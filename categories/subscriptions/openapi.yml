@@ -15,6 +15,9 @@ tags:
 servers:
 - url: https://api.tatum.io
 paths:
+  /v1/subscription:
+    post:
+      $ref: categories/subscriptions/paths/v1_subscription_post.yml
   /v3/subscription:
     post:
       $ref: categories/subscriptions/paths/v3_subscription_post.yml

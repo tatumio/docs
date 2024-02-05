@@ -1,0 +1,441 @@
+description: "Please expand below notification types to see more details.\n\n---\n\
+  \n<details>\n <summary><b>ADDRESS_EVENT</b></summary>\n    \nMonitoring blockchain\
+  \ addresses can be a challenging and resource-intensive task, especially when you\
+  \ need to track balance updates across multiple token types and currencies. However,\
+  \ with Tatum's ADDRESS_EVENT notification type, you can stay up-to-date with real-time\
+  \ balance updates, allowing you to streamline your operations and enhance the user\
+  \ experience.\n\n### Which blockchain networks are supported?\n\n| Blockchain  \
+  \        | Mainnet                     | Testnet                               \
+  \           |\n| ------------------- | --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
+  \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
+  \  |\n| Litecoin            | Network.LITECOIN            | Network.LITECOIN_TESTNET\
+  \                         |\n| Dogecoin            | Network.DOGECOIN          \
+  \  | Network.DOGECOIN_TESTNET                         |\n| Bitcoin Cash        |\
+  \ Network.BITCOIN_CASH        | Network.BITCOIN_CASH_TESTNET                   \
+  \  |\n| Celo                | Network.CELO                | Network.CELO_ALFAJORES\
+  \                           |\n| Klaytn              | Network.KLAYTN          \
+  \    | Network.KLATN_BAOBAB                             |\n| Solana            \
+  \  | Network.SOLANA              | Network.SOLANA_DEVNET                       \
+  \     |\n| Tezos               | Network.TEZOS               | -               \
+  \                                 |\n| Tron                | Network.TRON      \
+  \          | Network.TRON_SHASTA                              |\n| XRP         \
+  \        | Network.XRP                 | Network.XRP_TESTNET                   \
+  \           |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n \
+  \ \"amount\": \"0.001\",\n  \"asset\": \"ETH\",\n  \"blockNumber\": 2913059,\n \
+  \ \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\",\n  \"\
+  type\": \"native\",\n  \"chain\": \"ethereum-mainnet\",\n  \"subscriptionType\"\
+  : \"ADDRESS_EVENT\"\n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>INCOMING_NATIVE_TX</b></summary>\n\
+  \nIn the world of blockchain, staying updated with incoming transactions is crucial\
+  \ for ensuring smooth operations and an optimal user experience. Tatum's INCOMING_NATIVE_TX\
+  \ notification type is designed to help you do just that \u2013 by sending webhook\
+  \ notifications every time there's an incoming native balance update on a monitored\
+  \ address.\n\n### Which blockchain networks are supported?\n\n| Blockchain     \
+  \     | Mainnet                     | Testnet                                  \
+  \        |\n| ------------------- | --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
+  \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
+  \  |\n| Litecoin            | Network.LITECOIN            | Network.LITECOIN_TESTNET\
+  \                         |\n| Dogecoin            | Network.DOGECOIN          \
+  \  | Network.DOGECOIN_TESTNET                         |\n| Bitcoin Cash        |\
+  \ Network.BITCOIN_CASH        | Network.BITCOIN_CASH_TESTNET                   \
+  \  |\n| Celo                | Network.CELO                | Network.CELO_ALFAJORES\
+  \                           |\n| Klaytn              | Network.KLAYTN          \
+  \    | Network.KLATN_BAOBAB                             |\n| Solana            \
+  \  | Network.SOLANA              | Network.SOLANA_DEVNET                       \
+  \     |\n| Tezos               | Network.TEZOS               | -               \
+  \                                 |\n| Tron                | Network.TRON      \
+  \          | Network.TRON_SHASTA                              |\n| XRP         \
+  \        | Network.XRP                 | Network.XRP_TESTNET                   \
+  \           |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n \
+  \ \"amount\": \"0.001\",\n  \"blockNumber\": 2913059,\n  \"counterAddress\": \"\
+  0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\": \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\"\
+  ,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n\
+  \  <summary><b>OUTGOING_NATIVE_TX</b></summary>\n\nMonitoring outgoing transactions\
+  \ is essential for maintaining a secure and efficient blockchain platform. Tatum's\
+  \ OUTGOING_NATIVE_TX notification type offers a powerful solution to help you stay\
+  \ informed about outgoing native balance updates on a monitored address, simplifying\
+  \ your operations and enhancing user experience.\n\n### Which blockchain networks\
+  \ are supported?\n\n| Blockchain          | Mainnet                     | Testnet\
+  \                                          |\n| ------------------- | ---------------------------\
+  \ | ------------------------------------------------ |\n| Ethereum            |\
+  \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
+  \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
+  \  |\n| Litecoin            | Network.LITECOIN            | Network.LITECOIN_TESTNET\
+  \                         |\n| Celo                | Network.CELO              \
+  \  | Network.CELO_ALFAJORES                           |\n| Klaytn              |\
+  \ Network.KLAYTN              | Network.KLATN_BAOBAB                           \
+  \  |\n| Solana              | Network.SOLANA              | Network.SOLANA_DEVNET\
+  \                            |\n| Tezos               | Network.TEZOS          \
+  \     | -                                                |\n| Tron             \
+  \   | Network.TRON                | Network.TRON_SHASTA                        \
+  \      |\n| XRP                 | Network.XRP                 | Network.XRP_TESTNET\
+  \                              |\n\n### What does the fired webhook look like?\n\
+  \nThe fired notification webhook you will receive in your webhook listener will\
+  \ have the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"amount\": \"-0.001\",\n  \"blockNumber\": 2913059,\n  \"counterAddress\"\
+  : \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\": \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\"\
+  ,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n\
+  \  <summary><b>INCOMING_INTERNAL_TX</b></summary>\n\nIn the dynamic world of blockchain,\
+  \ staying updated with transactions involving smart contracts is essential for maintaining\
+  \ a secure and efficient platform. Tatum's INCOMING_INTERNAL_TX notification type\
+  \ offers a powerful solution to help you track incoming native balance updates on\
+  \ a monitored address, which originated from smart contracts.\n\n### Which blockchain\
+  \ networks are supported?\n\n| Blockchain | Mainnet          | Testnet         \
+  \                                 |\n| ---------- | ---------------- | ------------------------------------------------\
+  \ |\n| Ethereum   | Network.ETHEREUM | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Celo       | Network.CELO     | Network.CELO_ALFAJORES                  \
+  \         |\n| Tezos      | Network.TEZOS    | -                               \
+  \                 |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n \
+  \ \"amount\": \"0.001\",\n  \"blockNumber\": 2913059,\n  \"counterAddress\": \"\
+  0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\": \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\"\
+  ,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n\
+  \  <summary><b>OUTGOING_INTERNAL_TX</b></summary>\n\nIn the dynamic world of blockchain,\
+  \ staying updated with transactions involving smart contracts is essential for maintaining\
+  \ a secure and efficient platform. Tatum's OUTGOING_INTERNAL_TX notification type\
+  \ offers a powerful solution to help you track outgoing native balance updates on\
+  \ a monitored smart contract.\n\n### Which blockchain networks are supported?\n\n\
+  | Blockchain | Mainnet          | Testnet                                      \
+  \    |\n| ---------- | ---------------- | ------------------------------------------------\
+  \ |\n| Ethereum   | Network.ETHEREUM | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Celo       | Network.CELO     | Network.CELO_ALFAJORES                  \
+  \         |\n| Tezos      | Network.TEZOS    | -                               \
+  \                 |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n \
+  \ \"amount\": \"-0.001\",\n  \"blockNumber\": 2913059,\n  \"counterAddress\": \"\
+  0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\": \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\"\
+  ,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n\
+  \  <summary><b>OUTGOING_FAILED_TX</b></summary>\n\nIn the fast-paced world of blockchain,\
+  \ keeping track of failed transactions is crucial for maintaining a secure and efficient\
+  \ platform. Tatum's OUTGOING_FAILED_TX notification type provides an invaluable\
+  \ tool to help you stay informed about transactions from monitored addresses that\
+  \ fail to be included in a block.\n\n### Which blockchain networks are supported?\n\
+  \n| Blockchain          | Mainnet                     | Testnet                \
+  \                          |\n| ------------------- | ---------------------------\
+  \ | ------------------------------------------------ |\n| Ethereum            |\
+  \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Solana              | Network.SOLANA        \
+  \      | Network.SOLANA_DEVNET                            |\n| Tezos           \
+  \    | Network.TEZOS               | -                                         \
+  \       |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n \
+  \ \"amount\": \"-0.001\",\n  \"blockNumber\": 2913059,\n  \"counterAddress\": \"\
+  0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\": \"0x062d236ccc044f68194a04008e98c3823271dc26160a4db9ae9303f9ecfc7bf6\"\
+  ,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n\
+  \  <summary><b>FAILED_TXS_PER_BLOCK</b></summary>\n\nIn the fast-paced world of\
+  \ blockchain, keeping track of failed transactions is crucial for maintaining a\
+  \ secure and efficient platform. Tatum's FAILED_TXS_PER_BLOCK notification type\
+  \ provides an invaluable tool to help you stay informed about all transactions in\
+  \ a block that fail to be included in a block.\n\n### Which blockchain networks\
+  \ are supported?\n\n| Blockchain          | Mainnet                     | Testnet\
+  \                                          |\n| ------------------- | ---------------------------\
+  \ | ------------------------------------------------ |\n| Ethereum            |\
+  \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Solana              | Network.SOLANA        \
+  \      | Network.SOLANA_DEVNET                            |\n| Tezos           \
+  \    | Network.TEZOS               | -                                         \
+  \       |\n\n### What does the fired webhook look like?\n\nThe fired notification\
+  \ webhook you will receive in your webhook listener will have the following format.\n\
+  \n```json\n{\n  \"txId\": \"2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A\"\
+  ,\n  \"blockNumber\": 110827114,\n  \"chain\": \"ethereum-mainnet\"\n}\n```\n\n\
+  </details>\n\n---\n\n<details>\n  <summary><b>PAID_FEE</b></summary>\n\nIn the complex\
+  \ world of blockchain, keeping track of transaction fees is crucial for maintaining\
+  \ a transparent and efficient platform. Tatum's PAID_FEE notification type provides\
+  \ a valuable tool to help you stay informed about fees paid as part of transactions\
+  \ involving a specific address.\n\n### Which blockchain networks are supported?\n\
+  \n| Blockchain          | Mainnet                     | Testnet                \
+  \                          |\n| ------------------- | ---------------------------\
+  \ | ------------------------------------------------ |\n| Ethereum            |\
+  \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Tezos               | Network.TEZOS         \
+  \      | -                                                |\n\n### What does the\
+  \ fired webhook look like?\n\nThe fired notification webhook you will receive in\
+  \ your webhook listener will have the following format.\n\n```json\n{\n  \"address\"\
+  : \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n  \"txId\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\"\
+  ,\n  \"blockNumber\": 110827114,\n  \"amount\": \"1\",\n  \"mempool\": true,\n \
+  \ \"chain\": \"ethereum-mainnet\"\n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>INCOMING_FUNGIBLE_TX</b></summary>\n\
+  \nIn the ever-evolving world of blockchain, keeping track of fungible token transactions\
+  \ is essential for maintaining a secure and efficient platform. Tatum's INCOMING_FUNGIBLE_TX\
+  \ notification type offers a powerful solution to help you stay informed about incoming\
+  \ fungible token transactions (e.g., ERC-20 transfers) involving a specific address.\n\
+  \n### Which blockchain networks are supported?\n\n| Blockchain          | Mainnet\
+  \                     | Testnet                                          |\n| -------------------\
+  \ | --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin Cash        |\
+  \ Network.BITCOIN_CASH        | Network.BITCOIN_CASH_TESTNET                   \
+  \  |\n| Celo                | Network.CELO                | Network.CELO_ALFAJORES\
+  \                           |\n| Klaytn              | Network.KLAYTN          \
+  \    | Network.KLATN_BAOBAB                             |\n| Solana            \
+  \  | Network.SOLANA              | Network.SOLANA_DEVNET                       \
+  \     |\n| Tron                | Network.TRON                | Network.TRON_SHASTA\
+  \                              |\n| Tezos               | Network.TEZOS        \
+  \       | -                                                |\n\n### What does the\
+  \ fired webhook look like?\n\nThe fired notification webhook you will receive in\
+  \ your webhook listener will have the following format.\n\n```json\n{\n  \"address\"\
+  : \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\",\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\"\
+  ,\n  \"txId\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"blockNumber\"\
+  : 110827114,\n  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\",\n  \"contractAddress\"\
+  : \"0x7D3Dda0430471Fe460C07b1ecaB35670eF4ce85b\"\n}\n```\n\n</details>\n\n---\n\n\
+  <details>\n  <summary><b>OUTGOING_FUNGIBLE_TX</b></summary>\n\nIn the dynamic world\
+  \ of blockchain, staying updated with fungible token transactions is vital for maintaining\
+  \ a secure and efficient platform. Tatum's OUTGOING_FUNGIBLE_TX notification type\
+  \ offers a powerful solution to help you track outgoing fungible token transactions\
+  \ (e.g., ERC-20 / SPL transfers) from a specific address.\n\n### Which blockchain\
+  \ networks are supported?\n\n| Blockchain          | Mainnet                   \
+  \  | Testnet                                          |\n| ------------------- |\
+  \ --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Solana              | Network.SOLANA        \
+  \      | Network.SOLANA_DEVNET                            |\n| Tron            \
+  \    | Network.TRON                | Network.TRON_SHASTA                       \
+  \       |\n| Tezos               | Network.TEZOS               | -             \
+  \                                   |\n\n### What does the fired webhook look like?\n\
+  \nThe fired notification webhook you will receive in your webhook listener will\
+  \ have the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"blockNumber\": 110827114,\n\
+  \  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\",\n  \"contractAddress\"\
+  : \"0x7D3Dda0430471Fe460C07b1ecaB35670eF4ce85b\"\n}\n```\n\n</details>\n\n---\n\n\
+  <details>\n  <summary><b>INCOMING_NFT_TX</b></summary>\n\nIn the ever-expanding\
+  \ world of blockchain, keeping track of non-fungible token (NFT) transactions is\
+  \ crucial for maintaining a secure and efficient platform. Tatum's INCOMING_NFT_TX\
+  \ notification type offers a powerful solution to help you stay informed about incoming\
+  \ non-fungible token transactions (e.g., ERC-721 / SPL transfers) involving a specific\
+  \ address.\n\n### Which blockchain networks are supported?\n\n| Blockchain     \
+  \     | Mainnet                     | Testnet                                  \
+  \        |\n| ------------------- | --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Solana              | Network.SOLANA        \
+  \      | Network.SOLANA_DEVNET                            |\n| Tron            \
+  \    | Network.TRON                | Network.TRON_SHASTA                       \
+  \       |\n| Tezos               | Network.TEZOS               | -             \
+  \                                   |\n\n### What does the fired webhook look like?\n\
+  \nThe fired notification webhook you will receive in your webhook listener will\
+  \ have the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0xe118976ba31815f81301341b4e211825bce1393cac1c4215075177b0a6b98930\",\n  \"\
+  blockNumber\": 110827114,\n  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\"\
+  ,\n  \"contractAddress\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"\
+  tokenId\": \"1450000023306\",\n  \"metadataURI\": \"https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json\"\
+  \n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>OUTGOING_NFT_TX</b></summary>\n\
+  \nIn the fast-paced world of blockchain, keeping track of non-fungible token (NFT)\
+  \ transactions is essential for maintaining a secure and efficient platform. Tatum's\
+  \ OUTGOING_NFT_TX notification type offers a powerful solution to help you stay\
+  \ informed about outgoing non-fungible token transactions (e.g., ERC-721 / SPL transfers)\
+  \ from a specific address.\n\n### Which blockchain networks are supported?\n\n|\
+  \ Blockchain          | Mainnet                     | Testnet                  \
+  \                        |\n| ------------------- | ---------------------------\
+  \ | ------------------------------------------------ |\n| Ethereum            |\
+  \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Solana              | Network.SOLANA        \
+  \      | Network.SOLANA_DEVNET                            |\n| Tron            \
+  \    | Network.TRON                | Network.TRON_SHASTA                       \
+  \       |\n| Tezos               | Network.TEZOS               | -             \
+  \                                   |\n\n### What does the fired webhook look like?\n\
+  \nThe fired notification webhook you will receive in your webhook listener will\
+  \ have the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0xe118976ba31815f81301341b4e211825bce1393cac1c4215075177b0a6b98930\",\n  \"\
+  blockNumber\": 110827114,\n  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\"\
+  ,\n  \"contractAddress\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"\
+  tokenId\": \"1450000023306\",\n  \"metadataURI\": \"https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json\"\
+  \n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>INCOMING_MULTITOKEN_TX</b></summary>\n\
+  \nIn the dynamic world of blockchain, keeping track of multi-token transactions\
+  \ is crucial for maintaining a secure and efficient platform. Tatum's INCOMING_MULTITOKEN_TX\
+  \ notification type offers a powerful solution to help you stay informed about incoming\
+  \ multi-token transactions (e.g., ERC-1155 transfers) involving a specific address.\n\
+  \n### Which blockchain networks are supported?\n\n| Blockchain          | Mainnet\
+  \                     | Testnet                                          |\n| -------------------\
+  \ | --------------------------- | ------------------------------------------------\
+  \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n\n### What does the fired webhook look like?\n\n\
+  The fired notification webhook you will receive in your webhook listener will have\
+  \ the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0xe118976ba31815f81301341b4e211825bce1393cac1c4215075177b0a6b98930\",\n  \"\
+  blockNumber\": 110827114,\n  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\"\
+  ,\n  \"contractAddress\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"\
+  tokenId\": \"1450000023306\",\n  \"metadataURI\": \"https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json\"\
+  \n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>OUTGOING_MULTITOKEN_TX</b></summary>\n\
+  \   \nIn the rapidly evolving world of blockchain, keeping track of multi-token\
+  \ transactions is essential for maintaining a secure and efficient platform. Tatum's\
+  \ OUTGOING_MULTITOKEN_TX notification type offers a powerful solution to help you\
+  \ stay informed about outgoing multi-token transactions (e.g., ERC-1155 transfers)\
+  \ from a specific address.\n  \n### Which blockchain networks are supported?\n|\
+  \ Blockchain          | Mainnet                     | Testnet                  \
+  \                        |\n|---------------------|-----------------------------|--------------------------------------------------|\n\
+  | Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n\n### What does the fired webhook look like?\n\n\
+  The fired notification webhook you will receive in your webhook listener will have\
+  \ the following format.\n\n```json\n{\n  \"address\": \"0xF64E82131BE01618487Da5142fc9d289cbb60E9d\"\
+  ,\n  \"counterAddress\": \"0x690B9A9E9aa1C9dB991C7721a92d351Db4FaC990\",\n  \"txId\"\
+  : \"0xe118976ba31815f81301341b4e211825bce1393cac1c4215075177b0a6b98930\",\n  \"\
+  blockNumber\": 110827114,\n  \"amount\": \"1\",\n  \"chain\": \"ethereum-mainnet\"\
+  ,\n  \"contractAddress\": \"0x7d3dda0430471fe460c07b1ecab35670ef4ce85b\",\n  \"\
+  tokenId\": \"1450000023306\",\n  \"metadataURI\": \"https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json\"\
+  \n}\n```\n\n</details>\n\n---\n\n<details>\n  <summary><b>CONTRACT_ADDRESS_LOG_EVENT</b></summary>\n\
+  \   \nIn the fast-paced world of blockchain, keeping track of contract events is\
+  \ essential for maintaining a secure and efficient platform. Tatum's CONTRACT_ADDRESS_LOG_EVENT\
+  \ notification type offers a powerful solution to help you stay informed about nft\
+  \ mints, transfers or any other contract events.\n  \n### Which blockchain networks\
+  \ are supported?\n| Blockchain          | Mainnet                     | Testnet\
+  \                                          |\n|---------------------|-----------------------------|--------------------------------------------------|\n\
+  | Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
+  \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
+  \ Network.CELO                | Network.CELO_ALFAJORES                         \
+  \  |\n| Klaytn              | Network.KLAYTN              | Network.KLATN_BAOBAB\
+  \                             |\n| Tezos               | Network.TEZOS         \
+  \      | N/A                                              |\n\n### What does the\
+  \ fired webhook look like?\n\nThe fired notification webhook you will receive in\
+  \ your webhook listener will have the following format.\n\nExample for EVM chains:\n\
+  \n```json\n{\n  \"events\": [\n    {\n      \"txId\": \"0xbcf42229dbd97a7c1554f0451a8d4ba6653593de06d4ea62691ce314d036d19e\"\
+  ,\n      \"logIndex\": 3,\n      \"timestamp\": 1696945197000,\n      \"address\"\
+  : \"0xeb0a4ee3cdfffe0ef29f967a34137dea3b529c89\",\n      \"topic_0\": \"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\"\
+  ,\n      \"topic_1\": \"0x0000000000000000000000000000000000000000000000000000000000000000\"\
+  ,\n      \"topic_2\": \"0x000000000000000000000000cacdddf3c123b133cb36b0ee17925c7a70a1ea93\"\
+  ,\n      \"topic_3\": \"0x0000000000000000000000000000000000000000000000000000000000000002\"\
+  ,\n      \"data\": \"0x\"\n    }\n  ],\n  \"blockNumber\": 20312334,\n  \"chain\"\
+  : \"celo-testnet\",\n  \"subscriptionType\": \"CONTRACT_ADDRESS_LOG_EVENT\"\n}\n\
+  ```\n\nExample for Tezos. The `tag` and `payload` in the event object depend on\
+  \ what the contract emits:\n\n```json\n{\n  \"events\": [\n    {\n      \"txId\"\
+  : \"op6Hu4iUV9bRxxGkc5qVexN1NXFYENpKEovyh41cC3W9a9voX2k\",\n      \"tag\": \"swap\"\
+  ,\n      \"payload\": [\n        {\n          \"int\": \"130\"\n        },\n   \
+  \     {\n          \"int\": \"0\"\n        },\n        {\n          \"int\": \"\
+  67034\"\n        },\n        {\n          \"int\": \"118138\"\n        }\n     \
+  \ ],\n      \"address\": \"KT1V5XKmeypanMS9pR65REpqmVejWBZURuuT\"\n    }\n  ],\n\
+  \  \"blockNumber\": 4376363,\n  \"chain\": \"tezos-mainnet\",\n  \"subscriptionType\"\
+  : \"CONTRACT_ADDRESS_LOG_EVENT\"\n}\n```\n\n</details>\n"
+operationId: createSubscription
+parameters:
+- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+  in: query
+  name: testnetType
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+    - ethereum-goerli
+    - ehtereum-holesky
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated_v1.yml#/components/schemas/CreateSubscriptionNotification'
+        - $ref: '../../../components/migrated_v1.yml#/components/schemas/CreateSubscriptionTxInTheBlock'
+        - $ref: '../../../components/migrated_v1.yml#/components/schemas/CreateContractAddressLogEventSubscription'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/Id'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionType'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionCurrency'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionBalance'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionInterval'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionId'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403SubscriptionPendingId'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Create a subscription
+tags:
+- Notification subscriptions
