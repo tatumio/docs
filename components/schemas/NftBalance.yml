@@ -1,0 +1,28 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  type:
+    $ref: '../migrated.yml#/components/schemas/TokenType'
+    example: nft
+  address:
+    type: string
+  balance:
+    type: string
+  tokenAddress:
+    type: string
+  tokenId:
+    type: string
+  metadataURI:
+    type: string
+  lastUpdatedBlockNumber:
+    type: integer
+  metadata:
+    type: object
+required:
+- chain
+- type
+- address
+- balance
+- tokenAddress
+- lastUpdatedBlockNumber

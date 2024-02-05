@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: report.invalid
+    example: report.invalid
+    type: string
+  message:
+    description: Unsupported report type.
+    example: Unsupported report type.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

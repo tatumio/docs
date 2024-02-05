@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: transaction.preparation.failed.utxo
+    example: transaction.preparation.failed.utxo
+    type: string
+  message:
+    description: Impossible to find last UTXO.
+    example: Impossible to find last UTXO.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

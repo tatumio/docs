@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: trade.currency2.balance
+    example: trade.currency2.balance
+    type: string
+  message:
+    description: Insufficient balance on currency2 account ${trade.currency2AccountId}.
+    example: Insufficient balance on currency2 account ${trade.currency2AccountId}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

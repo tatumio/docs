@@ -1,0 +1,14 @@
+type: object
+properties:
+  hash:
+    description: The block hash.
+    type: string
+    example: a6f2ac15a6b1bafdde9afff2297cef49c4c523c516f8ee12fed54be070e9512b
+  nonce:
+    description: The block height.
+    type: number
+    example: 5440070
+  shard:
+    description: The shard number.
+    type: number
+    example: 1

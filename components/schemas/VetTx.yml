@@ -1,0 +1,57 @@
+type: object
+properties:
+  id:
+    type: string
+    example: '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7'
+  chainTag:
+    type: string
+    example: '0x27'
+  blockRef:
+    type: string
+    example: '0x0011bbb748852599'
+  expiration:
+    type: number
+    example: 720
+  clauses:
+    type: array
+    items:
+      type: object
+      properties:
+        to:
+          type: string
+          example: '0xc6a3007e8e0d959ada56eaa003ebd1d61364cb4f'
+        value:
+          type: string
+          example: '115070300000000000000000000'
+        data:
+          type: string
+          example: 0x
+  gasPriceCoef:
+    type: number
+    example: 120
+  gas:
+    type: number
+    example: 21000
+  origin:
+    type: string
+    example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+  nonce:
+    type: string
+    example: '0x48ca1882cf3726ee'
+  size:
+    type: number
+    example: 132
+  meta:
+    properties:
+      blockID:
+        type: string
+        example: '0x0011bbb9925da1b54035e2a870abe336bc79a3b083303646b87a3315c11c963b'
+      blockNumber:
+        type: number
+        example: 1162169
+      blockTimestamp:
+        type: number
+        example: 1541643760
+    type: object
+  blockNumber:
+    type: number

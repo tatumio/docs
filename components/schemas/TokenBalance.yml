@@ -1,0 +1,20 @@
+type: object
+properties:
+  accountIndex:
+    description: Index of the account in which the token balance is provided for.
+    type: number
+    example: 1
+  mint:
+    description: Pubkey of the token's mint.
+    type: string
+    example: So11111111111111111111111111111111111111112
+  owner:
+    description: Pubkey of token balance's owner.
+    type: string
+    example: BYM81n8HvTJuqZU1PmTVcwZ9G8uoji7FKM6EaPkwphPt
+  programId:
+    description: Pubkey of the Token program that owns the account.
+    type: string
+    example: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+  uiTokenAmount:
+    $ref: '../migrated.yml#/components/schemas/UiTokenAmount'

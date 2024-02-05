@@ -1,0 +1,24 @@
+type: object
+properties:
+  testnet:
+    type: string
+    description: Chain of the blockchain, main or test.
+    example: test
+  tip:
+    type: object
+    properties:
+      number:
+        type: number
+        description: Last block.
+        example: 2749845
+      slotNo:
+        type: number
+        description: Last slot number.
+        example: 31798572
+      epoch:
+        type: object
+        properties:
+          number:
+            type: number
+            description: Last epoch number.
+            example: 143

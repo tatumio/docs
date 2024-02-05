@@ -1,0 +1,25 @@
+type: object
+description: Detailed estimations for safe (under 30 minutes), standard (under 5 minutes)
+  and fast (under 2 minutes) transaction times.
+required:
+- safe
+- standard
+- fast
+- baseFee
+properties:
+  safe:
+    type: string
+    description: Safe gas price in wei.
+    example: '20000000000'
+  standard:
+    type: string
+    description: Standard gas price in wei.
+    example: '40000000000'
+  fast:
+    type: string
+    description: Fast gas price in wei.
+    example: '55000000000'
+  baseFee:
+    type: string
+    description: Base fee for EIP-1559 transactions in wei.
+    example: '55000000000'

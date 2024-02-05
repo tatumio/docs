@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Blockchain Data
+  version: "1.0.0"
+paths:
+  # NFT API
+  /v3/data/collections:
+    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1collections"
+  /v3/data/metadata:
+    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1metadata"
+  /v3/data/owners:
+    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1owners"
+  /v3/data/owners/address:
+    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1owners~1address"
+
+  # Token API
+  /v3/data/tokens:
+    $ref: "categories/blockchain_data/operations/token.yml#/paths/~1v3~1data~1tokens"
+
+  # Wallet API
+  /v3/data/balances:
+    $ref: "categories/blockchain_data/operations/wallet.yml#/paths/~1v3~1data~1balances"
+  /v3/data/utxos:
+    $ref: "categories/blockchain_data/operations/wallet.yml#/paths/~1v3~1data~1utxos"
+
+  # Transactions API
+  /v3/data/transactions:
+    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1data~1transactions"
+  /v3/data/transactions/hash:
+    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1data~1transactions~1hash"
+  /v3/blockchain/fee/{chain}:
+    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1blockchain~1fee~1{chain}"
+  /v3/blockchain/estimate:
+    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1blockchain~1estimate"
+
+  # DeFi API
+  /v3/data/events:
+    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1events"
+  /v3/data/blocks:
+    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1blocks"
+  /v3/data/blocks/latest:
+    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1blocks~1latest"
+
+servers:
+  - url: https://api.tatum.io/

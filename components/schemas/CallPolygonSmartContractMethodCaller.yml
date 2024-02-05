@@ -1,0 +1,54 @@
+type: object
+properties:
+  caller:
+    maxLength: 42
+    minLength: 42
+    description: The address of the account, which will be sender and fee payer of
+      this transaction
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The address of the smart contract
+    example: '0xC9c8ba8C7e2EAF43e84330Db08915A8106d7bD74'
+    type: string
+  amount:
+    description: Amount of the assets to be sent.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  methodName:
+    minLength: 1
+    maxLength: 500
+    description: Name of the method to invoke on smart contract.
+    type: string
+    example: transfer
+  methodABI:
+    type: object
+    example:
+      inputs:
+      - internalType: uint256
+        name: amount
+        type: uint256
+      name: stake
+      outputs: []
+      stateMutability: nonpayable
+      type: function
+    description: ABI of the method to invoke.
+  params:
+    type: array
+    example:
+    - '0x632'
+    items:
+      type: string
+      description: Parameters of the method to be invoked
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- contractAddress
+- params
+- methodABI
+- fromPrivateKey
+- methodName
+- caller

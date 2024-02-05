@@ -1,0 +1,6 @@
+type: object
+properties:
+  total:
+    description: Total entities
+    example: 20
+    type: number

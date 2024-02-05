@@ -1,0 +1,32 @@
+type: object
+properties:
+  from:
+    description: The blockchain address of the sender
+    type: string
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+  to:
+    description: The blockchain address of the recipient
+    type: string
+    example: NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+  amount:
+    description: The amount to send in Algos
+    type: string
+    example: '1'
+  note:
+    description: The note for the recipient; must not contain spaces
+    type: string
+    example: Helloworld
+  fromPrivateKey:
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+    type: string
+    example: 72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI
+required:
+- from
+- to
+- amount
+- fromPrivateKey

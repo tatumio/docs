@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: withdrawal.not.cancelled.transaction.failed
+    example: withdrawal.not.cancelled.transaction.failed
+    type: string
+  message:
+    description: Unable to broadcast transaction, and impossible to cancel withdrawal.
+      ID is attached, "${withdrawalId}", cancel it manually.
+    example: Unable to broadcast transaction, and impossible to cancel withdrawal.
+      ID is attached, "${withdrawalId}", cancel it manually.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

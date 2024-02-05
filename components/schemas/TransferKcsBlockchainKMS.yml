@@ -1,0 +1,63 @@
+type: object
+properties:
+  data:
+    type: string
+    maxLength: 50000
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to Kcs transaction. If not present, last known nonce
+      will be used.
+  to:
+    description: Blockchain address to send assets
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  currency:
+    description: Currency to transfer from Kcs Blockchain Account.
+    enum:
+    - KCS
+    example: KCS
+    type: string
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        example: '40000'
+        pattern: ^[+]?\d+$
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        example: '20'
+        pattern: ^[+]?\d+$
+  amount:
+    description: Amount to be sent.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+required:
+- to
+- amount
+- currency
+- signatureId

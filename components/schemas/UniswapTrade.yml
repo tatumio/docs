@@ -1,0 +1,16 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/DecodedDataCommon'
+- type: object
+  properties:
+    token0:
+      type: string
+      description: The address of the first token involved in the trade.
+      example: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+    token1:
+      type: string
+      description: The address of the second token involved in the trade.
+      example: '0x6b175474e89094c44da98b954eedeac495271d0f'
+    partiallyRaw:
+      type: boolean
+      description: Indicates whether the trade data is partially raw or not.
+      example: false

@@ -1,0 +1,25 @@
+properties:
+  name:
+    description: Virtual currency name, which will be updated. It is not possible
+      to update the name of the virtual currency.
+    example: VC_VIRTUAL
+    maxLength: 30
+    pattern: ^[a-zA-Z0-9_]+$
+    minLength: 1
+    type: string
+  baseRate:
+    type: number
+    example: 1
+    default: 1
+    minimum: 0
+    description: Exchange rate of the base pair. Each unit of the created curency
+      will represent value of baseRate*1 basePair.
+  basePair:
+    description: Base pair for virtual currency. Transaction value will be calculated
+      according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair
+      is set to BTC.
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    example: EUR
+required:
+- name
+type: object

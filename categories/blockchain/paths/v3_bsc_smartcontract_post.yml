@@ -1,0 +1,94 @@
+description: "<p><b>2 credits per API call</b></p>\n<p>Invoke a method in an existing\
+  \ smart contract on BNB Smart Chain.</p>\n<p>You can call a read-only or write method.</p>\n\
+  <ul>\n<li>For <b>read-only</b> methods, the output of the invoked method is returned.</li>\n\
+  <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li>\n\
+  </ul>        \n<p><b>Troubleshooting a failed transaction</b><br/>\nTatum ensures\
+  \ that this API works against the blockchain (accesses the blockchain, finds the\
+  \ specified smart contract, and executes the specified ABI method with the provided\
+  \ parameters).<br/>However, because this API can be run against any smart contract\
+  \ on the blockchain, Tatum cannot in any way guarantee that the method itself will\
+  \ be executed successfully.</p>\n<p>If you have issues with invoking the method,\
+  \ refer to the user documentation for this method, or contact the author of the\
+  \ smart contract.</p>\n<p>For more information about invoking methods in smart contracts,\
+  \ see <a href=\"https://support.tatum.io/support/solutions/articles/80001052441\"\
+  \ target=\"_blank\">this article</a> on our Support Portal.</p>\n<p><b>Signing a\
+  \ transaction</b><br/>\nWhen invoking a method in a smart contract, you are charged\
+  \ a fee for the transaction, and you must sign the transaction with the private\
+  \ key of the blockchain address from which the fee will be deducted.</p>\n<p>If\
+  \ <b>caller</b> field is present instead of the private key, Tatum will sign the\
+  \ transaction with the managed private key connected to the caller address. This\
+  \ is applicable only for paid mainnet plans and all testnet plans. Keep in mind\
+  \ that the caller address must have enough access right to perform the action in\
+  \ the smart contract method.</p>\n<p>Providing the private key in the API is not\
+  \ a secure way of signing transactions, because the private key can be stolen or\
+  \ exposed. Your private keys should never leave your security perimeter. You should\
+  \ use the private keys only for testing a solution you are building on the <b>testnet</b>\
+  \ of a blockchain.</p>\n<p>For signing transactions on the <b>mainnet</b>, we strongly\
+  \ recommend that you use the Tatum <a href=\"https://github.com/tatumio/tatum-kms\"\
+  \ target=\"_blank\">Key Management System (KMS)</a> and provide the signature ID\
+  \ instead of the private key in the API. Alternatively, you can use the <a href=\"\
+  https://github.com/tatumio/tatum-js/tree/v2\" target=\"_blank\">Tatum JavaScript\
+  \ client</a>.</p>\n"
+operationId: BscBlockchainSmartContractInvocation
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/CallBscSmartContractReadMethod'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CallBscSmartContractMethod'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CallBscSmartContractMethodCaller'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CallBscSmartContractMethodKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Data'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscBroadcast'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscGasPrice'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscScBody'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscGasCalculation'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscTxHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BscTxSign'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Invoke a method in a smart contract on BNB Smart Chain
+tags:
+- BNB Smart Chain

@@ -1,0 +1,66 @@
+type: object
+description: <p>The <code>MintNftKMSTron</code> schema lets you mint NFTs natively
+  on TRON and sign the transaction with your signature ID.<br/>For more information,
+  see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+properties:
+  chain:
+    type: string
+    example: TRON
+    description: The blockchain to work with
+    enum:
+    - TRON
+  to:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address to send the NFT to
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address of the smart contract to build the NFT on
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  tokenId:
+    description: The ID of the NFT
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  feeLimit:
+    type: number
+    description: The maximum amount to be paid as the transaction fee (in TRX)
+    example: 600
+  from:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address that will pay the fee for the transaction
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the blockchain address that
+      will pay the fee for the transaction
+  index:
+    type: number
+    minimum: 0
+    description: (Only if the signature ID is mnemonic-based) The index of the address
+      to pay the transaction fee that was generated from the mnemonic
+required:
+- chain
+- from
+- to
+- url
+- feeLimit
+- contractAddress
+- signatureId
+- tokenId

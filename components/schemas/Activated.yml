@@ -1,0 +1,8 @@
+type: object
+properties:
+  activated:
+    type: boolean
+    description: If set to "true", the gas pump address has been activated
+    example: true
+example:
+  activated: true

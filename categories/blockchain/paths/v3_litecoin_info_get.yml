@@ -1,0 +1,46 @@
+description: '<h4>5 credits per API call.</h4>
+
+  <br/><p>Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet
+  version of the chain, current block number and it''s hash.</p>
+
+  <br />Examples of using this endpoint with the Tatum JS SDK can be found in <a href="https://github.com/tatumio/tatum-js/tree/v2/examples/ltc-example/src/app/ltc.blockchain.example.ts"
+  target="_blank">Tatum LTC SDK</a>.
+
+  '
+operationId: LtcGetBlockChainInfo
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/LtcInfo'
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get Litecoin Blockchain Information
+tags:
+- Litecoin

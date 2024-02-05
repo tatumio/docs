@@ -1,0 +1,57 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: Chain to work with.
+    enum:
+    - ETH
+    - MATIC
+    - KCS
+    - KLAY
+    - CELO
+    - ONE
+    - BSC
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of MultiToken token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  minter:
+    maxLength: 42
+    minLength: 42
+    description: Address of MultiToken minter
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to Ethereum transaction. If not present, last known
+      nonce will be used.
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  feeCurrency:
+    type: string
+    description: Currency to pay for transaction gas, only valid for CELO chain.
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+required:
+- chain
+- url
+- contractAddress
+- minter
+- signatureId

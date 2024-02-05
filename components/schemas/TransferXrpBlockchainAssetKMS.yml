@@ -1,0 +1,60 @@
+type: object
+properties:
+  fromAccount:
+    maxLength: 34
+    minLength: 33
+    description: XRP account address. Must be the one used for generating deposit
+      tags.
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    type: string
+  to:
+    description: Blockchain address to send assets
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    maxLength: 34
+    minLength: 33
+    type: string
+  amount:
+    description: Amount to be sent, in XRP.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the secret associated in signing application. Secret,
+      or signature Id must be present.
+  fee:
+    description: Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  sourceTag:
+    description: Source tag of sender account, if any.
+    example: 12355
+    type: integer
+  destinationTag:
+    description: Destination tag of recipient account, if any.
+    example: 12355
+    type: integer
+  issuerAccount:
+    description: Blockchain address of the issuer of the assets to create trust line
+      for.
+    example: rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc
+    maxLength: 34
+    minLength: 33
+    type: string
+  token:
+    description: Asset name. Must be 160bit HEX string, e.g. SHA1.
+    example: DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
+    type: string
+    pattern: ^[A-F0-9]{40}$
+    maxLength: 40
+    minLength: 40
+required:
+- fromAccount
+- to
+- amount
+- signatureId
+- issuerAccount
+- token

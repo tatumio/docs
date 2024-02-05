@@ -1,0 +1,27 @@
+type: object
+properties:
+  sender:
+    description: Account address of the sender
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7
+    maxLength: 62
+    minLength: 62
+    type: string
+  receiver:
+    description: Account address of the receiver or smart contract
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq6
+    maxLength: 62
+    minLength: 62
+    type: string
+  value:
+    type: string
+    description: Value to be sent.
+    example: '0.1'
+  data:
+    type: string
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+required:
+- sender
+- receiver
+- value

@@ -1,0 +1,82 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: Chain to work with.
+    enum:
+    - ETH
+    - ONE
+    - MATIC
+    - KCS
+    - KLAY
+    - BSC
+  account:
+    maxLength: 42
+    minLength: 42
+    description: Address of holder
+    example: '0x4b812a77b109A150C2Fc89eD133EaBC78bC9EC8f'
+    type: string
+  tokenId:
+    description: The IDs of the Multi Tokens to be destroyed.
+    example:
+    - '100'
+    - '101'
+    type: array
+    items:
+      type: string
+      maxLength: 32
+  amounts:
+    description: The amounts of the Multi Tokens to be destroyed.
+    example:
+    - '10'
+    - '10'
+    type: array
+    items:
+      type: string
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The address of the Multi Token smart contract
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to transaction. If not present, last known nonce
+      will be used.
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- account
+- chain
+- amounts
+- contractAddress
+- tokenId
+- signatureId

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.inactive
+    example: account.inactive
+    type: string
+  message:
+    description: Unable to deactivate inactive account.
+    example: Unable to deactivate inactive account.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

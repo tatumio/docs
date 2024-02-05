@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: subscription.attr.currency.invalid
+    example: subscription.attr.currency.invalid
+    type: string
+  message:
+    description: Invalid subscription attribute 'currency'.
+    example: Invalid subscription attribute 'currency'.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

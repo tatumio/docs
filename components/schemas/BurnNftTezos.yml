@@ -1,0 +1,39 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: TEZOS
+    description: The blockchain to work with
+    enum:
+    - TEZOS
+  tokenId:
+    description: ID of token to be destroyed.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  contractAddress:
+    maxLength: 36
+    minLength: 36
+    description: Address of NFT token
+    example: KT1KVGCm3WTQndN8WLvdYWAaCJheWj7oudY7
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: edskRvJQqeNih91dkoRkTG1PWxV5AruYbtrkp5DKibL2iMkPGWBbdYp8jpsY3N3skCNrwf9socTv9Sstonkckc4
+    minLength: 66
+    description: Private key of sender address.
+  ownerAddress:
+    maxLength: 36
+    minLength: 36
+    description: Public address of the owner. Owner is admin and minter of the token.
+      Must be a valid address of the Tezos blockchain.
+    example: tz1cCRCbBwnazV6howgD84a6fuhikKTnsWHZ
+    type: string
+required:
+- chain
+- tokenId
+- contractAddress
+- fromPrivateKey
+- ownerAddress

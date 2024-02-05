@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: bch.broadcast.failed
+    example: bch.broadcast.failed
+    type: string
+  message:
+    description: 'Unable to broadcast transaction. Error from blockchain: ${error}'
+    example: 'Unable to broadcast transaction. Error from blockchain: ${error}'
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

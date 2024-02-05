@@ -1,0 +1,11 @@
+type: string
+example: bitcoin
+enum:
+- bitcoin
+- bitcoin-testnet
+- litecoin
+- litecoin-testnet
+- doge
+- doge-testnet
+- cardano
+- cardano-preprod

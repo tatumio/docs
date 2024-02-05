@@ -1,0 +1,85 @@
+description: '<h4>4 credits per API call.</h4><br/>
+
+  <p>Sends a payment within Tatum Private Ledger. All assets are settled instantly.<br/>
+
+  When a transaction is settled, 2 transaction records are created, 1 for each of
+  the participants. These 2 records are connected via a transaction reference, which
+  is the same for both of them.<br/>
+
+  This method is only used for transferring assets between accounts within Tatum and
+  will not send any funds to blockchain addresses.<br/>
+
+  If there is an insufficient balance in the sender account, no transaction is recorded.<br/>
+
+  It is possible to perform an anonymous transaction where the sender account is not
+  visible for the recipient.<br/>
+
+  The FIAT currency value of every transaction is calculated automatically. The FIAT
+  value is based on the accountingCurrency of the account connected to the transaction
+  and is available in the marketValue parameter of the transaction.</p>
+
+  '
+operationId: sendTransaction
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/CreateTransaction'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/TransactionResult'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403ComplianceBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403ComplianceEth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxRecipientNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxCurrency'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxBalance'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountEth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxNotCompliant'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Send payment
+tags:
+- Transaction

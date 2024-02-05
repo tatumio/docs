@@ -1,0 +1,40 @@
+type: object
+properties:
+  account:
+    description: Blockchain account to send from
+    example: '0x955cd3f17b2fd8ad'
+    maxLength: 18
+    minLength: 18
+    type: string
+  currency:
+    type: string
+    description: Type of asset to send
+    enum:
+    - FLOW
+    - FUSD
+  to:
+    description: Blockchain address to send assets
+    example: '0x955cd3f17b2fd8ae'
+    maxLength: 18
+    minLength: 18
+    type: string
+  amount:
+    description: Amount to be sent
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  privateKey:
+    maxLength: 64
+    minLength: 64
+    description: Secret for account. Secret, or signature Id must be present.
+    example: 37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8
+    type: string
+required:
+- account
+- address
+- to
+- privateKey
+- currency
+- amount
+- to

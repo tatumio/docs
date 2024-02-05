@@ -1,0 +1,16 @@
+type: object
+required:
+- gasLimit
+- gasPrice
+- estimations
+properties:
+  gasLimit:
+    type: string
+    description: Gas limit for transaction in gas price.
+    example: '40000'
+  gasPrice:
+    type: string
+    description: Gas price in wei.
+    example: '20000000000'
+  estimations:
+    $ref: '../migrated.yml#/components/schemas/EthGasEstimationDetails'

@@ -1,0 +1,59 @@
+type: object
+properties:
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: The ID of the virtual account to send Algos from
+    example: 61b3bffddfb389cde19c73be
+    type: string
+  address:
+    description: The blockchain address to send Algos to
+    example: 5YVZBUH3STSQ5ABCTLEIEIJ7QOZFILM2DLAEEA4ZL6CU55ODZIQXO5EMYM
+    maxLength: 58
+    minLength: 58
+    type: string
+  amount:
+    description: The amount to send in Algos
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+    default: '0.001'
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The identifier of the secret of the Algorand wallet (account) in
+      the signing application. Secret, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  compliant:
+    description: Compliance check; if the withdrawal is not compliant, it will not
+      be processed
+    example: false
+    type: boolean
+  paymentId:
+    description: The identifier of the Algo transfer that is shown on the virtual
+      account for the created transaction
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: The note for the recipient; must not contain spaces
+    example: Helloworld
+    type: string
+required:
+- senderAccountId
+- address
+- amount
+- signatureId

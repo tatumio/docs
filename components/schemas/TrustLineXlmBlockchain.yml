@@ -1,0 +1,41 @@
+type: object
+properties:
+  fromAccount:
+    maxLength: 56
+    minLength: 56
+    description: XLM account address. Must be the one used for generating deposit
+      tags.
+    example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
+    type: string
+  issuerAccount:
+    description: Blockchain address of the issuer of the assets to create trust line
+      for.
+    example: GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT
+    maxLength: 56
+    minLength: 56
+    type: string
+  token:
+    description: Asset name.
+    example: TOKEN123
+    type: string
+    pattern: ^[a-zA-Z0-9]{1,12}$
+    maxLength: 12
+    minLength: 1
+  fromSecret:
+    maxLength: 56
+    minLength: 56
+    description: Secret for account. Secret, or signature Id must be present.
+    example: SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED
+    type: string
+  limit:
+    description: Amount of the assets to be permitted to send over this trust line.
+      0 means deletion of the trust line. When no limit is specified, maximum amount
+      available is permitted.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+required:
+- fromAccount
+- issuerAccount
+- fromSecret
+- token

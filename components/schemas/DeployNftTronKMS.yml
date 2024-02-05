@@ -1,0 +1,49 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: TRON
+    description: The blockchain to work with
+    enum:
+    - TRON
+  from:
+    maxLength: 34
+    minLength: 34
+    description: Blockchain address to perform transaction from
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  name:
+    description: Name of the NFT token
+    example: My ERC721
+    maxLength: 100
+    minLength: 1
+    type: string
+  symbol:
+    description: Symbol of the NFT token
+    example: ERC_SYMBOL
+    maxLength: 30
+    minLength: 1
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  feeLimit:
+    type: number
+    description: The maximum amount to be paid as the transaction fee (in TRX); deployment
+      of a smart contract on TRON costs around 580 TRX
+    example: 600
+required:
+- chain
+- name
+- from
+- symbol
+- feeLimit
+- signatureId

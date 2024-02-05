@@ -1,0 +1,12 @@
+type: object
+properties:
+  txId:
+    type: string
+    description: Transaction ID
+    example: d67787399d205139f4d6f42c2aa4fffdf6f247411fae3706e874fbba0ce04b1b
+  tokenId:
+    description: ID of the token.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256

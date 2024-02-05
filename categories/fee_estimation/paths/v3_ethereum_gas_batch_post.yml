@@ -1,0 +1,93 @@
+description: '<p><b>10 credits per API call + 10 credits per each gas estimation</b></p>
+
+  <p>Get an estimated gas price and the number of gas units needed for multiple Ethereum
+  transactions. The gas price is obtained from multiple sources and calculated based
+  on the latest N blocks and the current mempool state.</p>
+
+  <p>The estimations are returned in the same order as the transactions were submitted
+  in the request.</p>
+
+  <p>The <code>fast</code> gas price is used by default.</p>
+
+  <p style="border:4px solid DeepSkyBlue;"><b>NOTE:</b> The estimated gas price is
+  returned in <b>wei</b>. However, when <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer"
+  target="_blank">making a transaction itself</a> and providing the custom fee, you
+  have to provide the gas price in <b>Gwei</b>. Make sure to convert the estimated
+  gas price from wei to Gwei before submitting your transaction.</p>
+
+  </p>
+
+  '
+operationId: EthEstimateGasBatch
+parameters:
+- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/EthEstimateGasArray'
+  required: true
+responses:
+  '200':
+    headers:
+      x-current-block:
+        schema:
+          type: number
+        description: Current block of the blockchain.
+      x-current-block-time:
+        schema:
+          type: string
+          format: date-time
+          example: '2021-11-11T11:54:49.000Z'
+        description: Current block time.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/EthGasEstimationBatch'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Estimate the fee for multiple Ethereum transactions
+tags:
+- Blockchain fees

@@ -1,0 +1,86 @@
+type: object
+properties:
+  id:
+    type: string
+    description: ID of the trade
+    example: 7c21ed165e294db78b95f0f1
+  type:
+    type: string
+    description: Type of the trade, BUY or SELL
+    example: BUY
+    enum:
+    - BUY
+    - SELL
+  price:
+    type: string
+    description: Price to buy / sell
+    example: '8650.4'
+  amount:
+    type: string
+    description: Amount of the trade to be bought / sold
+    example: '15000'
+  pair:
+    type: string
+    description: Trading pair
+    example: BTC/EUR
+  isMaker:
+    type: boolean
+    description: If closed trade was Maker or Taker trade
+    example: true
+  fill:
+    type: string
+    description: How much of the trade was already filled.
+    example: '1500'
+  feeAccountId:
+    type: string
+    description: ID of the account where fee will be paid, if any. If trade is a BUY
+      or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId,
+      and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have
+      same currency as a currency of currency1AccountId.
+    example: 7c21ed165e294db78b95f0f1
+    minLength: 24
+    maxLength: 24
+  fee:
+    type: number
+    description: Percentage of the trade amount to be paid as a fee.
+    example: 1.5
+    minimum: 0
+    maximum: 100
+  currency1AccountId:
+    type: string
+    description: ID of the account of the currenc 1 trade currency
+    example: 7c21ed165e294db78b95f0f1
+  currency2AccountId:
+    type: string
+    description: ID of the account of the currenc 2 trade currency
+    example: 7c21ed165e294db78b95f0f1
+  created:
+    type: number
+    description: Creation date, UTC millis
+    example: 1585170363103
+  attr:
+    type: object
+    description: Additional attributes for the future type.
+    required:
+    - sealDate
+    properties:
+      sealDate:
+        type: number
+        description: Time in UTC when the future will be filled.
+        example: 1572031674384
+        minimum: 0
+      percentBlock:
+        description: "Percentage of the future amount which the selling or buying\
+          \ account must have available for the future\u2019s creation. This amount\
+          \ will be blocked until the future is filled or expires."
+        type: number
+        example: 1.5
+        minimum: 0
+        maximum: 100
+      percentPenalty:
+        description: "If one of the parties doesn\u2019t have the full amount of the\
+          \ future at the time of expiration filled, the party will be penalized."
+        type: number
+        example: 1.5
+        minimum: 0
+        maximum: 100

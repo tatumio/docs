@@ -1,0 +1,31 @@
+type: object
+required:
+- type
+- attr
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: CUSTOMER_TRADE_MATCH
+    enum:
+    - CUSTOMER_TRADE_MATCH
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.
+    required:
+    - id
+    - url
+    properties:
+      id:
+        description: ID of the customer, on which the webhook will be applied, when
+          on any of his accounts trade will be matched and closed.
+        example: 5e6be8e9e6aa436299950c41
+        maxLength: 24
+        minLength: 24
+        type: string
+      url:
+        type: string
+        description: URL of the endpoint, where HTTP POST request will be sent, when
+          on any of his accounts trade will be matched and closed.
+        example: https://dashboard.tatum.io/webhook-handler
+        maxLength: 500

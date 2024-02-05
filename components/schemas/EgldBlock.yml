@@ -1,0 +1,37 @@
+type: object
+properties:
+  nonce:
+    description: The block height.
+    type: number
+    example: 5440076
+  round:
+    description: The round number.
+    type: number
+    example: 186582
+  hash:
+    description: Hash of the block.
+    type: string
+    example: bd2de3618929b696807f6ef8a619f93d29d639aec9277f9c6f8569a8487141b1
+  prevBlockHash:
+    description: Hash of the previous block.
+    type: string
+    example: 2a11aad21e933be58200839ff875f0ca7e955b8c483a0e117cb92409e5d2a5da
+  epoch:
+    description: An epoch is a sequence of consecutive rounds during which the configuration
+      of the network does not change (currently aprox. 24 hrs in length).
+    type: number
+    example: 18
+  numTxs:
+    description: Number of transactions in current block.
+    type: number
+    example: 8
+  shardBlocks:
+    description: Array of shard blocks
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/EgldShardBlock'
+  transactions:
+    description: Array of transactions.
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/EgldTx'

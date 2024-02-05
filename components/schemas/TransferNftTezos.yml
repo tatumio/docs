@@ -1,0 +1,46 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: TEZOS
+    description: The blockchain to work with
+    enum:
+    - TEZOS
+  from:
+    maxLength: 36
+    minLength: 36
+    description: Blockchain address that owns the NFT token
+    example: tz1LszyhzQS6JgySBSNkM55szM18inGwEgPa
+    type: string
+  to:
+    maxLength: 36
+    minLength: 36
+    description: Blockchain address to send NFT token to
+    example: tz1LszyhzQS6JgySBSNkM55szM18inGwEgPa
+    type: string
+  contractAddress:
+    maxLength: 36
+    minLength: 36
+    description: The blockchain address of the NFT smart contract
+    example: KT1PemxAAhNkjvt49gBtFHn4JEm49Z3HA8TX
+    type: string
+  tokenId:
+    description: The ID of the NFT
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: edskRvJQqeNih91dkoRkTG1PWxV5AruYbtrkp5DKibL2iMkPGWBbdYp8jpsY3N3skCNrwf9socTv9Sstonkckc4jTb
+    minLength: 64
+    description: The private key of the blockchain address that owns the token or
+      has rights to transfer the token. This address will pay the fee for the transaction,
+required:
+- chain
+- from
+- to
+- tokenId
+- contractAddress
+- fromPrivateKey

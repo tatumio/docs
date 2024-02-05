@@ -1,0 +1,132 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Bid for an asset listed on the NFT auction.</p>
+
+  <p>You can buy the asset either for the native blockchain assets (for example, ETH,
+  BSC, and so on) or for the fungible tokens of the blockchain.</p>
+
+  <ul>
+
+  <li>If you want to pay for the asset with the <b>native assets</b>, send the required
+  amount of the assets with the API call.</li>
+
+  <li>If you want to pay with the <b>fungible tokens</b>, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve"
+  target="_blank">allow the auction smart contract to access your tokens</a> before
+  bidding for the asset. When you make the API call, the auction smart contract will
+  deduct the required amount of the tokens from the smart contract where you hold
+  the tokens.</li>
+
+  </ul>
+
+  <p>After you have purchased the asset, it is in a pending state until <a href="#operation/SettleAuction"
+  target="_blank">the auction is settled</a>. Settling the auction means that the
+  asset is transferred to the buyer, the amount is transferred to the seller, and
+  the fee is transferred to the fee recipient of the auction.</p>
+
+  <p>For the complete information about how the bidding/purchase process at an auction
+  works, see the API for <a href="#operation/GenerateAuction" target="_blank">creating
+  an NFT auction</a>.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>Polygon</li>
+
+  </ul>
+
+  <p><b>The "execution reverted" message</b><br/>
+
+  When making this API call, you may get the following message:<br/>
+
+  <code>Although one or more Error Occurred [execution reverted] Contract Execution
+  Completed</code><br/>
+
+  This message is a result of the auction version check and has no impact on completing
+  the API call. You can safely ignore it.</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When bidding for an asset at the NFT auction, you are charged a fee for the transaction,
+  and you must sign the transaction with the private key of the blockchain address
+  from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: BidOnAuction
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/BidOnAuction'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BidOnAuctionKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BidOnAuctionCelo'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BidOnAuctionCeloKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Bid for an asset at the NFT auction
+tags:
+- Auction

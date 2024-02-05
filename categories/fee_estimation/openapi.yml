@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Fee estimation
+  version: 3.18.3
+tags: []
+servers:
+- url: https://api.tatum.io
+paths:
+  /v3/blockchain/fee/{chain}:
+    get:
+      $ref: categories/fee_estimation/paths/v3_blockchain_fee_{chain}_get.yml
+  /v3/blockchain/estimate:
+    post:
+      $ref: categories/fee_estimation/paths/v3_blockchain_estimate_post.yml
+  /v3/bsc/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_bsc_gas_post.yml
+  /v3/celo/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_celo_gas_post.yml
+  /v3/egld/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_egld_gas_post.yml
+  /v3/ethereum/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_ethereum_gas_post.yml
+  /v3/ethereum/gas/batch:
+    post:
+      $ref: categories/fee_estimation/paths/v3_ethereum_gas_batch_post.yml
+  /v3/one/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_one_gas_post.yml
+  /v3/klaytn/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_klaytn_gas_post.yml
+  /v3/kcs/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_kcs_gas_post.yml
+  /v3/polygon/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_polygon_gas_post.yml
+  /v3/xdc/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_xdc_gas_post.yml
+  /v3/vet/transaction/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_vet_transaction_gas_post.yml
+  /v3/offchain/blockchain/estimate:
+    post:
+      $ref: categories/fee_estimation/paths/v3_offchain_blockchain_estimate_post.yml

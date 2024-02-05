@@ -1,0 +1,7 @@
+type: array
+items:
+  description: The internal reference to the transaction (a unique identifier of the
+    transaction within the virtual account); if the transaction fails, use this reference
+    to search through the logs
+  example: 0c64cc04-5412-4e57-a51c-ee5727939bcb
+  type: string

@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: transaction.preparation.failed
+    example: transaction.preparation.failed
+    type: string
+  message:
+    description: Impossible to prepare transaction. Either mnemonic or keyPair and
+      attr must be present.
+    example: Impossible to prepare transaction. Either mnemonic or keyPair and attr
+      must be present.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

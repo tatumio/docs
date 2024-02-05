@@ -1,0 +1,47 @@
+description: <h4>1 credit per API call.</h4><br/><p>Get Solana account balance in
+  SOL. This method does not prints any balance of the SPL or NFT tokens on the account.</p>
+operationId: SolanaGetBalance
+parameters:
+- description: Account address you want to get balance of
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/SolBalance'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get Solana Account balance
+tags:
+- Solana

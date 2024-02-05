@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.not.frozen
+    example: account.not.frozen
+    type: string
+  message:
+    description: Unable to unfreeze unfrozen account.
+    example: Unable to unfreeze unfrozen account.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

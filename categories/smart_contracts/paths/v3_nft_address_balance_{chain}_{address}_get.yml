@@ -1,0 +1,97 @@
+description: '<p><b>1 credit per API call + 5 credits for each owned NFT</b></p>
+
+  <p>Get all NFTs that a blockchain address holds. The NFTs are returned grouped by
+  the smart contracts they were minted on.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>Algorand</li>
+
+  <li>BNB Smart Chain - mainnet only</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Polygon</li>
+
+  <li>Solana</li>
+
+  </ul>
+
+  <p>On Solana and Algorand, if a blockchain address holds fewer than 50 NFTs, the
+  API also returns each NFT''s metadata. If the metadata is not returned, you can
+  obtain it using the <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetMetadataErc721">API
+  for getting NFT metadata</a>.</p>
+
+  '
+operationId: NftGetTokensByAddressErc721
+parameters:
+- description: The blockchain to work with
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    example: SOL
+    enum:
+    - ALGO
+    - BSC
+    - CELO
+    - ETH
+    - MATIC
+    - SOL
+- description: The blockchain address that you want to get the token balance of
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/NftTokenByAddressErc721'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get NFT balance of the wallet
+tags:
+- NFT (ERC-721 or compatible)

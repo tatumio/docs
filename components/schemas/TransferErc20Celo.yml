@@ -1,0 +1,53 @@
+type: object
+properties:
+  to:
+    maxLength: 50
+    minLength: 1
+    description: Blockchain address to send ERC20 token to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  amount:
+    description: Amount to be sent.
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of ERC20 token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  digits:
+    description: Number of decimal points that ERC20 token has.
+    example: 18
+    maximum: 30
+    minimum: 1
+    type: number
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to Celo transaction. If not present, last known nonce
+      will be used.
+  feeCurrency:
+    type: string
+    description: Currency to pay for transaction gas
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- to
+- contractAddress
+- digits
+- feeCurrency
+- fromPrivateKey
+- amount

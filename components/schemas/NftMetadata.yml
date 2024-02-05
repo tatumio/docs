@@ -1,0 +1,20 @@
+type: object
+description: 'Metadata scheme obtained from the url. This data don''t have to be present.
+
+  The safest way to obtain them in that case is from the NFT Contract.tokenURI() method
+  call.
+
+  '
+example:
+  image: ipfs://QmamEqaaVttv9AvfgM4Wa7d9Ettonep1NBQSDCtM7THUSX
+  attributes:
+  - trait_type: Background
+    value: Club Exterior
+  - trait_type: Fur
+    value: Radioactive
+  - trait_type: Back
+    value: Beer Kegs
+  - trait_type: Mouth
+    value: Goofball
+  - trait_type: Eyes
+    value: Closed

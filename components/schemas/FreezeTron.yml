@@ -1,0 +1,24 @@
+type: object
+properties:
+  fromPrivateKey:
+    type: string
+    minLength: 64
+    maxLength: 64
+    description: Private key of the address, from which the TRX will be sent.
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+  resource:
+    type: string
+    description: Resource to obtain, BANDWIDTH or ENERGY.
+    example: ENERGY
+    enum:
+    - BANDWIDTH
+    - ENERGY
+  amount:
+    description: Amount to be frozen in TRX.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+required:
+- fromPrivateKey
+- resource
+- amount

@@ -1,0 +1,30 @@
+type: object
+required:
+- type
+- attr
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: ACCOUNT_BALANCE_LIMIT
+    enum:
+    - ACCOUNT_BALANCE_LIMIT
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.
+    required:
+    - limit
+    - typeOfBalance
+    properties:
+      limit:
+        type: string
+        description: Limit to filter accounts with balance above it.
+        example: '15000'
+        pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+        maxLength: 38
+      typeOfBalance:
+        type: string
+        description: Type of balance to filter.
+        enum:
+        - account
+        - available

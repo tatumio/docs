@@ -1,0 +1,23 @@
+properties:
+  version:
+    type: number
+    example: 2
+  blockNumber:
+    type: number
+    example: 1611608
+  value:
+    type: number
+    description: Amount of the transaction, in Satoshis (1 BTC = 100 000 000 Satoshis)
+    example: 1341956178
+  script:
+    type: string
+    example: 0014049a97d91d4e1123899bf48c5ba6ce3fd959664e
+  address:
+    type: string
+    description: Sender address.
+    example: tb1qqjdf0kgafcgj8zvm7jx9hfkw8lv4jejw6wsmjg
+  coinbase:
+    type: boolean
+    description: Coinbase transaction - miner fee.
+    example: false
+type: object

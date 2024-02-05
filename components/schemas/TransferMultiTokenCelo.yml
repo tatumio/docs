@@ -1,0 +1,63 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: Chain to work with.
+    enum:
+    - CELO
+  to:
+    maxLength: 42
+    minLength: 42
+    description: Blockchain address to send Multi Token token to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  tokenId:
+    description: ID of token.
+    example: '100000'
+    type: string
+    maxLength: 256
+  amount:
+    description: Amount of token.
+    example: '100000'
+    type: string
+    maxLength: 256
+  data:
+    description: Data in bytes
+    example: '0x1234'
+    type: string
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of Multi Token token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  nonce:
+    type: number
+    example: 1
+    description: Nonce to be set to Celo transaction. If not present, last known nonce
+      will be used.
+  feeCurrency:
+    type: string
+    description: Currency to pay for transaction gas
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- chain
+- to
+- contractAddress
+- tokenId
+- fromPrivateKey
+- amount
+- feeCurrency

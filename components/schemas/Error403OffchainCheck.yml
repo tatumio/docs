@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: withdrawal.check.currency
+    example: withdrawal.check.currency
+    type: string
+  message:
+    description: Withdrawal check available only for ETH based currencies.
+    example: Withdrawal check available only for ETH based currencies.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

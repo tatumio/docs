@@ -1,0 +1,17 @@
+description: The custom defined fee; if not present, will be calculated automatically
+type: object
+required:
+- gasLimit
+- gasPrice
+properties:
+  gasPrice:
+    type: string
+    description: The price for one gas unit (in Gwei)
+    pattern: ^[+]?\d+$
+    example: '20'
+  gasLimit:
+    type: string
+    description: The maximum number of gas units that you are willing to spend on
+      processing the transaction at the provided gas price
+    pattern: ^[+]?\d+$
+    example: '40000'

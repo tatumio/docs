@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: withdrawal.recipient.format
+    example: withdrawal.recipient.format
+    type: string
+  message:
+    description: Recipient blockchain address has incorrect format.
+    example: Recipient blockchain address has incorrect format.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

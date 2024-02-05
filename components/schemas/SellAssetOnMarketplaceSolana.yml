@@ -1,0 +1,51 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - SOL
+    example: SOL
+    type: string
+  contractAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the smart contract
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  nftAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the asset to sell
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the seller
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+  price:
+    description: Price of the asset to sell. Marketplace fee will be obtained on top
+      of this price.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  authorityPrivateKey:
+    type: string
+    maxLength: 128
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    minLength: 87
+    description: The private key used for signing transactions as authority; required
+      if <code>requiresSignOff</code> is set to "true" for the marketplace
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    minLength: 87
+    description: The private key of the seller
+required:
+- chain
+- contractAddress
+- nftAddress
+- price
+- from
+- fromPrivateKey

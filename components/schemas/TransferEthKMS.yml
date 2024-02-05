@@ -1,0 +1,76 @@
+type: object
+properties:
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  address:
+    description: Blockchain address to send assets
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  amount:
+    description: Amount to be sent in Ether | MATIC | XDC | KCS.
+    maxLength: 38
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: 'Identifier of the mnemonic / private key associated in signing application.
+
+      When hash identifies mnemonic, index must be present to represent specific account
+      to pay from.
+
+      Private key, mnemonic or signature Id must be present.
+
+      '
+  index:
+    description: Derivation index of sender address.
+    maximum: 2147483647
+    example: 0
+    type: integer
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: Sender account ID
+    example: 5e68c66581f2ee32bc354087
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: Note visible to owner of withdrawing account
+    example: Sender note
+    type: string
+  gasLimit:
+    type: string
+    description: Gas limit for transaction in gas price. If not set, automatic calculation
+      will be used.
+    pattern: ^[+]?\d+$
+    example: '40000'
+  gasPrice:
+    type: string
+    description: Gas price in Gwei. If not set, automatic calculation will be used.
+    pattern: ^[+]?\d+$
+    example: '20'
+required:
+- senderAccountId
+- address
+- signatureId
+- amount

@@ -1,0 +1,29 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: TEZOS
+    description: The blockchain to work with
+    enum:
+    - TEZOS
+  ownerAddress:
+    description: Public address that will be admin of the contract. Must be a valid
+      address of the Tezos blockchain.
+    example: tz1cCRCbBwnazV6howgD84a6fuhikKTnsWHZ
+    type: string
+  metadata:
+    description: Object of key-value pairs representing metadata of the contract.
+      Keys must be strings, values can be strings, numbers, or booleans.
+    example:
+      name: My NFT
+    type: object
+  fromPrivateKey:
+    description: Private key of account address, from which fee and storage costs
+      for deployment of Tzip12 contract will be paid.
+    type: string
+    example: edskRvJQqeNih91dkoRkTG1PWxV5AruYbtrkp5DKibL2iMkPGWBbdYp8jpsY3N3skCNrwf9socTv9Sstonkckc
+required:
+- chain
+- ownerAddress
+- metadata
+- fromPrivateKey

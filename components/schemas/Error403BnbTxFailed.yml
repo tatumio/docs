@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: bnb.transfer.failed
+    example: bnb.transfer.failed
+    type: string
+  message:
+    description: Unable to transfer funds. ${error}
+    example: Unable to transfer funds. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

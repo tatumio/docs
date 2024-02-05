@@ -1,0 +1,63 @@
+type: object
+properties:
+  contractAddress:
+    maxLength: 43
+    minLength: 42
+    description: The address of the smart contract
+    example: xdc687422eEA2cB73B5d3e242bA5456b782919AFc85
+    type: string
+  methodName:
+    minLength: 1
+    maxLength: 500
+    description: Name of the method to invoke on smart contract.
+    type: string
+    example: transfer
+  methodABI:
+    type: object
+    description: ABI of the method to invoke.
+  params:
+    type: array
+    example:
+    - '0x632'
+    items:
+      type: string
+    description: Parameters of the method to be invoked.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to XDC transaction. If not present, last known nonce
+      will be used.
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- contractAddress
+- params
+- methodABI
+- signatureId
+- methodName

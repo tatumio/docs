@@ -1,0 +1,89 @@
+description: "<h4>2 credits per API call, additional credits are charged for each\
+  \ gas covered operation.</h4><br/>\n<p>Sign transaction and transfer assets from\
+  \ a custodial managed address.<br/>\nSupported chains:\n<ul>\n<li><b>Solana</b></li>\n\
+  </ul>\n<br/>\nLogic for <b>Solana</b><br/>\nIn Solana, it's possible to cover the\
+  \ fees connected to any arbitrary transaction by a third party.\nTatum can cover\
+  \ these fees for any transaction on the Solana blockchain - transfer of SOL, SPL\
+  \ tokens, minting or transferring NFTs or invoking programs.\nIn order to do this,\
+  \ Tatum fee address must be used as a feePayer address during transaction creation:\n\
+  <table>\n<tr><td></td><td><b>Mainnet address</b></td><td><b>Devnet address</b></td></tr>\n\
+  <tr><td><b>Address</b></td><td>DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF</td><td>DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF</td></tr>\n\
+  </table>\nOnce transaction is constructed using <a href=\"https://github.com/solana-labs/solana-web3.js/\"\
+  \ target=\"_blank\">Solana SDK</a>, it can be serialized to HEX data string, which\
+  \ is then passed to the API and signed.<br/>\nTransaction could require multiple\
+  \ private keys for signing - fee payer, sender of the SOL assets, minting key during\
+  \ NFT mint operation etc.\nSome of the keys are used in Tatum - fee payer, or, in\
+  \ case of managed wallet holding SOL assets, the key of that managed wallet - those\
+  \ must be referenced in a list of walletIds to be used.\nFor external keys, which\
+  \ are not managed by Tatum, those could either sign the transaction before it's\
+  \ serialization, or could be passed to the API in it's raw form - this is OK only\
+  \ for keys, which could be exposed and there is no harm of loosing assets on them.<br/>\n\
+  How to partially sign the transaction could be found <a href=\"https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction\"\
+  \ target=\"_blank\">here</a>.<br/>\n<b>Fee payer key is used by default, doesn't\
+  \ have to be mentioned in the list of wallets used for signing.</b><br/><br/>\n\
+  <b>Examples of different transaction payloads.</b><br/><br/>\n1. Send SOL from account\
+  \ HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU\n\
+  <pre>\nimport { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, Connection\
+  \ } from '@solana/web3.js'\n\nconst connection = new Connection('https://api.tatum.io/v3/blockchain/node/SOL')\n\
+  const from = 'HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58'\nconst to = 'FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU'\n\
+  const amount = '0.000001'\nconst devnet_fee_payer = '5zPr5331CtBjgVeLedhmJPEpFaUsorLCnb3aCQPsUc9w'\n\
+  const fromPubkey = new PublicKey(from)\nconst transaction = new Transaction({ feePayer:\
+  \ new PublicKey(devnet_fee_payer) })\ntransaction.add(\n  SystemProgram.transfer({\n\
+  \    fromPubkey: fromPubkey,\n    toPubkey: new PublicKey(to),\n    lamports: new\
+  \ BigNumber(amount).multipliedBy(LAMPORTS_PER_SOL).toNumber(),\n  }),\n)\nconst\
+  \ { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('finalized')\n\
+  transaction.recentBlockhash = blockhash\ntransaction.lastValidBlockHeight = lastValidBlockHeight\n\
+  transaction.partialSign(...signers)\nreturn transaction.serialize({ requireAllSignatures:\
+  \ false }).toString('hex')\n</pre>\nFor the above example, developer have 2 options\
+  \ how to sign transaction - if the sender address HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58\
+  \ is managed using a Tatum managed wallet with id 0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4,\n\
+  the final payload to the custodial/transaction endpoint should look like this:\n\
+  <pre>\n{\n  \"chain\": \"SOL\",\n  \"txData\": \"020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000\"\
+  ,\n  \"walletIds\": [\n    {\n      \"key\": \"0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4\"\
+  ,\n      \"type\": \"MANAGED\"\n    }\n  ]\n}\n</pre>\nIf the sender address is\
+  \ not managed, the transaction could be signed with the private key of that address\
+  \ before the serialization and the payload will look like this:\n<pre>\n{\n  \"\
+  chain\": \"SOL\",\n  \"txData\": \"020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000\"\
+  ,\n  \"walletIds\": []\n}\n</pre>\n</p>\n"
+operationId: CustodialTransferManagedAddress
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/TransferManagedAddress'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Sign and transfer using managed address
+tags:
+- Custodial managed wallets

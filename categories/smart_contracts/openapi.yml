@@ -1,0 +1,321 @@
+openapi: 3.1.0
+info:
+  title: Smart Contracts
+  version: 3.18.3
+tags:
+- description: '<p>"NFT" stands for "Non-Fungible Token", which means that each token
+    is unique and irreplaceable. NFTs are described by the ERC-721 standard on the
+    Ethereum blockchain or by the equivalent standard on the other blockchains.</p>
+
+    <p>NFTs can be used for nearly any digital asset or good to ensure authenticity
+    and scarcity, for example:<p>
+
+    <ul>
+
+    <li><b>In-game assets:</b> NFTs can be used to create unique collectibles in the
+    form of characters, weapons, skins, or other equipment. Players can resell or
+    trade assets directly as they choose, and their authenticity is easily verifiable.</li>
+
+    <li><b>Music and other digital media:</b> NFTs can be used to create rare and
+    unique collectible digital releases. Similarly, NFTs can be used to sell videos,
+    art, or any other type of digital media. Collectors can own digital originals
+    of their favorite songs, movies, and so on.</li>
+
+    <li><b>Digital sports merchandise:</b> Trading cards, memorabilia, classic moments
+    in sports history, and one-of-a-kind experiences can be sold as NFTs.</li>
+
+    </ul>
+
+    <p>Each NFT-related API its own set of the blockchains. The list of the supported
+    blockchains is provided in the API description further in this section.</p>
+
+    '
+  name: NFT (ERC-721 or compatible)
+- description: '<p>Fungible tokens are interchangeable and are used as a blockchain
+    representation of the currency. Fungible tokens are described by the ERC-20 standard
+    on the Ethereum blockchain or by the equivalent standard on the other blockchains.</p>
+
+    <p>Each API related to fungible tokens supports its own set of the blockchains.
+    The list of the supported blockchains is provided in the operation description
+    further in this section.</p>
+
+    '
+  name: Fungible Tokens (ERC-20 or compatible)
+- description: '<p>A Multi Token combines characteristics of fungible and non-fungible
+    tokens. A single Multi Token smart contract allows you to mint fungible, non-fungible,
+    and semi-fungible tokens and process different types of the tokens in a single
+    transaction. Multi Tokens are described by the ERC-1155 standard on the Ethereum
+    blockchain or by the equivalent standard on the other blockchains.<p/>
+
+    <p>Multi Tokens can be used for nearly any digital asset or good to ensure authenticity
+    and scarcity, for example:<p>
+
+    <ul>
+
+    <li><b>In-game assets:</b> Multi Tokens can be used to create unique collectibles
+    in the form of characters, weapons, skins, or other equipment. Players can resell
+    or trade assets directly as they choose, and their authenticity is easily verifiable.</li>
+
+    <li><b>Music and other digital media:</b> Multi Tokens can be used to create rare
+    and unique collectible digital releases. Similarly, Multi Tokens can be used to
+    sell videos, art, or any other type of digital media. Collectors can own digital
+    originals of their favorite songs, movies, and so on.</li>
+
+    <li><b>Digital sports merchandise:</b> Trading cards, memorabilia, classic moments
+    in sports history, and one-of-a-kind experiences can be sold as Multi Tokens.</li>
+
+    </ul>
+
+    <p>Each Multi Token-related API supports its own set of the blockchains. The list
+    of the supported blockchains is provided in the API description further in this
+    section.</p>
+
+    '
+  name: Multi Tokens (ERC-1155 or compatible)
+- description: '<p>The gas pump is Tatum''s feature that helps you manage gas fees
+    in a custodial application. When you use the gas pump, gas fees for any transaction
+    made by your customers (users of your custodial application) are automatically
+    deducted from the master address instead of the customer''s address. This eliminates
+    the need to send crypto to each customer''s address to pay for gas fees.</p>
+
+    <p>For more information about the gas pump, see <a href="https://docs.tatum.io/gas-pump/pay-gas-fees-with-tatum-gas-pump"
+    target="_blank">our user documentation</a>.</p>
+
+    <p>Each API related to the gas pump supports its own set of the blockchains. The
+    list of the supported blockchains is provided in the API description further in
+    this section.</p>
+
+    '
+  name: Gas pump
+- description: '<p>Build a peer-to-peer NFT marketplace and allow your customers to
+    sell and buy assets. When an asset is sold, the creator is automatically paid,
+    the asset is instantly transferred to the buyer, and you as the owner of the marketplace
+    automatically receive a percentage of the transaction.</p>
+
+    <p>Each marketplace-related API supports its own set of the blockchains. The list
+    of the supported blockchains is provided in the API description further in this
+    section.</p>
+
+    '
+  name: Marketplace
+servers:
+- url: https://api.tatum.io
+paths:
+  /v3/gas-pump:
+    post:
+      $ref: categories/smart_contracts/paths/v3_gas-pump_post.yml
+  /v3/gas-pump/activate:
+    post:
+      $ref: categories/smart_contracts/paths/v3_gas-pump_activate_post.yml
+  /v3/gas-pump/address/{chain}/{txId}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_gas-pump_address_{chain}_{txId}_get.yml
+  /v3/gas-pump/activated/{chain}/{owner}/{index}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_gas-pump_activated_{chain}_{owner}_{index}_get.yml
+  /v3/blockchain/sc/custodial/transfer:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_transfer_post.yml
+  /v3/blockchain/sc/custodial/transfer/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_transfer_batch_post.yml
+  /v3/blockchain/sc/custodial/approve:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_approve_post.yml
+  /v3/blockchain/sc/custodial/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_batch_post.yml
+  /v3/blockchain/sc/custodial:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_post.yml
+  /v3/blockchain/sc/custodial/{chain}/{hash}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_sc_custodial_{chain}_{hash}_get.yml
+  /v3/blockchain/marketplace/listing:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_post.yml
+    put:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_put.yml
+  /v3/blockchain/marketplace/listing/sell:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_sell_post.yml
+  /v3/blockchain/marketplace/listing/buy:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_buy_post.yml
+  /v3/blockchain/marketplace/listing/cancel:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_cancel_post.yml
+  /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_{chain}_{contractAddress}_{type}_get.yml
+  /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_{chain}_{contractAddress}_listing_{id}_get.yml
+  /v3/blockchain/marketplace/listing/{chain}/{contractAddress}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_{chain}_{contractAddress}_get.yml
+  /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_{chain}_{contractAddress}_fee_get.yml
+  /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_{chain}_{contractAddress}_recipient_get.yml
+  /v3/blockchain/marketplace/listing/recipient:
+    put:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_recipient_put.yml
+  /v3/blockchain/marketplace/listing/fee:
+    put:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_listing_fee_put.yml
+  /v3/blockchain/marketplace/withdraw/fee:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_withdraw_fee_post.yml
+  /v3/blockchain/marketplace/withdraw/treasury:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_marketplace_withdraw_treasury_post.yml
+  /v3/blockchain/auction:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_post.yml
+  /v3/blockchain/auction/sell:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_sell_post.yml
+  /v3/blockchain/auction/bid:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_bid_post.yml
+  /v3/blockchain/auction/settle:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_settle_post.yml
+  /v3/blockchain/auction/cancel:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_cancel_post.yml
+  /v3/blockchain/auction/approve:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_approve_post.yml
+  /v3/blockchain/auction/{chain}/{contractAddress}/{id}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_{chain}_{contractAddress}_{id}_get.yml
+  /v3/blockchain/auction/{chain}/{contractAddress}/fee:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_{chain}_{contractAddress}_fee_get.yml
+  /v3/blockchain/auction/{chain}/{contractAddress}/recipient:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_{chain}_{contractAddress}_recipient_get.yml
+  /v3/blockchain/auction/recipient:
+    put:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_recipient_put.yml
+  /v3/blockchain/auction/fee:
+    put:
+      $ref: categories/smart_contracts/paths/v3_blockchain_auction_fee_put.yml
+  /v3/multitoken/deploy:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_deploy_post.yml
+  /v3/multitoken/mint:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_mint_post.yml
+  /v3/multitoken/mint/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_mint_batch_post.yml
+  /v3/multitoken/burn:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_burn_post.yml
+  /v3/multitoken/burn/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_burn_batch_post.yml
+  /v3/multitoken/transaction:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_transaction_post.yml
+  /v3/multitoken/transaction/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_transaction_batch_post.yml
+  /v3/multitoken/mint/add:
+    post:
+      $ref: categories/smart_contracts/paths/v3_multitoken_mint_add_post.yml
+  /v3/multitoken/transaction/{chain}/{address}/{tokenAddress}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_transaction_{chain}_{address}_{tokenAddress}_get.yml
+  /v3/multitoken/transaction/{chain}/{hash}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_transaction_{chain}_{hash}_get.yml
+  /v3/multitoken/address/balance/{chain}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_address_balance_{chain}_{address}_get.yml
+  /v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_balance_{chain}_{contractAddress}_{address}_{tokenId}_get.yml
+  /v3/multitoken/balance/batch/{chain}/{contractAddress}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_balance_batch_{chain}_{contractAddress}_get.yml
+  /v3/multitoken/metadata/{chain}/{contractAddress}/{token}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_metadata_{chain}_{contractAddress}_{token}_get.yml
+  /v3/multitoken/address/{chain}/{hash}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_multitoken_address_{chain}_{hash}_get.yml
+  /v3/blockchain/token/deploy:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_deploy_post.yml
+  /v3/blockchain/token/mint:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_mint_post.yml
+  /v3/blockchain/token/burn:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_burn_post.yml
+  /v3/blockchain/token/approve:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_approve_post.yml
+  /v3/blockchain/token/transaction:
+    post:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_transaction_post.yml
+  /v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_transaction_{chain}_{address}_{tokenAddress}_get.yml
+  /v3/blockchain/token/balance/{chain}/{contractAddress}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_balance_{chain}_{contractAddress}_{address}_get.yml
+  /v3/blockchain/token/address/{chain}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_blockchain_token_address_{chain}_{address}_get.yml
+  /v3/nft/deploy:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_deploy_post.yml
+  /v3/nft/mint/add:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_mint_add_post.yml
+  /v3/nft/mint:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_mint_post.yml
+  /v3/nft/transaction:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_transaction_post.yml
+  /v3/nft/mint/batch:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_mint_batch_post.yml
+  /v3/nft/burn:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_burn_post.yml
+  /v3/nft/verify:
+    post:
+      $ref: categories/smart_contracts/paths/v3_nft_verify_post.yml
+  /v3/nft/transaction/{chain}/{address}/{tokenAddress}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_transaction_{chain}_{address}_{tokenAddress}_get.yml
+  /v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_transaction_tokenId_{chain}_{tokenAddress}_{tokenId}_get.yml
+  /v3/nft/transaction/{chain}/{hash}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_transaction_{chain}_{hash}_get.yml
+  /v3/nft/address/balance/{chain}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_address_balance_{chain}_{address}_get.yml
+  /v3/nft/collection/{chain}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_collection_{chain}_{address}_get.yml
+  /v3/nft/balance/{chain}/{contractAddress}/{address}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_balance_{chain}_{contractAddress}_{address}_get.yml
+  /v3/nft/metadata/{chain}/{contractAddress}/{tokenId}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_metadata_{chain}_{contractAddress}_{tokenId}_get.yml
+  /v3/nft/address/{chain}/{hash}:
+    get:
+      $ref: categories/smart_contracts/paths/v3_nft_address_{chain}_{hash}_get.yml

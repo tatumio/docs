@@ -1,0 +1,65 @@
+description: <p>The <code>MintNftCelo</code> schema lets you mint NFTs natively on
+  Celo and sign the transaction with your private key.<br/>For more information, see
+  "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: The blockchain to work with
+    enum:
+    - CELO
+  to:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address to send the NFT to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address of the smart contract to build the NFT on
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  tokenId:
+    description: The ID of the NFT
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  feeCurrency:
+    type: string
+    default: CELO
+    description: The currency in which the transaction fee will be paid.
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: The private key of the blockchain address that will pay the fee for
+      the transaction
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+required:
+- chain
+- to
+- url
+- tokenId
+- contractAddress
+- fromPrivateKey

@@ -1,0 +1,55 @@
+tags:
+- Tron
+summary: Get the current TRON block
+description: '<p><b>5 credits per API call</b></p>
+
+  <p>Get current Tron block.</p>
+
+  '
+operationId: TronGetCurrentBlock
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            blockNumber:
+              description: Block height.
+              type: number
+              example: 26585295
+            hash:
+              description: Block hash.
+              type: string
+              example: 000000000195a8cfe2ea4ca60ce921b30e95980a96c6bb1da4a35aa03da9c5a8
+            testnet:
+              description: Wether the block is from mainnet of Shasta testnet
+              type: boolean
+              example: false
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403Tron'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []

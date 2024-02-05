@@ -1,0 +1,42 @@
+type: object
+properties:
+  from:
+    description: Blockchain address to send assets from
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    maxLength: 44
+    minLength: 32
+    type: string
+  to:
+    description: Blockchain address to send assets to
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  amount:
+    description: Amount to be sent in SOL.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  feePayer:
+    description: Blockchain address to pay the fee for the transaction from
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    maxLength: 44
+    minLength: 32
+    type: string
+  feePayerSignatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key used for paying the gas costs in signing
+      application. Defaults to the signatureId.
+required:
+- to
+- amount
+- from
+- signatureId

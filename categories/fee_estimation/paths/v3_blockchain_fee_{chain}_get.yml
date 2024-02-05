@@ -1,0 +1,67 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get the recommended fee/gas price for a blockchain.</p>
+
+  <p>Fee is in satoshis(meaning currency(BTC, DOGE,... / 100 000 000) per byte
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>Bitcoin</li>
+
+  <li>Dogecoin</li>
+
+  <li>Ethereum</li>
+
+  <li>Litecoin</li>
+
+  </ul>
+
+  '
+operationId: getBlockchainFee
+parameters:
+- description: Chain
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    example: BTC
+    enum:
+    - ETH
+    - BTC
+    - LTC
+    - DOGE
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/BlockchainFee'
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get the recommended fee/gas price for a blockchain
+tags:
+- Blockchain fees

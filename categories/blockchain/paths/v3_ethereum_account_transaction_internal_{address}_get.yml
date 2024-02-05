@@ -1,0 +1,76 @@
+description: '<h4>1 credit per API call.</h4><br/>
+
+  <p>Get Ethereum internal transactions by address.<br/></p>
+
+  '
+operationId: EthGetInternalTransactionByAddress
+parameters:
+- description: Account address you want to get balance of
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: '0x8ce4e40889a13971681391aad29e88efaf91f784'
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  required: true
+- description: Offset to obtain next page of the data.
+  in: query
+  name: offset
+  schema:
+    type: number
+    example: 0
+- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/EthTxInternal'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get Ethereum internal transactions by address
+tags:
+- Ethereum

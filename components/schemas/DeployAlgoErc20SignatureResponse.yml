@@ -1,0 +1,17 @@
+properties:
+  accountId:
+    description: Account ID with the type of currency as created ERC20 token symbol.
+      Account will be unfrozen when ERC20 contract address will be set.
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  signatureId:
+    description: ID of prepared payment template to sign. This is should be stored
+      on a client side to retrieve ID of the blockchain transaction, when signing
+      application signs the transaction and broadcasts it to the blockchain.
+    format: uuid
+    example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+    type: string
+type: object
+required:
+- accountId
+- signatureId

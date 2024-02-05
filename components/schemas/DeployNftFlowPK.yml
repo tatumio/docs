@@ -1,0 +1,25 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: FLOW
+    description: The blockchain to work with
+    enum:
+    - FLOW
+  account:
+    type: string
+    maxLength: 18
+    example: '0xc1b45bc27b9c61c3'
+    minLength: 18
+    description: Blockchain address of the sender account.
+  privateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of sender address. Private key, mnemonic and index or
+      signature Id must be present.
+required:
+- chain
+- account
+- privateKey

@@ -1,0 +1,49 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: The blockchain to work with
+    enum:
+    - ETH
+    - MATIC
+    - KCS
+    - ONE
+    - KLAY
+    - BSC
+    - ZEN
+  name:
+    description: Name of the NFT token
+    example: My ERC721
+    maxLength: 100
+    minLength: 1
+    type: string
+  symbol:
+    description: Symbol of the NFT token
+    example: ERC_SYMBOL
+    maxLength: 30
+    minLength: 1
+    type: string
+  fromPrivateKey:
+    description: Private key of account address, from which gas for deployment of
+      ERC721 will be paid. Private key, or signature Id must be present.
+    type: string
+    maxLength: 103
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+  publicMint:
+    description: True if the contract is publicMint type. False by default.
+    example: true
+    type: boolean
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- name
+- chain
+- symbol
+- fromPrivateKey

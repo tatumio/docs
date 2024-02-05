@@ -1,0 +1,67 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: The blockchain to work with
+    enum:
+    - ETH
+    - MATIC
+    - CELO
+    - KCS
+    - ONE
+    - KLAY
+    - BSC
+  to:
+    type: array
+    description: Blockchain address to send NFT token to.
+    example:
+    - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    items:
+      maxLength: 42
+      minLength: 42
+      type: string
+  tokenId:
+    type: array
+    description: ID of token to be created.
+    example:
+    - '123'
+    items:
+      type: string
+      maxLength: 78
+      example: '123'
+      format: uint256
+  minter:
+    maxLength: 42
+    minLength: 43
+    description: Address of NFT minter, which will be used to mint the tokens. From
+      this address, transaction fees will be deducted.
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  url:
+    type: array
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example:
+    - https://my_token_data.com
+    items:
+      type: string
+      maxLength: 256
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of NFT token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  feeCurrency:
+    type: string
+    description: (Celo only) The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+required:
+- to
+- chain
+- url
+- contractAddress
+- minter
+- tokenId

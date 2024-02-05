@@ -1,0 +1,12 @@
+type: object
+required:
+- tokenId
+properties:
+  tokenId:
+    description: ID of the token.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  metadata:
+    $ref: '../migrated.yml#/components/schemas/NftTokenByCollectionErc721TokenMetadata'

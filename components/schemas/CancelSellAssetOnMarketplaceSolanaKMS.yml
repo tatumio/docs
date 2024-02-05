@@ -1,0 +1,42 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - SOL
+    example: SOL
+    type: string
+  contractAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the smart contract
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  listingId:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the listing
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+  from:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the asset owner
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+  authoritySignatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key used for signing transactions
+      as authority; required if <code>requiresSignOff</code> is set to "true" for
+      the marketplace
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the asset owner
+required:
+- chain
+- contractAddress
+- listingId
+- from
+- signatureId

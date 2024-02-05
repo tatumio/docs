@@ -1,0 +1,92 @@
+description: "<p><b>2 credits per RPC method in an API call</b></p>\n<p>Connect directly\
+  \ to the blockchain node provided by Tatum.</p>\n<p>The <code>PUT</code> method\
+  \ is used. The API endpoint URL acts as an HTTP-based RPC driver.</p>\n<p>In the\
+  \ request body, provide valid Web3 RPC method content, for example:</p>\n<pre>\n\
+  {\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"method_name\",\n  \"params\"\
+  : []\n}\n</pre>\n<p>For the blockchains using the JSON-RPC 2.0 specification, you\
+  \ can submit multiple RPC methods in one API call:</p>\n<pre>\n[\n  {\n    \"jsonrpc\"\
+  : \"2.0\",\n    \"id\": 1,\n    \"method\": \"method_1_name\",\n    \"params\":\
+  \ []\n  },\n  {\n    \"jsonrpc\": \"2.0\",\n    \"id\": 2,\n    \"method\": \"method_2_name\"\
+  ,\n    \"params\": []\n  },\n  ...\n]\n</pre>\n<p>This API is supported for the\
+  \ following blockchains:</p>\n<ul>\n  <li><a href=\"https://developer.algorand.org/docs/rest-apis/restendpoints/\"\
+  \ target=\"_blank\">Algorand</a></li>\n  <li><a href=\"https://docs.bnbchain.org/docs/beaconchain/develop/api-reference/node-rpc#5-rpc-endpoint-list\"\
+  \ target=\"_blank\">BNB Beacon Chain</a></li>\n  <li><a href=\"https://docs.elrond.com/sdk-and-tools/rest-api/nodes/\"\
+  \ target=\"_blank\">Elrond</a></li>\n  <li><a href=\"https://developers.stellar.org/api\"\
+  \ target=\"_blank\">Stellar</a></li>\n</ul>\n"
+operationId: NodeJsonRpcPutDriver
+parameters:
+- description: Tatum X-API-Key used for authorization. You can omit this path parameter
+    and either use the X-Api-Key header, or the API key tied to your IP address without
+    any header.
+  in: path
+  name: xApiKey
+  required: true
+  schema:
+    type: string
+    example: ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5
+- description: Blockchain to communicate with.
+  in: path
+  name: chain
+  required: true
+  schema:
+    $ref: '../../../components/migrated.yml#/components/schemas/NodeRpcPutChains'
+- description: Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
+  in: path
+  name: rpcPath
+  required: true
+  schema:
+    type: string
+    example: v2/accounts
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        description: A valid Web3 RPC method content body with one or multiple RPC
+          methods
+        example:
+          jsonrpc: '2.0'
+          method: web3_clientVersion
+          params: []
+          id: 2
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          description: A valid RPC response
+          example:
+            jsonrpc: '2.0'
+            id: 2
+            result: Geth/v1.9.9-omnibus-e320ae4c-20191206/linux-amd64/go1.13.4
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Any valid RPC error response.
+          example: null
+    description: Internal server error
+x-codeSamples: []
+summary: Connect to the blockchain node through an RPC driver
+tags:
+- Node RPC

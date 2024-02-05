@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: transaction.amount.ada
+    example: transaction.amount.ada
+    type: string
+  message:
+    description: ADA payment amount must be at least 0.000001, not ${transaction.amount}.
+    example: ADA payment amount must be at least 0.000001, not ${transaction.amount}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

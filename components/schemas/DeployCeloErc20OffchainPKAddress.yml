@@ -1,0 +1,13 @@
+allOf:
+- type: object
+  required:
+  - feeCurrency
+  properties:
+    feeCurrency:
+      type: string
+      description: The currency in which the transaction fee will be paid
+      enum:
+      - CELO
+      - CUSD
+      - CEUR
+- $ref: '../migrated.yml#/components/schemas/DeployErc20OffchainPKAddress'

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.blockchain.testnet
+    example: account.blockchain.testnet
+    type: string
+  message:
+    description: Unable to create account, unsupported testnet blockchain.
+    example: Unable to create account, unsupported testnet blockchain.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

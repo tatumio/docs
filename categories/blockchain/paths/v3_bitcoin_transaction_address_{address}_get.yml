@@ -1,0 +1,96 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get all transactions for a Bitcoin address.</p>
+
+  '
+operationId: BtcGetTxByAddress
+parameters:
+- description: Address
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: 2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  required: true
+- description: Offset to obtain the next page of data.
+  in: query
+  name: offset
+  schema:
+    type: number
+    example: 0
+- description: Only show transactions after this block height.
+  in: query
+  name: blockFrom
+  schema:
+    type: number
+    example: 801234
+- description: Only show transactions before this block height.
+  in: query
+  name: blockTo
+  schema:
+    type: number
+    example: 891002
+- description: Type of the transaction to fetch - either incoming, or outgoing. If
+    none is present - all transactions are fetched.
+  in: query
+  name: txType
+  schema:
+    type: string
+    example: incoming
+    enum:
+    - incoming
+    - outgoing
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/BtcTx'
+          type: array
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get all transactions for a Bitcoin address
+tags:
+- Bitcoin

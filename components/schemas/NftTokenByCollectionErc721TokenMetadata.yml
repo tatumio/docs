@@ -1,0 +1,25 @@
+type: object
+required:
+- tokenID
+properties:
+  tokenId:
+    description: TokenID of the NFT token owned by this address.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: Metadata URL of the TokenID. This data don't have to be present,
+      safest way (if not present) is to obtain them from the NFT Contract.tokenURI()
+      method call.
+    example: ipfs://QmXFpaS3S7CkLZvihLFA9JbawKdqhjg8dJeDkPntmkD2Pc
+    type: string
+  metadata:
+    type: object
+    description: Metadata scheme obtained from the url. This data don't have to be
+      present, safest way (if not present) is to obtain them from the NFT Contract.tokenURI()
+      method call.
+    example:
+      name: Example NFT name
+      description: Example NFT description
+      image: ipfs://QmP4R7ACZ7JRQ6sLdmnPHqjWEXxzdnPvhAV2f6RnQ8uxJ6

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: eth.erc721.failed
+    example: eth.erc721.failed
+    type: string
+  message:
+    description: Unable to obtain information for token. ${error}
+    example: Unable to obtain information for token. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

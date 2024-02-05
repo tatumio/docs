@@ -1,0 +1,52 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get all deposit addresses generated for a virtual account.</p>
+
+  '
+operationId: getAllDepositAddresses
+parameters:
+- description: The ID of the virtual account to get deposit addresses for
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    example: 5e68c66581f2ee32bc354087
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Address'
+          type: array
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get all deposit addresses for a virtual account
+tags:
+- Blockchain addresses

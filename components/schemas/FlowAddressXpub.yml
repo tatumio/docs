@@ -1,0 +1,13 @@
+type: object
+properties:
+  txId:
+    type: string
+    example: d1c75a84e4bdf0dd9bf1bcd0ce4fb25f89e2ed3c5e9574dbca2760b52c428717
+    description: The ID of the transaction
+  address:
+    type: string
+    example: 5695321609876367000
+    description: The generated blockchain address
+required:
+- txId
+- address

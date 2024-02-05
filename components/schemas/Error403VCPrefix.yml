@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: virtual.name.prefix
+    example: virtual.name.prefix
+    type: string
+  message:
+    description: Virtual currency has wrong name, must start with VC_.
+    example: Virtual currency has wrong name, must start with VC_.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

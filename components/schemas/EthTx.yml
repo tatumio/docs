@@ -1,0 +1,82 @@
+type: object
+properties:
+  blockHash:
+    description: Hash of the block where this transaction was in.
+    type: string
+    example: '0xcf2c40f475e78c7c19778e1ae999a0e371c9319b38182ea15dc94536f13f9137'
+  timestamp:
+    description: Time of the transaction, in UTC seconds.
+    type: number
+    example: 1617483956
+  status:
+    type: boolean
+    example: true
+    description: TRUE if the transaction was successful, FALSE, if the EVM reverted
+      the transaction.
+  blockNumber:
+    type:
+    - number
+    - 'null'
+    description: Block number where this transaction was in.
+    example: 6470854
+  from:
+    type: string
+    description: Address of the sender.
+    example: '0x81b7E08F65Bdf5648606c89998A9CC8164397647'
+  gas:
+    type: number
+    description: Gas provided by the sender.
+    example: 21000
+  gasPrice:
+    type: string
+    description: Gas price provided by the sender in wei.
+    example: '1000000000'
+  transactionHash:
+    type: string
+    description: Hash of the transaction.
+    example: '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7'
+  input:
+    type: string
+    description: The data sent along with the transaction.
+    example: 0x
+  nonce:
+    type: number
+    description: The number of transactions made by the sender prior to this one.
+    example: 26836405
+  to:
+    type: string
+    description: Address of the receiver. 'null' when its a contract creation transaction.
+    example: '0xbC546fa1716Ed886967cf73f40e8F2F5e623a92d'
+  transactionIndex:
+    type:
+    - number
+    - 'null'
+    description: Integer of the transactions index position in the block.
+    example: 3
+  value:
+    type: string
+    description: Value transferred in wei.
+    example: '1000000000000000000'
+  gasUsed:
+    type:
+    - number
+    - 'null'
+    description: The amount of gas used by this specific transaction alone.
+    example: 21000
+  cumulativeGasUsed:
+    type:
+    - number
+    - 'null'
+    description: The total amount of gas used when this transaction was executed in
+      the block.
+    example: 314159
+  contractAddress:
+    type: string
+    description: The contract address created, if the transaction was a contract creation,
+      otherwise null.
+    example: '0x81b7E08F65Bdf5648606c89998A9CC8164397647'
+  logs:
+    type: array
+    description: Log events, that happened in this transaction.
+    items:
+      $ref: '../migrated.yml#/components/schemas/EthTxLog'

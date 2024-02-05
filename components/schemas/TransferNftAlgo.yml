@@ -1,0 +1,43 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ALGO
+    description: The blockchain to work with
+    enum:
+    - ALGO
+  to:
+    maxLength: 58
+    minLength: 58
+    description: The blockchain address to transfer the NFT to
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+    type: string
+  contractAddress:
+    description: The asset ID (the ID of the NFT)
+    example: '100000'
+    type: string
+    maxLength: 256
+  fromPrivateKey:
+    type: string
+    maxLength: 103
+    example: 72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI
+    minLength: 106
+    description: The private key of the sender's blockchain address
+  amount:
+    description: (For <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts"
+      target="_blank">fractional NFTs</a> only) The number of NFT fractions to transfer;
+      if not set, defaults to 1, which means that one fraction of the NFT will be
+      transferred
+    example: 1
+    default: 1
+    minimum: 1
+    type: number
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+required:
+- to
+- chain
+- contractAddress
+- fromPrivateKey

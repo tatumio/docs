@@ -1,0 +1,62 @@
+type: object
+required:
+- type
+- price
+- amount
+- pair
+- currency1AccountId
+- currency2AccountId
+properties:
+  type:
+    type: string
+    description: Type of the regular trade, BUY, SELL
+    example: BUY
+    enum:
+    - BUY
+    - SELL
+  price:
+    type: string
+    description: Price to buy / sell
+    example: '8650.4'
+    maxLength: 38
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  amount:
+    type: string
+    description: Amount of the trade to be bought / sold
+    example: '15000'
+    maxLength: 38
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  pair:
+    type: string
+    description: Trading pair
+    example: BTC/EUR
+    minLength: 3
+    maxLength: 30
+    pattern: ^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$
+  currency1AccountId:
+    type: string
+    description: ID of the account of the currency 1 trade currency
+    example: 7c21ed165e294db78b95f0f1
+    minLength: 24
+    maxLength: 24
+  currency2AccountId:
+    type: string
+    description: ID of the account of the currency 2 trade currency
+    example: 7c21ed165e294db78b95f0f1
+    minLength: 24
+    maxLength: 24
+  feeAccountId:
+    type: string
+    description: ID of the account where fee will be paid, if any. If trade is a BUY
+      or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId,
+      and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have
+      same currency as a currency of currency1AccountId.
+    example: 7c21ed165e294db78b95f0f1
+    minLength: 24
+    maxLength: 24
+  fee:
+    type: number
+    description: Percentage of the trade amount to be paid as a fee.
+    example: 1.5
+    minimum: 0
+    maximum: 100

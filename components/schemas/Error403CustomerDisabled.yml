@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: customer.disabled
+    example: customer.disabled
+    type: string
+  message:
+    description: Unable to disable disabled customer.
+    example: Unable to disable disabled customer.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

@@ -1,0 +1,53 @@
+type: object
+properties:
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: Sender account ID
+    example: 61b3bffddfb389cde19c73be
+    type: string
+  address:
+    description: Blockchain address to send assets
+    example: tbnb1q82g2h9q0kfe7sysnj5w7nlak92csfjztymp39
+    maxLength: 100
+    minLength: 1
+    type: string
+  amount:
+    description: Amount to be sent, in BNB.
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  attr:
+    description: Memo of the recipient account, if any.
+    example: '12355'
+    type: string
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    minLength: 64
+    example: 8ac4b14b38d8a5af58019088ce5a24b764536bccd1981cf79d3e09e9d1f2ad31
+    description: Private key of sender address.
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: Note visible to owner of withdrawing account.
+    example: Sender note
+    type: string
+required:
+- senderAccountId
+- address
+- amount
+- fromPrivateKey

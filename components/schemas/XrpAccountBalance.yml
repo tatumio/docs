@@ -1,0 +1,20 @@
+type: object
+properties:
+  assets:
+    type: array
+    description: Different assets other then XRP available on the account.
+    items:
+      type: object
+      properties:
+        balance:
+          type: string
+          description: Balance of the asset.
+          example: '1000000000'
+        currency:
+          type: string
+          description: Asset identifier.
+          example: 015841551A748AD2C1F76FF6ECB0CCCD00000000
+  balance:
+    type: string
+    description: Balance of XRP, in drops.
+    example: '1000000000'

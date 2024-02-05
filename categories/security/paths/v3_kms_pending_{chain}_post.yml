@@ -1,0 +1,85 @@
+description: '<p><b>1 credit for every 500 signature IDs per API call</b></p>
+
+  <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms"
+  target="_blank">KMS</a>.</p>
+
+  <p><b>NOTE:</b> This API works only in KMS v5.0 or later. If you use KMS older than
+  v5.0, use <a href="#operation/GetPendingTransactionsToSign">this API</a> instead.</p>
+
+  '
+operationId: ReceivePendingTransactionsToSign
+parameters:
+- description: Blockchain to get pending transactions for.
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    maxLength: 24
+    minLength: 24
+    enum:
+    - ADA
+    - BNB
+    - BTC
+    - ETH
+    - XLM
+    - XRP
+    - BCH
+    - LTC
+    - DOGE
+    - VET
+    - BSC
+    - MATIC
+    - CELO
+    - FLOW
+    - TRON
+    - ONE
+    - XDC
+    - EGLD
+    - KLAY
+    - SOL
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/KmsSignatureIds'
+  required: false
+  description: Signature IDs of the KMS which invokes this endpoint.
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/PendingTransaction'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get pending transactions to sign
+tags:
+- Key Management System

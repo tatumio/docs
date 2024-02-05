@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: block.hash.not.exists
+    example: block.hash.not.exists
+    type: string
+  message:
+    description: No such block.
+    example: No such block.
+    type: string
+  statusCode:
+    description: '404'
+    example: 404
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

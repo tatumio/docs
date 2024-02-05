@@ -1,0 +1,8 @@
+type: string
+description: 'Metadata URL of the token. This data doesn''t have to be present.
+
+  The safest way to obtain them in that case is from the NFT Contract.tokenURI() method
+  call.
+
+  '
+example: ipfs://QmTDcCdt3yb6mZitzWBmQr65AW6Wska295Dg9nbEYpSUDR/3

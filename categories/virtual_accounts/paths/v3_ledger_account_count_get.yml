@@ -1,0 +1,106 @@
+description: <h4>1 credit per API call.</h4><br/><p>Count of accounts that were found
+  from /v3/ledger/account</p>
+operationId: getAccountsCount
+parameters:
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 20
+    maximum: 50
+    minimum: 1
+  required: false
+- description: Page number
+  in: query
+  name: page
+  schema:
+    type: number
+    example: 0
+- description: Direction of sorting. Can be asc or desc
+  in: query
+  name: sort
+  schema:
+    type: string
+    enum:
+    - asc
+    - desc
+- description: Sort by
+  in: query
+  name: sortBy
+  schema:
+    type: string
+    example: _id
+    enum:
+    - _id
+    - account_number
+    - account_balance
+    - available_balance
+- description: Filter only active or non active accounts
+  in: query
+  name: active
+  schema:
+    type: boolean
+    example: true
+- description: Filter only accounts with non zero balances
+  in: query
+  name: onlyNonZeroBalance
+  schema:
+    type: boolean
+    example: true
+- description: Filter only frozen or non frozen accounts
+  in: query
+  name: frozen
+  schema:
+    type: boolean
+    example: true
+- description: Filter by currency
+  in: query
+  name: currency
+  schema:
+    type: string
+    example: BTC
+- description: Filter by account number
+  in: query
+  name: accountNumber
+  schema:
+    maxLength: 50
+    example: AC_1011_B
+    minLength: 1
+    type: string
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/EntitiesCount'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Count of found entities for get accounts request
+tags:
+- Account

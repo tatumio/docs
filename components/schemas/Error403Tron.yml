@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: tron.failed
+    example: tron.failed
+    type: string
+  message:
+    description: Unable to communicate to blockchain. ${error}
+    example: Unable to communicate to blockchain. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

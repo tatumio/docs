@@ -1,0 +1,8 @@
+type: object
+properties:
+  accounts:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/CreateAccount'
+required:
+- accounts

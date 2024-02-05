@@ -1,0 +1,142 @@
+type: object
+required:
+- pageSize
+properties:
+  id:
+    type: string
+    description: Account ID. If present, list current active sell trades for that
+      account.
+    example: 5e68c66581f2ee32bc354087
+  customerId:
+    description: Customer ID. If present, list current active buy trades for that
+      customer.
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  pageSize:
+    description: Max number of items per page is 50.
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  offset:
+    description: Offset to obtain next page of the data.
+    type: number
+    example: 0
+  pair:
+    description: Trade pair. If present, list current active sell trades for that
+      pair.
+    type: string
+    example: BTC/EUR
+    minLength: 3
+    maxLength: 30
+    pattern: ^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$
+  count:
+    description: Get the total trade pair count based on the filter. Either count
+      or pageSize is accepted.
+    example: true
+    type: boolean
+  tradeType:
+    description: Trade type.
+    example: BUY
+    type: string
+    enum:
+    - FUTURE_BUY
+    - BUY
+  amount:
+    type: array
+    description: Amount of the trade. AND is used between filter options.
+    items:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Filtering operation.
+          example: gte
+          enum:
+          - gte
+          - lte
+          - gt
+          - lt
+          - eq
+          - neq
+        value:
+          type: string
+          description: Value of the operation.
+          example: '1.5'
+      required:
+      - op
+      - value
+  fill:
+    type: array
+    description: Fill of the trade. AND is used between filter options.
+    items:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Filtering operation.
+          example: gte
+          enum:
+          - gte
+          - lte
+          - gt
+          - lt
+          - eq
+          - neq
+        value:
+          type: string
+          description: Value of the operation.
+          example: '1.5'
+      required:
+      - op
+      - value
+  price:
+    type: array
+    description: Price of the trade. AND is used between filter options.
+    items:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Filtering operation.
+          example: gte
+          enum:
+          - gte
+          - lte
+          - gt
+          - lt
+          - eq
+          - neq
+        value:
+          type: string
+          description: Value of the operation.
+          example: '1.5'
+      required:
+      - op
+      - value
+  created:
+    type: array
+    description: Created date of the trade. AND is used between filter options.
+    items:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Filtering operation.
+          example: gte
+          enum:
+          - gte
+          - lte
+          - gt
+          - lt
+          - eq
+          - neq
+        value:
+          type: string
+          description: Value of the operation.
+          example: '1.5'
+      required:
+      - op
+      - value
+  sort:
+    $ref: '../migrated.yml#/components/schemas/OrderBookSort'

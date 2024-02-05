@@ -1,0 +1,79 @@
+type: object
+required:
+- chain
+- type
+- sender
+- recipient
+- custodialAddress
+- amount
+- tokenType
+properties:
+  chain:
+    type: string
+    description: The blockchain to estimate the fee for
+    enum:
+    - CELO
+    - ETH
+    - BSC
+    - XDC
+    - KLAY
+    - ONE
+    - MATIC
+  type:
+    type: string
+    description: The type of the transaction
+    enum:
+    - TRANSFER_CUSTODIAL
+  sender:
+    type: string
+    maxLength: 42
+    example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+    minLength: 42
+    description: The blockchain address of the sender
+  recipient:
+    description: The blockchain address of the recipient
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  contractAddress:
+    description: Contract address of the token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  custodialAddress:
+    description: The blockchain address of the custodial wallet contract
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  tokenType:
+    description: The type of the asset to transfer. Set <code>0</code> for fungible
+      tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent),
+      <code>2</code> for Multi Tokens (ERC-1155 or equivalent), or <code>3</code>
+      for native blockchain currencies.
+    example: 0
+    type: number
+    minimum: 0
+    maximum: 3
+    enum:
+    - 0
+    - 1
+    - 2
+    - 3
+  amount:
+    description: '<ul><li>If the asset to transfer is a fungible token, Multi Token,
+      or a native blockchain currency, set this parameter to the amount to transfer.</li>
+
+      <li>If the asset to transfer is an NFT, set this parameter to <code>1</code>.</li></ul>
+
+      '
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  tokenId:
+    description: (only if tokenType = 1 or 2) Token id
+    example: '1234'
+    type: string
+    minimum: 1

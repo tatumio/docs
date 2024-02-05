@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: erc20.address.xpub.missing
+    example: erc20.address.xpub.missing
+    type: string
+  message:
+    description: Either xpub or address must be present.
+    example: Either xpub or address must be present.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

@@ -1,0 +1,24 @@
+type: object
+properties:
+  symbol:
+    type: string
+    description: The symbol of the NFT token.
+    example: ART
+  name:
+    type: string
+    description: The name of the NFT token.
+    example: Mona Lisa
+  metadata:
+    type: object
+    description: The metadata associated with the NFT token.
+    example:
+      artist: Leonardo da Vinci
+      year: 1503
+  metadataURI:
+    type: string
+    description: The URI of the metadata associated with the NFT token.
+    example: https://example.com/metadata/123
+  tokenType:
+    type: string
+    description: The type of the token (e.g., ERC721, ERC1155).
+    example: ERC721

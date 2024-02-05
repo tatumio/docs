@@ -1,0 +1,13 @@
+type: object
+required:
+- address
+- secret
+properties:
+  address:
+    description: Generated account address.
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    type: string
+  secret:
+    description: Generated secret for account.
+    example: snSFTHdvSYQKKkYntvEt8cnmZuPJB
+    type: string

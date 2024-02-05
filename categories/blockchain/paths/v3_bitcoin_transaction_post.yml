@@ -1,0 +1,129 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Send BTC to blockchain addresses.</p>
+
+  <p>Bitcoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction
+  Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address
+  after a cryptocurrency transaction involving this address has been performed. The
+  UTXO can then be used as input for a new cryptocurrency transaction. For more information
+  about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html"
+  target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction,
+  see the <a href="#operation/BtcGetUTXO">API for getting information about a transaction
+  output (UTXO) in a Bitcoin transaction</a>.</p>
+
+  <p>You can build a BTC transaction by one of the following methods:</p>
+
+  <ul>
+
+  <li><b>Sending BTC from blockchain addresses</b><br/>The assets are sent from a
+  list of addresses. For each address, the last 100 transactions are scanned for any
+  UTXO to be included in the transaction. For easier control over the assets to be
+  sent, we recommend that you use this method only if you have one address to send
+  the assets from.<br/> To use this method, use the <code>BtcTransactionFromAddress</code>
+  or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li>
+
+  <li><b>Sending BTC from UTXOs</b><br/>The assets are sent from a list of UTXOs.
+  Each UTXO is included in the transaction. Use this method if you want to manually
+  calculate the amount to send.<br/> To use this method, use the <code>BtcTransactionFromUTXO</code>
+  or <code>BtcTransactionFromUTXOKMS</code> schema of the request body.</li>
+
+  </ul>
+
+  <p>When an UTXO is entered into a transaction, the whole UTXO amount is included
+  and must be spent. For example, address A receives two transactions, T1 with 1 BTC
+  and T2 with 2 BTC. A transaction that consumes the UTXOs from both T1 and T2 will
+  have an available amount of 3 BTC to spend:<br/><code>1 BTC (from T1) + 2 BTC (from
+  T2) = 3 BTC (to spend in total)</code></p>
+
+  <p>You can send the assets to one or multiple recipients in one transaction. If
+  you send the assets to multiple addresses, each address must have its own amount
+  to receive.</p>
+
+  <p><b>Paying the gas fee and receiving the change</b><br/>
+
+  When the amount that the recipients should receive is lower than the amount from
+  the UTXOs, the difference between these two amounts is by default used as the gas
+  fee for the transaction. Because this amount may be considerable and you may not
+  want to spend it all on the gas fee, you can explicitly specify the fee amount and
+  the blockchain address where any extra funds remaining after covering the fee will
+  be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request
+  body, correspondingly).</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When sending BTC, you are charged a fee for the transaction, and you must sign the
+  transaction with the private key of the blockchain address from which the fee will
+  be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: BtcTransferBlockchain
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/BtcTransactionFromAddress'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BtcTransactionFromAddressKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BtcTransactionFromUTXO'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BtcTransactionFromUTXOKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcTx'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcUTXO'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcTxFailed'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Send BTC to Bitcoin addresses
+tags:
+- Bitcoin

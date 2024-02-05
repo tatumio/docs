@@ -1,0 +1,14 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  tokenId:
+    $ref: '../migrated.yml#/components/schemas/TokenId'
+  tokenAddress:
+    $ref: '../migrated.yml#/components/schemas/TokenAddress'
+  tokenType:
+    $ref: '../migrated.yml#/components/schemas/TokenType'
+  metadataURI:
+    $ref: '../migrated.yml#/components/schemas/NftMetadataURI'
+  metadata:
+    $ref: '../migrated.yml#/components/schemas/NftMetadata'

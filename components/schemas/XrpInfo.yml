@@ -1,0 +1,10 @@
+type: object
+properties:
+  ledger_hash:
+    type: string
+    description: Current ledger hash.
+    example: 20C40AAF14D52FB614E41625218AF6C97B43076C30060E85AEFB38D54A99050F
+  ledger_index:
+    type: number
+    description: Current ledger index.
+    example: 760383

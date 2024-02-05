@@ -1,0 +1,90 @@
+description: <h4>1 credit per API call.</h4><br/><p>List all active sell trades.</p>
+operationId: getSellTrades
+deprecated: true
+parameters:
+- description: Account ID. If present, list current active sell trades for that account.
+  in: query
+  name: id
+  required: false
+  schema:
+    type: string
+    example: 5e68c66581f2ee32bc354087
+- description: Customer ID. If present, list current active buy trades for that customer.
+  in: query
+  name: customerId
+  required: false
+  schema:
+    type: string
+    example: 5e68c66581f2ee32bc354087
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  required: true
+- description: Offset to obtain next page of the data.
+  in: query
+  name: offset
+  schema:
+    type: number
+    example: 0
+- description: Trade pair. If present, list current active sell trades for that pair.
+  in: query
+  name: pair
+  schema:
+    type: string
+    example: BTC/EUR
+    minLength: 3
+    maxLength: 30
+    pattern: ^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$
+- description: Get the total trade pair count based on the filter. Either count or
+    pageSize is accepted.
+  in: query
+  name: count
+  example: true
+  schema:
+    type: boolean
+- description: Trade type.
+  in: query
+  name: tradeType
+  example: SELL
+  required: false
+  schema:
+    type: string
+    enum:
+    - FUTURE_SELL
+    - SELL
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Trade'
+          type: array
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: List all active sell trades
+tags:
+- Order Book

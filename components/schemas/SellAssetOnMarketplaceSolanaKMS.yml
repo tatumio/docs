@@ -1,0 +1,50 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - SOL
+    example: SOL
+    type: string
+  contractAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the smart contract
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  nftAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the asset to sell
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the seller
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+  price:
+    description: Price of the asset to sell. Marketplace fee will be obtained on top
+      of this price.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  authoritySignatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key used for signing transactions
+      as authority; required if <code>requiresSignOff</code> is set to "true" for
+      the marketplace
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the seller
+required:
+- chain
+- contractAddress
+- nftAddress
+- price
+- from
+- signatureId

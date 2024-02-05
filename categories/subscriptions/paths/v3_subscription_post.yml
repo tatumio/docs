@@ -1,0 +1,337 @@
+description: "<p><b>2 credits per API call + credits spent on subscriptions themselves<br/>\n\
+  Each subscription type consumes a different number of credits.</b></p>\n<p>For Free\
+  \ plans, there is a monthly limit of sent webhooks, which is <b>1000</b>.</p>\n\
+  <p>If the webhook is sent unsuccessfully, it will be retried. The number of retries\
+  \ depends on the plan. </p>\n<ul>\n  <li><b>Free Plan</b> - 3 retries</li>\n  <li><b>Paid\
+  \ plans</b> - 10 retries</li>\n</ul>\n<p>Create a subscription as an HTTP web hook.</p>\n\
+  <p>The following subscription types are available:</p>\n<ul>\n<li><b>ADDRESS_TRANSACTION</b>\
+  \ - Enable HTTP POST JSON notifications for any blockchain transaction (both incoming\
+  \ and outgoing) at a specified address. This notification applies to transactions\
+  \ in the native blockchain currency or with any type of blockchain tokens.<br/>\n\
+  - For <b>EVM-based blockchains</b> (ETH), this web hook might be first invoked when\
+  \ a transaction appears in the mempool. In that case the webhook has a field \"\
+  mempool\" set to \"true\". Then it is invoked again once the transaction is added\
+  \ to a block.<br/>\n- For the <b>other blockchains</b>, this webhook is invoked\
+  \ when a transaction is added to a block.<br/>\nFree community plans can monitor\
+  \ up to 10 addresses per plan.<br/>\nThe following table describes the availability\
+  \ of this notification type on different blockchains and the credit consumption:<br/>\n\
+  <table>\n  <tr>\n    <th>Chain</th>\n    <th>Testnet/Mainnet</th>\n    <th>Token\
+  \ assets support</th>\n    <th>Plan limitation</th>\n    <th>Credit consumption\
+  \ / day / address</th>\n  </tr>\n  <tr>\n    <td>Solana</td>\n    <td>Yes/Yes</td>\n\
+  \    <td>SOL, SPL and NFTs</td>\n    <td>Free plans - 10 addresses across all blockchains,\
+  \ Paid plans - unlimited addresses across all blockchains</td>\n    <td>50 credits\
+  \ / day / address</td>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n    <td>Yes (Sepolia,\
+  \ Goerli)/Yes</td>\n    <td>ETH, Internal transfers, ERC20, ERC721, ERC1155</td>\n\
+  \    <td>Free plans - 10 addresses across all blockchains, Paid plans - unlimited\
+  \ addresses across all blockchains</td>\n    <td>25 credits / day / address</td>\n\
+  \  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>Yes/Yes</td>\n    <td>MATIC, ERC20,\
+  \ ERC721, ERC1155</td>\n    <td>Free plans - 10 addresses across all blockchains,\
+  \ Paid plans - unlimited addresses across all blockchains</td>\n    <td>40 credits\
+  \ / day / address</td>\n  </tr>\n  <tr>\n    <td>Celo</td>\n    <td>Yes/Yes</td>\n\
+  \    <td>CELO, Internal transfers, ERC20, ERC721, ERC1155</td>\n    <td>Free plans\
+  \ - 10 addresses across all blockchains, Paid plans - unlimited addresses across\
+  \ all blockchains</td>\n    <td>25 credits / day / address</td>\n  </tr>\n  <tr>\n\
+  \    <td>Klaytn</td>\n    <td>Yes/Yes</td>\n    <td>Klay, ERC20, ERC721, ERC1155</td>\n\
+  \    <td>Free plans - 10 addresses across all blockchains, Paid plans - unlimited\
+  \ addresses across all blockchains</td>\n    <td>25 credits / day / address</td>\n\
+  \  </tr>\n  <tr>\n    <td>Bitcoin</td>\n    <td>Yes/Yes</td>\n    <td>BTC</td>\n\
+  \    <td>Free plans - 10 addresses across all blockchains, Paid plans - unlimited\
+  \ addresses across all blockchains</td>\n    <td>5 credits / day / address</td>\n\
+  \  </tr>\n  <tr>\n    <td>Litecoin</td>\n    <td>Yes/Yes</td>\n    <td>LTC</td>\n\
+  \    <td>Free plans - 10 addresses across all blockchains, Paid plans - unlimited\
+  \ addresses across all blockchains</td>\n    <td>7 credits / day / address</td>\n\
+  \  </tr>\n  <tr>\n    <td>Bitcoin Cash</td>\n    <td>Yes/Yes</td>\n    <td>BCH,\
+  \ only incoming transactions</td>\n    <td>Free plans - 10 addresses across all\
+  \ blockchains, Paid plans - unlimited addresses across all blockchains</td>\n  \
+  \  <td>5 credits / day / address</td>\n  </tr>\n  <tr>\n    <td>Dogecoin</td>\n\
+  \    <td>Yes/Yes</td>\n    <td>DOGE, only incoming transactions</td>\n    <td>Free\
+  \ plans - 10 addresses across all blockchains, Paid plans - unlimited addresses\
+  \ across all blockchains</td>\n    <td>7 credits / day / address</td>\n  </tr>\n\
+  \   <tr>\n    <td>Tron</td>\n    <td>Yes/Yes</td>\n    <td>Tron, TRC10/TRC20</td>\n\
+  \    <td>Free plans - 10 addresses across all blockchains, Paid plans - unlimited\
+  \ addresses across all blockchains</td>\n    <td>30 credits / day / address</td>\n\
+  \  </tr>\n  <tr>\n    <td>Binance Smart Chain</td>\n    <td>Yes/Yes</td>\n    <td>BSC,\
+  \ BEP20, ERC721, ERC1155</td>\n    <td>Free plans - 10 addresses across all blockchains,\
+  \ Paid plans - unlimited addresses across all blockchains</td>\n    <td>40 credits\
+  \ / day / address</td>\n  </tr>\n</table>\nThe request body of the POST request\
+  \ is a JSON object with the following structure:<br/>\n<pre>{\n  \"address\": \"\
+  FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ\", // the address on which the transaction\
+  \ occurs; for EVM-based chains, this is the sender's address\n  \"txId\": \"2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A\"\
+  , // the transaction ID\n  \"blockNumber\": 110827114, // the block number; does\
+  \ not appear if the transaction is in the mempool (for EVM-based blockchains)\n\
+  \  \"asset\": \"3gUeeR3BfVhukYJMwtHownRtRkGcf1bvwiV8TbKMZBVz\", // the asset of\
+  \ the transaction: for token assets, this is the token address; for native blochckain\
+  \ assets, this is the name of the asset (for example, SOL)\n  \"amount\": \"1\"\
+  , // the amount of the asset that was credited to (+) or debited from (-) the address;\
+  \ for EVM-based chains, when \"counterAddress\" is present, the amount is always\
+  \ positive\n  \"tokenId\": \"1\", // (ERC-721 / ERC-1155 only) the ID of the transferred\
+  \ token\n  \"type\": \"token\", // the type of the transaction; can be either \"\
+  native\" or \"token\"\n  \"mempool\": true, // (EVM-based blockchains only) if appears\
+  \ and set to \"true\", the transaction is in the mempool; if set to \"false\" or\
+  \ does not appear at all, the transaction has been added to a block\n  \"counterAddress\"\
+  : undefined // an optional counter party address of the transaction; for EVM-based\
+  \ blockchains, this is the recipient's address\n  \"addressesRiskRatio\": [ // (optional,\
+  \ subject to change; for Solana mainnet only) risk levels assigned to the addresses\
+  \ with which the address communicated within the transaction; the addresses are\
+  \ assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources\n\
+  \    {\"vTEfAhXTmvgFmepgfhzBbRrJ4EtUP9adbMJjpzLsDMk\": 0},\n    {\"zBbRrJ4EtUP9adbMJjpzLsDMkvTEfAhXTmvgFmepgfh\"\
+  : 100}\n  ]\n}</pre>\n<b>5 credits are debited for each fired web hook.</b><br/></li>\n\
+  <li><b>CONTRACT_NFT_TXS_PER_BLOCK</b> - Enable HTTP POST JSON notifications for\
+  \ any event of minting, transferring, or burning an NFT that was emitted from any\
+  \ smart contract. This notification is fired as a batch notification per block:\
+  \ it includes all NFT minting, transferring, or burning events from all smart contracts\
+  \ that got recorded into a block.<br/>\nFree community plans can monitor 1 event\
+  \ across all blockchains per plan.<br/><br/>\nThe following table describes the\
+  \ availability of this notification type on different blockchains and the credit\
+  \ consumption:<br/>\n<table>\n  <tr>\n    <th>Chain</th>\n    <th>Available chains\
+  \ (the \"chain\" parameter in the response payload)</th>\n    <th>Credit consumption\
+  \ / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n    <td>ethereum-sepolia /\
+  \ ethereum-goerli / ethereum-mainnet</td>\n    <td>500,000 credits / day</td>\n\
+  \  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai / polygon-mainnet</td>\n\
+  \    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n    <td>Celo</td>\n    <td>celo-testnet\
+  \ / celo-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n   \
+  \ <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n    <td>500,000\
+  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>BNB Smart Chain</td>\n    <td>bsc-testnet\
+  \ / bsc-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n</table>\nThe\
+  \ request body of the POST request is a JSON object with the following structure:<br/>\n\
+  <pre>{\n \"events\": [\n   {\n     \"timestamp\": 1661961758000,\n     \"from\"\
+  : \"0x0000000000000000000000000000000000000000\",\n     \"to\": \"0xfa4e7035b34294407e5df1603215983d65e5a773\"\
+  ,\n     \"tokenId\": \"14671\",\n     \"txId\": \"0x916fcf878656f7a3772317697e6d2740ac8b1b7dbe6d029aa79592fd72f3fb0b\"\
+  ,\n     \"contractAddress\": \"0x55a2430e32dcebc3649120f26f917d1f0686f74c\",\n \
+  \    \"type\": \"erc721\",\n     \"amount\": \"1\",\n     \"logIndex\": 578,\n \
+  \    \"metadataURI\": \"https://graphigo.prd.galaxy.eco/metadata/0x55a2430e32dcebc3649120f26f917d1f0686f74c/14671.json\"\
+  \n   }\n ],\n \"blockNumber\": 32522207,\n \"chain\": \"polygon-mainnet\",\n \"\
+  subscriptionType\": \"CONTRACT_NFT_TXS_PER_BLOCK\"\n }</pre>\n<b>1 credit is debited\
+  \ for each fired web hook.</b><br/></li>\n<li><b>CONTRACT_MULTITOKEN_TXS_PER_BLOCK</b>\
+  \ - Enable HTTP POST JSON notifications for any event of minting, transferring,\
+  \ or burning a Multi-Token that was emitted from any smart contract. This notification\
+  \ is fired as a batch notification per block: it includes all Multi Token minting,\
+  \ transferring, or burning events from all smart contracts that got recorded into\
+  \ a block.<br/>\nFree community plans can monitor 1 event across all blockchains\
+  \ per plan.<br/><br/>\nThe following table describes the availability of this notification\
+  \ type on different blockchains and the credit consumption:<br/>\n<table>\n  <tr>\n\
+  \    <th>Chain</th>\n    <th>Available chains (the \"chain\" parameter in the response\
+  \ payload)</th>\n    <th>Credit consumption / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n\
+  \    <td>ethereum-sepolia / ethereum-goerli / ethereum-mainnet</td>\n    <td>500,000\
+  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai\
+  \ / polygon-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n\
+  \    <td>Celo</td>\n    <td>celo-testnet / celo-mainnet</td>\n    <td>500,000 credits\
+  \ / day</td>\n  </tr>\n  <tr>\n    <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n\
+  \    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n    <td>BNB Smart Chain</td>\n\
+  \    <td>bsc-testnet / bsc-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n\
+  </table>\nThe request body of the POST request is a JSON object with the following\
+  \ structure:<br/>\n<pre>{\n \"events\": [\n   {\n     \"timestamp\": 1661961758000,\n\
+  \     \"from\": \"0x85bd970cf0e49acd572f9c2d608713bc55b5ee0e\",\n     \"to\": \"\
+  0x9ab31230d5413e4af01af9bb697651a3c70c95c9\",\n     \"tokenId\": \"1450000023306\"\
+  ,\n     \"txId\": \"0x565b9ca6b7b5ff1b1ce0725acd785dbf5ff0930d5ff547bad044c0960291555f\"\
+  ,\n     \"contractAddress\": \"0xdb6290f355a528a7284bdd528b05a78fb05226ca\",\n \
+  \    \"type\": \"erc1155\",\n     \"amount\": \"1\",\n     \"logIndex\": 571,\n\
+  \     \"metadataURI\": \"https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json\"\
+  \n   }\n ],\n \"blockNumber\": 32522207,\n \"chain\": \"polygon-mainnet\",\n \"\
+  subscriptionType\": \"CONTRACT_MULTITOKEN_TXS_PER_BLOCK\"\n}</pre>\n<b>1 credit\
+  \ is debited for each fired web hook.</b><br/></li>\n<li><b>CONTRACT_LOG_EVENT</b>\
+  \ - Enable HTTP POST JSON notifications for any event that was emitted from any\
+  \ smart contract. This notification is fired as a batch notification per block:\
+  \ it includes all events from all smart contracts that got recorded into a block.<br/>\n\
+  Free community plans can monitor 1 event across all blockchains per plan.<br/><br/>\n\
+  The following table describes the availability of this notification type on different\
+  \ blockchains and the credit consumption:<br/>\n<table>\n  <tr>\n    <th>Chain</th>\n\
+  \    <th>Available chains (the \"chain\" parameter in the response payload)</th>\n\
+  \    <th>Credit consumption / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n\
+  \    <td>ethereum-sepolia / ethereum-goerli / ethereum-mainnet</td>\n    <td>50,000\
+  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai\
+  \ / polygon-mainnet</td>\n    <td>50,000 credits / day</td>\n  </tr>\n  <tr>\n \
+  \   <td>Celo</td>\n    <td>celo-testnet / celo-mainnet</td>\n    <td>50,000 credits\
+  \ / day</td>\n  </tr>\n  <tr>\n    <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n\
+  \    <td>50,000 credits / day</td>\n  </tr>\n  <tr>\n    <td>BNB Smart Chain</td>\n\
+  \    <td>bsc-testnet / bsc-mainnet</td>\n    <td>50,000 credits / day</td>\n  </tr>\n\
+  </table>\nThe request body of the POST request is a JSON object with the following\
+  \ structure:<br/>\n<pre>{\n \"events\": [\n   {\n     \"txId\": \"0xc98307f09ed527d5cff8305e8f65226b790e3317ded10b9e58f6f07286dcf8f1\"\
+  ,\n     \"logIndex\": 326,\n     \"timestamp\": 1661774265000,\n     \"address\"\
+  : \"0xc2132d05d31c914a87c6611c10748aeb04b58e8f\",\n     \"topic_0\": \"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\"\
+  ,\n     \"topic_1\": \"0x000000000000000000000000a91ab7d77892a559d2a95baaf1d748fc97c65d29\"\
+  ,\n     \"topic_2\": \"0x0000000000000000000000009b08288c3be4f62bbf8d1c20ac9c5e6f9467d8b7\"\
+  ,\n     \"topic_3\": null,\n     \"data\": \"0x0000000000000000000000000000000000000000000000000000000002c9e3e4\"\
+  \n   }\n ],\n \"blockNumber\": 32447538,\n \"chain\": \"polygon-mumbai\",\n \"subscriptionType\"\
+  : \"CONTRACT_LOG_EVENT\"\n}</pre>\n<b>1 credit is debited for each fired web hook.</b><br/></li>\n\
+  <li><b>ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION</b> - Enable HTTP POST JSON notifications\
+  \ about incoming blockchain transactions on virtual accounts.\nThis web hook is\
+  \ invoked when an incoming transaction is reflected on the balance of the virtual\
+  \ account (the balance is credited with the transaction amount). This happens when\
+  \ the transaction has the sufficient number of blockchain confirmations: two confirmations\
+  \ for BTC, LTC, BCH, and DOGE, and one confirmation for the other blockchains.<br/>\n\
+  The request body of the POST request is a JSON object with the following structure:\n\
+  <pre>{\n  \"date\": 1619176527481,\n  \"amount\": \"0.005\",\n  \"currency\": \"\
+  BTC\",\n  \"subscriptionType\":\"ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION\",\n  \"\
+  accountId\": \"6082ab462936b4478117c6a0\",\n  \"reference: \"c9875708-4ba3-41c9-a4cd-271048b41b9a\"\
+  , // the reference of the transaction in the virtual account\n  \"txId\": \"45af182a0ffab58e5ba32fee57b297b2260c6e23a1de5ddc76c7ee22d72dea99\"\
+  ,\n  \"blockHash\": \"45af182a0ffab58e5ba32fee57b297b2260c6e23a1de5ddc76c7ee22d72dea99\"\
+  , // the hash of the block, might not be present every time\n  \"blockHeight\":\
+  \ 12345,\n  \"from\": \"SENDER_ADDRESS\", // might not be present every time; not\
+  \ present for UTXO-based blockchains\n  \"to\": \"RECIPIENT_ADDRESS_CONNECTED_TO_LEDGER_ACCOUNT\"\
+  , // the blockchain address of the recipient\n  \"index\": 5 // for UTXO-based blockchains\
+  \ (BCH, BTC, DOGE, LTC), this is the index of the output in the transaction\n}</pre>\n\
+  1 credit is debited for each monitored account every day.</li>\n<li><b>ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION</b>\
+  \ - Enable HTTP POST JSON notifications about incoming blockchain transactions on\
+  \ virtual accounts.<br />\nThis web hook is supported only for BCH, BTC, DOGE, ETH,\
+  \ and LTC accounts.<br />\n- For <b>BTC-based blockchains</b> (BCH, BTC, DOGE, and\
+  \ LTC), this web hook is invoked when an incoming transaction appears in a block\
+  \ for the first time. At that time, the transaction has one confirmation but this\
+  \ is not enough for the transaction to be reflected on the balance of the virtual\
+  \ account yet. Instead, a deposit corresponding to the pending transaction with\
+  \ a status of \"in progress\" appears on the virtual account. Once the transaction\
+  \ is added to the block, the deposit's status changes to \"done\", and the account\
+  \ balance gets updated.<br />\n- For <b>EVM-based blockchains</b> (ETH), this web\
+  \ hook is invoked when an incoming transaction appears in the mempool. The virtual\
+  \ account balance is not updated until the transaction is added to a block. Instead,\
+  \ a deposit corresponding to the pending transaction with a status of \"in progress\"\
+  \ appears on the virtual account. Once the transaction is added to the block, the\
+  \ deposit's status changes to \"done\", and the account balance gets updated.<br\
+  \ />\nThe request body of the POST request is a JSON object with the following structure:<br/>\n\
+  <pre>{\n  \"date\": 1619176527481,\n  \"amount\": \"0.005\",\n  \"currency\": \"\
+  BTC\",\n  \"accountId\": \"6082ab462936b4478117c6a0\",\n  \"reference: \"c9875708-4ba3-41c9-a4cd-271048b41b9a\"\
+  , // the reference of the transaction in the virtual account\n  \"txId\": \"45af182a0ffab58e5ba32fee57b297b2260c6e23a1de5ddc76c7ee22d72dea99\"\
+  ,\n  \"blockHash\": \"45af182a0ffab58e5ba32fee57b297b2260c6e23a1de5ddc76c7ee22d72dea99\"\
+  , // the hash of the block, might not be present every time; if set to \"null\"\
+  , the transaction is in the mempool (for EVM-based blockchains)\n  \"blockHeight\"\
+  : 12345, // if set to \"null\", the transaction is in the mempool (for EVM-based\
+  \ blockchains)\n  \"from\": \"SENDER_ADDRESS\", // might not be present every time;\
+  \ not present for UTXO-based blockchains (BCH, BTC, DOGE, LTC)\n  \"to\": \"RECIPIENT_ADDRESS_CONNECTED_TO_LEDGER_ACCOUNT\"\
+  , // the blockchain address of the recipient\n  \"index\": 5 // for UTXO-based blockchains\
+  \ (BCH, BTC, DOGE, LTC), this is the index of the output in the transaction\n}</pre>\n\
+  1 credit is debited for each monitored account every day.</li>\n<li><b>CUSTOMER_TRADE_MATCH</b>\
+  \ - Enable HTTP POST JSON notifications on closed trade, which occurs on any customer\
+  \ account.\nThis web hook will be invoked, when the open trade is filled and closed.\
+  \ Works also for the Trade Futures. If is triggered by the futures, bool field expiredWithoutMatch\
+  \ is present.\nRequest body of the POST request will be JSON object with attributes:<br/>\n\
+  <pre>{\n  \"created\": 1619176527481,\n  \"amount\": \"0.005\",\n  \"price\": \"\
+  0.02\",\n  \"type\": \"SELL\",\n  \"pair\": \"VC_CHF/VC_CHF3\",\n  \"id\": \"6082ab462936b4478117c6a0\"\
+  , // id of the trade\n  \"currency1AccountId\": \"6082ab462936b4478117c6a0\",\n\
+  \  \"currency2AccountId\": \"6082ab512936b4478117c6a2\",\n  \"fee\": null,\n  \"\
+  feeAccountId\": null,\n  \"isMaker\": true,\n  \"expiredWithoutMatch\": false\n\
+  }</pre>\n10 credits will be debited for every monitored customer every day.</li>\n\
+  <li><b>CUSTOMER_PARTIAL_TRADE_MATCH</b> - Enable HTTP POST JSON notifications on\
+  \ partialy filled trade, which occurs on any customer account.\nThis web hook will\
+  \ be invoked, when the open trade is partialy filled.\nRequest body of the POST\
+  \ request will be JSON object with attributes:<br/>\n<pre>{\n  \"created\": 1619176527481,\n\
+  \  \"amount\": \"0.005\",\n  \"orderAmount\": \"0.1\",\n  \"price\": \"0.02\",\n\
+  \  \"type\": \"SELL\",\n  \"pair\": \"VC_CHF/VC_CHF3\",\n  \"id\": \"6082ab462936b4478117c6a0\"\
+  , // id of the trade\n  \"currency1AccountId\": \"6082ab462936b4478117c6a0\",\n\
+  \  \"currency2AccountId\": \"6082ab512936b4478117c6a2\",\n  \"fee\": null,\n  \"\
+  feeAccountId\": null,\n  \"isMaker\": true,\n  \"expiredWithoutMatch\": false\n\
+  }</pre>\n10 credits will be debited for every monitored customer every day.</li>\n\
+  <li><b>TRANSACTION_IN_THE_BLOCK</b> - Enable HTTP POST JSON notifications on ledger\
+  \ => blockchain transaction, when transaction is included in the block.\nThis web\
+  \ hook will be invoked, when the outgoing transaction is included in the block.\n\
+  Request body of the POST request will be JSON object with attributes:<br/>\n<pre>\n\
+  \  {\n    \"txId\": \"0x026f4f05b972c09279111da13dfd20d8df04eff436d7f604cd97b9ffaa690567\"\
+  ,\n    \"reference\": \"90270634-5b07-4fad-b17b-f82899953533\",\n    \"accountId\"\
+  : \"6086ed0744c45b24d4fbd039\",\n    \"currency\": \"BSC\",\n    \"withdrawalId\"\
+  : \"608fe5b73a893234ba379ab2\",\n    \"address\": \"0x8ce4e40889a13971681391AAd29E88eFAF91f784\"\
+  ,\n    \"amount\": \"0.1\",\n    \"blockHeight\": 8517664\n  }</pre>\n10 credits\
+  \ will be debited every day, 1 credit for every included transaction notified via\
+  \ web hook.</li>\n<li><b>KMS_FAILED_TX</b> - Enable HTTP POST JSON notifications\
+  \ on error during KMS signature process.\nThis web hook will be invoked, when the\
+  \ Tatum KMS receives error during processing transactions.\nRequest body of the\
+  \ POST request will be JSON object with attributes:<br/>\n<pre>{\n  \"signatureId\"\
+  : \"6082ab462936b4478117c6a0\",\n  \"error\": \"Error message from the KMS\"\n}</pre>\n\
+  10 credits will be debited every day.</li>\n<li><b>KMS_COMPLETED_TX</b> - Enable\
+  \ HTTP POST JSON notifications on successful completion of KMS signature process.\n\
+  This web hook will be invoked, when the Tatum KMS successfully completes the signature\
+  \ during processing transactions.\nRequest body of the POST request will be JSON\
+  \ object with attributes:<br/>\n<pre>{\n  \"signatureId\": \"6082ab462936b4478117c6a0\"\
+  ,\n  \"txId\": \"0x7bb7d3b90567e89f999f2e3d263bc3738a018dbbcfa9f5397678cf17cdf0235f\"\
+  \n}</pre>\n10 credits will be debited every day.</li>\n<li><b>ACCOUNT_BALANCE_LIMIT</b>\
+  \ - Report with all account balances above desired limit.</li>\n<li><b>TRANSACTION_HISTORY_REPORT</b>\
+  \ - Report with all ledger transactions for last X hours, where X is set by the\
+  \ subscription attribute as interval.\nMaximum number of transactions returned by\
+  \ this report is 20000. Transactions are obtained from the time of the invocation\
+  \ of the GET method to obtain report - X hours.</li>\n</ul>\nIn case of unsuccesful\
+  \ web hook response status - other then 2xx - web hook is repeated 9 more times\
+  \ with exponential backoff.\nParameters are T = 15 * 2.7925^9, where 15 is interval\
+  \ in s, backoff rate is 2.7925 and 9 is current number of retries. Last web hook\
+  \ is fired after 24 hours approximatelly. After last failed attempt, web hook is\
+  \ deleted from our system. The 2xx response must be returned in 10 seconds after\
+  \ web hook is fired.<br/>\nResult of the operation is subscription ID, which can\
+  \ be used to cancel subscription or obtain additional data connected to it like\
+  \ reports.</p>\n"
+operationId: createSubscription
+parameters:
+- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+  in: query
+  name: testnetType
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+    - ethereum-goerli
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionNotification'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionNftTransferEvent'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionMultiTokenTransferEvent'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionContractLogEvent'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionIncoming'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionPending'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionTradeMatch'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionPartialTradeMatch'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSError'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSSuccess'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionTxInTheBlock'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionBalance'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionInterval'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Id'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionType'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionCurrency'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionBalance'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionInterval'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionId'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionPendingId'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Create a subscription
+tags:
+- Notification subscriptions

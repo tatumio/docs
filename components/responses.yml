@@ -1,0 +1,61 @@
+components:
+  OK:
+    content:
+      application/json:
+        schema:
+          properties:
+            id:
+              description: The ID of the response
+              example: 5e68c66581f2ee32bc354087
+              type: string
+            data:
+              type: array
+              items:
+                type: object
+                example: {}
+    description: OK
+  Error400:
+    content:
+      application/json:
+        schema:
+          properties:
+            errorCode:
+              example: validation.failed
+              description: validation.failed
+              type: string
+            message:
+              example: "Request validation failed. Please see data for additional information."
+              description: "Request validation failed. Please see data for additional information."
+              type: string
+            statusCode:
+              example: 400
+              description: "400"
+              type: number
+            data:
+              type: array
+              items:
+                type: object
+                required:
+                  - target
+                properties:
+                  target:
+                    type: object
+                    additionalProperties: true
+                    description: Request object present in the body of the HTTP request
+                    example:
+                      property: 12345
+                  value:
+                    type: number
+                    description: Value of the target object which validation is wrong. Can be of any data type, example here is using type number.
+                    example: 12345
+                  property:
+                    type: string
+                    description: Property name of the target object which validation is wrong
+                    example: property1
+                  constraints:
+                    type: object
+                    additionalProperties: true
+                    description: Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.
+                    example:
+                      min: property1 must not be less than 50000
+    description: Bad Request. Validation failed for the given object in the HTTP Body or Request parameters.

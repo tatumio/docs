@@ -1,0 +1,44 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: Transaction hash.
+    example: 5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a
+  fee:
+    type: string
+    description: Fee paid for this transaction, in ADA.
+    example: '0.00001682'
+  block:
+    type: object
+    properties:
+      number:
+        type: number
+        description: Index of the block this transaction belongs to.
+        example: 1233224
+      hash:
+        type: string
+        description: Block hash.
+        example: 5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a
+  inputs:
+    description: List of transactions, from which assets are being sent.
+    type: array
+    items:
+      type: object
+      properties:
+        txHash:
+          type: string
+          description: Transaction hash of the input.
+          example: 0db5a2881f26f7dce20222f9c2538dc296ab562e134a72052596bdf4bb6913b4
+        value:
+          type: string
+          description: Value of the transaction, in Lovelace - 1/1000000 of ADA.
+          example: '989946'
+        address:
+          type: string
+          description: Sender address.
+          example: addr1qxm3vd0msv9ph8elhy7xrv975z88y6lr3d8vdgy3fwr2e22uvu2ffa2ctx3pdl4rjjja5p7al2k356x5yx8cn03am88s2807d9
+  outputs:
+    description: List of recipient addresses and amounts to send to each of them.
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/AdaUTXO'

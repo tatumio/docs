@@ -1,0 +1,10 @@
+type: object
+properties:
+  address:
+    description: Generated account address.
+    example: tbnb1sfj9981j2eo1ij2e09
+    type: string
+  privateKey:
+    description: Generated private key for account.
+    example: cTmS2jBWXgFaXZ2xG9jhn67TiyTshnMp3UedamzEhGm6BZV1vLgQ
+    type: string

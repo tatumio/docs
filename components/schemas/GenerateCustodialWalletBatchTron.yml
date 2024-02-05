@@ -1,0 +1,35 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of account, from which the transaction will be initiated.
+  batchCount:
+    type: number
+    example: 50
+    description: Number of addresses to generate.
+  owner:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Owner of the addresses.
+    example: TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9
+  feeLimit:
+    type: number
+    minimum: 5
+    example: 100
+    description: Fee limit to be set, in TRX
+required:
+- chain
+- feeLimit
+- fromPrivateKey
+- batchCount
+- owner

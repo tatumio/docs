@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: eth.erc20.sign
+    example: eth.erc20.sign
+    type: string
+  message:
+    description: Unable to sign transaction for contract creation. ${error}
+    example: Unable to sign transaction for contract creation. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

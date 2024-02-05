@@ -1,0 +1,134 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get metadata of an NFT.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>Algorand</li>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Flow</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  <li>Solana</li>
+
+  <li>TRON</li>
+
+  </ul>
+
+  '
+operationId: NftGetMetadataErc721
+parameters:
+- description: The blockchain to work with
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    enum:
+    - BSC
+    - CELO
+    - ETH
+    - FLOW
+    - KCS
+    - KLAY
+    - MATIC
+    - ONE
+    - SOL
+    - TRON
+    - ALGO
+- description: The blockchain address of the NFT to get metadata for
+  in: path
+  name: contractAddress
+  required: true
+  schema:
+    type: string
+    example: '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326'
+- description: The ID of the NFT to get metadata for<br/>For Solana and ALGO put 0
+    since this parameter is irrelevant for those chains.
+  in: path
+  name: tokenId
+  required: true
+  schema:
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+- description: (Flow only) The account that holds the NFT
+  in: query
+  required: false
+  name: account
+  schema:
+    type: string
+    example: '0xc1b45bc27b9c61c3'
+- description: Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
+    for testnet API Key. For mainnet API Key, this value is ignored.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/NftMetadataErc721'
+          - $ref: '../../../components/migrated.yml#/components/schemas/NftMetadataErc721OnchainSolana'
+          - $ref: '../../../components/migrated.yml#/components/schemas/NftMetadataErc721OnchainFlow'
+          - $ref: '../../../components/migrated.yml#/components/schemas/NftMetadataErc721OnchainAlgo'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get NFT metadata
+tags:
+- NFT (ERC-721 or compatible)

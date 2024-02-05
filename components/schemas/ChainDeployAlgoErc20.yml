@@ -1,0 +1,58 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ALGO
+    description: The blockchain to work with
+    enum:
+    - ALGO
+  symbol:
+    description: Symbol of the ERC20 token
+    example: ERC_SYMBOL
+    maxLength: 8
+    minLength: 1
+    type: string
+  name:
+    description: Name of the ERC20 token
+    example: MyERC20
+    maxLength: 32
+    minLength: 1
+    pattern: ^[a-zA-Z0-9_]+$
+    type: string
+  supply:
+    description: Initial supply of ERC20 token. If totalCap is not defined, this will
+      be the total cap.
+    maxLength: 38
+    example: '10000000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  digits:
+    description: Number of decimal points
+    example: 1
+    maximum: 15
+    minimum: 0
+    type: number
+  url:
+    description: The URL pointing to the metadata
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  fromPrivateKey:
+    description: Private key of Ethereum account address, from which the fee for the
+      deployment of ERC20 will be paid. Private key, or signature Id must be present.
+    type: string
+    example: GDNQECUM2JDPTA4KXNSXHQBAYL56FDZ73NXCQ2OLB32PN2G5BLNO5GY3QD2BQOYVBPYPMMETQUGTJUQ7W3V2K4NRJFHAVVWVZVBG5G2
+    maxLength: 103
+    minLength: 103
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+required:
+- chain
+- name
+- symbol
+- supply
+- fromPrivateKey
+- digits
+- fee

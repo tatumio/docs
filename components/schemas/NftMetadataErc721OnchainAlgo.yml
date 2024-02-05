@@ -1,0 +1,6 @@
+type: object
+properties:
+  onchainData:
+    type: string
+    description: (ALGO) Metadata associated with token.
+    example: https://my_token_data.com

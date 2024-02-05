@@ -1,0 +1,16 @@
+type: object
+required:
+- address
+- value
+properties:
+  address:
+    description: The blockchain address to receive the assets
+    type: string
+    example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+    minimum: 30
+    maximum: 60
+  value:
+    description: The amount to receive (in BTC)
+    type: number
+    minimum: 0
+    example: 0.02969944

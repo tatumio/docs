@@ -1,0 +1,55 @@
+type: object
+required:
+- chain
+- type
+properties:
+  chain:
+    type: string
+    description: The blockchain to estimate the fee for
+    enum:
+    - CELO
+    - ETH
+    - BSC
+    - XDC
+    - ONE
+    - MATIC
+    - KLAY
+  type:
+    type: string
+    description: The type of the transaction
+    enum:
+    - DEPLOY_ERC20
+    - DEPLOY_NFT
+    - MINT_NFT
+    - BURN_NFT
+    - TRANSFER_NFT
+    - TRANSFER_ERC20
+    - DEPLOY_AUCTION
+    - DEPLOY_MARKETPLACE
+  sender:
+    type: string
+    maxLength: 42
+    minLength: 42
+    example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+    description: (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address
+      of the sender address
+  recipient:
+    description: (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address
+      of the recipient address
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  contractAddress:
+    description: (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address
+      of the smart address of the fungible token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  amount:
+    description: (Only if <code>type=TRANSFER_ERC20</code>) The amount of the fungible
+      token to be sent
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string

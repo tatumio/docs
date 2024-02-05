@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: trade.currency1AccountId.frozen
+    example: trade.currency1AccountId.frozen
+    type: string
+  message:
+    description: Currency1 account ${trade.currency1AccountId} is frozen, unable to
+      perform trade.
+    example: Currency1 account ${trade.currency1AccountId} is frozen, unable to perform
+      trade.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

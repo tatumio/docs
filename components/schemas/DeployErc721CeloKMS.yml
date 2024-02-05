@@ -1,0 +1,42 @@
+type: object
+properties:
+  name:
+    description: Name of the ERC721 token
+    example: My ERC721
+    maxLength: 100
+    minLength: 1
+    type: string
+  symbol:
+    description: Symbol of the ERC721 token
+    example: ERC_SYMBOL
+    maxLength: 30
+    minLength: 1
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+  feeCurrency:
+    type: string
+    description: Currency to pay for transaction gas
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- name
+- symbol
+- feeCurrency
+- signatureId

@@ -1,0 +1,44 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: Chain to work with.
+    enum:
+    - CELO
+  uri:
+    description: URI of the Multi Token contract
+    example: example.com
+    maxLength: 100
+    minLength: 1
+    type: string
+  publicMint:
+    description: True if the contract is publicMint type
+    example: true
+    type: boolean
+  fromPrivateKey:
+    description: Private key of account address, from which gas for deployment of
+      ERC1155 will be paid. Private key, or signature Id must be present.
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to transaction. If not present, last known nonce
+      will be used.
+  feeCurrency:
+    type: string
+    description: Currency to pay for transaction gas
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- chain
+- uri
+- feeCurrency
+- fromPrivateKey

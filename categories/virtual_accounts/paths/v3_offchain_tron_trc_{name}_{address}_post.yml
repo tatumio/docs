@@ -1,0 +1,69 @@
+deprecated: true
+description: '<p><b>This method is deprecated.<br/>Use <a href="#operation/storeTokenAddress">this
+  method</a> instead.</b></p><br/>
+
+  <h4>2 credits per API call.</h4>
+
+  '
+operationId: storeTrcAddress
+parameters:
+- description: TRC-10 Token ID or TRC-20 contract address
+  in: path
+  name: address
+  required: true
+  schema:
+    maxLength: 34
+    minLength: 7
+    example: TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW
+    type: string
+- description: TRC 10/20 symbol name.
+  in: path
+  name: name
+  required: true
+  schema:
+    maxLength: 30
+    minLength: 1
+    pattern: ^[a-zA-Z0-9_]+$
+    example: MY_TOKEN
+    type: string
+responses:
+  '204':
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20NotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Set'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Set the contract address of a TRC-10 or TRC-20 token
+tags:
+- Blockchain operations

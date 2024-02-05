@@ -1,0 +1,40 @@
+description: <h4>5 credits per API call.</h4><br/><p>Get Binance current block number.</p>
+operationId: BnbGetCurrentBlock
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: number
+          description: Current block number
+          example: 6491272
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BnbFailed'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get Binance current block
+tags:
+- BNB Beacon Chain

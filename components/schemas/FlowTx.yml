@@ -1,0 +1,101 @@
+type: object
+properties:
+  referenceBlockId:
+    description: Id of the block
+    type: string
+    example: ad8b9ab637d56e19188cd5410db6e993fbf66216296c99f7934cf9f3594f9658
+  script:
+    description: Script to execute in the transaction
+    type: string
+  args:
+    description: Args to the transaction
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          example: Address
+        value:
+          type: string
+          example: '0x21cbd745a4df66f1'
+  gasLimit:
+    type: number
+    example: 1000
+    description: Gas limit for the transaction
+  proposalKey:
+    type: object
+    properties:
+      address:
+        type: string
+        example: 21cbd745a4df66f1
+      keyId:
+        type: number
+        example: 0
+      sequenceNumber:
+        type: number
+        example: 20
+  payer:
+    type: string
+    description: Address from which the assets and fees were debited
+    example: 955cd3f17b2fd8ad
+  payloadSignatures:
+    description: Array of payload signatures.
+    type: array
+    items:
+      type: object
+      properties:
+        address:
+          type: string
+          example: 21cbd745a4df66f1
+        keyId:
+          type: number
+          example: 0
+        signature:
+          type: string
+          example: 17a936b93b405f74af8ed4c70884ef10d98e900d04fb05bf12767e64ce5e498194348a13952c86335f56c8638fbfd0b1efde66b87e6df9ad687833709f9bd3f3
+  envelopeSignatures:
+    description: Array of envelope signatures.
+    type: array
+    items:
+      type: object
+      properties:
+        address:
+          type: string
+          example: 21cbd745a4df66f1
+        keyId:
+          type: number
+          example: 0
+        signature:
+          type: string
+          example: 17a936b93b405f74af8ed4c70884ef10d98e900d04fb05bf12767e64ce5e498194348a13952c86335f56c8638fbfd0b1efde66b87e6df9ad687833709f9bd3f3
+  status:
+    type: number
+    example: 4
+    description: Status of the transaction
+  statusCode:
+    type: number
+    example: 0
+    description: Status cofe of the transaction
+  errorMessage:
+    type: string
+  events:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+          example: A.7e60df042a9c0868.FlowToken.TokensWithdrawn
+        transactionId:
+          type: string
+          example: d1c75a84e4bdf0dd9bf1bcd0ce4fb25f89e2ed3c5e9574dbca2760b52c428717
+        transactionIndex:
+          type: number
+          example: 0
+        eventIndex:
+          type: number
+          example: 0
+        data:
+          type: object
+          description: Event specific data. May vary.

@@ -1,0 +1,50 @@
+type: object
+required:
+- chain
+- type
+- fromAddress
+- to
+properties:
+  chain:
+    type: string
+    description: Blockchain to estimate fee for.
+    enum:
+    - BTC
+    - DOGE
+    - LTC
+  type:
+    type: string
+    description: Type of transaction
+    enum:
+    - TRANSFER
+  fromAddress:
+    description: Array of addresses. Tatum will automatically scan last 100 transactions
+      for each address and will use all of the unspent values. We advise to use this
+      option if you have 1 address per 1 transaction only.
+    type: array
+    items:
+      type: string
+      example: 2N9bBiH2qrTDrPCzrNhaFGdkNKS86PJAAAS
+      minimum: 30
+      maximum: 50
+  to:
+    description: Array of addresses and values to send bitcoins to. Values must be
+      set in BTC. Difference between from and to is transaction fee.
+    type: array
+    items:
+      type: object
+      required:
+      - address
+      - value
+      properties:
+        address:
+          description: Destination address.
+          type: string
+          example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+          minimum: 30
+          maximum: 60
+        value:
+          description: Amount to be sent, in BTC.
+          type: number
+          minimum: 0
+          example: 0.02969944

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: transaction.invalid.body
+    example: transaction.invalid.body
+    type: string
+  message:
+    description: Either UTXO, or addresses must be present.
+    example: Either UTXO, or addresses must be present.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

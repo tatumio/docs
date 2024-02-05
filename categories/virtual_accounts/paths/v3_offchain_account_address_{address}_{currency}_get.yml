@@ -1,0 +1,80 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Check whether a blockchain address with the specified cryptocurrency is registered
+  within Tatum and is assigned to a virtual account (that is, whether this blockchain
+  address is a deposit address associated with the virtual account).</p>
+
+  <p>If the blockchain address is assigned to a virtual account, information about
+  this account is returned. Otherwise, an error message is returned.</p>
+
+  '
+operationId: addressExists
+parameters:
+- description: The cryptocurrency of the blockchain address to check
+  in: path
+  name: currency
+  required: true
+  schema:
+    type: string
+    example: BNB
+- description: The blockchain address to check
+  in: path
+  name: address
+  required: true
+  schema:
+    example: tbnb1sfj9981j2eo1ij2e09
+    type: string
+- description: Only for BNB Beacon Chain, Stellar, or XRPL<ul><li>For <b>BNB Beacon
+    Chain</b>, specify the memo.</li><li>For <b>Stellar</b>, specify the message.</li><li>For
+    <b>XRPL</b>, specify the DestinationTag.</li></ul>
+  in: query
+  name: index
+  required: false
+  schema:
+    example: 1
+    type: number
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Account'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressNotFound'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Check whether a blockchain address is assigned to a virtual account
+tags:
+- Blockchain addresses

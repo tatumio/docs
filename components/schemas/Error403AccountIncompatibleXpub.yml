@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.xpub.incompatible
+    example: account.xpub.incompatible
+    type: string
+  message:
+    description: Xpub not compatible with account currency.
+    example: Xpub not compatible with account currency.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

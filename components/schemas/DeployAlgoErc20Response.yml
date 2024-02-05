@@ -1,0 +1,15 @@
+properties:
+  accountId:
+    description: Account ID with the type of currency as created ERC20 token symbol.
+      Account will be unfrozen when ERC20 contract address will be set.
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  txId:
+    description: TX hash of successful transaction. From this transaction receipt
+      contract address can be obtained.
+    example: JGDMW6F6BUWQLFXDEPZIUO5WCTQOL3QV7KZ2SBV44K5WE6SSNN7Q
+    type: string
+type: object
+required:
+- accountId
+- txId

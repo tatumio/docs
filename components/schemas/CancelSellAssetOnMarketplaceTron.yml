@@ -1,0 +1,39 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: Address of the marketplace smart contract.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  erc20Address:
+    maxLength: 34
+    minLength: 34
+    description: Optional address of the TRC20 token, which will be used as a selling
+      currency of the NFT.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+required:
+- feeLimit
+- chain
+- contractAddress
+- listingId
+- fromPrivateKey

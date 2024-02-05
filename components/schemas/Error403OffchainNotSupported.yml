@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: offchain.not.supported
+    example: offchain.not.supported
+    type: string
+  message:
+    description: Offchain not supported for account with ${account.currency} currency.
+    example: Offchain not supported for account with ${account.currency} currency.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

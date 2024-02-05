@@ -1,0 +1,14 @@
+properties:
+  reference:
+    description: Transaction reference of the transaction connected to this withdrawal.
+    example: 5e6be8e9e6aa436299950c41
+    type: string
+  data:
+    items:
+      $ref: '../migrated.yml#/components/schemas/ResponseData'
+    type: array
+  id:
+    description: ID of withdrawal
+    example: 5e68c66581f2ee32bc354087
+    type: string
+type: object

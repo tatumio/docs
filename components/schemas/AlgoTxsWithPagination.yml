@@ -1,0 +1,12 @@
+type: object
+properties:
+  nextToken:
+    description: Used for pagination, when making another request provide this token
+      with the next parameter.
+    type: string
+    example: ywAAAAAAAAAAAAAA
+  transactions:
+    description: Array of transactions.
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/AlgoTx'

@@ -1,0 +1,72 @@
+type: object
+properties:
+  chain:
+    description: The blockchain to work with
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  custodialAddress:
+    maxLength: 34
+    minLength: 34
+    description: The gas pump address that transfers the asset; this is the address
+      that you <a href="#operation/PrecalculateGasPumpAddresses">precalculated</a>
+      and <a href="#operation/ActivateGasPumpAddresses">activated</a> earlier and
+      that is assigned to a customer in your custodial application; this is not the
+      "master address"
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  recipient:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address that receives the asset
+    example: TYMcTVBz48okKLRczhwiDu22V6XG3yk6W9
+    type: string
+  contractType:
+    type: number
+    description: The type of the asset to transfer. Set <code>0</code> for fungible
+      tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent),
+      or <code>3</code> for native blockchain currencies.
+    example: 0
+    enum:
+    - 0
+    - 1
+    - 3
+  tokenAddress:
+    maxLength: 34
+    minLength: 34
+    description: (Only if the asset is a fungible token or NFT) The address of the
+      token to transfer. Do not use if the asset is a native blockchain currency.
+    example: TYMG3ykLRczh6W9cTVBz48wiDu22V6XokK
+    type: string
+  amount:
+    description: (Only if the asset is a fungible token or native blockchain currency)
+      The amount of the asset to transfer. Do not use if the asset is an NFT.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  tokenId:
+    description: (Only if the asset is an NFT) The ID of the token to transfer. Do
+      not use if the asset is a fungible token or native blockchain currency.
+    example: '100000'
+    type: string
+    maxLength: 256
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: The private key of the blockchain address that owns the gas pump
+      address ("master address")
+  feeLimit:
+    type: number
+    minimum: 0
+    description: The maximum amount to be paid as the gas fee (in TRX)
+    example: 10
+required:
+- custodialAddress
+- chain
+- contractType
+- feeLimit
+- recipient
+- fromPrivateKey

@@ -1,0 +1,88 @@
+type: object
+required:
+- to
+- fromUTXO
+- fee
+- changeAddress
+properties:
+  fromUTXO:
+    description: The array of transaction hashes, indexes of its UTXOs, and the private
+      keys of the associated blockchain addresses
+    type: array
+    items:
+      type: object
+      required:
+      - txHash
+      - index
+      - address
+      - amount
+      - privateKey
+      properties:
+        txHash:
+          description: The transaction hash of the UTXO to be spent
+          type: string
+          example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+          minLength: 64
+          maxLength: 64
+        index:
+          description: The index of the UTXO to be spent
+          type: number
+          example: 0
+          minimum: 0
+          maximum: 2147483647
+        amount:
+          description: The amount of the UTXO to be spent, in ADA
+          type: number
+          example: 0
+          minimum: 0
+          maximum: 1.652
+        privateKey:
+          description: The private key of the blockchain address that holds the UTXO
+            to be spent
+          type: string
+          example: 8873d5e84af86978f03b63d9ffc9c6f940bd8501d32e91980c904e8d81c305507dc95992faa5aefccb263b28b411eda2dde7882d922742663804a69d78182e34
+          minLength: 128
+          maxLength: 128
+        address:
+          description: The address that holds the UTXO to be spent
+          type: string
+          example: addr_test1vzfp68vn36ze5yz7x7evracmasuptjmz99qk4j23gun3pcqhlevq5
+          minLength: 0
+          maxLength: 128
+  to:
+    description: The array of blockchain addresses to send the assets to and the amounts
+      that each address should receive (in ADA). The difference between the UTXOs
+      calculated in the <code>fromUTXO</code> section and the total amount to receive
+      calculated in the <code>to</code> section will be used as the gas fee. To explicitly
+      specify the fee amount and the blockchain address where any extra funds remaining
+      after covering the fee will be sent, set the <code>fee</code> and <code>changeAddress</code>
+      parameters.
+    type: array
+    items:
+      type: object
+      required:
+      - address
+      - value
+      properties:
+        address:
+          description: The blockchain address to receive the assets
+          type: string
+          example: addr_test1vzdts2y4k47zwypzdh36azxx0w4v8tev6m6svtz9fud0emgchuswu
+          minimum: 30
+          maximum: 128
+        value:
+          description: The amount to receive (in ADA)
+          type: number
+          minimum: 0
+          example: 0.02969944
+  fee:
+    type: number
+    description: The fee to be paid for the transaction (in ADA).
+    example: 0.0015
+  changeAddress:
+    description: The blockchain address to send any extra assets remaning after covering
+      the fee
+    type: string
+    example: addr_test1vzdts2y4k47zwypzdh36azxx0w4v8tev6m6svtz9fud0emgchuswu
+    minimum: 30
+    maximum: 128

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xrp.fee
+    example: xrp.fee
+    type: string
+  message:
+    description: Unable to calculate fee.
+    example: Unable to calculate fee.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

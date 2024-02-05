@@ -1,0 +1,83 @@
+type: object
+properties:
+  type:
+    type: string
+    description: Type of transaction.
+    example: null
+  nonce:
+    type: number
+    description: Nonce of the transaction.
+    example: 2
+  round:
+    type: number
+    description: The round number.
+    example: 186580
+  epoch:
+    type: number
+    description: An epoch is a sequence of consecutive rounds during which the configuration
+      of the network does not change (currently aprox. 24 hrs in length).
+    example: 12
+  value:
+    type: string
+    description: Transferred value.
+    example: '1000000000000000000'
+  receiver:
+    type: string
+    description: Address of the receiver.
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7
+  sender:
+    type: string
+    description: Address of the sender.
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq1
+  gasPrice:
+    type: number
+    description: Gas price provided by the sender
+    example: 1000000000
+  gasLimit:
+    type: number
+    description: Gas provided by the sender
+    example: 70000
+  data:
+    type: string
+    description: Data field in transaction.
+    example: Zm9yIHRlc3Rz
+  signature:
+    type: string
+    description: Signature of the transaction.
+    example: c6ab10b401f14b122caf9d2ef80d532b986aa82b589dac77d77929da27ae2382c6ab10b401f14b122caf9d2ef80d532b986aa82b589dac77d77929da27ae238
+  sourceShard:
+    type: number
+    description: Source shard.
+    example: 2
+  destinationShard:
+    type: number
+    description: Destination shard.
+    example: 1
+  blockNonce:
+    type: number
+    description: Nonce of block which contains current transaction.
+    example: 186535
+  blockHash:
+    type: string
+    description: Hash of block which contains current transaction.
+    example: bd2de3618929b696807f6ef8a619f93d29d639aec9277f9c6f8569a8487141b1
+  miniblockHash:
+    type: string
+    description: Miniblock hash.
+    example: 7cb0a10cf9e9ec9ff719ffe99349db3feac3ec217b6de62f6cf7756647194bbf
+  timestamp:
+    type: number
+    description: The unix timestamp for when the block was collated.
+    example: 1569600592
+  status:
+    type: string
+    description: Status of the transaction.
+    example: Success
+  hyperblockNonce:
+    type: number
+    description: Nonce of the hyperblockwhere this transaction was in.
+    example: 123321
+  hyperblockHash:
+    type: string
+    description: Hash of the hyperblock where this transaction was in.
+    example: 715224f1f7d8330e3837500d1f82431954e30db6149f3ee4644d0950576d8dfe

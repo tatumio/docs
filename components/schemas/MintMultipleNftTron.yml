@@ -1,0 +1,61 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: TRON
+    description: The blockchain to work with
+    enum:
+    - TRON
+  to:
+    type: array
+    description: Blockchain address to send NFT token to.
+    example:
+    - TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    items:
+      maxLength: 34
+      minLength: 34
+      type: string
+  tokenId:
+    type: array
+    description: ID of token to be created.
+    example:
+    - '123'
+    items:
+      type: string
+      maxLength: 78
+      example: '123'
+      format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    type: array
+    example:
+    - https://my_token_data.com
+    items:
+      type: string
+      maxLength: 256
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: Address of NFT token
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+    minLength: 64
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  feeLimit:
+    type: number
+    description: The maximum amount to be paid as the transaction fee (in TRX)
+    example: 600
+required:
+- chain
+- to
+- contractAddress
+- url
+- fromPrivateKey
+- feeLimit
+- tokenId

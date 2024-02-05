@@ -1,0 +1,69 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Generate a Bitcoin address from the extended public key of the wallet. The address
+  is generated for the specific index - each extended public key can generate up to
+  2^32 addresses with the index starting from 0 up to 2^31 - 1.</p>
+
+  '
+operationId: BtcGenerateAddress
+parameters:
+- description: Extended public key of a wallet.
+  in: path
+  name: xpub
+  required: true
+  example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
+  schema:
+    type: string
+- description: Derivation index of the desired address to be generated.
+  in: path
+  name: index
+  required: true
+  example: 0
+  schema:
+    type: number
+    minimum: 0
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/GeneratedAddressBtc'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Generate a Bitcoin address from the wallet's extended public key
+tags:
+- Bitcoin

@@ -1,0 +1,77 @@
+required:
+- txId
+- address
+- timestamp
+- xpub
+- derivationKey
+- amount
+- status
+- accountId
+- currency
+- reference
+- vout
+- spent
+- blockHeight
+properties:
+  txId:
+    type: string
+    example: 6498A3BE7313FEF32C9C0130F321D7808439F7F59D41932122383CC9E109F534
+  address:
+    description: Blockchain address.
+    example: 7c21ed165e294db78b95f0f181086d6f
+    type: string
+  timestamp:
+    type: number
+    minimum: 0
+    example: 1613654998398
+    description: End interval in UTC millis.
+  xpub:
+    description: Extended public key to derive address from.
+    example: xpub6FB4LJzdKNkkpsjggFAGS2p34G48pqjtmSktmK2Ke3k1LKqm9ULsg8bGfDakYUrdhe2EHw5uGKX9DrMbrgYnVfDwrksT4ZVQ3vmgEruo3Ka
+    type: string
+  derivationKey:
+    description: Derivation key index for given address.
+    format: int32
+    type: integer
+    maximum: 2147483647
+  amount:
+    type: string
+    description: Amount of the trade
+    example: '15000'
+  status:
+    type: string
+    example: Done
+    description: Status of deposit
+    enum:
+    - InProgress
+    - Done
+    - Failed
+  accountId:
+    description: Account ID.
+    example: 5e68c66581f2ee32bc354087
+    type: string
+  currency:
+    type: string
+    example: BTC
+    description: Currency
+  reference:
+    type: string
+    example: some reference
+  vout:
+    type: number
+    example: 0
+  spent:
+    type: boolean
+  blockHeight:
+    type: number
+    minimum: 0
+    description: Block of deposit
+    example: 228232166
+  blockHash:
+    description: Hash of the block where this transaction was in.
+    type: string
+    example: '0xcf2c40f475e78c7c19778e1ae999a0e371c9319b38182ea15dc94536f13f9137'
+  from:
+    description: Blockchain address.
+    example: 7c21ed165e294db78b95f0f181086d6f
+    type: string

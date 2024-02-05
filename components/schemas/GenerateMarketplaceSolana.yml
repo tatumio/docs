@@ -1,0 +1,61 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - SOL
+    example: SOL
+    type: string
+  marketplaceFee:
+    type: number
+    description: The percentage of the amount that an NFT was sold for that will be
+      sent to the marketplace as a fee. To set the fee to 1%, set this parameter to
+      <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set
+      50%, set this parameter to <code>5000</code>, and so on.
+    example: 150
+    minimum: 0
+    maximum: 10000
+  from:
+    description: The address that will be the owner of the marketplace
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  treasuryMint:
+    description: Address of a SPL token contract
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  treasuryWithdrawalDestination:
+    description: The address that will be able to withdraw funds from the marketplace
+      treasury account to own address
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  feeWithdrawalDestination:
+    description: The address that will be able to withdraw funds from the marketplace
+      fee account to own address
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  requiresSignOff:
+    description: Set to "false" if you do not want the marketplace to sign all operations
+      related to the listings and sales; if not set, defaults to "true" (the marketplace
+      must sign all the operations)
+    example: true
+    type: boolean
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    minLength: 87
+    description: The private key of the blockchain address from which the fee will
+      be deducted
+required:
+- chain
+- marketplaceFee
+- from
+- fromPrivateKey

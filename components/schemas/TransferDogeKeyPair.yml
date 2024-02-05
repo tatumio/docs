@@ -1,0 +1,92 @@
+properties:
+  senderAccountId:
+    description: Sender account ID
+    example: 5e68c66581f2ee32bc354087
+    maxLength: 24
+    minLength: 24
+    type: string
+  address:
+    description: Blockchain address to send assets to. For BTC, LTC, DOGE and BCH,
+      it is possible to enter list of multiple recipient blockchain addresses as a
+      comma separated string.
+    example: mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7
+    maxLength: 10000
+    minLength: 1
+    type: string
+  amount:
+    description: Amount to be withdrawn to blockchain.
+    maxLength: 38
+    example: '0.001'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  fee:
+    description: Fee to be submitted as a transaction fee to blockchain. If none is
+      set, default value of 1 DOGE is used.
+    example: '1'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  multipleAmounts:
+    description: For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple
+      recipient blockchain amounts. List of recipient addresses must be present in
+      the address field and total sum of amounts must be equal to the amount field.
+    type: array
+    items:
+      type: string
+      example: '0.1'
+      pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  keyPair:
+    description: 'Array of assigned blockchain addresses with their private keys.
+
+      Either mnemonic, keyPair or signature Id must be present - depends on the type
+      of account and xpub.
+
+      Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic
+      based.
+
+      '
+    type: array
+    items:
+      type: object
+      properties:
+        address:
+          type: string
+          description: Blockchain address assigned to account withdrawal is made from.
+          maxLength: 50
+          minLength: 30
+        privateKey:
+          type: string
+          description: Private key of blockchain address.
+          maxLength: 52
+          example: cTmS2jBWXgFaXZ2xG9jhn67TiyTshnMp3UedamzEhGm6BZV1vLgQ
+          minLength: 52
+  attr:
+    description: Used to parametrize withdrawal as a change address for left coins
+      from transaction.
+    maxLength: 256
+    minLength: 1
+    type: string
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    description: Note visible to owner of withdrawing account
+    example: Sender note
+    maxLength: 500
+    minLength: 1
+    type: string
+required:
+- amount
+- senderAccountId
+- address
+- keyPair
+- attr
+type: object

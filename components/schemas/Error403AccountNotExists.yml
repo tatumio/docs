@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.not.exists
+    example: account.not.exists
+    type: string
+  message:
+    description: No such account.
+    example: No such account.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

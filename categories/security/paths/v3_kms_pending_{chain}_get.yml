@@ -1,0 +1,83 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms"
+  target="_blank">KMS</a>.</p>
+
+  '
+operationId: GetPendingTransactionsToSign
+parameters:
+- description: Blockchain to get pending transactions for.
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    maxLength: 24
+    minLength: 24
+    enum:
+    - ADA
+    - BNB
+    - BTC
+    - ETH
+    - XLM
+    - XRP
+    - BCH
+    - LTC
+    - DOGE
+    - VET
+    - BSC
+    - MATIC
+    - CELO
+    - FLOW
+    - TRON
+    - ONE
+    - XDC
+    - EGLD
+    - KLAY
+    - SOL
+- description: Signature IDs of the KMS which invokes this endpoint. If multiple,
+    they should be separated by comma.
+  in: query
+  name: signatures
+  required: false
+  schema:
+    type: string
+    example: 6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-8f1df0de6885,6d78dad2-518f-4e76-8255-8f1df0de6886
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/PendingTransaction'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get pending transactions to sign
+tags:
+- Key Management System

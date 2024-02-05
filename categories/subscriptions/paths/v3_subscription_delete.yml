@@ -1,0 +1,30 @@
+description: '<h4>2 credits per API call.</h4><br/><p>Disable HMAC hash ID on the
+  fired webhooks from Tatum API.</p>
+
+  '
+operationId: disableWebHookHmac
+responses:
+  '204':
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Disable HMAC webhook digest
+tags:
+- Notification subscriptions

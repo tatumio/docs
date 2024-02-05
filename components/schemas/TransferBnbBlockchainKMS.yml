@@ -1,0 +1,47 @@
+type: object
+properties:
+  to:
+    description: Blockchain address to send assets.
+    example: tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex
+    maxLength: 100
+    minLength: 1
+    type: string
+  currency:
+    description: Currency to transfer from Binance Blockchain Account.
+    enum:
+    - BNB
+    example: BNB
+    type: string
+  amount:
+    description: Amount to be sent in BNB.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: 'Signature hash of the mnemonic, which will be used to sign transactions
+      locally.
+
+      All signature Ids should be present, which might be used to sign transaction.
+
+      '
+  fromAddress:
+    description: Blockchain address to send from
+    example: tbnb1q82g2h9q0kfe7sysnj5w7nlak92csfjztymp39
+    maxLength: 50
+    minLength: 42
+    type: string
+  message:
+    maxLength: 50
+    minLength: 1
+    description: Message to recipient.
+    example: Message to recipient
+    type: string
+required:
+- to
+- amount
+- signatureId
+- fromAddress
+- currency

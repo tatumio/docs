@@ -1,0 +1,11 @@
+properties:
+  accountId:
+    description: The ID of the created virtual account with the currency set to the
+      token name (the <code>symbol</code> parameter of the request body)
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  address:
+    description: The deposit address of the virtual account
+    example: TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW
+    type: string
+type: object

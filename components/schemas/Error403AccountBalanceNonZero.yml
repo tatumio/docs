@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.balance.non.zero
+    example: account.balance.non.zero
+    type: string
+  message:
+    description: Unable to deactivate account with non-zero balance.
+    example: Unable to deactivate account with non-zero balance.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

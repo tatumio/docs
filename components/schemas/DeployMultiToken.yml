@@ -1,0 +1,54 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: Chain to work with.
+    enum:
+    - ETH
+    - ONE
+    - MATIC
+    - KCS
+    - KLAY
+    - BSC
+  uri:
+    description: URI of the Multi Token token
+    example: example.com
+    type: string
+  fromPrivateKey:
+    description: Private key of account address, from which gas for deployment of
+      ERC1155 will be paid. Private key, or signature Id must be present.
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+  publicMint:
+    description: True if the contract is publicMint type
+    example: true
+    type: boolean
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to transaction. If not present, last known nonce
+      will be used.
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- uri
+- chain
+- fromPrivateKey

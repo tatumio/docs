@@ -1,0 +1,68 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ALGO
+    description: The blockchain to work with
+    enum:
+    - ALGO
+  symbol:
+    description: Symbol of the ERC20 token
+    example: ERC_SYMBOL
+    maxLength: 8
+    minLength: 1
+    type: string
+  name:
+    description: Name of the ERC20 token
+    example: MyERC20
+    maxLength: 32
+    minLength: 1
+    pattern: ^[a-zA-Z0-9_]+$
+    type: string
+  supply:
+    description: Initial supply of ERC20 token. If totalCap is not defined, this will
+      be the total cap.
+    maxLength: 38
+    example: '10000000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  digits:
+    description: Number of decimal points
+    example: 18
+    maximum: 15
+    minimum: 0
+    type: number
+  from:
+    maxLength: 58
+    minLength: 58
+    description: Blockchain address to create token from
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+    type: string
+  url:
+    description: The URL pointing to the metadata
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  fee:
+    description: The transaction fee in ALGO
+    type: string
+    example: '0.001'
+required:
+- chain
+- name
+- symbol
+- supply
+- signatureId
+- digits
+- from

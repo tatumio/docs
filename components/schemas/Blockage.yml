@@ -1,0 +1,21 @@
+properties:
+  id:
+    description: The ID of the blockage
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  accountId:
+    description: The ID of the account where the amount is blocked
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  amount:
+    description: The amount blocked on the account
+    example: '5'
+    type: string
+  type:
+    description: The type of the blockage
+    type: string
+    example: DEBIT_CARD_OP
+  description:
+    description: The description of the blockage
+    type: string
+    example: Card payment in the shop.

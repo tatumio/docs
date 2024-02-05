@@ -1,0 +1,49 @@
+type: object
+properties:
+  to:
+    maxLength: 50
+    minLength: 1
+    description: Blockchain address to send HRM20 token to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  amount:
+    description: Amount to be sent.
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of HRM20 token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  digits:
+    description: Number of decimal points that HRM20 token has.
+    example: 18
+    maximum: 30
+    minimum: 1
+    type: number
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to ONE transaction. If not present, last known nonce
+      will be used.
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- to
+- contractAddress
+- signatureId
+- digits
+- amount

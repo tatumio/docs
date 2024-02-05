@@ -1,0 +1,13 @@
+properties:
+  message:
+    example: Forbidden
+    description: Forbidden
+    type: string
+  statusCode:
+    example: 403
+    description: '403'
+    type: number
+required:
+- statusCode
+- message
+type: object

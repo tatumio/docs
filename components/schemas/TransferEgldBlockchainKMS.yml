@@ -1,0 +1,53 @@
+type: object
+properties:
+  from:
+    description: Account address of the sender
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7
+    maxLength: 62
+    minLength: 62
+    type: string
+  to:
+    description: Account address of the receiver or smart contract
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq6
+    maxLength: 62
+    minLength: 62
+    type: string
+  amount:
+    type: string
+    description: Value to be sent.
+    example: '0'
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction.
+        example: '500000'
+        pattern: ^[+]?\d+$
+      gasPrice:
+        type: string
+        description: Gas price.
+        example: '1000000000'
+        pattern: ^[+]?\d+$
+  data:
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    type: string
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+required:
+- signatureId
+- from
+- to
+- amount

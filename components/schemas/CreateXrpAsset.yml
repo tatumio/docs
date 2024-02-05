@@ -1,0 +1,25 @@
+type: object
+properties:
+  issuerAccount:
+    description: Blockchain address of the issuer of the assets.
+    example: rsCZjvenhxsFycrb33gPSfXdrTNAS5uiR1
+    maxLength: 34
+    minLength: 33
+    type: string
+  token:
+    description: Asset name.
+    example: DA39A3EE5E6B4B0D3255BFEF95601890AFD80709
+    type: string
+    pattern: ^[A-F0-9]{40}$
+    maxLength: 40
+    minLength: 40
+  basePair:
+    description: Base pair for Asset. Transaction value will be calculated according
+      to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to
+      EUR.
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    example: EUR
+required:
+- basePair
+- issuerAccount
+- token

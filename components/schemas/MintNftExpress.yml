@@ -1,0 +1,34 @@
+description: <p>The <code>MintNftExpress</code> schema lets you mint NFTs on BNB Smart
+  Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using <b>NTF Express</b> with
+  the pre-built smart contract provided by Tatum.<br/>For more information, see "Use
+  the pre-built smart contract provided by Tatum to mint NFTs" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: The blockchain to work with
+    enum:
+    - BSC
+    - CELO
+    - ETH
+    - KLAY
+    - MATIC
+    - ONE
+  to:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address to send the NFT to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+required:
+- to
+- chain
+- url

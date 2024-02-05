@@ -1,0 +1,51 @@
+type: object
+properties:
+  address:
+    description: Account address.
+    type: string
+    example: '0x02fcc83938d2b63b'
+  balance:
+    description: Balance of the account in smallest FLOW unit = 1 FLOW = 1e8 unit
+    type: number
+    example: 10000000
+  fusdBalance:
+    description: FUSD Balance of the account
+    type: string
+    example: '10.00000000'
+  code:
+    description: Account code
+    type: string
+  contracts:
+    type: object
+  keys:
+    description: Array of public keys assigned.
+    type: array
+    items:
+      type: object
+      properties:
+        index:
+          description: Index of the public key.
+          type: number
+          example: 0
+        publicKey:
+          type: string
+          example: ba38c835921828e11264e35fe31cc5ad90149f803fd3106e1dd1df49567a05714ed2bf5e42d58b4fef7eb9b0f7121f446d9b607216fdf04459e007b053288287
+        signAlgo:
+          description: Type of signature algorithm. 2 - ECDSA_secp256k1
+          type: number
+          example: 2
+        hashAlgo:
+          description: Type of hash algo. 3 - SHA3_256
+          type: number
+          example: 3
+        sequenceNumber:
+          description: Number of outgoing transactions for this public key.
+          type: number
+          example: 1
+        revoked:
+          type: boolean
+          example: false
+        weight:
+          description: Weight of the key. 1000 means single signature necessary.
+          type: number
+          example: 1000

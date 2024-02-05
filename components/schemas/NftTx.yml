@@ -1,0 +1,35 @@
+type: object
+properties:
+  blockNumber:
+    type: number
+    example: 6541235
+    description: Block number
+  txId:
+    type: string
+    example: '0x955c1037608c7aecb6d1a3f150ce7d0a80536bcabb0deb69d62f55292cc4c372'
+    description: Transaction ID
+  contractAddress:
+    type: string
+    example: '0x4f54fAD27F7F46C102Cd49b8E75C5593397cd9c3'
+    description: Contract address
+  tokenId:
+    description: ID of the token.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  from:
+    type: string
+    example: '0x780c3de0aba1b51f04cfe8a5d9d277d4ad032b8d'
+    description: Sender
+  to:
+    type: string
+    example: '0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea'
+    description: recipient
+required:
+- blockNumber
+- txId
+- contractAddress
+- tokenId
+- from
+- to

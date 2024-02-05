@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: amount.format
+    example: amount.format
+    type: string
+  message:
+    description: Amount has incorrect format.
+    example: Amount has incorrect format.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

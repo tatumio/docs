@@ -1,0 +1,31 @@
+type: object
+properties:
+  fromAccount:
+    maxLength: 34
+    minLength: 33
+    description: XRP account address. Must be the one used for generating deposit
+      tags.
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    type: string
+  fromSecret:
+    maxLength: 29
+    minLength: 29
+    description: Secret for account. Secret, or signature Id must be present.
+    example: snSFTHdvSYQKKkYntvEt8cnmZuPJB
+    type: string
+  fee:
+    description: Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  rippling:
+    description: Should be true, if an account is the issuer of assets.
+    example: true
+    type: boolean
+  requireDestinationTag:
+    description: Should be true, if an account should support off-chain processing.
+    example: true
+    type: boolean
+required:
+- fromAccount
+- fromSecret

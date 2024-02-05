@@ -1,0 +1,16 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  type:
+    $ref: '../migrated.yml#/components/schemas/TokenType'
+    example: native
+  address:
+    type: string
+  balance:
+    type: string
+required:
+- chain
+- type
+- address
+- balance

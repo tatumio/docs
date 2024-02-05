@@ -1,0 +1,14 @@
+type: object
+required:
+- changeAddress
+properties:
+  changeAddress:
+    description: Address, where unspent funds will be transferred.
+    type: string
+    example: cVX7YtgL5muLTPncHFhP95oitV1mqUUA5VeSn8HeCRJbPqipzobf
+    minimum: 30
+    maximum: 110
+  fee:
+    type: string
+    description: Fee to be paid.
+    example: '0.5'

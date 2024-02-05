@@ -1,0 +1,22 @@
+type: object
+required:
+- error
+properties:
+  error:
+    type: boolean
+    description: If estimation succeeded.
+    example: false
+  contractAddress:
+    description: Contract address of ERC20 token, if transaction is ERC20 token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  data:
+    $ref: '../migrated.yml#/components/schemas/EthGasEstimationBatchResultData'
+  msg:
+    type: string
+    description: Error message. Present only if error - true.
+    example: Provided address 0xt16360210b423d3a5205923d6e64a2d142d9f426 is invalid,
+      the capitalization checksum test failed, or it's an indirect IBAN address which
+      can't be converted.

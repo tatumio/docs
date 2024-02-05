@@ -1,0 +1,30 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: FLOW
+    description: The blockchain to work with
+    enum:
+    - FLOW
+  account:
+    type: string
+    maxLength: 18
+    example: '0xc1b45bc27b9c61c3'
+    minLength: 18
+    description: Blockchain address of the sender account.
+  mnemonic:
+    type: string
+    maxLength: 500
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    minLength: 1
+    description: Mnemonic to generate private key of sender address.
+  index:
+    description: Derivation index of sender address.
+    example: 0
+    type: integer
+    maximum: 2147483647
+required:
+- chain
+- account
+- mnemonic
+- index

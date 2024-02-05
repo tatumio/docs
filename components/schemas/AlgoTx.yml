@@ -1,0 +1,73 @@
+type: object
+properties:
+  closeRewards:
+    description: rewards applied to close-remainder-to account.
+    type: number
+    example: 0
+  closingAmount:
+    description: closing amount for transaction.
+    type: number
+    example: 0
+  confirmedRound:
+    description: Round when the transaction was confirmed.
+    type: number
+    example: 16775567
+  fee:
+    description: Transaction fee
+    type: number
+    example: 0.001
+  firstValid:
+    description: First valid round for this transaction.
+    type: number
+    example: 16775565
+  genesisHash:
+    description: Hash of genesis block
+    type: string
+    example: SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=
+  genesisId:
+    description: genesis block ID.
+    type: string
+    example: testnet-v1.0
+  id:
+    description: transaction ID
+    type: string
+    example: HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ
+  intraRoundOffset:
+    description: Offset into the round where this transaction was confirmed.
+    type: number
+    example: 1
+  lastValid:
+    description: Last valid round for this transaction.
+    type: number
+    example: 16775571
+  note:
+    description: Free form data
+    type: string
+    example: cGluZ3Bvbmf0Jyl21QrtLw==
+  paymentTransaction:
+    description: payment Transaction
+    type: object
+  receiverRewards:
+    description: rewards applied to receiver account.
+    type: number
+    example: 0
+  roundTime:
+    description: Time when the block this transaction is in was confirmed.
+    type: number
+    example: 1632167753
+  sender:
+    description: Sender's address
+    type: string
+    example: U6QEM4KM7KKGCLH4FELZBGJEVVSF556ELXHUOZC4ESPFS4O4V4VQXKQRXQ
+  senderRewards:
+    description: rewards applied to sender account.
+    type: number
+    example: 0
+  signature:
+    description: signature
+    type: object
+  txType:
+    description: indicates what type of transaction this is. Different types have
+      differnet fields.
+    type: string
+    example: pay

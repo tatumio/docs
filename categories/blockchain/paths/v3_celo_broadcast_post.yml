@@ -1,0 +1,59 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Broadcast signed transaction to Celo blockchain. This method is used internally
+  from Tatum KMS or Tatum client libraries.
+
+  It is possible to create custom signing mechanism and use this method only for broadcasting
+  data to the blockchain.</p>
+
+  '
+operationId: CeloBroadcast
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/BroadcastKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403Celo'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Broadcast signed Celo transaction
+tags:
+- Celo

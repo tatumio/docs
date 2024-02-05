@@ -1,0 +1,64 @@
+summary: Generate a TRON wallet
+description: "<p><b>1 credit per API call</b></p>\n<p>Tatum supports BIP44 HD wallets.\
+  \ It is very convenient and secure, since it can generate 2^31 addresses from 1\
+  \ mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order\
+  \ and can restore access to all generated addresses and private keys.<br/>Each address\
+  \ is identified by 3 main values:<ul><li>Private Key - your secret value, which\
+  \ should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation\
+  \ index - index of generated address</li></ul></p><p>Tatum follows BIP44 specification\
+  \ and generates for Bitcoin wallet with derivation path m'/44'/195'/0'/0. More about\
+  \ BIP44 HD wallets can be found here - <a target=\"_blank\" href=\"https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki\"\
+  >https://github.com/tron/bips/blob/master/bip-0044.mediawiki</a>.\n        Generate\
+  \ BIP44 compatible Tron wallet.</p>\n"
+operationId: GenerateTronwallet
+parameters:
+- description: Mnemonic to use for generation of extended public and private keys.
+  in: query
+  name: mnemonic
+  required: false
+  schema:
+    type: string
+    maxLength: 500
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/TronWallet'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+tags:
+- Tron

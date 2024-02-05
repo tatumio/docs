@@ -1,0 +1,12 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/DecodedDataCommon'
+- type: object
+  properties:
+    decimals:
+      type: integer
+      description: The number of decimal places for the transferred token.
+      example: 18
+    value:
+      type: string
+      description: The value of the transferred token.
+      example: '1000'

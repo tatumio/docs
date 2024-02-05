@@ -1,0 +1,59 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - CELO
+    example: CELO
+    type: string
+  feeCurrency:
+    type: string
+    default: CELO
+    description: The currency in which the gas fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  enableFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC20 tokens, it should be marked as true.
+  enableNonFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC721 tokens, it should be marked as true.
+  enableSemiFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC1155 tokens, it should be marked as
+      true.
+  enableBatchTransactions:
+    type: boolean
+    example: false
+    description: If address should support batch transfers of the assets, it should
+      be marked as true.
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+required:
+- chain
+- signatureId
+- enableFungibleTokens
+- enableNonFungibleTokens
+- enableSemiFungibleTokens
+- enableBatchTransactions

@@ -1,0 +1,23 @@
+type: object
+required:
+- type
+- attr
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: KMS_COMPLETED_TX
+    enum:
+    - KMS_COMPLETED_TX
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.
+    required:
+    - url
+    properties:
+      url:
+        type: string
+        description: URL of the endpoint, where HTTP POST request will be sent, when
+          tx is sucessfully broadcasted using Tatum KMS.
+        example: https://dashboard.tatum.io/webhook-handler
+        maxLength: 500

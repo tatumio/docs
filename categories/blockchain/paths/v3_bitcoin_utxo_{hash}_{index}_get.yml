@@ -1,0 +1,85 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get information about a transaction output in a transaction and check whether
+  this output is a UTXO or has been spent.</p>
+
+  <p>"UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis
+  that remains at a Bitcoin address after a cryptocurrency transaction involving this
+  address has been performed. The UTXO can then be used as input for a new cryptocurrency
+  transaction. For more information about Bitcoin transactions and UTXO, see the <a
+  href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin
+  user documentation</a>.</p>
+
+  <ul>
+
+  <li>If the transaction output is an UTXO, the API returns data about it.</li>
+
+  <li>If the transaction output has been spent and there is no UTXO to return, the
+  API returns an error with the <code>404</code> response code.</li>
+
+  </ul>
+
+  '
+operationId: BtcGetUTXO
+parameters:
+- description: The transaction hash
+  in: path
+  name: hash
+  required: true
+  schema:
+    type: string
+    minLength: 64
+    maxLength: 64
+    example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+- description: The index of the transaction output that you want to check for the
+    UTXO
+  in: path
+  name: index
+  required: true
+  schema:
+    type: number
+    example: 0
+    minimum: 0
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/BtcUTXO'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcUTXO'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get information about a transaction output (UTXO) in a Bitcoin transaction
+tags:
+- Bitcoin

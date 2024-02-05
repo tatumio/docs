@@ -1,0 +1,72 @@
+description: <h4>1 credit per API call.</h4><br/><p>Lists all accounts associated
+  with a customer. Only active accounts are visible.</p>
+operationId: getAccountsByCustomerId
+parameters:
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  required: true
+- description: Offset to obtain the next page of data.
+  in: query
+  name: offset
+  schema:
+    type: number
+    example: 0
+- description: Internal customer ID
+  in: path
+  name: id
+  required: true
+  schema:
+    example: 5e68c66581f2ee32bc354087
+    type: string
+- description: For bookkeeping to distinct account purpose.
+  in: query
+  name: accountCode
+  schema:
+    maxLength: 50
+    example: AC_1011_B
+    minLength: 1
+    type: string
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Account'
+          type: array
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: List all customer accounts
+tags:
+- Account

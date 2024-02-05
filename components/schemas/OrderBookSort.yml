@@ -1,0 +1,16 @@
+description: Sorts the result by selected property. The priority of the items is determined
+  by order of the sort properties in array.
+items:
+  type: string
+  enum:
+  - PRICE_ASC
+  - PRICE_DESC
+  - CREATED_ASC
+  - CREATED_DESC
+  - AMOUNT_ASC
+  - AMOUNT_DESC
+  - FILL_ASC
+  - FILL_DESC
+  - FEE_ASC
+  - FEE_DESC
+  example: PRICE_ASC

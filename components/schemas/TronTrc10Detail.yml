@@ -1,0 +1,47 @@
+type: object
+properties:
+  ownerAddress:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: The address of the TRC-10 token's owner in the hexadecimal format
+    example: 41d2803f9c22aa429d71554c9427e97ffedcec17c7
+  name:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: The name of the TRC-10 token
+    example: My token
+  abbr:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: The abbreviated name of the TRC-10 token
+    example: SYM
+  description:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: The description of the TRC-10 token
+    example: My short description
+  url:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: The URL of the TRC-10 token
+    example: https://mytoken.com
+  totalSupply:
+    type: number
+    minimum: 0
+    description: The total supply of tokens in the TRC-10 token
+    example: 100000
+  precision:
+    type: number
+    minimum: 0
+    maximum: 5
+    description: The number of decimal places
+    example: 10
+  id:
+    type: number
+    description: The ID of the TRC-10 token
+    example: 1000540

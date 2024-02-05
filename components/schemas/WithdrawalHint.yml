@@ -1,0 +1,11 @@
+additionalProperties:
+  properties:
+    address:
+      $ref: '../migrated.yml#/components/schemas/Address'
+    amount:
+      description: Balance for address.
+      type: string
+  type: object
+description: Object containing information about balance of Ethereum funds on each
+  address linked to the account, from which withdrawal should be processed.
+type: object

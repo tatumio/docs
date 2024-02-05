@@ -1,0 +1,104 @@
+description: "<h4>2 credits per API call</h4>\n<p>Create a withdrawal from Tatum Ledger\
+  \ account to the blockchain.</p>\n  <h4>BTC, LTC, DOGE, BCH</h4>\n  <p>\n    When\
+  \ withdrawal from Tatum is executed, all deposits, which are not processed yet are\
+  \ used as an input and\n    change is moved to pool address 0 of wallet for defined\
+  \ account's xpub. If there are no unspent deposits, only last pool address 0 UTXO\
+  \ is used.\n    If balance of wallet is not sufficient, it is impossible to perform\
+  \ withdrawal from this account -> funds were transferred to another\n    linked\
+  \ wallet within system or outside of Tatum visibility.<br/>\n    For the first time\
+  \ of withdrawal from wallet, there must be some deposit made and funds are obtained\
+  \ from that. Since\n    there is no withdrawal, there was no transfer to pool address\
+  \ 0 and thus it is not present in vIn. Pool transfer is identified by missing data.address\
+  \ property in response.\n    When last not cancelled withdrawal is not completed\
+  \ and thus there is no tx id of output transaction given,\n    we cannot perform\
+  \ next withdrawal.\n  </p>\n  <h4>ETH</h4>\n  <p>\n    Withdrawal from Tatum can\
+  \ be processed only from 1 account. In Ethereum Blockchain, each address is recognized\
+  \ as an account and only funds from that account can be sent in 1 transaction.\n\
+  \    Example: Account A has 0.5 ETH, Account B has 0.3 ETH. Account A is linked\
+  \ to Tatum Account 1, Account B is linked to Tatum Account 2. Tatum Account 1 has\
+  \ balance 0.7 Ethereum and\n    Tatum Account 2 has 0.1 ETH. Withdrawal from Tatum\
+  \ Account 1 can be at most 0.5 ETH, even though balance in Tatum Private Ledger\
+  \ is 0.7 ETH.\n    Because of this Ethereum Blockchain limitation, withdrawal request\
+  \ should always contain sourceAddress, from which withdrawal will be made. To get\
+  \ available balances for Ethereum wallet accounts, use hint endpoint.\n  </p>\n\
+  \  <h4>XRP</h4>\n  <p>\n    XRP withdrawal can contain DestinationTag except of\
+  \ address, which is placed in attr parameter of withdrawal request.\nSourceTag of\
+  \ the blockchain transaction should be withdrawal ID for autocomplete purposes of\
+  \ withdrawals.\n  </p>\n  <h4>XLM</h4>\n  <p>\n    XLM withdrawal can contain memo\
+  \ except of address, which is placed in attr parameter of withdrawal request. XLM\
+  \ blockchain does not have possibility to enter source account information.\n  \
+  \  It is possible to create memo in format 'destination|source', which is supported\
+  \ way of memo in Tatum and also there is information about the sender account in\
+  \ the blockchain.\n  </p>\n<p>\nWhen withdrawal is created, all other withdrawals\
+  \ with the same currency are pending, unless the current one is marked as complete\
+  \ or cancelled.</p>\n<p>Tatum ledger transaction is created for every withdrawal\
+  \ request with operation type WITHDRAWAL. The value of the transaction is the withdrawal\
+  \ amount + blockchain fee, which should be paid.\nIn the situation, when there is\
+  \ withdrawal for ERC20, XLM, or XRP based custom assets, the fee is not included\
+  \ in the transaction because it is paid in different assets than the withdrawal\
+  \ itself.\n</p>\n"
+operationId: storeWithdrawal
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/Withdrawal'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/WithdrawalResponse'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RecipientFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalFailed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalVC'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403FeeFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxBalance'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountBtcOffchain'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountEthOffchain'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalPending'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Store withdrawal
+tags:
+- Withdrawal

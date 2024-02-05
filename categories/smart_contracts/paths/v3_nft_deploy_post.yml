@@ -1,0 +1,158 @@
+description: '<p><b>100 credits per API call on Flow<br/>
+
+  2 credits per API call on the other blockchains</b></p>
+
+  <p>Deploy an NFT smart contract on the blockchain. In a deployed NFT smart contract,
+  you can mint NFTs (one NFT at a time or multiple NFTs at once), burn, and transfer
+  NFTs.</p>
+
+  <p>Smart contracts are standardized and audited. You can review the code of a deployed
+  NFT smart contract <a href="https://github.com/tatumio/flow-contracts" target="_blank">here</a>
+  (if the contract is deployed on Flow) or <a href="https://github.com/tatumio/smart-contracts/tree/master/contracts/tatum"
+  target="_blank">here</a> (if the contract is deployed on any other supported blockchain).</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Flow</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  <li>TRON</li>
+
+  <li>Tezos</li>
+
+  <li>Horizen Eon</li>
+
+  </ul>
+
+  <p><b>General NFT smart contracts</b><br/>
+
+  By default, an NFT smart contract is deployed as a <b>general NFT smart contract
+  compatible with OpenSea royalties</b>. This is a standard NFT contract with <code>AccessControl</code>
+  and <code>Ownable</code>, enhanced with NFT batch minting. NFTs minted on this smart
+  contract are compatible with OpenSea and its royalty structure.<p>
+
+  <p>You can enable <b>public minting</b> for smart contracts. By default, public
+  minting is disabled, which means that only the blockchain address whose private
+  key was used to create the smart contract or the blockchain addresses <a href="#operation/NftAddMinter">added
+  to the smart contract as NFT minters</a> will be able to mint NFTs for the contract.
+  To enable public minting and allow anyone to mint NFTs on top of the smart contract,
+  deploy the contract with the <code>publicMint</code> parameter set to <code>true</code>
+  in the request body.</p>
+
+  <p><b>NFT smart contracts and NFT Express</b><br/>
+
+  If you want to use NFT Express to mint NFTs on the deployed smart contract, deploy
+  the smart contract as a general NFT smart contract.<br/>
+
+  After you have deployed the NFT smart contract, <a href="#operation/NftAddMinter">add
+  the Tatum minter address as an NFT minter to your smart contract</a>.</p>
+
+  <p>For the complete information about using NFT Express on your smart contract,
+  see "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When deploying an NFT smart contract, you are charged a fee for the transaction,
+  and you must sign the transaction with the private key of the blockchain address
+  from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: NftDeployErc721
+parameters:
+- description: Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
+    for testnet API Key. For mainnet API Key, this value is ignored.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNft'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftCelo'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTron'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftCeloKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTronKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftFlowPK'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftFlowMnemonic'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTezos'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Deploy an NFT smart contract
+tags:
+- NFT (ERC-721 or compatible)

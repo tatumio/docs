@@ -1,0 +1,36 @@
+type: object
+description: 1 point in the chart. This point represents the tick in the grapch based
+  on the specified time frame.
+required:
+- timestamp
+- high
+- low
+- open
+- close
+- volume
+properties:
+  timestamp:
+    type: number
+    description: Milliseconds in UTC of the time interval.
+    example: 1613654117167
+  high:
+    type: string
+    description: Highest trade value in the current interval.
+    example: '54213.21'
+  low:
+    type: string
+    description: Lowest trade value in the current interval.
+    example: '53213.54'
+  open:
+    type: string
+    description: Open trade value in the current interval.
+    example: '53513'
+  close:
+    type: string
+    description: Close trade value in the current interval.
+    example: '54113'
+  volume:
+    type: string
+    description: Total volume of assets traded in the current interval. Volume is
+      in currency1 asset.
+    example: '2.423'

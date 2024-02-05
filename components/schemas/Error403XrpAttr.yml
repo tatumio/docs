@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: attr.wrong.format
+    example: attr.wrong.format
+    type: string
+  message:
+    description: Wrong attr of withdrawal, should be of uint32 type.
+    example: Wrong attr of withdrawal, should be of uint32 type.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

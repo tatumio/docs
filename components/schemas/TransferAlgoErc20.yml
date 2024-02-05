@@ -1,0 +1,53 @@
+type: object
+properties:
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: The ID of the virtual account to send the ERC-20-equivalent Algorand
+      tokens from
+    example: 61b3bffddfb389cde19c73be
+    type: string
+  address:
+    description: The blockchain address to send the ERC-20-equivalent Algorand tokens
+      to
+    example: 5YVZBUH3STSQ5ABCTLEIEIJ7QOZFILM2DLAEEA4ZL6CU55ODZIQXO5EMYM
+    maxLength: 58
+    minLength: 58
+    type: string
+  amount:
+    description: The amount of the ERC-20-equivalent Algorand tokens to send
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  privateKey:
+    maxLength: 103
+    minLength: 103
+    description: The secret of the Algorand wallet (account). Secret, or signature
+      Id must be present.
+    example: NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q
+    type: string
+  compliant:
+    description: Compliance check; if the withdrawal is not compliant, it will not
+      be processed
+    example: false
+    type: boolean
+  paymentId:
+    description: The identifier of the token transfer that is shown on the virtual
+      account for the created transaction
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: The note for the recipient; must not contain spaces
+    example: Helloworld
+    type: string
+required:
+- senderAccountId
+- address
+- privateKey
+- amount
+- fee

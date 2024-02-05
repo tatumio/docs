@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: subscription.type.invalid
+    example: subscription.type.invalid
+    type: string
+  message:
+    description: Invalid subscription type.
+    example: Invalid subscription type.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

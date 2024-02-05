@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: erc20.address.set
+    example: erc20.address.set
+    type: string
+  message:
+    description: HRM20 address was already set.
+    example: HRM20 address was already set.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

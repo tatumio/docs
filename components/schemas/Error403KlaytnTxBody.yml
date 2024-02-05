@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: klaytn.transaction.body
+    example: klaytn.transaction.body
+    type: string
+  message:
+    description: Either currency, or tokenAddress must be defined.
+    example: Either currency, or tokenAddress must be defined.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

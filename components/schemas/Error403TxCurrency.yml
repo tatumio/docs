@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: transaction.currency.incompatible
+    example: transaction.currency.incompatible
+    type: string
+  message:
+    description: Incompatible currencies for sender account ${transaction.senderAccountId}
+      and recipient account ${transaction.recipientAccountId}.
+    example: Incompatible currencies for sender account ${transaction.senderAccountId}
+      and recipient account ${transaction.recipientAccountId}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

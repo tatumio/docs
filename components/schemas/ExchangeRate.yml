@@ -1,0 +1,34 @@
+description: FIAT value in EURO of the FIAT or crypto asset.
+properties:
+  id:
+    description: FIAT or crypto asset.
+    example: BTC
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+  value:
+    description: FIAT value of the asset in given base pair.
+    example: '1235.56'
+    type: string
+  basePair:
+    description: Base pair.
+    example: EUR
+    default: EUR
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+  timestamp:
+    description: Date of validity of rate in UTC.
+    example: 1572031674384
+    type: number
+  source:
+    description: Source of base pair.
+    example: fixer.io
+    type: string
+  batchId:
+    description: Used for identification in batch calls
+    example: one
+    type: string
+type: object
+required:
+- id
+- value
+- basePair
+- timestamp
+- source

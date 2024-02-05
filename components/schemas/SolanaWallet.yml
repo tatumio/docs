@@ -1,0 +1,14 @@
+type: object
+properties:
+  mnemonic:
+    description: Generated mnemonic for wallet.
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    type: string
+  address:
+    description: Generated account address.
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  privateKey:
+    description: Generated private key for account.
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    type: string

@@ -1,0 +1,17 @@
+type: object
+required:
+- address
+- privateKey
+properties:
+  address:
+    description: The blockchain address to send the assets from
+    type: string
+    example: 2N9bBiH2qrTDrPCzrNhaFGdkNKS86PJAAAS
+    minimum: 30
+    maximum: 50
+  privateKey:
+    description: The private key of the address to send the assets from
+    type: string
+    minimum: 52
+    maximum: 52
+    example: cVX7YtgL5muLTPncHFhP95oitV1mqUUA5VeSn8HeCRJbPqipzobf

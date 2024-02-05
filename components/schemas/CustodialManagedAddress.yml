@@ -1,0 +1,33 @@
+type: object
+required:
+- address
+- walletId
+- chain
+properties:
+  address:
+    type: string
+    description: Blockchain address
+    example: 8oJ8KRL87ja7DjPSsmBG1KtfrpsfLGDMJDGzev68DGqx
+  walletId:
+    type: string
+    format: uuid
+    example: 52901013-94ab-4124-8645-acba4ee90bb8
+    description: Unique identifier of the managed address
+  chain:
+    type: string
+    description: Blockchain of the address
+    example: SOL
+    enum:
+    - BSC
+    - ETH
+    - KLAY
+    - ONE
+    - CELO
+    - MATIC
+    - SOL
+    - LTC
+    - BTC
+  privateKey:
+    type: string
+    example: 4jCFiqh3tLxKxt3vYW478qodivkCkSzqtpG4wqEaYkgdVC1o79a1VJTc5UiCmCmZBwoJmjaenfYH1ML7ra8vbNpA
+    description: Private key of the address. Not present by default.

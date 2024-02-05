@@ -1,0 +1,210 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Create a new virtual account for a customer.</p>
+
+  <ul>
+
+  <li>If the customer that you specified in the request body already exists, the newly
+  created virtual account is added to this customer''s list of accounts.</li>
+
+  <li>If the customer that you specified in the request body does not exist yet, a
+  new customer is created together with the virtual account, and the virtual account
+  is added to this customer.</li>
+
+  </ul>
+
+  <p>You can create a virtual account for any supported cryptocurrency, fiat currency,
+  Tatum virtual currency, or fungible tokens created within Tatum. Once the currency/asset
+  is set for a virtual account, it cannot be changed.</p>
+
+  <p><b>Virtual account balance</b></p>
+
+  <p>A virtual account has its own balance. The balance can be logically presented
+  by the account balance and available balance:</p>
+
+  <ul>
+
+  <li>The <b>account balance</b> (<code>accountBalance</code>) represents all assets
+  on the account, both available and blocked.</li>
+
+  <li>The <b>available balance</b> (<code>availableBalance</code>) represents the
+  account balance minus the blocked assets. Use the available balance to determine
+  how much a customer can send or withdraw from their virtual account.</li>
+
+  </ul>
+
+  <p><b>Cryptocurrency virtual accounts</b></p>
+
+  <p>When you create a virtual account based on a cryptocurrency (for example, BTC
+  or ETH), you have to provide the extended public key (<code>xpub</code>) of the
+  blockchain wallet that will be connected to this account.</p>
+
+  <p><b>NOTE:</b> Adding <code>xpub</code> to the virtual account does <b>not</b>
+  connect any specific blockchain address to this account. <code>xpub</code> is a
+  generator of addresses, not an address itself.</p>
+
+  <p>Not all blockchains provide <code>xpub</code> for wallets, or Tatum may not support
+  wallets on some blockchains. In such cases, use the wallet address or the account
+  address instead.</p>
+
+  <ul>
+
+  <li><b>ALGO:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateWallet"
+  target="_blank">generated wallet</a> instead.</li>
+
+  <li><b>BCH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin-Cash#operation/BchGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>BNB:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/BNB-Beacon-Chain#operation/BnbGenerateWallet"
+  target="_blank">generated wallet</a> instead.</li>
+
+  <li><b>BSC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscGenerateWallet"
+  target="_blank">generated wallet</a> instead.</li>
+
+  <li><b>BTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcGenerateWallet"
+  target="_blank">generated wallet</a> instead.</li>
+
+  <li><b>CELO:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>DOGE:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>EGLD:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress" target="_blank">generated
+  blockchain address</a> instead.<br />Blockchain addresses on Elrond are generated
+  based on the mnemonic of an Elrond wallet. If you do not have an Elrond wallet,
+  <a href="https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet" target="_blank">create
+  one</a>.</li>
+
+  <li><b>ETH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>FLOW:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>KCS:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>KLAY:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>LTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Litecoin#operation/LtcGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>MATIC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>SOL:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/Solana#operation/SolanaGenerateWallet" target="_blank">generated
+  wallet</a> instead.</li>
+
+  <li><b>TRON:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Tron#operation/GenerateTronwallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>XDC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcGenerateWallet"
+  target="_blank">generated wallet</a>.</li>
+
+  <li><b>XLM:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/Stellar#operation/XlmWallet" target="_blank">generated
+  account</a> instead.</li>
+
+  <li><b>XRP:</b> No <code>xpub</code> provided; use <code>address</code> from the
+  <a href="https://apidoc.tatum.io/tag/XRP#operation/XrpWallet" target="_blank">generated
+  account</a> instead.</li>
+
+  </ul>
+
+  <p><b>Connect a virtual account to the blockchain</b></p>
+
+  <ul>
+
+  <li>If the virtual account was created with the wallet''s <code>xpub</code>, <a
+  href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/generateDepositAddress"
+  target="_blank">generate a new blockchain address</a> for this account.</li>
+
+  <li>If the virtual account was created with the wallet''s or account''s address
+  instead of the wallet''s <code>xpub</code>, <a href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/assignAddress"
+  target="_blank">assign an existing blockchain address</a> to this account.</li>
+
+  </ul>
+
+  <p>You can connect multiple blockchain addresses to one virtual account.</p>
+
+  <p>Digital assets:</p>
+
+  <ul>
+
+  <li><b>USDC_MATIC</b> refers to contract <code>0x2791bca1f2de4661ed88a30c99a7a9449aa84174</code>
+  on Polygon mainnet.</li>
+
+  <li><b>USDC_MATIC_NATIVE</b> refers to contract <code>0x3c499c542cef5e3811e1192ce70d8cc03d5c3359</code>
+  on Polygon mainnet.</li>
+
+  </ul>
+
+  '
+operationId: createAccount
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateAccountXpub'
+        - $ref: '../../../components/migrated.yml#/components/schemas/CreateAccount'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Account'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403ComplianceBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403ComplianceEth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountTestnet'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountXpub'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountCurrency'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpub'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403CustomerNotExists'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403CustomerNotActive'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Create a virtual account
+tags:
+- Account

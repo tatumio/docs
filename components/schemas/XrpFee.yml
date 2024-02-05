@@ -1,0 +1,78 @@
+type: object
+properties:
+  current_ledger_size:
+    type: string
+    description: Number of transactions provisionally included in the in-progress
+      ledger.
+    example: '8'
+  current_queue_size:
+    type: string
+    description: Number of transactions currently queued for the next ledger.
+    example: '0'
+  drops:
+    description: Various information about the transaction cost (the Fee field of
+      a transaction), in drops of XRP.
+    properties:
+      base_fee:
+        type: string
+        description: The transaction cost required for a reference transaction to
+          be included in a ledger under minimum load, represented in drops of XRP.
+        example: '10'
+      median_fee:
+        type: string
+        description: An approximation of the median transaction cost among transactions
+          included in the previous validated ledger, represented in drops of XRP.
+        example: '5000'
+      minimum_fee:
+        type: string
+        description: The minimum transaction cost for a reference transaction to be
+          queued for a later ledger, represented in drops of XRP. If greater than
+          base_fee, the transaction queue is full.
+        example: '10'
+      open_ledger_fee:
+        type: string
+        description: The minimum transaction cost that a reference transaction must
+          pay to be included in the current open ledger, represented in drops of XRP.
+        example: '10'
+    type: object
+  expected_ledger_size:
+    type: string
+    description: The approximate number of transactions expected to be included in
+      the current ledger. This is based on the number of transactions in the previous
+      ledger.
+    example: '67'
+  ledger_current_index:
+    type: number
+    description: The Ledger Index of the current open ledger these stats describe.
+    example: 760411
+  levels:
+    description: Various information about the transaction cost, in fee levels. The
+      ratio in fee levels applies to any transaction relative to the minimum cost
+      of that particular transaction.
+    properties:
+      median_level:
+        type: string
+        description: The median transaction cost among transactions in the previous
+          validated ledger, represented in fee levels.
+        example: '128000'
+      minimum_level:
+        type: string
+        description: The minimum transaction cost required to be queued for a future
+          ledger, represented in fee levels.
+        example: '256'
+      open_ledger_level:
+        type: string
+        description: The minimum transaction cost required to be included in the current
+          open ledger, represented in fee levels.
+        example: '256'
+      reference_level:
+        type: string
+        description: The equivalent of the minimum transaction cost, represented in
+          fee levels.
+        example: '256'
+    type: object
+  max_queue_size:
+    type: string
+    description: The maximum number of transactions that the transaction queue can
+      currently hold.
+    example: '2000'

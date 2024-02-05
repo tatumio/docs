@@ -1,0 +1,45 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+    minLength: 64
+    description: Private key of account, from which the transaction will be initiated.
+  enableFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC20 tokens, it should be marked as true.
+  enableNonFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC721 tokens, it should be marked as true.
+  enableSemiFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC1155 tokens, it should be marked as
+      true. Not supported for TRON.
+  enableBatchTransactions:
+    type: boolean
+    example: false
+    description: If address should support batch transfers of the assets, it should
+      be marked as true.
+required:
+- chain
+- feeLimit
+- fromPrivateKey
+- enableFungibleTokens
+- enableNonFungibleTokens
+- enableSemiFungibleTokens
+- enableBatchTransactions

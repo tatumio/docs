@@ -1,0 +1,53 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: The blockchain to work with
+    enum:
+    - CELO
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The address of the smart contract
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  spender:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address to be allowed to transfer or burn the fungible
+      tokens
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  amount:
+    description: The amount of the tokens allowed to be transferred or burnt
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the smart contract's owner;
+      the fee will be deducted from the owner's address
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+required:
+- chain
+- spender
+- amount
+- feeCurrency
+- contractAddress
+- signatureId

@@ -1,0 +1,53 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: Chain to work with.
+    enum:
+    - ETH
+    - ONE
+    - MATIC
+    - KCS
+    - KLAY
+    - BSC
+  uri:
+    description: URI of the Multi Token token
+    example: example.com
+    type: string
+  publicMint:
+    description: True if the contract is publicMint type
+    example: true
+    type: boolean
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to transaction. If not present, last known nonce
+      will be used.
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- uri
+- chain
+- signatureId

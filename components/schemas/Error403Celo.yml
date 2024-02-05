@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: celo.error
+    example: celo.error
+    type: string
+  message:
+    description: 'Unexpected error occurred. Reason: ${reason}'
+    example: 'Unexpected error occurred. Reason: ${reason}'
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

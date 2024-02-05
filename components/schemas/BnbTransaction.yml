@@ -1,0 +1,40 @@
+type: object
+properties:
+  txHash:
+    type: string
+    example: 4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A
+  blockHeight:
+    type: number
+    example: 44925860
+  txType:
+    type: string
+    example: TRANSFER
+  timeStamp:
+    type: string
+    example: '2019-10-17T18:58:01.423Z'
+  fromAddr:
+    type: string
+    example: tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex
+  toAddr:
+    type: string
+    example: tbnb14wu3a8pmauj2kjswyvxtvhdrjktx60efq227uw
+  value:
+    type: string
+    example: '200.00000000'
+  txAsset:
+    type: string
+    example: BNB
+  txFee:
+    type: string
+    example: '0.00037500'
+  code:
+    type: number
+    example: 0
+  memo:
+    type: string
+    example: ''
+  source:
+    type: number
+    example: 0
+  sequence:
+    type: number

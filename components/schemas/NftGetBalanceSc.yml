@@ -1,0 +1,11 @@
+type: object
+properties:
+  data:
+    type: array
+    description: The array returning the ID of the NFTs
+    items:
+      description: The ID of the NFT
+      type: string
+      maxLength: 78
+      example: '123'
+      format: uint256

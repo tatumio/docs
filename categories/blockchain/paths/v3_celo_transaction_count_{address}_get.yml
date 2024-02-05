@@ -1,0 +1,61 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get a number of outgoing Celo transactions for the address. When a transaction
+  is sent, there can be multiple outgoing transactions,
+
+  which are not yet processed by the blockchain. To distinguish between them, there
+  is a counter called a nonce, which represents
+
+  the order of the transaction in the list of outgoing transactions.</p>
+
+  '
+operationId: CeloGetTransactionCount
+parameters:
+- description: address
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    maxLength: 42
+    minLength: 42
+    example: '0xdac17f958d2ee523a2206206994597c13d831ec7'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: number
+          example: 5
+          description: Number of transactions, that were made from this address. Can
+            be used as a nonce parameter in send transaction calls.
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get count of outgoing Celo transactions
+tags:
+- Celo

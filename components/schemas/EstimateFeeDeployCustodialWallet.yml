@@ -1,0 +1,28 @@
+type: object
+required:
+- chain
+- type
+- batchCount
+properties:
+  chain:
+    type: string
+    description: Blockchain to estimate fee for.
+    enum:
+    - CELO
+    - ETH
+    - BSC
+    - XDC
+    - ONE
+    - MATIC
+    - KLAY
+  type:
+    type: string
+    description: Type of transaction
+    enum:
+    - DEPLOY_CUSTODIAL_WALLET_BATCH
+  batchCount:
+    description: Number of addresses to create
+    example: 10
+    minimum: 1
+    maximum: 300
+    type: number

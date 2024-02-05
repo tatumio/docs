@@ -1,0 +1,11 @@
+type: object
+properties:
+  numReadonlySignedAccounts:
+    type: number
+    example: 0
+  numReadonlyUnsignedAccounts:
+    type: number
+    example: 3
+  numRequiredSignatures:
+    type: number
+    example: 1

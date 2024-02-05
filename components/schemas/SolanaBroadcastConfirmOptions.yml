@@ -1,0 +1,22 @@
+description: Options for sending and waiting for a transaction
+type: object
+properties:
+  commitment:
+    type: string
+    description: Commitment to waiting for transaction confirmation
+    example: confirmed
+    enum:
+    - confirmed
+    - finalized
+  preflightCommitment:
+    type: string
+    description: Preflight Commitment.
+    example: finalized
+    enum:
+    - confirmed
+    - finalized
+    - processed
+    - recent
+    - single
+    - singleGossip
+    - max

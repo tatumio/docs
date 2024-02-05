@@ -1,0 +1,127 @@
+description: '<p><b>4 credits per API call</b></p>
+
+  <p>Send Algos or ERC-20-equivalent Algorand tokens from a virtual account (even
+  from a virtual account without deposit addresses adssigned) to the Algorand blockchain.</p>
+
+  <p>The recipient has to agree in advance to receive assets because Algorand charges
+  users for storing assets on their addresses, and an Algorand blockchain address
+  by default does not receive assets unless explicitly agreed. Before sending any
+  asset from a virtual account to the blockchain, make sure that the recipient <a
+  href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset"
+  target="_blank">has agreed to receive the assets</a> to their address.</p>
+
+  <p>Sending Algorand assets creates an internal Tatum withdrawal request with an
+  ID. If everything works as expected, the withdrawal request is marked as complete
+  and a transaction ID is assigned to it.</p>
+
+  <ul>
+
+  <li>If a server connection is unavailable, the withdrawal request is cancelled.</li>
+
+  <li>If the transfer to the blockchain is successful, but the Tatum infrastructure
+  cannot be accesses, the ID of the blockchain transaction is returned and you have
+  to <a href="https://apidoc.tatum.io/tag/Withdrawal#operation/completeWithdrawal"
+  target="_blank">complete the withdrawal request manually</a>. Otherwise, all other
+  withdrawals will be pending.</li>
+
+  </ul>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When sending Algos or ERC-20-equivalent Algorand tokens, you are charged a fee for
+  the transaction, and you must sign the transaction with the private key of the blockchain
+  address from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: AlgoTransfer
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferAlgo'
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferAlgoErc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferAlgoKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionResult'
+          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionSignatureResult'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RecipientFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalFailed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalVC'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403FeeFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotCancelled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainCancelled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxBalance'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountEth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalPending'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthMnemonicPrivateKey'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthBroadcast'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasPrice'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxSign'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Send ALGO from a virtual account to the blockchain
+tags:
+- Blockchain operations

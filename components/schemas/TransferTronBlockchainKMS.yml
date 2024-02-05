@@ -1,0 +1,37 @@
+type: object
+properties:
+  from:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Sender address of TRON account in Base58 format.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  signatureId:
+    type: string
+    minimum: 36
+    maximum: 36
+    format: uuid
+    example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  to:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Recipient address of TRON account in Base58 format.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  amount:
+    description: Amount to be sent in TRX.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+required:
+- from
+- signatureId
+- to
+- amount

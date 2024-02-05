@@ -1,0 +1,42 @@
+type: object
+properties:
+  scriptPubKey:
+    type: object
+    properties:
+      asm:
+        type: string
+        example: OP_HASH160 905c261d73922a21a16f505cefccaa07aaee50cd OP_EQUAL
+      hex:
+        type: string
+        example: a914905c261d73922a21a16f505cefccaa07aaee50cd87
+      type:
+        type: string
+        example: scripthash
+      addresses:
+        type: array
+        items:
+          type: string
+          description: Recipient address.
+          example: n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or
+  version:
+    type: number
+    description: The version of the transaction
+    example: 2
+  height:
+    type: number
+    description: The height (number) of the block where the transaction is included
+      in
+    example: 1233224
+  value:
+    type: number
+    description: The amount of the UTXO (in 1/1000000 DOGE)
+    example: 1000
+  coinbase:
+    type: boolean
+    description: If set to "true", the transaction is a coinbase transaction (a transaction
+      created by a Bitcoin miner to collect their reward)
+    example: false
+  bestblock:
+    type: string
+    description: The block hash
+    example: 5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a

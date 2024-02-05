@@ -1,0 +1,106 @@
+type: object
+required:
+- txID
+- signature
+- blockNumber
+- ret
+- rawData
+properties:
+  ret:
+    type: array
+    description: Result of the smart contract invocation.
+    items:
+      properties:
+        contractRet:
+          type: string
+          description: Returns the value of the smart contract invocation.
+          example: SUCCESS
+    required:
+    - contractRet
+  signature:
+    type: array
+    description: List of signatures of the transaction.
+    items:
+      type: string
+      example: 91fa5d81f9578970d21fdcde4ebb849674d437b62774f34e8d9e4cb50960c0031362cbcb649553b1f5f9daf19495ae46e517d4401172b5e53bb06bfe6896e2e300
+  blockNumber:
+    type: number
+    description: The block in which the transaction was included.
+    example: 11223344
+  txID:
+    type: string
+    description: Transaction ID.
+    example: 24dd2f121a24516f22df78adf1ccc32119e3edb7760297f76a925b879f2baa98
+  netUsage:
+    type: number
+    description: Usage of the network.
+    example: 0
+  rawData:
+    type: object
+    description: Raw data of the transaction.
+    required:
+    - expiration
+    - timestamp
+    - contract
+    properties:
+      contract:
+        type: array
+        description: Smart contract invocations details.
+        items:
+          type: object
+          properties:
+            parameter:
+              type: object
+              properties:
+                value:
+                  type: object
+                  properties:
+                    data:
+                      type: string
+                      format: hex
+                      description: The amount transferred within the transaction.
+                      example: '0x000002e917e68b4e'
+                    amount:
+                      type: number
+                      description: The amount transferred within the transaction.
+                      example: 1000000
+                    owner_address:
+                      type: string
+                      example: 418632237fd33f62c549ee044dd3da779aba947dcc
+                      description: Address of the sender.
+                    to_address:
+                      type: string
+                      description: Address of the recipient.
+                      example: 41a614f803b6fd780986a42c78ec9c7f77e6ded13c
+                    ownerAddressBase58:
+                      type: string
+                      example: TNCmcTdyrYKMtmE1KU2itzeCX76jGm5Not
+                      description: Address of the sender in Base58 encoding.
+                    toAddressBase58:
+                      type: string
+                      example: TRwS7apsNdRGzMBfhB2hVC4RhqfubUYZ8P
+                      description: Address of the recipient in Base58 encoding.
+                type_url:
+                  type: string
+                  example: type.googleapis.com/protocol.TriggerSmartContract
+                  description: Type of the smart contract event.
+            type:
+              example: TriggerSmartContract
+              type: string
+              description: Type of the Smart contract.
+      ref_block_bytes:
+        type: number
+        description: The height of the transaction reference block.
+        example: 4946
+      ref_block_hash:
+        type: number
+        description: The hash of the transaction reference block.
+        example: 6d0c1a0af5a52f17
+      expiration:
+        description: Expiration of the transaction.
+        type: number
+        example: 1610067216000
+      timestamp:
+        description: Time of the transaction.
+        type: number
+        example: 1609980816000

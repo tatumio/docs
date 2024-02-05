@@ -1,0 +1,10 @@
+properties:
+  hash:
+    type: string
+    description: Transaction hash of the input.
+    example: 60bc8445c11318e45a72a3259e65118d2f352568757e6ceb8bf1b527ce68379f
+  index:
+    type: number
+    description: Transaction index of the input.
+    example: 1
+type: object

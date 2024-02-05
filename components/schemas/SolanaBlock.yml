@@ -1,0 +1,25 @@
+type: object
+properties:
+  blockHeight:
+    type: number
+    example: 94778421
+  blockTime:
+    type: number
+    example: 1638279333
+  blockhash:
+    type: string
+    example: Ch7qVhCkSqEvhWE8xzJZbJKRcsH6wtTjfiMJdt9eKiD7
+  parentSlot:
+    type: number
+    example: 97742681
+  previousBlockhash:
+    type: string
+    example: C3vsoVwVWx7yPRhsNoKpcm2CJTrnVcvimdC4bd3jTPbj
+  rewards:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/SolanaBlockReward'
+  transactions:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/SolanaBlockTx'

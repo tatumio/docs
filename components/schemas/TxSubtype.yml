@@ -1,0 +1,6 @@
+type: string
+description: The subtype of the transaction.
+enum:
+- incoming
+- outgoing
+- zero-transfer

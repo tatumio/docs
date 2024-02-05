@@ -1,0 +1,81 @@
+type: object
+required:
+- to
+- fromUTXO
+properties:
+  fromUTXO:
+    description: The array of transaction hashes, indexes of its UTXOs, and the signature
+      IDs of the associated blockchain addresses
+    type: array
+    items:
+      type: object
+      required:
+      - txHash
+      - index
+      - signatureId
+      properties:
+        txHash:
+          description: The transaction hash of the UTXO to be spent
+          type: string
+          example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+          minLength: 64
+          maxLength: 64
+        index:
+          description: The index of the UTXO to be spent
+          type: number
+          example: 0
+          minimum: 0
+          maximum: 2147483647
+        signatureId:
+          type: string
+          format: uuid
+          example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+          description: The KMS identifier of the private key of the blockchain address
+            that holds the UTXO to be spent
+        signatureIdIndex:
+          description: Index of the address in the wallet. Required when signatureId
+            represents the mnenomic.
+          type: number
+          example: 0
+          minimum: 0
+          maximum: 2147483647
+  to:
+    description: The array of blockchain addresses to send the assets to and the amounts
+      that each address should receive (in LTC). The difference between the UTXOs
+      calculated in the <code>fromUTXO</code> section and the total amount to receive
+      calculated in the <code>to</code> section will be used as the gas fee. To explicitly
+      specify the fee amount and the blockchain address where any extra funds remaining
+      after covering the fee will be sent, set the <code>fee</code> and <code>changeAddress</code>
+      parameters.
+    type: array
+    items:
+      type: object
+      required:
+      - address
+      - value
+      properties:
+        address:
+          description: The blockchain address to receive the assets
+          type: string
+          example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+          minimum: 30
+          maximum: 60
+        value:
+          description: The amount to receive (in LTC)
+          type: number
+          minimum: 0
+          example: 0.02969944
+  fee:
+    type: string
+    description: The fee to be paid for the transaction (in LTC); if you are using
+      this parameter, you have to also use the <code>changeAddress</code> parameter
+      because these two parameters only work together.
+    example: '0.0015'
+  changeAddress:
+    description: The blockchain address to send any extra assets remaning after covering
+      the fee; if you are using this parameter, you have to also use the <code>fee</code>
+      parameter because these two parameters only work together.
+    type: string
+    example: 2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7
+    minimum: 30
+    maximum: 60

@@ -1,0 +1,59 @@
+description: <h4>1 credit per API call.</h4><br/><p>Get current version of the API.</p>
+operationId: getVersion
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            version:
+              type: string
+              example: 3.0.2
+            testnet:
+              type: boolean
+              example: true
+            planName:
+              type: string
+              example: Free
+            planCode:
+              type: string
+              example: FREE
+            price:
+              type: number
+              example: 9
+            expiration:
+              type: number
+              example: 4113115784397
+            creditLimit:
+              type: number
+              example: 1000000000
+            usage:
+              type: number
+              example: 25656634
+            rolloverDay:
+              type: number
+              example: 4
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get API version
+tags:
+- Service utils

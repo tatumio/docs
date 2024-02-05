@@ -1,0 +1,59 @@
+type: object
+properties:
+  from:
+    type: string
+    description: Address of the sender.
+    example: '0x81b7E08F65Bdf5648606c89998A9CC8164397647'
+  to:
+    type: string
+    description: Address of the receiver. 'null' when its a contract creation transaction.
+    example: '0xbC546fa1716Ed886967cf73f40e8F2F5e623a92d'
+  value:
+    type: string
+    description: Value transferred in wei.
+    example: '1000000000000000000'
+  blockNumber:
+    type: number
+    description: Block number where this transaction was in.
+    example: 6470854
+  timeStamp:
+    type: string
+    description: Time of the transaction in seconds.
+    example: '1477837690'
+  hash:
+    type: string
+    description: Hash of the transaction.
+    example: '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7'
+  input:
+    type: string
+    description: The data sent along with the transaction.
+    example: ''
+  traceId:
+    type: string
+    description: Trace ID.
+    example: '0'
+  type:
+    type: string
+    description: Type of the transaction.
+    example: create
+  errCode:
+    type: string
+    description: Error code.
+    example: Bad jump destination
+  gas:
+    type: number
+    description: Gas provided by the sender.
+    example: 21000
+  isError:
+    type: string
+    example: '0'
+    description: 1 if the transaction was not successful, 0 otherwise.
+  gasUsed:
+    type: number
+    description: The amount of gas used by this specific transaction alone.
+    example: 21000
+  contractAddress:
+    type: string
+    description: The contract address created, if the transaction was a contract creation,
+      otherwise null.
+    example: '0x81b7E08F65Bdf5648606c89998A9CC8164397647'

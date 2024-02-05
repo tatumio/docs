@@ -1,0 +1,56 @@
+description: '<h4>1 credit per API call.</h4><br/>
+
+  <p>This endpoint allows one to retrieve the latest 20 transactions sent from an
+  address.</p>
+
+  '
+operationId: EgldGetTransactionAddress
+parameters:
+- description: address
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    maxLength: 62
+    minLength: 62
+    example: erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          description: List of transactions sent from an address.
+          items:
+            type: object
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get count of outgoing EGLD transactions
+tags:
+- Elrond

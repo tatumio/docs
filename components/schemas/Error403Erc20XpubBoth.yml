@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: erc20.address.xpub.both
+    example: erc20.address.xpub.both
+    type: string
+  message:
+    description: Either xpub or address must be present, not both.
+    example: Either xpub or address must be present, not both.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

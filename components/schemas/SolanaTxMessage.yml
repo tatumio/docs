@@ -1,0 +1,18 @@
+type: object
+properties:
+  header:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxMessageHeader'
+  accountKeys:
+    type: array
+    items:
+      type: string
+      example: 0974de54f77afa9ad3d474909f6ce095b9623a359a5d08cc807b8a92dd5e1f96
+  recentBlockhash:
+    type: string
+    example: C3vsoVwVWx7yPRhsNoKpcm2CJTrnVcvimdC4bd3jTPbj
+  instructions:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/SolanaTxMessageInstruction'
+  indexToProgramIds:
+    type: object

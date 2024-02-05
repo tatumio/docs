@@ -1,0 +1,74 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p><b>This endpoint is deprecated.</b></p><br/>
+
+  <p>Get Algorand transaction by specified period of time.</p>
+
+  '
+operationId: AlgorandGetPayTransactionsByFromTo
+deprecated: true
+parameters:
+- description: Start timestamp in specified period of time
+  in: path
+  name: from
+  required: true
+  schema:
+    type: string
+    example: '2021-05-01T20:44:39Z'
+- description: End timestamp in specified period of time
+  in: path
+  name: to
+  required: true
+  schema:
+    type: string
+    example: '2021-06-01T20:44:39Z'
+- description: page size for pagination
+  in: query
+  name: limit
+  required: false
+  schema:
+    type: string
+    example: '5'
+- description: Algorand Next Token for getting the next page results
+  in: query
+  name: next
+  required: false
+  schema:
+    type: string
+    example: ywAAAAAAAAAAAAAA
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/AlgoTxsWithPagination'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get Algorand Transactions between from and to
+tags:
+- Algorand

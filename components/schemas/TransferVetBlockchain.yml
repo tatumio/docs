@@ -1,0 +1,41 @@
+type: object
+properties:
+  to:
+    description: Blockchain address to send assets
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 100
+    minLength: 1
+    type: string
+  amount:
+    description: Amount to be sent in VET
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    minLength: 6
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  data:
+    type: string
+    maxLength: 10000
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction.
+        example: '40000'
+        pattern: ^[+]?\d+$
+required:
+- to
+- amount
+- fromPrivateKey

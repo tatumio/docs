@@ -1,0 +1,57 @@
+description: <p><b>You can work with Cardano by <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver"
+  target="_blank">connecting directly to a blockchain node provided by Tatum</a>.</b></p><br/><h4>1
+  credit per API call.</h4><p>Gets a Ada UTXOs by address.</p>
+operationId: AdaGetUTXOByAddress
+parameters:
+- description: Address
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/AdaUTXO'
+          type: array
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get UTXOs by address
+tags:
+- Cardano

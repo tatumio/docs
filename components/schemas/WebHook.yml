@@ -1,0 +1,73 @@
+type: object
+required:
+- id
+- type
+- subscriptionId
+- url
+- data
+- failed
+- response
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: ACCOUNT_BALANCE_LIMIT
+    enum:
+    - INCOMING_BLOCKCHAIN_HOOK
+    - ADDRESS_TRANSACTION
+    - CONTRACT_LOG_EVENT
+    - TRADE_MATCH
+    - TRADE_PARTIAL_FILL
+    - PENDING_BLOCKCHAIN_HOOK
+    - TRANSACTION_IN_THE_BLOCK
+    - KMS_FAILED_TX
+    - KMS_COMPLETED_TX
+  id:
+    type: string
+    description: ID of the WebHook
+    example: 7c21ed165e294db78b95f0f1
+  subscriptionId:
+    type: string
+    description: ID of the subscription
+    example: 7c21ed165e294db78b95f0f1
+  url:
+    type: string
+    description: ID of the subscription
+    example: http://some-host.net/webhook
+  data:
+    type: object
+    description: Data of webhook
+  nextTime:
+    type: number
+    description: Next webhook execution try time
+    example: 1653320900353
+  timestamp:
+    type: number
+    description: Webhook execution time
+    example: 1653320900353
+  retryCount:
+    type: number
+    description: Number
+    example: 3
+  failed:
+    type: boolean
+    description: Flag indicating whether this webhook was successful or not
+    example: false
+  response:
+    type: object
+    description: Response from the server in case the webhook was unsuccessful
+    required:
+    - networkError
+    properties:
+      code:
+        type: number
+        description: HTTP Status
+        example: 500
+      data:
+        type: string
+        description: Response from the server
+        example: Internal server error
+      networkError:
+        type: boolean
+        description: Flag indicating whether an error has been caused by the network
+        example: false

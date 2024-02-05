@@ -1,0 +1,107 @@
+description: <p>The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively
+  on Algorand and sign the transaction with your signature ID.<br/>For more information,
+  see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+type: object
+properties:
+  chain:
+    type: string
+    example: ALGO
+    description: The blockchain to work with
+    enum:
+    - ALGO
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  name:
+    description: The name of the NFT
+    example: My Crazy NFT
+    maxLength: 32
+    minLength: 1
+    type: string
+  from:
+    description: The address of the minting account
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+    type: string
+    maxLength: 58
+    minLength: 58
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the minting account; the
+      transaction fee will be paid from this account
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+  attr:
+    type: object
+    properties:
+      assetUnit:
+        description: The unit name of the NFT
+        example: USDT
+        type: string
+        maxLength: 8
+        minLength: 1
+      clawback:
+        description: The address of the clawback account that can claw back holdings
+          of the NFT
+        example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+        type: string
+        maxLength: 58
+        minLength: 58
+      manager:
+        description: The address of the manager account that can manage the configuration
+          of the NFT or burn it; specify this parameter if you want to be able to
+          <a href="#operation/NftBurnErc721">burn the minted NFT</a> any time later
+        example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+        type: string
+        maxLength: 58
+        minLength: 58
+      reserve:
+        description: The address of the reserve account that holds the reserve (non-minted)
+          units of the NFT
+        example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+        type: string
+        maxLength: 58
+        minLength: 58
+      freeze:
+        description: The address of the freeze account that is used to freeze holdings
+          of the NFT
+        example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+        type: string
+        maxLength: 58
+        minLength: 58
+      total:
+        description: (For minting the NFT as a <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts"
+          target="_blank">fractional NFT</a>) The number of fractions that the minted
+          NFT should be divided into<br/>The number must be a power of 10 and greater
+          that 1, for example, 10, 100, 1000...<br/>If not set, the parameter defaults
+          to 1, which means that one regular (not fractional) NFT will be minted.
+        example: 10
+        default: 1
+        type: number
+        minimum: 10
+      decimals:
+        description: (For minting the NFT as a <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts"
+          target="_blank">fractional NFT</a>) The number of decimal places in a fraction
+          of the minted NFT<br/>The number must be greater that 0 and equal to the
+          logarithm in base 10 of the number of the fractions (see the <code>total</code>
+          parameter); for example, if <code>total</code> is set to 10, <code>decimals</code>
+          must be set to 1.<br/>If not set, the parameter defaults to 0, which means
+          that one regular (not fractional) NFT will be minted.
+        example: 1
+        default: 0
+        type: number
+        minimum: 1
+        maximum: 15
+required:
+- name
+- chain
+- url
+- from
+- signatureId

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: compliance.country.btc.not.supported
+    example: compliance.country.btc.not.supported
+    type: string
+  message:
+    description: Customer country not supported for BTC.
+    example: Customer country not supported for BTC.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

@@ -1,0 +1,18 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  tokenId:
+    $ref: '../migrated.yml#/components/schemas/TokenId'
+  tokenAddress:
+    $ref: '../migrated.yml#/components/schemas/TokenAddress'
+  tokenType:
+    $ref: '../migrated.yml#/components/schemas/TokenType'
+  creator:
+    type: string
+    description: Address of the token creator.
+    example: tz1hkNPg5jQ66pJpZH2boiF5AnbAcd1dt5KS
+  name:
+    type: string
+    description: Name of the token.
+    example: My token 1

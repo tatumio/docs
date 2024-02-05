@@ -1,0 +1,63 @@
+type: object
+description: <p>The <code>MintNftSolana</code> schema lets you mint NFTs natively
+  on Solana and sign the transaction with your private key.<br/>For more information,
+  see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+properties:
+  chain:
+    type: string
+    example: SOL
+    description: The blockchain to work with
+    enum:
+    - SOL
+  to:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address to send the NFT to
+    example: 9pSkqSG71Sb25ia9WBFhoeBYjp8dhUf7fRux9xrDq89b
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address that will pay the fee for the transaction
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: 3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad
+    minLength: 64
+    description: The private key of the blockchain address that will pay the fee for
+      the transaction
+  feePayer:
+    description: Address on the Solana blockchain, from which the fee will be paid
+      for transaction. Defaults to from.
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  feePayerPrivateKey:
+    type: string
+    maxLength: 87
+    example: YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf
+    minLength: 128
+    description: Private key of the fee payer address.
+  collectionVerifierPrivateKey:
+    type: string
+    maxLength: 128
+    example: 3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad
+    minLength: 64
+    description: The private key of the collection verifier (owner) who will verify
+      the NFT in the NFT collection where the NFT is minted in. The blockchain address
+      of this collection is specified in the <code>collection</code> parameter in
+      the <code>metadata</code> section of the request body. To know more about Solana
+      collections and verification, refer to the <a href="https://docs.metaplex.com/programs/token-metadata/certified-collections"
+      target="_blank">Solana user documentation</a>.
+  metadata:
+    $ref: '../migrated.yml#/components/schemas/SolanaNftMetadata'
+required:
+- to
+- chain
+- fromPrivateKey
+- from
+- metadata

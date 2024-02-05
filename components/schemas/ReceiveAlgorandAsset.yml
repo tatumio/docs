@@ -1,0 +1,18 @@
+type: object
+properties:
+  assetId:
+    description: AssetID of the asset you wanna enable for the sender.
+    type: number
+    example: 116363571
+  fromPrivateKey:
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+    type: string
+    example: 72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+required:
+- assetId
+- fromPrivateKey

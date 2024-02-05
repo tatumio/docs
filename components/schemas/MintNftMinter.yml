@@ -1,0 +1,57 @@
+description: <p>The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart
+  Chain, Celo, Ethereum, Harmony, Klaytn, Polygon and Horizen Eon using the <b>NTF
+  minter</b>, a special blockchain address provided by Tatum that will cover the minting
+  fees.<br/>For more information, see "Use your own smart contract to mint NFTs" in
+  <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: The blockchain to work with
+    enum:
+    - BSC
+    - CELO
+    - ETH
+    - KLAY
+    - MATIC
+    - ONE
+    - ZEN
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address of the smart contract to build the NFT on
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  minter:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address of the Tatum NFT minter; this is the address
+      that you added as an NFT minter to your NFT smart contract
+    example: '0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94'
+    type: string
+  to:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address to send the NFT to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  tokenId:
+    description: The ID of the NFT
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+required:
+- to
+- chain
+- url
+- minter
+- tokenId
+- contractAddress

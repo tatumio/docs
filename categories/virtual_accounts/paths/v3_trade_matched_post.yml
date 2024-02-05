@@ -1,0 +1,40 @@
+description: <h4>1 credit per API call.</h4><br/><p>List all matched orders from the
+  FUTURE_BUY OR FUTURE_SELL orders.</p>
+operationId: getMatchedTrades
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/ListOderBookMatchedBody'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Trade'
+          type: array
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+tags:
+- Order Book

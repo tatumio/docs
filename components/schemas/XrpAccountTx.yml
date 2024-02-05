@@ -1,0 +1,79 @@
+type: object
+properties:
+  account:
+    type: string
+    description: Unique Address identifying the related account.
+    example: rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe
+  ledger_index_max:
+    type: number
+    description: The ledger index of the earliest ledger actually searched for transactions.
+    example: 760762
+  ledger_index_min:
+    type: number
+    description: The ledger index of the most recent ledger actually searched for
+      transactions.
+    example: 614
+  marker:
+    description: Server-defined value indicating the response is paginated. Pass this
+      to the next call to resume where this call left off.
+    properties:
+      ledger:
+        type: number
+        example: 759571
+      seq:
+        type: number
+        example: 2
+    type: object
+  transactions:
+    type: array
+    description: Array of transactions matching the request's criteria, as explained
+      below.
+    items:
+      type: object
+      properties:
+        meta:
+          description: Transaction metadata included in JSON format.
+          properties:
+            AffectedNodes:
+              type: array
+              items:
+                type: object
+                properties:
+                  CreatedNode:
+                    properties:
+                      LedgerEntryType:
+                        type: string
+                        example: AccountRoot
+                      LedgerIndex:
+                        type: string
+                        example: 0C9EDA0CDF11B0ACBF4B356C329607E5DDC25B7FCCC51A12579B58220AF6AF54
+                      NewFields:
+                        properties:
+                          Account:
+                            type: string
+                            example: rGenhJmoWHqD6tgmUyxQHLQH8sPuRGtUcv
+                          Balance:
+                            type: string
+                            example: '1000000000'
+                          Sequence:
+                            type: number
+                            example: 1
+                        type: object
+                    type: object
+            TransactionIndex:
+              type: number
+              example: 2
+            TransactionResult:
+              type: string
+              example: tesSUCCESS
+            delivered_amount:
+              type: string
+              example: '1000000000'
+          type: object
+        tx:
+          $ref: '../migrated.yml#/components/schemas/XrpTx'
+        validated:
+          type: boolean
+          description: True if this data is from a validated ledger version; if omitted
+            or set to false, this data is not final.
+          example: true

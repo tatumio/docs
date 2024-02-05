@@ -1,0 +1,141 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Deploy an NFT marketplace smart contract on the blockchain. With a deployed marketplace
+  smart contract, you and your customers can create new  listings for assets such
+  as non-fungible tokens and combinations of token types as described by the ERC-721
+  and ERC-1155 standards on the Ethereum blockchain or by the equivalent standards
+  on the other blockchains. As the marketplace operator, you can set a fee as a percentage
+  of the asset price that will be paid on top of the asset price.</p>
+
+  <p>The purchase process looks like the following:</p>
+
+  <ol>
+
+  <li>The seller <a href="#operation/SellAssetOnMarketplace">creates a listing for
+  an asset on the NFT marketplace</a>. The listing can be offered for the native blockchain
+  assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</li>
+
+  <li>The seller <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending"
+  target="_blank">allows the marketplace smart contract to transfer the asset that
+  they are selling</a>.</li>
+
+  <li>A buyer buys the asset.
+
+  <ul><li>If the buyer wants to pay with the <b>native blockchain assets</b>, they
+  <a href="#operation/BuyAssetOnMarketplace">make the purchase</a> (the <code>buyAssetFromListing()</code>
+  method is called against the marketplace smart contract) and send the required amount
+  of the native assets to the marketplace smart contract.</li>
+
+  <li>If the buyer wants to pay with the <b>fungible tokens</b>:
+
+  <ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve"
+  target="_blank">allows the marketplace smart contract to access their tokens</a>
+  and makes the purchase (the <code>buyAssetFromListing()</code> method is called
+  against the marketplace smart contract).</li>
+
+  <li>The marketplace smart contract deducts the required amount of tokens from the
+  smart contract where the buyer holds the tokens.</li></ol></li></ul></li>
+
+  <li>The marketplace smart contract transfers the asset to the buyer, transfers the
+  asset price to the seller, and sends the fee to the marketplace fee recipient.</li>
+
+  </ol>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>Polygon</li>
+
+  <li>Solana (in <b>alpha</b>)</li>
+
+  </ul>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When deploying an NFT marketplace smart contract, you are charged a fee for the
+  transaction, and you must sign the transaction with the private key of the blockchain
+  address from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: GenerateMarketplace
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplace'
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplaceKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplaceCelo'
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplaceCeloKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplaceSolana'
+        - $ref: '../../../components/migrated.yml#/components/schemas/GenerateMarketplaceSolanaKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SolanaMarketplaceTransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Create an NFT marketplace
+tags:
+- Marketplace

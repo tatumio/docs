@@ -1,0 +1,58 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - ETH
+    - ONE
+    - KLAY
+    - BSC
+    - MATIC
+    example: ETH
+    type: string
+  feeRecipient:
+    maxLength: 42
+    minLength: 42
+    description: Address of the recipient of the fee for the trade.
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  auctionFee:
+    type: number
+    description: Percentage of the selling amount of the NFT asset. 100 - 1%
+    example: 150
+    minimum: 0
+    maximum: 10000
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  nonce:
+    type: number
+    example: 1
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- feeRecipient
+- chain
+- auctionFee
+- fromPrivateKey

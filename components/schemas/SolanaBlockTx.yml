@@ -1,0 +1,6 @@
+type: object
+properties:
+  meta:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxMeta'
+  transaction:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxTransaction'

@@ -1,0 +1,44 @@
+type: object
+properties:
+  from:
+    description: Blockchain address to send assets from
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    maxLength: 44
+    minLength: 32
+    type: string
+  to:
+    description: Blockchain address to send assets to
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  amount:
+    description: Amount to be sent in SOL.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    minLength: 87
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  feePayer:
+    description: Address on the Solana blockchain, from which the fee will be paid
+      for transaction. Defaults to from.
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  feePayerPrivateKey:
+    type: string
+    maxLength: 87
+    example: YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf
+    minLength: 128
+    description: Private key of the fee payer address.
+required:
+- to
+- amount
+- from
+- fromPrivateKey

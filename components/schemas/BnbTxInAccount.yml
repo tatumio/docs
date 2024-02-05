@@ -1,0 +1,9 @@
+type: object
+properties:
+  total:
+    type: number
+    example: 10
+  tx:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/BnbTransaction'

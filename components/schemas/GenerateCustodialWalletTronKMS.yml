@@ -1,0 +1,57 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+  from:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Sender address of TRON account in Base58 format.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  enableFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC20 tokens, it should be marked as true.
+  enableNonFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC721 tokens, it should be marked as true.
+  enableSemiFungibleTokens:
+    type: boolean
+    example: false
+    description: If address should support ERC1155 tokens, it should be marked as
+      true. Not supported for TRON.
+  enableBatchTransactions:
+    type: boolean
+    example: false
+    description: If address should support batch transfers of the assets, it should
+      be marked as true.
+required:
+- chain
+- feeLimit
+- signatureId
+- from
+- enableFungibleTokens
+- enableNonFungibleTokens
+- enableSemiFungibleTokens
+- enableBatchTransactions

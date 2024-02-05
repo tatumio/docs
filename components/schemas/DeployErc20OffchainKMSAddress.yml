@@ -1,0 +1,69 @@
+type: object
+properties:
+  symbol:
+    description: The name of the token; used as an identifier within the Tatum platform
+      and as a currency symbol on the blockchain
+    example: MY_TOKEN
+    maxLength: 30
+    pattern: ^[a-zA-Z0-9_]+$
+    minLength: 1
+    type: string
+  supply:
+    description: The supply of the token
+    maxLength: 38
+    example: '10000000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  description:
+    description: The description of the token; used as a description within the Tatum
+      platform and as a currency name on the blockchain
+    example: My Public Token
+    maxLength: 100
+    minLength: 1
+    type: string
+  address:
+    description: The blockchain address to be assigned to the virtual account as a
+      deposit address
+    maxLength: 42
+    minLength: 42
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of either the <b>private key</b> of the blockchain
+      address from which the fee for deploying the smart contract will be deducted,
+      or the <b>mnemonic</b> to generate the private key for the blockchain address
+      from which the fee will be deducted
+  index:
+    type: number
+    minimum: 0
+    description: (Only if the signature ID is mnemonic-based) The index of the address
+      from which the fee will be deducted that was generated from the mnemonic
+  basePair:
+    description: The base pair for the virtual currency that represents the token;
+      used to calculate the value of a transaction
+    example: EUR
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+  baseRate:
+    type: number
+    example: 1
+    default: 1
+    minimum: 0
+    description: The exchange rate for the base pair; one unit of the created virtual
+      currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
+  nonce:
+    type: number
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+    minimum: 0
+  customer:
+    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+required:
+- description
+- supply
+- symbol
+- basePair
+- address
+- signatureId

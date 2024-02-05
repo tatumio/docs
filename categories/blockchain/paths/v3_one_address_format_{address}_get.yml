@@ -1,0 +1,50 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Transform HEX address to Bech32 format with one prefix.</p>
+
+  '
+operationId: OneFormatAddress
+parameters:
+- description: Address in HEX (ETH compatible) format.
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: '0xa7673161CbfE0116A4De9E341f8465940c2211d4'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/GeneratedAddressOne'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Transform HEX address to Bech32 ONE address format
+tags:
+- Harmony

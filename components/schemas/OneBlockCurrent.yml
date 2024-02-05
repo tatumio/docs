@@ -1,0 +1,10 @@
+type: object
+properties:
+  shardID:
+    type: number
+    description: Shard ID
+    example: 0
+  blockNumber:
+    type: number
+    description: Current block number in this shard
+    example: 6491272

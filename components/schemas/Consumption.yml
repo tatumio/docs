@@ -1,0 +1,10 @@
+type: object
+properties:
+  day:
+    type: string
+    description: The date in the MM/DD/YYYY format
+    example: 10/25/2020
+  usage:
+    type: number
+    description: The number of credits used on the specified day
+    example: 123

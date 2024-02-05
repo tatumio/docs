@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: withdrawal.prepare.failed
+    example: withdrawal.prepare.failed
+    type: string
+  message:
+    description: Unable to prepare transaction, withdrawal cancelled.
+    example: Unable to prepare transaction, withdrawal cancelled.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

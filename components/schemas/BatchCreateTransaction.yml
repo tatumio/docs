@@ -1,0 +1,75 @@
+properties:
+  senderAccountId:
+    description: Internal sender account ID within Tatum platform
+    example: 5e6645712b55823de7ea82f1
+    maxLength: 24
+    minLength: 24
+    type: string
+  transaction:
+    description: Array of block seals.
+    type: array
+    items:
+      type: object
+      required:
+      - amount
+      - recipientAccountId
+      properties:
+        recipientAccountId:
+          description: Internal recipient account ID within Tatum platform
+          example: 5e6645712b55823de7ea82f2
+          maxLength: 24
+          minLength: 24
+          type: string
+        amount:
+          description: Amount to be sent.
+          maxLength: 38
+          example: '5'
+          type: string
+          pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+        anonymous:
+          default: false
+          description: Anonymous transaction does not show sender account to recipient,
+            default is false
+          example: false
+          type: boolean
+        compliant:
+          description: Enable compliant checks. Transaction will not be processed,
+            if compliant check fails.
+          example: false
+          type: boolean
+        transactionCode:
+          description: For bookkeeping to distinct transaction purpose.
+          example: 1_01_EXTERNAL_CODE
+          maxLength: 100
+          minLength: 1
+          type: string
+        paymentId:
+          description: Payment ID, External identifier of the payment, which can be
+            used to pair transactions within Tatum accounts.
+          example: '9625'
+          maxLength: 100
+          minLength: 1
+          type: string
+        recipientNote:
+          description: Note visible to both, sender and recipient
+          example: Private note
+          maxLength: 500
+          minLength: 1
+          type: string
+        baseRate:
+          type: number
+          example: 1
+          default: 1
+          minimum: 0
+          description: Exchange rate of the base pair. Only applicable for Tatum's
+            Virtual currencies Ledger transactions. Override default exchange rate
+            for the Virtual Currency.
+        senderNote:
+          description: Note visible to sender
+          example: Sender note
+          maxLength: 500
+          minLength: 1
+          type: string
+required:
+- senderAccountId
+type: object

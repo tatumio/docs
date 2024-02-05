@@ -1,0 +1,42 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ETH
+    description: The blockchain to work with
+    enum:
+    - BSC
+    - ETH
+    - KLAY
+    - MATIC
+    - ONE
+  owner:
+    type: string
+    description: The blockchain address that owns the precalculated gas pump addresses
+      and is used to pay gas fees for operations made on the gas pump addresses; can
+      be referred to as "master address"
+    example: '0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD'
+  from:
+    type: integer
+    description: The start index of the range of gas pump addresses to activate
+    minimum: 0
+    example: 0
+  to:
+    type: integer
+    description: The end index of the range of gas pump addresses to activate; must
+      be greater than or equal to the value in the <code>from</code> parameter
+    minimum: 0
+    example: 200
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: The private key of the blockchain address that will pay the gas fee
+      for the activation transaction
+required:
+- chain
+- owner
+- from
+- to
+- fromPrivateKey

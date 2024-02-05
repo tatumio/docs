@@ -1,0 +1,64 @@
+type: object
+properties:
+  genesisHash:
+    description: hash to which this block belongs
+    type: string
+    example: SGO1GKSzyE7IEPItTxCByw9x8FmnrCDexi9/cOUJOiI=
+  genesisId:
+    description: ID to which this block belongs
+    type: string
+    example: testnet-v1.0
+  previousBlockHash:
+    description: Previous block hash
+    type: string
+    example: JeLGQTbqnBsD3NXE8Bf1TpPFMFadEVVyHhkcD61ljAU=
+  rewards:
+    description: rewards
+    type: object
+    example:
+      fee-sink: A7NMWS3NT3IUDMLVO26ULGXGIIOUQ3ND2TXSER6EBGRZNOBOUIQXHIBGDE
+      rewards-calculation-round: 17000000
+      rewards-level: 27521
+      rewards-pool: 7777777777777777777777777777777777777777777777777774MSJUVU
+      rewards-rate: 0
+      rewards-residue: 2020197303
+  round:
+    description: Current round on which this block was appended to the chain
+    type: number
+    example: 16775567
+  seed:
+    description: Sortition seed.
+    type: string
+    example: VPBpyrHyqbfqrHqJ3l39LXGN4qgEdNnE5kpJfk3vJtA=
+  timestamp:
+    description: Block creation timestamp in seconds since eposh
+    type: number
+    example: 1632167753
+  txns:
+    description: Array of transactions
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/AlgoTx'
+  txn:
+    description: TransactionsRoot authenticates the set of transactions appearing
+      in the block.
+    type: string
+    example: ++MWW82yIvYQ0AEoPP0aDGGHGk/dSp5WHlbkf9SVU1U=
+  txnc:
+    description: TxnCounter counts the number of transations committed in the ledger
+    type: number
+    example: 27814470
+  upgradeState:
+    description: upgrade state
+    type: object
+    example:
+      current-protocol: https://github.com/algorandfoundation/specs/tree/abc54f79f9ad679d2d22f0fb9909fb005c16f8a1
+      next-protocol-approvals: 0
+      next-protocol-switch-on: 0
+      next-protocol-vote-before: 0
+  upgradeVote:
+    description: upgrade vote
+    type: object
+    example:
+      upgrade-approve: false
+      upgrade-delay: 0

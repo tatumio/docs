@@ -1,0 +1,59 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - SOL
+    example: SOL
+    type: string
+  contractAddress:
+    maxLength: 44
+    minLength: 32
+    description: Blockchain address of the smart contract
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  marketplaceFee:
+    type: number
+    description: The percentage of the amount that an NFT was sold for that will be
+      sent to the marketplace as a fee. To set the fee to 1%, set this parameter to
+      <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set
+      50%, set this parameter to <code>5000</code>, and so on.
+    example: 150
+    minimum: 0
+    maximum: 10000
+  from:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the marketplace authority
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    type: string
+  treasuryWithdrawalDestination:
+    description: The address that will be able to withdraw funds from the marketplace
+      treasury account to own address
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  feeWithdrawalDestination:
+    description: The address that will be able to withdraw funds from the marketplace
+      fee account to own address
+    example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
+    maxLength: 44
+    minLength: 32
+    type: string
+  requiresSignOff:
+    description: Set to "false" if you do not want the marketplace to sign all operations
+      related to the listings and sales; if not set, defaults to "true" (the marketplace
+      must sign all the operations)
+    example: true
+    type: boolean
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the marketplace authority
+required:
+- chain
+- contractAddress
+- from
+- signatureId

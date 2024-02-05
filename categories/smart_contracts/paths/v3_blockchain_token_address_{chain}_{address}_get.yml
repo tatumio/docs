@@ -1,0 +1,90 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get the number of all fungible tokens that a blockchain address holds across
+  a blockchain. The tokens are returned grouped by the smart contracts they were minted
+  on.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>Algorand</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Polygon</li>
+
+  <li>Solana</li>
+
+  </ul>
+
+  '
+operationId: Erc20GetBalanceAddress
+parameters:
+- description: Network name
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    example: CELO
+    enum:
+    - CELO
+    - ETH
+    - MATIC
+    - SOL
+    - ALGO
+- description: The blockchain address that you want to get the token balance of
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Erc20BalanceForAddress'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get the total number of fungible tokens that a blockchain address holds
+tags:
+- Fungible Tokens (ERC-20 or compatible)

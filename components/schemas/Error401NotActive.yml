@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    example: subscription.not.active
+    description: subscription.not.active
+    type: string
+  message:
+    example: Subscription not active anymore.
+    description: Subscription not active anymore.
+    type: string
+  statusCode:
+    example: 401
+    description: '401'
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

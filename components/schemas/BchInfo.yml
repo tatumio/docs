@@ -1,0 +1,18 @@
+type: object
+properties:
+  chain:
+    type: string
+    description: Chain of the blockchain, main or test.
+    example: main
+  blocks:
+    type: number
+    description: Last block.
+    example: 609604
+  bestblockhash:
+    type: string
+    description: Hash of the last block.
+    example: 0000000000000000024997c878c5a90bd73cd50060877c4f70eef1f2e92243f5
+  difficulty:
+    type: number
+    description: Difficulty of the PoW algorithm.
+    example: 375206303347.133

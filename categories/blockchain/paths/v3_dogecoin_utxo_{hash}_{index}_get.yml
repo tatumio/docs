@@ -1,0 +1,84 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get information about a transaction output in a transaction and check whether
+  this output is a UTXO or has been spent.</p>
+
+  <p>"UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of DOGE
+  that remains at a Dogecoin address after a cryptocurrency transaction involving
+  this address has been performed. The UTXO can then be used as input for a new cryptocurrency
+  transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html"
+  target="_blank">Bitcoin user documentation</a>.</p>
+
+  <ul>
+
+  <li>If the transaction output is an UTXO, the API returns data about it.</li>
+
+  <li>If the transaction output has been spent and there is no UTXO to return, the
+  API returns an error with the <code>404</code> response code.</li>
+
+  </ul>
+
+  '
+operationId: DogeGetUTXO
+parameters:
+- description: The transaction hash
+  in: path
+  name: hash
+  required: true
+  schema:
+    type: string
+    minLength: 64
+    maxLength: 64
+    example: 5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a
+- description: The index of the transaction output that you want to check for the
+    UTXO
+  in: path
+  name: index
+  required: true
+  schema:
+    type: number
+    example: 0
+    minimum: 0
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/DogeUTXO'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcUTXO'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get information about a transaction output (UTXO) in a Dogecoin transaction
+tags:
+- Dogecoin

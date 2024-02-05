@@ -1,0 +1,60 @@
+type: object
+properties:
+  data:
+    type: string
+    maxLength: 50000
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  currency:
+    type: string
+    description: Currency of the transfer. ERC20 tokens are available only for mainnet
+      use.
+    example: XDC
+    enum:
+    - XDC
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to XDC transaction. If not present, last known nonce
+      will be used.
+  to:
+    description: Blockchain address to send assets
+    example: xdc687422eEA2cB73B5d3e242bA5456b782919AFc85
+    maxLength: 43
+    minLength: 42
+    type: string
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        example: '40000'
+        pattern: ^[+]?\d+$
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        example: '20'
+        pattern: ^[+]?\d+$
+  amount:
+    description: Amount to be sent.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+required:
+- to
+- currency
+- amount
+- fromPrivateKey

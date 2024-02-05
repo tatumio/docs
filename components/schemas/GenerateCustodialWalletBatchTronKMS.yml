@@ -1,0 +1,45 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  from:
+    type: string
+    description: Sender address.
+    example: TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  batchCount:
+    type: number
+    example: 50
+    description: Number of addresses to generate.
+  owner:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Owner of the addresses.
+    example: TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9
+  feeLimit:
+    type: number
+    example: 100
+    minimum: 5
+    description: Fee limit to be set, in TRX
+required:
+- chain
+- signatureId
+- batchCount
+- from
+- feeLimit
+- owner

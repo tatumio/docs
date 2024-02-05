@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.currency.missing
+    example: account.currency.missing
+    type: string
+  message:
+    description: No such virtual currency ${currency} for account ${account}.
+    example: No such virtual currency ${currency} for account ${account}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

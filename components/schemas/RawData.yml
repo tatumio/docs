@@ -1,0 +1,25 @@
+type: object
+description: Raw data associated with the event, including topics and data.
+required:
+- topic_0
+properties:
+  topic_0:
+    type: string
+    description: The first topic of the event, if present.
+    example: '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+  topic_1:
+    type: string
+    description: The second topic of the event, if present.
+    example: '0x000000000000000000000000742d35cc6634c0532925a3b844bc454e4438f44e'
+  topic_2:
+    type: string
+    description: The third topic of the event, if present.
+    example: '0x000000000000000000000000b7d49e5aa39ff1e5d1b33286c3a8e5515b6a4e1a'
+  topic_3:
+    type: string
+    description: The fourth topic of the event, if present.
+    example: ''
+  data:
+    type: string
+    description: The data associated with the event, if present.
+    example: '0x0000000000000000000000000000000000000000000000000de0b6b3a7640000'

@@ -1,0 +1,8 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/FungibleTransfer'
+- type: object
+  properties:
+    stablecoin:
+      type: string
+      description: The address of the stablecoin being transferred.
+      example: '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48'

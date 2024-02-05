@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xrp.account.failed
+    example: xrp.account.failed
+    type: string
+  message:
+    description: '${error} Code: ${code}'
+    example: '${error} Code: ${code}'
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

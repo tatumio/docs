@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: customer.blockage.inactive
+    example: customer.blockage.inactive
+    type: string
+  message:
+    description: Unable to delete blockages on account for inactive customer.
+    example: Unable to delete blockages on account for inactive customer.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

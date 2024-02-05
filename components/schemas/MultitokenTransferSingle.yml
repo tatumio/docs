@@ -1,0 +1,12 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/MultitokenTransfer'
+- type: object
+  properties:
+    multitokenId:
+      type: string
+      description: The unique identifier of the single multitoken being transferred.
+      example: '1'
+    multitokenValue:
+      type: string
+      description: The value of the single multitoken being transferred.
+      example: '100'

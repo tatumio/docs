@@ -1,0 +1,29 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: ALGO
+    description: Chain to work with.
+    enum:
+    - ALGO
+  contractAddress:
+    maxLength: 43
+    minLength: 1
+    description: assetIndex - asset index uniquely specifying the asset
+    example: '1'
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 103
+    example: 72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI
+    minLength: 103
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+required:
+- chain
+- contractAddress
+- fromPrivateKey

@@ -1,0 +1,14 @@
+type: object
+properties:
+  value:
+    type: number
+    description: Sent amount in satoshis.
+    example: 2068942
+  script:
+    type: string
+    description: Transaction script.
+    example: a914eaf2ad7e161c3ce7092bde14dc5842b642fe925187
+  address:
+    type: string
+    description: Recipient address.
+    example: 2NEfWpiQwLEcHGbX2Fwij16NDxTEZwHk4BH

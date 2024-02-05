@@ -1,0 +1,2124 @@
+components:
+  schemas:
+    Account:
+      $ref: ./schemas/Account.yml
+    Deposit:
+      $ref: ./schemas/Deposit.yml
+    EntitiesCount:
+      $ref: ./schemas/EntitiesCount.yml
+    ChartRequest:
+      $ref: ./schemas/ChartRequest.yml
+    Chart:
+      $ref: ./schemas/Chart.yml
+    AccountBalance:
+      $ref: ./schemas/AccountBalance.yml
+    Subscription:
+      $ref: ./schemas/Subscription.yml
+    WebHook:
+      $ref: ./schemas/WebHook.yml
+    CreateSubscriptionBalance:
+      $ref: ./schemas/CreateSubscriptionBalance.yml
+    CreateSubscriptionInterval:
+      $ref: ./schemas/CreateSubscriptionInterval.yml
+    CreateSubscriptionIncoming:
+      $ref: ./schemas/CreateSubscriptionIncoming.yml
+    CreateSubscriptionNotification:
+      $ref: ./schemas/CreateSubscriptionNotification.yml
+    CreateSubscriptionContractLogEvent:
+      $ref: ./schemas/CreateSubscriptionContractLogEvent.yml
+    CreateSubscriptionMultiTokenTransferEvent:
+      $ref: ./schemas/CreateSubscriptionMultiTokenTransferEvent.yml
+    CreateSubscriptionNftTransferEvent:
+      $ref: ./schemas/CreateSubscriptionNftTransferEvent.yml
+    CreateSubscriptionTradeMatch:
+      $ref: ./schemas/CreateSubscriptionTradeMatch.yml
+    CreateSubscriptionPartialTradeMatch:
+      $ref: ./schemas/CreateSubscriptionPartialTradeMatch.yml
+    CreateSubscriptionKMSError:
+      $ref: ./schemas/CreateSubscriptionKMSError.yml
+    CreateSubscriptionKMSSuccess:
+      $ref: ./schemas/CreateSubscriptionKMSSuccess.yml
+    CreateSubscriptionTxInTheBlock:
+      $ref: ./schemas/CreateSubscriptionTxInTheBlock.yml
+    CreateSubscriptionPending:
+      $ref: ./schemas/CreateSubscriptionPending.yml
+    OffchainAddresses:
+      $ref: ./schemas/OffchainAddresses.yml
+    Address:
+      $ref: ./schemas/Address.yml
+    Trade:
+      $ref: ./schemas/Trade.yml
+    CreateTrade:
+      $ref: ./schemas/CreateTrade.yml
+    CreateFutureTrade:
+      $ref: ./schemas/CreateFutureTrade.yml
+    BnbBlock:
+      $ref: ./schemas/BnbBlock.yml
+    BnbTransaction:
+      $ref: ./schemas/BnbTransaction.yml
+    BnbTx:
+      $ref: ./schemas/BnbTx.yml
+    BnbTxInAccount:
+      $ref: ./schemas/BnbTxInAccount.yml
+    BnbAccount:
+      $ref: ./schemas/BnbAccount.yml
+    BtcBlockHash:
+      $ref: ./schemas/BtcBlockHash.yml
+    BtcBlock:
+      $ref: ./schemas/BtcBlock.yml
+    BtcInfo:
+      $ref: ./schemas/BtcInfo.yml
+    BtcBasedBalance:
+      $ref: ./schemas/BtcBasedBalance.yml
+    BtcTx:
+      $ref: ./schemas/BtcTx.yml
+    BtcTxOutput:
+      $ref: ./schemas/BtcTxOutput.yml
+    BtcTxInput:
+      $ref: ./schemas/BtcTxInput.yml
+    BtcTxInputCoin:
+      $ref: ./schemas/BtcTxInputCoin.yml
+    BtcTxInputPrevOut:
+      $ref: ./schemas/BtcTxInputPrevOut.yml
+    BtcUTXO:
+      $ref: ./schemas/BtcUTXO.yml
+    FeeAndChange:
+      $ref: ./schemas/FeeAndChange.yml
+    AdaTransactionFromAddress:
+      $ref: ./schemas/AdaTransactionFromAddress.yml
+    AdaTransactionFromUTXO:
+      $ref: ./schemas/AdaTransactionFromUTXO.yml
+    AdaTransactionFromAddressKMS:
+      $ref: ./schemas/AdaTransactionFromAddressKMS.yml
+    AdaTransactionFromUTXOKMS:
+      $ref: ./schemas/AdaTransactionFromUTXOKMS.yml
+    BtcTransactionFromAddress:
+      $ref: ./schemas/BtcTransactionFromAddress.yml
+    BtcTransactionFromAddressSource:
+      $ref: ./schemas/BtcTransactionFromAddressSource.yml
+    BtcTransactionFromAddressTarget:
+      $ref: ./schemas/BtcTransactionFromAddressTarget.yml
+    BtcTransactionFromUTXO:
+      $ref: ./schemas/BtcTransactionFromUTXO.yml
+    BtcTransactionFromUTXOSource:
+      $ref: ./schemas/BtcTransactionFromUTXOSource.yml
+    BtcTransactionFromUTXOTarget:
+      $ref: ./schemas/BtcTransactionFromUTXOTarget.yml
+    BtcTransactionFromAddressKMS:
+      $ref: ./schemas/BtcTransactionFromAddressKMS.yml
+    BtcTransactionFromAddressKMSSource:
+      $ref: ./schemas/BtcTransactionFromAddressKMSSource.yml
+    BtcTransactionFromAddressKMSTarget:
+      $ref: ./schemas/BtcTransactionFromAddressKMSTarget.yml
+    BtcTransactionFromUTXOKMS:
+      $ref: ./schemas/BtcTransactionFromUTXOKMS.yml
+    BtcTransactionFromUTXOKMSSource:
+      $ref: ./schemas/BtcTransactionFromUTXOKMSSource.yml
+    BtcTransactionFromUTXOKMSTarget:
+      $ref: ./schemas/BtcTransactionFromUTXOKMSTarget.yml
+    BchBlock:
+      $ref: ./schemas/BchBlock.yml
+    BchInfo:
+      $ref: ./schemas/BchInfo.yml
+    BchTransaction:
+      $ref: ./schemas/BchTransaction.yml
+    BchTransactionKMS:
+      $ref: ./schemas/BchTransactionKMS.yml
+    BchTx:
+      $ref: ./schemas/BchTx.yml
+    DogeInfo:
+      $ref: ./schemas/DogeInfo.yml
+    DogeBlock:
+      $ref: ./schemas/DogeBlock.yml
+    DogeTx:
+      $ref: ./schemas/DogeTx.yml
+    DogeUTXO:
+      $ref: ./schemas/DogeUTXO.yml
+    DogeTransactionUTXOKMS:
+      $ref: ./schemas/DogeTransactionUTXOKMS.yml
+    DogeTransactionUTXO:
+      $ref: ./schemas/DogeTransactionUTXO.yml
+    DogeTransactionAddress:
+      $ref: ./schemas/DogeTransactionAddress.yml
+    DogeTransactionAddressKMS:
+      $ref: ./schemas/DogeTransactionAddressKMS.yml
+    LtcInfo:
+      $ref: ./schemas/LtcInfo.yml
+    LtcBlock:
+      $ref: ./schemas/LtcBlock.yml
+    LtcTx:
+      $ref: ./schemas/LtcTx.yml
+    DogeTxByAddress:
+      $ref: ./schemas/DogeTxByAddress.yml
+    LtcUTXO:
+      $ref: ./schemas/LtcUTXO.yml
+    LtcTransactionAddress:
+      $ref: ./schemas/LtcTransactionAddress.yml
+    LtcTransactionUTXO:
+      $ref: ./schemas/LtcTransactionUTXO.yml
+    LtcTransactionAddressKMS:
+      $ref: ./schemas/LtcTransactionAddressKMS.yml
+    LtcTransactionUTXOKMS:
+      $ref: ./schemas/LtcTransactionUTXOKMS.yml
+    AdaBlock:
+      $ref: ./schemas/AdaBlock.yml
+    AdaTx:
+      $ref: ./schemas/AdaTx.yml
+    AdaUTXO:
+      $ref: ./schemas/AdaUTXO.yml
+    AdaAccountBalance:
+      $ref: ./schemas/AdaAccountBalance.yml
+    AdaTransaction:
+      $ref: ./schemas/AdaTransaction.yml
+    AdaInfo:
+      $ref: ./schemas/AdaInfo.yml
+    Blockage:
+      $ref: ./schemas/Blockage.yml
+    BlockAmount:
+      $ref: ./schemas/BlockAmount.yml
+    BroadcastKMS:
+      $ref: ./schemas/BroadcastKMS.yml
+    HmacWebHook:
+      $ref: ./schemas/HmacWebHook.yml
+    Broadcast:
+      $ref: ./schemas/Broadcast.yml
+    BroadcastResponse:
+      $ref: ./schemas/BroadcastResponse.yml
+    BroadcastWithdrawal:
+      $ref: ./schemas/BroadcastWithdrawal.yml
+    Id:
+      $ref: ./schemas/Id.yml
+    CreateAccountBatch:
+      $ref: ./schemas/CreateAccountBatch.yml
+    CreateAccount:
+      $ref: ./schemas/CreateAccount.yml
+    CreateAccountXpub:
+      $ref: ./schemas/CreateAccountXpub.yml
+    UpdateAccount:
+      $ref: ./schemas/UpdateAccount.yml
+    CreateTransaction:
+      $ref: ./schemas/CreateTransaction.yml
+    BatchCreateTransaction:
+      $ref: ./schemas/BatchCreateTransaction.yml
+    UnblockAmount:
+      $ref: ./schemas/UnblockAmount.yml
+    Customer:
+      $ref: ./schemas/Customer.yml
+    CustomerRegistration:
+      $ref: ./schemas/CustomerRegistration.yml
+    CustomerUpdate:
+      $ref: ./schemas/CustomerUpdate.yml
+    DeployErc20OffchainMnemXpub:
+      $ref: ./schemas/DeployErc20OffchainMnemXpub.yml
+    DeployErc20OffchainMnemonicAddress:
+      $ref: ./schemas/DeployErc20OffchainMnemonicAddress.yml
+    DeployErc20OffchainPKXpub:
+      $ref: ./schemas/DeployErc20OffchainPKXpub.yml
+    DeployErc20OffchainPKAddress:
+      $ref: ./schemas/DeployErc20OffchainPKAddress.yml
+    DeployErc20OffchainKMSAddress:
+      $ref: ./schemas/DeployErc20OffchainKMSAddress.yml
+    DeployErc20OffchainKMSXpub:
+      $ref: ./schemas/DeployErc20OffchainKMSXpub.yml
+    DeployKCSErc20OffchainMnemXpub:
+      $ref: ./schemas/DeployKCSErc20OffchainMnemXpub.yml
+    DeployKCSErc20OffchainMnemonicAddress:
+      $ref: ./schemas/DeployKCSErc20OffchainMnemonicAddress.yml
+    DeployKCSErc20OffchainPKXpub:
+      $ref: ./schemas/DeployKCSErc20OffchainPKXpub.yml
+    DeployKCSErc20OffchainPKAddress:
+      $ref: ./schemas/DeployKCSErc20OffchainPKAddress.yml
+    DeployKCSErc20OffchainKMSAddress:
+      $ref: ./schemas/DeployKCSErc20OffchainKMSAddress.yml
+    DeployKCSErc20OffchainKMSXpub:
+      $ref: ./schemas/DeployKCSErc20OffchainKMSXpub.yml
+    DeployAlgoErc20OffchainMnemonicAddress:
+      $ref: ./schemas/DeployAlgoErc20OffchainMnemonicAddress.yml
+    DeployAlgoErc20OffchainPKAddress:
+      $ref: ./schemas/DeployAlgoErc20OffchainPKAddress.yml
+    DeployAlgoErc20OffchainKMSAddress:
+      $ref: ./schemas/DeployAlgoErc20OffchainKMSAddress.yml
+    TransferAlgoErc20:
+      $ref: ./schemas/TransferAlgoErc20.yml
+    DeployTrcOffchainMnemXpub:
+      $ref: ./schemas/DeployTrcOffchainMnemXpub.yml
+    DeployTrcOffchainMnemonicAddress:
+      $ref: ./schemas/DeployTrcOffchainMnemonicAddress.yml
+    DeployTrcOffchainPKXpub:
+      $ref: ./schemas/DeployTrcOffchainPKXpub.yml
+    DeployTrcOffchainPKAddress:
+      $ref: ./schemas/DeployTrcOffchainPKAddress.yml
+    DeployTrcOffchainKMSAddress:
+      $ref: ./schemas/DeployTrcOffchainKMSAddress.yml
+    DeployTrcOffchainKMSXpub:
+      $ref: ./schemas/DeployTrcOffchainKMSXpub.yml
+    DeployErc20:
+      $ref: ./schemas/DeployErc20.yml
+    DeployErc20KMS:
+      $ref: ./schemas/DeployErc20KMS.yml
+    DeployErc721:
+      $ref: ./schemas/DeployErc721.yml
+    DeployErc721KMS:
+      $ref: ./schemas/DeployErc721KMS.yml
+    EthBlock:
+      $ref: ./schemas/EthBlock.yml
+    FlowBlock:
+      $ref: ./schemas/FlowBlock.yml
+    FlowAccount:
+      $ref: ./schemas/FlowAccount.yml
+    FlowTx:
+      $ref: ./schemas/FlowTx.yml
+    FlowEvent:
+      $ref: ./schemas/FlowEvent.yml
+    EthTx:
+      $ref: ./schemas/EthTx.yml
+    EthTxLog:
+      $ref: ./schemas/EthTxLog.yml
+    EthTxInternal:
+      $ref: ./schemas/EthTxInternal.yml
+    TrcAddress:
+      $ref: ./schemas/TrcAddress.yml
+    TrcXpub:
+      $ref: ./schemas/TrcXpub.yml
+    Erc20:
+      $ref: ./schemas/Erc20.yml
+    Erc20Address:
+      $ref: ./schemas/Erc20Address.yml
+    Erc20Response:
+      $ref: ./schemas/Erc20Response.yml
+    Trc20Response:
+      $ref: ./schemas/Trc20Response.yml
+    DeployErc20Response:
+      $ref: ./schemas/DeployErc20Response.yml
+    DeployErc20SignatureResponse:
+      $ref: ./schemas/DeployErc20SignatureResponse.yml
+    DeployAlgoErc20Response:
+      $ref: ./schemas/DeployAlgoErc20Response.yml
+    DeployAlgoErc20SignatureResponse:
+      $ref: ./schemas/DeployAlgoErc20SignatureResponse.yml
+    Error:
+      $ref: ./schemas/Error.yml
+    Error400:
+      $ref: ./schemas/Error400.yml
+    Error401Invalid:
+      $ref: ./schemas/Error401Invalid.yml
+    Error401NotActive:
+      $ref: ./schemas/Error401NotActive.yml
+    Error403ComplianceBtc:
+      $ref: ./schemas/Error403ComplianceBtc.yml
+    Error403Libra:
+      $ref: ./schemas/Error403Libra.yml
+    Error403EthBroadcast:
+      $ref: ./schemas/Error403EthBroadcast.yml
+    Error403EthErc20NotFound:
+      $ref: ./schemas/Error403EthErc20NotFound.yml
+    Error403TxNotFound:
+      $ref: ./schemas/Error403TxNotFound.yml
+    Error404TxNotFound:
+      $ref: ./schemas/Error404TxNotFound.yml
+    Error403EthErc20Set:
+      $ref: ./schemas/Error403EthErc20Set.yml
+    Error403EthMnemonicPrivateKey:
+      $ref: ./schemas/Error403EthMnemonicPrivateKey.yml
+    Error403EthErc20Unsupported:
+      $ref: ./schemas/Error403EthErc20Unsupported.yml
+    Error403EthTxHash:
+      $ref: ./schemas/Error403EthTxHash.yml
+    Error403EthTxSign:
+      $ref: ./schemas/Error403EthTxSign.yml
+    Error403EthErc20TxSign:
+      $ref: ./schemas/Error403EthErc20TxSign.yml
+    Error403EthErc721TxSign:
+      $ref: ./schemas/Error403EthErc721TxSign.yml
+    Error403EthErc721Call:
+      $ref: ./schemas/Error403EthErc721Call.yml
+    Error403EthGasCalculation:
+      $ref: ./schemas/Error403EthGasCalculation.yml
+    Error403EthTxBody:
+      $ref: ./schemas/Error403EthTxBody.yml
+    Error403EthScBody:
+      $ref: ./schemas/Error403EthScBody.yml
+    Error403EthGasPrice:
+      $ref: ./schemas/Error403EthGasPrice.yml
+    Error403ComplianceEth:
+      $ref: ./schemas/Error403ComplianceEth.yml
+    Error403AccountTestnet:
+      $ref: ./schemas/Error403AccountTestnet.yml
+    Error403AccountXpub:
+      $ref: ./schemas/Error403AccountXpub.yml
+    Error403AddressXpub:
+      $ref: ./schemas/Error403AddressXpub.yml
+    Error403AccountCurrency:
+      $ref: ./schemas/Error403AccountCurrency.yml
+    Error403AccountIncompatibleXpub:
+      $ref: ./schemas/Error403AccountIncompatibleXpub.yml
+    Error403AccountIncompatibleXpubBtc:
+      $ref: ./schemas/Error403AccountIncompatibleXpubBtc.yml
+    Error403AccountAddressGeneral:
+      $ref: ./schemas/Error403AccountAddressGeneral.yml
+    Error403BnbFailed:
+      $ref: ./schemas/Error403BnbFailed.yml
+    Error403BnbAddressFailed:
+      $ref: ./schemas/Error403BnbAddressFailed.yml
+    Error403BnbBroadcatSigFailed:
+      $ref: ./schemas/Error403BnbBroadcatSigFailed.yml
+    Error403BnbTxStateFailed:
+      $ref: ./schemas/Error403BnbTxStateFailed.yml
+    Error403BnbTxFailed:
+      $ref: ./schemas/Error403BnbTxFailed.yml
+    Error403BtcTxFailed:
+      $ref: ./schemas/Error403BtcTxFailed.yml
+    Error403BtcTx:
+      $ref: ./schemas/Error403BtcTx.yml
+    Error403AccountNotExists:
+      $ref: ./schemas/Error403AccountNotExists.yml
+    Error403BlockageNotExists:
+      $ref: ./schemas/Error403BlockageNotExists.yml
+    Error403BlockageAmount:
+      $ref: ./schemas/Error403BlockageAmount.yml
+    Error403SubscriptionNotExists:
+      $ref: ./schemas/Error403SubscriptionNotExists.yml
+    Error403SubscriptionType:
+      $ref: ./schemas/Error403SubscriptionType.yml
+    Error403SubscriptionCurrency:
+      $ref: ./schemas/Error403SubscriptionCurrency.yml
+    Error403SubscriptionInterval:
+      $ref: ./schemas/Error403SubscriptionInterval.yml
+    Error403SubscriptionBalance:
+      $ref: ./schemas/Error403SubscriptionBalance.yml
+    Error403SubscriptionId:
+      $ref: ./schemas/Error403SubscriptionId.yml
+    Error403SubscriptionPendingId:
+      $ref: ./schemas/Error403SubscriptionPendingId.yml
+    Error403ReportNotAvailable:
+      $ref: ./schemas/Error403ReportNotAvailable.yml
+    Error403AccountInactive:
+      $ref: ./schemas/Error403AccountInactive.yml
+    Error403AccountActive:
+      $ref: ./schemas/Error403AccountActive.yml
+    Error403AccountFrozen:
+      $ref: ./schemas/Error403AccountFrozen.yml
+    Error403AccountNotFrozen:
+      $ref: ./schemas/Error403AccountNotFrozen.yml
+    Error403CustomerInternalNotExists:
+      $ref: ./schemas/Error403CustomerInternalNotExists.yml
+    Error403CustomerActive:
+      $ref: ./schemas/Error403CustomerActive.yml
+    Error403CustomerInactive:
+      $ref: ./schemas/Error403CustomerInactive.yml
+    Error403CustomerDisabled:
+      $ref: ./schemas/Error403CustomerDisabled.yml
+    Error403CustomerEnabled:
+      $ref: ./schemas/Error403CustomerEnabled.yml
+    Error403CustomerDeactivateActiveAccounts:
+      $ref: ./schemas/Error403CustomerDeactivateActiveAccounts.yml
+    Error403CustomerNotExists:
+      $ref: ./schemas/Error403CustomerNotExists.yml
+    Error403BlockDelete:
+      $ref: ./schemas/Error403BlockDelete.yml
+    Error403CustomerNotActive:
+      $ref: ./schemas/Error403CustomerNotActive.yml
+    Error403VCNoAccount:
+      $ref: ./schemas/Error403VCNoAccount.yml
+    Error403VCTxFailed:
+      $ref: ./schemas/Error403VCTxFailed.yml
+    Error403VCRevokeBalance:
+      $ref: ./schemas/Error403VCRevokeBalance.yml
+    Error403VCCreateFailed:
+      $ref: ./schemas/Error403VCCreateFailed.yml
+    Error403VCPrefix:
+      $ref: ./schemas/Error403VCPrefix.yml
+    Error403VCDuplicate:
+      $ref: ./schemas/Error403VCDuplicate.yml
+    Error403AccountCustomerInactive:
+      $ref: ./schemas/Error403AccountCustomerInactive.yml
+    Error403AccountBalanceNonZero:
+      $ref: ./schemas/Error403AccountBalanceNonZero.yml
+    Error403TradeBalanceNonZero:
+      $ref: ./schemas/Error403TradeBalanceNonZero.yml
+    Error403AmountFormat:
+      $ref: ./schemas/Error403AmountFormat.yml
+    Error403RecipientFormat:
+      $ref: ./schemas/Error403RecipientFormat.yml
+    Error403AccountCurrencyVC:
+      $ref: ./schemas/Error403AccountCurrencyVC.yml
+    Error403VCNotFound:
+      $ref: ./schemas/Error403VCNotFound.yml
+    Error403AddressUsed:
+      $ref: ./schemas/Error403AddressUsed.yml
+    Error403AddressNotFound:
+      $ref: ./schemas/Error403AddressNotFound.yml
+    Error403AddressAccountXpubMissing:
+      $ref: ./schemas/Error403AddressAccountXpubMissing.yml
+    Error403AddressIndexUsed:
+      $ref: ./schemas/Error403AddressIndexUsed.yml
+    Error403BtcBlockchain:
+      $ref: ./schemas/Error403BtcBlockchain.yml
+    Error404BlockNotExists:
+      $ref: ./schemas/Error404BlockNotExists.yml
+    Error403Broadcast:
+      $ref: ./schemas/Error403Broadcast.yml
+    Error403BlockchainPrivateFailed:
+      $ref: ./schemas/Error403BlockchainPrivateFailed.yml
+    Error403BtcUTXO:
+      $ref: ./schemas/Error403BtcUTXO.yml
+    Error403BcashBroadcast:
+      $ref: ./schemas/Error403BcashBroadcast.yml
+    Error403WithdrawalNotFound:
+      $ref: ./schemas/Error403WithdrawalNotFound.yml
+    Error403KMSNotExists:
+      $ref: ./schemas/Error403KMSNotExists.yml
+    Error403OffchainNotCancelled:
+      $ref: ./schemas/Error403OffchainNotCancelled.yml
+    Error403XlmFailed:
+      $ref: ./schemas/Error403XlmFailed.yml
+    Error403XrpFailed:
+      $ref: ./schemas/Error403XrpFailed.yml
+    Error403XrpCode:
+      $ref: ./schemas/Error403XrpCode.yml
+    Error403XrpLedger:
+      $ref: ./schemas/Error403XrpLedger.yml
+    Error403XrpBroadcast:
+      $ref: ./schemas/Error403XrpBroadcast.yml
+    Error403XrpMultiple:
+      $ref: ./schemas/Error403XrpMultiple.yml
+    Error403XrpAttr:
+      $ref: ./schemas/Error403XrpAttr.yml
+    Error403XrpFee:
+      $ref: ./schemas/Error403XrpFee.yml
+    Error403XrpSign:
+      $ref: ./schemas/Error403XrpSign.yml
+    Error403XlmTxFailed:
+      $ref: ./schemas/Error403XlmTxFailed.yml
+    Error403VetFailed:
+      $ref: ./schemas/Error403VetFailed.yml
+    Error403VetGas:
+      $ref: ./schemas/Error403VetGas.yml
+    Error403VetTxHash:
+      $ref: ./schemas/Error403VetTxHash.yml
+    TransactionFeeEgldBlockchain:
+      $ref: ./schemas/TransactionFeeEgldBlockchain.yml
+    Error403EgldGasCalculation:
+      $ref: ./schemas/Error403EgldGasCalculation.yml
+    Error403OffchainBroadcastState:
+      $ref: ./schemas/Error403OffchainBroadcastState.yml
+    Error403OffchainCancelled:
+      $ref: ./schemas/Error403OffchainCancelled.yml
+    Error403OffchainNotSupported:
+      $ref: ./schemas/Error403OffchainNotSupported.yml
+    Error403AddressAccountXpubUsed:
+      $ref: ./schemas/Error403AddressAccountXpubUsed.yml
+    Error403RateNotFound:
+      $ref: ./schemas/Error403RateNotFound.yml
+    Error403OffchainBroadcast:
+      $ref: ./schemas/Error403OffchainBroadcast.yml
+    Error403OffchainCheck:
+      $ref: ./schemas/Error403OffchainCheck.yml
+    Error403BtcTxUtxoFailed:
+      $ref: ./schemas/Error403BtcTxUtxoFailed.yml
+    Error403BtcMnemonicTxFailed:
+      $ref: ./schemas/Error403BtcMnemonicTxFailed.yml
+    Error403WithdrawalFailed:
+      $ref: ./schemas/Error403WithdrawalFailed.yml
+    Error403WithdrawalCancelled:
+      $ref: ./schemas/Error403WithdrawalCancelled.yml
+    Error403FeeFormat:
+      $ref: ./schemas/Error403FeeFormat.yml
+    Error403TxSenderNotFound:
+      $ref: ./schemas/Error403TxSenderNotFound.yml
+    Error403TxSenderFrozen:
+      $ref: ./schemas/Error403TxSenderFrozen.yml
+    Error403TxSenderCustomerDisabled:
+      $ref: ./schemas/Error403TxSenderCustomerDisabled.yml
+    Error403TxRecipientNotFound:
+      $ref: ./schemas/Error403TxRecipientNotFound.yml
+    Error403TxCurrency:
+      $ref: ./schemas/Error403TxCurrency.yml
+    Error403TxBalance:
+      $ref: ./schemas/Error403TxBalance.yml
+    Error403TxAmountBtc:
+      $ref: ./schemas/Error403TxAmountBtc.yml
+    Error403TxAmountBtcOffchain:
+      $ref: ./schemas/Error403TxAmountBtcOffchain.yml
+    Error403TxAmountAda:
+      $ref: ./schemas/Error403TxAmountAda.yml
+    Error403TxAmountAdaOffchain:
+      $ref: ./schemas/Error403TxAmountAdaOffchain.yml
+    Error403WithdrawalPending:
+      $ref: ./schemas/Error403WithdrawalPending.yml
+    Error403TxAmountEth:
+      $ref: ./schemas/Error403TxAmountEth.yml
+    Error403TxAmountEthOffchain:
+      $ref: ./schemas/Error403TxAmountEthOffchain.yml
+    Error403TxNotCompliant:
+      $ref: ./schemas/Error403TxNotCompliant.yml
+    Error403WithdrawalVC:
+      $ref: ./schemas/Error403WithdrawalVC.yml
+    Error403Erc20Prefix:
+      $ref: ./schemas/Error403Erc20Prefix.yml
+    Error403Erc20XpubBoth:
+      $ref: ./schemas/Error403Erc20XpubBoth.yml
+    Error403Erc20XpubMissing:
+      $ref: ./schemas/Error403Erc20XpubMissing.yml
+    Error403Erc20NameDuplicate:
+      $ref: ./schemas/Error403Erc20NameDuplicate.yml
+    Error403OrderCurrency1NotFound:
+      $ref: ./schemas/Error403OrderCurrency1NotFound.yml
+    Error403OrderFeeNotFound:
+      $ref: ./schemas/Error403OrderFeeNotFound.yml
+    Error403OrderFeeIncompatible:
+      $ref: ./schemas/Error403OrderFeeIncompatible.yml
+    Error403OrderCurrency1Frozen:
+      $ref: ./schemas/Error403OrderCurrency1Frozen.yml
+    Error403OrderCurrency1CustomerDisabled:
+      $ref: ./schemas/Error403OrderCurrency1CustomerDisabled.yml
+    Error403OrderCurrency2NotFound:
+      $ref: ./schemas/Error403OrderCurrency2NotFound.yml
+    Error403OrderCurrency2Frozen:
+      $ref: ./schemas/Error403OrderCurrency2Frozen.yml
+    Error403OrderCurrency2CustomerDisabled:
+      $ref: ./schemas/Error403OrderCurrency2CustomerDisabled.yml
+    Error403OrderCurrency1Pair:
+      $ref: ./schemas/Error403OrderCurrency1Pair.yml
+    Error403OrderCurrency2Pair:
+      $ref: ./schemas/Error403OrderCurrency2Pair.yml
+    Error403OrderCurrency1Balance:
+      $ref: ./schemas/Error403OrderCurrency1Balance.yml
+    Error403OrderCurrency2Balance:
+      $ref: ./schemas/Error403OrderCurrency2Balance.yml
+    Error500:
+      $ref: ./schemas/Error500.yml
+    Error403:
+      $ref: ./schemas/Error403.yml
+    Error401:
+      $ref: ./schemas/Error401.yml
+    FeeEvmBased:
+      $ref: ./schemas/FeeEvmBased.yml
+    FeeBtcBased:
+      $ref: ./schemas/FeeBtcBased.yml
+    EstimateFee:
+      $ref: ./schemas/EstimateFee.yml
+    EstimateFeeDeployCustodialWallet:
+      $ref: ./schemas/EstimateFeeDeployCustodialWallet.yml
+    EstimateFeeBatchMintNft:
+      $ref: ./schemas/EstimateFeeBatchMintNft.yml
+    EstimateFeeTransferFromCustodial:
+      $ref: ./schemas/EstimateFeeTransferFromCustodial.yml
+    OffchainEstimateFee:
+      $ref: ./schemas/OffchainEstimateFee.yml
+    EstimateFeeFromAddress:
+      $ref: ./schemas/EstimateFeeFromAddress.yml
+    EstimateFeeFromUTXO:
+      $ref: ./schemas/EstimateFeeFromUTXO.yml
+    MarketValue:
+      $ref: ./schemas/MarketValue.yml
+    BlockchainFee:
+      $ref: ./schemas/BlockchainFee.yml
+    ExchangeRate:
+      $ref: ./schemas/ExchangeRate.yml
+    RateQuery:
+      $ref: ./schemas/RateQuery.yml
+    Object:
+      $ref: ./schemas/Object.yml
+    Consumption:
+      $ref: ./schemas/Consumption.yml
+    PrivKey:
+      $ref: ./schemas/PrivKey.yml
+    PrivKeyRequest:
+      $ref: ./schemas/PrivKeyRequest.yml
+    EthBalance:
+      $ref: ./schemas/EthBalance.yml
+    Transaction:
+      $ref: ./schemas/Transaction.yml
+    TransactionFilter:
+      $ref: ./schemas/TransactionFilter.yml
+    TransactionFilterCustomer:
+      $ref: ./schemas/TransactionFilterCustomer.yml
+    TransactionFilterLedger:
+      $ref: ./schemas/TransactionFilterLedger.yml
+    TransactionResult:
+      $ref: ./schemas/TransactionResult.yml
+    BatchTransactionResult:
+      $ref: ./schemas/BatchTransactionResult.yml
+    TransferBnbBlockchain:
+      $ref: ./schemas/TransferBnbBlockchain.yml
+    TransferBnbBlockchainKMS:
+      $ref: ./schemas/TransferBnbBlockchainKMS.yml
+    TransferLtcMnemonic:
+      $ref: ./schemas/TransferLtcMnemonic.yml
+    TransferLtcKeyPair:
+      $ref: ./schemas/TransferLtcKeyPair.yml
+    TransferLtcKMS:
+      $ref: ./schemas/TransferLtcKMS.yml
+    TransferDogeMnemonic:
+      $ref: ./schemas/TransferDogeMnemonic.yml
+    TransferDogeKeyPair:
+      $ref: ./schemas/TransferDogeKeyPair.yml
+    TransferDogeKMS:
+      $ref: ./schemas/TransferDogeKMS.yml
+    TransferBtcMnemonic:
+      $ref: ./schemas/TransferBtcMnemonic.yml
+    TransferBtcKeyPair:
+      $ref: ./schemas/TransferBtcKeyPair.yml
+    TransferBtcKMS:
+      $ref: ./schemas/TransferBtcKMS.yml
+    TransferBchMnemonic:
+      $ref: ./schemas/TransferBchMnemonic.yml
+    TransferBchKeyPair:
+      $ref: ./schemas/TransferBchKeyPair.yml
+    TransferBchKMS:
+      $ref: ./schemas/TransferBchKMS.yml
+    TransferErc20Blockchain:
+      $ref: ./schemas/TransferErc20Blockchain.yml
+    TransferErc20BlockchainKMS:
+      $ref: ./schemas/TransferErc20BlockchainKMS.yml
+    CallSmartContractMethod:
+      $ref: ./schemas/CallSmartContractMethod.yml
+    CustomFee:
+      $ref: ./schemas/CustomFee.yml
+    CallEthSmartContractMethodCaller:
+      $ref: ./schemas/CallEthSmartContractMethodCaller.yml
+    CallReadSmartContractMethod:
+      $ref: ./schemas/CallReadSmartContractMethod.yml
+    CallSmartContractMethodKMS:
+      $ref: ./schemas/CallSmartContractMethodKMS.yml
+    TransferErc721:
+      $ref: ./schemas/TransferErc721.yml
+    GenerateMarketplace:
+      $ref: ./schemas/GenerateMarketplace.yml
+    GenerateMarketplaceSolana:
+      $ref: ./schemas/GenerateMarketplaceSolana.yml
+    GenerateMarketplaceSolanaKMS:
+      $ref: ./schemas/GenerateMarketplaceSolanaKMS.yml
+    GenerateMarketplaceCelo:
+      $ref: ./schemas/GenerateMarketplaceCelo.yml
+    GenerateMarketplaceKMS:
+      $ref: ./schemas/GenerateMarketplaceKMS.yml
+    GenerateMarketplaceCeloKMS:
+      $ref: ./schemas/GenerateMarketplaceCeloKMS.yml
+    GenerateAuction:
+      $ref: ./schemas/GenerateAuction.yml
+    GenerateAuctionCelo:
+      $ref: ./schemas/GenerateAuctionCelo.yml
+    GenerateAuctionKMS:
+      $ref: ./schemas/GenerateAuctionKMS.yml
+    GenerateAuctionCeloKMS:
+      $ref: ./schemas/GenerateAuctionCeloKMS.yml
+    GenerateMarketplaceTron:
+      $ref: ./schemas/GenerateMarketplaceTron.yml
+    GenerateMarketplaceTronKMS:
+      $ref: ./schemas/GenerateMarketplaceTronKMS.yml
+    SellAssetOnMarketplace:
+      $ref: ./schemas/SellAssetOnMarketplace.yml
+    SellAssetOnMarketplaceSolana:
+      $ref: ./schemas/SellAssetOnMarketplaceSolana.yml
+    SellAssetOnMarketplaceSolanaKMS:
+      $ref: ./schemas/SellAssetOnMarketplaceSolanaKMS.yml
+    SellAssetOnMarketplaceCelo:
+      $ref: ./schemas/SellAssetOnMarketplaceCelo.yml
+    SellAssetOnMarketplaceKMS:
+      $ref: ./schemas/SellAssetOnMarketplaceKMS.yml
+    SellAssetOnMarketplaceCeloKMS:
+      $ref: ./schemas/SellAssetOnMarketplaceCeloKMS.yml
+    WithdrawFromMarketplaceSolana:
+      $ref: ./schemas/WithdrawFromMarketplaceSolana.yml
+    WithdrawFromMarketplaceSolanaKMS:
+      $ref: ./schemas/WithdrawFromMarketplaceSolanaKMS.yml
+    CreateAuction:
+      $ref: ./schemas/CreateAuction.yml
+    CreateAuctionCelo:
+      $ref: ./schemas/CreateAuctionCelo.yml
+    CreateAuctionKMS:
+      $ref: ./schemas/CreateAuctionKMS.yml
+    CreateAuctionCeloKMS:
+      $ref: ./schemas/CreateAuctionCeloKMS.yml
+    SellAssetOnMarketplaceTron:
+      $ref: ./schemas/SellAssetOnMarketplaceTron.yml
+    SellAssetOnMarketplaceTronKMS:
+      $ref: ./schemas/SellAssetOnMarketplaceTronKMS.yml
+    BuyAssetOnMarketplace:
+      $ref: ./schemas/BuyAssetOnMarketplace.yml
+    BuyAssetOnMarketplaceSolana:
+      $ref: ./schemas/BuyAssetOnMarketplaceSolana.yml
+    BuyAssetOnMarketplaceSolanaKMS:
+      $ref: ./schemas/BuyAssetOnMarketplaceSolanaKMS.yml
+    BuyAssetOnMarketplaceCelo:
+      $ref: ./schemas/BuyAssetOnMarketplaceCelo.yml
+    BuyAssetOnMarketplaceKMS:
+      $ref: ./schemas/BuyAssetOnMarketplaceKMS.yml
+    BuyAssetOnMarketplaceCeloKMS:
+      $ref: ./schemas/BuyAssetOnMarketplaceCeloKMS.yml
+    ApproveNftSpending:
+      $ref: ./schemas/ApproveNftSpending.yml
+    ApproveNftSpendingCelo:
+      $ref: ./schemas/ApproveNftSpendingCelo.yml
+    ApproveNftSpendingKMS:
+      $ref: ./schemas/ApproveNftSpendingKMS.yml
+    ApproveNftSpendingCeloKMS:
+      $ref: ./schemas/ApproveNftSpendingCeloKMS.yml
+    BidOnAuction:
+      $ref: ./schemas/BidOnAuction.yml
+    BidOnAuctionCelo:
+      $ref: ./schemas/BidOnAuctionCelo.yml
+    BidOnAuctionKMS:
+      $ref: ./schemas/BidOnAuctionKMS.yml
+    BidOnAuctionCeloKMS:
+      $ref: ./schemas/BidOnAuctionCeloKMS.yml
+    CancelAuction:
+      $ref: ./schemas/CancelAuction.yml
+    CancelAuctionCelo:
+      $ref: ./schemas/CancelAuctionCelo.yml
+    CancelAuctionKMS:
+      $ref: ./schemas/CancelAuctionKMS.yml
+    CancelAuctionCeloKMS:
+      $ref: ./schemas/CancelAuctionCeloKMS.yml
+    SettleAuction:
+      $ref: ./schemas/SettleAuction.yml
+    SettleAuctionCelo:
+      $ref: ./schemas/SettleAuctionCelo.yml
+    SettleAuctionKMS:
+      $ref: ./schemas/SettleAuctionKMS.yml
+    SettleAuctionCeloKMS:
+      $ref: ./schemas/SettleAuctionCeloKMS.yml
+    BuyAssetOnMarketplaceTron:
+      $ref: ./schemas/BuyAssetOnMarketplaceTron.yml
+    BuyAssetOnMarketplaceTronKMS:
+      $ref: ./schemas/BuyAssetOnMarketplaceTronKMS.yml
+    UpdateFeeRecipient:
+      $ref: ./schemas/UpdateFeeRecipient.yml
+    UpdateFeeRecipientSolana:
+      $ref: ./schemas/UpdateFeeRecipientSolana.yml
+    UpdateFeeRecipientSolanaKMS:
+      $ref: ./schemas/UpdateFeeRecipientSolanaKMS.yml
+    UpdateFeeRecipientCelo:
+      $ref: ./schemas/UpdateFeeRecipientCelo.yml
+    UpdateFeeRecipientKMS:
+      $ref: ./schemas/UpdateFeeRecipientKMS.yml
+    UpdateFeeRecipientCeloKMS:
+      $ref: ./schemas/UpdateFeeRecipientCeloKMS.yml
+    UpdateFeeRecipientTron:
+      $ref: ./schemas/UpdateFeeRecipientTron.yml
+    UpdateFeeRecipientTronKMS:
+      $ref: ./schemas/UpdateFeeRecipientTronKMS.yml
+    UpdateFee:
+      $ref: ./schemas/UpdateFee.yml
+    UpdateFeeSolana:
+      $ref: ./schemas/UpdateFeeSolana.yml
+    UpdateFeeSolanaKMS:
+      $ref: ./schemas/UpdateFeeSolanaKMS.yml
+    UpdateFeeCelo:
+      $ref: ./schemas/UpdateFeeCelo.yml
+    UpdateFeeKMS:
+      $ref: ./schemas/UpdateFeeKMS.yml
+    UpdateFeeCeloKMS:
+      $ref: ./schemas/UpdateFeeCeloKMS.yml
+    UpdateFeeTron:
+      $ref: ./schemas/UpdateFeeTron.yml
+    UpdateFeeTronKMS:
+      $ref: ./schemas/UpdateFeeTronKMS.yml
+    UpdateFeeAuction:
+      $ref: ./schemas/UpdateFeeAuction.yml
+    UpdateFeeAuctionKMS:
+      $ref: ./schemas/UpdateFeeAuctionKMS.yml
+    UpdateFeeAuctionCelo:
+      $ref: ./schemas/UpdateFeeAuctionCelo.yml
+    UpdateFeeAuctionCeloKMS:
+      $ref: ./schemas/UpdateFeeAuctionCeloKMS.yml
+    UpdateMarketplaceSolana:
+      $ref: ./schemas/UpdateMarketplaceSolana.yml
+    UpdateMarketplaceSolanaKMS:
+      $ref: ./schemas/UpdateMarketplaceSolanaKMS.yml
+    CancelSellAssetOnMarketplace:
+      $ref: ./schemas/CancelSellAssetOnMarketplace.yml
+    CancelSellAssetOnMarketplaceSolana:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceSolana.yml
+    CancelSellAssetOnMarketplaceSolanaKMS:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceSolanaKMS.yml
+    CancelSellAssetOnMarketplaceCelo:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceCelo.yml
+    CancelSellAssetOnMarketplaceKMS:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceKMS.yml
+    CancelSellAssetOnMarketplaceCeloKMS:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceCeloKMS.yml
+    CancelSellAssetOnMarketplaceTron:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceTron.yml
+    CancelSellAssetOnMarketplaceTronKMS:
+      $ref: ./schemas/CancelSellAssetOnMarketplaceTronKMS.yml
+    ApproveTransferCustodialWallet:
+      $ref: ./schemas/ApproveTransferCustodialWallet.yml
+    ApproveTransferCustodialWalletCelo:
+      $ref: ./schemas/ApproveTransferCustodialWalletCelo.yml
+    ApproveTransferCustodialWalletCeloKMS:
+      $ref: ./schemas/ApproveTransferCustodialWalletCeloKMS.yml
+    ApproveTransferCustodialWalletKMS:
+      $ref: ./schemas/ApproveTransferCustodialWalletKMS.yml
+    TransferCustodialWallet:
+      $ref: ./schemas/TransferCustodialWallet.yml
+    TransferCustodialWalletCelo:
+      $ref: ./schemas/TransferCustodialWalletCelo.yml
+    TransferCustodialWalletCeloKMS:
+      $ref: ./schemas/TransferCustodialWalletCeloKMS.yml
+    TransferCustodialWalletKMS:
+      $ref: ./schemas/TransferCustodialWalletKMS.yml
+    TransferCustodialWalletTronKMS:
+      $ref: ./schemas/TransferCustodialWalletTronKMS.yml
+    TransferCustodialWalletTron:
+      $ref: ./schemas/TransferCustodialWalletTron.yml
+    TransferCustodialWalletBatch:
+      $ref: ./schemas/TransferCustodialWalletBatch.yml
+    TransferCustodialWalletBatchCelo:
+      $ref: ./schemas/TransferCustodialWalletBatchCelo.yml
+    TransferCustodialWalletBatchTron:
+      $ref: ./schemas/TransferCustodialWalletBatchTron.yml
+    TransferCustodialWalletBatchCeloKMS:
+      $ref: ./schemas/TransferCustodialWalletBatchCeloKMS.yml
+    TransferCustodialWalletBatchTronKMS:
+      $ref: ./schemas/TransferCustodialWalletBatchTronKMS.yml
+    TransferCustodialWalletBatchKMS:
+      $ref: ./schemas/TransferCustodialWalletBatchKMS.yml
+    TransferErc721KMS:
+      $ref: ./schemas/TransferErc721KMS.yml
+    KmsSignatureIds:
+      $ref: ./schemas/KmsSignatureIds.yml
+    PendingTransaction:
+      $ref: ./schemas/PendingTransaction.yml
+    MintErc721:
+      $ref: ./schemas/MintErc721.yml
+    MintErc721KMS:
+      $ref: ./schemas/MintErc721KMS.yml
+    MintMultipleErc721:
+      $ref: ./schemas/MintMultipleErc721.yml
+    MintMultipleErc721KMS:
+      $ref: ./schemas/MintMultipleErc721KMS.yml
+    BurnErc721:
+      $ref: ./schemas/BurnErc721.yml
+    BurnErc721KMS:
+      $ref: ./schemas/BurnErc721KMS.yml
+    TransferEthBlockchain:
+      $ref: ./schemas/TransferEthBlockchain.yml
+    EthEstimateGas:
+      $ref: ./schemas/EthEstimateGas.yml
+    EthEstimateGasArray:
+      $ref: ./schemas/EthEstimateGasArray.yml
+    EthGasEstimation:
+      $ref: ./schemas/EthGasEstimation.yml
+    EthGasEstimationDetails:
+      $ref: ./schemas/EthGasEstimationDetails.yml
+    EthGasEstimationBatch:
+      $ref: ./schemas/EthGasEstimationBatch.yml
+    EthGasEstimationBatchResult:
+      $ref: ./schemas/EthGasEstimationBatchResult.yml
+    EthGasEstimationBatchResultData:
+      $ref: ./schemas/EthGasEstimationBatchResultData.yml
+    TransferEthBlockchainKMS:
+      $ref: ./schemas/TransferEthBlockchainKMS.yml
+    CreateRecord:
+      $ref: ./schemas/CreateRecord.yml
+    CreateRecordKMS:
+      $ref: ./schemas/CreateRecordKMS.yml
+    CreateRecordCelo:
+      $ref: ./schemas/CreateRecordCelo.yml
+    TransferErc20:
+      $ref: ./schemas/TransferErc20.yml
+    TransferErc20Mnemonic:
+      $ref: ./schemas/TransferErc20Mnemonic.yml
+    TransferErc20KMS:
+      $ref: ./schemas/TransferErc20KMS.yml
+    TransferEth:
+      $ref: ./schemas/TransferEth.yml
+    TransferEthMnemonic:
+      $ref: ./schemas/TransferEthMnemonic.yml
+    TransferEthKMS:
+      $ref: ./schemas/TransferEthKMS.yml
+    TransferKCS:
+      $ref: ./schemas/TransferKCS.yml
+    TransferKCSMnemonic:
+      $ref: ./schemas/TransferKCSMnemonic.yml
+    TransferKCSKMS:
+      $ref: ./schemas/TransferKCSKMS.yml
+    TransferBsc:
+      $ref: ./schemas/TransferBsc.yml
+    TransferBscMnemonic:
+      $ref: ./schemas/TransferBscMnemonic.yml
+    TransferBscKMS:
+      $ref: ./schemas/TransferBscKMS.yml
+    TransferCelo:
+      $ref: ./schemas/TransferCelo.yml
+    TransferCeloMnemonic:
+      $ref: ./schemas/TransferCeloMnemonic.yml
+    TransferCeloKMS:
+      $ref: ./schemas/TransferCeloKMS.yml
+    TransferTron:
+      $ref: ./schemas/TransferTron.yml
+    TransferTronMnemonic:
+      $ref: ./schemas/TransferTronMnemonic.yml
+    TransferTronKMS:
+      $ref: ./schemas/TransferTronKMS.yml
+    TransferAdaMnemonic:
+      $ref: ./schemas/TransferAdaMnemonic.yml
+    TransferAdaKMS:
+      $ref: ./schemas/TransferAdaKMS.yml
+    TransferXrp:
+      $ref: ./schemas/TransferXrp.yml
+    TransferXrpKMS:
+      $ref: ./schemas/TransferXrpKMS.yml
+    TransferBnb:
+      $ref: ./schemas/TransferBnb.yml
+    TransferBnbKMS:
+      $ref: ./schemas/TransferBnbKMS.yml
+    CreateXlmAsset:
+      $ref: ./schemas/CreateXlmAsset.yml
+    CreateBnbAsset:
+      $ref: ./schemas/CreateBnbAsset.yml
+    CreateXrpAsset:
+      $ref: ./schemas/CreateXrpAsset.yml
+    TransferXlm:
+      $ref: ./schemas/TransferXlm.yml
+    TransferXlmKMS:
+      $ref: ./schemas/TransferXlmKMS.yml
+    TransferSol:
+      $ref: ./schemas/TransferSol.yml
+    TransferSolKMS:
+      $ref: ./schemas/TransferSolKMS.yml
+    TransferFlowPK:
+      $ref: ./schemas/TransferFlowPK.yml
+    TransferFlowKMS:
+      $ref: ./schemas/TransferFlowKMS.yml
+    TransferAlgo:
+      $ref: ./schemas/TransferAlgo.yml
+    TransferAlgoKMS:
+      $ref: ./schemas/TransferAlgoKMS.yml
+    TransferFlowMnemonic:
+      $ref: ./schemas/TransferFlowMnemonic.yml
+    FlowTransactionPK:
+      $ref: ./schemas/FlowTransactionPK.yml
+    FlowTransactionKMS:
+      $ref: ./schemas/FlowTransactionKMS.yml
+    FlowTransactionMnemonic:
+      $ref: ./schemas/FlowTransactionMnemonic.yml
+    FlowCustomTransactionPK:
+      $ref: ./schemas/FlowCustomTransactionPK.yml
+    FlowCustomTransactionKMS:
+      $ref: ./schemas/FlowCustomTransactionKMS.yml
+    FlowCustomTransactionMnemonic:
+      $ref: ./schemas/FlowCustomTransactionMnemonic.yml
+    FlowCreateAddressFromPubKeySecret:
+      $ref: ./schemas/FlowCreateAddressFromPubKeySecret.yml
+    FlowCreateAddressFromPubKeyKMS:
+      $ref: ./schemas/FlowCreateAddressFromPubKeyKMS.yml
+    FlowCreateAddressFromPubKeyMnemonic:
+      $ref: ./schemas/FlowCreateAddressFromPubKeyMnemonic.yml
+    FlowAddPubKeySecret:
+      $ref: ./schemas/FlowAddPubKeySecret.yml
+    FlowAddPubKeySecretKMS:
+      $ref: ./schemas/FlowAddPubKeySecretKMS.yml
+    FlowAddPubKeyMnemonic:
+      $ref: ./schemas/FlowAddPubKeyMnemonic.yml
+    TransferXrpBlockchain:
+      $ref: ./schemas/TransferXrpBlockchain.yml
+    TransferXrpBlockchainAsset:
+      $ref: ./schemas/TransferXrpBlockchainAsset.yml
+    TransferXrpBlockchainKMS:
+      $ref: ./schemas/TransferXrpBlockchainKMS.yml
+    TransferXrpBlockchainAssetKMS:
+      $ref: ./schemas/TransferXrpBlockchainAssetKMS.yml
+    TransferXlmBlockchain:
+      $ref: ./schemas/TransferXlmBlockchain.yml
+    TransferXlmBlockchainAsset:
+      $ref: ./schemas/TransferXlmBlockchainAsset.yml
+    TransferXlmBlockchainKMS:
+      $ref: ./schemas/TransferXlmBlockchainKMS.yml
+    TransferXlmBlockchainKMSAsset:
+      $ref: ./schemas/TransferXlmBlockchainKMSAsset.yml
+    TrustLineXlmBlockchain:
+      $ref: ./schemas/TrustLineXlmBlockchain.yml
+    TrustLineXlmBlockchainKMS:
+      $ref: ./schemas/TrustLineXlmBlockchainKMS.yml
+    TrustLineXrpBlockchain:
+      $ref: ./schemas/TrustLineXrpBlockchain.yml
+    TrustLineXrpBlockchainKMS:
+      $ref: ./schemas/TrustLineXrpBlockchainKMS.yml
+    AccountSettingsXrpBlockchain:
+      $ref: ./schemas/AccountSettingsXrpBlockchain.yml
+    AccountSettingsXrpBlockchainKMS:
+      $ref: ./schemas/AccountSettingsXrpBlockchainKMS.yml
+    DeployCeloErc20OffchainMnemXpub:
+      $ref: ./schemas/DeployCeloErc20OffchainMnemXpub.yml
+    DeployCeloErc20OffchainMnemonicAddress:
+      $ref: ./schemas/DeployCeloErc20OffchainMnemonicAddress.yml
+    DeployCeloErc20OffchainPKXpub:
+      $ref: ./schemas/DeployCeloErc20OffchainPKXpub.yml
+    DeployCeloErc20OffchainPKAddress:
+      $ref: ./schemas/DeployCeloErc20OffchainPKAddress.yml
+    DeployCeloErc20OffchainKMSAddress:
+      $ref: ./schemas/DeployCeloErc20OffchainKMSAddress.yml
+    DeployCeloErc20OffchainKMSXpub:
+      $ref: ./schemas/DeployCeloErc20OffchainKMSXpub.yml
+    VetEstimateGas:
+      $ref: ./schemas/VetEstimateGas.yml
+    TransferVetBlockchain:
+      $ref: ./schemas/TransferVetBlockchain.yml
+    TransferVetBlockchainKMS:
+      $ref: ./schemas/TransferVetBlockchainKMS.yml
+    XlmWallet:
+      $ref: ./schemas/XlmWallet.yml
+    BnbWallet:
+      $ref: ./schemas/BnbWallet.yml
+    XlmTx:
+      $ref: ./schemas/XlmTx.yml
+    XlmAccount:
+      $ref: ./schemas/XlmAccount.yml
+    XlmLedger:
+      $ref: ./schemas/XlmLedger.yml
+    VetBlock:
+      $ref: ./schemas/VetBlock.yml
+    VetTx:
+      $ref: ./schemas/VetTx.yml
+    VetTxReceipt:
+      $ref: ./schemas/VetTxReceipt.yml
+    GenerateCustodialWalletBatch:
+      $ref: ./schemas/GenerateCustodialWalletBatch.yml
+    GenerateCustodialWalletBatchPayer:
+      $ref: ./schemas/GenerateCustodialWalletBatchPayer.yml
+    GenerateCustodialWalletBatchKMS:
+      $ref: ./schemas/GenerateCustodialWalletBatchKMS.yml
+    GenerateCustodialWalletBatchCelo:
+      $ref: ./schemas/GenerateCustodialWalletBatchCelo.yml
+    GenerateCustodialWalletBatchCeloKMS:
+      $ref: ./schemas/GenerateCustodialWalletBatchCeloKMS.yml
+    GenerateCustodialWalletBatchTron:
+      $ref: ./schemas/GenerateCustodialWalletBatchTron.yml
+    GenerateCustodialWalletBatchTronKMS:
+      $ref: ./schemas/GenerateCustodialWalletBatchTronKMS.yml
+    GenerateCustodialWalletTronKMS:
+      $ref: ./schemas/GenerateCustodialWalletTronKMS.yml
+    GenerateCustodialWalletCelo:
+      $ref: ./schemas/GenerateCustodialWalletCelo.yml
+    GenerateCustodialWallet:
+      $ref: ./schemas/GenerateCustodialWallet.yml
+    GenerateCustodialWalletKMS:
+      $ref: ./schemas/GenerateCustodialWalletKMS.yml
+    GenerateCustodialWalletCeloKMS:
+      $ref: ./schemas/GenerateCustodialWalletCeloKMS.yml
+    GenerateCustodialWalletTron:
+      $ref: ./schemas/GenerateCustodialWalletTron.yml
+    TransactionHash:
+      $ref: ./schemas/TransactionHash.yml
+    Data:
+      $ref: ./schemas/Data.yml
+    SignatureId:
+      $ref: ./schemas/SignatureId.yml
+    OffchainTransactionResult:
+      $ref: ./schemas/OffchainTransactionResult.yml
+    OffchainTransactionSignatureResult:
+      $ref: ./schemas/OffchainTransactionSignatureResult.yml
+    Url:
+      $ref: ./schemas/Url.yml
+    VirtualCurrency:
+      $ref: ./schemas/VirtualCurrency.yml
+    VC:
+      $ref: ./schemas/VC.yml
+    VirtualCurrencyUpdate:
+      $ref: ./schemas/VirtualCurrencyUpdate.yml
+    VirtualCurrencyOperation:
+      $ref: ./schemas/VirtualCurrencyOperation.yml
+    Wallet:
+      $ref: ./schemas/Wallet.yml
+    GeneratedAddressEth:
+      $ref: ./schemas/GeneratedAddressEth.yml
+    GeneratedAddressBtc:
+      $ref: ./schemas/GeneratedAddressBtc.yml
+    Withdrawal:
+      $ref: ./schemas/Withdrawal.yml
+    WithdrawalObject:
+      $ref: ./schemas/WithdrawalObject.yml
+    WithdrawalHint:
+      $ref: ./schemas/WithdrawalHint.yml
+    ResponseData:
+      $ref: ./schemas/ResponseData.yml
+    WithdrawalResponse:
+      $ref: ./schemas/WithdrawalResponse.yml
+    XrpWallet:
+      $ref: ./schemas/XrpWallet.yml
+    XrpTx:
+      $ref: ./schemas/XrpTx.yml
+    XrpLedger:
+      $ref: ./schemas/XrpLedger.yml
+    XrpAccountTx:
+      $ref: ./schemas/XrpAccountTx.yml
+    XrpAccount:
+      $ref: ./schemas/XrpAccount.yml
+    XrpAccountBalance:
+      $ref: ./schemas/XrpAccountBalance.yml
+    XrpFee:
+      $ref: ./schemas/XrpFee.yml
+    XrpInfo:
+      $ref: ./schemas/XrpInfo.yml
+    ListOderBookActiveSellBody:
+      $ref: ./schemas/ListOderBookActiveSellBody.yml
+    ListOderBookActiveBuyBody:
+      $ref: ./schemas/ListOderBookActiveBuyBody.yml
+    ListOderBookMatchedBody:
+      $ref: ./schemas/ListOderBookMatchedBody.yml
+    ListOderBookHistoryBody:
+      $ref: ./schemas/ListOderBookHistoryBody.yml
+    OrderBookSort:
+      $ref: ./schemas/OrderBookSort.yml
+    GasPumpAddress:
+      $ref: ./schemas/GasPumpAddress.yml
+    Activated:
+      $ref: ./schemas/Activated.yml
+    ActivateGasPump:
+      $ref: ./schemas/ActivateGasPump.yml
+    ActivateGasPumpTatum:
+      $ref: ./schemas/ActivateGasPumpTatum.yml
+    ActivateGasPumpKMS:
+      $ref: ./schemas/ActivateGasPumpKMS.yml
+    ActivateGasPumpCelo:
+      $ref: ./schemas/ActivateGasPumpCelo.yml
+    ActivateGasPumpCeloKMS:
+      $ref: ./schemas/ActivateGasPumpCeloKMS.yml
+    ActivateGasPumpTron:
+      $ref: ./schemas/ActivateGasPumpTron.yml
+    ActivateGasPumpTronKMS:
+      $ref: ./schemas/ActivateGasPumpTronKMS.yml
+    CreateGasPump:
+      $ref: ./schemas/CreateGasPump.yml
+    GasPumpTrxOut:
+      $ref: ./schemas/GasPumpTrxOut.yml
+    ValidGasPumpAddress:
+      $ref: ./schemas/ValidGasPumpAddress.yml
+    InvalidGasPumpAddress:
+      $ref: ./schemas/InvalidGasPumpAddress.yml
+    SolanaMarketplaceTransactionHash:
+      $ref: ./schemas/SolanaMarketplaceTransactionHash.yml
+    SolanaMarketplaceSellTransactionHash:
+      $ref: ./schemas/SolanaMarketplaceSellTransactionHash.yml
+    EvmListingData:
+      $ref: ./schemas/EvmListingData.yml
+    SolanaListingData:
+      $ref: ./schemas/SolanaListingData.yml
+    FlowAddressXpub:
+      $ref: ./schemas/FlowAddressXpub.yml
+    CountryCode:
+      $ref: ./schemas/CountryCode.yml
+    FiatCurrency:
+      $ref: ./schemas/FiatCurrency.yml
+    FiatOrCryptoCurrency:
+      $ref: ./schemas/FiatOrCryptoCurrency.yml
+    GasEstimated:
+      $ref: ./schemas/GasEstimated.yml
+    Erc20Currency:
+      $ref: ./schemas/Erc20Currency.yml
+    NodeRpcPutChains:
+      $ref: ./schemas/NodeRpcPutChains.yml
+    NodeRpcGetChains:
+      $ref: ./schemas/NodeRpcGetChains.yml
+    NodeRpcPostChains:
+      $ref: ./schemas/NodeRpcPostChains.yml
+    TransferManagedAddress:
+      $ref: ./schemas/TransferManagedAddress.yml
+    CustodialManagedAddress:
+      $ref: ./schemas/CustodialManagedAddress.yml
+    AlgoWallet:
+      $ref: ./schemas/AlgoWallet.yml
+    AlgoBlock:
+      $ref: ./schemas/AlgoBlock.yml
+    AlgoTx:
+      $ref: ./schemas/AlgoTx.yml
+    AlgoTxsWithPagination:
+      $ref: ./schemas/AlgoTxsWithPagination.yml
+    TransferAlgorandBlockchain:
+      $ref: ./schemas/TransferAlgorandBlockchain.yml
+    ReceiveAlgorandAsset:
+      $ref: ./schemas/ReceiveAlgorandAsset.yml
+    ReceiveAlgorandAssetKMS:
+      $ref: ./schemas/ReceiveAlgorandAssetKMS.yml
+    AlgoTransactionHashKMS:
+      $ref: ./schemas/AlgoTransactionHashKMS.yml
+    TransferAlgorandBlockchainKMS:
+      $ref: ./schemas/TransferAlgorandBlockchainKMS.yml
+    MaticBalance:
+      $ref: ./schemas/MaticBalance.yml
+    GeneratedAddressMatic:
+      $ref: ./schemas/GeneratedAddressMatic.yml
+    PolygonBlock:
+      $ref: ./schemas/PolygonBlock.yml
+    PolygonTx:
+      $ref: ./schemas/PolygonTx.yml
+    PolygonTxLog:
+      $ref: ./schemas/PolygonTxLog.yml
+    Error403PolygonBroadcast:
+      $ref: ./schemas/Error403PolygonBroadcast.yml
+    Error403PolygonBep20NotFound:
+      $ref: ./schemas/Error403PolygonBep20NotFound.yml
+    Error403PolygonBep20Set:
+      $ref: ./schemas/Error403PolygonBep20Set.yml
+    Error403PolygonMnemonicPrivateKey:
+      $ref: ./schemas/Error403PolygonMnemonicPrivateKey.yml
+    Error403PolygonBep20Unsupported:
+      $ref: ./schemas/Error403PolygonBep20Unsupported.yml
+    Error403PolygonTxHash:
+      $ref: ./schemas/Error403PolygonTxHash.yml
+    Error403PolygonTxSign:
+      $ref: ./schemas/Error403PolygonTxSign.yml
+    Error403PolygonErc20TxSign:
+      $ref: ./schemas/Error403PolygonErc20TxSign.yml
+    Error403PolygonGasCalculation:
+      $ref: ./schemas/Error403PolygonGasCalculation.yml
+    Error403PolygonTxBody:
+      $ref: ./schemas/Error403PolygonTxBody.yml
+    Error403PolygonScBody:
+      $ref: ./schemas/Error403PolygonScBody.yml
+    Error403PolygonGasPrice:
+      $ref: ./schemas/Error403PolygonGasPrice.yml
+    TransferBep20Blockchain:
+      $ref: ./schemas/TransferBep20Blockchain.yml
+    TransferBep20BlockchainKMS:
+      $ref: ./schemas/TransferBep20BlockchainKMS.yml
+    CallPolygonSmartContractMethod:
+      $ref: ./schemas/CallPolygonSmartContractMethod.yml
+    CallPolygonSmartContractMethodCaller:
+      $ref: ./schemas/CallPolygonSmartContractMethodCaller.yml
+    CallPolygonSmartContractReadMethod:
+      $ref: ./schemas/CallPolygonSmartContractReadMethod.yml
+    CallPolygonSmartContractMethodKMS:
+      $ref: ./schemas/CallPolygonSmartContractMethodKMS.yml
+    TransferPolygonBlockchain:
+      $ref: ./schemas/TransferPolygonBlockchain.yml
+    PolygonEstimateGas:
+      $ref: ./schemas/PolygonEstimateGas.yml
+    TransferPolygonBlockchainKMS:
+      $ref: ./schemas/TransferPolygonBlockchainKMS.yml
+    DeployBep20:
+      $ref: ./schemas/DeployBep20.yml
+    DeployBep20KMS:
+      $ref: ./schemas/DeployBep20KMS.yml
+    KlaytnBlock:
+      $ref: ./schemas/KlaytnBlock.yml
+    KlaytnTx:
+      $ref: ./schemas/KlaytnTx.yml
+    Error403KlaytnBroadcast:
+      $ref: ./schemas/Error403KlaytnBroadcast.yml
+    Error403KlaytnKlay20NotFound:
+      $ref: ./schemas/Error403KlaytnKlay20NotFound.yml
+    Error403KlaytnKlay20Set:
+      $ref: ./schemas/Error403KlaytnKlay20Set.yml
+    Error403KlaytnMnemonicPrivateKey:
+      $ref: ./schemas/Error403KlaytnMnemonicPrivateKey.yml
+    Error403KlaytnKlay20Unsupported:
+      $ref: ./schemas/Error403KlaytnKlay20Unsupported.yml
+    Error403KlaytnTxHash:
+      $ref: ./schemas/Error403KlaytnTxHash.yml
+    Error403KlaytnTxSign:
+      $ref: ./schemas/Error403KlaytnTxSign.yml
+    Error403KlaytnErc20TxSign:
+      $ref: ./schemas/Error403KlaytnErc20TxSign.yml
+    Error403KlaytnGasCalculation:
+      $ref: ./schemas/Error403KlaytnGasCalculation.yml
+    Error403KlaytnTxBody:
+      $ref: ./schemas/Error403KlaytnTxBody.yml
+    Error403KlaytnScBody:
+      $ref: ./schemas/Error403KlaytnScBody.yml
+    Error403KlaytnGasPrice:
+      $ref: ./schemas/Error403KlaytnGasPrice.yml
+    TransferKlay20Blockchain:
+      $ref: ./schemas/TransferKlay20Blockchain.yml
+    CallKlaytnSmartContractMethod:
+      $ref: ./schemas/CallKlaytnSmartContractMethod.yml
+    CallKlaytnSmartContractReadMethod:
+      $ref: ./schemas/CallKlaytnSmartContractReadMethod.yml
+    CallKlaytnSmartContractMethodKMS:
+      $ref: ./schemas/CallKlaytnSmartContractMethodKMS.yml
+    TransferKlaytnBlockchain:
+      $ref: ./schemas/TransferKlaytnBlockchain.yml
+    KlaytnEstimateGas:
+      $ref: ./schemas/KlaytnEstimateGas.yml
+    TransferKlaytnBlockchainKMS:
+      $ref: ./schemas/TransferKlaytnBlockchainKMS.yml
+    SolBalance:
+      $ref: ./schemas/SolBalance.yml
+    SolanaWallet:
+      $ref: ./schemas/SolanaWallet.yml
+    SolanaBlockReward:
+      $ref: ./schemas/SolanaBlockReward.yml
+    TokenBalance:
+      $ref: ./schemas/TokenBalance.yml
+    UiTokenAmount:
+      $ref: ./schemas/UiTokenAmount.yml
+    SolanaTxMeta:
+      $ref: ./schemas/SolanaTxMeta.yml
+    SolanaTxMessageHeader:
+      $ref: ./schemas/SolanaTxMessageHeader.yml
+    SolanaTxMessageInstruction:
+      $ref: ./schemas/SolanaTxMessageInstruction.yml
+    SolanaTxMessage:
+      $ref: ./schemas/SolanaTxMessage.yml
+    SolanaTxTransaction:
+      $ref: ./schemas/SolanaTxTransaction.yml
+    SolanaBlockTx:
+      $ref: ./schemas/SolanaBlockTx.yml
+    SolanaTx:
+      $ref: ./schemas/SolanaTx.yml
+    SolanaBlock:
+      $ref: ./schemas/SolanaBlock.yml
+    Error403SolanaBroadcast:
+      $ref: ./schemas/Error403SolanaBroadcast.yml
+    Error403SolanaBroadcastConfirm:
+      $ref: ./schemas/Error403SolanaBroadcastConfirm.yml
+    Error403SolanaBep20NotFound:
+      $ref: ./schemas/Error403SolanaBep20NotFound.yml
+    Error403SolanaTxHash:
+      $ref: ./schemas/Error403SolanaTxHash.yml
+    Error403SolanaTxSign:
+      $ref: ./schemas/Error403SolanaTxSign.yml
+    Error403SolanaTxBody:
+      $ref: ./schemas/Error403SolanaTxBody.yml
+    TransferSolanaBlockchain:
+      $ref: ./schemas/TransferSolanaBlockchain.yml
+    TransferSolanaBlockchainKMS:
+      $ref: ./schemas/TransferSolanaBlockchainKMS.yml
+    SolanaBroadcastConfirmOptions:
+      $ref: ./schemas/SolanaBroadcastConfirmOptions.yml
+    SolanaBroadcastConfirm:
+      $ref: ./schemas/SolanaBroadcastConfirm.yml
+    SolanaTransactionHashWithConfirm:
+      $ref: ./schemas/SolanaTransactionHashWithConfirm.yml
+    Error403Celo:
+      $ref: ./schemas/Error403Celo.yml
+    TransferErc721Celo:
+      $ref: ./schemas/TransferErc721Celo.yml
+    TransferErc721KMSCelo:
+      $ref: ./schemas/TransferErc721KMSCelo.yml
+    MintErc721Celo:
+      $ref: ./schemas/MintErc721Celo.yml
+    MintErc721KMSCelo:
+      $ref: ./schemas/MintErc721KMSCelo.yml
+    MintErc20Celo:
+      $ref: ./schemas/MintErc20Celo.yml
+    MintErc20KMSCelo:
+      $ref: ./schemas/MintErc20KMSCelo.yml
+    MintMultipleErc721Celo:
+      $ref: ./schemas/MintMultipleErc721Celo.yml
+    MintMultipleErc721KMSCelo:
+      $ref: ./schemas/MintMultipleErc721KMSCelo.yml
+    BurnErc721Celo:
+      $ref: ./schemas/BurnErc721Celo.yml
+    BurnErc721KMSCelo:
+      $ref: ./schemas/BurnErc721KMSCelo.yml
+    BurnErc20Celo:
+      $ref: ./schemas/BurnErc20Celo.yml
+    BurnErc20KMSCelo:
+      $ref: ./schemas/BurnErc20KMSCelo.yml
+    TransferCeloBlockchain:
+      $ref: ./schemas/TransferCeloBlockchain.yml
+    TransferCeloBlockchainKMS:
+      $ref: ./schemas/TransferCeloBlockchainKMS.yml
+    CeloEstimateGas:
+      $ref: ./schemas/CeloEstimateGas.yml
+    CeloBlock:
+      $ref: ./schemas/CeloBlock.yml
+    CeloTx:
+      $ref: ./schemas/CeloTx.yml
+    DeployErc721Celo:
+      $ref: ./schemas/DeployErc721Celo.yml
+    DeployErc721CeloKMS:
+      $ref: ./schemas/DeployErc721CeloKMS.yml
+    DeployErc20Celo:
+      $ref: ./schemas/DeployErc20Celo.yml
+    DeployErc20KMSCelo:
+      $ref: ./schemas/DeployErc20KMSCelo.yml
+    CallCeloSmartContractMethod:
+      $ref: ./schemas/CallCeloSmartContractMethod.yml
+    CallCeloReadSmartContractMethod:
+      $ref: ./schemas/CallCeloReadSmartContractMethod.yml
+    CallCeloSmartContractMethodKMS:
+      $ref: ./schemas/CallCeloSmartContractMethodKMS.yml
+    TransferErc20Celo:
+      $ref: ./schemas/TransferErc20Celo.yml
+    TransferErc20CeloKMS:
+      $ref: ./schemas/TransferErc20CeloKMS.yml
+    Error403CeloGasCalculation:
+      $ref: ./schemas/Error403CeloGasCalculation.yml
+    Error403CeloTxBody:
+      $ref: ./schemas/Error403CeloTxBody.yml
+    EgldBlock:
+      $ref: ./schemas/EgldBlock.yml
+    EgldShardBlock:
+      $ref: ./schemas/EgldShardBlock.yml
+    EgldTx:
+      $ref: ./schemas/EgldTx.yml
+    Error403EgldBroadcast:
+      $ref: ./schemas/Error403EgldBroadcast.yml
+    Error403EgldTxHash:
+      $ref: ./schemas/Error403EgldTxHash.yml
+    Error403EgldTxSign:
+      $ref: ./schemas/Error403EgldTxSign.yml
+    TransferEgldBlockchain:
+      $ref: ./schemas/TransferEgldBlockchain.yml
+    TransferEgldBlockchainKMS:
+      $ref: ./schemas/TransferEgldBlockchainKMS.yml
+    TransferTronBlockchain:
+      $ref: ./schemas/TransferTronBlockchain.yml
+    TransferTronBlockchainKMS:
+      $ref: ./schemas/TransferTronBlockchainKMS.yml
+    TransferTronTrc10Blockchain:
+      $ref: ./schemas/TransferTronTrc10Blockchain.yml
+    TransferTronTrc10BlockchainKMS:
+      $ref: ./schemas/TransferTronTrc10BlockchainKMS.yml
+    TransferTronTrc20Blockchain:
+      $ref: ./schemas/TransferTronTrc20Blockchain.yml
+    TransferTronTrc20BlockchainKMS:
+      $ref: ./schemas/TransferTronTrc20BlockchainKMS.yml
+    CreateTronTrc20Blockchain:
+      $ref: ./schemas/CreateTronTrc20Blockchain.yml
+    CreateTronTrc20BlockchainKMS:
+      $ref: ./schemas/CreateTronTrc20BlockchainKMS.yml
+    CreateTronTrc10Blockchain:
+      $ref: ./schemas/CreateTronTrc10Blockchain.yml
+    CreateTronTrc10BlockchainKMS:
+      $ref: ./schemas/CreateTronTrc10BlockchainKMS.yml
+    TronTrc10Detail:
+      $ref: ./schemas/TronTrc10Detail.yml
+    FreezeTron:
+      $ref: ./schemas/FreezeTron.yml
+    FreezeTronKMS:
+      $ref: ./schemas/FreezeTronKMS.yml
+    Error403Tron:
+      $ref: ./schemas/Error403Tron.yml
+    TronWallet:
+      $ref: ./schemas/TronWallet.yml
+    TronBlock:
+      $ref: ./schemas/TronBlock.yml
+    TronBroadcast:
+      $ref: ./schemas/TronBroadcast.yml
+    TronTx:
+      $ref: ./schemas/TronTx.yml
+    TronInternalTx:
+      $ref: ./schemas/TronInternalTx.yml
+    TronTx20:
+      $ref: ./schemas/TronTx20.yml
+    TronAccount:
+      $ref: ./schemas/TronAccount.yml
+    BscBalance:
+      $ref: ./schemas/BscBalance.yml
+    GeneratedAddressBsc:
+      $ref: ./schemas/GeneratedAddressBsc.yml
+    BscBlock:
+      $ref: ./schemas/BscBlock.yml
+    BscTx:
+      $ref: ./schemas/BscTx.yml
+    BscTxLog:
+      $ref: ./schemas/BscTxLog.yml
+    Error403BscBroadcast:
+      $ref: ./schemas/Error403BscBroadcast.yml
+    Error403BscBep20NotFound:
+      $ref: ./schemas/Error403BscBep20NotFound.yml
+    Error403BscBep20Set:
+      $ref: ./schemas/Error403BscBep20Set.yml
+    Error403BscMnemonicPrivateKey:
+      $ref: ./schemas/Error403BscMnemonicPrivateKey.yml
+    Error403BscBep20Unsupported:
+      $ref: ./schemas/Error403BscBep20Unsupported.yml
+    Error403BscTxHash:
+      $ref: ./schemas/Error403BscTxHash.yml
+    Error403BscTxSign:
+      $ref: ./schemas/Error403BscTxSign.yml
+    Error403BscErc20TxSign:
+      $ref: ./schemas/Error403BscErc20TxSign.yml
+    Error403BscGasCalculation:
+      $ref: ./schemas/Error403BscGasCalculation.yml
+    Error403BscTxBody:
+      $ref: ./schemas/Error403BscTxBody.yml
+    Error403BscScBody:
+      $ref: ./schemas/Error403BscScBody.yml
+    Error403BscGasPrice:
+      $ref: ./schemas/Error403BscGasPrice.yml
+    CallBscSmartContractMethodCaller:
+      $ref: ./schemas/CallBscSmartContractMethodCaller.yml
+    CallBscSmartContractMethod:
+      $ref: ./schemas/CallBscSmartContractMethod.yml
+    CallBscSmartContractReadMethod:
+      $ref: ./schemas/CallBscSmartContractReadMethod.yml
+    CallBscSmartContractMethodKMS:
+      $ref: ./schemas/CallBscSmartContractMethodKMS.yml
+    TransferBscBlockchain:
+      $ref: ./schemas/TransferBscBlockchain.yml
+    BscEstimateGas:
+      $ref: ./schemas/BscEstimateGas.yml
+    TransferBscBlockchainKMS:
+      $ref: ./schemas/TransferBscBlockchainKMS.yml
+    KcsBlock:
+      $ref: ./schemas/KcsBlock.yml
+    KcsTx:
+      $ref: ./schemas/KcsTx.yml
+    Error403KcsBroadcast:
+      $ref: ./schemas/Error403KcsBroadcast.yml
+    Error403KcsBep20NotFound:
+      $ref: ./schemas/Error403KcsBep20NotFound.yml
+    Error403KcsBep20Set:
+      $ref: ./schemas/Error403KcsBep20Set.yml
+    Error403KcsMnemonicPrivateKey:
+      $ref: ./schemas/Error403KcsMnemonicPrivateKey.yml
+    Error403KcsBep20Unsupported:
+      $ref: ./schemas/Error403KcsBep20Unsupported.yml
+    Error403KcsTxHash:
+      $ref: ./schemas/Error403KcsTxHash.yml
+    Error403KcsTxSign:
+      $ref: ./schemas/Error403KcsTxSign.yml
+    Error403KcsErc20TxSign:
+      $ref: ./schemas/Error403KcsErc20TxSign.yml
+    Error403KcsGasCalculation:
+      $ref: ./schemas/Error403KcsGasCalculation.yml
+    Error403KcsTxBody:
+      $ref: ./schemas/Error403KcsTxBody.yml
+    Error403KcsScBody:
+      $ref: ./schemas/Error403KcsScBody.yml
+    Error403KcsGasPrice:
+      $ref: ./schemas/Error403KcsGasPrice.yml
+    CallKcsSmartContractMethod:
+      $ref: ./schemas/CallKcsSmartContractMethod.yml
+    CallKcsSmartContractReadMethod:
+      $ref: ./schemas/CallKcsSmartContractReadMethod.yml
+    CallKcsSmartContractMethodKMS:
+      $ref: ./schemas/CallKcsSmartContractMethodKMS.yml
+    TransferKcsBlockchain:
+      $ref: ./schemas/TransferKcsBlockchain.yml
+    KcsEstimateGas:
+      $ref: ./schemas/KcsEstimateGas.yml
+    TransferKcsBlockchainKMS:
+      $ref: ./schemas/TransferKcsBlockchainKMS.yml
+    OneBlockCurrent:
+      $ref: ./schemas/OneBlockCurrent.yml
+    OneBalance:
+      $ref: ./schemas/OneBalance.yml
+    GeneratedAddressOne:
+      $ref: ./schemas/GeneratedAddressOne.yml
+    OneBlock:
+      $ref: ./schemas/OneBlock.yml
+    OneTx:
+      $ref: ./schemas/OneTx.yml
+    OneTxLog:
+      $ref: ./schemas/OneTxLog.yml
+    Error403OneBroadcast:
+      $ref: ./schemas/Error403OneBroadcast.yml
+    Error403OneBep20NotFound:
+      $ref: ./schemas/Error403OneBep20NotFound.yml
+    Error403OneBep20Set:
+      $ref: ./schemas/Error403OneBep20Set.yml
+    Error403OneMnemonicPrivateKey:
+      $ref: ./schemas/Error403OneMnemonicPrivateKey.yml
+    Error403OneBep20Unsupported:
+      $ref: ./schemas/Error403OneBep20Unsupported.yml
+    Error403OneTxHash:
+      $ref: ./schemas/Error403OneTxHash.yml
+    Error403OneTxSign:
+      $ref: ./schemas/Error403OneTxSign.yml
+    Error403OneErc20TxSign:
+      $ref: ./schemas/Error403OneErc20TxSign.yml
+    Error403OneGasCalculation:
+      $ref: ./schemas/Error403OneGasCalculation.yml
+    Error403OneTxBody:
+      $ref: ./schemas/Error403OneTxBody.yml
+    Error403OneScBody:
+      $ref: ./schemas/Error403OneScBody.yml
+    Error403OneGasPrice:
+      $ref: ./schemas/Error403OneGasPrice.yml
+    CallOneSmartContractMethod:
+      $ref: ./schemas/CallOneSmartContractMethod.yml
+    CallOneReadSmartContractMethod:
+      $ref: ./schemas/CallOneReadSmartContractMethod.yml
+    CallOneSmartContractMethodKMS:
+      $ref: ./schemas/CallOneSmartContractMethodKMS.yml
+    TransferOneBlockchain:
+      $ref: ./schemas/TransferOneBlockchain.yml
+    OneEstimateGas:
+      $ref: ./schemas/OneEstimateGas.yml
+    TransferOneBlockchainKMS:
+      $ref: ./schemas/TransferOneBlockchainKMS.yml
+    XdcBlock:
+      $ref: ./schemas/XdcBlock.yml
+    XdcTx:
+      $ref: ./schemas/XdcTx.yml
+    Error403XdcBroadcast:
+      $ref: ./schemas/Error403XdcBroadcast.yml
+    Error403XdcErc20Set:
+      $ref: ./schemas/Error403XdcErc20Set.yml
+    Error403XdcMnemonicPrivateKey:
+      $ref: ./schemas/Error403XdcMnemonicPrivateKey.yml
+    Error403XdcTxHash:
+      $ref: ./schemas/Error403XdcTxHash.yml
+    Error403XdcTxSign:
+      $ref: ./schemas/Error403XdcTxSign.yml
+    Error403XdcErc20TxSign:
+      $ref: ./schemas/Error403XdcErc20TxSign.yml
+    Error403XdcGasCalculation:
+      $ref: ./schemas/Error403XdcGasCalculation.yml
+    CallXdcSmartContractMethod:
+      $ref: ./schemas/CallXdcSmartContractMethod.yml
+    CallXdcReadSmartContractMethod:
+      $ref: ./schemas/CallXdcReadSmartContractMethod.yml
+    CallXdcSmartContractMethodKMS:
+      $ref: ./schemas/CallXdcSmartContractMethodKMS.yml
+    TransferXdcBlockchain:
+      $ref: ./schemas/TransferXdcBlockchain.yml
+    XdcEstimateGas:
+      $ref: ./schemas/XdcEstimateGas.yml
+    TransferXdcBlockchainKMS:
+      $ref: ./schemas/TransferXdcBlockchainKMS.yml
+    TransferMultiTokenCelo:
+      $ref: ./schemas/TransferMultiTokenCelo.yml
+    MultiTx:
+      $ref: ./schemas/MultiTx.yml
+    TransferMultiTokenBatchCelo:
+      $ref: ./schemas/TransferMultiTokenBatchCelo.yml
+    DeployMultiTokenCelo:
+      $ref: ./schemas/DeployMultiTokenCelo.yml
+    DeployMultiTokenCeloKMS:
+      $ref: ./schemas/DeployMultiTokenCeloKMS.yml
+    MintMultiTokenBatchKMSCelo:
+      $ref: ./schemas/MintMultiTokenBatchKMSCelo.yml
+    BurnMultiTokenCelo:
+      $ref: ./schemas/BurnMultiTokenCelo.yml
+    BurnMultiTokenBatchCelo:
+      $ref: ./schemas/BurnMultiTokenBatchCelo.yml
+    BurnMultiTokenKMSCelo:
+      $ref: ./schemas/BurnMultiTokenKMSCelo.yml
+    AddMultiTokenMinterKMS:
+      $ref: ./schemas/AddMultiTokenMinterKMS.yml
+    AddMultiTokenMinter:
+      $ref: ./schemas/AddMultiTokenMinter.yml
+    BurnMultiTokenBatchKMSCelo:
+      $ref: ./schemas/BurnMultiTokenBatchKMSCelo.yml
+    TransferMultiTokenKMSCelo:
+      $ref: ./schemas/TransferMultiTokenKMSCelo.yml
+    TransferMultiTokenBatchKMSCelo:
+      $ref: ./schemas/TransferMultiTokenBatchKMSCelo.yml
+    MintMultiTokenCelo:
+      $ref: ./schemas/MintMultiTokenCelo.yml
+    MintMultiTokenBatchCelo:
+      $ref: ./schemas/MintMultiTokenBatchCelo.yml
+    MintMultiTokenKMSCelo:
+      $ref: ./schemas/MintMultiTokenKMSCelo.yml
+    TransferMultiToken:
+      $ref: ./schemas/TransferMultiToken.yml
+    TransferMultiTokenBatch:
+      $ref: ./schemas/TransferMultiTokenBatch.yml
+    DeployMultiToken:
+      $ref: ./schemas/DeployMultiToken.yml
+    DeployMultiTokenKMS:
+      $ref: ./schemas/DeployMultiTokenKMS.yml
+    TransferMultiTokenKMS:
+      $ref: ./schemas/TransferMultiTokenKMS.yml
+    TransferMultiTokenBatchKMS:
+      $ref: ./schemas/TransferMultiTokenBatchKMS.yml
+    MintMultiToken:
+      $ref: ./schemas/MintMultiToken.yml
+    MintMultiTokenKMS:
+      $ref: ./schemas/MintMultiTokenKMS.yml
+    MintMultiTokenBatch:
+      $ref: ./schemas/MintMultiTokenBatch.yml
+    MintMultiTokenBatchKMS:
+      $ref: ./schemas/MintMultiTokenBatchKMS.yml
+    BurnMultiToken:
+      $ref: ./schemas/BurnMultiToken.yml
+    BurnMultiTokenBatch:
+      $ref: ./schemas/BurnMultiTokenBatch.yml
+    BurnMultiTokenKMS:
+      $ref: ./schemas/BurnMultiTokenKMS.yml
+    BurnMultiTokenBatchKMS:
+      $ref: ./schemas/BurnMultiTokenBatchKMS.yml
+    Erc20BalanceForAddress:
+      $ref: ./schemas/Erc20BalanceForAddress.yml
+    Erc20Balance:
+      $ref: ./schemas/Erc20Balance.yml
+    ChainDeployErc20:
+      $ref: ./schemas/ChainDeployErc20.yml
+    ChainDeploySolanaSpl:
+      $ref: ./schemas/ChainDeploySolanaSpl.yml
+    ChainDeploySolanaSplKMS:
+      $ref: ./schemas/ChainDeploySolanaSplKMS.yml
+    FungibleTx:
+      $ref: ./schemas/FungibleTx.yml
+    ChainDeployErc20KMS:
+      $ref: ./schemas/ChainDeployErc20KMS.yml
+    ChainDeployKcsErc20:
+      $ref: ./schemas/ChainDeployKcsErc20.yml
+    ChainDeployKcsErc20KMS:
+      $ref: ./schemas/ChainDeployKcsErc20KMS.yml
+    ChainDeployAlgoErc20:
+      $ref: ./schemas/ChainDeployAlgoErc20.yml
+    ChainDeployAlgoErc20KMS:
+      $ref: ./schemas/ChainDeployAlgoErc20KMS.yml
+    ChainDeployCeloErc20:
+      $ref: ./schemas/ChainDeployCeloErc20.yml
+    ChainDeployCeloErc20KMS:
+      $ref: ./schemas/ChainDeployCeloErc20KMS.yml
+    ChainMintErc20:
+      $ref: ./schemas/ChainMintErc20.yml
+    ChainMintKcsErc20:
+      $ref: ./schemas/ChainMintKcsErc20.yml
+    ChainMintErc20KMS:
+      $ref: ./schemas/ChainMintErc20KMS.yml
+    ChainMintKcsErc20KMS:
+      $ref: ./schemas/ChainMintKcsErc20KMS.yml
+    ChainMintCeloErc20:
+      $ref: ./schemas/ChainMintCeloErc20.yml
+    ChainMintCeloErc20KMS:
+      $ref: ./schemas/ChainMintCeloErc20KMS.yml
+    ApproveErc20:
+      $ref: ./schemas/ApproveErc20.yml
+    ApproveErc20KMS:
+      $ref: ./schemas/ApproveErc20KMS.yml
+    ApproveCeloErc20:
+      $ref: ./schemas/ApproveCeloErc20.yml
+    ApproveCeloErc20KMS:
+      $ref: ./schemas/ApproveCeloErc20KMS.yml
+    ChainBurnErc20:
+      $ref: ./schemas/ChainBurnErc20.yml
+    ChainBurnErc20KMS:
+      $ref: ./schemas/ChainBurnErc20KMS.yml
+    ChainBurnKcsErc20:
+      $ref: ./schemas/ChainBurnKcsErc20.yml
+    ChainBurnKcsErc20KMS:
+      $ref: ./schemas/ChainBurnKcsErc20KMS.yml
+    ChainBurnCeloErc20:
+      $ref: ./schemas/ChainBurnCeloErc20.yml
+    ChainBurnCeloErc20KMS:
+      $ref: ./schemas/ChainBurnCeloErc20KMS.yml
+    ChainTransferAlgoErc20:
+      $ref: ./schemas/ChainTransferAlgoErc20.yml
+    ChainTransferAlgoErc20KMS:
+      $ref: ./schemas/ChainTransferAlgoErc20KMS.yml
+    ChainBurnAlgoErc20:
+      $ref: ./schemas/ChainBurnAlgoErc20.yml
+    ChainBurnAlgoErc20KMS:
+      $ref: ./schemas/ChainBurnAlgoErc20KMS.yml
+    ChainTransferEthErc20:
+      $ref: ./schemas/ChainTransferEthErc20.yml
+    ChainTransferSolanaSpl:
+      $ref: ./schemas/ChainTransferSolanaSpl.yml
+    ChainTransferSolanaSplKMS:
+      $ref: ./schemas/ChainTransferSolanaSplKMS.yml
+    ChainTransferEthErc20KMS:
+      $ref: ./schemas/ChainTransferEthErc20KMS.yml
+    ChainTransferKcsEthErc20:
+      $ref: ./schemas/ChainTransferKcsEthErc20.yml
+    ChainTransferKcsEthErc20KMS:
+      $ref: ./schemas/ChainTransferKcsEthErc20KMS.yml
+    ChainTransferBscBep20:
+      $ref: ./schemas/ChainTransferBscBep20.yml
+    ChainTransferBscBep20KMS:
+      $ref: ./schemas/ChainTransferBscBep20KMS.yml
+    ChainTransferCeloErc20Token:
+      $ref: ./schemas/ChainTransferCeloErc20Token.yml
+    ChainTransferCeloErc20TokenKMS:
+      $ref: ./schemas/ChainTransferCeloErc20TokenKMS.yml
+    ChainCallSmartContractMethod:
+      $ref: ./schemas/ChainCallSmartContractMethod.yml
+    NftMetadataErc721:
+      $ref: ./schemas/NftMetadataErc721.yml
+    NftMetadataErc721OnchainSolana:
+      $ref: ./schemas/NftMetadataErc721OnchainSolana.yml
+    NftMetadataErc721OnchainFlow:
+      $ref: ./schemas/NftMetadataErc721OnchainFlow.yml
+    NftMetadataErc721OnchainAlgo:
+      $ref: ./schemas/NftMetadataErc721OnchainAlgo.yml
+    NftRoyaltyErc721:
+      $ref: ./schemas/NftRoyaltyErc721.yml
+    NftTokenByAddressErc721:
+      $ref: ./schemas/NftTokenByAddressErc721.yml
+    NftTokenByAddressErc721TokenMetadata:
+      $ref: ./schemas/NftTokenByAddressErc721TokenMetadata.yml
+    NftTokenByAddressErc721Metadata:
+      $ref: ./schemas/NftTokenByAddressErc721Metadata.yml
+    NftTokenByCollectionErc721:
+      $ref: ./schemas/NftTokenByCollectionErc721.yml
+    NftTokenByCollectionErc721TokenMetadata:
+      $ref: ./schemas/NftTokenByCollectionErc721TokenMetadata.yml
+    TransferNftCelo:
+      $ref: ./schemas/TransferNftCelo.yml
+    TransferNftTezos:
+      $ref: ./schemas/TransferNftTezos.yml
+    TransferNftTron:
+      $ref: ./schemas/TransferNftTron.yml
+    FlowMintedMultipleResult:
+      $ref: ./schemas/FlowMintedMultipleResult.yml
+    FlowMintedResult:
+      $ref: ./schemas/FlowMintedResult.yml
+    SolanaMintedResult:
+      $ref: ./schemas/SolanaMintedResult.yml
+    AlgorandMintedResult:
+      $ref: ./schemas/AlgorandMintedResult.yml
+    MintMultipleNftCelo:
+      $ref: ./schemas/MintMultipleNftCelo.yml
+    MintMultipleNftTron:
+      $ref: ./schemas/MintMultipleNftTron.yml
+    DeployNftCelo:
+      $ref: ./schemas/DeployNftCelo.yml
+    DeployNftTezos:
+      $ref: ./schemas/DeployNftTezos.yml
+    DeployNftTron:
+      $ref: ./schemas/DeployNftTron.yml
+    DeployNftCeloKMS:
+      $ref: ./schemas/DeployNftCeloKMS.yml
+    DeployNftTronKMS:
+      $ref: ./schemas/DeployNftTronKMS.yml
+    MintMultipleNftKMSCelo:
+      $ref: ./schemas/MintMultipleNftKMSCelo.yml
+    MintMultipleNftKMSTron:
+      $ref: ./schemas/MintMultipleNftKMSTron.yml
+    BurnNftCelo:
+      $ref: ./schemas/BurnNftCelo.yml
+    BurnNftTezos:
+      $ref: ./schemas/BurnNftTezos.yml
+    BurnNftAlgo:
+      $ref: ./schemas/BurnNftAlgo.yml
+    BurnNftAlgoKMS:
+      $ref: ./schemas/BurnNftAlgoKMS.yml
+    BurnNftTron:
+      $ref: ./schemas/BurnNftTron.yml
+    BurnNftSolana:
+      $ref: ./schemas/BurnNftSolana.yml
+    BurnNftSolanaKMS:
+      $ref: ./schemas/BurnNftSolanaKMS.yml
+    BurnNftKMSCelo:
+      $ref: ./schemas/BurnNftKMSCelo.yml
+    BurnNftKMSTron:
+      $ref: ./schemas/BurnNftKMSTron.yml
+    BurnNftFlowPK:
+      $ref: ./schemas/BurnNftFlowPK.yml
+    BurnNftFlowMnemonic:
+      $ref: ./schemas/BurnNftFlowMnemonic.yml
+    BurnNftFlowKMS:
+      $ref: ./schemas/BurnNftFlowKMS.yml
+    MintMultipleNftFlowPK:
+      $ref: ./schemas/MintMultipleNftFlowPK.yml
+    MintMultipleNftFlowMnemonic:
+      $ref: ./schemas/MintMultipleNftFlowMnemonic.yml
+    MintMultipleNftFlowKMS:
+      $ref: ./schemas/MintMultipleNftFlowKMS.yml
+    MintNftFlowPK:
+      $ref: ./schemas/MintNftFlowPK.yml
+    MintNftFlowMnemonic:
+      $ref: ./schemas/MintNftFlowMnemonic.yml
+    MintNftFlowKMS:
+      $ref: ./schemas/MintNftFlowKMS.yml
+    DeployNftFlowPK:
+      $ref: ./schemas/DeployNftFlowPK.yml
+    DeployNftFlowMnemonic:
+      $ref: ./schemas/DeployNftFlowMnemonic.yml
+    DeployNftFlowKMS:
+      $ref: ./schemas/DeployNftFlowKMS.yml
+    TransferNftFlowPK:
+      $ref: ./schemas/TransferNftFlowPK.yml
+    TransferNftFlowMnemonic:
+      $ref: ./schemas/TransferNftFlowMnemonic.yml
+    TransferNftFlowKMS:
+      $ref: ./schemas/TransferNftFlowKMS.yml
+    NftTx:
+      $ref: ./schemas/NftTx.yml
+    TransferNftKMSCelo:
+      $ref: ./schemas/TransferNftKMSCelo.yml
+    TransferNftKMSTron:
+      $ref: ./schemas/TransferNftKMSTron.yml
+    MintNftCelo:
+      $ref: ./schemas/MintNftCelo.yml
+    MintNftTron:
+      $ref: ./schemas/MintNftTron.yml
+    MintNftKMSCelo:
+      $ref: ./schemas/MintNftKMSCelo.yml
+    MintNftKMSTron:
+      $ref: ./schemas/MintNftKMSTron.yml
+    TransferNft:
+      $ref: ./schemas/TransferNft.yml
+    TransferNftAlgo:
+      $ref: ./schemas/TransferNftAlgo.yml
+    TransferNftAlgoExpress:
+      $ref: ./schemas/TransferNftAlgoExpress.yml
+    TransferNftSolana:
+      $ref: ./schemas/TransferNftSolana.yml
+    TransferNftAlgoKMS:
+      $ref: ./schemas/TransferNftAlgoKMS.yml
+    TransferNftSolanaKMS:
+      $ref: ./schemas/TransferNftSolanaKMS.yml
+    DeployNft:
+      $ref: ./schemas/DeployNft.yml
+    DeployNftKMS:
+      $ref: ./schemas/DeployNftKMS.yml
+    TransferNftKMS:
+      $ref: ./schemas/TransferNftKMS.yml
+    MintNft:
+      $ref: ./schemas/MintNft.yml
+    MintNftMinter:
+      $ref: ./schemas/MintNftMinter.yml
+    MintNftExpress:
+      $ref: ./schemas/MintNftExpress.yml
+    MintNftExpressAlgorand:
+      $ref: ./schemas/MintNftExpressAlgorand.yml
+    MintNftAlgorand:
+      $ref: ./schemas/MintNftAlgorand.yml
+    MintNftAlgorandKMS:
+      $ref: ./schemas/MintNftAlgorandKMS.yml
+    MintNftExpressTezos:
+      $ref: ./schemas/MintNftExpressTezos.yml
+    MintNftTezos:
+      $ref: ./schemas/MintNftTezos.yml
+    MintNftKMS:
+      $ref: ./schemas/MintNftKMS.yml
+    MintNftSolana:
+      $ref: ./schemas/MintNftSolana.yml
+    VerifySolanaNFT:
+      $ref: ./schemas/VerifySolanaNFT.yml
+    VerifySolanaNFTKMS:
+      $ref: ./schemas/VerifySolanaNFTKMS.yml
+    MintNftExpressSolana:
+      $ref: ./schemas/MintNftExpressSolana.yml
+    MintNftSolanaKMS:
+      $ref: ./schemas/MintNftSolanaKMS.yml
+    SolanaNftMetadataCreator:
+      $ref: ./schemas/SolanaNftMetadataCreator.yml
+    SolanaNftMetadata:
+      $ref: ./schemas/SolanaNftMetadata.yml
+    SolanaNftMetadataKMS:
+      $ref: ./schemas/SolanaNftMetadataKMS.yml
+    SolanaNftExpressMetadata:
+      $ref: ./schemas/SolanaNftExpressMetadata.yml
+    MintMultipleNft:
+      $ref: ./schemas/MintMultipleNft.yml
+    MintMultipleNftMinter:
+      $ref: ./schemas/MintMultipleNftMinter.yml
+    MintMultipleNftKMS:
+      $ref: ./schemas/MintMultipleNftKMS.yml
+    BurnNft:
+      $ref: ./schemas/BurnNft.yml
+    AddNftMinter:
+      $ref: ./schemas/AddNftMinter.yml
+    BurnNftKMS:
+      $ref: ./schemas/BurnNftKMS.yml
+    AddNftMinterKMS:
+      $ref: ./schemas/AddNftMinterKMS.yml
+    NftGetBalanceSc:
+      $ref: ./schemas/NftGetBalanceSc.yml
+    NftGetBalanceScAlgo:
+      $ref: ./schemas/NftGetBalanceScAlgo.yml
+    BalanceItem:
+      $ref: ./schemas/BalanceItem.yml
+    NativeTokenBalance:
+      $ref: ./schemas/NativeTokenBalance.yml
+    NftBalance:
+      $ref: ./schemas/NftBalance.yml
+    FungibleTokenBalance:
+      $ref: ./schemas/FungibleTokenBalance.yml
+    TokenType:
+      $ref: ./schemas/TokenType.yml
+    BlockItem:
+      $ref: ./schemas/BlockItem.yml
+    Event:
+      $ref: ./schemas/Event.yml
+    DecodedDataCommon:
+      $ref: ./schemas/DecodedDataCommon.yml
+    FungibleTransfer:
+      $ref: ./schemas/FungibleTransfer.yml
+    StablecoinTransfer:
+      $ref: ./schemas/StablecoinTransfer.yml
+    NftTransfer:
+      $ref: ./schemas/NftTransfer.yml
+    MultitokenTransfer:
+      $ref: ./schemas/MultitokenTransfer.yml
+    MultitokenTransferSingle:
+      $ref: ./schemas/MultitokenTransferSingle.yml
+    MultitokenTransferBatch:
+      $ref: ./schemas/MultitokenTransferBatch.yml
+    UniswapTrade:
+      $ref: ./schemas/UniswapTrade.yml
+    UniswapTradeV2:
+      $ref: ./schemas/UniswapTradeV2.yml
+    UniswapTradeV3:
+      $ref: ./schemas/UniswapTradeV3.yml
+    RawData:
+      $ref: ./schemas/RawData.yml
+    TxData:
+      $ref: ./schemas/TxData.yml
+    TxType:
+      $ref: ./schemas/TxType.yml
+    TxSubtype:
+      $ref: ./schemas/TxSubtype.yml
+    FungibleInfo:
+      $ref: ./schemas/FungibleInfo.yml
+    FungibleInfoTezos:
+      $ref: ./schemas/FungibleInfoTezos.yml
+    NftInfo:
+      $ref: ./schemas/NftInfo.yml
+    NftInfoTezos:
+      $ref: ./schemas/NftInfoTezos.yml
+    MultitokenInfo:
+      $ref: ./schemas/MultitokenInfo.yml
+    NftTokenInfo:
+      $ref: ./schemas/NftTokenInfo.yml
+    Token:
+      $ref: ./schemas/Token.yml
+    TokenTezos:
+      $ref: ./schemas/TokenTezos.yml
+    Chain:
+      $ref: ./schemas/Chain.yml
+    ChainEnum:
+      $ref: ./schemas/ChainEnum.yml
+    ChainEnumExtended:
+      $ref: ./schemas/ChainEnumExtended.yml
+    ChainUtxoEnum:
+      $ref: ./schemas/ChainUtxoEnum.yml
+    TokenId:
+      $ref: ./schemas/TokenId.yml
+    TokenIds:
+      $ref: ./schemas/TokenIds.yml
+    TokenAddress:
+      $ref: ./schemas/TokenAddress.yml
+    ExcludeMetadata:
+      $ref: ./schemas/ExcludeMetadata.yml
+    NftMetadataURI:
+      $ref: ./schemas/NftMetadataURI.yml
+    NftMetadata:
+      $ref: ./schemas/NftMetadata.yml
+    BlockNumber:
+      $ref: ./schemas/BlockNumber.yml
+    BlockNumberTo:
+      $ref: ./schemas/BlockNumberTo.yml
+    PageSize:
+      $ref: ./schemas/PageSize.yml
+    Cursor:
+      $ref: ./schemas/Cursor.yml
+    Offset:
+      $ref: ./schemas/Offset.yml
+  securitySchemes:
+    X-API-Key:
+      type: apiKey
+      name: x-api-key
+      in: header
+      description: "The **API key** represents your [pricing plan](https://tatum.io/pricing)\
+        \ and defines how many API calls \nyou can make per second and what the total\
+        \ number of API calls per month is available for you.\n\nOne API key must\
+        \ be used by only one person.\n\nChoose one of the following authentication\
+        \ methods:\n\n* **Provide the API key in each API call.**\n\n  To obtain the\
+        \ API key, [create a Tatum account](https://dashboard.tatum.io/sign-up). Once\
+        \ you are logged in,\n  you are automatically assigned the Free plan.\n\n\
+        \  With the Free plan:\n  * You get two API keys, one tied to the testnet\
+        \ of a blockchain and the other to the mainnet.\n  * You can make up to five\
+        \ API calls per second.\n  * The number of API calls per month is not limited.\n\
+        \n  When making an API call, provide the appropriate API key (testnet or mainnet)\
+        \ as either an HTTP header\n  or a path parameter of the API call.\n\n  If\
+        \ you ever need your API keys, you can find them in [your Tatum account](https://dashboard.tatum.io/).\n\
+        \n  For more information about the Free plan and paid plans, refer to [this\
+        \ article](https://docs.tatum.io/payments/plans-and-pricing).\n\n* **Get an\
+        \ auto-generated API key attached to API calls.**\n\n  Make an API call without\
+        \ any API key provided. The API key will be generated and tied to your IP\
+        \ address.\n  This API key is stored within the Tatum platform and is automatically\
+        \ attached to all your API calls.\n\n  With the auto-generated API key:\n\
+        \  * You can make up to five API calls per second.\n  * You get 10,000,000\
+        \ credits to spend on API calls within a month.\n\n    The number of credits\
+        \ is reset on the first day of a month. The unused credits from the current\
+        \ month are not\n    rolled over to the next month.\n\n  These limits are\
+        \ applied to both the testnet and mainnet.\n\n  By default, API calls with\
+        \ the auto-generated API key are executed against the mainnet.\n  To make\
+        \ an API call to the testnet, add the `type` query parameter set to `testnet`\
+        \ to the endpoint URL,\n  for example:\n\n  `https://api.tatum.io/v3/ledger/account?type=testnet`\n"

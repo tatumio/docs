@@ -1,0 +1,69 @@
+type: object
+properties:
+  symbol:
+    description: Name of the ERC20 token - stored as a symbol on Blockchain
+    example: MT
+    maxLength: 30
+    pattern: ^[a-zA-Z0-9_]+$
+    minLength: 1
+    type: string
+  supply:
+    description: max supply of ERC20 token.
+    maxLength: 38
+    example: '10000000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  description:
+    description: Description of the ERC20 token
+    example: My ERC20 Token
+    maxLength: 100
+    minLength: 1
+    type: string
+  basePair:
+    description: Base pair for ERC20 token. 1 token will be equal to 1 unit of base
+      pair. Transaction value will be calculated according to this base pair.
+    example: EUR
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+  baseRate:
+    type: number
+    example: 1
+    default: 1
+    minimum: 0
+    description: Exchange rate of the base pair. Each unit of the created curency
+      will represent value of baseRate*1 basePair.
+  customer:
+    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+  xpub:
+    description: Extended public key (xpub), from which address, where all initial
+      supply will be stored, will be generated. Either xpub and derivationIndex, or
+      address must be present, not both.
+    maxLength: 150
+    minLength: 1
+    example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
+    type: string
+  derivationIndex:
+    description: Derivation index for xpub to generate specific deposit address.
+    format: int32
+    example: 0
+    type: integer
+    maximum: 2147483647
+  privateKey:
+    description: Private key of Ethereum account address, from which gas for deployment
+      of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
+    type: string
+    maxLength: 66
+    minLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+  nonce:
+    type: number
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+    minimum: 0
+required:
+- description
+- supply
+- symbol
+- basePair
+- xpub
+- derivationIndex
+- privateKey

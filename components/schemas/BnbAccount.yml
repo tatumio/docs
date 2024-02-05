@@ -1,0 +1,31 @@
+type: object
+properties:
+  account_number:
+    type: number
+    example: 696215
+  address:
+    type: string
+    example: tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn
+  balances:
+    type: array
+    items:
+      type: object
+      properties:
+        free:
+          type: string
+          example: '207.00000000'
+        frozen:
+          type: string
+          example: '0.00000000'
+        locked:
+          type: string
+          example: '0.00000000'
+        symbol:
+          type: string
+          example: BNB
+  flags:
+    type: number
+    example: 0
+  sequence:
+    type: number
+    example: 0

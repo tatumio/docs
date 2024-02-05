@@ -1,0 +1,56 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Gets Bitcoin block detail by block hash or height.</p>
+
+  '
+operationId: BtcGetBlock
+parameters:
+- description: Block hash or height.
+  in: path
+  name: hash
+  required: true
+  schema:
+    type: string
+    example: 00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/BtcBlock'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '404':
+    description: Block not found.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error404BlockNotExists'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get a Bitcoin block by its hash or height
+tags:
+- Bitcoin

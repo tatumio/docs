@@ -1,0 +1,50 @@
+description: <p>The <code>MintNftFlowPK</code> schema lets you mint NFTs natively
+  on Flow and sign the transaction with your private key.<br/>For more information,
+  see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+type: object
+properties:
+  chain:
+    type: string
+    example: FLOW
+    description: The blockchain to work with
+    enum:
+    - FLOW
+  to:
+    type: string
+    description: Blockchain address to send NFT token to.
+    example: '0xc1b45bc27b9c61c3'
+    maxLength: 18
+    minLength: 18
+  url:
+    type: string
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    maxLength: 256
+  contractAddress:
+    maxLength: 36
+    minLength: 36
+    description: Address of NFT token
+    example: 17a50dad-bcb1-4f3d-ae2c-ea2bfb04419f
+    type: string
+  account:
+    type: string
+    maxLength: 18
+    example: '0xc1b45bc27b9c61c3'
+    minLength: 18
+    description: Blockchain address of the sender account.
+  privateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of sender address. Private key, mnemonic and index or
+      signature Id must be present.
+required:
+- chain
+- contractAddress
+- account
+- privateKey
+- to
+- url

@@ -1,0 +1,18 @@
+type: object
+properties:
+  symbol:
+    type: string
+    description: The symbol of the NFT collection.
+    example: ART
+  name:
+    type: string
+    description: The full name of the NFT collection.
+    example: Art Collection
+  supply:
+    type: string
+    description: The total supply of the NFT collection.
+    example: '5000'
+  tokenType:
+    type: string
+    description: The type of the token (e.g., ERC721, ERC1155).
+    example: ERC721

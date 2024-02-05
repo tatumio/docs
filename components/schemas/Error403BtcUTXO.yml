@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: tx.hash.index.spent
+    example: tx.hash.index.spent
+    type: string
+  message:
+    description: No such UTXO for transaction and index.
+    example: No such UTXO for transaction and index.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

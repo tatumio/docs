@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: vet.failed
+    example: vet.failed
+    type: string
+  message:
+    description: Unable to communicate with blockchain. ${error}
+    example: Unable to communicate with blockchain. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

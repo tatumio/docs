@@ -1,0 +1,91 @@
+type: object
+required:
+- to
+properties:
+  fromAddress:
+    description: Array of addresses and corresponding private keys. Tatum will automatically
+      scan last unspent transactions for each address and will use all of the unspent
+      values. We advise to use this option if you have 1 address per 1 transaction
+      only.
+    type: array
+    items:
+      type: object
+      required:
+      - address
+      properties:
+        address:
+          description: Address to send assets from.
+          type: string
+          minimum: 30
+          maximum: 150
+          example: addr1qxm3vd0msv9ph8elhy7xrv975z88y6lr3d8vdgy3fwr2e22uvu2ffa2ctx3pdl4rjjja5p7al2k356x5yx8cn03am88s2807d9
+        privateKey:
+          description: Private key of the address to send assets from. Private key,
+            or signature Id must be present.
+          type: string
+          minimum: 192
+          maximum: 192
+          example: 7808a501e1bbc9926ac8ac6981e47cb0401288ae331a1f2333d1bed46c5b3051b5f875c39477b05bc3a43a3800b763f616ae3646f21df0ab5d95db944e71f5cfa8082d5c4e6241d49b17b2b6173f01bb3fd03be012cc8908ceea9e559e33e4fc
+        signatureId:
+          type: string
+          format: uuid
+          example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+          description: Identifier of the private key associated in signing application.
+            Private key, or signature Id must be present.
+  fromUTXO:
+    description: Array of transaction hashes, index of UTXO in it and corresponding
+      private keys. Use this option if you want to calculate amount to send manually.
+      Either fromUTXO or fromAddress must be present.
+    type: array
+    items:
+      type: object
+      required:
+      - txHash
+      - index
+      properties:
+        txHash:
+          description: Transaction hash of the UTXO to be spent.
+          type: string
+          example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+          minLength: 64
+          maxLength: 64
+        index:
+          description: Index of the UTXO to be spent.
+          type: number
+          example: 0
+          minimum: 0
+          maximum: 2147483647
+        privateKey:
+          description: Private key of the UTXO to be spent. Private key, or signature
+            Id must be present.
+          type: string
+          example: 7808a501e1bbc9926ac8ac6981e47cb0401288ae331a1f2333d1bed46c5b3051b5f875c39477b05bc3a43a3800b763f616ae3646f21df0ab5d95db944e71f5cfa8082d5c4e6241d49b17b2b6173f01bb3fd03be012cc8908ceea9e559e33e4fc
+          minLength: 192
+          maxLength: 192
+        signatureId:
+          type: string
+          format: uuid
+          example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+          description: Identifier of the private key associated in signing application.
+            Private key, or signature Id must be present.
+  to:
+    description: Array of addresses and values to send Litecoins to. Values must be
+      set in LTC. Difference between from and to is transaction fee.
+    type: array
+    items:
+      type: object
+      required:
+      - address
+      - value
+      properties:
+        address:
+          description: Destination address.
+          type: string
+          example: addr1qxm3vd0msv9ph8elhy7xrv975z88y6lr3d8vdgy3fwr2e22uvu2ffa2ctx3pdl4rjjja5p7al2k356x5yx8cn03am88s2807d9
+          minimum: 30
+          maximum: 150
+        value:
+          description: Amount to be sent, in ADA.
+          type: number
+          minimum: 0
+          example: 0.029609

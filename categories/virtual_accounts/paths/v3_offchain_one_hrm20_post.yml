@@ -1,0 +1,120 @@
+deprecated: true
+description: '<p><b>This method is deprecated.<br/>Use <a href="#operation/registerErc20Token">this
+  method</a> instead.</b></p><br/>
+
+  <h4>2 credits per API call.</h4>
+
+  <p>First step to create new HRM20 token with given supply on ONE blockchain with
+  support of Tatum''s private ledger.<br/>
+
+  <br/>
+
+  <br/>
+
+  This method only creates Tatum Private ledger virtual currency with predefined parameters.
+  It will not generate any blockchain smart contract.<br/>
+
+  The whole supply of HRM20 token is stored in the customer''s newly created account.
+  Then it is possible to create new Tatum accounts with HRM20 token name as account''s
+  currency.<br/>
+
+  Newly created account is frozen until the specific HRM20 smart contract address
+  is linked with the Tatum virtual currency, representing the token.<br/>
+
+  Order of the steps to create HRM20 smart contract with Tatum private ledger support:
+
+  <ol>
+
+  <li><a href="#operation/registerErc20Token">Register HRM20 token</a> - creates a
+  virtual currency within Tatum</li>
+
+  <li><a href="#operation/Erc20Deploy">Deploy HRM20 smart contract</a> - create new
+  HRM20 smart contract on the blockchain</li>
+
+  <li><a href="#operation/storeTokenAddress">Store HRM20 smart contract address</a>
+  - link newly created HRM20 smart contract address with Tatum virtual currency -
+  this operation enables frozen account and enables ledger synchronization for HRM20
+  Tatum accounts</li>
+
+  </ol>
+
+  There is a helper method <a href="#operation/Erc20Deploy">Deploy ONE HRM20 Smart
+  Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.<br/>
+
+  Address on the blockchain, where all initial supply will be transferred, can be
+  defined via the address or xpub and derivationIndex. When xpub is present, the account
+  connected to this virtualCurrency will be set as the account''s xpub.
+
+  </p>
+
+  '
+operationId: createHrm20
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/Erc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/Erc20Address'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Erc20Response'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20Prefix'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubBoth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubMissing'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RecipientFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20NameDuplicate'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403CustomerNotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCCreateFailed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubMissing'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressIndexUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressXpub'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Register a new Harmony HRM-20 token in the virtual account
+tags:
+- Blockchain operations

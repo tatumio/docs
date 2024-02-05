@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: customer.not.active
+    example: customer.not.active
+    type: string
+  message:
+    description: Customer not active.
+    example: Customer not active.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

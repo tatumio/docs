@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: kms.missing
+    example: kms.missing
+    type: string
+  message:
+    description: No such KMS signature with id '{id}'.
+    example: No such KMS signature with id '{id}'.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

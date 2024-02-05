@@ -1,0 +1,72 @@
+type: object
+properties:
+  gasUsed:
+    type: number
+    example: 21000
+  gasPayer:
+    type: string
+    example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+  paid:
+    type: string
+    example: '0x1ac942860d7100728'
+  reward:
+    type: string
+    example: '0x8092d8e9da1e688c'
+  reverted:
+    type: boolean
+    example: false
+  meta:
+    properties:
+      blockID:
+        type: string
+        example: '0x0011bbb9925da1b54035e2a870abe336bc79a3b083303646b87a3315c11c963b'
+      blockNumber:
+        type: number
+        example: 1162169
+      blockTimestamp:
+        type: number
+        example: 1541643760
+      txID:
+        type: string
+        example: '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7'
+      txOrigin:
+        type: string
+        example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+    type: object
+  outputs:
+    description: List of recipient addresses and amounts to send to each of them.
+    type: array
+    items:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            type: object
+          example: []
+        transfers:
+          type: array
+          items:
+            type: object
+            properties:
+              sender:
+                type: string
+                example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+              recipient:
+                type: string
+                example: '0xc6a3007e8e0d959ada56eaa003ebd1d61364cb4f'
+              amount:
+                type: string
+                example: '0x5f2f157661ad625bf00000'
+  blockNumber:
+    type: number
+    example: 1162169
+  blockHash:
+    type: string
+    example: '0x0011bbb9925da1b54035e2a870abe336bc79a3b083303646b87a3315c11c963b'
+  transactionHash:
+    type: string
+    example: '0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7'
+  status:
+    type: string
+    example: '0x1'

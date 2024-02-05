@@ -1,0 +1,71 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Remove a deposit address from the virtual account.</p>
+
+  <p>The deposit address will no longer be scanned for incoming deposits. You will
+  no longer be able to generate this address again.</p>
+
+  '
+operationId: removeAddress
+parameters:
+- description: Account ID
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    example: 5e68c66581f2ee32bc354087
+- description: Blockchain address
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: 2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb
+- description: Destination tag or memo attribute for XRP, BNB or XLM addresses
+  in: query
+  name: index
+  required: false
+  schema:
+    type: number
+    minimum: 1
+    example: 1
+responses:
+  '204':
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Remove a deposit address from a virtual account
+tags:
+- Blockchain addresses

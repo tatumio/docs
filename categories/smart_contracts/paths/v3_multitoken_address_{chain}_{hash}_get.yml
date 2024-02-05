@@ -1,0 +1,112 @@
+description: '<p><p>This endpoint is deprecated. Do not use it.<br/>
+
+  Instead, use <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress"
+  target="_blank">this API</a>.</b></p><br/>
+
+  <p><b>1 credit per API call</b></p>
+
+  <p>Get Multi Token contract address from deploy transaction.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  </ul>
+
+  '
+deprecated: true
+operationId: MultiTokenGetContractAddress
+parameters:
+- description: Blockchain to work with
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    enum:
+    - ETH
+    - MATIC
+    - KCS
+    - KLAY
+    - ONE
+    - CELO
+    - BSC
+- description: Transaction hash
+  in: path
+  name: hash
+  required: true
+  schema:
+    type: string
+    example: '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7'
+- description: Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            contractAddress:
+              type: string
+              description: Address of the Multi Token token.
+              example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxNotFound'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get the address of a Multi Token smart contract by its transaction hash
+tags:
+- Multi Tokens (ERC-1155 or compatible)

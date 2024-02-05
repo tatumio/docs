@@ -1,0 +1,63 @@
+type: object
+required:
+- amount
+- listingId
+- nft
+- price
+- seller
+- state
+- createdAt
+properties:
+  amount:
+    type: string
+    description: Amount of NFTs to sold in this listing.
+    example: '1'
+  buyer:
+    type: string
+    description: Address of the buyer, if exists.
+    example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
+  listingId:
+    type: string
+    description: ID of the listing
+    example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
+  nft:
+    type: object
+    required:
+    - address
+    - data
+    properties:
+      address:
+        type: string
+        description: NFT Address
+        example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
+      data:
+        $ref: '../migrated.yml#/components/schemas/SolanaNftMetadata'
+  price:
+    type: string
+    description: Price of the NFT asset in native currency or ERC20 token based on
+      the presence of erc20Address field.
+    example: '1.234'
+  seller:
+    type: string
+    description: Address of the seller.
+    example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
+  state:
+    type: string
+    description: State of the listing. 0 - available, 1 - sold, 2 - cancelled
+    enum:
+    - '0'
+    - '1'
+    - '2'
+    example: '1'
+  createdAt:
+    type: number
+    description: Timestamp when this listing was created
+    example: 1669751911
+  purchasedAt:
+    type: number
+    description: Timestamp when this listing was purchased
+    example: 1669751911
+  cancelledAt:
+    type: number
+    description: Timestamp when this listing was cancelled
+    example: 1669751911

@@ -1,0 +1,112 @@
+description: '<p><b>2 credits per API call + 1 credit for each created address<br/>
+
+  On Flow, additional 3000 credits are consumed for <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress"
+  target="_blank">each created address</a>.</b></p>
+
+  <p>Create multiple deposit addresses associated with a virtual account.</p>
+
+  <p>When you have multiple deposit addresses created for the same virtual account,
+  you aggregate various blockchain transactions from different addresses under a single
+  account.<br/>You can deposit funds from another blockchain address to a deposit
+  address associated with the virtual account, and the funds will be credited to that
+  virtual account.</p>
+
+  <p><b>Scanning for incoming deposits</b><br/>
+
+  By default, deposit addresses are scanned for incoming deposits. Deposit addresses
+  are automatically synchronized with the associated virtual account, and you can
+  see incoming deposits on the virtual account.<br/>Scanning deposit addresses for
+  incoming deposits consumes <b>20 credits per address per day</b>.</p>
+
+  <p>If you want to be notified about certain events occurring on the deposit addresses,
+  <a href="https://apidoc.tatum.io/tag/Notification-subscriptions#operation/createSubscription"
+  target="_blank">subscribe for notifications</a>.</p>
+
+  <p><b>Virtual account cryptocurrency</b></p>
+
+  <p>Depending on the cryptocurrency of the virtual account, this API generates:</p>
+
+  <ul>
+
+  <li><b>Public address</b> for BTC, BCH, ETH, or LTC</li>
+
+  <li><b>DestinationTag</b> for XRP</li>
+
+  <li><b>Message</b> for XLM</li>
+
+  </ul>
+
+  <p>For fore information about supported blockchains and address types, see the <a
+  href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">API
+  for creating virtual accounts</a>.</p>
+
+  <p>Deposit addresses are generated in the natural order of the extended public key
+  provided in the virtual account. The derivation index is the representation of that
+  order; it starts from 0 and ends at 2^31.</p>
+
+  <p>When a new deposit address is generated, the last not used index is used to generate
+  the address. You can skip some addresses to a different index, which means all the
+  skipped addresses will no longer be used.</p>
+
+  '
+operationId: generateDepositAddressesBatch
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/OffchainAddresses'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Address'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubMissing'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressIndexUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressUsed'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Create multiple deposit addresses for a virtual account
+tags:
+- Blockchain addresses

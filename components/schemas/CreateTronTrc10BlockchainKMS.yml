@@ -1,0 +1,72 @@
+type: object
+properties:
+  from:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Sender address of TRON account in Base58 format.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  signatureId:
+    type: string
+    minimum: 36
+    maximum: 36
+    format: uuid
+    example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  recipient:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Recipient address of created TRC 10 tokens.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  name:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Name of the token.
+    example: My token
+  abbreviation:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Abbreviation of the token.
+    example: SYM
+  description:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Description of the token.
+    example: My short description
+  url:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: URL of the token.
+    example: https://mytoken.com
+  totalSupply:
+    type: number
+    minimum: 0
+    description: Total supply of the tokens.
+    example: 100000
+  decimals:
+    type: number
+    minimum: 0
+    maximum: 5
+    description: Number of decimal places of the token.
+    example: 10
+required:
+- from
+- signatureId
+- recipient
+- name
+- abbreviation
+- description
+- url
+- totalSupply
+- decimals

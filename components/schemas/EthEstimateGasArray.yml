@@ -1,0 +1,8 @@
+type: object
+required:
+- estimations
+properties:
+  estimations:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/EthEstimateGas'

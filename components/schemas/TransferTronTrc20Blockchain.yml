@@ -1,0 +1,36 @@
+type: object
+properties:
+  fromPrivateKey:
+    type: string
+    minLength: 64
+    maxLength: 64
+    description: Private key of the address, from which the TRX will be sent.
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+  to:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Recipient address of TRON account in Base58 format.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  tokenAddress:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Address of the TRC20 token to transfer.
+    example: TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+  amount:
+    description: Amount to be sent in TRX.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+required:
+- fromPrivateKey
+- tokenAddress
+- to
+- amount
+- feeLimit

@@ -1,0 +1,31 @@
+type: object
+properties:
+  blockNumber:
+    type: integer
+    description: The block number in the blockchain.
+    example: 10
+  blockTimestamp:
+    type: integer
+    format: int64
+    description: The timestamp when the block was created, in milliseconds since Unix
+      epoch.
+    example: 1598671520000
+  hash:
+    type: string
+    description: The hash of the block.
+    example: '0xec1a2d906f34e1981b2b1a15dbe5e10cf640e8b4b27dc056ebb65c0409b5a9af'
+  eventIngestedSize:
+    type: integer
+    description: The number of ingested events in the block.
+    example: 0
+  nftIngestedSize:
+    type: integer
+    description: The number of ingested NFTs in the block.
+    example: 0
+  txHashes:
+    type: array
+    items:
+      type: string
+    description: The array of transaction hashes included in the block.
+    example:
+    - '0x19eaae1f7bdd28605f4175d7e87c9de68431bf76e85a262e268252a84bfc3984'

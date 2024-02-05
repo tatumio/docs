@@ -1,0 +1,6 @@
+type: object
+properties:
+  balance:
+    type: string
+    description: Balance in ETH
+    example: '10.52'

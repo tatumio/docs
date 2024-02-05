@@ -1,0 +1,44 @@
+description: <h4>1 credit per API call.</h4><br/><p>Gets the current Ethereum block
+  number. This is the number of the latest block in the blockchain.</p>
+operationId: EthGetCurrentBlock
+parameters:
+- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: number
+          description: Current block number
+          example: 6491272
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get current block number
+tags:
+- Ethereum

@@ -1,0 +1,104 @@
+properties:
+  accountId:
+    description: Source account - source of transaction(s)
+    example: 5e6645712b55823de7ea82f1
+    type: string
+  counterAccountId:
+    description: Counter account - transaction(s) destination account. In case of
+      blockchain recipient, this is addess of blockchain account.
+    example: 5e6645712b55823de7ea82f1
+    type: string
+  currency:
+    description: Transaction currency
+    example: BTC
+    type: string
+  amount:
+    description: Amount in account's currency
+    example: '0.1'
+    type: string
+  anonymous:
+    description: Whether the transaction is anonymous. If true, counter account owner
+      does not see source account.
+    example: false
+    type: boolean
+  created:
+    description: Time in UTC of transaction.
+    example: 1572031674384
+    type: number
+  marketValue:
+    $ref: '../migrated.yml#/components/schemas/MarketValue'
+  operationType:
+    description: Type of operation.
+    enum:
+    - PAYMENT
+    - WITHDRAWAL
+    - BLOCKCHAIN_TRANSACTION
+    - EXCHANGE
+    - FAILED
+    - DEPOSIT
+    - MINT
+    - REVOKE
+    example: PAYMENT
+    type: string
+  transactionType:
+    description: Type of payment.
+    enum:
+    - FAILED
+    - DEBIT_PAYMENT
+    - CREDIT_PAYMENT
+    - CREDIT_DEPOSIT
+    - DEBIT_WITHDRAWAL
+    - CANCEL_WITHDRAWAL
+    - DEBIT_OUTGOING_PAYMENT
+    - CREDIT_INCOMING_PAYMENT
+    - EXCHANGE_BUY
+    - EXCHANGE_SELL
+    example: CREDIT_PAYMENT
+    type: string
+  reference:
+    description: Transaction internal reference - unique identifier within Tatum ledger.
+      In order of failure, use this value to search for problems.
+    example: 5e6be8e9e6aa436299950c41
+    type: string
+  transactionCode:
+    description: For bookkeeping to distinct transaction purpose.
+    example: 1_01_EXTERNAL_CODE
+    type: string
+  senderNote:
+    description: Note visible for sender.
+    example: Sender note
+    type: string
+  recipientNote:
+    description: Note visible for both sender and recipient.
+    example: Private note
+    type: string
+  paymentId:
+    description: Payment ID defined in payment order by sender.
+    example: '65426'
+    type: string
+  attr:
+    example: '123'
+    description: Present only for operationType WITHDRAWAL and XLM / XRP based accounts
+      it represents message or destinationTag of the recipient, if present.
+    type: string
+  address:
+    type: string
+    description: For operationType DEPOSIT it represents address, on which was deposit
+      credited for the account.
+    example: qrppgud79n5h5ehqt9s7x8uc82pcag82es0w9tada0
+  txId:
+    type: string
+    description: For operationType DEPOSIT, BLOCKCHAIN_TRANSACTION it represents transaction
+      id, for which deposit occured.
+    example: c6c176e3f6705596d58963f0ca79b34ffa5b78874a65df9c974e22cf86a7ba67
+type: object
+required:
+- accountId
+- reference
+- anonymous
+- amount
+- marketValue
+- created
+- operationType
+- transactionType
+- currency

@@ -1,0 +1,120 @@
+type: object
+properties:
+  account:
+    description: Blockchain account to send from
+    example: '0x955cd3f17b2fd8ad'
+    maxLength: 18
+    minLength: 18
+    type: string
+  transaction:
+    description: Transaction string to send to the chain.
+    example: "transaction(publicKey: String) {\n  prepare(signer: AuthAccount) {\n\
+      \    signer.addPublicKey(publicKey.decodeHex())\n  }\n}\n"
+    maxLength: 500000
+    minLength: 1
+    type: string
+  args:
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          description: The value of the argument; can be a string or an array of strings
+          oneOf:
+          - type: string
+          - type: array
+        type:
+          description: Type of the argument
+          maxLength: 38
+          type: string
+          enum:
+          - Identity
+          - UInt
+          - Int
+          - UInt8
+          - Int8
+          - UInt16
+          - Int16
+          - UInt32
+          - Int32
+          - UInt64
+          - Int64
+          - UInt128
+          - Int128
+          - UInt256
+          - Int256
+          - Word8
+          - Word16
+          - Word32
+          - Word64
+          - UFix64
+          - Fix64
+          - String
+          - Character
+          - Bool
+          - Address
+          - Void
+          - Optional
+          - Reference
+          - Array
+          - Dictionary
+          - Event
+          - Resource
+          - Struct
+        subType:
+          description: Type of the argument
+          maxLength: 38
+          type: string
+          enum:
+          - Identity
+          - UInt
+          - Int
+          - UInt8
+          - Int8
+          - UInt16
+          - Int16
+          - UInt32
+          - Int32
+          - UInt64
+          - Int64
+          - UInt128
+          - Int128
+          - UInt256
+          - Int256
+          - Word8
+          - Word16
+          - Word32
+          - Word64
+          - UFix64
+          - Fix64
+          - String
+          - Character
+          - Bool
+          - Address
+          - Void
+          - Optional
+          - Reference
+          - Array
+          - Dictionary
+          - Event
+          - Resource
+          - Struct
+      required:
+      - type
+      - value
+  mnemonic:
+    maxLength: 500
+    minLength: 1
+    description: Mnemonic to generate private key.
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: Index to the specific address from mnemonic.
+required:
+- account
+- transaction
+- args
+- mnemonic
+- index

@@ -1,0 +1,37 @@
+description: Recommended fees to perform blockchain transaction
+properties:
+  fast:
+    description: Fast transaction acceptance time into block. For btc-based chains
+      - fee per byte. For evm-based chains - gas price in wei
+    example: 14766927339
+    type: number
+  medium:
+    description: Medium transaction acceptance time into block. For btc-based chains
+      - fee per byte. For evm-based chains - gas price in wei
+    example: 13333333333
+    type: number
+  slow:
+    description: Slow transaction acceptance time into block. For btc-based chains
+      - fee per byte. For evm-based chains - gas price in wei
+    example: 12953333333
+    type: number
+  baseFee:
+    description: (evm-based only) This is the minimum fee needs to paid in order for
+      the tx to be accepted into block.
+    example: 12657357496
+    type: number
+  time:
+    description: Last time fees were recalculated
+    example: '2022-12-08T08:42:04.518Z'
+    type: string
+  block:
+    description: Last used to calculate fee from
+    example: 16138867
+    type: number
+type: object
+required:
+- fast
+- medium
+- slow
+- time
+- block

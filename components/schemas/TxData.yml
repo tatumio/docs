@@ -1,0 +1,44 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/ChainEnum'
+  hash:
+    type: string
+    description: The transaction hash.
+    example: '0x549447710026cef714da21fb29cbfae1f689bd3246f2fa0a5081149c4aeb3bb3'
+  address:
+    type: string
+    description: The address involved in the transaction.
+    example: '0xdef1c0ded9bec7f1a1670819833240f027b25eff'
+  counterAddress:
+    type: string
+    description: The counter address involved in the transaction (optional).
+    example: '0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852'
+  tokenAddress:
+    type: string
+    description: The token address involved in the transaction (optional).
+    example: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'
+  tokenId:
+    type: string
+    description: The ID of the token involved in the transaction (optional).
+    example: 33
+  blockNumber:
+    type: number
+    description: The block number in which the transaction occurred.
+    example: 16819465
+  transactionIndex:
+    type: number
+    description: The transaction index within the block.
+    example: 84
+  transactionType:
+    $ref: '../migrated.yml#/components/schemas/TxType'
+  transactionSubtype:
+    $ref: '../migrated.yml#/components/schemas/TxSubtype'
+  amount:
+    type: string
+    description: The amount transferred in the transaction.
+    example: 0.9909237063720822
+  timestamp:
+    type: number
+    description: The timestamp when the transaction occurred.
+    example: 1678715303000

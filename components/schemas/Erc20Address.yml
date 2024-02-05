@@ -1,0 +1,65 @@
+properties:
+  symbol:
+    description: The name of the token; used as an identifier within the Tatum platform
+      and as a currency symbol on the blockchain<br/>The token name that you specify
+      here must be the same as the token name in the <code>symbol</code> parameter
+      of the smart contract that you <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy"
+      target="_blank">are going to deploy or have already deployed</a> for this token.
+    example: MY_TOKEN
+    maxLength: 30
+    minLength: 1
+    pattern: ^[a-zA-Z0-9_]+$
+    type: string
+  supply:
+    description: The supply of the token
+    maxLength: 38
+    example: '1000000.0'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  decimals:
+    description: The number of decimal places that the token has
+    minimum: 0
+    example: 8
+    type: number
+  description:
+    description: The description of the token; used as a description within the Tatum
+      platform and as a currency name on the blockchain
+    example: My Public Token
+    maxLength: 100
+    minLength: 1
+    type: string
+  address:
+    description: The blockchain address to be assigned to the virtual account as a
+      deposit address
+    maxLength: 44
+    minLength: 42
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  basePair:
+    description: The base pair for the virtual currency that represents the token;
+      used to calculate the value of a transaction
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    example: EUR
+  baseRate:
+    type: number
+    example: 1
+    default: 1
+    minimum: 0
+    description: The exchange rate for the base pair; one unit of the created virtual
+      currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
+  customer:
+    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+  accountingCurrency:
+    description: AThe ISO 4217 code of the currency in which all transactions for
+      the created virtual account will be billed
+    default: USD
+    $ref: '../migrated.yml#/components/schemas/FiatCurrency'
+    example: USD
+required:
+- symbol
+- supply
+- decimals
+- description
+- basePair
+- address
+type: object

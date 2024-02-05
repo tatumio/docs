@@ -1,0 +1,14 @@
+properties:
+  accountCode:
+    description: For bookkeeping to distinct account purpose.
+    maxLength: 50
+    minLength: 1
+    example: AC_1011_B
+    type: string
+  accountNumber:
+    description: Account number from external system.
+    maxLength: 50
+    minLength: 1
+    example: '123456'
+    type: string
+type: object

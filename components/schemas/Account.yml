@@ -1,0 +1,52 @@
+properties:
+  id:
+    description: The ID of the virtual account
+    example: 5e68c66581f2ee32bc354087
+    type: string
+  balance:
+    $ref: '../migrated.yml#/components/schemas/AccountBalance'
+  currency:
+    description: The currency of the virtual account
+    example: BTC
+    type: string
+  frozen:
+    description: If set to "true", the virtual account is frozen
+    example: false
+    type: boolean
+  active:
+    description: If set to "true", the virtual account is active
+    example: true
+    type: boolean
+  customerId:
+    description: The ID of the customer (newly created or existing one) associated
+      with the virtual account
+    type: string
+    example: 5e68c66581f2ee32bc354087
+  accountNumber:
+    description: The number associated with the virtual account in an external system
+    maxLength: 50
+    minLength: 1
+    example: '123456'
+    type: string
+  accountCode:
+    description: The code associated with the virtual account in an external system
+      to designate the purpose of the account in bookkeeping
+    example: 03_ACC_01
+    type: string
+  accountingCurrency:
+    description: The currency in which all the transactions for all accounts will
+      be accounted
+    example: EUR
+    type: string
+  xpub:
+    description: The extended public key of the blockchain wallet associated with
+      the virtual account; used to generate deposit addresses for the virtual account
+    example: xpub6FB4LJzdKNkkpsjggFAGS2p34G48pqjtmSktmK2Ke3k1LKqm9ULsg8bGfDakYUrdhe2EHw5uGKX9DrMbrgYnVfDwrksT4ZVQ3vmgEruo3Ka
+    type: string
+required:
+- id
+- active
+- frozen
+- currency
+- balance
+type: object

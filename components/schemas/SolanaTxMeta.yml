@@ -1,0 +1,44 @@
+type: object
+properties:
+  err:
+    type: object
+  fee:
+    type: number
+    example: 5000
+  innerInstructions:
+    type: array
+    items:
+      type: object
+  logMessages:
+    type: array
+    items:
+      type: string
+      example: Program Vote111111111111111111111111111111111111111 invoke [1]
+  postBalances:
+    type: array
+    items:
+      type: number
+      example: 1101768559544744
+  postTokenBalances:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/TokenBalance'
+  preBalances:
+    type: array
+    items:
+      type: number
+      example: 1101768559549744
+  preTokenBalances:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/TokenBalance'
+  rewards:
+    type: array
+    items:
+      type: object
+  status:
+    type: object
+    properties:
+      Ok:
+        type: string
+        format: nullable

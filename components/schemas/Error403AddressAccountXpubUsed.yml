@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xpub.used
+    example: xpub.used
+    type: string
+  message:
+    description: XPub already used registered within Tatum
+    example: XPub already used registered within Tatum
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

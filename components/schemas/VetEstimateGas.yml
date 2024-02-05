@@ -1,0 +1,29 @@
+type: object
+required:
+- from
+- to
+- value
+properties:
+  from:
+    description: Sender account address.
+    type: string
+    maxLength: 50
+    example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+  to:
+    type: string
+    description: Recipient account address.
+    maxLength: 50
+    example: '0x5034aa590125b64023a0262112b98d72e3c8e40e'
+  value:
+    type: string
+    description: Amount to send.
+    maxLength: 50
+    example: '140'
+  data:
+    type: string
+    description: Data to send to Smart Contract
+    maxLength: 10000
+  nonce:
+    type: number
+    description: Nonce
+    example: 12345

@@ -1,0 +1,12 @@
+type: object
+properties:
+  blockTime:
+    type: number
+    example: 1638279975
+  meta:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxMeta'
+  transaction:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxTransaction'
+  slot:
+    type: number
+    example: 97744333

@@ -1,0 +1,56 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: SOL
+    description: The blockchain to work with
+    enum:
+    - SOL
+  nftAddress:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the NFT to verify
+    example: CHw1Fy5YdbaaosLXrrxhuc3X3fpssMqDQm9XwJh9LPGe
+    type: string
+  collectionAddress:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the NFT collection where the NFT should
+      be verified in. The collection must be a sized collection that was introduced
+      in <a href="https://docs.metaplex.com/programs/token-metadata/changelog/v1.3"
+      target="_blank">Version 1.3</a> of the Metaplex Token Metadata program.
+    example: CHw1Fy5YdbaaosLXrrxhuc3X3fpssMqDQm9XwJh9LPGe
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the collection verifier on behalf of whom
+      the transaction will be originated. The transaction fee will be paid from this
+      address.
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 128
+    example: 3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad
+    minLength: 64
+    description: The private key of the collection verifier's address
+  feePayer:
+    description: Address on the Solana blockchain, from which the fee will be paid
+      for transaction. Defaults to from.
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  feePayerPrivateKey:
+    type: string
+    maxLength: 87
+    example: YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf
+    minLength: 128
+    description: Private key of the fee payer address.
+required:
+- collectionAddress
+- chain
+- fromPrivateKey
+- from
+- nftAddress

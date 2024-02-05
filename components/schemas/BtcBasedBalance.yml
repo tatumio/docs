@@ -1,0 +1,24 @@
+type: object
+properties:
+  incoming:
+    type: string
+    description: Total sum of the assets that arrives to the address. Both confirmed
+      transactions in the block and pending in the mempool are used for calculating
+      this value.
+    example: '0.1234'
+  outgoing:
+    type: string
+    description: Total sum of the assets that leaves from the address. Both confirmed
+      transactions in the block and pending in the mempool are used for calculating
+      this value.
+    example: '0.1'
+  incomingPending:
+    type: string
+    description: Total sum of the assets that arrives to the address and are pending
+      in the mempool.
+    example: '0.0004'
+  outgoingPending:
+    type: string
+    description: Total sum of the assets that leaves from the address and are pending
+      in the mempool.
+    example: '0.05'

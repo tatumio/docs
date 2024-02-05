@@ -1,0 +1,20 @@
+type: object
+properties:
+  address:
+    maxLength: 58
+    minLength: 58
+    description: address of Algorand account.
+    example: NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y
+    type: string
+  secret:
+    maxLength: 103
+    minLength: 103
+    description: secretKey can generate Mnemonic, similar to private Key.
+    type: string
+    example: NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q
+  mnemonic:
+    description: Mnemonic of the wallet.
+    type: string
+    example: work syrup plug fluid moon regret wolf visa muffin supply erode lemon
+      absurd voyage plastic blade baby stable burger glue dynamic expire cabin abandon
+      pilot

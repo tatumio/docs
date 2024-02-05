@@ -1,0 +1,17 @@
+type: object
+properties:
+  commission:
+    type: string
+    format: nullable
+  lamports:
+    type: number
+    example: 7
+  postBalance:
+    type: number
+    example: 10149491708073344
+  pubkey:
+    type: string
+    example: ETSKPSzESbVdmtUn67LA2p9J1gPCSEgYvmJS9pNNWQqR
+  rewardType:
+    type: string
+    example: Rent

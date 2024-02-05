@@ -1,0 +1,63 @@
+type: object
+properties:
+  address:
+    description: Blockchain address to send assets
+    example: TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW
+    maxLength: 34
+    minLength: 34
+    type: string
+  amount:
+    description: Amount to be sent in Tron.
+    maxLength: 38
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  fee:
+    description: Fee to be submitted as a transaction fee to blockchain. If none is
+      set, default value of 2.5 TRX is used.
+    example: '2.5'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  index:
+    description: Derivation index of sender address.
+    maximum: 2147483647
+    example: 0
+    type: integer
+  mnemonic:
+    maxLength: 500
+    minLength: 1
+    description: Mnemonic to generate private key for sender address. Either mnemonic
+      and index, privateKey or signature Id must be present - depends on the type
+      of account and xpub.
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    type: string
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: Sender account ID
+    example: 5e68c66581f2ee32bc354087
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: Note visible to owner of withdrawing account
+    example: Sender note
+    type: string
+required:
+- senderAccountId
+- address
+- amount
+- mnemonic
+- index

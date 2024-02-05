@@ -1,0 +1,51 @@
+type: object
+description: <p>The <code>MintNftSolanaKMS</code> schema lets you mint NFTs natively
+  on Solana and sign the transaction with your signature ID.<br/>For more information,
+  see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+properties:
+  chain:
+    type: string
+    example: SOL
+    description: The blockchain to work with
+    enum:
+    - SOL
+  to:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address to send the NFT to
+    example: 9pSkqSG71Sb25ia9WBFhoeBYjp8dhUf7fRux9xrDq89b
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address that will pay the fee for the transaction
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: The KMS identifier of the private key of the blockchain address that
+      will pay the fee for the transaction
+  feePayer:
+    description: Address on the Solana blockchain, from which the fee will be paid
+      for transaction. Defaults to from.
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  feePayerSignatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key used for paying the gas costs in signing
+      application. Defaults to the signatureId.
+  metadata:
+    $ref: '../migrated.yml#/components/schemas/SolanaNftMetadataKMS'
+required:
+- to
+- chain
+- signatureId
+- metadata
+- from

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xdc.transaction.gas
+    example: xdc.transaction.gas
+    type: string
+  message:
+    description: Unable to calculate gas limit for transaction. ${error}
+    example: Unable to calculate gas limit for transaction. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

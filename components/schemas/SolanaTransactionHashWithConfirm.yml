@@ -1,0 +1,13 @@
+type: object
+properties:
+  txId:
+    description: TX hash of successful transaction.
+    example: 5Sh63rNFg6iR9YUGPwEkbAg4kYSWnf5eRS2wcLG1Gc6psj27SGK3LNuN9jNSPKn3JoChgmq8pSirHWsPPWzy2PFw
+    type: string
+  confirmed:
+    description: Indicates whether or not the transferred commitment has been fulfilled
+    example: false
+    type: boolean
+required:
+- txId
+- confirmed

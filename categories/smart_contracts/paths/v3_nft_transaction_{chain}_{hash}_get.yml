@@ -1,0 +1,110 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get an NFT transaction by its hash.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Flow</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  <li>TRON</li>
+
+  </ul>
+
+  '
+operationId: NftGetTransactErc721
+parameters:
+- description: The blockchain to work with
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    enum:
+    - ETH
+    - MATIC
+    - KCS
+    - ONE
+    - KLAY
+    - CELO
+    - TRON
+    - FLOW
+    - BSC
+- description: The hash (ID) of the NFT transaction
+  in: path
+  name: hash
+  required: true
+  schema:
+    type: string
+    example: '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7'
+- description: Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
+    for testnet API Key. For mainnet API Key, this value is ignored.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/CeloTx'
+          - $ref: '../../../components/migrated.yml#/components/schemas/EthTx'
+          - $ref: '../../../components/migrated.yml#/components/schemas/FlowTx'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403TxNotFound'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get an NFT transaction by its hash
+tags:
+- NFT (ERC-721 or compatible)

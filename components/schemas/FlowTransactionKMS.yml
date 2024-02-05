@@ -1,0 +1,45 @@
+type: object
+properties:
+  account:
+    description: Blockchain account to send from
+    example: '0x955cd3f17b2fd8ad'
+    maxLength: 18
+    minLength: 18
+    type: string
+  currency:
+    type: string
+    description: Type of asset to send
+    enum:
+    - FLOW
+    - FUSD
+  to:
+    description: Blockchain address to send assets
+    example: '0x955cd3f17b2fd8ae'
+    maxLength: 18
+    minLength: 18
+    type: string
+  amount:
+    description: Amount to be sent
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the secret associated in signing application. Secret,
+      or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+required:
+- account
+- currency
+- address
+- to
+- amount
+- signatureId
+- to

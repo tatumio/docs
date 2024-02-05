@@ -1,0 +1,13 @@
+type: object
+properties:
+  data:
+    description: Result of the method, if the method was read only.
+    example: 2
+    oneOf:
+    - type: object
+    - type: string
+    - type: number
+    - type: array
+    - type: boolean
+required:
+- data

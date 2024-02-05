@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xdc.transaction.hash
+    example: xdc.transaction.hash
+    type: string
+  message:
+    description: Unable to calculate transaction hash. ${error}
+    example: Unable to calculate transaction hash. ${error}
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

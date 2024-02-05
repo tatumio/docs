@@ -1,0 +1,131 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Deploy a fungible token smart contract on the blockchain. In a deployed smart
+  contract, you can mint and burn fungible tokens. The whole supply of fungible tokens
+  (the <code>supply</code> parameter in the request body) will be transferred to the
+  specified blockchain address (the <code>address</code> parameter in the request
+  body).<br/>
+
+  Smart contracts are standardized and audited.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>Algorand</li>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  <li>Solana</li>
+
+  <li>XinFin</li>
+
+  </ul>
+
+  <p>You can review the code of a deployed smart contract <a href="https://github.com/tatumio/tatum-middleware/blob/master/src/contracts/token.sol"
+  target="_blank">here</a>.</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When deploying a fungible token smart contract, you are charged a fee for the transaction,
+  and you must sign the transaction with the private key of the blockchain address
+  from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: Erc20Deploy
+parameters:
+- description: Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
+    for testnet API Key. For mainnet API Key, this value is ignored.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployErc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeploySolanaSpl'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployCeloErc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployKcsErc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployAlgoErc20'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployErc20KMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeploySolanaSplKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployCeloErc20KMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployKcsErc20KMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/ChainDeployAlgoErc20KMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Deploy a fungible token smart contract
+tags:
+- Fungible Tokens (ERC-20 or compatible)

@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: Subscriptions
+  version: 3.18.3
+tags:
+- description: '<p>Endpoints to handle subscriptions to the Tatum Platform. Subscriptions
+    allow users to enable some additional features or reports that are not enabled
+    by default,
+
+    like outgoing off-chain transaction scanning, accounts with balances above the
+    limit, etc.</p>
+
+    '
+  name: Notification subscriptions
+servers:
+- url: https://api.tatum.io
+paths:
+  /v3/subscription:
+    post:
+      $ref: categories/subscriptions/paths/v3_subscription_post.yml
+    get:
+      $ref: categories/subscriptions/paths/v3_subscription_get.yml
+    put:
+      $ref: categories/subscriptions/paths/v3_subscription_put.yml
+    delete:
+      $ref: categories/subscriptions/paths/v3_subscription_delete.yml
+  /v3/subscription/count:
+    get:
+      $ref: categories/subscriptions/paths/v3_subscription_count_get.yml
+  /v3/subscription/{id}:
+    delete:
+      $ref: categories/subscriptions/paths/v3_subscription_{id}_delete.yml
+  /v3/subscription/report/{id}:
+    get:
+      $ref: categories/subscriptions/paths/v3_subscription_report_{id}_get.yml
+  /v3/subscription/webhook:
+    get:
+      $ref: categories/subscriptions/paths/v3_subscription_webhook_get.yml
+  /v3/subscription/webhook/count:
+    get:
+      $ref: categories/subscriptions/paths/v3_subscription_webhook_count_get.yml

@@ -1,0 +1,98 @@
+deprecated: true
+description: <h4>1 credit per API call.</h4><br/><p>List all historical trades. It
+  is possible to list all trades, trades for specific trading pair and/or account.</p>
+operationId: getHistoricalTrades
+parameters:
+- description: Account ID. If present, only closed trades for given account will be
+    present.
+  in: query
+  name: id
+  required: false
+  schema:
+    type: string
+    example: 5e68c66581f2ee32bc354087
+- description: Trade pair. If present, only closed trades on given trade pair will
+    be present.
+  in: query
+  name: pair
+  required: false
+  schema:
+    type: string
+    example: BTC/ETH
+    minLength: 3
+    maxLength: 30
+    pattern: ^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$
+- description: Max number of items per page is 50.
+  in: query
+  name: pageSize
+  schema:
+    type: number
+    example: 10
+    maximum: 50
+    minimum: 1
+  required: true
+- description: Offset to obtain next page of the data.
+  in: query
+  name: offset
+  schema:
+    type: number
+    example: 0
+- description: Get the total trade pair count based on the filter. Either count or
+    pageSize is accepted.
+  in: query
+  name: count
+  example: true
+  schema:
+    type: boolean
+- description: Trade types.
+  in: query
+  name: types
+  required: false
+  schema:
+    type: array
+    items:
+      type: string
+      example: BUY
+      enum:
+      - FUTURE_BUY
+      - FUTURE_SELL
+      - BUY
+      - SELL
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          items:
+            $ref: '../../../components/migrated.yml#/components/schemas/Trade'
+          type: array
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: List all historical trades
+tags:
+- Order Book

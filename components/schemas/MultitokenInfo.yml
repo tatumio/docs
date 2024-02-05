@@ -1,0 +1,14 @@
+type: object
+properties:
+  symbol:
+    type: string
+    description: The symbol of the multitoken collection.
+    example: GAME
+  name:
+    type: string
+    description: The full name of the multitoken collection.
+    example: Game Assets
+  tokenType:
+    type: string
+    description: The type of the token (e.g., ERC1155).
+    example: ERC1155

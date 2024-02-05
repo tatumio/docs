@@ -1,0 +1,6 @@
+type: object
+properties:
+  address:
+    type: string
+    description: ONE address
+    example: one15annzcwtlcq3dfx7nc6plpr9jsxzyyw5xc8pjn

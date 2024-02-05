@@ -1,0 +1,5 @@
+type: string
+description: ID of the token.
+maxLength: 78
+example: '3'
+format: uint256

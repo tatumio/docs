@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: customer.active
+    example: customer.active
+    type: string
+  message:
+    description: Unable to activate active customer.
+    example: Unable to activate active customer.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

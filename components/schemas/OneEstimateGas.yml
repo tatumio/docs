@@ -1,0 +1,29 @@
+type: object
+properties:
+  from:
+    type: string
+    maxLength: 66
+    example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+    minLength: 66
+    description: Sender address.
+  to:
+    description: Blockchain address to send assets
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  amount:
+    description: Amount to be sent in One.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  data:
+    type: string
+    maxLength: 50000
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+required:
+- to
+- amount
+- from

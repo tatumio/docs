@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: blockchain.error.code
+    example: blockchain.error.code
+    type: string
+  message:
+    description: '${error.message} Code: ${error.code}'
+    example: '${error.message} Code: ${error.code}'
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

@@ -1,0 +1,10 @@
+properties:
+  completed:
+    description: Flag, if withdrawal is successfully completed within Tatum systems.
+    example: true
+    type: boolean
+  txId:
+    description: Transaction ID of broadcast transaction and status
+    example: 62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D
+    type: string
+type: object

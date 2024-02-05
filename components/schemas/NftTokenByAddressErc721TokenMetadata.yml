@@ -1,0 +1,16 @@
+type: object
+properties:
+  tokenId:
+    description: (EVM-based blockchains only) The ID of the NFT owned by this address
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; the URL may not be present,
+      and if it is not returned, you can get it by calling the NFT Contract.tokenURI()
+      method
+    example: ipfs://QmXFpaS3S7CkLZvihLFA9JbawKdqhjg8dJeDkPntmkD2Pc
+    type: string
+  metadata:
+    $ref: '../migrated.yml#/components/schemas/NftTokenByAddressErc721Metadata'

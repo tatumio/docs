@@ -1,0 +1,68 @@
+type: object
+properties:
+  txid:
+    type: string
+    example: fe28050b93faea61fa88c4c630f0e1f0a1c24d0082dd0e10d369e13212128f33
+  version:
+    type: number
+    example: 1
+  locktime:
+    type: number
+    example: 0
+  vin:
+    type: array
+    items:
+      type: object
+      properties:
+        txid:
+          type: string
+          example: eea57285462dd70dadcd431fc814857b3f81fe4d0a059a8c02c12fd7d33c02d1
+        vout:
+          type: number
+          example: 0
+        scriptSig:
+          properties:
+            hex:
+              type: string
+              example: 48304502210083753ff9954579f1062d60905650d5d07f50dedc96f9425403b80957f199e1ee022053625597b069c48ed29f8825bd3c8f66757ccaa21a7bb49314eae4eca1fb8d7041210299b1eedeb115b5880cd5e0df0717bd982748a8e003e34371dc36301e17ee0ed6
+            asm:
+              type: string
+              example: 304502210083753ff9954579f1062d60905650d5d07f50dedc96f9425403b80957f199e1ee022053625597b069c48ed29f8825bd3c8f66757ccaa21a7bb49314eae4eca1fb8d70[ALL|FORKID]
+                0299b1eedeb115b5880cd5e0df0717bd982748a8e003e34371dc36301e17ee0ed6
+          type: object
+        coinbase:
+          type: string
+          example: 04ffff001d02fd04
+        sequence:
+          type: number
+          example: 2147483647
+  vout:
+    type: array
+    items:
+      type: object
+      properties:
+        value:
+          type: number
+          example: 50
+        n:
+          type: number
+          example: 0
+        scriptPubKey:
+          properties:
+            hex:
+              type: string
+              example: 4104f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446aac
+            asm:
+              type: string
+              example: 04f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446a
+                OP_CHECKSIG
+            addresses:
+              type: array
+              items:
+                type: string
+              example:
+              - 1BW18n7MfpU35q4MTBSk8pse3XzQF8XvzT
+            type:
+              type: string
+              example: pubkeyhash
+          type: object

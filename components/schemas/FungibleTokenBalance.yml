@@ -1,0 +1,22 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  type:
+    $ref: '../migrated.yml#/components/schemas/TokenType'
+    example: fungible
+  address:
+    type: string
+  balance:
+    type: string
+  tokenAddress:
+    type: string
+  lastUpdatedBlockNumber:
+    type: integer
+required:
+- chain
+- type
+- address
+- balance
+- tokenAddress
+- lastUpdatedBlockNumber

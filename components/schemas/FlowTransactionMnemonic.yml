@@ -1,0 +1,45 @@
+type: object
+properties:
+  account:
+    description: Blockchain account to send from
+    example: '0x955cd3f17b2fd8ad'
+    maxLength: 18
+    minLength: 18
+    type: string
+  currency:
+    type: string
+    description: Type of asset to send
+    enum:
+    - FLOW
+    - FUSD
+  to:
+    description: Blockchain address to send assets
+    example: '0x955cd3f17b2fd8ae'
+    maxLength: 18
+    minLength: 18
+    type: string
+  amount:
+    description: Amount to be sent
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  mnemonic:
+    maxLength: 500
+    minLength: 1
+    description: Mnemonic to generate private key.
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: Index to the specific address from mnemonic.
+required:
+- account
+- currency
+- address
+- amount
+- to
+- mnemonic
+- index
+- to

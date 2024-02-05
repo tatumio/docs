@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: transaction.amount.eth
+    example: transaction.amount.eth
+    type: string
+  message:
+    description: ETH payment amount must be at least 0.000000000000000001, not ${transaction.amount}.
+    example: ETH payment amount must be at least 0.000000000000000001, not ${transaction.amount}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

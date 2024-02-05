@@ -1,0 +1,23 @@
+type: object
+properties:
+  txId:
+    description: The hash (ID) of the transaction
+    example: c83f8818db43d9ba4accfe454aa44fc33123d47a4f89d47b314d6748eb0e9bc9
+    type: string
+  contractAddress:
+    description: The address of deployed marketplace contract
+    example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
+    type: string
+  feeAccount:
+    description: The blockchain address of the fee account
+    example: B2va8BWefHKhKnejxiKxLxWYbpzwJWPsNGzEPCiYHQDH
+    type: string
+  treasuryAccount:
+    description: The blockchain address of the treasury account
+    example: 9MLntRkghAgC7ZR1RQouE9EkXwjTfZxbi9nBziofPTjM
+    type: string
+required:
+- txId
+- contractAddress
+- feeAccount
+- treasuryAccount

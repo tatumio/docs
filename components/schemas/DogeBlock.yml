@@ -1,0 +1,51 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: Hash of block.
+    example: 6178dda07b94becb118f67b21aa72f60d85c1029e9e9b8ae56a25d684de66078
+  height:
+    type: number
+    description: The number of blocks preceding a particular block on a block chain.
+    example: 1234314
+  size:
+    type: number
+    description: The size of the block.
+    example: 1234314
+  confirmations:
+    type: number
+    description: Number of confirmations of that block.
+    example: 1234314
+  weight:
+    type: number
+    description: The weight of the block.
+    example: 1234314
+  version:
+    type: number
+    example: 536870912
+    description: Block version.
+  previousblockhash:
+    type: string
+    description: Hash of the previous block.
+    example: a3047a060e5d586a9b26779ebe62fc57ce7323745da8f28761ab755454d89c52
+  merkleRoot:
+    type: string
+    description: The root node of a merkle tree, a descendant of all the hashed pairs
+      in the tree.
+    example: a1634a42a8e956a5fb5225d06c3af6207e7f6fe5a00fa45229edfd0ddfa587f0
+  time:
+    type: number
+    description: Time of the block.
+    example: 1572865501
+  bits:
+    type: number
+    example: 503452237
+  nonce:
+    type: number
+    description: Arbitrary number that is used in Litecoin's proof of work consensus
+      algorithm.
+    example: 2278594841
+  txs:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/DogeTx'

@@ -1,0 +1,44 @@
+type: object
+properties:
+  amount:
+    description: The amount to transfer
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  currency:
+    type: string
+    description: The currency of the amount to transfer
+    example: ONE
+    enum:
+    - ONE
+  to:
+    description: The blockchain address to transfer the amount to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: The private key of the blockchain address from which the fee will
+      be deducted
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  data:
+    type: string
+    maxLength: 50000
+    description: Additional data that can be passed to a blockchain transaction as
+      a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+required:
+- to
+- amount
+- currency
+- fromPrivateKey

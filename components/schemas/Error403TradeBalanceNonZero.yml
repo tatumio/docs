@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.trade.non.zero
+    example: account.trade.non.zero
+    type: string
+  message:
+    description: Unable to deactivate account with non-zero exchange trades.
+    example: Unable to deactivate account with non-zero exchange trades.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

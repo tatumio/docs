@@ -1,0 +1,129 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: The SHA-512 hash of the transaction
+    example: 1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250
+  ledger_index:
+    type: number
+    description: The ledger index of the ledger that includes this transaction.
+    example: 760469
+  Account:
+    type: string
+    description: The unique address of the account that initiated the transaction.
+    example: rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe
+  Amount:
+    type: string
+    description: Amount of transaction, in drops. 1 drop = 0.000001 XRP.
+    example: '1000000000'
+  Destination:
+    type: string
+    description: Recipient account address.
+    example: rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF
+  Fee:
+    type: string
+    description: Integer amount of XRP, in drops, to be destroyed as a cost for distributing
+      this transaction to the network. Some transaction types have different minimum
+      requirements.
+    example: '12'
+  TransactionType:
+    type: string
+    description: Type of the transaction. XRp supports more than 18 transaction types.
+      For the payment, Payment type is used.
+    example: Payment
+  Flags:
+    type: number
+    description: Set of bit-flags for this transaction.
+    example: 2147483648
+  LastLedgerSequence:
+    type: number
+    description: Last ledger, in which this transaction could have occured.
+    example: 760473
+  Sequence:
+    type: number
+    description: The sequence number of the account sending the transaction. A transaction
+      is only valid if the Sequence number is exactly 1 greater than the previous
+      transaction from the same account.
+    example: 118697
+  date:
+    type: number
+    description: Timestamp of the transaction, in Ripple epoch (946684800 seconds
+      after Unix Epoch)
+    example: 622916620
+  inLedger:
+    type: number
+    description: Ledger, in which transaction took place.
+    example: 760469
+  SigningPubKey:
+    type: string
+    example: 02356E89059A75438887F9FEE2056A2890DB82A68353BE9C0C0C8F89C0018B37FC
+  TxnSignature:
+    type: string
+    example: 304402206BB719587C55513515C092122813BC71C0BA28E7061830ABE6395308A1CAA0B302205B8256181965BB1345902597B2D3F1670F5F23A2E62097B3CCAA1F2EE631655E
+  meta:
+    properties:
+      AffectedNodes:
+        type: array
+        items:
+          type: object
+          properties:
+            ModifiedNode:
+              properties:
+                FinalFields:
+                  properties:
+                    Account:
+                      type: string
+                      example: rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe
+                    Balance:
+                      type: string
+                      example: '99871289963167439'
+                    Flags:
+                      type: number
+                      example: 0
+                    OwnerCount:
+                      type: number
+                      example: 0
+                    Sequence:
+                      type: number
+                      example: 118698
+                  type: object
+                LedgerEntryType:
+                  type: string
+                  example: AccountRoot
+                LedgerIndex:
+                  type: string
+                  example: 31CCE9D28412FF973E9AB6D0FA219BACF19687D9A2456A0C2ABC3280E9D47E37
+                PreviousFields:
+                  required:
+                  - Balance
+                  - Sequence
+                  properties:
+                    Balance:
+                      type: string
+                      example: '99871290963167451'
+                    Sequence:
+                      type: number
+                      example: 118697
+                  type: object
+                PreviousTxnID:
+                  type: string
+                  example: C72E7E2C5D6C123F739689DD6C286910667CC4C2C65F8E6CBBE264E32B08E1B4
+                PreviousTxnLgrSeq:
+                  type: number
+                  example: 760443
+              type: object
+      TransactionIndex:
+        type: number
+        example: 2
+      TransactionResult:
+        type: string
+        example: tesSUCCESS
+      delivered_amount:
+        type: string
+        example: '1000000000'
+    type: object
+  validated:
+    type: boolean
+    description: Whether or not the transaction is included in a validated ledger.
+      Any transaction not yet in a validated ledger is subject to change.
+    example: true

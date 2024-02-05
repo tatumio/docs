@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: xdc.broadcast.failed
+    example: xdc.broadcast.failed
+    type: string
+  message:
+    description: Unable to broadcast transaction due to ${error}.
+    example: Unable to broadcast transaction due to ${error}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

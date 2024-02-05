@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: gas.price.failed
+    example: gas.price.failed
+    type: string
+  message:
+    description: Unable to obtain current GAS price.
+    example: Unable to obtain current GAS price.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

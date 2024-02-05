@@ -1,0 +1,73 @@
+type: object
+properties:
+  to:
+    type: array
+    description: Blockchain address to send ERC721 token to.
+    example:
+    - '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    items:
+      maxLength: 42
+      minLength: 42
+      type: string
+  tokenId:
+    type: array
+    description: ID of token to be created.
+    example:
+    - '100000'
+    items:
+      type: string
+      maxLength: 32
+  url:
+    type: array
+    description: Metadata of the token. See https://eips.ethereum.org/EIPS/eip-721#specification
+      for more details.
+    example:
+    - https://my_token_data.com
+    items:
+      type: string
+      maxLength: 256
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of ERC721 token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- to
+- contractAddress
+- tokenId
+- url
+- signatureId

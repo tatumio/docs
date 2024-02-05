@@ -1,0 +1,10 @@
+type: object
+properties:
+  contractAddress:
+    type: string
+    description: The address of the smart contract that the fungible tokens were minted
+      on
+  amount:
+    type: string
+    description: The number of the fungible tokens
+    example: '10'

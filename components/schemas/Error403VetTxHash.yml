@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: vet.transaction.hash
+    example: vet.transaction.hash
+    type: string
+  message:
+    description: Unable to calculate transaction hash.
+    example: Unable to calculate transaction hash.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

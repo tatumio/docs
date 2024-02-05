@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: erc20.symbol.prefix
+    example: erc20.symbol.prefix
+    type: string
+  message:
+    description: ERC20 token cannot start with VC_.
+    example: ERC20 token cannot start with VC_.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

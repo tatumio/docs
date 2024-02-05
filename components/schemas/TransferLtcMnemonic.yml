@@ -1,0 +1,82 @@
+properties:
+  senderAccountId:
+    description: Sender account ID
+    example: 5e68c66581f2ee32bc354087
+    maxLength: 24
+    minLength: 24
+    type: string
+  address:
+    description: Blockchain address to send assets to. For BTC, LTC, DOGE and BCH,
+      it is possible to enter list of multiple recipient blockchain addresses as a
+      comma separated string.
+    example: mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7
+    maxLength: 10000
+    minLength: 1
+    type: string
+  amount:
+    description: Amount to be withdrawn to blockchain.
+    maxLength: 38
+    example: '0.001'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  fee:
+    description: Fee to be submitted as a transaction fee to blockchain. If none is
+      set, default value of 0.0005 LTC is used. Minimum fee is 0.00001 LTC.
+    example: '0.0005'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  multipleAmounts:
+    description: For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple
+      recipient blockchain amounts. List of recipient addresses must be present in
+      the address field and total sum of amounts must be equal to the amount field.
+    type: array
+    items:
+      type: string
+      example: '0.1'
+      pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  mnemonic:
+    maxLength: 500
+    minLength: 1
+    description: 'Mnemonic seed - usually 12-24 words with access to whole wallet.
+
+      Either mnemonic, keyPair or signature Id must be present - depends on the type
+      of account and xpub.
+
+      Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic
+      based.
+
+      '
+    example: urge pulp usage sister evidence arrest palm math please chief egg abuse
+    type: string
+  xpub:
+    description: Extended public key (xpub) of the wallet associated with the accounts.
+      Should be present, when mnemonic is used.
+    maxLength: 150
+    minLength: 1
+    example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
+    type: string
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    description: Note visible to owner of withdrawing account
+    example: Sender note
+    maxLength: 500
+    minLength: 1
+    type: string
+required:
+- amount
+- senderAccountId
+- address
+- mnemonic
+- xpub
+type: object

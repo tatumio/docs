@@ -1,0 +1,72 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Get an estimated gas price and the number of gas units needed for an Elrond transaction.
+  The gas price is obtained from <a href="https://gateway.elrond.com/network/config"
+  target="_blank">https://gateway.elrond.com/network/config</a>. The gas limit is
+  obtains from <a href="https://gateway.elrond.com/transaction/cost" target="_blank">https://gateway.elrond.com/transaction/cost</a>.</p>
+
+  '
+operationId: EgldEstimateGas
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/TransactionFeeEgldBlockchain'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+          - gasLimit
+          - gasPrice
+          properties:
+            gasPrice:
+              type: number
+              description: The estimated price for one gas unit
+              example: 1000000000
+            gasLimit:
+              type: number
+              description: The number of the gas units needed to process the transaction
+                at the estimated gas price
+              example: 77000
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EgldGasCalculation'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Estimate the fee for an Elrond transaction
+tags:
+- Blockchain fees

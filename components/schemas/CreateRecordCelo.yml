@@ -1,0 +1,48 @@
+type: object
+properties:
+  data:
+    type: string
+    minLength: 1
+    maxLength: 130000
+    description: The data to be stored on the blockchain
+    example: My example log data
+  chain:
+    description: The blockchain to store the data on
+    enum:
+    - CELO
+    example: CELO
+    type: string
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of account, from which the transaction will be initiated.
+      If not present, transaction fee will be debited from Tatum internal account
+      and additional credits will be charged.
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to Ethereum transaction. If not present, last known
+      nonce will be used.
+  to:
+    description: The blockchain address to store the data on<br/>If not provided,
+      the data will be stored on the address from which the transaction is made.
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+required:
+- data
+- feeCurrency
+- chain
+- fromPrivateKey

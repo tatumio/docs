@@ -1,0 +1,30 @@
+type: object
+properties:
+  data:
+    type: array
+    required:
+    - contractAddress
+    - balances
+    items:
+      type: object
+      properties:
+        contractAddress:
+          type: string
+          description: The asset ID (the ID of the NFT)
+          example: '116227380'
+        balances:
+          type: array
+          description: The array returning <code>1</code> to indicate that the NFT
+            with the specified ID exists
+          items:
+            type: string
+            example: '1'
+        metadata:
+          type: array
+          items:
+            type: object
+            properties:
+              url:
+                description: The URL pointing to the NFT metadata; may not be present
+                example: ipfs://QmXFpaS3S7CkLZvihLFA9JbawKdqhjg8dJeDkPntmkD2Pc
+                type: string

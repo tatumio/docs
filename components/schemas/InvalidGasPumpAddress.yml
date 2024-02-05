@@ -1,0 +1,10 @@
+type: object
+properties:
+  address:
+    type: string
+    description: The not activated gas pump address
+    example: '0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD'
+  reason:
+    type: string
+    description: The reason why the gas pump address did not get activated
+    example: Wallet already exists

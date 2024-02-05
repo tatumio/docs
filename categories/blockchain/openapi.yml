@@ -1,0 +1,1240 @@
+openapi: 3.1.0
+info:
+  title: Blockchain
+  version: 3.18.3
+tags:
+- description: '<p>Algorand is a decentralized blockchain technology network. Algorand
+    is enabling the simple creation of next generation financial products, protocols
+    and exchange of value across defi, financial institutions and governments.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://bank.testnet.algorand.network/">https://bank.testnet.algorand.network/</a></li></ul><br/>
+
+    Examples of working with the Algorand blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/algo-example"
+    target="_blank">Tatum ALGO SDK</a>.<br/>
+
+    </p>
+
+    '
+  name: Algorand
+- description: '<p>Bitcoin Blockchain enables access to the most commonly used Bitcoin
+    methods. These methods bring a small level of abstraction
+
+    and are used for applications that communicate with the blockchain directly. Some
+    of the methods are used alongside Tatum Private Ledger
+
+    to connect the blockchain and the private ledger, like wallet generation or getting
+    information about transactions.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain</li>
+
+    <li>Testnet3 - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from a faucet, e.g. <a target="_blank" href="https://testnet-faucet.mempool.co/">https://testnet-faucet.mempool.co/</a></li></ul><br/>
+
+    '
+  name: Bitcoin
+- description: "<p>Bitcoin Cash Blockchain enables access to the most commonly used\
+    \ Bitcoin Cash methods. These methods bring a small level of abstraction\n and\
+    \ are used for applications that communicate with the blockchain directly. Some\
+    \ of the methods are used alongside Tatum Private Ledger\n to connect the blockchain\
+    \ and the private ledger, like wallet generation or getting information about\
+    \ transactions.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet - a regular\
+    \ live chain</li>\n  <li>Testnet - a chain used for testing purposes. Coins on\
+    \ the test chain have no value and can be obtained from a faucet, e.g. <a target=\"\
+    _blank\" href=\"https://faucet.fullstack.cash/\">https://faucet.fullstack.cash/</a></li></ul>\n\
+    \  </ul>\nTatum supports BIP44 HD wallets. Because they can generate 2^31 addresses\
+    \ from 1 mnemonic phrase, they are very convenient and secure. It is possible\
+    \ to generate this type of wallet with 1 simple API call.</p>\n"
+  name: Bitcoin Cash
+- description: '<p>Binance Smart Chain is an Ethereum EVM 100% compatible blockchain,
+    and is very good for decentralized application (Dapp) development within many
+    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://testnet.binance.org/faucet-smart">https://testnet.binance.org/faucet-smart</a></li></ul></p>
+
+    '
+  name: BNB Smart Chain
+- description: '<p><a href="https://docs.bnbchain.org/docs/learn/beaconIntro" target="_blank">BNB
+    Beacon Chain</a> is a blockchain developed by <a href="https://www.bnbchain.org/"
+    target="_blank">Binance</a>. With Tatum, you can access the most commonly used
+    BNB Beacon Chain methods. These methods bring a certain level of abstraction and
+    are used for applications that communicate with the blockchain directly.</p>
+
+    <p>BNB Beacon Chain does not provide the smart contract functionality.</p>
+
+    <p>Tatum supports the following BNB Beacon Chain networks:</p>
+
+    <ul>
+
+    <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+    <li><b>Testnet</b>, a chain used for testing purposes. The testnet cryptocurrency
+    has no value, and you can obtain it from a faucet (for example, get it from the
+    <a target="_blank" href="https://testnet.bnbchain.org/faucet-smart">BNB Smart
+    Chain Faucet</a> and transfer it to your BNB Beacon Chain address using the <a
+    target="_blank" href="https://www.bnbchain.org/en/binance-wallet">Binance Wallet</a>).</li>
+
+    </ul>
+
+    '
+  name: BNB Beacon Chain
+- description: '<p><a href="https://cardano.org/" target="_blank">Cardano</a> is a
+    decentralized, open-source blockchain. With Tatum, you can access the most commonly
+    used Cardano methods. These methods bring a certain level of abstraction and are
+    used for applications that communicate with the blockchain directly. Some of the
+    methods are used alongside virtual accounts to connect the blockchain and a virtual
+    account, like generating a wallet or getting information about transactions.</p>
+
+    <p>Tatum supports Cardano mainnet and <a href="https://docs.cardano.org/cardano-testnet/getting-started"
+    target="_blank">Cardano preproduction testnet</a>.</p>
+
+    '
+  name: Cardano
+- description: "<p>Celo is fork of Celo with more than 1000 tps and possibility to\
+    \ pay for\ntransactions in it's own stable coin, cUSD. Celo Blockchain enables\
+    \ access to most commonly used Celo methods.\nThese methods bring small level\
+    \ of abstraction,\n       and are used for the type of applications that want\
+    \ to communicate with blockchain directly. Some of the methods are used alongside\
+    \ Tatum Private Ledger\n       to connect blockchain and private ledger together,\
+    \ like wallet generation or getting information about transactions.<br/>\n   \
+    \   Tatum supports 2 chains:\n      <ul><li>Mainnet - regular live chain\n   \
+    \   <li>Alfajorec - test chain used for testing purposes. Coins on test chain\
+    \ have no value and can be obtained from\n      Faucet, e.g. <a target=\"_blank\"\
+    \ href=\"https://celo.org/developers/faucet\">https://celo.org/developers/faucet</a></li></ul><br/>\n\
+    \      Tatum supports BIP44 HD wallets. It is very convenient and secure, since\
+    \ it can generate 2^31 addresses from 1 mnemonic phrase. It is possible to generate\
+    \ this type of wallet with 1 simple API call.</p>\n"
+  name: Celo
+- description: "<p>Dogecoin Blockchain enables access to the most commonly used Dogecoin\
+    \ methods. These methods bring a small level of abstraction\n and are used for\
+    \ applications that communicate with the blockchain directly. Some of the methods\
+    \ are used alongside Tatum Private Ledger\n to connect the blockchain and the\
+    \ private ledger, like wallet generation or getting information about transactions.<br/>\n\
+    Tatum supports 2 chains:\n  <ul><li>Mainnet - a regular live chain</li>\n  <li>Testnet\
+    \ - a chain used for testing purposes. Coins on the test chain have no value and\
+    \ can be obtained from a faucet, e.g. <a target=\"_blank\" href=\"https://testnet-faucet.com/doge-testnet/\"\
+    >https://testnet-faucet.com/doge-testnet/</a></li></ul>\nTatum supports BIP44\
+    \ HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase,\
+    \ they are very convenient and secure. It is possible to generate this type of\
+    \ wallet with 1 simple API call.</p>\n"
+  name: Dogecoin
+- description: '<p>Elrond (EGLD) is a distributed transactional computation protocol
+    which relies on a sharded state architecture and a secure Proof of Stake consensus
+    mechanism.
+
+    <br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
+    value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://r3d4.fr/elrond/devnet/index.php">https://r3d4.fr/elrond/devnet/</a></li></ul></p>
+
+    '
+  name: Elrond
+- description: '<p><a href="https://ethereum.org/" target="_blank">Ethereum</a> is
+    a decentralized, open-source blockchain. With Tatum, you can access the most commonly
+    used Ethereum methods. These methods bring a certain level of abstraction and
+    are used for applications that communicate with the blockchain directly. Some
+    of the methods are used alongside virtual accounts to connect the blockchain and
+    a virtual account, like generating a wallet or getting information about transactions.</p>
+
+    <p>Tatum supports the following Ethereum networks:</p>
+
+    <ul>
+
+    <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+    <li><b>Sepolia</b>, a proof-of-work testnet and the default testnet for Ethereum.
+    The testnet cryptocurrency has no value, and you can obtain it from a faucet (for
+    example, <a target="_blank" href="https://fauceth.komputing.org/">FaucETH</a>).</li>
+
+    </ul>
+
+    '
+  name: Ethereum
+- description: "<p>Flow Blockchain enables access to the most commonly used Flow methods.\
+    \ These methods bring a small level of abstraction\n and are used for applications\
+    \ that communicate with the blockchain directly. Some of the methods are used\
+    \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
+    \ like wallet generation or getting information about transactions.<br/>\nTatum\
+    \ supports FLOW and FUSD stable coin.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
+    \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
+    \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
+    \ <a target=\"_blank\" href=\"https://testnet-faucet.onflow.org/\">https://testnet-faucet.onflow.org/</a>\n\
+    <br/>To obtain FUSD on testnet, you can swap them using <a target=\"_blank\" href=\"\
+    https://swap-testnet.blocto.app/#/swap\">https://swap-testnet.blocto.app/#/swap</a></li></ul>\n\
+    To create accounts or mint NFTs on <b>mainnet</b>, you have to have paid API Key.\
+    \ Tatum covers the transaction fees on FLOW blockchain out of the box, so mainnet\
+    \ operations are available only on the paid API Key.<br/>\nTatum handles automatically\
+    \ proposal key management - we internally rotate the proposal keys for you, so\
+    \ you don't have to take care of that and can easily scale your transaction throughput.<br/>\n\
+    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
+    \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
+    \ this type of wallet with 1 simple API call.<br/>\nIt's not possible to pregenerate\
+    \ addresses on the Flow blockchain. You can generate only public keys, which are\
+    \ used to generate address using a create account transaction to the Flow blockchain.\n\
+    You have to have existing account on the Flow to initialize new address creation.\
+    \ Transactions on the Flow blockchain are free.</p>\n"
+  name: Flow
+- description: '<p>Harmony.ONE is an Oneeum L2 scaling solution 100% EVM compatible,
+    and is very good for decentralized application (Dapp) development within many
+    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://faucet.pops.one/">https://faucet.pops.one/</a></li></ul></p>
+
+    '
+  name: Harmony
+- description: '<p>Klaytn is an Ethereum EVM 100% compatible blockchain, and is very
+    good for decentralized application (Dapp) development within many possible verticals
+    including DeFi, NFT, Gaming, and many others.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Baobab Testnet - a chain used for testing purposes. Coins on the test chain
+    have no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://baobab.wallet.klaytn.com/access?next=faucet">https://baobab.wallet.klaytn.com/access?next=faucet</a></li></ul></p>
+
+    '
+  name: Klaytn
+- description: '<p>Kcs (KCS) is an Ethereum EVM 100% compatible blockchain, and is
+    very good for decentralized application (Dapp) development within many possible
+    verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
+    have no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://faucet-testnet.kcc.network/">https://faucet-testnet.kcc.network/</a></li></ul></p>
+
+    '
+  name: KuCoin
+- description: "<p>Litecoin Blockchain enables access to the most commonly used Litecoin\
+    \ methods. These methods bring a small level of abstraction and are used for applications\
+    \ that communicate with the blockchain directly. Some of the methods are used\
+    \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
+    \ like wallet generation or getting information about transactions.<br/>\nExamples\
+    \ of working with the Litecoin blockchain can be found in <a href=\"https://github.com/tatumio/tatum-js/tree/master/examples/ltc-example\"\
+    \ target=\"_blank\">Tatum LTC SDK</a>.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
+    \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
+    \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
+    \ <a target=\"_blank\" href=\"http://testnet.litecointools.com/\">http://testnet.litecointools.com/</a></li></ul>\n\
+    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
+    \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
+    \ this type of wallet with 1 simple API call.</p>\n"
+  name: Litecoin
+- description: '<p>Polygon (Matic) is an Ethereum EVM 100% compatible blockchain,
+    and is very good for decentralized application (Dapp) development within many
+    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
+    have no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://faucet.matic.network/">https://faucet.matic.network/</a></li></ul></p>
+
+    '
+  name: Polygon
+- description: '<p>Solana is a blockchain network focused on fast transactions and
+    high throughput. It uses a unique method of ordering transactions to improve its
+    speed. Users can pay their transaction fees and interact with smart contracts
+    with SOL, the network''s native cryptocurrency.<br/>
+
+    <b>For now, Solana is in <b>BETA</b> and there is a rate limitation applied for
+    all projects for Solana to 40 req/s on the platform.</b><br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet BETA - a regular live chain
+
+    <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
+    value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://solfaucet.com/">https://solfaucet.com/</a></li></ul></p>
+
+    '
+  name: Solana
+- description: '<p>XLM Blockchain enables access to the most commonly used XLM methods.
+    These methods bring a small level of abstraction
+
+    and are used for applications that communicate with the blockchain directly. Some
+    of the methods are used alongside Tatum Private Ledger
+
+    to connect the blockchain and the private ledger, like wallet generation or getting
+    information about transactions.<br/>
+
+    Examples of working with the Stellar blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xlm-example"
+    target="_blank">Tatum XLM SDK</a>.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li> Mainnet - a regular live chain</li>
+
+    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from a faucet, e.g. <a href="https://friendbot.stellar.org/?addr=address"
+    target="_blank">https://friendbot.stellar.org/?addr=address</a>.</li></ul>
+
+    <br/>In order to start using the XLM blockchain, we first need to create an XLM
+    account. In order to have the account activated, it must be credited with 0.5
+    XLM.  Because of this requirement, it is common to use one account for all customers
+    and differentiate them using a memo - a short text/number included in every transaction
+    as an account distinguisher.<br/>
+
+    When an off-chain deposit address is created for the ledger account, a memo is
+    generated, e.g. 12345 for that account. When a transaction to the blockchain is
+    performed, it should contain the address of the recipient and the memo as an account
+    distinguisher.</p>
+
+    '
+  name: Stellar
+- description: '<p>Tron Blockchain enables access to most commonly used Tron methods.
+    It''s possible to generate TRON account, send TRX, TRC10 and TRC20 assets. It''s
+    also possible to generate custom TRC10 or TRC20 tokens using API.<br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - regular live chain
+
+    <li>Shasta Testnet - test chain used for testing purposes. Coins on test chain
+    have no value and can be obtained from
+
+    Faucet, e.g. <a target="_blank" href="https://www.trongrid.io/shasta/">https://www.trongrid.io/shasta/</a></li></ul>
+
+    '
+  name: Tron
+- description: '<p>VeChain Blockchain enables access to the most commonly used VeChain
+    methods. Tatum does not support off-chain capabilities for the VET blockchain.
+
+    Tatum KMS is not supported for VET transactions. VET supports 2 native assets
+    - VET and VTHO. VTHO is used for paying transaction fees.
+
+    <br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Testnet - a test chain used for testing purposes. Coins on the test chain
+    have no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://faucet.vecha.in/">https://faucet.vecha.in/</a></li></ul>
+
+    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from
+    1 mnemonic phrase, they are very convenient and secure. It is possible to generate
+    this type of wallet with 1 simple API call.</p>
+
+    '
+  name: VeChain
+- description: '<p>XDC Network (XinFin) is enterprise ready hybrid blockchain for
+    global trade and finance, combining the power of Public & Private blockchains
+    with interoperable Smart Contracts.
+
+    <br/>
+
+    Tatum supports 2 chains:
+
+    <ul><li>Mainnet - a regular live chain
+
+    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+    no value and can be obtained from
+
+    a faucet, e.g. <a target="_blank" href="https://apothem.network/#getTestXDC">https://apothem.network/#getTestXDC</a></li></ul></p>
+
+    '
+  name: XinFin
+- description: '<p><a href="https://xrpl.org/" target="_blank">XRPL</a> is a decentralized
+    public blockchain. With Tatum, you can access the most commonly used XRPL methods.
+    These methods bring a certain level of abstraction and are used for applications
+    that communicate with the blockchain directly. Some of the methods are used alongside
+    virtual accounts to connect the blockchain and a virtual account, like generating
+    a wallet or getting information about transactions.</p>
+
+    <p>Tatum supports the following XRPL networks:</p>
+
+    <ul>
+
+    <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+    <li><b>Testnet</b>, a mainnet-like network for testing applications on XRPL. The
+    testnet cryptocurrency has no value, and you can obtain it from a faucet (for
+    example, <a target="_blank" href="https://xrpl.org/xrp-testnet-faucet.html">XRP
+    Faucets</a>).</li>
+
+    </ul>
+
+    <p>To start using the XRPL blockchain, create an XRPL account. On XRPL, the same
+    account is used for the mainnet and the testnet. To activate the account, credit
+    it with 20 XRP.</p>
+
+    <p>Because of the activation requirement, it is common to use one account for
+    all customers and differentiate them via <code>Destination</code> tags. A <code>Destination</code>
+    tag is a number included in every transaction as an account distinguisher.</p>
+
+    <p>When an off-chain deposit address is created for a virtual account, a <code>Destination</code>
+    tag is generated for that account (for example, <code>12345</code>). When you
+    make a transaction to the blockchain, be sure to include the address of the recipient
+    and the <code>Destination</code> tag as an account distinguisher. Examples of
+    working with the XRP blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xrp-example"
+    target="_blank">Tatum XRP SDK</a>.<br/></p>
+
+    '
+  name: XRP
+servers:
+- url: https://api.tatum.io
+paths:
+  /v3/bitcoin/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_wallet_get.yml
+  /v3/bitcoin/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_address_{xpub}_{index}_get.yml
+  /v3/bitcoin/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_bitcoin_wallet_priv_post.yml
+  /v3/bitcoin/info:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_info_get.yml
+  /v3/bitcoin/block/hash/{i}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_block_hash_{i}_get.yml
+  /v3/bitcoin/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_block_{hash}_get.yml
+  /v3/bitcoin/address/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_address_balance_{address}_get.yml
+  /v3/bitcoin/address/balance/batch:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_address_balance_batch_get.yml
+  /v3/bitcoin/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_transaction_address_{address}_get.yml
+  /v3/bitcoin/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_bitcoin_transaction_post.yml
+  /v3/bitcoin/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_transaction_{hash}_get.yml
+  /v3/bitcoin/utxo/{hash}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_utxo_{hash}_{index}_get.yml
+  /v3/bitcoin/mempool:
+    get:
+      $ref: categories/blockchain/paths/v3_bitcoin_mempool_get.yml
+  /v3/bitcoin/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_bitcoin_broadcast_post.yml
+  /v3/bitcoin/node:
+    post:
+      $ref: categories/blockchain/paths/v3_bitcoin_node_post.yml
+  /v3/ethereum/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_wallet_get.yml
+  /v3/ethereum/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_address_{xpub}_{index}_get.yml
+  /v3/ethereum/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_ethereum_wallet_priv_post.yml
+  /v3/ethereum/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_ethereum_web3_{xApiKey}_post.yml
+  /v3/ethereum/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_block_current_get.yml
+  /v3/ethereum/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_block_{hash}_get.yml
+  /v3/ethereum/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_account_balance_{address}_get.yml
+  /v3/ethereum/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_transaction_{hash}_get.yml
+  /v3/ethereum/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_transaction_count_{address}_get.yml
+  /v3/ethereum/account/transaction/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_account_transaction_{address}_get.yml
+  /v3/ethereum/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_ethereum_transaction_post.yml
+  /v3/ethereum/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_ethereum_smartcontract_post.yml
+  /v3/ethereum/account/transaction/internal/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ethereum_account_transaction_internal_{address}_get.yml
+  /v3/ethereum/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_ethereum_broadcast_post.yml
+  /v3/bcash/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_wallet_get.yml
+  /v3/bcash/node:
+    post:
+      $ref: categories/blockchain/paths/v3_bcash_node_post.yml
+  /v3/bcash/info:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_info_get.yml
+  /v3/bcash/block/hash/{i}:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_block_hash_{i}_get.yml
+  /v3/bcash/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_block_{hash}_get.yml
+  /v3/bcash/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_transaction_{hash}_get.yml
+  /v3/bcash/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_transaction_address_{address}_get.yml
+  /v3/bcash/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_bcash_address_{xpub}_{index}_get.yml
+  /v3/bcash/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_bcash_wallet_priv_post.yml
+  /v3/bcash/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_bcash_transaction_post.yml
+  /v3/bcash/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_bcash_broadcast_post.yml
+  /v3/litecoin/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_wallet_get.yml
+  /v3/litecoin/node:
+    post:
+      $ref: categories/blockchain/paths/v3_litecoin_node_post.yml
+  /v3/litecoin/info:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_info_get.yml
+  /v3/litecoin/block/hash/{i}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_block_hash_{i}_get.yml
+  /v3/litecoin/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_block_{hash}_get.yml
+  /v3/litecoin/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_transaction_{hash}_get.yml
+  /v3/litecoin/mempool:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_mempool_get.yml
+  /v3/litecoin/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_transaction_address_{address}_get.yml
+  /v3/litecoin/address/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_address_balance_{address}_get.yml
+  /v3/litecoin/address/balance/batch:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_address_balance_batch_get.yml
+  /v3/litecoin/utxo/{hash}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_utxo_{hash}_{index}_get.yml
+  /v3/litecoin/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_litecoin_address_{xpub}_{index}_get.yml
+  /v3/litecoin/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_litecoin_wallet_priv_post.yml
+  /v3/litecoin/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_litecoin_transaction_post.yml
+  /v3/litecoin/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_litecoin_broadcast_post.yml
+  /v3/dogecoin/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_wallet_get.yml
+  /v3/dogecoin/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_address_{xpub}_{index}_get.yml
+  /v3/dogecoin/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_dogecoin_wallet_priv_post.yml
+  /v3/dogecoin/node:
+    post:
+      $ref: categories/blockchain/paths/v3_dogecoin_node_post.yml
+  /v3/dogecoin/info:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_info_get.yml
+  /v3/dogecoin/block/hash/{i}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_block_hash_{i}_get.yml
+  /v3/dogecoin/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_block_{hash}_get.yml
+  /v3/dogecoin/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_transaction_{hash}_get.yml
+  /v3/dogecoin/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_transaction_address_{address}_get.yml
+  /v3/dogecoin/address/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_address_balance_{address}_get.yml
+  /v3/dogecoin/address/balance/batch:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_address_balance_batch_get.yml
+  /v3/dogecoin/mempool:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_mempool_get.yml
+  /v3/dogecoin/utxo/{hash}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_dogecoin_utxo_{hash}_{index}_get.yml
+  /v3/dogecoin/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_dogecoin_transaction_post.yml
+  /v3/dogecoin/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_dogecoin_broadcast_post.yml
+  /v3/flow/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_wallet_get.yml
+  /v3/flow/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_address_{xpub}_{index}_get.yml
+  /v3/flow/pubkey/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_pubkey_{xpub}_{index}_get.yml
+  /v3/flow/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_flow_wallet_priv_post.yml
+  /v3/flow/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_block_current_get.yml
+  /v3/flow/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_block_{hash}_get.yml
+  /v3/flow/block/events:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_block_events_get.yml
+  /v3/flow/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_transaction_{hash}_get.yml
+  /v3/flow/account/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_flow_account_{address}_get.yml
+  /v3/flow/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_flow_transaction_post.yml
+  /v3/flow/transaction/custom:
+    post:
+      $ref: categories/blockchain/paths/v3_flow_transaction_custom_post.yml
+  /v3/flow/account:
+    post:
+      $ref: categories/blockchain/paths/v3_flow_account_post.yml
+    put:
+      $ref: categories/blockchain/paths/v3_flow_account_put.yml
+  /v3/xrp/account:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_account_get.yml
+  /v3/xrp/info:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_info_get.yml
+  /v3/xrp/fee:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_fee_get.yml
+  /v3/xrp/account/tx/{account}:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_account_tx_{account}_get.yml
+  /v3/xrp/ledger/{i}:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_ledger_{i}_get.yml
+  /v3/xrp/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_transaction_{hash}_get.yml
+  /v3/xrp/account/{account}:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_account_{account}_get.yml
+  /v3/xrp/account/{account}/balance:
+    get:
+      $ref: categories/blockchain/paths/v3_xrp_account_{account}_balance_get.yml
+  /v3/xrp/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_xrp_transaction_post.yml
+  /v3/xrp/trust:
+    post:
+      $ref: categories/blockchain/paths/v3_xrp_trust_post.yml
+  /v3/xrp/account/settings:
+    post:
+      $ref: categories/blockchain/paths/v3_xrp_account_settings_post.yml
+  /v3/xrp/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_xrp_broadcast_post.yml
+  /v3/xlm/account:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_account_get.yml
+  /v3/xlm/info:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_info_get.yml
+  /v3/xlm/ledger/{sequence}:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_ledger_{sequence}_get.yml
+  /v3/xlm/ledger/{sequence}/transaction:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_ledger_{sequence}_transaction_get.yml
+  /v3/xlm/fee:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_fee_get.yml
+  /v3/xlm/account/tx/{account}:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_account_tx_{account}_get.yml
+  /v3/xlm/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_transaction_{hash}_get.yml
+  /v3/xlm/account/{account}:
+    get:
+      $ref: categories/blockchain/paths/v3_xlm_account_{account}_get.yml
+  /v3/xlm/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_xlm_transaction_post.yml
+  /v3/xlm/trust:
+    post:
+      $ref: categories/blockchain/paths/v3_xlm_trust_post.yml
+  /v3/xlm/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_xlm_broadcast_post.yml
+  /v3/bnb/account:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_account_get.yml
+  /v3/bnb/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_block_current_get.yml
+  /v3/bnb/block/{height}:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_block_{height}_get.yml
+  /v3/bnb/account/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_account_{address}_get.yml
+  /v3/bnb/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_transaction_{hash}_get.yml
+  /v3/bnb/account/transaction/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bnb_account_transaction_{address}_get.yml
+  /v3/bnb/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_bnb_transaction_post.yml
+  /v3/bnb/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_bnb_broadcast_post.yml
+  /v3/vet/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_wallet_get.yml
+  /v3/vet/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_address_{xpub}_{index}_get.yml
+  /v3/vet/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_vet_wallet_priv_post.yml
+  /v3/vet/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_block_current_get.yml
+  /v3/vet/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_block_{hash}_get.yml
+  /v3/vet/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_account_balance_{address}_get.yml
+  /v3/vet/account/energy/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_account_energy_{address}_get.yml
+  /v3/vet/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_transaction_{hash}_get.yml
+  /v3/vet/transaction/{hash}/receipt:
+    get:
+      $ref: categories/blockchain/paths/v3_vet_transaction_{hash}_receipt_get.yml
+  /v3/vet/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_vet_transaction_post.yml
+  /v3/vet/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_vet_broadcast_post.yml
+  /v3/ada/info:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_info_get.yml
+  /v3/ada/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_wallet_get.yml
+  /v3/ada/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_address_{xpub}_{index}_get.yml
+  /v3/ada/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_ada_wallet_priv_post.yml
+  /v3/ada/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_block_{hash}_get.yml
+  /v3/ada/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_transaction_{hash}_get.yml
+  /v3/ada/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_transaction_address_{address}_get.yml
+  /v3/ada/{address}/utxos:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_{address}_utxos_get.yml
+  /v3/ada/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_ada_transaction_post.yml
+  /v3/ada/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_ada_broadcast_post.yml
+  /v3/ada/account/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_ada_account_{address}_get.yml
+  /v3/algorand/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_wallet_get.yml
+  /v3/algorand/address/{priv}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_address_{priv}_get.yml
+  /v3/algorand/node/indexer/{xApiKey}/{indexerPath}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_node_indexer_{xApiKey}_{indexerPath}_get.yml
+  /v3/algorand/node/algod/{xApiKey}/{algodPath}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_node_algod_{xApiKey}_{algodPath}_get.yml
+    post:
+      $ref: categories/blockchain/paths/v3_algorand_node_algod_{xApiKey}_{algodPath}_post.yml
+  /v3/algorand/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_account_balance_{address}_get.yml
+  /v3/algorand/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_block_current_get.yml
+  /v3/algorand/block/{roundNumber}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_block_{roundNumber}_get.yml
+  /v3/algorand/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_algorand_transaction_post.yml
+  /v3/algorand/asset/receive:
+    post:
+      $ref: categories/blockchain/paths/v3_algorand_asset_receive_post.yml
+  /v3/algorand/transaction/{txid}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_transaction_{txid}_get.yml
+  /v3/algorand/transactions/{from}/{to}:
+    get:
+      $ref: categories/blockchain/paths/v3_algorand_transactions_{from}_{to}_get.yml
+  /v3/algorand/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_algorand_broadcast_post.yml
+  /v3/polygon/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_wallet_get.yml
+  /v3/polygon/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_address_{xpub}_{index}_get.yml
+  /v3/polygon/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_polygon_wallet_priv_post.yml
+  /v3/polygon/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_polygon_web3_{xApiKey}_post.yml
+  /v3/polygon/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_block_current_get.yml
+  /v3/polygon/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_block_{hash}_get.yml
+  /v3/polygon/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_account_balance_{address}_get.yml
+  /v3/polygon/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_transaction_{hash}_get.yml
+  /v3/polygon/account/transaction/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_account_transaction_{address}_get.yml
+  /v3/polygon/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_polygon_transaction_count_{address}_get.yml
+  /v3/polygon/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_polygon_transaction_post.yml
+  /v3/polygon/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_polygon_smartcontract_post.yml
+  /v3/polygon/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_polygon_broadcast_post.yml
+  /v3/klaytn/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_wallet_get.yml
+  /v3/klaytn/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_address_{xpub}_{index}_get.yml
+  /v3/klaytn/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_klaytn_wallet_priv_post.yml
+  /v3/klaytn/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_klaytn_web3_{xApiKey}_post.yml
+  /v3/klaytn/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_block_current_get.yml
+  /v3/klaytn/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_block_{hash}_get.yml
+  /v3/klaytn/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_account_balance_{address}_get.yml
+  /v3/klaytn/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_transaction_{hash}_get.yml
+  /v3/klaytn/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_klaytn_transaction_count_{address}_get.yml
+  /v3/klaytn/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_klaytn_transaction_post.yml
+  /v3/klaytn/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_klaytn_smartcontract_post.yml
+  /v3/klaytn/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_klaytn_broadcast_post.yml
+  /v3/solana/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_solana_wallet_get.yml
+  /v3/solana/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_solana_web3_{xApiKey}_post.yml
+  /v3/solana/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_solana_block_current_get.yml
+  /v3/solana/block/{height}:
+    get:
+      $ref: categories/blockchain/paths/v3_solana_block_{height}_get.yml
+  /v3/solana/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_solana_account_balance_{address}_get.yml
+  /v3/solana/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_solana_transaction_{hash}_get.yml
+  /v3/solana/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_solana_transaction_post.yml
+  /v3/solana/broadcast/confirm:
+    post:
+      $ref: categories/blockchain/paths/v3_solana_broadcast_confirm_post.yml
+  /v3/celo/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_wallet_get.yml
+  /v3/celo/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_address_{xpub}_{index}_get.yml
+  /v3/celo/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_celo_wallet_priv_post.yml
+  /v3/celo/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_celo_web3_{xApiKey}_post.yml
+  /v3/celo/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_block_current_get.yml
+  /v3/celo/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_block_{hash}_get.yml
+  /v3/celo/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_account_balance_{address}_get.yml
+  /v3/celo/account/transaction/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_account_transaction_{address}_get.yml
+  /v3/celo/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_transaction_{hash}_get.yml
+  /v3/celo/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_celo_transaction_count_{address}_get.yml
+  /v3/celo/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_celo_transaction_post.yml
+  /v3/celo/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_celo_smartcontract_post.yml
+  /v3/celo/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_celo_broadcast_post.yml
+  /v3/egld/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_wallet_get.yml
+  /v3/egld/address/{mnemonic}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_address_{mnemonic}_{index}_get.yml
+  /v3/egld/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_egld_wallet_priv_post.yml
+  /v3/egld/node/{xApiKey}/*:
+    post:
+      $ref: categories/blockchain/paths/v3_egld_node_{xApiKey}_*_post.yml
+    get:
+      $ref: categories/blockchain/paths/v3_egld_node_{xApiKey}_*_get.yml
+  /v3/egld/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_block_current_get.yml
+  /v3/egld/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_block_{hash}_get.yml
+  /v3/egld/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_account_balance_{address}_get.yml
+  /v3/egld/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_transaction_{hash}_get.yml
+  /v3/egld/transaction/address/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_transaction_address_{address}_get.yml
+  /v3/egld/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_egld_transaction_count_{address}_get.yml
+  /v3/egld/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_egld_transaction_post.yml
+  /v3/egld/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_egld_broadcast_post.yml
+  /v3/tron/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_wallet_get.yml
+  /v3/tron/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_address_{xpub}_{index}_get.yml
+  /v3/tron/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_wallet_priv_post.yml
+  /v3/tron/info:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_info_get.yml
+  /v3/tron/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_block_{hash}_get.yml
+  /v3/tron/account/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_account_{address}_get.yml
+  /v3/tron/freezeBalance:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_freezeBalance_post.yml
+  /v3/tron/unfreezeBalance:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_unfreezeBalance_post.yml
+  /v3/tron/transaction/account/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_transaction_account_{address}_get.yml
+  /v3/tron/transaction/account/{address}/trc20:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_transaction_account_{address}_trc20_get.yml
+  /v3/tron/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_transaction_post.yml
+  /v3/tron/trc10/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_trc10_transaction_post.yml
+  /v3/tron/trc20/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_trc20_transaction_post.yml
+  /v3/tron/trc10/deploy:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_trc10_deploy_post.yml
+  /v3/tron/trc10/detail/{idOrOwnerAddress}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_trc10_detail_{idOrOwnerAddress}_get.yml
+  /v3/tron/trc20/deploy:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_trc20_deploy_post.yml
+  /v3/tron/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_tron_transaction_{hash}_get.yml
+  /v3/tron/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_tron_broadcast_post.yml
+  /v3/bsc/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_wallet_get.yml
+  /v3/bsc/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_address_{xpub}_{index}_get.yml
+  /v3/bsc/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_bsc_wallet_priv_post.yml
+  /v3/bsc/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_bsc_web3_{xApiKey}_post.yml
+  /v3/bsc/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_block_current_get.yml
+  /v3/bsc/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_block_{hash}_get.yml
+  /v3/bsc/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_account_balance_{address}_get.yml
+  /v3/bsc/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_transaction_{hash}_get.yml
+  /v3/bsc/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_bsc_transaction_count_{address}_get.yml
+  /v3/bsc/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_bsc_transaction_post.yml
+  /v3/bsc/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_bsc_smartcontract_post.yml
+  /v3/bsc/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_bsc_broadcast_post.yml
+  /v3/kcs/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_wallet_get.yml
+  /v3/kcs/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_address_{xpub}_{index}_get.yml
+  /v3/kcs/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_kcs_wallet_priv_post.yml
+  /v3/kcs/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_kcs_web3_{xApiKey}_post.yml
+  /v3/kcs/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_block_current_get.yml
+  /v3/kcs/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_block_{hash}_get.yml
+  /v3/kcs/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_account_balance_{address}_get.yml
+  /v3/kcs/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_transaction_{hash}_get.yml
+  /v3/kcs/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_kcs_transaction_count_{address}_get.yml
+  /v3/kcs/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_kcs_transaction_post.yml
+  /v3/kcs/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_kcs_smartcontract_post.yml
+  /v3/kcs/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_kcs_broadcast_post.yml
+  /v3/one/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_one_wallet_get.yml
+  /v3/one/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_address_{xpub}_{index}_get.yml
+  /v3/one/address/format/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_address_format_{address}_get.yml
+  /v3/one/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_one_wallet_priv_post.yml
+  /v3/one/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_one_web3_{xApiKey}_post.yml
+  /v3/one/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_one_block_current_get.yml
+  /v3/one/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_block_{hash}_get.yml
+  /v3/one/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_account_balance_{address}_get.yml
+  /v3/one/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_transaction_{hash}_get.yml
+  /v3/one/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_one_transaction_count_{address}_get.yml
+  /v3/one/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_one_transaction_post.yml
+  /v3/one/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_one_smartcontract_post.yml
+  /v3/one/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_one_broadcast_post.yml
+  /v3/xdc/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_wallet_get.yml
+  /v3/xdc/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_address_{xpub}_{index}_get.yml
+  /v3/xdc/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_xdc_wallet_priv_post.yml
+  /v3/xdc/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_xdc_web3_{xApiKey}_post.yml
+  /v3/xdc/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_block_current_get.yml
+  /v3/xdc/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_block_{hash}_get.yml
+  /v3/xdc/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_account_balance_{address}_get.yml
+  /v3/xdc/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_transaction_{hash}_get.yml
+  /v3/xdc/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_xdc_transaction_count_{address}_get.yml
+  /v3/xdc/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_xdc_transaction_post.yml
+  /v3/xdc/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_xdc_smartcontract_post.yml
+  /v3/xdc/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_xdc_broadcast_post.yml

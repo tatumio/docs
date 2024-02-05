@@ -1,0 +1,60 @@
+type: object
+required:
+- chain
+- type
+- sender
+- recipients
+- tokenIds
+- urls
+- contractAddress
+properties:
+  chain:
+    type: string
+    description: Blockchain to estimate fee for.
+    enum:
+    - CELO
+    - ETH
+    - BSC
+    - XDC
+    - ONE
+    - MATIC
+    - KLAY
+  type:
+    type: string
+    description: Type of transaction
+    enum:
+    - MINT_NFT_BATCH
+  sender:
+    type: string
+    maxLength: 42
+    minLength: 43
+    example: '0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef'
+    description: Address of the minter
+  recipients:
+    type: array
+    description: Blockchain addresses to mint tokens to
+    items:
+      example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+      maxLength: 42
+      minLength: 43
+      type: string
+  contractAddress:
+    description: Contract address of NFT token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 43
+    type: string
+  tokenIds:
+    type: array
+    description: Token IDs
+    items:
+      example: '100000'
+      pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+      type: string
+  urls:
+    type: array
+    description: Metadata URLs
+    items:
+      example: ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj
+      pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+      type: string

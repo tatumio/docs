@@ -1,0 +1,26 @@
+type: object
+properties:
+  symbol:
+    type: string
+    description: The symbol of the fungible token.
+    example: USDC
+  name:
+    type: string
+    description: The full name of the fungible token.
+    example: USD Coin
+  supply:
+    type: string
+    description: The total supply of the fungible token.
+    example: '1000000000'
+  decimals:
+    type: number
+    description: The number of decimal places for the fungible token.
+    example: 6
+  tokenType:
+    type: string
+    description: The type of the token (e.g., ERC20, BEP20).
+    example: ERC20
+  cap:
+    type: string
+    description: The maximum supply cap of the fungible token.
+    example: '2000000000'

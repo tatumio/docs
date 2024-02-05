@@ -1,0 +1,22 @@
+type: object
+properties:
+  chain:
+    type: string
+    description: Chain of the blockchain, main or test.
+    example: test
+  blocks:
+    type: number
+    description: Last block.
+    example: 1579820
+  headers:
+    type: number
+    description: Last headers.
+    example: 1579820
+  bestblockhash:
+    description: Hash of the last block.
+    type: string
+    example: 0000000000000106e4c03ca093ce0cf77e796ddff4f3cadc59ca6b0380e3eed4
+  difficulty:
+    type: number
+    description: Difficulty of the algorithm.
+    example: 6522714.521250089

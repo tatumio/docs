@@ -1,0 +1,13 @@
+type: object
+required:
+- gasLimit
+- gasPrice
+properties:
+  gasLimit:
+    type: number
+    description: Gas limit for transaction in gas price.
+    example: 40000
+  gasPrice:
+    type: number
+    description: Gas price in Gwei.
+    example: 20

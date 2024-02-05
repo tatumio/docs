@@ -1,0 +1,44 @@
+type: object
+properties:
+  fromPrivateKey:
+    type: string
+    minLength: 64
+    maxLength: 64
+    description: Private key of the address, from which the TRX will be sent.
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+  recipient:
+    type: string
+    minLength: 34
+    maxLength: 34
+    description: Recipient address of created TRC20 tokens.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+  name:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Name of the token.
+    example: My token
+  symbol:
+    type: string
+    minLength: 1
+    maxLength: 100
+    description: Symbol of the token.
+    example: SYM
+  totalSupply:
+    type: number
+    minimum: 0
+    description: Total supply of the tokens.
+    example: 100000
+  decimals:
+    type: number
+    minimum: 0
+    maximum: 30
+    description: Number of decimal places of the token.
+    example: 10
+required:
+- fromPrivateKey
+- name
+- recipient
+- symbol
+- totalSupply
+- decimals

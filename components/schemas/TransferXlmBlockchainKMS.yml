@@ -1,0 +1,43 @@
+type: object
+properties:
+  fromAccount:
+    description: Blockchain account to send assets from
+    example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
+    maxLength: 56
+    minLength: 56
+    type: string
+  to:
+    description: Blockchain address to send assets
+    example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
+    maxLength: 56
+    minLength: 56
+    type: string
+  amount:
+    description: Amount to be sent, in XLM.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the secret associated in signing application. Secret,
+      or signature Id must be present.
+  initialize:
+    type: boolean
+    default: false
+    example: false
+    description: Set to true, if the destination address is not yet initialized and
+      should be funded for the first time.
+  message:
+    description: Short message to recipient. It can be either 28 characters long ASCII
+      text, 64 characters long HEX string or uint64 number.
+    example: '12355'
+    pattern: ^[ -~]{0,64}$
+    type: string
+    maxLength: 64
+required:
+- fromAccount
+- signatureId
+- to
+- amount

@@ -1,0 +1,55 @@
+description: '<h4>1 credit per API call.</h4><br/>
+
+  <p>Generate Algorand account deposit address from private key.</p>
+
+  '
+operationId: AlgorandGenerateAddress
+parameters:
+- description: private key of wallet.
+  in: path
+  name: priv
+  required: true
+  schema:
+    type: string
+    example: NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            address:
+              type: string
+              description: Algorand address
+              example: NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Generate Algorand account address from private key
+tags:
+- Algorand

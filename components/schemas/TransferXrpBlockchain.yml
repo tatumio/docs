@@ -1,0 +1,44 @@
+type: object
+properties:
+  fromAccount:
+    maxLength: 34
+    minLength: 33
+    description: XRP account address. Must be the one used for generating deposit
+      tags.
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    type: string
+  to:
+    description: Blockchain address to send assets
+    example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
+    maxLength: 34
+    minLength: 33
+    type: string
+  amount:
+    description: Amount to be sent, in XRP.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromSecret:
+    maxLength: 29
+    minLength: 29
+    description: Secret for account. Secret, or signature Id must be present.
+    example: snSFTHdvSYQKKkYntvEt8cnmZuPJB
+    type: string
+  fee:
+    description: Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  sourceTag:
+    description: Source tag of sender account, if any.
+    example: 12355
+    type: integer
+  destinationTag:
+    description: Destination tag of recipient account, if any.
+    example: 12355
+    type: integer
+required:
+- fromAccount
+- to
+- amount
+- fromSecret

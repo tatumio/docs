@@ -1,0 +1,60 @@
+type: object
+properties:
+  chain:
+    description: The blockchain to work with
+    enum:
+    - CELO
+    example: CELO
+    type: string
+  spender:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address of the auction/marketplace smart contract
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  isErc721:
+    type: boolean
+    description: Set to "true" if the asset is an NFT; set to "false" is the asset
+      is a Multi Token
+    example: true
+  tokenId:
+    description: The ID of the asset (NFT or Multi Token)
+    example: '100000'
+    type: string
+    maxLength: 256
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: The blockchain address of the smart contract from which the asset
+      (NFT or Multi Token) was minted
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: The private key of the blockchain address from which the fee will
+      be deducted
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  nonce:
+    type: number
+    example: 1
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- chain
+- contractAddress
+- spender
+- tokenId
+- isErc721
+- feeCurrency
+- fromPrivateKey

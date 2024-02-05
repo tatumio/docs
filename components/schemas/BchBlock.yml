@@ -1,0 +1,52 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: Hash of block.
+    example: 000000000000000005e14d3f9fdfb70745308706615cfa9edca4f4558332b201
+  size:
+    type: number
+    description: Block size.
+    example: 81577
+  height:
+    type: number
+    description: The number of blocks preceding a particular block on a block chain.
+    example: 500000
+  version:
+    type: number
+    description: Block version.
+    example: 536870912
+  merkleroot:
+    type: string
+    description: The root node of a merkle tree, a descendant of all the hashed pairs
+      in the tree.
+    example: 4af279645e1b337e655ae3286fc2ca09f58eb01efa6ab27adedd1e9e6ec19091
+  tx:
+    type: array
+    description: List of transactions present in the block.
+    items:
+      $ref: '../migrated.yml#/components/schemas/BchTx'
+  time:
+    type: number
+    description: Time of the block.
+    example: 1509343584
+  nonce:
+    type: number
+    description: Arbitrary number that is used in Bitcoin's proof of work consensus
+      algorithm.
+    example: 3604508752
+  difficulty:
+    type: number
+    example: 113081236211.45331
+  confirmations:
+    type: number
+    description: Number of blocks mined after this block.
+    example: 109602
+  previousblockhash:
+    type: string
+    description: Hash of the previous block.
+    example: 0000000000000000043831d6ebb013716f0580287ee5e5687e27d0ed72e6e523
+  nextblockhash:
+    type: string
+    description: Hash of the next block.
+    example: 00000000000000000568f0a96bf4348847bc84e455cbfec389f27311037a20f3

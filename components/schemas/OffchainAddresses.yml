@@ -1,0 +1,24 @@
+type: object
+required:
+- addresses
+properties:
+  addresses:
+    type: array
+    items:
+      type: object
+      required:
+      - accountId
+      properties:
+        accountId:
+          description: ID of the account, for which blockchain address will be created.
+          example: 5e6be8e9e6aa436299950c41
+          maxLength: 24
+          minLength: 24
+          type: string
+        derivationKey:
+          description: Derivation key index for given address to generate. If not
+            present, first not used address will be created.
+          format: int32
+          type: integer
+          minimum: 0
+          maximum: 2147483647

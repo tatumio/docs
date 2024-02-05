@@ -1,0 +1,35 @@
+description: '<h4>2 credits per API call.</h4><br/><p>Freeze the API Key.
+
+  It''s not possible to perform sensitive operations like send ledger transaction,
+  send off-chain transaction, send blockchain transaction,
+
+  broadcast blockchain transaction, perform Order book trade or create blockage. Only
+  read operations are permitted.</p>
+
+  '
+operationId: freezeApiKey
+responses:
+  '204':
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Freeze API Key
+tags:
+- Service utils

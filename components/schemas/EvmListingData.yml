@@ -1,0 +1,44 @@
+type: object
+properties:
+  amount:
+    type: string
+    description: Amount of NFTs to sold in this listing. Valid only for ERC1155 listings.
+    example: '1'
+  buyer:
+    type: string
+    description: Address of the buyer, if exists.
+    example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+  erc20Address:
+    type: string
+    description: Address of the ERC20 token smart contract, which should be used for
+      paying for the asset
+    example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+  isErc721:
+    type: boolean
+    description: True if asset is NFT of type ERC721, false if ERC1155
+    example: true
+  listingId:
+    type: string
+    description: ID of the listing.
+    example: '12345'
+  nftAddress:
+    type: string
+    description: Address of the NFT smart contract.
+    example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+  price:
+    type: string
+    description: Price of the NFT asset in native currency or ERC20 token based on
+      the presence of erc20Address field.
+    example: '1.234'
+  seller:
+    type: string
+    description: Address of the seller.
+    example: '0xc21C81ef03f98898Fb155E00C364e8a7b9D158b8'
+  state:
+    type: string
+    description: State of the listing. 0 - available, 1 - sold, 2 - cancelled
+    enum:
+    - '0'
+    - '1'
+    - '2'
+    example: '1'

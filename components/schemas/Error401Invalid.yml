@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    example: subscription.invalid
+    description: subscription.invalid
+    type: string
+  message:
+    example: Unable to find valid subscription for '${apiKey}'
+    description: Unable to find valid subscription for '${apiKey}'
+    type: string
+  statusCode:
+    example: 401
+    description: '401'
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

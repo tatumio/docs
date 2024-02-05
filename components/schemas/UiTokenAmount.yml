@@ -1,0 +1,20 @@
+type: object
+properties:
+  amount:
+    description: Raw amount of tokens as a string, ignoring decimals.
+    type: string
+    example: 2653579503
+  decimals:
+    description: Number of decimals configured for token's mint.
+    type: number
+    example: 9
+  uiAmount:
+    description: Token amount as a float, accounting for decimals.
+    type:
+    - number
+    - 'null'
+    example: 2.653579503
+  uiAmountString:
+    description: Token amount as a string, accounting for decimals.
+    type: string
+    example: 2.653579503

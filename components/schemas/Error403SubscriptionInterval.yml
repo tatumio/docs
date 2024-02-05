@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: subscription.attr.interval.invalid
+    example: subscription.attr.interval.invalid
+    type: string
+  message:
+    description: Invalid subscription attribute 'interval'.
+    example: Invalid subscription attribute 'interval'.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

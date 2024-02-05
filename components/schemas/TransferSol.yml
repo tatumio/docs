@@ -1,0 +1,65 @@
+type: object
+properties:
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: Sender account ID
+    example: 61b3bffddfb389cde19c73be
+    type: string
+  from:
+    description: Blockchain account to send from
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    maxLength: 44
+    minLength: 32
+    type: string
+  address:
+    description: Blockchain address to send assets
+    example: 9B5XszUGdMaxCZ7uSQhPzdks5ZQSmWxrmzCSvtJ6Ns6g
+    maxLength: 44
+    minLength: 32
+    type: string
+  amount:
+    description: Amount to be sent, in SOL / USDC_SOL or custom SPL token based on
+      the senderAccountId currency type.
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  privateKey:
+    maxLength: 128
+    minLength: 87
+    description: Private key for account. Private key, or signature Id must be present.
+    example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
+    type: string
+  fee:
+    description: Fee to be charged for the operation. For SOL, fee is decided by the
+      blockchain, but default SOL fee is 0.000005. This fee will be only charged on
+      top of the withdrawal amount to the virtual account.
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: Note visible to owner of withdrawing account.
+    example: Sender note
+    type: string
+required:
+- from
+- senderAccountId
+- address
+- privateKey
+- amount

@@ -1,0 +1,55 @@
+type: object
+description: <p>The <code>MintNftTron</code> schema lets you mint NFTs natively on
+  TRON and sign the transaction with your private key.<br/>For more information, see
+  "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
+  an NFT</a>.</p><br/>
+properties:
+  chain:
+    type: string
+    example: TRON
+    description: The blockchain to work with
+    enum:
+    - TRON
+  to:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address to send the NFT to
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: The blockchain address of the smart contract to build the NFT on
+    example: TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ
+    type: string
+  tokenId:
+    description: The ID of the NFT
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  url:
+    description: The URL pointing to the NFT metadata; for more information, see <a
+      href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    example: https://my_token_data.com
+    type: string
+    maxLength: 256
+  feeLimit:
+    type: number
+    description: The maximum amount to be paid as the transaction fee (in TRX)
+    example: 600
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
+    minLength: 64
+    description: The private key of the blockchain address that will pay the fee for
+      the transaction
+required:
+- chain
+- to
+- url
+- feeLimit
+- contractAddress
+- fromPrivateKey
+- tokenId

@@ -1,0 +1,19 @@
+properties:
+  errorCode:
+    description: amount.btc
+    example: amount.btc
+    type: string
+  message:
+    description: BTC|LTC|BCH|DOGE payment amount must be at least 0.00000001, not
+      ${transaction.amount}.
+    example: BTC|LTC|BCH|DOGE payment amount must be at least 0.00000001, not ${transaction.amount}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

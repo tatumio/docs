@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: trade.currency1AccountId.not.exists
+    example: trade.currency1AccountId.not.exists
+    type: string
+  message:
+    description: Unable to find currency1 account ${trade.currency1AccountId}.
+    example: Unable to find currency1 account ${trade.currency1AccountId}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

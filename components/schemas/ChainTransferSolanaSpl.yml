@@ -1,0 +1,69 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: SOL
+    description: The blockchain to work with
+    enum:
+    - SOL
+  from:
+    description: The blockchain address to send the fungible tokens from
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  to:
+    description: The blockchain address to send the fungible tokens to
+    maxLength: 44
+    minLength: 32
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  contractAddress:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the fungible tokens
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  amount:
+    description: The amount of the fungible tokens to be sent
+    example: '100000'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  digits:
+    description: The number of decimal places that the fungible tokens have
+    example: 18
+    maximum: 30
+    minimum: 0
+    type: number
+  fromPrivateKey:
+    type: string
+    maxLength: 87
+    example: YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf
+    minLength: 128
+    description: The private key of the blockchain address that you are sending the
+      fungible tokens from (the address that you specified in the <code>from</code>
+      parameter); the transaction fee will be deducted from this address
+  feePayer:
+    description: The blockchain address from which the fee will be deducted; if not
+      set, defaults to the address that you specified in the <code>from</code> parameter
+    maxLength: 44
+    minLength: 32
+    example: BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs
+    type: string
+  feePayerPrivateKey:
+    type: string
+    maxLength: 87
+    example: YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf
+    minLength: 128
+    description: The private key of the blockchain address that you specified in the
+      <code>feePayer</code> parameter; if not set, defaults to the private key that
+      you specified in the <code>fromPrivateKey</code> parameter
+required:
+- chain
+- currency
+- to
+- contractAddress
+- digits
+- fromPrivateKey
+- from
+- amount

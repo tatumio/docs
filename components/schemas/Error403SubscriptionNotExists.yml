@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: subscription.not.exists
+    example: subscription.not.exists
+    type: string
+  message:
+    description: No such subscription.
+    example: No such subscription.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

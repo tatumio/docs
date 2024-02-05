@@ -1,0 +1,6 @@
+type: object
+properties:
+  data:
+    type: string
+    description: Metadata associated with token.
+    example: https://my_token_data.com

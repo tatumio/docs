@@ -1,0 +1,153 @@
+tags:
+- Tron
+summary: Get TRC-20 transactions for a TRON account
+description: '<p><b>5 credits per API call</b></p>
+
+  <p>Get TRC-20 transactions for a TRON account.</p>
+
+  <p>This API returns up to 200 transactions in one API call. If there are more than
+  200 transactions for the TRON account, the response body will contain the <code>next</code>
+  parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>)
+  transaction in the returned list.</p>
+
+  <p>To get the next 200 transactions, make another call using this API, but this
+  time add the <code>next</code> parameter the endpoint URL and set it to the transaction
+  fingerprint from the <code>next</code> parameter in the response, for example:</p>
+
+  <p><code>https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code></p>
+
+  '
+operationId: TronAccountTx20
+parameters:
+- in: path
+  name: address
+  description: The address of the TRON account to get TRC-20 transactions for
+  required: true
+  schema:
+    type: string
+    example: TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8
+- in: query
+  name: next
+  description: The fingerprint of the transaction that follows the last (200<sup>th</sup>)
+    transaction in the returned list of transactions. Use it to get the next 200 transactions
+    for the specified account (for more information, see the description of this API).
+  required: false
+  schema:
+    type: string
+    example: 81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991
+- in: query
+  name: onlyConfirmed
+  required: false
+  description: If true, only confirmed transactions are returned
+  schema:
+    type: boolean
+    example: false
+- in: query
+  name: onlyUnconfirmed
+  required: false
+  description: If true, only unconfirmed transactions are returned
+  schema:
+    type: boolean
+    example: false
+- in: query
+  name: onlyTo
+  required: false
+  description: If true, only transactions to this address are returned
+  schema:
+    type: boolean
+    example: false
+- in: query
+  name: onlyFrom
+  required: false
+  description: If true, only transactions from this address are returned
+  schema:
+    type: boolean
+    example: false
+- in: query
+  name: orderBy
+  required: false
+  description: Order of the returned transactions
+  schema:
+    type: string
+    enum:
+    - block_timestamp,asc
+    - block_timestamp,desc
+    example: block_timestamp,desc
+- in: query
+  name: minTimestamp
+  required: false
+  description: Minimum block_timestamp, default is 0
+  schema:
+    type: number
+    example: 1674416039000
+- in: query
+  name: maxTimestamp
+  required: false
+  description: Maximum block_timestamp, default is now
+  schema:
+    type: number
+    example: 1674416039000
+- in: query
+  name: contractAddress
+  required: false
+  description: Receive only transactions with one specific smart contract
+  schema:
+    type: string
+    example: TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+          - transactions
+          properties:
+            next:
+              type: string
+              description: If present, there are more transactions for the TRON account
+                than the 200 transactions returned in the response, and this parameter
+                specifies the fingerprint of the transaction that follows the last
+                (200<sup>th</sup>) transaction in the returned list of transactions.
+                Use it to get the next 200 transactions for the specified account
+                (for more information, see the description of this API).
+              example: 81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991
+            transactions:
+              type: array
+              description: The list of transactions for the specified TRON account
+              items:
+                $ref: '../../../components/migrated.yml#/components/schemas/TronTx20'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403Tron'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []

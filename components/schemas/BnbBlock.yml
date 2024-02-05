@@ -1,0 +1,12 @@
+type: object
+properties:
+  timestamp:
+    type: number
+    example: 1651145988650
+  blockHeight:
+    type: number
+    example: 44925860
+  tx:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/BnbTransaction'

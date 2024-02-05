@@ -1,0 +1,58 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: The blockchain to work with
+    enum:
+    - CELO
+  to:
+    maxLength: 42
+    minLength: 42
+    description: Blockchain address to send NFT token to
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  tokenId:
+    description: ID of the token.
+    type: string
+    maxLength: 78
+    example: '123'
+    format: uint256
+  contractAddress:
+    maxLength: 42
+    minLength: 42
+    description: Address of NFT token
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  nonce:
+    type: number
+    example: 1
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- chain
+- to
+- contractAddress
+- feeCurrency
+- signatureId
+- tokenId

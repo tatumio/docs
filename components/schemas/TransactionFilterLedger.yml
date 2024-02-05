@@ -1,0 +1,135 @@
+properties:
+  account:
+    description: Source account - source of transaction(s).
+    example: 5e6be8e9e6aa436299950c41
+    maxLength: 24
+    minLength: 24
+    type: string
+  counterAccount:
+    description: Counter account - transaction(s) destination account.
+    example: 5e6be8e9e6aa436299950c41
+    maxLength: 24
+    minLength: 24
+    type: string
+  currency:
+    description: Currency of the transactions.
+    example: BTC
+    minLength: 1
+    maxLength: 50
+    type: string
+  from:
+    description: Starting date to search for transactions from in UTC millis. If not
+      present, search all history.
+    example: 1571833231000
+    type: integer
+    format: int64
+    minimum: 0
+  amount:
+    type: array
+    description: Amount of the transaction. AND is used between filter options.
+    items:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Filtering operation.
+          example: gte
+          enum:
+          - gte
+          - lte
+          - gt
+          - lt
+          - eq
+          - neq
+        value:
+          type: string
+          description: Value of the operation.
+          example: '1.5'
+      required:
+      - op
+      - value
+  currencies:
+    description: List of currencies of the transactions.
+    type: array
+    items:
+      example: BTC
+      minLength: 1
+      maxLength: 50
+      type: string
+  transactionType:
+    description: Type of payment
+    enum:
+    - FAILED
+    - DEBIT_PAYMENT
+    - CREDIT_PAYMENT
+    - CREDIT_DEPOSIT
+    - DEBIT_WITHDRAWAL
+    - CANCEL_WITHDRAWAL
+    - DEBIT_OUTGOING_PAYMENT
+    - EXCHANGE_BUY
+    - EXCHANGE_SELL
+    - DEBIT_TRANSACTION
+    - CREDIT_INCOMING_PAYMENT
+  transactionTypes:
+    description: Types of payment
+    type: array
+    items:
+      type: string
+      example: CREDIT_PAYMENT
+      enum:
+      - FAILED
+      - DEBIT_PAYMENT
+      - CREDIT_PAYMENT
+      - CREDIT_DEPOSIT
+      - DEBIT_WITHDRAWAL
+      - CANCEL_WITHDRAWAL
+      - DEBIT_OUTGOING_PAYMENT
+      - EXCHANGE_BUY
+      - EXCHANGE_SELL
+      - DEBIT_TRANSACTION
+      - CREDIT_INCOMING_PAYMENT
+  opType:
+    description: Type of operation.
+    enum:
+    - PAYMENT
+    - WITHDRAWAL
+    - BLOCKCHAIN_TRANSACTION
+    - EXCHANGE
+    - FAILED
+    - DEPOSIT
+    - MINT
+    - REVOKE
+    example: PAYMENT
+    type: string
+  transactionCode:
+    description: For bookkeeping to distinct transaction purpose.
+    example: 1_01_EXTERNAL_CODE
+    maxLength: 100
+    minLength: 1
+    type: string
+  paymentId:
+    description: Payment ID defined in payment order by sender.
+    example: '65426'
+    maxLength: 100
+    minLength: 1
+    type: string
+  recipientNote:
+    description: Recipient note defined in payment order by sender.
+    example: '65426'
+    maxLength: 500
+    minLength: 1
+    type: string
+  senderNote:
+    description: Sender note defined in payment order by sender.
+    example: '65426'
+    maxLength: 500
+    minLength: 1
+    type: string
+  to:
+    description: Date until to search for transactions in UTC millis. If not present,
+      search up till now.
+    example: 1571833231000
+    type: integer
+    format: int64
+    minimum: 0
+type: object

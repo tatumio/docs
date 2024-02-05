@@ -1,0 +1,57 @@
+properties:
+  accountId:
+    description: Ledger account with currency of the virtual currency, on which the
+      operation will be performed.
+    example: 5e68c66581f2ee32bc354087
+    maxLength: 24
+    minLength: 24
+    type: string
+  amount:
+    description: Amount of virtual currency to operate within this operation.
+    maxLength: 38
+    example: '1.5'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: My Payment
+    maxLength: 100
+    minLength: 1
+    type: string
+  reference:
+    description: Reference of the payment.
+    example: akjsndakjsdn-asd-kjasnd-asdkn-asdjnasjkdn
+    maxLength: 100
+    minLength: 1
+    type: string
+  transactionCode:
+    description: For bookkeeping to distinct transaction purpose.
+    example: 1_01_EXTERNAL_CODE
+    maxLength: 100
+    minLength: 1
+    type: string
+  recipientNote:
+    description: Note visible to both, sender and recipient. Available for both Mint
+      and Revoke operations
+    example: Private note
+    maxLength: 500
+    minLength: 1
+    type: string
+  counterAccount:
+    description: External account identifier. By default, there is no counterAccount
+      present in the transaction.
+    example: 5e6645712b55823de7ea82f1
+    maxLength: 24
+    minLength: 24
+    type: string
+  senderNote:
+    description: Note visible to sender. Available in Revoke operation.
+    example: Sender note
+    maxLength: 500
+    minLength: 1
+    type: string
+required:
+- accountId
+- amount
+type: object

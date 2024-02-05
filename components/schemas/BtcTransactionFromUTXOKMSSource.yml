@@ -1,0 +1,31 @@
+type: object
+required:
+- txHash
+- signatureId
+- index
+properties:
+  txHash:
+    description: The transaction hash of the UTXO to be spent
+    type: string
+    example: 53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc
+    minLength: 64
+    maxLength: 64
+  index:
+    description: The index of the UTXO to be spent
+    type: number
+    example: 0
+    minimum: 0
+    maximum: 2147483647
+  signatureId:
+    type: string
+    format: uuid
+    example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
+    description: The KMS identifier of the private key of the blockchain address that
+      holds the UTXO to be spent
+  signatureIdIndex:
+    description: Index of the address in the wallet. Required when signatureId represents
+      the mnenomic.
+    type: number
+    example: 0
+    minimum: 0
+    maximum: 2147483647

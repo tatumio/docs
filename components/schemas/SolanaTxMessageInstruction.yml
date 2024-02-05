@@ -1,0 +1,13 @@
+type: object
+properties:
+  accounts:
+    type: array
+    items:
+      type: number
+      example: 1
+  data:
+    type: string
+    example: 2ZjTR1vUs2pHXyTM4rXnJowxekwfBcBJwsE4EameG3Sapvgfit27vrBd8k8QYCoTtMgfHEJLDqWEWBYUYVd
+  programIdIndex:
+    type: number
+    example: 4

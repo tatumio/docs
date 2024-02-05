@@ -1,0 +1,76 @@
+type: object
+properties:
+  blockID:
+    type: string
+    example: c49322287d9ce1d05e909668a15f3e1ed5593b11ace2cbbee56eebf8e9fb1a85
+  blockHeight:
+    type: number
+    example: 14493280
+  blockTimestamp:
+    type: string
+    example: '2021-05-14T21:08:34.536Z'
+  type:
+    type: string
+    example: A.7e60df042a9c0868.FlowToken.TokensWithdrawn
+  transactionId:
+    type: string
+    example: d1c75a84e4bdf0dd9bf1bcd0ce4fb25f89e2ed3c5e9574dbca2760b52c428717
+  transactionIndex:
+    type: number
+    example: 0
+  eventIndex:
+    type: number
+    example: 0
+  payload:
+    type: object
+    properties:
+      type:
+        type: string
+        description: Type of payload.
+        enum:
+        - Event
+      value:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Event type
+            example: A.1654653399040a61.FlowToken.TokensWithdrawn
+          fields:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name
+                  description: Name of the property
+                value:
+                  oneOf:
+                  - type: object
+                    properties:
+                      type:
+                        type: string
+                        description: Type of the value
+                        example: UFix64
+                      value:
+                        type: string
+                        description: Value
+                        example: '0.001'
+                  - type: object
+                    properties:
+                      type:
+                        type: string
+                        description: Type of the value
+                        example: Optional
+                      value:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            description: Type of the value
+                            example: Address
+                          value:
+                            type: string
+                            description: Value
+                            example: '0x18eb4ee6b3c026d2'

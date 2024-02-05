@@ -1,0 +1,18 @@
+type: object
+properties:
+  batchId:
+    description: Used for identification, will be returned with result pair
+    example: one
+    type: string
+  basePair:
+    description: Base pair.
+    example: EUR
+    $ref: '../migrated.yml#/components/schemas/FiatCurrency'
+  currency:
+    description: FIAT or crypto asset.
+    example: BTC
+    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+required:
+- batchId
+- basePair
+- currency

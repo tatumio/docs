@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: withdrawal.unexpected.state
+    example: withdrawal.unexpected.state
+    type: string
+  message:
+    description: Unable to complete withdrawal, which is not in InProgress state.
+    example: Unable to complete withdrawal, which is not in InProgress state.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

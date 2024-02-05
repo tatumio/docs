@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: trade.currency2.pair
+    example: trade.currency2.pair
+    type: string
+  message:
+    description: Incompatible currencies for currency2 account ${trade.currency2AccountId}
+      and trading pair.
+    example: Incompatible currencies for currency2 account ${trade.currency2AccountId}
+      and trading pair.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

@@ -1,0 +1,74 @@
+description: '<p><b>5 credits per API call</b></p>
+
+  <p>Generate a TRON address from the extended public key of the wallet. The address
+  is generated for the specific index - each extended public key can generate up to
+  2^32 addresses with the index starting from 0 up to 2^31.</p>
+
+  '
+operationId: TronGenerateAddress
+parameters:
+- description: The extended public key of the wallet; can be in the base58 format
+    (111 characters) or the hexadecimal format (130 characters)
+  in: path
+  name: xpub
+  required: true
+  example: 0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd794936c61f0c80dc74ace4cd04690d4eeb1aa6555883be006e1748306faa7ed3a26a
+  schema:
+    type: string
+- description: Derivation index of desired address to be generated.
+  in: path
+  name: index
+  required: true
+  example: 1
+  schema:
+    type: number
+    minimum: 0
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            address:
+              type: string
+              description: Tron address
+              example: TFFBpkRNro4Pe4154ayGWx7C6Ev7BvQZ6t
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Generate a TRON address from the wallet's extended public key
+tags:
+- Tron

@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: Security
+  version: 3.18.3
+tags:
+- description: '<p><a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+    Management System</a> (KMS) is a comprehensive solution for building custodial
+    applications. KMS runs locally on your server and provides security for generating
+    wallets, addresses, and private keys, and for signing transactions.</p>
+
+    <p>KMS builds a list of pending transaction to sign and provides the options to
+    complete a transaction after it has been signed and to obtain transaction details
+    with the result of the blockchain operation via the transaction ID.</p>
+
+    <p>In KMS, each managed wallet or private key is assigned a unique signature ID
+    (<code>signatureId</code>) that represents that wallet or private key. This signature
+    ID is then used in an API request to identify the wallet.</p>
+
+    <p>Depending on the API, you can use the signature ID in an API call request in
+    the following ways:</p>
+
+    <ul>
+
+    <li>
+
+    To represent the <b>mnemonic</b> type of the wallet; for example, in the <a href="https://apidoc.tatum.io/tag/Blockchain-operations#operation/BtcTransfer"
+    target="_blank">API for sending BTC from a virtual account to the blockchain</a>
+    (see the <code>transferBtcKMS</code> request schema).</li>
+
+    <li>To represent the <b>privateKey</b> type of the wallet; for example, in the
+    <a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcTransferBlockchain"
+    target="_blank">API for sending BTC to a blockchain address</a> (see the <code>BtcTransactionFromUTXOKMS</code>
+    request schema).</li>
+
+    <li>To represent the <b>mnemonic</b> and <b>index</b> type of the wallet; for
+    example, in the <a href="https://apidoc.tatum.io/tag/Blockchain-operations#operation/EthTransfer"
+    target="_blank">API for sending ETH from a virtual account to the blockchain</a>
+    (see the <code>transferEthKMS</code> request schema).<br />In this case, the index
+    of the specific private key generated from the mnemonic must be used in addition
+    to the signature ID.</li>
+
+    </ul>
+
+    <p>You can run KMS on the following operating systems:</p>
+
+    <ul>
+
+    <li><b>macOS:</b> Natively or via <a href="https://hub.docker.com/repository/docker/tatumio/tatum-kms"
+    target="_blank">Docker</a></li>
+
+    <li><b>Unix:</b> Natively or via <a href="https://hub.docker.com/repository/docker/tatumio/tatum-kms"
+    target="_blank">Docker</a></li>
+
+    <li><b>MS Windows:</b> Only via <a href="https://hub.docker.com/repository/docker/tatumio/tatum-kms"
+    target="_blank">Docker</a></li>
+
+    </ul>
+
+    <p>For more information about KMS, see the <a href="https://github.com/tatumio/tatum-kms"
+    target="_blank">KMS GitHub repository</a> and the <a href="https://docs.tatum.io/private-key-management/private-key-management"
+    target="_blank">user documentation</a>.</p>
+
+    </ul></p>
+
+    '
+  name: Key Management System
+- description: '<p>An endpoint to check if the blockchain address is safe to work
+    with or not.</p>
+
+    '
+  name: Malicious address
+- description: '<p>Custodial API is a set of operations, which allows you to work
+    with managed blockchain addresses without having its private key.
+
+    You can easily create new managed address and export its details - with private
+    key as well - once required.<br/>
+
+    This features are currently in <b>Alpha version</b>.</p>
+
+    '
+  name: Custodial managed wallets
+servers:
+- url: https://api.tatum.io
+paths:
+  /v3/kms/pending/{chain}:
+    get:
+      $ref: categories/security/paths/v3_kms_pending_{chain}_get.yml
+    post:
+      $ref: categories/security/paths/v3_kms_pending_{chain}_post.yml
+  /v3/kms/{id}/{txId}:
+    put:
+      $ref: categories/security/paths/v3_kms_{id}_{txId}_put.yml
+  /v3/kms/{id}:
+    get:
+      $ref: categories/security/paths/v3_kms_{id}_get.yml
+    delete:
+      $ref: categories/security/paths/v3_kms_{id}_delete.yml
+  /v3/security/address/{address}:
+    get:
+      $ref: categories/security/paths/v3_security_address_{address}_get.yml
+  /v3/custodial/wallet:
+    post:
+      $ref: categories/security/paths/v3_custodial_wallet_post.yml
+    get:
+      $ref: categories/security/paths/v3_custodial_wallet_get.yml
+  /v3/custodial/wallet/{id}:
+    get:
+      $ref: categories/security/paths/v3_custodial_wallet_{id}_get.yml
+    delete:
+      $ref: categories/security/paths/v3_custodial_wallet_{id}_delete.yml
+  /v3/custodial/transaction:
+    post:
+      $ref: categories/security/paths/v3_custodial_transaction_post.yml

@@ -1,0 +1,20 @@
+properties:
+  errorCode:
+    description: account.xpub.missing
+    example: account.xpub.missing
+    type: string
+  message:
+    description: No xpub assigned to account, it is not possible to generate address.
+      Use assignAddress method instead.
+    example: No xpub assigned to account, it is not possible to generate address.
+      Use assignAddress method instead.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

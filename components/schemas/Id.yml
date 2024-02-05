@@ -1,0 +1,6 @@
+type: object
+properties:
+  id:
+    type: string
+    description: ID of the entity.
+    example: 5e68c66581f2ee32bc354087

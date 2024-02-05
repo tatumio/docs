@@ -1,0 +1,23 @@
+type: object
+properties:
+  from:
+    type: string
+    maxLength: 43
+    example: xdcfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef
+    minLength: 42
+    description: Sender address.
+  to:
+    description: Blockchain address to send assets
+    example: xdc687422eEA2cB73B5d3e242bA5456b782919AFc85
+    maxLength: 43
+    minLength: 42
+    type: string
+  amount:
+    description: Amount to be sent in XDC.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+required:
+- to
+- amount
+- from

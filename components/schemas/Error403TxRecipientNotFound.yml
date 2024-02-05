@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: recipientAccount.not.exists
+    example: recipientAccount.not.exists
+    type: string
+  message:
+    description: Unable to find recipient account ${transaction.recipientAccountId}.
+    example: Unable to find recipient account ${transaction.recipientAccountId}.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

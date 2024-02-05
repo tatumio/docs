@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: transaction.failed
+    example: transaction.failed
+    type: string
+  message:
+    description: No spendable inputs.
+    example: No spendable inputs.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

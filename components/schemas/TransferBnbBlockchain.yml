@@ -1,0 +1,36 @@
+type: object
+properties:
+  to:
+    description: Blockchain address to send assets.
+    example: tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex
+    maxLength: 100
+    minLength: 1
+    type: string
+  currency:
+    description: Currency to transfer from Binance Blockchain Account.
+    enum:
+    - BNB
+    example: BNB
+    type: string
+  amount:
+    description: Amount to be sent in BNB.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 100
+    minLength: 1
+    example: cTmS2jBWXgFaXZ2xG9jhn67TiyTshnMp3UedamzEhGm6BZV1vLgQ
+    description: Private key of sender address.
+  message:
+    maxLength: 50
+    minLength: 1
+    description: Message to recipient.
+    example: Message to recipient
+    type: string
+required:
+- to
+- amount
+- fromPrivateKey
+- currency

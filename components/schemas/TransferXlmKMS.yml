@@ -1,0 +1,65 @@
+type: object
+properties:
+  senderAccountId:
+    maxLength: 24
+    minLength: 24
+    description: Sender account ID
+    example: 61b3bffddfb389cde19c73be
+    type: string
+  fromAccount:
+    description: Blockchain account to send from
+    example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
+    maxLength: 56
+    minLength: 56
+    type: string
+  address:
+    description: Blockchain address to send assets
+    example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
+    maxLength: 56
+    minLength: 56
+    type: string
+  amount:
+    description: Amount to be sent, in XLM or XLM-based Asset.
+    maxLength: 38
+    example: '10000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the secret associated in signing application. Secret,
+      or signature Id must be present.
+  compliant:
+    description: Compliance check, if withdrawal is not compliant, it will not be
+      processed.
+    example: false
+    type: boolean
+  attr:
+    description: Short message to recipient. Usually used as an account discriminator.
+      It can be either 28 characters long ASCII text, 64 characters long HEX string
+      or uint64 number. When using as an account disciminator in Tatum Offchain ledger,
+      can be in format of destination_acc|source_acc.
+    example: '12355'
+    pattern: ^[ -~]{0,64}$
+    type: string
+    maxLength: 64
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '1234'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    maxLength: 500
+    minLength: 1
+    description: Note visible to owner of withdrawing account.
+    example: Sender note
+    type: string
+required:
+- fromAccount
+- senderAccountId
+- address
+- amount
+- signatureId

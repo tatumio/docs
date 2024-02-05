@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: bnb.broadcast.bad.signature
+    example: bnb.broadcast.bad.signature
+    type: string
+  message:
+    description: Unable to broadcast BNB transaction, bad signature.
+    example: Unable to broadcast BNB transaction, bad signature.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

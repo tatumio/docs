@@ -1,0 +1,24 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/UniswapTrade'
+- type: object
+  properties:
+    amount0:
+      type: string
+      description: The net amount of the first token involved in the trade.
+      example: '0.5'
+    amount1:
+      type: string
+      description: The net amount of the second token involved in the trade.
+      example: '1.0'
+    sqrtPriceX96:
+      type: string
+      description: The square root price of the trading pair scaled by 2^96.
+      example: '79228162514264337593543950336'
+    liquidity:
+      type: string
+      description: The liquidity of the trading pair at the time of the trade.
+      example: '1000'
+    tick:
+      type: integer
+      description: The tick index of the Uniswap V3 pool at the time of the trade.
+      example: 1000

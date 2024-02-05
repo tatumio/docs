@@ -1,0 +1,99 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: Address of the marketplace smart contract.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  from:
+    maxLength: 34
+    minLength: 34
+    description: Address of the recipient of the fee for the trade.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  nftAddress:
+    maxLength: 34
+    minLength: 34
+    description: Address of the NFT asset to sell smart contract.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  seller:
+    maxLength: 34
+    minLength: 34
+    description: Address of the seller of the NFT asset.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  erc20Address:
+    maxLength: 34
+    minLength: 34
+    description: Optional address of the TRC20 token, which will be used as a selling
+      currency of the NFT.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  listingId:
+    type: string
+    description: ID of the listing. It's up to the developer to generate unique ID
+    minLength: 1
+    maxLength: 200
+  amount:
+    description: Amount of the assets to be sent. For ERC-721 tokens, enter 1.
+    example: '1'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  tokenId:
+    description: ID of token, if transaction is for ERC-721 or ERC-1155.
+    example: '100000'
+    type: string
+    maxLength: 256
+  price:
+    description: Price of the asset to sell. Marketplace fee will be obtained on top
+      of this price.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  isErc721:
+    type: boolean
+    description: True if asset is NFT of type ERC721, false if ERC1155.
+    example: true
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+required:
+- feeLimit
+- nftAddress
+- chain
+- contractAddress
+- tokenId
+- isErc721
+- listingId
+- seller
+- price
+- from
+- signatureId

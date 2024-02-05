@@ -1,0 +1,128 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Buy an asset listed on the NFT marketplace.</p>
+
+  <p>You can buy the asset either for the native blockchain currency (for example,
+  ETH, MATIC, and so on) or for the fungible tokens of the blockchain.</p>
+
+  <ul>
+
+  <li>If you want to pay for the asset with the <b>native blockchain currency</b>,
+  send the required amount plus the marketplace fee right in the API call (in the
+  <code>amount</code> request body parameter).</li>
+
+  <li>If you want to pay with the <b>fungible tokens</b>, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve"
+  target="_blank">allow the marketplace smart contract to access your tokens</a> before
+  making the purchase. When you make the API call, the marketplace smart contract
+  will deduct the required amount of the tokens from the smart contract where you
+  hold the tokens.</li>
+
+  </ul>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>Polygon</li>
+
+  <li>Solana (in <b>alpha</b>)</li>
+
+  </ul>
+
+  <p><b>The "execution reverted" message</b><br/>
+
+  When making this API call, you may get the following message:<br/>
+
+  <code>Although one or more Error Occurred [execution reverted] Contract Execution
+  Completed</code><br/>
+
+  This message is a result of the marketplace version check and has no impact on completing
+  the API call. You can safely ignore it.</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When buying an asset on the NFT marketplace, you are charged a fee for the transaction,
+  and you must sign the transaction with the private key of the blockchain address
+  from which the fee will be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: BuyAssetOnMarketplace
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplace'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplaceKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplaceCelo'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplaceCeloKMS'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplaceSolana'
+        - $ref: '../../../components/migrated.yml#/components/schemas/BuyAssetOnMarketplaceSolanaKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      perform the required operation due to a logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Buy an asset on the NFT marketplace
+tags:
+- Marketplace

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: subscription.attr.balance.invalid
+    example: subscription.attr.balance.invalid
+    type: string
+  message:
+    description: Invalid subscription attribute 'limit' or 'typeOfBalance'.
+    example: Invalid subscription attribute 'limit' or 'typeOfBalance'.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

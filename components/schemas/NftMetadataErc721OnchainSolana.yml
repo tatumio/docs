@@ -1,0 +1,15 @@
+type: object
+properties:
+  onchainData:
+    type: object
+    description: (Solana) Metadata associated with token.
+    properties:
+      name:
+        type: string
+        example: My token
+      symbol:
+        type: string
+        example: symbol
+      uri:
+        type: string
+        example: http://google.com

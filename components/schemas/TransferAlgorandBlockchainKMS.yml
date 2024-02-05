@@ -1,0 +1,38 @@
+type: object
+properties:
+  from:
+    description: The blockchain address of the sender
+    type: string
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
+  to:
+    description: The blockchain address of the recipient
+    type: string
+    example: NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y
+  fee:
+    description: The transaction fee in Algos
+    type: string
+    example: '0.001'
+  amount:
+    description: The amount to send in Algos
+    type: string
+    example: '1'
+  note:
+    description: The note for the recipient; must not contain spaces
+    type: string
+    example: Helloworld
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+required:
+- from
+- to
+- amount
+- signatureId

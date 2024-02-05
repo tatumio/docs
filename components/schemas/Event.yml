@@ -1,0 +1,34 @@
+type: object
+properties:
+  chain:
+    $ref: '../migrated.yml#/components/schemas/Chain'
+  address:
+    type: string
+    description: The address associated with the event.
+  blockNumber:
+    type: integer
+    description: The block number where the event was recorded.
+  timestamp:
+    type: integer
+    description: The timestamp of the event in UNIX format.
+  decoded:
+    oneOf:
+    - $ref: '../migrated.yml#/components/schemas/FungibleTransfer'
+    - $ref: '../migrated.yml#/components/schemas/StablecoinTransfer'
+    - $ref: '../migrated.yml#/components/schemas/NftTransfer'
+    - $ref: '../migrated.yml#/components/schemas/MultitokenTransferSingle'
+    - $ref: '../migrated.yml#/components/schemas/MultitokenTransferBatch'
+    - $ref: '../migrated.yml#/components/schemas/UniswapTradeV2'
+    - $ref: '../migrated.yml#/components/schemas/UniswapTradeV3'
+    description: The decoded event data based on the given models.
+  raw:
+    $ref: '../migrated.yml#/components/schemas/RawData'
+  txHash:
+    type: string
+    description: The transaction hash related to the event.
+  txIndex:
+    type: integer
+    description: The transaction index within the block.
+  logIndex:
+    type: integer
+    description: The log index within the transaction.

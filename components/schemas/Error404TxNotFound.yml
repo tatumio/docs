@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: tx.not.found
+    example: tx.not.found
+    type: string
+  message:
+    description: Transaction not found. Possible not exists or is still pending.
+    example: Transaction not found. Possible not exists or is still pending.
+    type: string
+  statusCode:
+    description: '404'
+    example: 404
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

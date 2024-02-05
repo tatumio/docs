@@ -1,0 +1,121 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get the amount of a specific Multi Token (minted on the smart contract specified
+  by the <code>contractAddress</code> path parameter in the request endpoint URL)
+  that a blockchain address holds.</p>
+
+  <p>This API is supported for the following blockchains:</p>
+
+  <ul>
+
+  <li>BNB Smart Chain</li>
+
+  <li>Celo</li>
+
+  <li>Ethereum</li>
+
+  <li>Harmony</li>
+
+  <li>Klaytn</li>
+
+  <li>KuCoin Community Chain</li>
+
+  <li>Polygon</li>
+
+  </ul>
+
+  '
+operationId: MultiTokenGetBalance
+parameters:
+- description: Blockchain to work with
+  in: path
+  name: chain
+  required: true
+  schema:
+    type: string
+    enum:
+    - ETH
+    - MATIC
+    - KCS
+    - KLAY
+    - ONE
+    - CELO
+    - BSC
+- description: The blockchain address that you want to get the token balance of
+  in: path
+  name: address
+  required: true
+  schema:
+    type: string
+    example: '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B'
+- description: The address of the Multi Token smart contract
+  in: path
+  name: contractAddress
+  required: true
+  schema:
+    type: string
+    example: '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326'
+- description: The ID of the Multi Token
+  in: path
+  name: tokenId
+  required: true
+  schema:
+    type: string
+    example: '100'
+- description: Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
+  in: header
+  name: x-testnet-type
+  required: false
+  schema:
+    default: ethereum-sepolia
+    type: string
+    enum:
+    - ethereum-sepolia
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: string
+              description: The amount of the specified Multi Token
+              example: '10'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403Celo'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get the amount of a specific MultiToken that a blockchain address holds
+tags:
+- Multi Tokens (ERC-1155 or compatible)

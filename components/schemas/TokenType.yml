@@ -1,0 +1,8 @@
+type: string
+enum:
+- native
+- fungible
+- nft
+- multitoken
+description: Enum representing the type of token.
+example: nft

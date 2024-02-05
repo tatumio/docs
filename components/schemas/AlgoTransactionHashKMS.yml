@@ -1,0 +1,24 @@
+type: object
+properties:
+  txId:
+    description: TX hash of transaction.
+    example: GTNOIDCIHZLESKNQPJXOXE476ODYDNNQBA3N2Q75MYQ4SI4XL5SA
+    type: string
+  assetIndex:
+    description: If transaction created new ASA asset, this value is the index of
+      the asset on the network.
+    example: 87751984
+    type: number
+  confirmed:
+    example: false
+    type: boolean
+    description: If transaction was not confirmed within 5 rounds, result is false.
+    default: false
+  failed:
+    description: In case of the transaction was broadcast to the blockchain, but it
+      was not possible to complete Tatum KMS signature, reponse is marked as failed
+      and must be marked manually.
+    example: false
+    type: boolean
+required:
+- txId

@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: Address.bnb.generation.failed.wrong.xpub
+    example: address.bnb.generation.failed.wrong.xpub
+    type: string
+  message:
+    description: Unable to generate BNB address, wrong xpub and account type.
+    example: Unable to generate BNB address, wrong xpub and account type.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

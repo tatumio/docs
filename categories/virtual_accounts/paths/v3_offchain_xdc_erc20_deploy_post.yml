@@ -1,0 +1,114 @@
+description: '<p><b>4 credits per API call</b></p>
+
+  <p>Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which
+  is combination of
+
+  <a href="#operation/registerErc20Token">Register new ERC20 token in the ledger</a>
+  and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy
+  blockchain ERC20</a>.</p>
+
+  <p>After deploying a contract to blockchain, the contract address will become available
+  and must be stored within Tatum. Otherwise, it will not be possible to interact
+  with it and starts automatic blockchain synchronization.</p>
+
+  <p><b>Signing a transaction</b><br/>
+
+  When deploying a XinFin ERC-20-equivalent smart contract to the blockchain and a
+  virtual account, you are charged a fee for the transaction, and you must sign the
+  transaction with the private key of the blockchain address from which the fee will
+  be deducted.</p>
+
+  <p>Providing the private key in the API is not a secure way of signing transactions,
+  because the private key can be stolen or exposed. Your private keys should never
+  leave your security perimeter. You should use the private keys only for testing
+  a solution you are building on the <b>testnet</b> of a blockchain.</p>
+
+  <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you
+  use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key
+  Management System (KMS)</a> and provide the signature ID instead of the private
+  key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js/tree/v2"
+  target="_blank">Tatum JavaScript client</a>.</p>
+
+  '
+operationId: XdcDeployErc20
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemonicAddress'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemXpub'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKAddress'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKXpub'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSAddress'
+        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSXpub'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20Response'
+          - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20SignatureResponse'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20Prefix'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubBoth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubMissing'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20NameDuplicate'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403CustomerNotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCCreateFailed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubMissing'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressIndexUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressUsed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressXpub'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthBroadcast'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasPrice'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxSign'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a
+  virtual account
+tags:
+- Blockchain operations

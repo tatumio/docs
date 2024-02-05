@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: virtual.creation.error
+    example: virtual.creation.error
+    type: string
+  message:
+    description: It is not possible to create virtual currency.
+    example: It is not possible to create virtual currency.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

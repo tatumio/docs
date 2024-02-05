@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: bnb.broadcast.failed.tx.state
+    example: bnb.broadcast.failed.tx.state
+    type: string
+  message:
+    description: Unable to broadcast BNB transaction, tx ${hash} state not OK.
+    example: Unable to broadcast BNB transaction, tx ${hash} state not OK.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

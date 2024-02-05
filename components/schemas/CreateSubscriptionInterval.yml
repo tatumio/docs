@@ -1,0 +1,23 @@
+type: object
+required:
+- type
+- attr
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: TRANSACTION_HISTORY_REPORT
+    enum:
+    - TRANSACTION_HISTORY_REPORT
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.
+    required:
+    - interval
+    properties:
+      interval:
+        type: number
+        description: Number of hours to obtain transactions for.
+        example: 1
+        minimum: 1
+        maximum: 720

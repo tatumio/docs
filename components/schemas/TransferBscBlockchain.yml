@@ -1,0 +1,61 @@
+type: object
+properties:
+  data:
+    type: string
+    maxLength: 50000
+    description: (Only for BSC transactions) Additional data that can be passed to
+      a blockchain transaction as a data property; must be in the hexadecimal format
+    example: 4d79206e6f746520746f2074686520726563697069656e74
+  nonce:
+    type: number
+    minimum: 0
+    description: Nonce to be set to BSC transaction. If not present, last known nonce
+      will be used.
+  to:
+    description: Blockchain address to send assets
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    maxLength: 42
+    minLength: 42
+    type: string
+  currency:
+    description: Currency to transfer from BSC Blockchain Account. BEP20 tokens like
+      BETH, BBTC, BADA, WBNB, BDOT, BXRP, BLTC, BBCH, CAKE are available only for
+      mainnet use.
+    enum:
+    - BSC
+    - BETH
+    - BBTC
+    - RMD
+    - USDC_BSC
+    - B2U_BSC
+    - BADA
+    - WBNB
+    - GMC_BSC
+    - BDOT
+    - BXRP
+    - BLTC
+    - BBCH
+    - HAG
+    - CAKE
+    - BUSD_BSC
+    example: BSC
+    type: string
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+  amount:
+    description: Amount to be sent.
+    example: '100000'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+required:
+- to
+- amount
+- currency
+- fromPrivateKey

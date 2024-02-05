@@ -1,0 +1,56 @@
+description: '<h4>2 credits per API call.</h4><br/><p>Enable HMAC hash ID on the fired
+  webhooks from Tatum API.
+
+  In order to make sure that a webhook is sent by us, we have the possibility to sign
+  it with the HMAC Sha512 Hex algorithm.<br/>
+
+  To verify that a webhook is sent by us
+
+  <ol>
+
+  <li>Get a webhook <b>x-payload-hash</b> header value and payload as it is as a JSON
+  file.</li>
+
+  <li>Convert the HTTP webhook body to stringify JSON without any spaces. In JavaScript,
+  you would do it like this <pre>JSON.stringify(req.body)</pre></li>
+
+  <li>Perform calculations on your side to create a digest using Secret Key, webhook
+  payload in bytes and HMAC SHA512 algorithm. JavaScript example:
+
+  <pre>require(''crypto'').createHmac(''sha512'', hmacSecret).update(JSON.stringify(req.body)).digest(''base64'')</pre>.</li>
+
+  <li>Compare x-payload-hash header value with calculated digest as a Base64 string.</li></p>
+
+  '
+operationId: enableWebHookHmac
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: '../../../components/migrated.yml#/components/schemas/HmacWebHook'
+  required: true
+responses:
+  '204':
+    description: OK
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Enable HMAC webhook digest
+tags:
+- Notification subscriptions

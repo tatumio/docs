@@ -1,0 +1,14 @@
+properties:
+  accountBalance:
+    description: All assets on the account, both available and blocked
+    example: '1000000'
+    type: string
+  availableBalance:
+    description: The account balance minus the blocked assets; use the available balance
+      to determine how much a customer can send or withdraw from their virtual account
+    example: '1000000'
+    type: string
+type: object
+required:
+- accountBalance
+- availableBalance

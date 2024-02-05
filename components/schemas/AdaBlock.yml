@@ -1,0 +1,26 @@
+type: object
+properties:
+  hash:
+    type: string
+    description: Hash of block.
+    example: 6178dda07b94becb118f67b21aa72f60d85c1029e9e9b8ae56a25d684de66078
+  number:
+    type: number
+    description: The number of blocks preceding a particular block on a block chain.
+    example: 1234314
+  epochNo:
+    type: number
+    example: 536870912
+    description: Number of the epoch the block is included in.
+  slotNo:
+    type: number
+    description: Number of the slot the block is included in.
+    example: a3047a060e5d586a9b26779ebe62fc57ce7323745da8f28761ab755454d89c52
+  forgedAt:
+    type: string
+    description: Time of the block.
+    example: '2020-10-20T08:21:50.107Z'
+  transactions:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/AdaTx'

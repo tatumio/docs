@@ -1,0 +1,108 @@
+type: object
+properties:
+  code:
+    type: number
+    example: 0
+  hash:
+    type: string
+    example: 4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A
+  height:
+    type: string
+    example: '44925860'
+  log:
+    type: string
+    example: 'Msg 0: '
+  ok:
+    type: boolean
+    example: true
+  tx:
+    properties:
+      type:
+        type: string
+        example: auth/StdTx
+      value:
+        properties:
+          memo:
+            type: string
+            example: ''
+          msg:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: cosmos-sdk/Send
+                value:
+                  properties:
+                    inputs:
+                      description: List of transactions, from which assets are being
+                        sent.
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          address:
+                            type: string
+                            example: tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex
+                          coins:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                amount:
+                                  type: string
+                                  example: '20000000000'
+                                denom:
+                                  type: string
+                                  example: BNB
+                    outputs:
+                      description: List of recipient addresses and amounts to send
+                        to each of them.
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          address:
+                            type: string
+                            example: tbnb14wu3a8pmauj2kjswyvxtvhdrjktx60efq227uw
+                          coins:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                amount:
+                                  type: string
+                                  example: '20000000000'
+                                denom:
+                                  type: string
+                                  example: BNB
+                  type: object
+          signatures:
+            type: array
+            items:
+              type: object
+              properties:
+                account_number:
+                  type: string
+                  example: '14'
+                pub_key:
+                  properties:
+                    type:
+                      type: string
+                      example: tendermint/PubKeySecp256k1
+                    value:
+                      type: string
+                      example: A4q95eEn4cR1bbxVRqYc8pbLvKYyaMxjzaTSmkTJQUr6
+                  type: object
+                sequence:
+                  type: string
+                  example: '47816'
+                signature:
+                  type: string
+                  example: VhewxOCPucjrtrpRbQMbl05i5MyJMrw12nUJ4ATssB1qvCqIO2+Fgqa/WTHaYpkhjJuIbpK620e0zpIQ56a5nw==
+          source:
+            type: string
+            example: '0'
+        type: object
+    type: object

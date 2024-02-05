@@ -1,0 +1,4 @@
+oneOf:
+- $ref: '../migrated.yml#/components/schemas/NativeTokenBalance'
+- $ref: '../migrated.yml#/components/schemas/NftBalance'
+- $ref: '../migrated.yml#/components/schemas/FungibleTokenBalance'

@@ -1,0 +1,75 @@
+deprecated: true
+description: '<p><b>2 credits per API call</b></p>
+
+  <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC"
+  target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p><br/>
+
+  <p>Use this endpoint URL as a http-based driver to connect directly to the EGLD
+  node provided by Tatum.
+
+  To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/"
+  target="_blank">EGLD developer''s guide</a>.</p>
+
+  '
+operationId: EgldNodePost
+parameters:
+- description: Tatum X-API-Key used for authorization.
+  in: path
+  name: xApiKey
+  required: true
+  schema:
+    type: string
+    example: /v3/egld/node/asdlkfjnqunalkwjf124387ad/transaction/cost
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        description: Any valid method content body.
+        example:
+          version: 1
+          chainId: D
+          nonce: 42
+          value: '100000000000000000'
+          receiver: erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r
+          sender: erd1njqj2zggfup4nl83x0nfgqjkjserm7mjyxdx5vzkm8k0gkh40ezqtfz9lg
+          gasPrice: 1000000000
+          gasLimit: 70000
+          data: food for cats
+          signature: 93207c579bf57be03add632b0e1624a73576eeda8a1687e0fa286f03eb1a17ffb125ccdb008a264c402f074a360442c7a034e237679322f62268b614e926d10f
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Any valid response.
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+x-codeSamples: []
+summary: Node HTTP driver
+tags:
+- Elrond

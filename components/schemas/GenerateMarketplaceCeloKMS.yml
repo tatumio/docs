@@ -1,0 +1,69 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - CELO
+    example: CELO
+    type: string
+  feeRecipient:
+    maxLength: 42
+    minLength: 42
+    description: Address of the recipient of the fee for the trade.
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  marketplaceFee:
+    type: number
+    description: The percentage of the amount that an NFT was sold for that will be
+      sent to the marketplace as a fee. To set the fee to 1%, set this parameter to
+      <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set
+      50%, set this parameter to <code>5000</code>, and so on.
+    example: 150
+    minimum: 0
+    maximum: 10000
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  index:
+    type: number
+    minimum: 0
+    description: If signatureId is mnemonic-based, this is the index to the specific
+      address from that mnemonic.
+  nonce:
+    type: number
+    example: 1
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  fee:
+    description: Custom defined fee. If not present, it will be calculated automatically.
+    type: object
+    required:
+    - gasLimit
+    - gasPrice
+    properties:
+      gasLimit:
+        type: string
+        description: Gas limit for transaction in gas price.
+        pattern: ^[+]?\d+$
+        example: '40000'
+      gasPrice:
+        type: string
+        description: Gas price in Gwei.
+        pattern: ^[+]?\d+$
+        example: '20'
+required:
+- feeRecipient
+- marketplaceFee
+- chain
+- feeCurrency
+- signatureId

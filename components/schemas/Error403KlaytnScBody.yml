@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: klaytn.sc.invalid
+    example: klaytn.sc.invalid
+    type: string
+  message:
+    description: Invalid parameters for smart contract invocation.
+    example: Invalid parameters for smart contract invocation.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

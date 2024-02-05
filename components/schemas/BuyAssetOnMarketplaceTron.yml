@@ -1,0 +1,58 @@
+type: object
+properties:
+  chain:
+    description: Blockchain to work with.
+    enum:
+    - TRON
+    example: TRON
+    type: string
+  contractAddress:
+    maxLength: 34
+    minLength: 34
+    description: Address of the marketplace smart contract.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  erc20Address:
+    maxLength: 34
+    minLength: 34
+    description: Optional address of the TRC20 token, which will be used as a selling
+      currency of the NFT.
+    example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
+    type: string
+  buyer:
+    maxLength: 42
+    minLength: 42
+    description: In case of the ERC20 listing, it's possible to buy on behalf of someone
+      else. This value is the address of the buyer, which should approve spending
+      of the ERC20 tokens for the Marketplace contract. This could be used for a buying
+      from the custodial wallet address.
+    example: '0x587422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+  listingId:
+    type: string
+    description: ID of the listing. It's up to the developer to generate unique ID
+    minLength: 1
+    maxLength: 200
+  amount:
+    description: Amount of the assets to be sent. For ERC-721 tokens, enter 1.
+    example: '1'
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+    type: string
+  fromPrivateKey:
+    type: string
+    maxLength: 64
+    example: 05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2
+    minLength: 64
+    description: Private key of sender address. Private key, or signature Id must
+      be present.
+  feeLimit:
+    type: number
+    minimum: 0
+    description: Fee in TRX to be paid.
+    example: 0.01
+required:
+- feeLimit
+- chain
+- contractAddress
+- listingId
+- fromPrivateKey

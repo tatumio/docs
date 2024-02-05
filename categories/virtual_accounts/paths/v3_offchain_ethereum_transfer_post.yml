@@ -1,0 +1,119 @@
+description: '<h4>4 credits per API call.</h4><br/>
+
+  <p>Send ETH (Ethereum) from a virtual account to the blockchain. This will create
+  Tatum internal withdrawal request with ID. If every system works as expected, withdrawal
+  request is marked as complete and transaction id is assigned to it.
+
+  <ul>
+
+  <li>If Ethereum server connection is unavailable, withdrawal request is cancelled.</li>
+
+  <li>If blockchain transfer is successful, but is it not possible to reach Tatum,
+  transaction id of blockchain transaction is returned and withdrawal request must
+  be completed manually, otherwise all other withdrawals will be pending.</li>
+
+  </ul>
+
+  It is possible to perform ledger to blockchain transaction for ledger accounts without
+  blockchain address assigned to them.<br/>
+
+  This operation needs the private key of the blockchain address. Every time the funds
+  are transferred, the transaction must be signed with the corresponding private key.
+
+  No one should ever send it''s own private keys to the internet because there is
+  a strong possibility of stealing keys and losing funds. In this method, it is possible
+  to enter privateKey
+
+  or signatureId. PrivateKey should be used only for quick development on testnet
+  versions of blockchain when there is no risk of losing funds. In production,
+
+  <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should
+  be used for the highest security standards, and signatureId should be present in
+  the request.
+
+  Alternatively, using the Tatum client library for supported languages.
+
+  </p>
+
+  '
+operationId: EthTransfer
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferEth'
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferEthMnemonic'
+        - $ref: '../../../components/migrated.yml#/components/schemas/TransferEthKMS'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionResult'
+          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionSignatureResult'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RecipientFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalFailed'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalVC'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403FeeFormat'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotCancelled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainCancelled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxBalance'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountBtc'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountEth'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalPending'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthMnemonicPrivateKey'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthBroadcast'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasPrice'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxHash'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxSign'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Send ETH from a virtual account to the blockchain
+tags:
+- Blockchain operations

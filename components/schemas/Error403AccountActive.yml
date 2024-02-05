@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: account.active
+    example: account.active
+    type: string
+  message:
+    description: Unable to activate active account.
+    example: Unable to activate active account.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

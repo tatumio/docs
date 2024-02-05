@@ -1,0 +1,51 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: CELO
+    description: The blockchain to work with
+    enum:
+    - CELO
+  name:
+    description: Name of the NFT token
+    example: My ERC721
+    maxLength: 100
+    minLength: 1
+    type: string
+  publicMint:
+    description: True if the contract is publicMint type. False by default.
+    example: true
+    type: boolean
+  symbol:
+    description: Symbol of the NFT token
+    example: ERC_SYMBOL
+    maxLength: 30
+    minLength: 1
+    type: string
+  fromPrivateKey:
+    description: Private key of account address, from which gas for deployment of
+      ERC721 will be paid. Private key, or signature Id must be present.
+    type: string
+    maxLength: 66
+    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    minLength: 66
+  nonce:
+    type: number
+    minimum: 0
+    description: The nonce to be set to the transaction; if not present, the last
+      known nonce will be used
+  feeCurrency:
+    type: string
+    description: The currency in which the transaction fee will be paid
+    enum:
+    - CELO
+    - CUSD
+    - CEUR
+  fee:
+    $ref: '../migrated.yml#/components/schemas/CustomFee'
+required:
+- chain
+- name
+- symbol
+- feeCurrency
+- fromPrivateKey

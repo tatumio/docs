@@ -1,0 +1,87 @@
+properties:
+  id:
+    description: ID of the withdrawal
+    example: 5e68c66581f2ee32bc354088
+    type: string
+  txId:
+    description: Transaction ID of broadcast transaction
+    example: 62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D
+    type: string
+  accountId:
+    description: Sender account ID
+    example: 5e68c66581f2ee32bc354087
+    type: string
+  status:
+    description: Status of the withdrawal
+    example: InProgress
+    type: string
+    enum:
+    - InProgress
+    - Done
+    - Cancelled
+  address:
+    description: Blockchain address to send assets to. For BTC, LTC, DOGE and BCH,
+      it is possible to enter list of multiple recipient blockchain addresses as a
+      comma separated string.
+    example: mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7
+    maxLength: 10000
+    minLength: 1
+    type: string
+  reference:
+    description: Transaction internal reference - unique identifier within Tatum ledger.
+      In order of failure, use this value to search for problems.
+    example: 0c64cc04-5412-4e57-a51c-ee5727939bcb
+    type: string
+  amount:
+    description: Amount to be withdrawn to blockchain.
+    maxLength: 38
+    example: '0.001'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  attr:
+    description: '<p>Used to parametrize withdrawal. Used for XRP withdrawal to define
+      destination tag of recipient, or XLM memo of the recipient, if needed.<br/>
+
+      For Bitcoin, Litecoin, Bitcoin Cash, used as a change address for left coins
+      from transaction.</p>
+
+      '
+    maxLength: 64
+    minLength: 1
+    example: '12345'
+    type: string
+  fee:
+    description: Fee to be submitted as a transaction fee to blockchain.
+    example: '0.0005'
+    type: string
+    pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  multipleAmounts:
+    description: For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple
+      recipient blockchain amounts. List of recipient addresses must be present in
+      the address field and total sum of amounts must be equal to the amount field.
+    type: array
+    items:
+      type: string
+      example: '0.1'
+      pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
+  paymentId:
+    description: Identifier of the payment, shown for created Transaction within Tatum
+      sender account.
+    example: '12345'
+    maxLength: 100
+    minLength: 1
+    type: string
+  senderNote:
+    description: Note visible to owner of withdrawing account
+    example: Sender note
+    maxLength: 500
+    minLength: 1
+    type: string
+required:
+- amount
+- id
+- accountId
+- address
+- reference
+- fee
+type: object

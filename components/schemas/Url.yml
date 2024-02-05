@@ -1,0 +1,5 @@
+properties:
+  url:
+    description: QR Code as data URL
+    type: string
+type: object

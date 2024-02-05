@@ -1,0 +1,41 @@
+type: object
+required:
+- pair
+- from
+- to
+- timeFrame
+properties:
+  pair:
+    type: string
+    description: Trading pair
+    example: BTC/EUR
+    minLength: 3
+    maxLength: 30
+    pattern: ^[A-a-zZ0-9_\-]+\/[A-Za-z0-9_\-]+$
+  from:
+    type: number
+    minimum: 0
+    example: 1613654998398
+    description: Start interval in UTC millis.
+  to:
+    type: number
+    minimum: 0
+    example: 1613654998398
+    description: End interval in UTC millis.
+  timeFrame:
+    type: string
+    example: MIN_5
+    description: Time frame of the chart.
+    enum:
+    - MIN_1
+    - MIN_3
+    - MIN_5
+    - MIN_15
+    - MIN_30
+    - HOUR_1
+    - HOUR_4
+    - HOUR_12
+    - DAY
+    - WEEK
+    - MONTH
+    - YEAR

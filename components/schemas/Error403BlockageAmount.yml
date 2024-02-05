@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: blockage.amount.exceeded
+    example: blockage.amount.exceeded
+    type: string
+  message:
+    description: Amount to transfer is greater then amount of the blockage.
+    example: Amount to transfer is greater then amount of the blockage.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

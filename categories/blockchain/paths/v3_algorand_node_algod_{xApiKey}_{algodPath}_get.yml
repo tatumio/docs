@@ -1,0 +1,76 @@
+deprecated: true
+description: '<p><b>1 credit per API call</b></p>
+
+  <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC"
+  target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p><br/>
+
+  <p>Use this endpoint URL as a http-based url to connect directly to the Algorand
+  node provided by Tatum.
+
+  You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/"
+  target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>.
+
+  <br/>
+
+  Example call for Get Block is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround"
+  target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround</a>.
+
+  <br/>
+
+  URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre>
+
+  </p>
+
+  '
+operationId: AlgoNodeGetDriver
+parameters:
+- description: Tatum X-API-Key used for authorization.
+  in: path
+  name: xApiKey
+  required: true
+  schema:
+    type: string
+    example: asdlkfjnqunalkwjfnq2oi303294857k
+- description: '`**` path of algod.'
+  in: path
+  name: algodPath
+  required: true
+  schema:
+    type: string
+    example: v2/accounts
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/AlgoBlock'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Access Algorand Algod GET node endpoints
+tags:
+- Algorand

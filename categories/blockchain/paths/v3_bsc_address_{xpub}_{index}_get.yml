@@ -1,0 +1,61 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Generate BSC account deposit address from Extended public key. Deposit address
+  is generated for the specific index - each extended public key can generate
+
+  up to 2^31 addresses starting from index 0 until 2^31.</p>
+
+  '
+operationId: BscGenerateAddress
+parameters:
+- description: Extended public key of wallet.
+  in: path
+  name: xpub
+  required: true
+  schema:
+    type: string
+    example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
+- description: Derivation index of desired address to be generated.
+  in: path
+  name: index
+  required: true
+  example: 1
+  schema:
+    type: number
+    example: 0
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/GeneratedAddressBsc'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Generate BSC account address from Extended public key
+tags:
+- BNB Smart Chain

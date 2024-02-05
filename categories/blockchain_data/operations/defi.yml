@@ -1,0 +1,740 @@
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: t-645a26e22d0761001c811c84-645a26e32d0761001c811c8a
+security:
+  - ApiKeyAuth: []
+
+info:
+  title: Data API
+  version: "1.0.0"
+openapi: 3.0.3
+paths:
+  /v3/data/events:
+    get:
+      description: >
+        <p><b>20 credits per API call</b></p>
+
+        <p>Get all events on given addresses and / or in the requested block
+        range on the following blockchains:</p>
+
+        <ul>
+
+        <li>Celo - celo / celo-testnet</li>
+
+        <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+        <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+        <li>Polygon - polygon / polygon-mumbai</li>
+
+        <li>Horizen EON - eon-mainnet</li>
+
+        <li>Chiliz - chiliz-mainnet</li>
+
+        </ul>
+
+        <p>To get started:</p>
+
+        <ul>
+
+        <li>To improve response times and obtain specific data, it is
+        recommended to use proper filtering techniques. Please provide a chain
+        name and a combination of filters that will accomplish this (at least
+        block range or contract addresses must be specified).</li>
+
+        <li>It is possible to specify multiple contract addresses at once by
+        passing them as a comma separated string.</li>
+
+        <li>If block range is not specified, the API attempts to go through all
+        available blocks, which may result in a timeout error.</li>
+
+        <li>It is recommended to filter only one specific type of events, which
+        comes with built-in decoding for all the supported types.</li>
+
+        <li>It is, however, also possible to filter by signature hashes, which
+        can be passed together as a comma separated string.</li>
+
+        </ul>
+
+        <p>As noted above, aside from general info and hashed event data, the
+        API also decodes them for you in case you filter by one of the following
+        supported event types:</p>
+
+        <ul>
+
+        <li><code>tokenTransfer</code>: All transfers of fungible tokens
+        (including stablecoins) and NFTs as per ERC-20 and ERC-721
+        standard.</li>
+
+        <li><code>multitokenTransfer</code>: All transfers of multitokens (both
+        single transfers and batch transfers) as per ERC-1155 standard.</li>
+
+        <li><code>stablecoinTransfer</code>: Refers to the transfer of specific
+        stablecoins on the mainnet. Typically, the top 10 to 16 stablecoins on
+        each chain according to CoinMarketCap are included. If the
+        <code>contractAddresses</code> parameter is also used in the filter
+        combination, any tokens specified in it will also be included in the
+        list.</li>
+
+        <li><code>uniswapTrade</code>: Provides all swap events that occur on
+        both Uniswap V2 and V3. In some cases, it may not be possible to map the
+        swapped amounts to specific tokens. As a result, certain decoded data
+        such as token amounts might be missing or in the original big number
+        format. This will be indicated by the response parameter
+        <code>partiallyRaw: true</code>.</li>
+
+        </ul>
+      operationId: GetEvents
+      parameters:
+        - description: The blockchain to work with.
+          in: query
+          name: chain
+          required: true
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/ChainEnum"
+        - description: >
+            The blockchain addresses of the contracts where requested events
+            were emitted.
+
+            It is possible to enter list of up to 10 addresses as a comma
+            separated string.
+          in: query
+          name: contractAddresses
+          required: true
+          schema:
+            type: string
+            example: "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce"
+        - description: First block to start from (including this one).
+          in: query
+          name: blockFrom
+          required: true
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/BlockNumber"
+        - description: Last block to finish on (including this one).
+          in: query
+          name: blockTo
+          required: true
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/BlockNumberTo"
+        - description: >
+            The type of events that should be returned, which comes with decoded
+            data in the response
+
+            (cannot be used together with signatures).
+          in: query
+          name: eventType
+          required: true
+          schema:
+            type: string
+            example: tokenTransfer
+            enum:
+              - tokenTransfer
+              - multitokenTransfer
+              - stablecoinTransfer
+              - uniswapTrade
+        - description: >
+            The types of events that should be returned, specified by hashed
+            signature
+
+            (cannot be used together with eventType).
+
+            It is possible to enter list of multiple signatures as a comma
+            separated string.
+          in: query
+          name: signatures
+          schema:
+            type: string
+            example: "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+        - description: The number of items per page (default is 50).
+          in: query
+          name: pageSize
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/PageSize"
+        - description: The offset to obtain next page of the data.
+          in: query
+          name: offset
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/Offset"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                description: List of all event data.
+                $ref: "../../../components/schemas.yml#/components/schemas/Event"
+                examples:
+                  tokenTransfer:
+                    value:
+                      - chain: ethereum-mainnet
+                        address: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                        blockNumber: 16719956
+                        timestamp: 1677506087000
+                        decoded:
+                          label: Transfer(address,address,uint256)
+                          type: fungible
+                          subtype: transfer
+                          from: "0xb4e16d0168e52d35cacd2c6185b44281ec28c9dc"
+                          to: "0xb3d994978d2bc50d2ce74c45fcd923e7c9c06730"
+                          decimals: 18
+                          value: "0.030041143652018106"
+                        raw:
+                          topic_0: >-
+                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                          topic_1: >-
+                            0x000000000000000000000000b4e16d0168e52d35cacd2c6185b44281ec28c9dc
+                          topic_2: >-
+                            0x000000000000000000000000b3d994978d2bc50d2ce74c45fcd923e7c9c06730
+                          data: >-
+                            0x000000000000000000000000000000000000000000000000006aba42d00667ba
+                        txHash: >-
+                          0x0ca14958f40d348bef24cd259a185c16867479b5f506e329063c4bb0b195a643
+                        txIndex: 144
+                        logIndex: 231
+                      - chain: ethereum-mainnet
+                        address: "0xd4307e0acd12cf46fd6cf93bc264f5d5d1598792"
+                        blockNumber: 16719955
+                        timestamp: 1677506075000
+                        decoded:
+                          label: Transfer(address,address,uint256)
+                          type: nft
+                          subtype: mint
+                          from: "0x0000000000000000000000000000000000000000"
+                          to: "0x192038b97fc5a926367f84743533ad63250be09b"
+                          tokenId: "370349"
+                        raw:
+                          topic_0: >-
+                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                          topic_1: >-
+                            0x0000000000000000000000000000000000000000000000000000000000000000
+                          topic_2: >-
+                            0x000000000000000000000000192038b97fc5a926367f84743533ad63250be09b
+                          topic_3: >-
+                            0x000000000000000000000000000000000000000000000000000000000005a6ad
+                        txHash: >-
+                          0x52249e144a905e4e84f185ce4895dbd1c7b53fb9068461869e2c6dc7e2487296
+                        txIndex: 99
+                        logIndex: 177
+                  stablecoinTransfer:
+                    value:
+                      - chain: ethereum-mainnet
+                        address: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                        blockNumber: 16719958
+                        timestamp: 1677506111000
+                        decoded:
+                          label: Transfer(address,address,uint256)
+                          type: stablecoin
+                          subtype: transfer
+                          from: "0x99de7724196070b9ff266adbac8c7abf56890207"
+                          to: "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43"
+                          decimals: 6
+                          stablecoin: USDT
+                          value: "699.981164"
+                        raw:
+                          topic_0: >-
+                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                          topic_1: >-
+                            0x00000000000000000000000099de7724196070b9ff266adbac8c7abf56890207
+                          topic_2: >-
+                            0x000000000000000000000000a9d1e08c7793af67e9d92fe308d5697fb81d3e43
+                          data: >-
+                            0x0000000000000000000000000000000000000000000000000000000029b8dd6c
+                        txHash: >-
+                          0xd77eaf324742498451aeafcfe4b2b9f07d817f6f6b0b1ae13fab5121b7bb32af
+                        txIndex: 91
+                        logIndex: 184
+                      - chain: ethereum-mainnet
+                        address: "0xdac17f958d2ee523a2206206994597c13d831ec7"
+                        blockNumber: 16719947
+                        timestamp: 1677505979000
+                        decoded:
+                          label: Transfer(address,address,uint256)
+                          type: stablecoin
+                          subtype: transfer
+                          from: "0x366cbca2412c2829fb80bfc844ed124938dd66c7"
+                          to: "0x28c6c06298d514db089934071355e5743bf21d60"
+                          decimals: 6
+                          stablecoin: USDT
+                          value: "467727"
+                        raw:
+                          topic_0: >-
+                            0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef
+                          topic_1: >-
+                            0x000000000000000000000000366cbca2412c2829fb80bfc844ed124938dd66c7
+                          topic_2: >-
+                            0x00000000000000000000000028c6c06298d514db089934071355e5743bf21d60
+                          data: >-
+                            0x0000000000000000000000000000000000000000000000000000006ce6b3a1c0
+                        txHash: >-
+                          0xb3aa57159446049acb1878b285452deb7fdcd798191472a3bae026006fc41fc7
+                        txIndex: 66
+                        logIndex: 69
+                  multitokenTransfer:
+                    value:
+                      - chain: ethereum-mainnet
+                        address: "0xd955e7bd8ca9f2aad391760f849cfa4ee2d80d57"
+                        blockNumber: 16719956
+                        timestamp: 1677506087000
+                        decoded:
+                          label: >-
+                            TransferSingle(address,address,address,uint256,uint256)
+                          type: multitoken
+                          subtype: transfer
+                          from: "0x3dacc060c993ae03a7f956a4f8ff81a33fa75ea4"
+                          to: "0x5f8e0020c3164fb7eb170d7345672f6948ca0ff4"
+                          operator: "0x1e0049783f008a0085193e00003d00cd54003c71"
+                          multitokenId: "15"
+                          multitokenValue: "1"
+                        raw:
+                          topic_0: >-
+                            0xc3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62
+                          topic_1: >-
+                            0x0000000000000000000000001e0049783f008a0085193e00003d00cd54003c71
+                          topic_2: >-
+                            0x0000000000000000000000003dacc060c993ae03a7f956a4f8ff81a33fa75ea4
+                          topic_3: >-
+                            0x0000000000000000000000005f8e0020c3164fb7eb170d7345672f6948ca0ff4
+                          data: >-
+                            0x000000000000000000000000000000000000000000000000000000000000000f0000000000000000000000000000000000000000000000000000000000000001
+                        txHash: >-
+                          0xd134d76b8a38a031bfad4bd7e1ee390ba610fa71cd66c338f1055260569ab643
+                        txIndex: 180
+                        logIndex: 349
+                      - chain: ethereum-mainnet
+                        address: "0xd955e7bd8ca9f2aad391760f849cfa4ee2d80d57"
+                        blockNumber: 16719785
+                        timestamp: 1677504011000
+                        decoded:
+                          label: >-
+                            TransferBatch(address,address,address,uint256[],uint256[])
+                          type: multitoken
+                          subtype: mint
+                          from: "0x0000000000000000000000000000000000000000"
+                          to: "0x1eb97e5c30c209e95913467fcc42c43274b0fe83"
+                          operator: "0x1eb97e5c30c209e95913467fcc42c43274b0fe83"
+                          multitokenIds:
+                            - "26"
+                            - "21"
+                          multitokenValues:
+                            - "1"
+                            - "1"
+                        raw:
+                          topic_0: >-
+                            0x4a39dc06d4c0dbc64b70af90fd698a233a518aa5d07e595d983b8c0526c8f7fb
+                          topic_1: >-
+                            0x0000000000000000000000001eb97e5c30c209e95913467fcc42c43274b0fe83
+                          topic_2: >-
+                            0x0000000000000000000000000000000000000000000000000000000000000000
+                          topic_3: >-
+                            0x0000000000000000000000001eb97e5c30c209e95913467fcc42c43274b0fe83
+                          data: >-
+                            0x000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000001a0000000000000000000000000000000000000000000000000000000000000015000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001
+                        txHash: >-
+                          0x2c4d5fa08d0d78cd08e3b2df66031f157d47d09dc931f0a0c967a086bd7dc593
+                        txIndex: 135
+                        logIndex: 395
+                  uniswapTrade:
+                    value:
+                      - chain: ethereum-mainnet
+                        address: "0x939da43b6987a1012a19db7bb971c9d88d409e2e"
+                        blockNumber: 16716951
+                        timestamp: 1677469631000
+                        decoded:
+                          label: >-
+                            Swap(address,uint256,uint256,uint256,uint256,address)
+                          type: uniswap
+                          subtype: v2
+                          from: "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45"
+                          to: "0x29847b89f58cbf4749ab609c623cf4dadd703d68"
+                          token0: "0x80941467df667bfdad333d4dc3527713a620df3c"
+                          token1: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                          amount0In: "0"
+                          amount1In: "0.02"
+                          amount0Out: "16.310991135231436277"
+                          amount1Out: "0"
+                        raw:
+                          topic_0: >-
+                            0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822
+                          topic_1: >-
+                            0x00000000000000000000000068b3465833fb72a70ecdf485e0e4c7bd8665fc45
+                          topic_2: >-
+                            0x00000000000000000000000029847b89f58cbf4749ab609c623cf4dadd703d68
+                          data: >-
+                            0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000e25c4804a603e5f50000000000000000000000000000000000000000000000000000000000000000
+                        txHash: >-
+                          0xd07727fa56151ed6813010859eaeaecb731a3da35b42583a720e60441e760dfb
+                        txIndex: 105
+                        logIndex: 316
+                      - chain: ethereum-mainnet
+                        address: "0x939da43b6987a1012a19db7bb971c9d88d409e2e"
+                        blockNumber: 16716945
+                        timestamp: 1677469520000
+                        decoded:
+                          label: >-
+                            Swap(address,uint256,uint256,uint256,uint256,address)
+                          type: uniswap
+                          subtype: v2
+                          from: "0x7a250d5630b4cf539739df2c5dacb4c659f2488d"
+                          to: "0xb90dd95cc9a8b603fa5b1ebf1fc54de792d51e44"
+                          token1: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                          partiallyRaw: true
+                          amount0In: "0"
+                          amount1In: "38582795937639190"
+                          amount0Out: "19346934115717712"
+                          amount1Out: "0"
+                        raw:
+                          topic_0: >-
+                            0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822
+                          topic_1: >-
+                            0x00000000000000000000000068b3465833fb72a70ecdf485e0e4c7bd8665fc45
+                          topic_2: >-
+                            0x00000000000000000000000029847b89f58cbf4749ab609c623cf4dadd703d68
+                          data: >-
+                            0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000470de4df820000000000000000000000000000000000000000000000000000e25c4804a603e5f50000000000000000000000000000000000000000000000000000000000000000
+                        txHash: >-
+                          0xd07727fa56151ed6813010859eaeaecb731a3da35b42583a720e60441e760dfb
+                        txIndex: 77
+                        logIndex: 421
+                      - chain: ethereum-mainnet
+                        address: "0x8ad599c3a0ff1de082011efddc58f1908eb6e6d8"
+                        blockNumber: 16715826
+                        timestamp: 1677455963000
+                        decoded:
+                          label: >-
+                            Swap(address,address,int256,int256,uint160,uint128,int24)
+                          type: uniswap
+                          subtype: v3
+                          from: "0xef1c6e67703c7bd7107eed8303fbe6ec2554bf6b"
+                          to: "0x2e8daf55f212be91d3fa882cceab193a08fddeb2"
+                          token0: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                          token1: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+                          amount0: "2539.314198"
+                          amount1: "-1.545466196980525897"
+                          sqrtPriceX96: "1957504157831843308092484471058274"
+                          liquidity: "16050202700964797693"
+                          tick: 202307
+                        raw:
+                          topic_0: >-
+                            0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67
+                          topic_1: >-
+                            0x000000000000000000000000ef1c6e67703c7bd7107eed8303fbe6ec2554bf6b
+                          topic_2: >-
+                            0x0000000000000000000000002e8daf55f212be91d3fa882cceab193a08fddeb2
+                          data: >-
+                            0x00000000000000000000000000000000000000000000000000000000975adc16ffffffffffffffffffffffffffffffffffffffffffffffffea8d66ae9c9a14b700000000000000000000000000000000000060832d1059b69d1a2cc113896f62000000000000000000000000000000000000000000000000debdc651a4059cfd0000000000000000000000000000000000000000000000000000000000031643
+                        txHash: >-
+                          0x3cb892c1f046f8467a7e081aedbbf90eeca93fa96a892ebf6f3c5db191dc29f5
+                        txIndex: 4
+                        logIndex: 32
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error400"
+          description: >-
+            Bad Request. Validation failed for the given object in the HTTP Body
+            or Request parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401NotActive"
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401Invalid"
+          description: >-
+            Unauthorized. Not valid or inactive subscription key present in the
+            HTTP Header.
+        "403":
+          description: >-
+            Forbidden. The request is authenticated, but it is not possible to
+            required perform operation due to logical error or invalid
+            permissions.
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error403"
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error500"
+          description: >-
+            Internal server error. There was an error on the server during the
+            processing of the request.
+      security:
+        - X-API-Key: []
+      x-codeSamples: []
+      summary: Get specified events
+      tags:
+        - Defi API
+
+  /v3/data/blocks:
+    get:
+      description: >
+        <p><b>10 credits per API call</b></p>
+
+        <p>Get information about blocks (when they were added, how many NFTs and
+        events were ingested and list of transaction hashes that were processed
+        within them) on the following blockchains:</p>
+
+        <ul>
+
+        <li>Celo - celo / celo-testnet</li>
+
+        <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+        <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+        <li>Polygon - polygon / polygon-mumbai</li>
+
+        <li>Horizen EON - eon-mainnet</li>
+
+        <li>Chiliz - chiliz-mainnet</li>
+
+        </ul>
+
+        <p>To get started, provide a chain and specify one of the filters listed
+        below (combination of these filters is not allowed):</p>
+
+        <ul>
+
+        <li>List of block numbers separated by comma</li>
+
+        <li>Range of block numbers</li>
+
+        <li>Date range when blocks were processed</li>
+
+        </ul>
+      operationId: GetBlocks
+      parameters:
+        - description: The blockchain to work with.
+          in: query
+          name: chain
+          required: true
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/ChainEnum"
+        - description: List of block numbers, separated by comma.
+          in: query
+          name: blockIds
+          schema:
+            type: array
+            items:
+              type: integer
+            example: 1,2,4,400
+            minimum: 0
+        - description: >-
+            Range of block numbers. Both blockFrom and blockTo need to be
+            specified.
+          in: query
+          name: blockFrom
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/BlockNumber"
+        - description: >-
+            Range of block numbers. Both blockFrom and blockTo need to be
+            specified.
+          in: query
+          name: blockTo
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/BlockNumber"
+        - description: >-
+            Date range when blocks were processed. Both timeFrom and timeTo need
+            to be specified.
+          in: query
+          name: timeFrom
+          schema:
+            type: string
+            example: 2022-12-24T00:10
+        - description: >-
+            Date range when blocks were processed. Both timeFrom and timeTo need
+            to be specified.
+          in: query
+          name: timeTo
+          schema:
+            type: string
+            example: 2022-12-24T00:20
+        - description: The number of items per page (default is 50).
+          in: query
+          name: pageSize
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/PageSize"
+        - description: The offset to obtain next page of the data.
+          in: query
+          name: offset
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/Offset"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "../../../components/schemas.yml#/components/schemas/BlockItem"
+                description: List of blocks added to a blockchain.
+                example:
+                  - blockNumber: 10
+                    blockTimestamp: 1598671520000
+                    hash: >-
+                      0xec1a2d906f34e1981b2b1a15dbe5e10cf640e8b4b27dc056ebb65c0409b5a9af
+                    eventIngestedSize: 0
+                    nftIngestedSize: 0
+                  - blockNumber: 11
+                    blockTimestamp: 1598671540000
+                    hash: >-
+                      0xa78e7a9c6910fea66a981389735e0c652f1625905c6e0dca08d3f5c1694b7cc4
+                    eventIngestedSize: 1
+                    nftIngestedSize: 0
+                    txHashes:
+                      - >-
+                        0x19eaae1f7bdd28605f4175d7e87c9de68431bf76e85a262e268252a84bfc3984
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error400"
+          description: >-
+            Bad Request. Validation failed for the given object in the HTTP Body
+            or Request parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401NotActive"
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401Invalid"
+          description: >-
+            Unauthorized. Not valid or inactive subscription key present in the
+            HTTP Header.
+        "403":
+          description: >-
+            Forbidden. The request is authenticated, but it is not possible to
+            required perform operation due to logical error or invalid
+            permissions.
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error403"
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error500"
+          description: >-
+            Internal server error. There was an error on the server during the
+            processing of the request.
+      security:
+        - X-API-Key: []
+      x-codeSamples: []
+      summary: Get specified blocks
+      tags:
+        - Defi API
+
+  /v3/data/blocks/latest:
+    get:
+      description: >
+        <p><b>1 credit per API call</b></p>
+
+        <p>Get information about latest added block on the following
+        blockchains:</p>
+
+        <ul>
+
+        <li>Celo - celo / celo-testnet</li>
+
+        <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+        <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+        <li>Polygon - polygon / polygon-mumbai</li>
+
+        <li>Horizen EON - eon-mainnet</li>
+
+        <li>Chiliz - chiliz-mainnet</li>
+
+        </ul>
+
+        <p>To get started, you can just provide a chain.</p>
+      operationId: GetLatestBlock
+      parameters:
+        - description: The blockchain to work with.
+          in: query
+          name: chain
+          required: true
+          schema:
+            $ref: "../../../components/schemas.yml#/components/schemas/ChainEnum"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/BlockItem"
+                description: Latest block added to a blockchain.
+                example:
+                  blockNumber: 25987956
+                  blockTimestamp: 1677372871000
+                  hash: >-
+                    0x047a6ab09f86c760c145dc09b7a43b74d6ad957133ba4462a5530c642d4d9f17
+                  eventIngestedSize: 351
+                  nftIngestedSize: 7
+                  txHashes:
+                    - >-
+                      0x01a7983d1391b74305840e4960ba6c61417a9398cb938c3522d0a4a9cedf488f
+                    - >-
+                      0x0478fdae7e5e6f1eb522e6f43ba760c924b1f72d16e4dadc332f150829d09cbe
+                    - >-
+                      0x05d00f08ae523e445c3b1e7bbabec1896091234643d50e8bcdb76ddd3ff3827a
+                    - >-
+                      0x0b644c19257cf34ab98c509c7901af5a4ad8c6f537b625b46ee771a45f1940dc
+                    - >-
+                      0x0c1016bf317946d9997588ee3b932bc8ba6033cfcb83eca4b5ebcc4f5eaa076d
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error400"
+          description: >-
+            Bad Request. Validation failed for the given object in the HTTP Body
+            or Request parameters.
+        "401":
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401NotActive"
+                  - $ref: "../../../components/schemas.yml#/components/schemas/Error401Invalid"
+          description: >-
+            Unauthorized. Not valid or inactive subscription key present in the
+            HTTP Header.
+        "403":
+          description: >-
+            Forbidden. The request is authenticated, but it is not possible to
+            required perform operation due to logical error or invalid
+            permissions.
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error403"
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: "../../../components/schemas.yml#/components/schemas/Error500"
+          description: >-
+            Internal server error. There was an error on the server during the
+            processing of the request.
+      security:
+        - X-API-Key: []
+      x-codeSamples: []
+      summary: Get latest block
+      tags:
+        - Defi API
+
+servers:
+  - url: https://api.tatum.io/

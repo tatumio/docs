@@ -1,0 +1,28 @@
+type: object
+required:
+- type
+- id
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: ACCOUNT_BALANCE_LIMIT
+    enum:
+    - ADDRESS_TRANSACTION
+    - CONTRACT_LOG_EVENT
+    - ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION
+    - ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION
+    - CUSTOMER_TRADE_MATCH
+    - CUSTOMER_PARTIAL_TRADE_MATCH
+    - TRANSACTION_IN_THE_BLOCK
+    - KMS_FAILED_TX
+    - KMS_COMPLETED_TX
+    - ACCOUNT_BALANCE_LIMIT
+    - TRANSACTION_HISTORY_REPORT
+  id:
+    type: string
+    description: ID of the subscription
+    example: 7c21ed165e294db78b95f0f1
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.

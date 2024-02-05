@@ -1,0 +1,55 @@
+type: object
+properties:
+  chain:
+    type: string
+    example: SOL
+    description: The blockchain to work with
+    enum:
+    - SOL
+  nftAddress:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the NFT to verify
+    example: CHw1Fy5YdbaaosLXrrxhuc3X3fpssMqDQm9XwJh9LPGe
+    type: string
+  collectionAddress:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the NFT collection where the NFT should
+      be verified in. The collection must be a sized collection that was introduced
+      in <a href="https://docs.metaplex.com/programs/token-metadata/changelog/v1.3"
+      target="_blank">Version 1.3</a> of the Metaplex Token Metadata program.
+    example: CHw1Fy5YdbaaosLXrrxhuc3X3fpssMqDQm9XwJh9LPGe
+    type: string
+  from:
+    maxLength: 44
+    minLength: 32
+    description: The blockchain address of the collection verifier on behalf of whom
+      the transaction will be originated. The transaction fee will be paid from this
+      address.
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    type: string
+  signatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key associated in signing application.
+      Private key, or signature Id must be present.
+  feePayer:
+    description: Blockchain address to pay the fee for the transaction from
+    example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+    maxLength: 44
+    minLength: 32
+    type: string
+  feePayerSignatureId:
+    type: string
+    format: uuid
+    example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
+    description: Identifier of the private key used for paying the gas costs in signing
+      application. Defaults to the signatureId.
+required:
+- collectionAddress
+- chain
+- signatureId
+- from
+- nftAddress

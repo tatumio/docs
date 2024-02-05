@@ -1,0 +1,22 @@
+allOf:
+- $ref: '../migrated.yml#/components/schemas/MultitokenTransfer'
+- type: object
+  properties:
+    multitokenIds:
+      type: array
+      items:
+        type: string
+      description: The unique identifiers of the multitokens being transferred.
+      example:
+      - '1'
+      - '2'
+      - '3'
+    multitokenValues:
+      type: array
+      items:
+        type: string
+      description: The values of the multitokens being transferred.
+      example:
+      - '100'
+      - '200'
+      - '300'

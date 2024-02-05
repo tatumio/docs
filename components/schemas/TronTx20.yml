@@ -1,0 +1,45 @@
+type: object
+required:
+- txID
+- to
+- tokenInfo
+- type
+- value
+- from
+properties:
+  txID:
+    type: string
+    description: Transaction ID.
+    example: 24dd2f121a24516f22df78adf1ccc32119e3edb7760297f76a925b879f2baa98
+  tokenInfo:
+    type: object
+    required:
+    - symbol
+    - decimals
+    - address
+    - name
+    properties:
+      symbol:
+        type: string
+        example: USDT
+      address:
+        type: string
+        example: TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t
+      decimals:
+        type: number
+        example: 6
+      name:
+        type: string
+        example: Tether USD
+  from:
+    type: string
+    example: TPn72oEg7WPaffgNBf62vGx8G1s4chx2fp
+  to:
+    type: string
+    example: TJyhbP1bQfo8tLPxEVjaka9gh2qkN7MvD3
+  type:
+    type: string
+    example: Transfer
+  value:
+    type: string
+    example: '1800'

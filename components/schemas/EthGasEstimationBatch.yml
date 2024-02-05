@@ -1,0 +1,30 @@
+type: object
+required:
+- error
+- result
+properties:
+  error:
+    type: boolean
+    description: If all estimations succeeded.
+    example: false
+  result:
+    type: array
+    items:
+      $ref: '../migrated.yml#/components/schemas/EthGasEstimationBatchResult'
+example:
+  error: true
+  result:
+  - error: true
+    msg: Provided address 0xt16360210b423d3a5205923d6e64a2d142d9f426 is invalid, the
+      capitalization checksum test failed, or it's an indirect IBAN address which
+      can't be converted.
+  - error: false
+    contractAddress: '0xdac17f958d2ee523a2206206994597c13d831ec7'
+    data:
+      gasLimit: '63185'
+      gasPrice: '119104833751'
+      estimations:
+        safe: '100833333333'
+        standard: '104833333333'
+        fast: '119104833751'
+        baseFee: '119104833751'

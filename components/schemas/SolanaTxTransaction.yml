@@ -1,0 +1,9 @@
+type: object
+properties:
+  message:
+    $ref: '../migrated.yml#/components/schemas/SolanaTxMessage'
+  signatures:
+    type: array
+    items:
+      type: string
+      example: 5FPSzkTsjZDBigU3ZagvkcwSPimt4K6voqrN9uUNVzWDBeRXWVH3uMarDPpSfrS7sFQeyKyDd5KpbdCrL3EWEP59

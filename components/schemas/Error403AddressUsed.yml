@@ -1,0 +1,18 @@
+properties:
+  errorCode:
+    description: Address.used
+    example: address.used
+    type: string
+  message:
+    description: Address and currency already in use.
+    example: Address and currency already in use.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode
+type: object

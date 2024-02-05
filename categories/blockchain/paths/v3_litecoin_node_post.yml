@@ -1,0 +1,74 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC"
+  target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p><br/>
+
+  <p>Use this endpoint URL as an http-based JSON RPC driver to connect directly to
+  the node provided by Tatum.</p>
+
+  '
+operationId: LtcRpcDriver
+deprecated: true
+requestBody:
+  content:
+    application/json:
+      schema:
+        type: object
+        description: Any valid JSON RPC method content body.
+        properties:
+          jsonrpc:
+            type: string
+            description: Version of the JSON RPC.
+            example: '1.0'
+          id:
+            type: string
+            description: ID of the request, could be any arbitrary identifier.
+            example: test
+          method:
+            type: string
+            description: Method to invoke on the node.
+            example: getblockcount
+          params:
+            type: array
+            description: Params to the method call, if required.
+            example: []
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: object
+          description: Any valid RPC response.
+          example:
+            jsonrpc: '1.0'
+            id: test
+            result: 654321
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+x-codeSamples: []
+summary: JSON RPC HTTP driver
+tags:
+- Litecoin

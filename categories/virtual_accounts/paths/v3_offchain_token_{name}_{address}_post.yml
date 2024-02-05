@@ -1,0 +1,86 @@
+description: '<p><b>2 credits per API call</b></p>
+
+  <p>Set the contract address of an ERC-20, ERC-20-equivalent (for example, BEP-20,
+  HRM-20, and so on), or TRC-10 token to be able to communicate with the smart contract.</p>
+
+  <p>After creating and deploying the token to the blockchain, the smart contract
+  address is generated and must be set within Tatum. If the address is not set, the
+  Tatum platform will not be able to detect incoming deposits of the tokens and transfer
+  the tokens from virtual accounts to blockchain addresses.</p>
+
+  <p><b>NOTE:</b></p>
+
+  <ul>
+
+  <li>For <b>Algorand</b>, the contract address is the asset ID (<code>assetId</code>),
+  for example, <code>55351976</code>.</li>
+
+  <li>For <b>TRON</b>, the contract address is the token ID (<code>tokenId</code>),
+  for example, <code>1234567</code>.</li>
+
+  </ul>
+
+  '
+operationId: storeTokenAddress
+parameters:
+- description: On Algorand, this is the asset ID; on TRON, this is the token ID; on
+    the other blockchains, this is the address of the smart contract.
+  in: path
+  name: address
+  required: true
+  schema:
+    maxLength: 100
+    minLength: 1
+    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    type: string
+- description: The name of the token (the token symbol)
+  in: path
+  name: name
+  required: true
+  schema:
+    maxLength: 30
+    minLength: 1
+    pattern: ^[a-zA-Z0-9_]+$
+    example: MY_TOKEN
+    type: string
+responses:
+  '204':
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20NotFound'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Set'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
+tags:
+- Blockchain operations

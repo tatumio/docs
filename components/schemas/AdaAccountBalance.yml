@@ -1,0 +1,16 @@
+type: array
+items:
+  type: object
+  properties:
+    currency:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: Name of the asset.
+        decimals:
+          type: number
+          description: Number of decimal places.
+    value:
+      type: string
+      description: Quantity of the asset.

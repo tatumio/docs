@@ -1,0 +1,48 @@
+type: object
+properties:
+  id:
+    description: The hash of the block
+    type: string
+    example: e11ca8f92f2d5dea7406e64ab8cb1780a8a19185d9ac670b16ca8c4f09f05add
+  parentId:
+    description: The hash of the parent block
+    type: string
+    example: 7bd701e87f319254d19dc17459f97df6a44052d05df5e1cd442dd2e3f48ecedc
+  height:
+    description: The number of the block
+    type: number
+    example: 31733102
+  timestamp:
+    description: The timestamp of the block
+    type: string
+    example: '2021-05-11T13:00:54.913131268Z'
+  collectionGuarantees:
+    description: Collection guaranties
+    type: array
+    items:
+      type: object
+      properties:
+        collectionId:
+          type: string
+          description: The collection guarantee
+          example: c0fb31b0a75d6f3d338ba8a1e8a07f343299db4be2855a3a42b0f0d33f2495d7
+  blockSeals:
+    description: Block seals
+    type: array
+    items:
+      type: object
+      properties:
+        blockId:
+          type: string
+          description: The ID of the block being sealed
+          example: c85bc2853ca9596a80050b6d2661aad10bd6b27d06b013050076ad1bed2c8b6a
+        executionReceiptId:
+          type: string
+          description: The ID of the execution receipt being sealed
+          example: e79acd6437efe49c22832802346908f9590b92fbcd452f72e3b2f1151c48f3ea
+  transactions:
+    description: The IDs of transactions
+    type: array
+    items:
+      type: string
+      example: 3b4351560d3b454a4c1ae2485074b0786093058bfe2b28d436584311b1e433a4
