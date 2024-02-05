@@ -1,0 +1,19 @@
+properties:
+  errorCode:
+    description: product.not.supported
+    example: product.not.supported
+    type: string
+  message:
+    description: Your plan is not supported to perform this operation. You can subscribe
+      at https://dashboard.tatum.com.
+    example: Your plan is not supported to perform this operation. You can subscribe
+      at https://dashboard.tatum.com.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode

@@ -1,0 +1,19 @@
+properties:
+  errorCode:
+    description: mainnet.not.supported
+    example: mainnet.not.supported
+    type: string
+  message:
+    description: Mainnet is not supported for this operation for your plan. You can
+      upgrade at https://dashboard.tatum.com.
+    example: Mainnet is not supported for this operation for your plan. You can upgrade
+      at https://dashboard.tatum.com.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode

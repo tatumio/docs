@@ -1,0 +1,47 @@
+type: object
+required:
+- type
+- attr
+properties:
+  type:
+    type: string
+    description: Type of the subscription.
+    example: CONTRACT_ADDRESS_LOG_EVENT
+  attr:
+    type: object
+    description: Additional attributes based on the subscription type.
+    required:
+    - chain
+    - address
+    - url
+    properties:
+      address:
+        description: Blockchain address to watch.
+        example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
+        maxLength: 128
+        minLength: 13
+        type: string
+      chain:
+        description: Blockchain of the address.
+        example: SOL
+        type: string
+        enum:
+        - ETH
+        - MATIC
+        - CELO
+        - KLAY
+        - BSC
+        - TEZOS
+      url:
+        type: string
+        description: URL of the endpoint, where HTTP POST request will be sent, when
+          transaction is detected on the address.
+        example: https://dashboard.tatum.io/webhook-handler
+        maxLength: 500
+      event:
+        type: string
+        description: Event to watch. In case of EVM chains it is usually a hash of
+          the event signature. In case of Tezos it is a name of the event and max
+          length is not enforced.
+        example: 1.0038928713678618e+77
+        maxLength: 66

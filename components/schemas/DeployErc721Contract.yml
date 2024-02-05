@@ -1,0 +1,26 @@
+allOf:
+- $ref: '../migrated_v1.yml#/components/schemas/DeployAbstractContract'
+- type: object
+  required:
+  - name
+  - symbol
+  - contractType
+  properties:
+    name:
+      type: string
+      maxLength: 255
+      description: The name of the ERC721 token.
+    symbol:
+      type: string
+      maxLength: 255
+      description: The symbol of the ERC721 token.
+    contractType:
+      type: string
+      enum:
+      - nft
+      description: The type of contract to deploy.
+    baseURI:
+      type: string
+      maxLength: 500
+      description: The base URI for the ERC721 token metadata. If not provided, the
+        token will not have any base URI prefixed.

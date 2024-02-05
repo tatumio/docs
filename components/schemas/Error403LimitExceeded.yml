@@ -1,0 +1,19 @@
+properties:
+  errorCode:
+    description: limit.exceeded
+    example: limit.exceeded
+    type: string
+  message:
+    description: Your plan limit is exceeded, you can't perform this operation more
+      then ${limit}x. You can upgrade at https://dashboard.tatum.com.
+    example: Your plan limit is exceeded, you can't perform this operation more then
+      ${limit}x. You can upgrade at https://dashboard.tatum.com.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode

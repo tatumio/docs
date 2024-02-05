@@ -1,0 +1,17 @@
+properties:
+  errorCode:
+    description: chain.not.supported
+    example: chain.not.supported
+    type: string
+  message:
+    description: Chain ${chain} is not supported for this operation.
+    example: Chain ${chain} is not supported for this operation.
+    type: string
+  statusCode:
+    description: '403'
+    example: 403
+    type: number
+required:
+- errorCode
+- message
+- statusCode

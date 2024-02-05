@@ -1,0 +1,63 @@
+description: 'This operation is used to mint NFT on existing NFT collection on the
+  blockchain. The operation is asynchronous and returns a transaction hash. The transaction
+  hash can be used to query the status of the transaction.<br/>
+
+  NFT will be minted as NFT Express. See more: <a href="https://docs.tatum.io/nft-express/what-is-nft-express"
+  target="_blank">NFT Express functionality.</a><br/>
+
+  '
+operationId: mintErc721
+requestBody:
+  content:
+    application/json:
+      schema:
+        oneOf:
+        - $ref: '../../../components/migrated_v1.yml#/components/schemas/EvmErc721Mint'
+  required: true
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/TransactionHash'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403PlanNotSupported'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403ChainNotSupported'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403MainnetNotSupported'
+          - $ref: '../../../components/migrated_v1.yml#/components/schemas/Error403LimitExceeded'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated_v1.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server while processing
+      the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Mint NFT
+tags:
+- General

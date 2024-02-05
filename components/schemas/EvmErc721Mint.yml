@@ -1,0 +1,45 @@
+type: object
+properties:
+  chain:
+    type: string
+    enum:
+    - bsc-mainnet
+    - bsc-testnet
+    - ethereum-mainnet
+    - ethereum-sepolia
+    - polygon-mainnet
+    - polygon-mumbai
+    - celo-mainnet
+    - celo-alfajores
+    - one-mainnet-s0
+    - one-testnet-s0
+    - kcs-mainnet
+    - kcs-testnet
+    description: The blockchain network where to mint NFT.
+  to:
+    type: string
+    pattern: ^0x[a-fA-F0-9]{40}$
+    description: The address of the NFT receiver.
+  url:
+    type: string
+    pattern: ipfs://[a-f0-9]{60}
+    description: The URL pointing to the NFT metadata; for more information, see EIP-721
+  tokenId:
+    type: string
+    pattern: ^[0-9]+$
+    description: Token Id of NFT to be minted
+  contractAddress:
+    type: string
+    pattern: ^0x[a-fA-F0-9]{40}$
+    description: Smart contract address of the NFT collection
+  minter:
+    type: string
+    pattern: ^0x[a-fA-F0-9]{40}$
+    description: The address of the minter of the contract. If not provided, the owner
+      will be the minter.
+required:
+- chain
+- to
+- url
+- tokenId
+- contractAddress
