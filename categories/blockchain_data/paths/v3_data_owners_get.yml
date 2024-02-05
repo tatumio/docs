@@ -69,6 +69,8 @@ responses:
         schema:
           type: array
           description: List of all addresses that own a token in a specified collection.
+          items:
+            type: string
           example:
           - '0x0bbf9f25c863fdf19e645c96280004d24f43cb38'
           - '0x0bd1b3b12db943f2310a4e53481ae97f8b6c2a75'
