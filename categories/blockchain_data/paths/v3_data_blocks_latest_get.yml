@@ -1,0 +1,87 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Get information about latest added block on the following blockchains:</p>
+
+  <ul>
+
+  <li>Celo - celo / celo-testnet</li>
+
+  <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+  <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+  <li>Polygon - polygon / polygon-mumbai</li>
+
+  <li>Horizen EON - eon-mainnet</li>
+
+  <li>Chiliz - chiliz-mainnet</li>
+
+  </ul>
+
+  <p>To get started, you can just provide a chain.</p>
+
+  '
+operationId: GetLatestBlockOld
+parameters:
+- description: The blockchain to work with.
+  in: query
+  name: chain
+  required: true
+  schema:
+    $ref: '../../../components/migrated.yml#/components/schemas/ChainEnum'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/BlockItem'
+          description: Latest block added to a blockchain.
+          example:
+            blockNumber: 25987956
+            blockTimestamp: 1677372871000
+            hash: '0x047a6ab09f86c760c145dc09b7a43b74d6ad957133ba4462a5530c642d4d9f17'
+            eventIngestedSize: 351
+            nftIngestedSize: 7
+            txHashes:
+            - '0x01a7983d1391b74305840e4960ba6c61417a9398cb938c3522d0a4a9cedf488f'
+            - '0x0478fdae7e5e6f1eb522e6f43ba760c924b1f72d16e4dadc332f150829d09cbe'
+            - '0x05d00f08ae523e445c3b1e7bbabec1896091234643d50e8bcdb76ddd3ff3827a'
+            - '0x0b644c19257cf34ab98c509c7901af5a4ad8c6f537b625b46ee771a45f1940dc'
+            - '0x0c1016bf317946d9997588ee3b932bc8ba6033cfcb83eca4b5ebcc4f5eaa076d'
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Get latest block
+tags:
+- Data API (old)

@@ -1,0 +1,109 @@
+description: '<p><b>1 credit per API call</b></p>
+
+  <p>Check if wallet address owns any specified token (ERC-20, ERC-721 or ERC-1155)
+  on the following blockchains:</p>
+
+  <ul>
+
+  <li>Celo - celo / celo-testnet</li>
+
+  <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+  <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+  <li>Polygon - polygon / polygon-mumbai</li>
+
+  <li>Horizen EON - eon-mainnet</li>
+
+  <li>Chiliz - chiliz-mainnet</li>
+
+  </ul>
+
+  <p>To get started:</p>
+
+  <ul>
+
+  <li>Provide a chain name, wallet address and address of any fungible token, NFT
+  or multitoken collection. Our API will return <code>true</code> if provided wallet
+  address owns them.</li>
+
+  <li>If wallet address does not own the specific token, response body is <code>false</code>
+  and status code is <code>200</code>.</li>
+
+  <li>It is also possible to check if wallet address owns a specific NFT by specifying
+  a <code>tokenId</code>.</li>
+
+  </ul>
+
+  '
+operationId: CheckOwnerOld
+parameters:
+- description: The blockchain to work with.
+  in: query
+  name: chain
+  required: true
+  schema:
+    $ref: '../../../components/migrated.yml#/components/schemas/ChainEnum'
+- description: The blockchain address of the wallet.
+  in: query
+  name: address
+  required: true
+  schema:
+    type: string
+    example: '0x2474a7227877f2b65185f09468af7c6577fa207c'
+- description: The blockchain address of the token (NFT collection or any fungible
+    token).
+  in: query
+  name: tokenAddress
+  required: true
+  schema:
+    $ref: '../../../components/migrated.yml#/components/schemas/TokenAddress'
+- description: The ID of a specific NFT token.
+  in: query
+  name: tokenId
+  schema:
+    $ref: '../../../components/migrated.yml#/components/schemas/TokenId'
+responses:
+  '200':
+    content:
+      application/json:
+        schema:
+          type: boolean
+          example: true
+    description: OK
+  '400':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
+    description: Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  '401':
+    content:
+      application/json:
+        schema:
+          oneOf:
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
+          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
+    description: Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  '403':
+    description: Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
+  '500':
+    content:
+      application/json:
+        schema:
+          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
+    description: Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+- X-API-Key: []
+x-codeSamples: []
+summary: Check owner of token
+tags:
+- Data API (old)
