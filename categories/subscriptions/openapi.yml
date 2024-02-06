@@ -3,17 +3,18 @@ info:
   title: Subscriptions
   version: 3.18.3
 tags:
-- description: '<p>Endpoints to handle subscriptions to the Tatum Platform. Subscriptions
-    allow users to enable some additional features or reports that are not enabled
-    by default,
+  - description:
+      "<p>Endpoints to handle subscriptions to the Tatum Platform. Subscriptions
+      allow users to enable some additional features or reports that are not enabled
+      by default,
 
-    like outgoing off-chain transaction scanning, accounts with balances above the
-    limit, etc.</p>
+      like outgoing off-chain transaction scanning, accounts with balances above the
+      limit, etc.</p>
 
-    '
-  name: Notification subscriptions
+      "
+    name: Notification subscriptions
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v1/subscription:
     post:
@@ -42,3 +43,7 @@ paths:
   /v3/subscription/webhook/count:
     get:
       $ref: categories/subscriptions/paths/v3_subscription_webhook_count_get.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

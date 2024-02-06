@@ -3,20 +3,22 @@ info:
   title: Storage
   version: 3.18.3
 tags:
-- description: '<p>IPFS is a distributed file storage. You can store data to IPFS
-    and read from them.</p>
+  - description:
+      "<p>IPFS is a distributed file storage. You can store data to IPFS
+      and read from them.</p>
 
-    '
-  name: IPFS
-- description: '<p>You can store data records on the blockchain. A record is stored
-    permanently: it cannot be changed,
+      "
+    name: IPFS
+  - description:
+      "<p>You can store data records on the blockchain. A record is stored
+      permanently: it cannot be changed,
 
-    deleted, or modified by anyone and will be stored on the blockchain forever.
+      deleted, or modified by anyone and will be stored on the blockchain forever.
 
-    '
-  name: Blockchain storage
+      "
+    name: Blockchain storage
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/record:
     post:
@@ -29,3 +31,7 @@ paths:
   /v3/ipfs:
     post:
       $ref: categories/storage/paths/v3_ipfs_post.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

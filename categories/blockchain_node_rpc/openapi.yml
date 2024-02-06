@@ -3,16 +3,17 @@ info:
   title: Blockchain Node RPC
   version: 3.18.3
 tags:
-- description: '<p>Interact with the blockchain directly by connecting to the blockchain
-    node and communicating with it through JSON-RPC.</p>
+  - description:
+      "<p>Interact with the blockchain directly by connecting to the blockchain
+      node and communicating with it through JSON-RPC.</p>
 
-    <p>Each node-related API supports its own set of the blockchains. The list of
-    the supported blockchains is provided in the API description further in this section.</p>
+      <p>Each node-related API supports its own set of the blockchains. The list of
+      the supported blockchains is provided in the API description further in this section.</p>
 
-    '
-  name: Node RPC
+      "
+    name: Node RPC
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}:
     post:
@@ -21,3 +22,7 @@ paths:
       $ref: categories/blockchain_node_rpc/paths/v3_blockchain_node_{chain}_{xApiKey}_{rpcPath}_put.yml
     get:
       $ref: categories/blockchain_node_rpc/paths/v3_blockchain_node_{chain}_{xApiKey}_{rpcPath}_get.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

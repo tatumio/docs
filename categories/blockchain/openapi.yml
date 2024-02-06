@@ -3,418 +3,440 @@ info:
   title: Blockchain
   version: 3.18.3
 tags:
-- description: '<p>Algorand is a decentralized blockchain technology network. Algorand
-    is enabling the simple creation of next generation financial products, protocols
-    and exchange of value across defi, financial institutions and governments.<br/>
+  - description:
+      '<p>Algorand is a decentralized blockchain technology network. Algorand
+      is enabling the simple creation of next generation financial products, protocols
+      and exchange of value across defi, financial institutions and governments.<br/>
 
-    Tatum supports 2 chains:
+      Tatum supports 2 chains:
 
-    <ul><li>Mainnet - a regular live chain
+      <ul><li>Mainnet - a regular live chain
 
-    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://bank.testnet.algorand.network/">https://bank.testnet.algorand.network/</a></li></ul><br/>
-
-    Examples of working with the Algorand blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/algo-example"
-    target="_blank">Tatum ALGO SDK</a>.<br/>
-
-    </p>
-
-    '
-  name: Algorand
-- description: '<p>Bitcoin Blockchain enables access to the most commonly used Bitcoin
-    methods. These methods bring a small level of abstraction
-
-    and are used for applications that communicate with the blockchain directly. Some
-    of the methods are used alongside Tatum Private Ledger
-
-    to connect the blockchain and the private ledger, like wallet generation or getting
-    information about transactions.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain</li>
-
-    <li>Testnet3 - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from a faucet, e.g. <a target="_blank" href="https://testnet-faucet.mempool.co/">https://testnet-faucet.mempool.co/</a></li></ul><br/>
-
-    '
-  name: Bitcoin
-- description: "<p>Bitcoin Cash Blockchain enables access to the most commonly used\
-    \ Bitcoin Cash methods. These methods bring a small level of abstraction\n and\
-    \ are used for applications that communicate with the blockchain directly. Some\
-    \ of the methods are used alongside Tatum Private Ledger\n to connect the blockchain\
-    \ and the private ledger, like wallet generation or getting information about\
-    \ transactions.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet - a regular\
-    \ live chain</li>\n  <li>Testnet - a chain used for testing purposes. Coins on\
-    \ the test chain have no value and can be obtained from a faucet, e.g. <a target=\"\
-    _blank\" href=\"https://faucet.fullstack.cash/\">https://faucet.fullstack.cash/</a></li></ul>\n\
-    \  </ul>\nTatum supports BIP44 HD wallets. Because they can generate 2^31 addresses\
-    \ from 1 mnemonic phrase, they are very convenient and secure. It is possible\
-    \ to generate this type of wallet with 1 simple API call.</p>\n"
-  name: Bitcoin Cash
-- description: '<p>Binance Smart Chain is an Ethereum EVM 100% compatible blockchain,
-    and is very good for decentralized application (Dapp) development within many
-    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://testnet.binance.org/faucet-smart">https://testnet.binance.org/faucet-smart</a></li></ul></p>
-
-    '
-  name: BNB Smart Chain
-- description: '<p><a href="https://docs.bnbchain.org/docs/learn/beaconIntro" target="_blank">BNB
-    Beacon Chain</a> is a blockchain developed by <a href="https://www.bnbchain.org/"
-    target="_blank">Binance</a>. With Tatum, you can access the most commonly used
-    BNB Beacon Chain methods. These methods bring a certain level of abstraction and
-    are used for applications that communicate with the blockchain directly.</p>
-
-    <p>BNB Beacon Chain does not provide the smart contract functionality.</p>
-
-    <p>Tatum supports the following BNB Beacon Chain networks:</p>
-
-    <ul>
-
-    <li><b>Mainnet</b>, the primary public production blockchain</li>
-
-    <li><b>Testnet</b>, a chain used for testing purposes. The testnet cryptocurrency
-    has no value, and you can obtain it from a faucet (for example, get it from the
-    <a target="_blank" href="https://testnet.bnbchain.org/faucet-smart">BNB Smart
-    Chain Faucet</a> and transfer it to your BNB Beacon Chain address using the <a
-    target="_blank" href="https://www.bnbchain.org/en/binance-wallet">Binance Wallet</a>).</li>
-
-    </ul>
-
-    '
-  name: BNB Beacon Chain
-- description: '<p><a href="https://cardano.org/" target="_blank">Cardano</a> is a
-    decentralized, open-source blockchain. With Tatum, you can access the most commonly
-    used Cardano methods. These methods bring a certain level of abstraction and are
-    used for applications that communicate with the blockchain directly. Some of the
-    methods are used alongside virtual accounts to connect the blockchain and a virtual
-    account, like generating a wallet or getting information about transactions.</p>
-
-    <p>Tatum supports Cardano mainnet and <a href="https://docs.cardano.org/cardano-testnet/getting-started"
-    target="_blank">Cardano preproduction testnet</a>.</p>
-
-    '
-  name: Cardano
-- description: "<p>Celo is fork of Celo with more than 1000 tps and possibility to\
-    \ pay for\ntransactions in it's own stable coin, cUSD. Celo Blockchain enables\
-    \ access to most commonly used Celo methods.\nThese methods bring small level\
-    \ of abstraction,\n       and are used for the type of applications that want\
-    \ to communicate with blockchain directly. Some of the methods are used alongside\
-    \ Tatum Private Ledger\n       to connect blockchain and private ledger together,\
-    \ like wallet generation or getting information about transactions.<br/>\n   \
-    \   Tatum supports 2 chains:\n      <ul><li>Mainnet - regular live chain\n   \
-    \   <li>Alfajorec - test chain used for testing purposes. Coins on test chain\
-    \ have no value and can be obtained from\n      Faucet, e.g. <a target=\"_blank\"\
-    \ href=\"https://celo.org/developers/faucet\">https://celo.org/developers/faucet</a></li></ul><br/>\n\
-    \      Tatum supports BIP44 HD wallets. It is very convenient and secure, since\
-    \ it can generate 2^31 addresses from 1 mnemonic phrase. It is possible to generate\
-    \ this type of wallet with 1 simple API call.</p>\n"
-  name: Celo
-- description: "<p>Dogecoin Blockchain enables access to the most commonly used Dogecoin\
-    \ methods. These methods bring a small level of abstraction\n and are used for\
-    \ applications that communicate with the blockchain directly. Some of the methods\
-    \ are used alongside Tatum Private Ledger\n to connect the blockchain and the\
-    \ private ledger, like wallet generation or getting information about transactions.<br/>\n\
-    Tatum supports 2 chains:\n  <ul><li>Mainnet - a regular live chain</li>\n  <li>Testnet\
-    \ - a chain used for testing purposes. Coins on the test chain have no value and\
-    \ can be obtained from a faucet, e.g. <a target=\"_blank\" href=\"https://testnet-faucet.com/doge-testnet/\"\
-    >https://testnet-faucet.com/doge-testnet/</a></li></ul>\nTatum supports BIP44\
-    \ HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase,\
-    \ they are very convenient and secure. It is possible to generate this type of\
-    \ wallet with 1 simple API call.</p>\n"
-  name: Dogecoin
-- description: '<p>Elrond (EGLD) is a distributed transactional computation protocol
-    which relies on a sharded state architecture and a secure Proof of Stake consensus
-    mechanism.
-
-    <br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
-    value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://r3d4.fr/elrond/devnet/index.php">https://r3d4.fr/elrond/devnet/</a></li></ul></p>
-
-    '
-  name: Elrond
-- description: '<p><a href="https://ethereum.org/" target="_blank">Ethereum</a> is
-    a decentralized, open-source blockchain. With Tatum, you can access the most commonly
-    used Ethereum methods. These methods bring a certain level of abstraction and
-    are used for applications that communicate with the blockchain directly. Some
-    of the methods are used alongside virtual accounts to connect the blockchain and
-    a virtual account, like generating a wallet or getting information about transactions.</p>
-
-    <p>Tatum supports the following Ethereum networks:</p>
-
-    <ul>
-
-    <li><b>Mainnet</b>, the primary public production blockchain</li>
-
-    <li><b>Sepolia</b>, a proof-of-work testnet and the default testnet for Ethereum.
-    The testnet cryptocurrency has no value, and you can obtain it from a faucet (for
-    example, <a target="_blank" href="https://fauceth.komputing.org/">FaucETH</a>).</li>
-
-    </ul>
-
-    '
-  name: Ethereum
-- description: "<p>Flow Blockchain enables access to the most commonly used Flow methods.\
-    \ These methods bring a small level of abstraction\n and are used for applications\
-    \ that communicate with the blockchain directly. Some of the methods are used\
-    \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
-    \ like wallet generation or getting information about transactions.<br/>\nTatum\
-    \ supports FLOW and FUSD stable coin.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
-    \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
-    \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
-    \ <a target=\"_blank\" href=\"https://testnet-faucet.onflow.org/\">https://testnet-faucet.onflow.org/</a>\n\
-    <br/>To obtain FUSD on testnet, you can swap them using <a target=\"_blank\" href=\"\
-    https://swap-testnet.blocto.app/#/swap\">https://swap-testnet.blocto.app/#/swap</a></li></ul>\n\
-    To create accounts or mint NFTs on <b>mainnet</b>, you have to have paid API Key.\
-    \ Tatum covers the transaction fees on FLOW blockchain out of the box, so mainnet\
-    \ operations are available only on the paid API Key.<br/>\nTatum handles automatically\
-    \ proposal key management - we internally rotate the proposal keys for you, so\
-    \ you don't have to take care of that and can easily scale your transaction throughput.<br/>\n\
-    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
-    \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
-    \ this type of wallet with 1 simple API call.<br/>\nIt's not possible to pregenerate\
-    \ addresses on the Flow blockchain. You can generate only public keys, which are\
-    \ used to generate address using a create account transaction to the Flow blockchain.\n\
-    You have to have existing account on the Flow to initialize new address creation.\
-    \ Transactions on the Flow blockchain are free.</p>\n"
-  name: Flow
-- description: '<p>Harmony.ONE is an Oneeum L2 scaling solution 100% EVM compatible,
-    and is very good for decentralized application (Dapp) development within many
-    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://faucet.pops.one/">https://faucet.pops.one/</a></li></ul></p>
-
-    '
-  name: Harmony
-- description: '<p>Klaytn is an Ethereum EVM 100% compatible blockchain, and is very
-    good for decentralized application (Dapp) development within many possible verticals
-    including DeFi, NFT, Gaming, and many others.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Baobab Testnet - a chain used for testing purposes. Coins on the test chain
-    have no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://baobab.wallet.klaytn.com/access?next=faucet">https://baobab.wallet.klaytn.com/access?next=faucet</a></li></ul></p>
-
-    '
-  name: Klaytn
-- description: '<p>Kcs (KCS) is an Ethereum EVM 100% compatible blockchain, and is
-    very good for decentralized application (Dapp) development within many possible
-    verticals including DeFi, NFT, Gaming, and many others.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
-    have no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://faucet-testnet.kcc.network/">https://faucet-testnet.kcc.network/</a></li></ul></p>
-
-    '
-  name: KuCoin
-- description: "<p>Litecoin Blockchain enables access to the most commonly used Litecoin\
-    \ methods. These methods bring a small level of abstraction and are used for applications\
-    \ that communicate with the blockchain directly. Some of the methods are used\
-    \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
-    \ like wallet generation or getting information about transactions.<br/>\nExamples\
-    \ of working with the Litecoin blockchain can be found in <a href=\"https://github.com/tatumio/tatum-js/tree/master/examples/ltc-example\"\
-    \ target=\"_blank\">Tatum LTC SDK</a>.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
-    \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
-    \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
-    \ <a target=\"_blank\" href=\"http://testnet.litecointools.com/\">http://testnet.litecointools.com/</a></li></ul>\n\
-    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
-    \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
-    \ this type of wallet with 1 simple API call.</p>\n"
-  name: Litecoin
-- description: '<p>Polygon (Matic) is an Ethereum EVM 100% compatible blockchain,
-    and is very good for decentralized application (Dapp) development within many
-    possible verticals including DeFi, NFT, Gaming, and many others.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
-    have no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://faucet.matic.network/">https://faucet.matic.network/</a></li></ul></p>
-
-    '
-  name: Polygon
-- description: '<p>Solana is a blockchain network focused on fast transactions and
-    high throughput. It uses a unique method of ordering transactions to improve its
-    speed. Users can pay their transaction fees and interact with smart contracts
-    with SOL, the network''s native cryptocurrency.<br/>
-
-    <b>For now, Solana is in <b>BETA</b> and there is a rate limitation applied for
-    all projects for Solana to 40 req/s on the platform.</b><br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet BETA - a regular live chain
-
-    <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
-    value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://solfaucet.com/">https://solfaucet.com/</a></li></ul></p>
-
-    '
-  name: Solana
-- description: '<p>XLM Blockchain enables access to the most commonly used XLM methods.
-    These methods bring a small level of abstraction
-
-    and are used for applications that communicate with the blockchain directly. Some
-    of the methods are used alongside Tatum Private Ledger
-
-    to connect the blockchain and the private ledger, like wallet generation or getting
-    information about transactions.<br/>
-
-    Examples of working with the Stellar blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xlm-example"
-    target="_blank">Tatum XLM SDK</a>.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li> Mainnet - a regular live chain</li>
-
-    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from a faucet, e.g. <a href="https://friendbot.stellar.org/?addr=address"
-    target="_blank">https://friendbot.stellar.org/?addr=address</a>.</li></ul>
-
-    <br/>In order to start using the XLM blockchain, we first need to create an XLM
-    account. In order to have the account activated, it must be credited with 0.5
-    XLM.  Because of this requirement, it is common to use one account for all customers
-    and differentiate them using a memo - a short text/number included in every transaction
-    as an account distinguisher.<br/>
-
-    When an off-chain deposit address is created for the ledger account, a memo is
-    generated, e.g. 12345 for that account. When a transaction to the blockchain is
-    performed, it should contain the address of the recipient and the memo as an account
-    distinguisher.</p>
-
-    '
-  name: Stellar
-- description: '<p>Tron Blockchain enables access to most commonly used Tron methods.
-    It''s possible to generate TRON account, send TRX, TRC10 and TRC20 assets. It''s
-    also possible to generate custom TRC10 or TRC20 tokens using API.<br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - regular live chain
-
-    <li>Shasta Testnet - test chain used for testing purposes. Coins on test chain
-    have no value and can be obtained from
-
-    Faucet, e.g. <a target="_blank" href="https://www.trongrid.io/shasta/">https://www.trongrid.io/shasta/</a></li></ul>
-
-    '
-  name: Tron
-- description: '<p>VeChain Blockchain enables access to the most commonly used VeChain
-    methods. Tatum does not support off-chain capabilities for the VET blockchain.
-
-    Tatum KMS is not supported for VET transactions. VET supports 2 native assets
-    - VET and VTHO. VTHO is used for paying transaction fees.
-
-    <br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Testnet - a test chain used for testing purposes. Coins on the test chain
-    have no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://faucet.vecha.in/">https://faucet.vecha.in/</a></li></ul>
-
-    Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from
-    1 mnemonic phrase, they are very convenient and secure. It is possible to generate
-    this type of wallet with 1 simple API call.</p>
-
-    '
-  name: VeChain
-- description: '<p>XDC Network (XinFin) is enterprise ready hybrid blockchain for
-    global trade and finance, combining the power of Public & Private blockchains
-    with interoperable Smart Contracts.
-
-    <br/>
-
-    Tatum supports 2 chains:
-
-    <ul><li>Mainnet - a regular live chain
-
-    <li>Testnet - a chain used for testing purposes. Coins on the test chain have
-    no value and can be obtained from
-
-    a faucet, e.g. <a target="_blank" href="https://apothem.network/#getTestXDC">https://apothem.network/#getTestXDC</a></li></ul></p>
-
-    '
-  name: XinFin
-- description: '<p><a href="https://xrpl.org/" target="_blank">XRPL</a> is a decentralized
-    public blockchain. With Tatum, you can access the most commonly used XRPL methods.
-    These methods bring a certain level of abstraction and are used for applications
-    that communicate with the blockchain directly. Some of the methods are used alongside
-    virtual accounts to connect the blockchain and a virtual account, like generating
-    a wallet or getting information about transactions.</p>
-
-    <p>Tatum supports the following XRPL networks:</p>
-
-    <ul>
-
-    <li><b>Mainnet</b>, the primary public production blockchain</li>
-
-    <li><b>Testnet</b>, a mainnet-like network for testing applications on XRPL. The
-    testnet cryptocurrency has no value, and you can obtain it from a faucet (for
-    example, <a target="_blank" href="https://xrpl.org/xrp-testnet-faucet.html">XRP
-    Faucets</a>).</li>
-
-    </ul>
-
-    <p>To start using the XRPL blockchain, create an XRPL account. On XRPL, the same
-    account is used for the mainnet and the testnet. To activate the account, credit
-    it with 20 XRP.</p>
-
-    <p>Because of the activation requirement, it is common to use one account for
-    all customers and differentiate them via <code>Destination</code> tags. A <code>Destination</code>
-    tag is a number included in every transaction as an account distinguisher.</p>
-
-    <p>When an off-chain deposit address is created for a virtual account, a <code>Destination</code>
-    tag is generated for that account (for example, <code>12345</code>). When you
-    make a transaction to the blockchain, be sure to include the address of the recipient
-    and the <code>Destination</code> tag as an account distinguisher. Examples of
-    working with the XRP blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xrp-example"
-    target="_blank">Tatum XRP SDK</a>.<br/></p>
-
-    '
-  name: XRP
+      <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://bank.testnet.algorand.network/">https://bank.testnet.algorand.network/</a></li></ul><br/>
+
+      Examples of working with the Algorand blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/algo-example"
+      target="_blank">Tatum ALGO SDK</a>.<br/>
+
+      </p>
+
+      '
+    name: Algorand
+  - description:
+      '<p>Bitcoin Blockchain enables access to the most commonly used Bitcoin
+      methods. These methods bring a small level of abstraction
+
+      and are used for applications that communicate with the blockchain directly. Some
+      of the methods are used alongside Tatum Private Ledger
+
+      to connect the blockchain and the private ledger, like wallet generation or getting
+      information about transactions.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain</li>
+
+      <li>Testnet3 - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from a faucet, e.g. <a target="_blank" href="https://testnet-faucet.mempool.co/">https://testnet-faucet.mempool.co/</a></li></ul><br/>
+
+      '
+    name: Bitcoin
+  - description:
+      "<p>Bitcoin Cash Blockchain enables access to the most commonly used\
+      \ Bitcoin Cash methods. These methods bring a small level of abstraction\n and\
+      \ are used for applications that communicate with the blockchain directly. Some\
+      \ of the methods are used alongside Tatum Private Ledger\n to connect the blockchain\
+      \ and the private ledger, like wallet generation or getting information about\
+      \ transactions.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet - a regular\
+      \ live chain</li>\n  <li>Testnet - a chain used for testing purposes. Coins on\
+      \ the test chain have no value and can be obtained from a faucet, e.g. <a target=\"\
+      _blank\" href=\"https://faucet.fullstack.cash/\">https://faucet.fullstack.cash/</a></li></ul>\n\
+      \  </ul>\nTatum supports BIP44 HD wallets. Because they can generate 2^31 addresses\
+      \ from 1 mnemonic phrase, they are very convenient and secure. It is possible\
+      \ to generate this type of wallet with 1 simple API call.</p>\n"
+    name: Bitcoin Cash
+  - description:
+      '<p>Binance Smart Chain is an Ethereum EVM 100% compatible blockchain,
+      and is very good for decentralized application (Dapp) development within many
+      possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://testnet.binance.org/faucet-smart">https://testnet.binance.org/faucet-smart</a></li></ul></p>
+
+      '
+    name: BNB Smart Chain
+  - description:
+      '<p><a href="https://docs.bnbchain.org/docs/learn/beaconIntro" target="_blank">BNB
+      Beacon Chain</a> is a blockchain developed by <a href="https://www.bnbchain.org/"
+      target="_blank">Binance</a>. With Tatum, you can access the most commonly used
+      BNB Beacon Chain methods. These methods bring a certain level of abstraction and
+      are used for applications that communicate with the blockchain directly.</p>
+
+      <p>BNB Beacon Chain does not provide the smart contract functionality.</p>
+
+      <p>Tatum supports the following BNB Beacon Chain networks:</p>
+
+      <ul>
+
+      <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+      <li><b>Testnet</b>, a chain used for testing purposes. The testnet cryptocurrency
+      has no value, and you can obtain it from a faucet (for example, get it from the
+      <a target="_blank" href="https://testnet.bnbchain.org/faucet-smart">BNB Smart
+      Chain Faucet</a> and transfer it to your BNB Beacon Chain address using the <a
+      target="_blank" href="https://www.bnbchain.org/en/binance-wallet">Binance Wallet</a>).</li>
+
+      </ul>
+
+      '
+    name: BNB Beacon Chain
+  - description:
+      '<p><a href="https://cardano.org/" target="_blank">Cardano</a> is a
+      decentralized, open-source blockchain. With Tatum, you can access the most commonly
+      used Cardano methods. These methods bring a certain level of abstraction and are
+      used for applications that communicate with the blockchain directly. Some of the
+      methods are used alongside virtual accounts to connect the blockchain and a virtual
+      account, like generating a wallet or getting information about transactions.</p>
+
+      <p>Tatum supports Cardano mainnet and <a href="https://docs.cardano.org/cardano-testnet/getting-started"
+      target="_blank">Cardano preproduction testnet</a>.</p>
+
+      '
+    name: Cardano
+  - description:
+      "<p>Celo is fork of Celo with more than 1000 tps and possibility to\
+      \ pay for\ntransactions in it's own stable coin, cUSD. Celo Blockchain enables\
+      \ access to most commonly used Celo methods.\nThese methods bring small level\
+      \ of abstraction,\n       and are used for the type of applications that want\
+      \ to communicate with blockchain directly. Some of the methods are used alongside\
+      \ Tatum Private Ledger\n       to connect blockchain and private ledger together,\
+      \ like wallet generation or getting information about transactions.<br/>\n   \
+      \   Tatum supports 2 chains:\n      <ul><li>Mainnet - regular live chain\n   \
+      \   <li>Alfajorec - test chain used for testing purposes. Coins on test chain\
+      \ have no value and can be obtained from\n      Faucet, e.g. <a target=\"_blank\"\
+      \ href=\"https://celo.org/developers/faucet\">https://celo.org/developers/faucet</a></li></ul><br/>\n\
+      \      Tatum supports BIP44 HD wallets. It is very convenient and secure, since\
+      \ it can generate 2^31 addresses from 1 mnemonic phrase. It is possible to generate\
+      \ this type of wallet with 1 simple API call.</p>\n"
+    name: Celo
+  - description:
+      "<p>Dogecoin Blockchain enables access to the most commonly used Dogecoin\
+      \ methods. These methods bring a small level of abstraction\n and are used for\
+      \ applications that communicate with the blockchain directly. Some of the methods\
+      \ are used alongside Tatum Private Ledger\n to connect the blockchain and the\
+      \ private ledger, like wallet generation or getting information about transactions.<br/>\n\
+      Tatum supports 2 chains:\n  <ul><li>Mainnet - a regular live chain</li>\n  <li>Testnet\
+      \ - a chain used for testing purposes. Coins on the test chain have no value and\
+      \ can be obtained from a faucet, e.g. <a target=\"_blank\" href=\"https://testnet-faucet.com/doge-testnet/\"\
+      >https://testnet-faucet.com/doge-testnet/</a></li></ul>\nTatum supports BIP44\
+      \ HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase,\
+      \ they are very convenient and secure. It is possible to generate this type of\
+      \ wallet with 1 simple API call.</p>\n"
+    name: Dogecoin
+  - description:
+      '<p>Elrond (EGLD) is a distributed transactional computation protocol
+      which relies on a sharded state architecture and a secure Proof of Stake consensus
+      mechanism.
+
+      <br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
+      value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://r3d4.fr/elrond/devnet/index.php">https://r3d4.fr/elrond/devnet/</a></li></ul></p>
+
+      '
+    name: Elrond
+  - description:
+      '<p><a href="https://ethereum.org/" target="_blank">Ethereum</a> is
+      a decentralized, open-source blockchain. With Tatum, you can access the most commonly
+      used Ethereum methods. These methods bring a certain level of abstraction and
+      are used for applications that communicate with the blockchain directly. Some
+      of the methods are used alongside virtual accounts to connect the blockchain and
+      a virtual account, like generating a wallet or getting information about transactions.</p>
+
+      <p>Tatum supports the following Ethereum networks:</p>
+
+      <ul>
+
+      <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+      <li><b>Sepolia</b>, a proof-of-work testnet and the default testnet for Ethereum.
+      The testnet cryptocurrency has no value, and you can obtain it from a faucet (for
+      example, <a target="_blank" href="https://fauceth.komputing.org/">FaucETH</a>).</li>
+
+      </ul>
+
+      '
+    name: Ethereum
+  - description:
+      "<p>Flow Blockchain enables access to the most commonly used Flow methods.\
+      \ These methods bring a small level of abstraction\n and are used for applications\
+      \ that communicate with the blockchain directly. Some of the methods are used\
+      \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
+      \ like wallet generation or getting information about transactions.<br/>\nTatum\
+      \ supports FLOW and FUSD stable coin.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
+      \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
+      \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
+      \ <a target=\"_blank\" href=\"https://testnet-faucet.onflow.org/\">https://testnet-faucet.onflow.org/</a>\n\
+      <br/>To obtain FUSD on testnet, you can swap them using <a target=\"_blank\" href=\"\
+      https://swap-testnet.blocto.app/#/swap\">https://swap-testnet.blocto.app/#/swap</a></li></ul>\n\
+      To create accounts or mint NFTs on <b>mainnet</b>, you have to have paid API Key.\
+      \ Tatum covers the transaction fees on FLOW blockchain out of the box, so mainnet\
+      \ operations are available only on the paid API Key.<br/>\nTatum handles automatically\
+      \ proposal key management - we internally rotate the proposal keys for you, so\
+      \ you don't have to take care of that and can easily scale your transaction throughput.<br/>\n\
+      Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
+      \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
+      \ this type of wallet with 1 simple API call.<br/>\nIt's not possible to pregenerate\
+      \ addresses on the Flow blockchain. You can generate only public keys, which are\
+      \ used to generate address using a create account transaction to the Flow blockchain.\n\
+      You have to have existing account on the Flow to initialize new address creation.\
+      \ Transactions on the Flow blockchain are free.</p>\n"
+    name: Flow
+  - description:
+      '<p>Harmony.ONE is an Oneeum L2 scaling solution 100% EVM compatible,
+      and is very good for decentralized application (Dapp) development within many
+      possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://faucet.pops.one/">https://faucet.pops.one/</a></li></ul></p>
+
+      '
+    name: Harmony
+  - description:
+      '<p>Klaytn is an Ethereum EVM 100% compatible blockchain, and is very
+      good for decentralized application (Dapp) development within many possible verticals
+      including DeFi, NFT, Gaming, and many others.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Baobab Testnet - a chain used for testing purposes. Coins on the test chain
+      have no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://baobab.wallet.klaytn.com/access?next=faucet">https://baobab.wallet.klaytn.com/access?next=faucet</a></li></ul></p>
+
+      '
+    name: Klaytn
+  - description:
+      '<p>Kcs (KCS) is an Ethereum EVM 100% compatible blockchain, and is
+      very good for decentralized application (Dapp) development within many possible
+      verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
+      have no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://faucet-testnet.kcc.network/">https://faucet-testnet.kcc.network/</a></li></ul></p>
+
+      '
+    name: KuCoin
+  - description:
+      "<p>Litecoin Blockchain enables access to the most commonly used Litecoin\
+      \ methods. These methods bring a small level of abstraction and are used for applications\
+      \ that communicate with the blockchain directly. Some of the methods are used\
+      \ alongside Tatum Private Ledger\n to connect the blockchain and the private ledger,\
+      \ like wallet generation or getting information about transactions.<br/>\nExamples\
+      \ of working with the Litecoin blockchain can be found in <a href=\"https://github.com/tatumio/tatum-js/tree/master/examples/ltc-example\"\
+      \ target=\"_blank\">Tatum LTC SDK</a>.<br/>\nTatum supports 2 chains:\n  <ul><li>Mainnet\
+      \ - a regular live chain</li>\n  <li>Testnet - a chain used for testing purposes.\
+      \ Coins on the test chain have no value and can be obtained from a faucet, e.g.\
+      \ <a target=\"_blank\" href=\"http://testnet.litecointools.com/\">http://testnet.litecointools.com/</a></li></ul>\n\
+      Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from\
+      \ 1 mnemonic phrase, they are very convenient and secure. It is possible to generate\
+      \ this type of wallet with 1 simple API call.</p>\n"
+    name: Litecoin
+  - description:
+      '<p>Polygon (Matic) is an Ethereum EVM 100% compatible blockchain,
+      and is very good for decentralized application (Dapp) development within many
+      possible verticals including DeFi, NFT, Gaming, and many others.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Mumbai Testnet - a chain used for testing purposes. Coins on the test chain
+      have no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://faucet.matic.network/">https://faucet.matic.network/</a></li></ul></p>
+
+      '
+    name: Polygon
+  - description:
+      '<p>Solana is a blockchain network focused on fast transactions and
+      high throughput. It uses a unique method of ordering transactions to improve its
+      speed. Users can pay their transaction fees and interact with smart contracts
+      with SOL, the network''s native cryptocurrency.<br/>
+
+      <b>For now, Solana is in <b>BETA</b> and there is a rate limitation applied for
+      all projects for Solana to 40 req/s on the platform.</b><br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet BETA - a regular live chain
+
+      <li>Devnet - a chain used for testing purposes. Coins on the test chain have no
+      value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://solfaucet.com/">https://solfaucet.com/</a></li></ul></p>
+
+      '
+    name: Solana
+  - description:
+      '<p>XLM Blockchain enables access to the most commonly used XLM methods.
+      These methods bring a small level of abstraction
+
+      and are used for applications that communicate with the blockchain directly. Some
+      of the methods are used alongside Tatum Private Ledger
+
+      to connect the blockchain and the private ledger, like wallet generation or getting
+      information about transactions.<br/>
+
+      Examples of working with the Stellar blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xlm-example"
+      target="_blank">Tatum XLM SDK</a>.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li> Mainnet - a regular live chain</li>
+
+      <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from a faucet, e.g. <a href="https://friendbot.stellar.org/?addr=address"
+      target="_blank">https://friendbot.stellar.org/?addr=address</a>.</li></ul>
+
+      <br/>In order to start using the XLM blockchain, we first need to create an XLM
+      account. In order to have the account activated, it must be credited with 0.5
+      XLM.  Because of this requirement, it is common to use one account for all customers
+      and differentiate them using a memo - a short text/number included in every transaction
+      as an account distinguisher.<br/>
+
+      When an off-chain deposit address is created for the ledger account, a memo is
+      generated, e.g. 12345 for that account. When a transaction to the blockchain is
+      performed, it should contain the address of the recipient and the memo as an account
+      distinguisher.</p>
+
+      '
+    name: Stellar
+  - description:
+      '<p>Tron Blockchain enables access to most commonly used Tron methods.
+      It''s possible to generate TRON account, send TRX, TRC10 and TRC20 assets. It''s
+      also possible to generate custom TRC10 or TRC20 tokens using API.<br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - regular live chain
+
+      <li>Shasta Testnet - test chain used for testing purposes. Coins on test chain
+      have no value and can be obtained from
+
+      Faucet, e.g. <a target="_blank" href="https://www.trongrid.io/shasta/">https://www.trongrid.io/shasta/</a></li></ul>
+
+      '
+    name: Tron
+  - description:
+      '<p>VeChain Blockchain enables access to the most commonly used VeChain
+      methods. Tatum does not support off-chain capabilities for the VET blockchain.
+
+      Tatum KMS is not supported for VET transactions. VET supports 2 native assets
+      - VET and VTHO. VTHO is used for paying transaction fees.
+
+      <br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Testnet - a test chain used for testing purposes. Coins on the test chain
+      have no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://faucet.vecha.in/">https://faucet.vecha.in/</a></li></ul>
+
+      Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from
+      1 mnemonic phrase, they are very convenient and secure. It is possible to generate
+      this type of wallet with 1 simple API call.</p>
+
+      '
+    name: VeChain
+  - description:
+      '<p>XDC Network (XinFin) is enterprise ready hybrid blockchain for
+      global trade and finance, combining the power of Public & Private blockchains
+      with interoperable Smart Contracts.
+
+      <br/>
+
+      Tatum supports 2 chains:
+
+      <ul><li>Mainnet - a regular live chain
+
+      <li>Testnet - a chain used for testing purposes. Coins on the test chain have
+      no value and can be obtained from
+
+      a faucet, e.g. <a target="_blank" href="https://apothem.network/#getTestXDC">https://apothem.network/#getTestXDC</a></li></ul></p>
+
+      '
+    name: XinFin
+  - description:
+      '<p><a href="https://xrpl.org/" target="_blank">XRPL</a> is a decentralized
+      public blockchain. With Tatum, you can access the most commonly used XRPL methods.
+      These methods bring a certain level of abstraction and are used for applications
+      that communicate with the blockchain directly. Some of the methods are used alongside
+      virtual accounts to connect the blockchain and a virtual account, like generating
+      a wallet or getting information about transactions.</p>
+
+      <p>Tatum supports the following XRPL networks:</p>
+
+      <ul>
+
+      <li><b>Mainnet</b>, the primary public production blockchain</li>
+
+      <li><b>Testnet</b>, a mainnet-like network for testing applications on XRPL. The
+      testnet cryptocurrency has no value, and you can obtain it from a faucet (for
+      example, <a target="_blank" href="https://xrpl.org/xrp-testnet-faucet.html">XRP
+      Faucets</a>).</li>
+
+      </ul>
+
+      <p>To start using the XRPL blockchain, create an XRPL account. On XRPL, the same
+      account is used for the mainnet and the testnet. To activate the account, credit
+      it with 20 XRP.</p>
+
+      <p>Because of the activation requirement, it is common to use one account for
+      all customers and differentiate them via <code>Destination</code> tags. A <code>Destination</code>
+      tag is a number included in every transaction as an account distinguisher.</p>
+
+      <p>When an off-chain deposit address is created for a virtual account, a <code>Destination</code>
+      tag is generated for that account (for example, <code>12345</code>). When you
+      make a transaction to the blockchain, be sure to include the address of the recipient
+      and the <code>Destination</code> tag as an account distinguisher. Examples of
+      working with the XRP blockchain can be found in <a href="https://github.com/tatumio/tatum-js/tree/master/examples/xrp-example"
+      target="_blank">Tatum XRP SDK</a>.<br/></p>
+
+      '
+    name: XRP
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/bitcoin/wallet:
     get:
@@ -1238,3 +1260,7 @@ paths:
   /v3/xdc/broadcast:
     post:
       $ref: categories/blockchain/paths/v3_xdc_broadcast_post.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

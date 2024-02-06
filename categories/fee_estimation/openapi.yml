@@ -4,7 +4,7 @@ info:
   version: 3.18.3
 tags: []
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/blockchain/fee/{chain}:
     get:
@@ -48,3 +48,7 @@ paths:
   /v3/offchain/blockchain/estimate:
     post:
       $ref: categories/fee_estimation/paths/v3_offchain_blockchain_estimate_post.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

@@ -3,107 +3,114 @@ info:
   title: Virtual Accounts
   version: 3.18.3
 tags:
-- description: '<p>A Tatum Account is the primary building block of Tatum-powered
-    applications. It is an envelope that holds essential information about balances,
-    the state of the account or customer, and to whom the account belongs.<br/><br/>
+  - description:
+      "<p>A Tatum Account is the primary building block of Tatum-powered
+      applications. It is an envelope that holds essential information about balances,
+      the state of the account or customer, and to whom the account belongs.<br/><br/>
 
-    Accounts in Tatum are stored within Tatum Private Ledger. Tatum Private Ledger
-    contains information about accounts, the customers that own the accounts, transactions
-    that affect the accounts or virtual currencies present in the ledger.<br/><br/>
+      Accounts in Tatum are stored within Tatum Private Ledger. Tatum Private Ledger
+      contains information about accounts, the customers that own the accounts, transactions
+      that affect the accounts or virtual currencies present in the ledger.<br/><br/>
 
-    By default, the private ledger is not connected to any blockchain. It is possible
-    to create an application on it without any blockchain at all. Using Tatum Private
-    Ledger and the building blocks included within it, it is possible to quickly swap
-    the whole application from the ledger to any blockchain supported by Tatum. All
-    of the API calls will remain the same, the only thing that changes is the blockchain
-    the application lives on.<br/><br/>
+      By default, the private ledger is not connected to any blockchain. It is possible
+      to create an application on it without any blockchain at all. Using Tatum Private
+      Ledger and the building blocks included within it, it is possible to quickly swap
+      the whole application from the ledger to any blockchain supported by Tatum. All
+      of the API calls will remain the same, the only thing that changes is the blockchain
+      the application lives on.<br/><br/>
 
-    Most blockchains do not have any compliance layer at all. It is not possible to
-    freeze funds at a blockchain address or deactivate an address. The Tatum Account
-    has built-in compliance, and it is possible to block funds in the account, freeze
-    outgoing transactions from the account or even completely deactivate the account.
+      Most blockchains do not have any compliance layer at all. It is not possible to
+      freeze funds at a blockchain address or deactivate an address. The Tatum Account
+      has built-in compliance, and it is possible to block funds in the account, freeze
+      outgoing transactions from the account or even completely deactivate the account.
 
-    </p>
+      </p>
 
-    '
-  name: Account
-- description: '<p>An endpoint used to create and list transactions within Tatum Private
-    Ledger. A transaction is performed between 2 accounts with the same currency.
-    To perform an exchange operation between accounts with different currencies, API
-    calls from <a href="#tag/Order-BookLedger-Order-Book">Order Book</a> sections
-    are available. Transactions in the ledger are instant, with a settlement time
-    of below 200ms.<br/>
+      "
+    name: Account
+  - description:
+      '<p>An endpoint used to create and list transactions within Tatum Private
+      Ledger. A transaction is performed between 2 accounts with the same currency.
+      To perform an exchange operation between accounts with different currencies, API
+      calls from <a href="#tag/Order-BookLedger-Order-Book">Order Book</a> sections
+      are available. Transactions in the ledger are instant, with a settlement time
+      of below 200ms.<br/>
 
-    Tatum Private Ledger supports microtransactions - a transaction of an amount as
-    little as 1e-30 (30 decimal places). Transactions are atomic.<br/>
+      Tatum Private Ledger supports microtransactions - a transaction of an amount as
+      little as 1e-30 (30 decimal places). Transactions are atomic.<br/>
 
-    When there is an insufficient balance in the sender account, or recipient account
-    cannot receive funds, the transaction is not settled.</p>
+      When there is an insufficient balance in the sender account, or recipient account
+      cannot receive funds, the transaction is not settled.</p>
 
-    '
-  name: Transaction
-- description: '<p>An endpoint used to handle customer operations, like updating customer
-    information, enabling/disabling etc.
+      '
+    name: Transaction
+  - description:
+      "<p>An endpoint used to handle customer operations, like updating customer
+      information, enabling/disabling etc.
 
-    Within Tatum API, a customer represents a client of the entity that communicates
-    with Tatum.<br/>
+      Within Tatum API, a customer represents a client of the entity that communicates
+      with Tatum.<br/>
 
-    Customers cannot be created via any other operation than Create Ledger Account.<br/>
+      Customers cannot be created via any other operation than Create Ledger Account.<br/>
 
-    Due to compliance restrictions, it is recommended to enter the country of residence
-    of the customer and the country of the provider. The Tatum compliance engine operates
-    based on this information.
+      Due to compliance restrictions, it is recommended to enter the country of residence
+      of the customer and the country of the provider. The Tatum compliance engine operates
+      based on this information.
 
-    </p>
+      </p>
 
-    '
-  name: Customer
-- description: '<p>Register and use Tatum Private Ledger''s virtual currencies. You
-    can create your own virtual currency and distribute it amongst your customers.<br/>
+      "
+    name: Customer
+  - description:
+      "<p>Register and use Tatum Private Ledger's virtual currencies. You
+      can create your own virtual currency and distribute it amongst your customers.<br/>
 
-    Virtual currencies are used to support FIAT currencies. When a virtual currency
-    is created with basePair of the FIAT currency, it is possible to perform transactions
-    in the private ledger in FIAT.
+      Virtual currencies are used to support FIAT currencies. When a virtual currency
+      is created with basePair of the FIAT currency, it is possible to perform transactions
+      in the private ledger in FIAT.
 
-    </p>
+      </p>
 
-    '
-  name: Virtual Currency
-- description: <p>Endpoint to handle Order book operations like creating BID / ASK
-    trades between Tatum Private Virtual accounts, obtaining trade histories, creating
-    futures etc. It is possible to build an exchange based on the Ledger Accounts.</p>
-  name: Order Book
-- description: '<p>Manage deposit addresses associated with your virtual account.</p>
+      "
+    name: Virtual Currency
+  - description:
+      <p>Endpoint to handle Order book operations like creating BID / ASK
+      trades between Tatum Private Virtual accounts, obtaining trade histories, creating
+      futures etc. It is possible to build an exchange based on the Ledger Accounts.</p>
+    name: Order Book
+  - description:
+      "<p>Manage deposit addresses associated with your virtual account.</p>
 
-    <p>Depending on how virtual accounts are connected to the blockchain, the virtual
-    accounts can be:</p>
+      <p>Depending on how virtual accounts are connected to the blockchain, the virtual
+      accounts can be:</p>
 
-    <ul>
+      <ul>
 
-    <li><b>Virtual accounts with associated deposit addresses</b>
+      <li><b>Virtual accounts with associated deposit addresses</b>
 
-    <br/>Customers can send funds to and receive funds from other blockchain addresses.</li>
+      <br/>Customers can send funds to and receive funds from other blockchain addresses.</li>
 
-    <li><b>Virtual accounts with no deposit addresses</b>
+      <li><b>Virtual accounts with no deposit addresses</b>
 
-    <br/>These accounts have a cryptocurrency assigned but do not have any associated
-    deposit addresses. The customers can send funds to and receive funds from another
-    virtual accounts and can send funds to blockchain addresses. However, the customers
-    cannot receive funds from blockchain addresses.</li>
+      <br/>These accounts have a cryptocurrency assigned but do not have any associated
+      deposit addresses. The customers can send funds to and receive funds from another
+      virtual accounts and can send funds to blockchain addresses. However, the customers
+      cannot receive funds from blockchain addresses.</li>
 
-    </ul>
+      </ul>
 
-    '
-  name: Blockchain addresses
-- description: '<p>An endpoint to handle operations between a virtual account and
-    the blockchain, e.g. to create blockchain transactions from virtual accounts,
-    create custom fungible tokens and custom assets, and register them as a regular
-    currency into the virtual account.</p>
+      "
+    name: Blockchain addresses
+  - description:
+      "<p>An endpoint to handle operations between a virtual account and
+      the blockchain, e.g. to create blockchain transactions from virtual accounts,
+      create custom fungible tokens and custom assets, and register them as a regular
+      currency into the virtual account.</p>
 
-    '
-  name: Blockchain operations
+      "
+    name: Blockchain operations
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/ledger/account:
     post:
@@ -406,3 +413,7 @@ paths:
   /v3/offchain/algorand/transfer:
     post:
       $ref: categories/virtual_accounts/paths/v3_offchain_algorand_transfer_post.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

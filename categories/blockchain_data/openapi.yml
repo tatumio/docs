@@ -78,6 +78,9 @@ paths:
   /v3/data/utxos:
     get:
       $ref: categories/blockchain_data/paths/v3_data_utxos_get.yml
-
 servers:
   - url: https://api.tatum.io/
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key

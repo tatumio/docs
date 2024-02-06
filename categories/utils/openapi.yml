@@ -3,16 +3,17 @@ info:
   title: Utils
   version: 3.18.3
 tags:
-- description: '<p>The utility APIs help you use some native blockchain features such
-    as getting the address of a smart contract or estimating the block number.</p>
+  - description:
+      "<p>The utility APIs help you use some native blockchain features such
+      as getting the address of a smart contract or estimating the block number.</p>
 
-    <p>Each utility API supports its own set of the blockchains. The list of the supported
-    blockchains is provided in the API description further in this section.</p>
+      <p>Each utility API supports its own set of the blockchains. The list of the supported
+      blockchains is provided in the API description further in this section.</p>
 
-    '
-  name: Blockchain utils
+      "
+    name: Blockchain utils
 servers:
-- url: https://api.tatum.io
+  - url: https://api.tatum.io
 paths:
   /v3/blockchain/sc/address/{chain}/{hash}:
     get:
@@ -37,3 +38,7 @@ paths:
       $ref: categories/utils/paths/v3_tatum_freeze_put.yml
     delete:
       $ref: categories/utils/paths/v3_tatum_freeze_delete.yml
+components:
+  securitySchemes:
+    X-API-Key:
+      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
