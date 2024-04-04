@@ -14,7 +14,7 @@ jobs:
   rdme-openapi:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repo 📚
+      - name: Check out repo
         uses: actions/checkout@v3
 
       - name: Blockchain Data
