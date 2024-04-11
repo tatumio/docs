@@ -11,6 +11,9 @@ properties:
       - KLAY
       - XDC
       - ONE
+      - FLR
+      - CRO
+      - BASE
   symbol:
     description: Symbol of the ERC20 token
     example: ERC_SYMBOL

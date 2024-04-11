@@ -1,11 +1,16 @@
+description: The blockchain to work with.
 type: string
 example: bitcoin
 enum:
   - bitcoin
+  - bitcoin-mainnet
   - bitcoin-testnet
   - litecoin
+  - litecoin-mainnet
   - litecoin-testnet
   - doge
+  - doge-mainnet
   - doge-testnet
   - cardano
+  - cardano-mainnet
   - cardano-preprod

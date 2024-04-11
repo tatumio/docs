@@ -12,6 +12,9 @@ properties:
       - KLAY
       - BSC
       - ZEN
+      - FLR
+      - CRO
+      - BASE
   tokenId:
     description: The ID of the NFT to burn
     type: string

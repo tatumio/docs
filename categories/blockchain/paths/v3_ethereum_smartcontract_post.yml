@@ -52,15 +52,8 @@ description: '<p><b>2 credits per API call</b></p>
   '
 operationId: EthBlockchainSmartContractInvocation
 parameters:
-  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeHeader"
 requestBody:
   content:
     application/json:

@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "../migrated.yml#/components/schemas/UniswapTrade"
+  - $ref: "../migrated_v1.yml#/components/schemas/UniswapTrade"
   - type: object
     properties:
       amount0In:

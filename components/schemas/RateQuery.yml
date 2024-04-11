@@ -7,11 +7,11 @@ properties:
   basePair:
     description: Base pair.
     example: EUR
-    $ref: "../migrated.yml#/components/schemas/FiatCurrency"
+    $ref: "../migrated_v1.yml#/components/schemas/FiatCurrency"
   currency:
     description: FIAT or crypto asset.
     example: BTC
-    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
+    $ref: "../migrated_v1.yml#/components/schemas/FiatOrCryptoCurrency"
 required:
   - batchId
   - basePair

@@ -3,15 +3,8 @@ description:
   number. This is the number of the latest block in the blockchain.</p>
 operationId: EthGetCurrentBlock
 parameters:
-  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeHeader"
 responses:
   "200":
     content:

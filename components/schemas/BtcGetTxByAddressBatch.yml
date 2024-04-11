@@ -1,0 +1,23 @@
+type: object
+properties:
+  txType:
+    description:
+      Type of the transaction to fetch - either incoming, or outgoing.
+      If none is present - all transactions are fetched.
+    type: string
+    example: incoming
+    enum:
+      - incoming
+      - outgoing
+  addresses:
+    description: Addresses
+    type: array
+    items:
+      type: string
+    maxItems: 50
+    minItems: 1
+    example:
+      - bc1qdj8dxppx6gyukpemsqx06a39877rt8kcc08uqs
+      - bc1qjwqv9qqnen2gmkqm57p2tl5pqqsyh0xnr7wnk2
+required:
+  - addresses

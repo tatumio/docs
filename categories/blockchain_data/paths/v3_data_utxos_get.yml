@@ -70,39 +70,7 @@ responses:
 
             "
           items:
-            type: object
-            required:
-              - chain
-              - address
-              - txHash
-              - index
-              - value
-              - valueAsString
-            properties:
-              chain:
-                $ref: "../../../components/migrated.yml#/components/schemas/ChainUtxoEnum"
-              address:
-                type: string
-                description: Address of the UTXO
-                example: bc1qmfp2r68cde646jv5ns7x2qvah8v5qtfw8gznj2
-              txHash:
-                type: string
-                description: Hash of the transaction this UTXO is present in
-                example: "0x1b5b3e8a671434bf5d0d38e3e52dcafac484441a48bfae4a3f71e5b0b3093d8e"
-              index:
-                type: number
-                description: Index of the UTXO in the transaction
-                example: 0
-              value:
-                type: number
-                description: Value of the UTXO, in BTC, LTC or DOGE.
-                example: 0.0001
-              valueAsString:
-                type: string
-                description:
-                  String representation of the value of the UTXO, in BTC,
-                  LTC or DOGE.
-                example: "0.0001"
+            $ref: "../../../components/migrated.yml#/components/schemas/Utxo"
     description: OK
   "400":
     content:

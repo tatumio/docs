@@ -31,6 +31,12 @@ description: '<p><p>This endpoint is deprecated. Do not use it.<br/>
 
   <li>TRON</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   '
@@ -54,6 +60,9 @@ parameters:
         - MATIC
         - KCS
         - BSC
+        - FLR
+        - CRO
+        - BASE
   - description: Transaction hash
     in: path
     name: hash

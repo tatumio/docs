@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "../migrated.yml#/components/schemas/DecodedDataCommon"
+  - $ref: "../migrated_v1.yml#/components/schemas/DecodedDataCommon"
   - type: object
     properties:
       tokenId:

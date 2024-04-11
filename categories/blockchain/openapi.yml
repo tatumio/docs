@@ -25,6 +25,15 @@ tags:
       '
     name: Algorand
   - description:
+      "<p>Base is a secure, low-cost, builder-friendly Ethereum L2 built\
+      \ to bring the next billion users onchain..\n    <br/>\n    Tatum supports 2 chains:\n\
+      \    <ul>\n      <li>Base Mainnet is a regular live chain. The explorer can be\
+      \ found at <a target=\"_blank\" href=\"https://basescan.org\">https://basescan.org</a>.</li>\n\
+      \      <li>Base Sepolia is a public testnet for Base. The explorer can be found\
+      \ at <a target=\"_blank\" href=\"https://sepolia-explorer.base.org\">https://sepolia-explorer.base.org</a>.</li>\n\
+      \    </ul>\n</p>\n"
+    name: Base
+  - description:
       '<p>Bitcoin Blockchain enables access to the most commonly used Bitcoin
       methods. These methods bring a small level of abstraction
 
@@ -128,6 +137,16 @@ tags:
       \ this type of wallet with 1 simple API call.</p>\n"
     name: Celo
   - description:
+      "<p>Cronos is an EVM-based blockchain which gives developers secure\
+      \ decentralized access to high-integrity data from other chains and the internet.\n\
+      \    <br/>\n    Tatum supports 2 chains:\n    <ul>\n      <li>Cronos Mainnet is\
+      \ a regular live chain. The explorer can be found at <a target=\"_blank\" href=\"\
+      https://cronoscan.com/\">https://cronoscan.com/</a>.</li>\n      <li>Cronos Testnet\
+      \ is a testing chain for developers. The explorer can be found at <a target=\"\
+      _blank\" href=\"https://explorer.cronos.org/testnet\">https://explorer.cronos.org/testnet</a>.</li>\
+      \ \n    </ul>\n</p>\n"
+    name: Cronos
+  - description:
       "<p>Dogecoin Blockchain enables access to the most commonly used Dogecoin\
       \ methods. These methods bring a small level of abstraction\n and are used for\
       \ applications that communicate with the blockchain directly. Some of the methods\
@@ -177,6 +196,10 @@ tags:
       The testnet cryptocurrency has no value, and you can obtain it from a faucet (for
       example, <a target="_blank" href="https://fauceth.komputing.org/">FaucETH</a>).</li>
 
+      <li><b>Holesky</b>, a network for testing validation and staking and is open for
+      users who want to test protocol upgrades before deploying them on mainnet. The
+      testnet cryptocurrency has no value.</li>
+
       </ul>
 
       '
@@ -206,6 +229,23 @@ tags:
       You have to have existing account on the Flow to initialize new address creation.\
       \ Transactions on the Flow blockchain are free.</p>\n"
     name: Flow
+  - description:
+      "<p>Flare is an EVM-based Layer 1 which gives developers secure decentralized\
+      \ access to high-integrity data from other chains and the internet.\n<br/>\nTatum\
+      \ supports 4 chains:\n<ul>\n  <li>Flare Mainnet is a regular live chain. The explorer\
+      \ can be found at <a target=\"_blank\" href=\"https://flare-explorer.flare.network/\"\
+      >https://flare-explorer.flare.network/</a>.</li>\n  <li>Flare Coston is Songbird's\
+      \ public test network, designed for developers. The explorer can be found at <a\
+      \ target=\"_blank\" href=\"https://coston-explorer.flare.network/\">https://coston-explorer.flare.network/</a>.</li>\n\
+      \  <li>Flare Coston 2 is Flare's public test network, created with developers\
+      \ in mind. The explorer can be found at <a target=\"_blank\" href=\"https://coston2-explorer.flare.network/\"\
+      >https://coston2-explorer.flare.network/</a>\n  </li>\n  <li>Flare Songbird is\
+      \ the canary network, where SGB is the native currency. Created with users in\
+      \ mind, it is meant for testing features under \"real fire\" conditions, before\
+      \ deploying them on the main network. The explorer can be found at <a target=\"\
+      _blank\" href=\"https://songbird-explorer.flare.network/\">https://songbird-explorer.flare.network/</a>.</li>\n\
+      </ul></p>\n"
+    name: Flare
   - description:
       '<p>Harmony.ONE is an Oneeum L2 scaling solution 100% EVM compatible,
       and is very good for decentralized application (Dapp) development within many
@@ -465,6 +505,9 @@ paths:
   /v3/bitcoin/transaction/address/{address}:
     get:
       $ref: categories/blockchain/paths/v3_bitcoin_transaction_address_{address}_get.yml
+  /v3/bitcoin/transaction/address/batch:
+    post:
+      $ref: categories/blockchain/paths/v3_bitcoin_transaction_address_batch_post.yml
   /v3/bitcoin/transaction:
     post:
       $ref: categories/blockchain/paths/v3_bitcoin_transaction_post.yml
@@ -922,6 +965,42 @@ paths:
   /v3/polygon/broadcast:
     post:
       $ref: categories/blockchain/paths/v3_polygon_broadcast_post.yml
+  /v3/cronos/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_wallet_get.yml
+  /v3/cronos/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_address_{xpub}_{index}_get.yml
+  /v3/cronos/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_cronos_wallet_priv_post.yml
+  /v3/cronos/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_cronos_web3_{xApiKey}_post.yml
+  /v3/cronos/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_block_current_get.yml
+  /v3/cronos/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_block_{hash}_get.yml
+  /v3/cronos/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_account_balance_{address}_get.yml
+  /v3/cronos/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_transaction_{hash}_get.yml
+  /v3/cronos/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_cronos_transaction_count_{address}_get.yml
+  /v3/cronos/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_cronos_transaction_post.yml
+  /v3/cronos/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_cronos_smartcontract_post.yml
+  /v3/cronos/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_cronos_broadcast_post.yml
   /v3/klaytn/wallet:
     get:
       $ref: categories/blockchain/paths/v3_klaytn_wallet_get.yml
@@ -982,6 +1061,78 @@ paths:
   /v3/solana/broadcast/confirm:
     post:
       $ref: categories/blockchain/paths/v3_solana_broadcast_confirm_post.yml
+  /v3/flare/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_wallet_get.yml
+  /v3/flare/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_address_{xpub}_{index}_get.yml
+  /v3/flare/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_flare_wallet_priv_post.yml
+  /v3/flare/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_flare_web3_{xApiKey}_post.yml
+  /v3/flare/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_block_current_get.yml
+  /v3/flare/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_block_{hash}_get.yml
+  /v3/flare/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_account_balance_{address}_get.yml
+  /v3/flare/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_transaction_{hash}_get.yml
+  /v3/flare/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_flare_transaction_count_{address}_get.yml
+  /v3/flare/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_flare_transaction_post.yml
+  /v3/flare/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_flare_smartcontract_post.yml
+  /v3/flare/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_flare_broadcast_post.yml
+  /v3/base/wallet:
+    get:
+      $ref: categories/blockchain/paths/v3_base_wallet_get.yml
+  /v3/base/address/{xpub}/{index}:
+    get:
+      $ref: categories/blockchain/paths/v3_base_address_{xpub}_{index}_get.yml
+  /v3/base/wallet/priv:
+    post:
+      $ref: categories/blockchain/paths/v3_base_wallet_priv_post.yml
+  /v3/base/web3/{xApiKey}:
+    post:
+      $ref: categories/blockchain/paths/v3_base_web3_{xApiKey}_post.yml
+  /v3/base/block/current:
+    get:
+      $ref: categories/blockchain/paths/v3_base_block_current_get.yml
+  /v3/base/block/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_base_block_{hash}_get.yml
+  /v3/base/account/balance/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_base_account_balance_{address}_get.yml
+  /v3/base/transaction/{hash}:
+    get:
+      $ref: categories/blockchain/paths/v3_base_transaction_{hash}_get.yml
+  /v3/base/transaction/count/{address}:
+    get:
+      $ref: categories/blockchain/paths/v3_base_transaction_count_{address}_get.yml
+  /v3/base/transaction:
+    post:
+      $ref: categories/blockchain/paths/v3_base_transaction_post.yml
+  /v3/base/smartcontract:
+    post:
+      $ref: categories/blockchain/paths/v3_base_smartcontract_post.yml
+  /v3/base/broadcast:
+    post:
+      $ref: categories/blockchain/paths/v3_base_broadcast_post.yml
   /v3/celo/wallet:
     get:
       $ref: categories/blockchain/paths/v3_celo_wallet_get.yml
@@ -1263,4 +1414,4 @@ paths:
 components:
   securitySchemes:
     X-API-Key:
-      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
+      $ref: components/migrated.yml#/components/securitySchemes/X-API-Key

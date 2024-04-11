@@ -11,17 +11,22 @@ properties:
   type:
     type: string
     description: Type of the subscription.
-    example: ACCOUNT_BALANCE_LIMIT
+    example: ADDRESS_EVENT
     enum:
-      - INCOMING_BLOCKCHAIN_HOOK
-      - ADDRESS_TRANSACTION
-      - CONTRACT_LOG_EVENT
-      - TRADE_MATCH
-      - TRADE_PARTIAL_FILL
-      - PENDING_BLOCKCHAIN_HOOK
-      - TRANSACTION_IN_THE_BLOCK
-      - KMS_FAILED_TX
-      - KMS_COMPLETED_TX
+      - ADDRESS_EVENT
+      - FAILED_TX_PER_BLOCK
+      - INCOMING_NATIVE_TX
+      - OUTGOING_NATIVE_TX
+      - OUTGOING_FAILED_TX
+      - PAID_FEE
+      - INCOMING_INTERNAL_TX
+      - OUTGOING_INTERNAL_TX
+      - INCOMING_FUNGIBLE_TX
+      - OUTGOING_FUNGIBLE_TX
+      - INCOMING_NFT_TX
+      - OUTGOING_NFT_TX
+      - INCOMING_MULTITOKEN_TX
+      - OUTGOING_MULTITOKEN_TX
   id:
     type: string
     description: ID of the WebHook

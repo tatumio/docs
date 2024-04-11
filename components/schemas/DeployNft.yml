@@ -12,6 +12,9 @@ properties:
       - KLAY
       - BSC
       - ZEN
+      - FLR
+      - CRO
+      - BASE
   name:
     description: Name of the NFT token
     example: My ERC721

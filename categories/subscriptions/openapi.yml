@@ -32,6 +32,8 @@ paths:
     get:
       $ref: categories/subscriptions/paths/v3_subscription_count_get.yml
   /v3/subscription/{id}:
+    put:
+      $ref: categories/subscriptions/paths/v3_subscription_{id}_put.yml
     delete:
       $ref: categories/subscriptions/paths/v3_subscription_{id}_delete.yml
   /v3/subscription/report/{id}:
@@ -46,4 +48,4 @@ paths:
 components:
   securitySchemes:
     X-API-Key:
-      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
+      $ref: components/migrated.yml#/components/securitySchemes/X-API-Key

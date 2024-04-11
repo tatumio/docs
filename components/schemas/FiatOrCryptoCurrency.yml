@@ -21,7 +21,6 @@ enum:
   - BHD
   - BIF
   - BMD
-  - BNB
   - BND
   - BOB
   - BRL
@@ -108,7 +107,6 @@ enum:
   - LVL
   - LYD
   - MAD
-  - MATIC
   - MDL
   - MGA
   - MKD
@@ -176,8 +174,6 @@ enum:
   - UNI
   - USD
   - USDC
-  - USDC_MATIC
-  - USDC_MATIC_NATIVE
   - USDT
   - USDT_TRON
   - USDT_MATIC

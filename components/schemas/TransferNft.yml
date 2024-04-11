@@ -12,6 +12,9 @@ properties:
       - KLAY
       - BSC
       - ZEN
+      - FLR
+      - CRO
+      - BASE
   to:
     maxLength: 58
     minLength: 42

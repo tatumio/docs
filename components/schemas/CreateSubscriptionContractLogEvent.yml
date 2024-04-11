@@ -35,6 +35,9 @@ properties:
           - CELO
           - KLAY
           - BSC
+          - FLR
+          - CRO
+          - BASE
       url:
         type: string
         description:

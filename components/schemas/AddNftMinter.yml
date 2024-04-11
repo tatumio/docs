@@ -13,6 +13,9 @@ properties:
       - MATIC
       - ONE
       - ZEN
+      - FLR
+      - CRO
+      - BASE
   contractAddress:
     maxLength: 42
     minLength: 42

@@ -36,6 +36,15 @@ paths:
   /v3/kcs/gas:
     post:
       $ref: categories/fee_estimation/paths/v3_kcs_gas_post.yml
+  /v3/flare/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_flare_gas_post.yml
+  /v3/cronos/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_cronos_gas_post.yml
+  /v3/base/gas:
+    post:
+      $ref: categories/fee_estimation/paths/v3_base_gas_post.yml
   /v3/polygon/gas:
     post:
       $ref: categories/fee_estimation/paths/v3_polygon_gas_post.yml
@@ -51,4 +60,4 @@ paths:
 components:
   securitySchemes:
     X-API-Key:
-      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
+      $ref: components/migrated.yml#/components/securitySchemes/X-API-Key

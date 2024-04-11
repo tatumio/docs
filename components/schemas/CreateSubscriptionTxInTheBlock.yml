@@ -6,14 +6,15 @@ properties:
   type:
     type: string
     description: Type of the subscription.
-    example: TRANSACTION_IN_THE_BLOCK
+    example: FAILED_TX_PER_BLOCK
     enum:
-      - TRANSACTION_IN_THE_BLOCK
+      - FAILED_TX_PER_BLOCK
   attr:
     type: object
     description: Additional attributes based on the subscription type.
     required:
       - url
+      - chain
     properties:
       url:
         type: string
@@ -22,3 +23,20 @@ properties:
           outgoing ledger transaction is included in the block.
         example: https://dashboard.tatum.io/webhook-handler
         maxLength: 500
+      chain:
+        description: Blockchain of the address.
+        example: SOL
+        type: string
+        enum:
+          - SOL
+          - ETH
+          - MATIC
+          - CELO
+          - KLAY
+          - BTC
+          - LTC
+          - BCH
+          - DOGE
+          - TRON
+          - BSC
+          - TEZOS

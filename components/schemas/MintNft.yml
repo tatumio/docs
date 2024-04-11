@@ -18,6 +18,9 @@ properties:
       - MATIC
       - ONE
       - ZEN
+      - FLR
+      - CRO
+      - BASE
   to:
     maxLength: 42
     minLength: 42

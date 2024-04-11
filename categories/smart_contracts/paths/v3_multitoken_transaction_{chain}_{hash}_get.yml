@@ -20,6 +20,12 @@ description: "<p><b>1 credit per API call</b></p>
 
   <li>Polygon</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   "
@@ -39,6 +45,9 @@ parameters:
         - ONE
         - CELO
         - BSC
+        - FLR
+        - CRO
+        - BASE
   - description: Transaction hash
     in: path
     name: hash
@@ -46,15 +55,8 @@ parameters:
     schema:
       type: string
       example: "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7"
-  - description: Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 responses:
   "200":
     content:

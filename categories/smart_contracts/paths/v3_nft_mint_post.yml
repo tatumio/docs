@@ -32,7 +32,7 @@ description:
   _blank\">our user documentation</a>.</p>\n<p>You can mint NFTs on the pre-built\
   \ smart contract provided by Tatum on the following blockchains:</p>\n<ul>\n<li>Algorand</li>\n\
   <li>BNB Smart Chain</li>\n<li>Celo</li>\n<li>Ethereum</li>\n<li>Harmony</li>\n<li>Klaytn</li>\n\
-  <li>Polygon</li>\n<li>Solana</li>\n</ul>\n<p>Depending on what blockchain you use,\
+  <li>Polygon</li>\n<li>Solana</li> \n</ul>\n<p>Depending on what blockchain you use,\
   \ choose the request body schema to use in the API call.</p>\n<ul>\n<li>To mint\
   \ NFTs on <b>BNB Smart Chain</b>, <b>Celo</b>, <b>Ethereum</b>, <b>Harmony</b>,\
   \ <b>Klaytn</b>, or <b>Polygon</b>, use this API with the <code>MintNftExpress</code>\
@@ -136,13 +136,13 @@ description:
   \ on the following blockchains:</p>\n<ul>\n<li>Algorand</li>\n<li>BNB Smart Chain</li>\n\
   <li>Celo</li>\n<li>Ethereum</li>\n<li>Flow</li>\n<li>Harmony</li>\n<li>Klaytn</li>\n\
   <li>KuCoin Community Chain</li>\n<li>Polygon</li>\n<li>Solana</li>\n<li>TRON</li>\n\
-  <li>Tezos</li>\n<li>Horizen Eon</li>\n</ul>        \n<p>Depending on what blockchain\
-  \ you use, choose the request body schema to use in the API call.</p>\n<ul>\n<li>To\
-  \ mint NFTs natively on <b>Algorand</b> and:\n<ul><li>To sign the transaction with\
-  \ your <b>private key</b>, use this API with the <code>MintNftAlgorand</code> schema\
-  \ of the request body.</li>\n<li>To sign the transaction with your <b>signature\
-  \ ID</b>, use this API the <code>MintNftAlgorandKMS</code> schema of the request\
-  \ body.<br/><b>NOTE:</b><ul><li>To be able to <a href=\"#operation/NftBurnErc721\"\
+  <li>Tezos</li>\n<li>Horizen Eon</li>\n<li>Flare</li>\n<li>Cronos</li>\n<li>Base</li>\n\
+  </ul>        \n<p>Depending on what blockchain you use, choose the request body\
+  \ schema to use in the API call.</p>\n<ul>\n<li>To mint NFTs natively on <b>Algorand</b>\
+  \ and:\n<ul><li>To sign the transaction with your <b>private key</b>, use this API\
+  \ with the <code>MintNftAlgorand</code> schema of the request body.</li>\n<li>To\
+  \ sign the transaction with your <b>signature ID</b>, use this API the <code>MintNftAlgorandKMS</code>\
+  \ schema of the request body.<br/><b>NOTE:</b><ul><li>To be able to <a href=\"#operation/NftBurnErc721\"\
   >burn the minted NFTs</a> any time later, specify the address of the manager account\
   \ in the <code>manager</code> parameter.</li><li>An NFT minted on Algorand is automatically\
   \ transferred to your blockchain address. After the NFT is minted, you have to transfer\
@@ -185,17 +185,8 @@ description:
   \ schema of the request body.</li></ul></li>\n</ul>\n"
 operationId: NftMintErc721
 parameters:
-  - description:
-      Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
-      for testnet API Key. For mainnet API Key, this value is ignored.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 requestBody:
   content:
     application/json:

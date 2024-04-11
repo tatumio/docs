@@ -6,19 +6,22 @@ properties:
   type:
     type: string
     description: Type of the subscription.
-    example: ACCOUNT_BALANCE_LIMIT
+    example: ADDRESS_EVENT
     enum:
-      - ADDRESS_TRANSACTION
-      - CONTRACT_LOG_EVENT
-      - ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION
-      - ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION
-      - CUSTOMER_TRADE_MATCH
-      - CUSTOMER_PARTIAL_TRADE_MATCH
-      - TRANSACTION_IN_THE_BLOCK
-      - KMS_FAILED_TX
-      - KMS_COMPLETED_TX
-      - ACCOUNT_BALANCE_LIMIT
-      - TRANSACTION_HISTORY_REPORT
+      - ADDRESS_EVENT
+      - FAILED_TX_PER_BLOCK
+      - INCOMING_NATIVE_TX
+      - OUTGOING_NATIVE_TX
+      - OUTGOING_FAILED_TX
+      - PAID_FEE
+      - INCOMING_INTERNAL_TX
+      - OUTGOING_INTERNAL_TX
+      - INCOMING_FUNGIBLE_TX
+      - OUTGOING_FUNGIBLE_TX
+      - INCOMING_NFT_TX
+      - OUTGOING_NFT_TX
+      - INCOMING_MULTITOKEN_TX
+      - OUTGOING_MULTITOKEN_TX
   id:
     type: string
     description: ID of the subscription

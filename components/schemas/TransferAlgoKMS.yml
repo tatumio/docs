@@ -36,6 +36,10 @@ properties:
     description:
       If signatureId is mnemonic-based, this is the index to the specific
       address from that mnemonic.
+  from:
+    description: The blockchain address of the sender
+    type: string
+    example: TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4
   compliant:
     description:
       Compliance check; if the withdrawal is not compliant, it will not
@@ -61,3 +65,4 @@ required:
   - address
   - amount
   - signatureId
+  - from

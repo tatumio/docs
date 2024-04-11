@@ -11,6 +11,9 @@ properties:
       - KCS
       - KLAY
       - BSC
+      - FLR
+      - CRO
+      - BASE
   to:
     maxLength: 42
     minLength: 42

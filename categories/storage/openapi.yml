@@ -34,4 +34,4 @@ paths:
 components:
   securitySchemes:
     X-API-Key:
-      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
+      $ref: components/migrated.yml#/components/securitySchemes/X-API-Key

@@ -26,6 +26,12 @@ description: '<p><b>2 credits per API call</b></p>
 
   <li>XinFin</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   <p><b>Signing a transaction</b><br/>
@@ -47,17 +53,8 @@ description: '<p><b>2 credits per API call</b></p>
 
   '
 parameters:
-  - description:
-      Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
-      for testnet API Key. For mainnet API Key, this value is ignored.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 operationId: Erc20Burn
 requestBody:
   content:

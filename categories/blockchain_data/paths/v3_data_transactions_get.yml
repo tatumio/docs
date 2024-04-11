@@ -20,7 +20,9 @@ description:
   \ and <code>offset</code> query parameters. \n<li>When querying Tezos transactions\
   \ for a specified block, pagination is supported via <code>cursor</code> query parameter,\
   \ by filling in the value from <code>prevPage</code> or <code>nextPage</code> field\
-  \ in the response body.</li>\n</ul>\n"
+  \ in the response body.</li>\n<li><b>When you are filtering data using blockFrom\
+  \ and not using blockTo, query might take longer time to finish. It is always recommended\
+  \ to use both filters blockFrom and blockTo.</b></li>\n</ul>\n"
 operationId: GetTransactionsOld
 parameters:
   - description: The blockchain to work with.

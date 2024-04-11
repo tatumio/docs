@@ -28,6 +28,7 @@ properties:
       - EGLD
       - KLAY
       - SOL
+      - ADA
   hashes:
     type: array
     description:

@@ -381,7 +381,7 @@ parameters:
       enum:
         - ethereum-sepolia
         - ethereum-goerli
-        - ehtereum-holesky
+        - ethereum-holesky
 requestBody:
   content:
     application/json:

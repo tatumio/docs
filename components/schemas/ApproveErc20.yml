@@ -10,6 +10,9 @@ properties:
       - MATIC
       - KLAY
       - ONE
+      - FLR
+      - CRO
+      - BASE
   contractAddress:
     maxLength: 43
     minLength: 42

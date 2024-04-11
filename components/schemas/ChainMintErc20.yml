@@ -11,6 +11,9 @@ properties:
       - KLAY
       - XDC
       - ONE
+      - FLR
+      - CRO
+      - BASE
   amount:
     description: Amount to be minted and transferred to the recipient.
     example: "100000"

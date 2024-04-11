@@ -21,7 +21,7 @@ parameters:
     required: true
     schema:
       type: string
-      maxLength: 80
+      maxLength: 88
       minLength: 10
 responses:
   "204":

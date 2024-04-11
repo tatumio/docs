@@ -8,15 +8,8 @@ description: "<h4>1 credit per API call.</h4><br/>
   "
 operationId: EthGenerateAddressPrivateKey
 parameters:
-  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeHeader"
 requestBody:
   content:
     application/json:

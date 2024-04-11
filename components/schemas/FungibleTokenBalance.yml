@@ -1,9 +1,9 @@
 type: object
 properties:
   chain:
-    $ref: "../migrated.yml#/components/schemas/Chain"
+    $ref: "../migrated_v1.yml#/components/schemas/Chain"
   type:
-    $ref: "../migrated.yml#/components/schemas/TokenType"
+    $ref: "../migrated_v1.yml#/components/schemas/TokenType"
     example: fungible
   address:
     type: string

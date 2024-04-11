@@ -17,15 +17,8 @@ parameters:
     schema:
       type: string
       example: "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B"
-  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/EthTestnetTypeHeader"
 responses:
   "200":
     content:

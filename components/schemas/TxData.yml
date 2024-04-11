@@ -1,7 +1,7 @@
 type: object
 properties:
   chain:
-    $ref: "../migrated.yml#/components/schemas/ChainEnum"
+    $ref: "../migrated_v1.yml#/components/schemas/ChainEnum"
   hash:
     type: string
     description: The transaction hash.
@@ -31,9 +31,9 @@ properties:
     description: The transaction index within the block.
     example: 84
   transactionType:
-    $ref: "../migrated.yml#/components/schemas/TxType"
+    $ref: "../migrated_v1.yml#/components/schemas/TxType"
   transactionSubtype:
-    $ref: "../migrated.yml#/components/schemas/TxSubtype"
+    $ref: "../migrated_v1.yml#/components/schemas/TxSubtype"
   amount:
     type: string
     description: The amount transferred in the transaction.

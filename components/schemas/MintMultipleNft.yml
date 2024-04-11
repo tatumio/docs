@@ -11,6 +11,9 @@ properties:
       - ONE
       - KLAY
       - BSC
+      - FLR
+      - CRO
+      - BASE
   to:
     type: array
     description: Blockchain address to send NFT token to.

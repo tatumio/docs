@@ -1,0 +1,5 @@
+type: string
+default: ethereum-sepolia
+enum:
+  - ethereum-sepolia
+  - ethereum-holesky

@@ -28,6 +28,12 @@ description: "<p><b>1 credit per API call</b></p>
 
   <li>TRON</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   "
@@ -51,6 +57,9 @@ parameters:
         - SOL
         - TRON
         - ALGO
+        - FLR
+        - CRO
+        - BASE
   - description: The blockchain address of the NFT to get metadata for
     in: path
     name: contractAddress
@@ -76,17 +85,8 @@ parameters:
     schema:
       type: string
       example: "0xc1b45bc27b9c61c3"
-  - description:
-      Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
-      for testnet API Key. For mainnet API Key, this value is ignored.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 responses:
   "200":
     content:

@@ -20,6 +20,12 @@ description: '<p><b>2 credits per API call</b></p>
 
   <li>Polygon</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   <p><b>Signing a transaction</b></p>
@@ -42,15 +48,8 @@ description: '<p><b>2 credits per API call</b></p>
   '
 operationId: AddMultiTokenMinter
 parameters:
-  - description: Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 requestBody:
   content:
     application/json:

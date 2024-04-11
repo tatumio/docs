@@ -11,6 +11,9 @@ properties:
       - KLAY
       - XDC
       - ONE
+      - FLR
+      - CRO
+      - BASE
   amount:
     description: Amount of tokens to be destroyed.
     example: "100000"

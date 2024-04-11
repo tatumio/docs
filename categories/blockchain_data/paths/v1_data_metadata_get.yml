@@ -1,0 +1,121 @@
+description: "<p><b>5 credits per API call</b></p>
+
+  <p>Get metadata of NFTs (ERC-721 and ERC-1155) or multitokens (ERC-1155 only) by
+  IDs for a given token address! Our API lets you search for all tokens on:</p>
+
+  <ul>
+
+  <li>Celo - celo / celo-testnet</li>
+
+  <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+  <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+  <li>Polygon - polygon / polygon-mumbai</li>
+
+  <li>Horizen EON - eon-mainnet</li>
+
+  <li>Chiliz - chiliz-mainnet</li>
+
+  </ul>
+
+  <p>To get started:</p>
+
+  <ul>
+
+  <li>Provide a chain name, token address and comma-separated list of IDs. Our API
+  will return relevant metadata about each specified token, including its name, description,
+  image, and more.</li>
+
+  <li>Aside from the metadata information, the response also contains token types
+  and metadata url minted in each token.</li>
+
+  </ul>
+
+  "
+operationId: GetMetadata
+parameters:
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/ChainEnum"
+  - description: The blockchain address of the NFT to get metadata for.
+    in: query
+    name: tokenAddress
+    required: true
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/TokenAddress"
+  - description: "The IDs of the tokens to get metadata for.
+
+      It is possible to enter list of multiple IDs as a comma separated string.
+
+      "
+    in: query
+    name: tokenIds
+    required: true
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/TokenIds"
+responses:
+  "200":
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              chain:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/Chain"
+              tokenId:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/TokenId"
+              tokenAddress:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/TokenAddress"
+              tokenType:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/TokenType"
+              metadataURI:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/NftMetadataURI"
+              metadata:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/NftMetadata"
+    description: OK
+  "400":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  "401":
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error403"
+  "500":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+  - X-API-Key: []
+x-codeSamples: []
+summary: Get token metadata
+tags:
+  - NFT API

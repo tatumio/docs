@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "../migrated.yml#/components/schemas/FungibleTransfer"
+  - $ref: "../migrated_v1.yml#/components/schemas/FungibleTransfer"
   - type: object
     properties:
       stablecoin:

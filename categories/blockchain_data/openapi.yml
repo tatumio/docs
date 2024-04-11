@@ -1,45 +1,56 @@
 openapi: 3.1.0
 info:
   title: Blockchain Data
-  version: "1.0.0"
+  version: 1.0.0
 paths:
   # NFT API
   /v4/data/collections:
-    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1collections"
+    get:
+      $ref: ./paths/v1_data_collections_get.yml
   /v4/data/metadata:
-    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1metadata"
+    get:
+      $ref: ./paths/v1_data_metadata_get.yml
   /v4/data/owners:
-    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1owners"
+    get:
+      $ref: ./paths/v1_data_owners_get.yml
   /v4/data/owners/address:
-    $ref: "categories/blockchain_data/operations/nft.yml#/paths/~1v3~1data~1owners~1address"
+    get:
+      $ref: ./paths/v1_data_owners_address_get.yml
 
   # Token API
   /v4/data/tokens:
-    $ref: "categories/blockchain_data/operations/token.yml#/paths/~1v3~1data~1tokens"
+    get:
+      $ref: ./paths/v1_data_tokens_get.yml
 
   # Wallet API
   /v4/data/balances:
-    $ref: "categories/blockchain_data/operations/wallet.yml#/paths/~1v3~1data~1balances"
+    get:
+      $ref: ./paths/v1_data_balances_get.yml
   /v4/data/utxos:
-    $ref: "categories/blockchain_data/operations/wallet.yml#/paths/~1v3~1data~1utxos"
+    get:
+      $ref: ./paths/v1_data_utxos_get.yml
+  /v4/data/utxos/batch:
+    post:
+      $ref: ./paths/v1_data_utxos_batch_post.yml
 
   # Transactions API
   /v4/data/transactions:
-    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1data~1transactions"
+    get:
+      $ref: ./paths/v1_data_transactions_get.yml
   /v4/data/transactions/hash:
-    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1data~1transactions~1hash"
-  /v4/blockchain/fee/{chain}:
-    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1blockchain~1fee~1{chain}"
-  /v4/blockchain/estimate:
-    $ref: "categories/blockchain_data/operations/transactions.yml#/paths/~1v3~1blockchain~1estimate"
+    get:
+      $ref: ./paths/v1_data_transactions_hash_get.yml
 
   # DeFi API
   /v4/data/events:
-    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1events"
+    get:
+      $ref: ./paths/v1_data_events_get.yml
   /v4/data/blocks:
-    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1blocks"
+    get:
+      $ref: ./paths/v1_data_blocks_get.yml
   /v4/data/blocks/latest:
-    $ref: "categories/blockchain_data/operations/defi.yml#/paths/~1v3~1data~1blocks~1latest"
+    get:
+      $ref: ./paths/v1_data_blocks_latest_get.yml
 
   # Data API (old)
   /v3/data/collections:
@@ -78,9 +89,12 @@ paths:
   /v3/data/utxos:
     get:
       $ref: categories/blockchain_data/paths/v3_data_utxos_get.yml
+  /v3/data/utxos/batch:
+    post:
+      $ref: categories/blockchain_data/paths/v3_data_utxos_batch_post.yml
 servers:
   - url: https://api.tatum.io/
 components:
   securitySchemes:
     X-API-Key:
-      $ref: components/schemas.yml#/components/securitySchemes/X-API-Key
+      $ref: components/migrated.yml#/components/securitySchemes/X-API-Key

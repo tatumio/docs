@@ -11,6 +11,9 @@ properties:
       - KCS
       - KLAY
       - BSC
+      - FLR
+      - CRO
+      - BASE
   tokenId:
     description: ID of token to be created.
     example: "100000"

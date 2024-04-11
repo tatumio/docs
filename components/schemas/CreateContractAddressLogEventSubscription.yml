@@ -12,10 +12,11 @@ properties:
     description: Additional attributes based on the subscription type.
     required:
       - chain
-      - address
+      - contractAddress
+      - event
       - url
     properties:
-      address:
+      contractAddress:
         description: Blockchain address to watch.
         example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
         maxLength: 128

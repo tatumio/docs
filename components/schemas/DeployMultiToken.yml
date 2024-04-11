@@ -11,6 +11,9 @@ properties:
       - KCS
       - KLAY
       - BSC
+      - FLR
+      - CRO
+      - BASE
   uri:
     description: URI of the Multi Token token
     example: example.com

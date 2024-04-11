@@ -11,6 +11,9 @@ properties:
       - KLAY
       - XDC
       - ONE
+      - FLR
+      - CRO
+      - BASE
   to:
     maxLength: 50
     minLength: 1

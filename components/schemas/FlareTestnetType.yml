@@ -1,0 +1,6 @@
+type: string
+default: flare-coston
+enum:
+  - flare-coston
+  - flare-coston2
+  - flare-songbird

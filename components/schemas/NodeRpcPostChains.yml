@@ -3,7 +3,6 @@ example: ethereum-sepolia
 enum:
   - ethereum-sepolia
   - ethereum-mainnet
-  - ethereum-goerli
   - ethereum-holesky
   - polygon-mumbai
   - polygon-mainnet
@@ -95,3 +94,8 @@ enum:
   - zilliqa-mainnet
   - zilliqa-testnet
   - ethereum-classic-mainnet
+  - ethereum-classic-testnet
+  - base-mainnet
+  - base-sepolia
+  - chiliz-mainnet
+  - chiliz-testnet

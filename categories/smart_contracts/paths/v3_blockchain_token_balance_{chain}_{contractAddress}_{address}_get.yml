@@ -30,6 +30,12 @@ description: "<p><b>1 credit per API call</b></p>
 
   <li>XinFin</li>
 
+  <li>Flare</li>
+
+  <li>Cronos</li>
+
+  <li>Base</li>
+
   </ul>
 
   "
@@ -53,6 +59,9 @@ parameters:
         - EGLD
         - KCS
         - SOL
+        - FLR
+        - CRO
+        - BASE
       example: CELO
   - description: The blockchain address that you want to get the token balance of
     in: path
@@ -68,17 +77,8 @@ parameters:
     schema:
       type: string
       example: "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326"
-  - description:
-      Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
-      for testnet API Key. For mainnet API Key, this value is ignored.
-    in: header
-    name: x-testnet-type
-    required: false
-    schema:
-      default: ethereum-sepolia
-      type: string
-      enum:
-        - ethereum-sepolia
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
+  - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
 responses:
   "200":
     content:

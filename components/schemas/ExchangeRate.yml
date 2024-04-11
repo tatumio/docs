@@ -3,7 +3,7 @@ properties:
   id:
     description: FIAT or crypto asset.
     example: BTC
-    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
+    $ref: "../migrated_v1.yml#/components/schemas/FiatOrCryptoCurrency"
   value:
     description: FIAT value of the asset in given base pair.
     example: "1235.56"
@@ -12,7 +12,7 @@ properties:
     description: Base pair.
     example: EUR
     default: EUR
-    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
+    $ref: "../migrated_v1.yml#/components/schemas/FiatOrCryptoCurrency"
   timestamp:
     description: Date of validity of rate in UTC.
     example: 1572031674384

@@ -1,5 +1,5 @@
 allOf:
-  - $ref: "../migrated.yml#/components/schemas/MultitokenTransfer"
+  - $ref: "../migrated_v1.yml#/components/schemas/MultitokenTransfer"
   - type: object
     properties:
       multitokenId:

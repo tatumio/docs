@@ -1,0 +1,188 @@
+description: "<p><b>50 credits per API call</b></p>
+
+  <p>Get balances of fungible tokens (ERC-20), NFTs (ERC-721 and ERC-1155) or multitokens
+  (ERC-1155 only) for a specific wallet address on the following blockchains:</p>
+
+  <ul>
+
+  <li>Celo - celo / celo-testnet</li>
+
+  <li>Ethereum - ethereum / ethereum-sepolia</li>
+
+  <li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>
+
+  <li>Polygon - polygon / polygon-mumbai</li>
+
+  <li>Tezos - tezos-mainnet</li>
+
+  <li>Horizen EON - eon-mainnet</li>
+
+  <li>Chiliz - chiliz-mainnet</li>
+
+  </ul>
+
+  <p>To get started:</p>
+
+  <ul>
+
+  <li>Provide a chain name and comma-separated list of addresses. Our API will return
+  balances of each token along with further information such as its type, id, and
+  more.</li>
+
+  <li>Aside from relevant information about each token and its balance, the response
+  also contains metadata (they can, however, be excluded by setting <code>excludeMetadata</code>
+  to <code>true</code>).</li>
+
+  <li>If not specified, the API returns balances for all supported types of tokens
+  (fungible tokens, nft, multitokens), but you can also choose to filter specific
+  <code>tokenTypes</code>.</li>
+
+  <li>For Tezos blockchain, the API returns balance of any tokens including native
+  token (XTZ) for specified wallet addresses. Following query parameters won't have
+  any effect on filtering data <code>excludeMetadata</code>.</li>
+
+  </ul>
+
+  "
+operationId: GetBalances
+parameters:
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/ChainEnumExtended"
+  - description: "The blockchain public wallet addresses.
+
+      It is possible to enter list of up to 10 addresses as a comma separated string.
+
+      "
+    in: query
+    name: addresses
+    required: true
+    schema:
+      type: string
+      description: Wallet address
+      example: 0x80d8bac9a6901698b3749fe336bbd1385c1f98f2,0xAe680Ed83baF08a8028118Bd19859F8a0E744cc6
+  - description: "The option to select only specific token types.
+
+      It is possible to enter list of multiple types as a comma separated string.
+
+      Use fungible (ERC-20), nft (includes ERC-721 and ERC-1155) or multitoken (ERC-1155
+      only).
+
+      "
+    in: query
+    name: tokenTypes
+    schema:
+      type: string
+      example: nft,multitoken
+      enum:
+        - nft
+        - multitoken
+        - fungible
+  - description: The option to exclude metadata from the response.
+    in: query
+    name: excludeMetadata
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/ExcludeMetadata"
+  - description: The number of items per page (default is 50).
+    in: query
+    name: pageSize
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/PageSize"
+  - description: The offset to obtain next page of the data.
+    in: query
+    name: offset
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/Offset"
+responses:
+  "200":
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            result:
+              type: array
+              items:
+                $ref: "../../../components/migrated_v1.yml#/components/schemas/BalanceItem"
+              description: List of all balances for all selected tokens.
+              example:
+                - chain: ethereum-mainnet
+                  address: "0xae680ed83baf08a8028118bd19859f8a0e744cc6"
+                  balance: "283333333333333333333"
+                  tokenAddress: "0x45dd18c5e0fa701abff449f6542aa53e258710b4"
+                  lastUpdatedBlockNumber: 14792747
+                  type: fungible
+                - chain: ethereum-mainnet
+                  address: "0xae680ed83baf08a8028118bd19859f8a0e744cc6"
+                  balance: "8690000000000000000"
+                  tokenAddress: "0x090f21a84a0e9674c1828aca1db69ec8ae1454e8"
+                  lastUpdatedBlockNumber: 15204015
+                  type: fungible
+                - chain: ethereum-mainnet
+                  address: "0xae680ed83baf08a8028118bd19859f8a0e744cc6"
+                  balance: "1"
+                  tokenAddress: "0xa58b5224e2fd94020cb2837231b2b0e4247301a6"
+                  lastUpdatedBlockNumber: 15326272
+                  type: multitoken
+                  tokenId: "2605"
+                  metadataURI: https://www.cryptovoxels.com/c/1/2605
+                  metadata:
+                    url: https://www.cryptovoxels.com/c/1/2605
+                    name: Link Marine Helmet
+                    description: Chainlink Marine Helmet, give Sergey Nazarov your love.
+            prevPage:
+              type: string
+              description:
+                Cursor pagination, used to get previous page of results
+                (work in progress, not used right now).
+              example: ""
+            nextPage:
+              type: string
+              description:
+                Cursor pagination, used to get next page of results (work
+                in progress, not used right now).
+              example: ""
+    description: OK
+  "400":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  "401":
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error403"
+  "500":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+  - X-API-Key: []
+x-codeSamples: []
+summary: Get balances of addresses
+tags:
+  - Wallet API

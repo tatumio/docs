@@ -114,6 +114,8 @@ components:
       $ref: ./schemas/BtcTransactionFromUTXOKMS.yml
     BtcTransactionFromUTXOKMSSource:
       $ref: ./schemas/BtcTransactionFromUTXOKMSSource.yml
+    BtcGetTxByAddressBatch:
+      $ref: ./schemas/BtcGetTxByAddressBatch.yml
     BtcTransactionFromUTXOKMSTarget:
       $ref: ./schemas/BtcTransactionFromUTXOKMSTarget.yml
     BchBlock:
@@ -1216,6 +1218,12 @@ components:
       $ref: ./schemas/NodeRpcGetChains.yml
     NodeRpcPostChains:
       $ref: ./schemas/NodeRpcPostChains.yml
+    EthTestnetType:
+      $ref: ./schemas/EthTestnetType.yml
+    TestnetType:
+      $ref: ./schemas/TestnetType.yml
+    FlareTestnetType:
+      $ref: ./schemas/FlareTestnetType.yml
     TransferManagedAddress:
       $ref: ./schemas/TransferManagedAddress.yml
     CustodialManagedAddress:
@@ -1294,6 +1302,52 @@ components:
       $ref: ./schemas/DeployBep20.yml
     DeployBep20KMS:
       $ref: ./schemas/DeployBep20KMS.yml
+    CronosBlock:
+      $ref: ./schemas/CronosBlock.yml
+    CronosTx:
+      $ref: ./schemas/CronosTx.yml
+    Error403CronosBroadcast:
+      $ref: ./schemas/Error403CronosBroadcast.yml
+    Error403CronosBep20NotFound:
+      $ref: ./schemas/Error403CronosBep20NotFound.yml
+    Error403CronosBep20Set:
+      $ref: ./schemas/Error403CronosBep20Set.yml
+    Error403CronosMnemonicPrivateKey:
+      $ref: ./schemas/Error403CronosMnemonicPrivateKey.yml
+    Error403CronosBep20Unsupported:
+      $ref: ./schemas/Error403CronosBep20Unsupported.yml
+    Error403CronosTxHash:
+      $ref: ./schemas/Error403CronosTxHash.yml
+    Error403CronosTxSign:
+      $ref: ./schemas/Error403CronosTxSign.yml
+    Error403CronosErc20TxSign:
+      $ref: ./schemas/Error403CronosErc20TxSign.yml
+    Error403CronosGasCalculation:
+      $ref: ./schemas/Error403CronosGasCalculation.yml
+    Error403CronosTxBody:
+      $ref: ./schemas/Error403CronosTxBody.yml
+    Error403CronosScBody:
+      $ref: ./schemas/Error403CronosScBody.yml
+    Error403CronosGasPrice:
+      $ref: ./schemas/Error403CronosGasPrice.yml
+    CallCronosSmartContractMethod:
+      $ref: ./schemas/CallCronosSmartContractMethod.yml
+    CallCronosSmartContractReadMethod:
+      $ref: ./schemas/CallCronosSmartContractReadMethod.yml
+    CallCronosSmartContractMethodKMS:
+      $ref: ./schemas/CallCronosSmartContractMethodKMS.yml
+    TransferCronosBlockchain:
+      $ref: ./schemas/TransferCronosBlockchain.yml
+    CronosEstimateGas:
+      $ref: ./schemas/CronosEstimateGas.yml
+    TransferCronosBlockchainKMS:
+      $ref: ./schemas/TransferCronosBlockchainKMS.yml
+    GeneratedAddressCronos:
+      $ref: ./schemas/GeneratedAddressCronos.yml
+    CronosBalance:
+      $ref: ./schemas/CronosBalance.yml
+    CallCronosSmartContractMethodCaller:
+      $ref: ./schemas/CallCronosSmartContractMethodCaller.yml
     KlaytnBlock:
       $ref: ./schemas/KlaytnBlock.yml
     KlaytnTx:
@@ -1384,6 +1438,98 @@ components:
       $ref: ./schemas/SolanaBroadcastConfirm.yml
     SolanaTransactionHashWithConfirm:
       $ref: ./schemas/SolanaTransactionHashWithConfirm.yml
+    FlareBlock:
+      $ref: ./schemas/FlareBlock.yml
+    FlareTx:
+      $ref: ./schemas/FlareTx.yml
+    Error403FlareBroadcast:
+      $ref: ./schemas/Error403FlareBroadcast.yml
+    Error403FlareBep20NotFound:
+      $ref: ./schemas/Error403FlareBep20NotFound.yml
+    Error403FlareBep20Set:
+      $ref: ./schemas/Error403FlareBep20Set.yml
+    Error403FlareMnemonicPrivateKey:
+      $ref: ./schemas/Error403FlareMnemonicPrivateKey.yml
+    Error403FlareBep20Unsupported:
+      $ref: ./schemas/Error403FlareBep20Unsupported.yml
+    Error403FlareTxHash:
+      $ref: ./schemas/Error403FlareTxHash.yml
+    Error403FlareTxSign:
+      $ref: ./schemas/Error403FlareTxSign.yml
+    Error403FlareErc20TxSign:
+      $ref: ./schemas/Error403FlareErc20TxSign.yml
+    Error403FlareGasCalculation:
+      $ref: ./schemas/Error403FlareGasCalculation.yml
+    Error403FlareTxBody:
+      $ref: ./schemas/Error403FlareTxBody.yml
+    Error403FlareScBody:
+      $ref: ./schemas/Error403FlareScBody.yml
+    Error403FlareGasPrice:
+      $ref: ./schemas/Error403FlareGasPrice.yml
+    CallFlareSmartContractMethod:
+      $ref: ./schemas/CallFlareSmartContractMethod.yml
+    CallFlareSmartContractReadMethod:
+      $ref: ./schemas/CallFlareSmartContractReadMethod.yml
+    CallFlareSmartContractMethodKMS:
+      $ref: ./schemas/CallFlareSmartContractMethodKMS.yml
+    TransferFlareBlockchain:
+      $ref: ./schemas/TransferFlareBlockchain.yml
+    FlareEstimateGas:
+      $ref: ./schemas/FlareEstimateGas.yml
+    TransferFlareBlockchainKMS:
+      $ref: ./schemas/TransferFlareBlockchainKMS.yml
+    GeneratedAddressFlare:
+      $ref: ./schemas/GeneratedAddressFlare.yml
+    FlareBalance:
+      $ref: ./schemas/FlareBalance.yml
+    CallFlareSmartContractMethodCaller:
+      $ref: ./schemas/CallFlareSmartContractMethodCaller.yml
+    BaseBlock:
+      $ref: ./schemas/BaseBlock.yml
+    BaseTx:
+      $ref: ./schemas/BaseTx.yml
+    Error403BaseBroadcast:
+      $ref: ./schemas/Error403BaseBroadcast.yml
+    Error403BaseBep20NotFound:
+      $ref: ./schemas/Error403BaseBep20NotFound.yml
+    Error403BaseBep20Set:
+      $ref: ./schemas/Error403BaseBep20Set.yml
+    Error403BaseMnemonicPrivateKey:
+      $ref: ./schemas/Error403BaseMnemonicPrivateKey.yml
+    Error403BaseBep20Unsupported:
+      $ref: ./schemas/Error403BaseBep20Unsupported.yml
+    Error403BaseTxHash:
+      $ref: ./schemas/Error403BaseTxHash.yml
+    Error403BaseTxSign:
+      $ref: ./schemas/Error403BaseTxSign.yml
+    Error403BaseErc20TxSign:
+      $ref: ./schemas/Error403BaseErc20TxSign.yml
+    Error403BaseGasCalculation:
+      $ref: ./schemas/Error403BaseGasCalculation.yml
+    Error403BaseTxBody:
+      $ref: ./schemas/Error403BaseTxBody.yml
+    Error403BaseScBody:
+      $ref: ./schemas/Error403BaseScBody.yml
+    Error403BaseGasPrice:
+      $ref: ./schemas/Error403BaseGasPrice.yml
+    CallBaseSmartContractMethod:
+      $ref: ./schemas/CallBaseSmartContractMethod.yml
+    CallBaseSmartContractReadMethod:
+      $ref: ./schemas/CallBaseSmartContractReadMethod.yml
+    CallBaseSmartContractMethodKMS:
+      $ref: ./schemas/CallBaseSmartContractMethodKMS.yml
+    TransferBaseBlockchain:
+      $ref: ./schemas/TransferBaseBlockchain.yml
+    BaseEstimateGas:
+      $ref: ./schemas/BaseEstimateGas.yml
+    TransferBaseBlockchainKMS:
+      $ref: ./schemas/TransferBaseBlockchainKMS.yml
+    GeneratedAddressBase:
+      $ref: ./schemas/GeneratedAddressBase.yml
+    BaseBalance:
+      $ref: ./schemas/BaseBalance.yml
+    CallBaseSmartContractMethodCaller:
+      $ref: ./schemas/CallBaseSmartContractMethodCaller.yml
     Error403Celo:
       $ref: ./schemas/Error403Celo.yml
     TransferErc721Celo:
@@ -2068,6 +2214,8 @@ components:
       $ref: ./schemas/ChainEnumExtended.yml
     ChainUtxoEnum:
       $ref: ./schemas/ChainUtxoEnum.yml
+    Utxo:
+      $ref: ./schemas/Utxo.yml
     TokenId:
       $ref: ./schemas/TokenId.yml
     TokenIds:
@@ -2090,6 +2238,67 @@ components:
       $ref: ./schemas/Cursor.yml
     Offset:
       $ref: ./schemas/Offset.yml
+  parameters:
+    EthTestnetTypeQuery:
+      in: query
+      name: testnetType
+      description:
+        Type of Ethereum testnet in query. Defaults to ethereum-sepolia.
+        For mainnet API Key, this value is ignored.
+      required: false
+      schema:
+        $ref: "#/components/schemas/EthTestnetType"
+    EthTestnetTypeHeader:
+      in: header
+      name: x-testnet-type
+      description:
+        Type of Ethereum testnet in header. Defaults to ethereum-sepolia.
+        For mainnet API Key, this value is ignored.
+      required: false
+      schema:
+        $ref: "#/components/schemas/EthTestnetType"
+    TestnetTypeQuery:
+      in: query
+      name: testnetType
+      description:
+        "Type of testnet in query. The default type is based on the currency:
+        ethereum-sepolia for ETH, and flare-coston for FLR. This parameter is valid
+        only for ETH or FLR invocations with a testnet API Key. For mainnet API Key,
+        this value is ignored. The currency/chain must be specified to determine the
+        applicable set of testnet types."
+      required: false
+      schema:
+        $ref: "#/components/schemas/TestnetType"
+    TestnetTypeHeader:
+      in: header
+      name: x-testnet-type
+      description:
+        "Type of testnet in header. The default type is based on the currency:
+        ethereum-sepolia for ETH, and flare-coston for FLR. This parameter is valid
+        only for ETH or FLR invocations with a testnet API Key. For mainnet API Key,
+        this value is ignored. The currency/chain must be specified to determine the
+        applicable set of testnet types."
+      required: false
+      schema:
+        $ref: "#/components/schemas/TestnetType"
+    FlareTestnetTypeQuery:
+      in: query
+      name: testnetType
+      description:
+        Type of Flare testnet in query. Defaults to flare-coston. For mainnet
+        API Key, this value is ignored.
+      required: false
+      schema:
+        $ref: "#/components/schemas/FlareTestnetType"
+    FlareTestnetTypeHeader:
+      in: header
+      name: x-testnet-type
+      description:
+        Type of Flare testnet in header. Defaults to flare-coston. For
+        mainnet API Key, this value is ignored.
+      required: false
+      schema:
+        $ref: "#/components/schemas/FlareTestnetType"
   securitySchemes:
     X-API-Key:
       type: apiKey

@@ -1,0 +1,114 @@
+description: "<p><b>100 credits per API call</b></p>
+
+  <p>Get unspent UTXOs for a specific address up to a specific total amount.
+
+  If you want to prepare a transaction on UTXO-based chains like Bitcoin, you need
+  to enter unspent UTXOs to be able to perform a transaction. By providing ```totalValue```
+  as a total, our API will return a list of UTXOs that will be enough to cover the
+  transaction.</p>
+
+  Our API lets you get the unpenst UTXOs for a specific address on:</p>
+
+  <ul>
+
+  <li>Bitcoin - bitcoin / bitcoin-testnet</li>
+
+  <li>Litecoin - litecoin / litecoin-testnet</li>
+
+  <li>Dogecoin - doge / doge-testnet</li>
+
+  <li>Cardano - cardano / cardano-preprod</li>
+
+  </ul>
+
+  <p>To get started:</p>
+
+  <ul>
+
+  <li>Provide a chain and address you want to list unspent UTXOs for. If available,
+  our API will return information about the unspent UTXOs for a specific address.
+  API traverses latest 200k incoming transactions.</li>
+
+  </ul>
+
+  "
+operationId: GetUtxosByAddress
+parameters:
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated_v1.yml#/components/schemas/ChainUtxoEnum"
+  - description: The blockchain address.
+    in: query
+    name: address
+    required: true
+    schema:
+      type: string
+      example: bc1qmfp2r68cde646jv5ns7x2qvah8v5qtfw8gznj2
+  - description:
+      The total amount of transaction you want to send. Only UTXOs up to
+      this amount will be returned, so you will not spend more than you need.
+    in: query
+    name: totalValue
+    required: true
+    schema:
+      type: number
+      example: 0.0001
+      minimum: 0
+responses:
+  "200":
+    content:
+      application/json:
+        schema:
+          type: array
+          description: "Information about specific collection or token
+
+            (not all fields are available for every token, e.g. some multitokens do
+            not have name and symbol).
+
+            "
+          items:
+            $ref: "../../../components/migrated_v1.yml#/components/schemas/Utxo"
+    description: OK
+  "400":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
+      or Request parameters.
+  "401":
+    content:
+      application/json:
+        schema:
+          oneOf:
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated_v1.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
+      HTTP Header.
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
+      required perform operation due to logical error or invalid permissions.
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error403"
+  "500":
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/migrated_v1.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
+      processing of the request.
+security:
+  - X-API-Key: []
+x-codeSamples: []
+summary: Get unspent UTXOs for an address
+tags:
+  - Wallet API
