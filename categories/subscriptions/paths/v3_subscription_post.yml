@@ -280,7 +280,7 @@ description:
   \ web hook is fired.<br/>\nResult of the operation is subscription ID, which can\
   \ be used to cancel subscription or obtain additional data connected to it like\
   \ reports.</p>\n"
-operationId: createSubscription
+operationId: createSubscriptionOld
 parameters:
   - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeQuery"
   - $ref: "../../../components/migrated.yml#/components/parameters/TestnetTypeHeader"
@@ -353,6 +353,6 @@ responses:
 security:
   - X-API-Key: []
 x-codeSamples: []
-summary: Create a subscription
+summary: Create a subscription (old)
 tags:
   - Notification subscriptions

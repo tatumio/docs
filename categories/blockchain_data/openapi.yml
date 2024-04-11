@@ -6,51 +6,51 @@ paths:
   # NFT API
   /v4/data/collections:
     get:
-      $ref: ./paths/v1_data_collections_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_collections_get.yml
   /v4/data/metadata:
     get:
-      $ref: ./paths/v1_data_metadata_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_metadata_get.yml
   /v4/data/owners:
     get:
-      $ref: ./paths/v1_data_owners_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_owners_get.yml
   /v4/data/owners/address:
     get:
-      $ref: ./paths/v1_data_owners_address_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_owners_address_get.yml
 
   # Token API
   /v4/data/tokens:
     get:
-      $ref: ./paths/v1_data_tokens_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_tokens_get.yml
 
   # Wallet API
   /v4/data/balances:
     get:
-      $ref: ./paths/v1_data_balances_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_balances_get.yml
   /v4/data/utxos:
     get:
-      $ref: ./paths/v1_data_utxos_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_utxos_get.yml
   /v4/data/utxos/batch:
     post:
-      $ref: ./paths/v1_data_utxos_batch_post.yml
+      $ref: categories/blockchain_data/paths/v1_data_utxos_batch_post.yml
 
   # Transactions API
   /v4/data/transactions:
     get:
-      $ref: ./paths/v1_data_transactions_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_transactions_get.yml
   /v4/data/transactions/hash:
     get:
-      $ref: ./paths/v1_data_transactions_hash_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_transactions_hash_get.yml
 
   # DeFi API
   /v4/data/events:
     get:
-      $ref: ./paths/v1_data_events_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_events_get.yml
   /v4/data/blocks:
     get:
-      $ref: ./paths/v1_data_blocks_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_blocks_get.yml
   /v4/data/blocks/latest:
     get:
-      $ref: ./paths/v1_data_blocks_latest_get.yml
+      $ref: categories/blockchain_data/paths/v1_data_blocks_latest_get.yml
 
   # Data API (old)
   /v3/data/collections:

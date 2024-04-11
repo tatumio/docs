@@ -148,6 +148,8 @@ responses:
         schema:
           type: array
           description: List of all event data.
+          items:
+            type: object
           $ref: "../../../components/migrated_v1.yml#/components/schemas/Event"
           examples:
             tokenTransfer:
