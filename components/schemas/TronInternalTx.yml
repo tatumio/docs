@@ -1,9 +1,9 @@
 type: object
 required:
-- internal_tx_id
-- tx_id
-- to_address
-- from_address
+  - internal_tx_id
+  - tx_id
+  - to_address
+  - from_address
 properties:
   tx_id:
     type: string

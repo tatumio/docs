@@ -431,7 +431,8 @@ components:
       type: apiKey
       name: x-api-key
       in: header
-      description: "The **API key** represents your [pricing plan](https://tatum.com/pricing)\
+      description:
+        "The **API key** represents your [pricing plan](https://tatum.com/pricing)\
         \ and defines how many API calls \nyou can make per second and what the total\
         \ number of API calls per month is available for you.\n\nOne API key must\
         \ be used by only one person.\n\nChoose one of the following authentication\

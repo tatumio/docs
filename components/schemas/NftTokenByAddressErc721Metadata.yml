@@ -1,5 +1,6 @@
 type: object
-description: The metadata scheme obtained from the metadata URL; the scheme may not
+description:
+  The metadata scheme obtained from the metadata URL; the scheme may not
   be present, and if it is not returned, you can get it using the <a href="#operation/NftGetMetadataErc721">NFT
   metadata API</a>
 example:

@@ -15,22 +15,24 @@ properties:
   amount:
     description: Amount to be sent, in BNB.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   attr:
     description: Memo of the recipient account, if any.
-    example: '12355'
+    example: "12355"
     type: string
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -38,7 +40,8 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the secret associated in signing application. Secret,
+    description:
+      Identifier of the secret associated in signing application. Secret,
       or signature Id must be present.
   fromAddress:
     description: Blockchain address to send from.
@@ -53,8 +56,8 @@ properties:
     example: Sender note
     type: string
 required:
-- senderAccountId
-- fromAddress
-- address
-- amount
-- signatureId
+  - senderAccountId
+  - fromAddress
+  - address
+  - amount
+  - signatureId

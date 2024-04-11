@@ -5,9 +5,9 @@ properties:
     type: string
   statusCode:
     example: 401
-    description: '401'
+    description: "401"
     type: number
 required:
-- statusCode
-- message
+  - statusCode
+  - message
 type: object

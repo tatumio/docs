@@ -1,7 +1,7 @@
 type: string
 description: The type of the transaction.
 enum:
-- fungible
-- nft
-- multitoken
-- native
+  - fungible
+  - nft
+  - multitoken
+  - native

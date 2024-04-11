@@ -9,14 +9,14 @@ properties:
     type: string
   statusCode:
     example: 400
-    description: '400'
+    description: "400"
     type: number
   data:
     type: array
     items:
       type: object
       required:
-      - target
+        - target
       properties:
         target:
           type: object
@@ -26,7 +26,8 @@ properties:
             property: 12345
         value:
           type: number
-          description: Value of the target object which validation is wrong. Can be
+          description:
+            Value of the target object which validation is wrong. Can be
             of any data type, example here is using type number.
           example: 12345
         property:
@@ -36,13 +37,14 @@ properties:
         constraints:
           type: object
           additionalProperties: true
-          description: Object of failed constraints for the target object. Key is
+          description:
+            Object of failed constraints for the target object. Key is
             the constraint, value is detailed description of the failed constraint.
           example:
             min: property1 must not be less than 50000
 required:
-- errorCode
-- message
-- statusCode
-- data
+  - errorCode
+  - message
+  - statusCode
+  - data
 type: object

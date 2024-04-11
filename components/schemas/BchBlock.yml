@@ -18,21 +18,23 @@ properties:
     example: 536870912
   merkleroot:
     type: string
-    description: The root node of a merkle tree, a descendant of all the hashed pairs
+    description:
+      The root node of a merkle tree, a descendant of all the hashed pairs
       in the tree.
     example: 4af279645e1b337e655ae3286fc2ca09f58eb01efa6ab27adedd1e9e6ec19091
   tx:
     type: array
     description: List of transactions present in the block.
     items:
-      $ref: '../migrated.yml#/components/schemas/BchTx'
+      $ref: "../migrated.yml#/components/schemas/BchTx"
   time:
     type: number
     description: Time of the block.
     example: 1509343584
   nonce:
     type: number
-    description: Arbitrary number that is used in Bitcoin's proof of work consensus
+    description:
+      Arbitrary number that is used in Bitcoin's proof of work consensus
       algorithm.
     example: 3604508752
   difficulty:

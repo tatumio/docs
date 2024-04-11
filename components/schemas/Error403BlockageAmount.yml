@@ -8,11 +8,11 @@ properties:
     example: Amount to transfer is greater then amount of the blockage.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

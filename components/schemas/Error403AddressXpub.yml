@@ -4,17 +4,19 @@ properties:
     example: account.xpub.present
     type: string
   message:
-    description: Xpub assigned to account, it is not possible to assign address. Use
+    description:
+      Xpub assigned to account, it is not possible to assign address. Use
       generateAddress method instead.
-    example: Xpub assigned to account, it is not possible to assign address. Use generateAddress
+    example:
+      Xpub assigned to account, it is not possible to assign address. Use generateAddress
       method instead.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

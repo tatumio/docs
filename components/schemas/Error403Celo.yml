@@ -4,15 +4,15 @@ properties:
     example: celo.error
     type: string
   message:
-    description: 'Unexpected error occurred. Reason: ${reason}'
-    example: 'Unexpected error occurred. Reason: ${reason}'
+    description: "Unexpected error occurred. Reason: ${reason}"
+    example: "Unexpected error occurred. Reason: ${reason}"
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

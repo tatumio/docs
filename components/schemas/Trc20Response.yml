@@ -1,6 +1,7 @@
 properties:
   accountId:
-    description: The ID of the created virtual account with the currency set to the
+    description:
+      The ID of the created virtual account with the currency set to the
       token name (the <code>symbol</code> parameter of the request body)
     type: string
     example: 5e68c66581f2ee32bc354087

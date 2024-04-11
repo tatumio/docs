@@ -1,12 +1,12 @@
 required:
-- active
-- id
-- externalId
-- enabled
+  - active
+  - id
+  - externalId
+  - enabled
 properties:
   externalId:
     description: Customer external ID.
-    example: '651234'
+    example: "651234"
     type: string
   id:
     description: Customer internal ID within Tatum.
@@ -21,10 +21,11 @@ properties:
     example: true
     type: boolean
   accountingCurrency:
-    description: All transaction will be accounted in this currency for all accounts
+    description:
+      All transaction will be accounted in this currency for all accounts
       of the customer. Currency can be overridden per account level. ISO-4217
     example: USD
-    $ref: '../migrated.yml#/components/schemas/FiatCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatCurrency"
   customerCountry:
     description: Country customer has to be compliant with
     example: US

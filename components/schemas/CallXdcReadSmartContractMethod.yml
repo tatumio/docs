@@ -16,9 +16,9 @@ properties:
     type: object
     example:
       inputs:
-      - internalType: uint256
-        name: amount
-        type: uint256
+        - internalType: uint256
+          name: amount
+          type: uint256
       name: stake
       outputs: []
       stateMutability: nonpayable
@@ -27,12 +27,12 @@ properties:
   params:
     type: array
     example:
-    - '0x632'
+      - "0x632"
     items:
       type: string
     description: Parameters of the method to be invoked.
 required:
-- contractAddress
-- params
-- methodABI
-- methodName
+  - contractAddress
+  - params
+  - methodABI
+  - methodName

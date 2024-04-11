@@ -18,7 +18,7 @@ properties:
           example: Address
         value:
           type: string
-          example: '0x21cbd745a4df66f1'
+          example: "0x21cbd745a4df66f1"
   gasLimit:
     type: number
     example: 1000

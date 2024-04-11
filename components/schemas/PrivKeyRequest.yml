@@ -12,5 +12,5 @@ properties:
     example: urge pulp usage sister evidence arrest palm math please chief egg abuse
     type: string
 required:
-- mnemonic
-- index
+  - mnemonic
+  - index

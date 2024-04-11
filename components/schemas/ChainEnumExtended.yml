@@ -1,14 +1,14 @@
 type: string
 example: ethereum
 enum:
-- ethereum
-- ethereum-sepolia
-- celo
-- celo-testnet
-- bsc
-- bsc-testnet
-- polygon
-- polygon-mumbai
-- tezos
-- eon
-- chiliz
+  - ethereum
+  - ethereum-sepolia
+  - celo
+  - celo-testnet
+  - bsc
+  - bsc-testnet
+  - polygon
+  - polygon-mumbai
+  - tezos
+  - eon
+  - chiliz

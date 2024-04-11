@@ -35,79 +35,84 @@ requestBody:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemonicAddress'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemXpub'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKAddress'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKXpub'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSAddress'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSXpub'
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemonicAddress"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainMnemXpub"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKAddress"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainPKXpub"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSAddress"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20OffchainKMSXpub"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20Response'
-          - $ref: '../../../components/migrated.yml#/components/schemas/DeployErc20SignatureResponse'
+            - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20Response"
+            - $ref: "../../../components/migrated.yml#/components/schemas/DeployErc20SignatureResponse"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20Prefix'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubBoth'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20XpubMissing'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Erc20NameDuplicate'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403CustomerNotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCCreateFailed'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubMissing'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubUsed'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressIndexUsed'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressUsed'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AddressXpub'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthBroadcast'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasPrice'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxHash'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxSign'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403Erc20Prefix"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403Erc20XpubBoth"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403Erc20XpubMissing"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403Erc20NameDuplicate"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403CustomerNotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403VCCreateFailed"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountNotExists"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubMissing"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AddressAccountXpubUsed"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AddressIndexUsed"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403VCNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AddressUsed"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AddressXpub"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthErc20Unsupported"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthBroadcast"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthGasPrice"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxBody"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxHash"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxSign"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
-summary: Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to
+summary:
+  Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to
   the blockchain and a virtual account
 tags:
-- Blockchain operations
+  - Blockchain operations

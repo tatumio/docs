@@ -17,4 +17,4 @@ properties:
     type: string
     example: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
   uiTokenAmount:
-    $ref: '../migrated.yml#/components/schemas/UiTokenAmount'
+    $ref: "../migrated.yml#/components/schemas/UiTokenAmount"

@@ -2,12 +2,12 @@ description: FIAT value of transaction.
 properties:
   amount:
     description: Value of transaction in given base pair.
-    example: '1235.56'
+    example: "1235.56"
     type: string
   currency:
     description: Base pair.
     example: EUR
-    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
   sourceDate:
     description: Date of validity of rate in UTC.
     example: 1572031674384
@@ -18,7 +18,7 @@ properties:
     type: string
 type: object
 required:
-- amount
-- currency
-- sourceDate
-- source
+  - amount
+  - currency
+  - sourceDate
+  - source

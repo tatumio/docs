@@ -8,20 +8,20 @@ properties:
     type: string
   account:
     description: Blockchain account to send from
-    example: '0x955cd3f17b2fd8ad'
+    example: "0x955cd3f17b2fd8ad"
     maxLength: 18
     minLength: 18
     type: string
   address:
     description: Blockchain address to send assets
-    example: '0x955cd3f17b2fd8ae'
+    example: "0x955cd3f17b2fd8ae"
     maxLength: 18
     minLength: 18
     type: string
   amount:
     description: Amount to be sent, in Flow.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   mnemonic:
@@ -35,14 +35,16 @@ properties:
     minimum: 0
     description: Index to the specific address from mnemonic.
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -53,9 +55,9 @@ properties:
     example: Sender note
     type: string
 required:
-- account
-- senderAccountId
-- address
-- amount
-- mnemonic
-- index
+  - account
+  - senderAccountId
+  - address
+  - amount
+  - mnemonic
+  - index

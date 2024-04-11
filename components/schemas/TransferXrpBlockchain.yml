@@ -3,7 +3,8 @@ properties:
   fromAccount:
     maxLength: 34
     minLength: 33
-    description: XRP account address. Must be the one used for generating deposit
+    description:
+      XRP account address. Must be the one used for generating deposit
       tags.
     example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
     type: string
@@ -15,7 +16,7 @@ properties:
     type: string
   amount:
     description: Amount to be sent, in XRP.
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   fromSecret:
@@ -26,7 +27,7 @@ properties:
     type: string
   fee:
     description: Fee to be paid, in XRP. If omitted, current fee will be calculated.
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   sourceTag:
@@ -38,7 +39,7 @@ properties:
     example: 12355
     type: integer
 required:
-- fromAccount
-- to
-- amount
-- fromSecret
+  - fromAccount
+  - to
+  - amount
+  - fromSecret

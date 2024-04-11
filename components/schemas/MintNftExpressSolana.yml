@@ -1,4 +1,5 @@
-description: <p>The <code>MintNftExpressSolana</code> schema lets you mint NFTs on
+description:
+  <p>The <code>MintNftExpressSolana</code> schema lets you mint NFTs on
   Solana using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For
   more information, see "Use the pre-built smart contract provided by Tatum to mint
   NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.</p><br/>
@@ -9,7 +10,7 @@ properties:
     example: SOL
     description: The blockchain to work with
     enum:
-    - SOL
+      - SOL
   to:
     maxLength: 44
     minLength: 32
@@ -17,8 +18,8 @@ properties:
     example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
     type: string
   metadata:
-    $ref: '../migrated.yml#/components/schemas/SolanaNftExpressMetadata'
+    $ref: "../migrated.yml#/components/schemas/SolanaNftExpressMetadata"
 required:
-- to
-- chain
-- metadata
+  - to
+  - chain
+  - metadata

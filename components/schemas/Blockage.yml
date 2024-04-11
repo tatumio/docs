@@ -9,7 +9,7 @@ properties:
     example: 5e68c66581f2ee32bc354087
   amount:
     description: The amount blocked on the account
-    example: '5'
+    example: "5"
     type: string
   type:
     description: The type of the blockage

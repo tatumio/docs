@@ -14,7 +14,7 @@ properties:
     type: string
   amount:
     description: Amount to be sent in SOL.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   fromPrivateKey:
@@ -22,10 +22,12 @@ properties:
     maxLength: 128
     example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
     minLength: 87
-    description: Private key of sender address. Private key, or signature Id must
+    description:
+      Private key of sender address. Private key, or signature Id must
       be present.
   feePayer:
-    description: Address on the Solana blockchain, from which the fee will be paid
+    description:
+      Address on the Solana blockchain, from which the fee will be paid
       for transaction. Defaults to from.
     maxLength: 44
     minLength: 32
@@ -38,7 +40,7 @@ properties:
     minLength: 128
     description: Private key of the fee payer address.
 required:
-- to
-- amount
-- from
-- fromPrivateKey
+  - to
+  - amount
+  - from
+  - fromPrivateKey

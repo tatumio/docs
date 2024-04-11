@@ -1,8 +1,8 @@
 type: object
 required:
-- txHash
-- index
-- privateKey
+  - txHash
+  - index
+  - privateKey
 properties:
   txHash:
     description: The transaction hash of the UTXO to be spent
@@ -17,7 +17,8 @@ properties:
     minimum: 0
     maximum: 2147483647
   privateKey:
-    description: The private key of the blockchain address that holds the UTXO to
+    description:
+      The private key of the blockchain address that holds the UTXO to
       be spent
     type: string
     example: cVX7YtgL5muLTPncHFhP95oitV1mqUUA5VeSn8HeCRJbPqipzobf

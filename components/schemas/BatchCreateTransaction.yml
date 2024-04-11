@@ -11,8 +11,8 @@ properties:
     items:
       type: object
       required:
-      - amount
-      - recipientAccountId
+        - amount
+        - recipientAccountId
       properties:
         recipientAccountId:
           description: Internal recipient account ID within Tatum platform
@@ -23,17 +23,19 @@ properties:
         amount:
           description: Amount to be sent.
           maxLength: 38
-          example: '5'
+          example: "5"
           type: string
           pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
         anonymous:
           default: false
-          description: Anonymous transaction does not show sender account to recipient,
+          description:
+            Anonymous transaction does not show sender account to recipient,
             default is false
           example: false
           type: boolean
         compliant:
-          description: Enable compliant checks. Transaction will not be processed,
+          description:
+            Enable compliant checks. Transaction will not be processed,
             if compliant check fails.
           example: false
           type: boolean
@@ -44,9 +46,10 @@ properties:
           minLength: 1
           type: string
         paymentId:
-          description: Payment ID, External identifier of the payment, which can be
+          description:
+            Payment ID, External identifier of the payment, which can be
             used to pair transactions within Tatum accounts.
-          example: '9625'
+          example: "9625"
           maxLength: 100
           minLength: 1
           type: string
@@ -61,7 +64,8 @@ properties:
           example: 1
           default: 1
           minimum: 0
-          description: Exchange rate of the base pair. Only applicable for Tatum's
+          description:
+            Exchange rate of the base pair. Only applicable for Tatum's
             Virtual currencies Ledger transactions. Override default exchange rate
             for the Virtual Currency.
         senderNote:
@@ -71,5 +75,5 @@ properties:
           minLength: 1
           type: string
 required:
-- senderAccountId
+  - senderAccountId
 type: object

@@ -3,22 +3,23 @@ properties:
   data:
     type: array
     required:
-    - contractAddress
-    - balances
+      - contractAddress
+      - balances
     items:
       type: object
       properties:
         contractAddress:
           type: string
           description: The asset ID (the ID of the NFT)
-          example: '116227380'
+          example: "116227380"
         balances:
           type: array
-          description: The array returning <code>1</code> to indicate that the NFT
+          description:
+            The array returning <code>1</code> to indicate that the NFT
             with the specified ID exists
           items:
             type: string
-            example: '1'
+            example: "1"
         metadata:
           type: array
           items:

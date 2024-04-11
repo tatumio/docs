@@ -8,36 +8,42 @@ properties:
         example: rf1BiGeXwwQoi8Z2ueFYTEXSwuJYfV2Jpn
       Balance:
         type: string
-        description: The account's current XRP balance in drops, represented as a
+        description:
+          The account's current XRP balance in drops, represented as a
           string.
-        example: '1000000000'
+        example: "1000000000"
       Flags:
         type: number
         description: A bit-map of boolean flags enabled for this account.
         example: 0
       LedgerEntryType:
         type: string
-        description: The value 0x0061, mapped to the string AccountRoot, indicates
+        description:
+          The value 0x0061, mapped to the string AccountRoot, indicates
           that this is an AccountRoot object.
         example: AccountRoot
       OwnerCount:
         type: number
-        description: The number of objects this account owns in the ledger, which
+        description:
+          The number of objects this account owns in the ledger, which
           contributes to its owner reserve.
         example: 0
       PreviousTxnID:
         type: string
-        description: The identifying hash of the transaction that most recently modified
+        description:
+          The identifying hash of the transaction that most recently modified
           this object.
         example: 1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250
       PreviousTxnLgrSeq:
         type: number
-        description: The index of the ledger that contains the transaction that most
+        description:
+          The index of the ledger that contains the transaction that most
           recently modified this object.
         example: 760469
       Sequence:
         type: number
-        description: The sequence number of the next valid transaction for this account.
+        description:
+          The sequence number of the next valid transaction for this account.
           (Each account starts with Sequence = 1 and increases each time a transaction
           is made.)
         example: 1
@@ -45,7 +51,8 @@ properties:
         type: string
         example: BB899D5C7C5E13AFFD702514FC78BE59313AC72AF02A3FC94E5F54F05EB2E20D
     type: object
-    description: The AccountRoot ledger object with this account's information, as
+    description:
+      The AccountRoot ledger object with this account's information, as
       stored in the ledger.
   ledger_current_index:
     type: number
@@ -53,6 +60,7 @@ properties:
     example: 760476
   validated:
     type: boolean
-    description: True if this data is from a validated ledger version; if omitted
+    description:
+      True if this data is from a validated ledger version; if omitted
       or set to false, this data is not final.
     example: false

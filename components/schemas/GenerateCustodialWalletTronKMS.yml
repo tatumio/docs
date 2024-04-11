@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - TRON
+      - TRON
     example: TRON
     type: string
   feeLimit:
@@ -21,12 +21,14 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the private key associated in signing application.
+    description:
+      Identifier of the private key associated in signing application.
       Private key, or signature Id must be present.
   index:
     type: number
     minimum: 0
-    description: If signatureId is mnemonic-based, this is the index to the specific
+    description:
+      If signatureId is mnemonic-based, this is the index to the specific
       address from that mnemonic.
   enableFungibleTokens:
     type: boolean
@@ -39,19 +41,21 @@ properties:
   enableSemiFungibleTokens:
     type: boolean
     example: false
-    description: If address should support ERC1155 tokens, it should be marked as
+    description:
+      If address should support ERC1155 tokens, it should be marked as
       true. Not supported for TRON.
   enableBatchTransactions:
     type: boolean
     example: false
-    description: If address should support batch transfers of the assets, it should
+    description:
+      If address should support batch transfers of the assets, it should
       be marked as true.
 required:
-- chain
-- feeLimit
-- signatureId
-- from
-- enableFungibleTokens
-- enableNonFungibleTokens
-- enableSemiFungibleTokens
-- enableBatchTransactions
+  - chain
+  - feeLimit
+  - signatureId
+  - from
+  - enableFungibleTokens
+  - enableNonFungibleTokens
+  - enableSemiFungibleTokens
+  - enableBatchTransactions

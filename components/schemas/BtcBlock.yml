@@ -9,7 +9,8 @@ properties:
     type: number
     example: 15235
   depth:
-    description: The number of blocks following a particular block on a block chain,
+    description:
+      The number of blocks following a particular block on a block chain,
       including current one.
     type: number
     example: 1567867
@@ -23,7 +24,8 @@ properties:
     example: 000000006e79360d7b2519410fe5a73e8e08393fd7166620c73c711e4507d9fd
   merkleRoot:
     type: string
-    description: The root node of a merkle tree, a descendant of all the hashed pairs
+    description:
+      The root node of a merkle tree, a descendant of all the hashed pairs
       in the tree.
     example: 480c227c5042377dbd54464d33e1f59c19fe02fe76d7f55b6955db438479aece
   time:
@@ -35,10 +37,11 @@ properties:
     example: 486604799
   nonce:
     type: number
-    description: Arbitrary number that is used in Bitcoin's proof of work consensus
+    description:
+      Arbitrary number that is used in Bitcoin's proof of work consensus
       algorithm.
     example: 1193572362
   txs:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/BtcTx'
+      $ref: "../migrated.yml#/components/schemas/BtcTx"

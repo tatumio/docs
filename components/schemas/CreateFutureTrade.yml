@@ -1,30 +1,30 @@
 type: object
 required:
-- type
-- price
-- amount
-- pair
-- currency1AccountId
-- currency2AccountId
-- attr
+  - type
+  - price
+  - amount
+  - pair
+  - currency1AccountId
+  - currency2AccountId
+  - attr
 properties:
   type:
     type: string
     description: Type of future the trade, FUTURE_BUY, FUTURE_SELL
     example: BUY
     enum:
-    - FUTURE_BUY
-    - FUTURE_SELL
+      - FUTURE_BUY
+      - FUTURE_SELL
   price:
     type: string
     description: Price to buy / sell
-    example: '8650.4'
+    example: "8650.4"
     maxLength: 38
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   amount:
     type: string
     description: Amount of the trade to be bought / sold
-    example: '15000'
+    example: "15000"
     maxLength: 38
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   pair:
@@ -48,7 +48,8 @@ properties:
     maxLength: 24
   feeAccountId:
     type: string
-    description: ID of the account where fee will be paid, if any. If trade is a BUY
+    description:
+      ID of the account where fee will be paid, if any. If trade is a BUY
       or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId,
       and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have
       same currency as a currency of currency1AccountId.
@@ -65,7 +66,7 @@ properties:
     type: object
     description: Additional attributes for the future type.
     required:
-    - sealDate
+      - sealDate
     properties:
       sealDate:
         type: number
@@ -73,14 +74,16 @@ properties:
         example: 1572031674384
         minimum: 0
       percentBlock:
-        description: Percentage of the future amount which selling or buying account
+        description:
+          Percentage of the future amount which selling or buying account
           must have available on future creation. This amount will be blocked till
           future is filled or expires.
         example: 1.5
         minimum: 0
         maximum: 100
       percentPenalty:
-        description: If one of the parties dont have filled full amount of the future
+        description:
+          If one of the parties dont have filled full amount of the future
           at the time of expiration, the party will be penalized. Penalty is sent
           to opposite party in exchanged crypto.
         example: 1.5

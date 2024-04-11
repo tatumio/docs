@@ -4,16 +4,17 @@ properties:
     example: virtual.account.notValid
     type: string
   message:
-    description: Unable to perform operation on virtual currency, account does not
+    description:
+      Unable to perform operation on virtual currency, account does not
       exists.
     example: Unable to perform operation on virtual currency, account does not exists.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

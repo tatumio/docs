@@ -9,5 +9,5 @@ properties:
     example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
     type: string
 required:
-- txId
-- listingId
+  - txId
+  - listingId

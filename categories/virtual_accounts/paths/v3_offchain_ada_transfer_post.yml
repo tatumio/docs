@@ -1,4 +1,5 @@
-description: '<h4>10 credits per API call.</h4><p>Send ADA (Cardano) from a virtual
+description:
+  '<h4>10 credits per API call.</h4><p>Send ADA (Cardano) from a virtual
   account to the blockchain. This will create Tatum internal withdrawal request with
   ID. If every system works as expected, withdrawal request is marked as complete
   and transaction id is assigned to it.
@@ -41,69 +42,73 @@ requestBody:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/TransferAdaMnemonic'
-        - $ref: '../../../components/migrated.yml#/components/schemas/TransferAdaKMS'
+          - $ref: "../../../components/migrated.yml#/components/schemas/TransferAdaMnemonic"
+          - $ref: "../../../components/migrated.yml#/components/schemas/TransferAdaKMS"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionResult'
-          - $ref: '../../../components/migrated.yml#/components/schemas/OffchainTransactionSignatureResult'
+            - $ref: "../../../components/migrated.yml#/components/schemas/OffchainTransactionResult"
+            - $ref: "../../../components/migrated.yml#/components/schemas/OffchainTransactionSignatureResult"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RecipientFormat'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalFailed'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalVC'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403FeeFormat'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainNotCancelled'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OffchainCancelled'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxBalance'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountBtc'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxAmountEth'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403WithdrawalPending'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403WithdrawalNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403RateNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403VCNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403RecipientFormat"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403WithdrawalFailed"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403WithdrawalVC"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OffchainNotSupported"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AmountFormat"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403FeeFormat"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OffchainNotCancelled"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OffchainCancelled"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxSenderNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxSenderCustomerDisabled"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxBalance"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxAmountBtc"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxAmountEth"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxSenderFrozen"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403WithdrawalPending"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Send ADA from a virtual account to the blockchain
 tags:
-- Blockchain operations
+  - Blockchain operations

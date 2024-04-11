@@ -3,10 +3,11 @@ properties:
     description: The amount to be blocked on the account
     maxLength: 38
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
-    example: '5'
+    example: "5"
     type: string
   type:
-    description: The type of the blockage that you are applying; can be a code or
+    description:
+      The type of the blockage that you are applying; can be a code or
       an identifier from an external system or a short description of the blockage
     type: string
     minLength: 1
@@ -19,6 +20,6 @@ properties:
     maxLength: 300
     example: Card payment in the shop.
 required:
-- amount
-- type
+  - amount
+  - type
 type: object

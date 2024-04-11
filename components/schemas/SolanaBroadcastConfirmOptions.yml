@@ -6,17 +6,17 @@ properties:
     description: Commitment to waiting for transaction confirmation
     example: confirmed
     enum:
-    - confirmed
-    - finalized
+      - confirmed
+      - finalized
   preflightCommitment:
     type: string
     description: Preflight Commitment.
     example: finalized
     enum:
-    - confirmed
-    - finalized
-    - processed
-    - recent
-    - single
-    - singleGossip
-    - max
+      - confirmed
+      - finalized
+      - processed
+      - recent
+      - single
+      - singleGossip
+      - max

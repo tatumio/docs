@@ -13,15 +13,15 @@ description: '<p><b>2 credits per API call</b></p>
   '
 operationId: EgldNodeGet
 parameters:
-- description: Tatum X-API-Key used for authorization.
-  in: path
-  name: xApiKey
-  required: true
-  schema:
-    type: string
-    example: /v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config
+  - description: Tatum X-API-Key used for authorization.
+    in: path
+    name: xApiKey
+    required: true
+    schema:
+      type: string
+      example: /v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -29,7 +29,7 @@ responses:
           description: Any valid response.
           example:
             config:
-              erd_chain_id: '1'
+              erd_chain_id: "1"
               erd_denomination: 18
               erd_gas_per_data_byte: 1500
               erd_latest_tag_software_version: v1.1.0.0
@@ -44,30 +44,33 @@ responses:
               erd_shard_consensus_group_size: 63
               erd_start_time: 1596117600
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '500':
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 x-codeSamples: []
 summary: Node HTTP driver
 tags:
-- Elrond
+  - Elrond

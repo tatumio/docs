@@ -5,7 +5,7 @@ properties:
     example: ALGO
     description: Chain to work with.
     enum:
-    - ALGO
+      - ALGO
   from:
     maxLength: 58
     minLength: 58
@@ -16,25 +16,27 @@ properties:
     maxLength: 43
     minLength: 1
     description: assetIndex - asset index uniquely specifying the asset
-    example: '1'
+    example: "1"
     type: string
   signatureId:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the private key associated in signing application.
+    description:
+      Identifier of the private key associated in signing application.
       Private key, or signature Id must be present.
   index:
     type: number
     minimum: 0
-    description: If signatureId is mnemonic-based, this is the index to the specific
+    description:
+      If signatureId is mnemonic-based, this is the index to the specific
       address from that mnemonic.
   fee:
     description: The transaction fee in Algos
     type: string
-    example: '0.001'
+    example: "0.001"
 required:
-- chain
-- contractAddress
-- signatureId
-- from
+  - chain
+  - contractAddress
+  - signatureId
+  - from

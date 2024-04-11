@@ -5,12 +5,12 @@ properties:
     example: FLOW
     description: The blockchain to work with
     enum:
-    - FLOW
+      - FLOW
   tokenId:
     description: ID of token to be destroyed.
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
   contractAddress:
     maxLength: 36
@@ -21,14 +21,15 @@ properties:
   account:
     type: string
     maxLength: 18
-    example: '0xc1b45bc27b9c61c3'
+    example: "0xc1b45bc27b9c61c3"
     minLength: 18
     description: Blockchain address of the sender account.
   signatureId:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the private key associated in signing application.
+    description:
+      Identifier of the private key associated in signing application.
       Private key, or signature Id must be present.
   index:
     description: Derivation index of sender address.
@@ -36,8 +37,8 @@ properties:
     type: integer
     maximum: 2147483647
 required:
-- chain
-- contractAddress
-- account
-- signatureId
-- tokenId
+  - chain
+  - contractAddress
+  - account
+  - signatureId
+  - tokenId

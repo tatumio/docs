@@ -1,41 +1,43 @@
 allOf:
-- $ref: '../migrated_v1.yml#/components/schemas/DeployAbstractContract'
-- type: object
-  required:
-  - name
-  - symbol
-  - contractType
-  - initialSupply
-  - initialHolder
-  properties:
-    name:
-      type: string
-      maxLength: 255
-      description: The name of the ERC20 token.
-    symbol:
-      type: string
-      maxLength: 255
-      description: The symbol of the ERC20 token.
-    contractType:
-      type: string
-      enum:
-      - fungible
-      description: The type of contract to deploy.
-    initialSupply:
-      type: string
-      description: The initial supply of the ERC20 token.
-    initialHolder:
-      type: string
-      pattern: ^0x[a-fA-F0-9]{40}$
-      description: The address that will hold the initial supply of the token.
-    decimals:
-      type: integer
-      minimum: 0
-      maximum: 30
-      description: The number of decimals the ERC20 token will have. If not provided,
-        the default value is 18.
-    pauser:
-      type: string
-      pattern: ^0x[a-fA-F0-9]{40}$
-      description: The address that can pause the token contract. If not provided,
-        the pauser is the owner.
+  - $ref: "../migrated_v1.yml#/components/schemas/DeployAbstractContract"
+  - type: object
+    required:
+      - name
+      - symbol
+      - contractType
+      - initialSupply
+      - initialHolder
+    properties:
+      name:
+        type: string
+        maxLength: 255
+        description: The name of the ERC20 token.
+      symbol:
+        type: string
+        maxLength: 255
+        description: The symbol of the ERC20 token.
+      contractType:
+        type: string
+        enum:
+          - fungible
+        description: The type of contract to deploy.
+      initialSupply:
+        type: string
+        description: The initial supply of the ERC20 token.
+      initialHolder:
+        type: string
+        pattern: ^0x[a-fA-F0-9]{40}$
+        description: The address that will hold the initial supply of the token.
+      decimals:
+        type: integer
+        minimum: 0
+        maximum: 30
+        description:
+          The number of decimals the ERC20 token will have. If not provided,
+          the default value is 18.
+      pauser:
+        type: string
+        pattern: ^0x[a-fA-F0-9]{40}$
+        description:
+          The address that can pause the token contract. If not provided,
+          the pauser is the owner.

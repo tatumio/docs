@@ -25,12 +25,12 @@ properties:
     example: 0.01
   amount:
     description: Amount to be sent in TRX.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- fromPrivateKey
-- tokenAddress
-- to
-- amount
-- feeLimit
+  - fromPrivateKey
+  - tokenAddress
+  - to
+  - amount
+  - feeLimit

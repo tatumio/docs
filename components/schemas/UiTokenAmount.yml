@@ -11,8 +11,8 @@ properties:
   uiAmount:
     description: Token amount as a float, accounting for decimals.
     type:
-    - number
-    - 'null'
+      - number
+      - "null"
     example: 2.653579503
   uiAmountString:
     description: Token amount as a string, accounting for decimals.

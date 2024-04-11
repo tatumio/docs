@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -24,16 +24,18 @@ properties:
     description: Blockchain address of the seller
     example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
   price:
-    description: Price of the asset to sell. Marketplace fee will be obtained on top
+    description:
+      Price of the asset to sell. Marketplace fee will be obtained on top
       of this price.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   authoritySignatureId:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: The KMS identifier of the private key used for signing transactions
+    description:
+      The KMS identifier of the private key used for signing transactions
       as authority; required if <code>requiresSignOff</code> is set to "true" for
       the marketplace
   signatureId:
@@ -42,9 +44,9 @@ properties:
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
     description: The KMS identifier of the private key of the seller
 required:
-- chain
-- contractAddress
-- nftAddress
-- price
-- from
-- signatureId
+  - chain
+  - contractAddress
+  - nftAddress
+  - price
+  - from
+  - signatureId

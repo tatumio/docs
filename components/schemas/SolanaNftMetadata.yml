@@ -1,9 +1,9 @@
 type: object
 required:
-- name
-- symbol
-- uri
-- sellerFeeBasisPoints
+  - name
+  - symbol
+  - uri
+  - sellerFeeBasisPoints
 properties:
   name:
     type: string
@@ -17,7 +17,8 @@ properties:
     maxLength: 10
   sellerFeeBasisPoints:
     type: number
-    description: The royalty that will be paid to the authors of the minted NFT every
+    description:
+      The royalty that will be paid to the authors of the minted NFT every
       time the NFT is transferred<br/>The royalty is calculated as a percentage of
       the NFT price. To set the royalty to 1%, set this parameter to <code>100</code>;
       to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter
@@ -27,7 +28,8 @@ properties:
       and do not set <code>creators</code>.
     example: 0
   uri:
-    description: The URL pointing to the NFT metadata; for more information, see <a
+    description:
+      The URL pointing to the NFT metadata; for more information, see <a
       href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     example: https://my_token_data.com
     type: string
@@ -35,7 +37,8 @@ properties:
   collection:
     maxLength: 44
     minLength: 32
-    description: The blockchain address of the NFT collection where the NFT will be
+    description:
+      The blockchain address of the NFT collection where the NFT will be
       minted in. Specify the private key of the collection verifier in the <code>collectionVerifierPrivateKey</code>
       parameter of the request body to get the NFT verified in the collection after
       the NFT has been minted. To know more about Solana collections and verification,
@@ -46,11 +49,13 @@ properties:
   mutable:
     type: boolean
     default: true
-    description: Specifies whether the NFT metadata is mutable ("true") or immutable
+    description:
+      Specifies whether the NFT metadata is mutable ("true") or immutable
       ("false"); if not set, defaults to "true"
   creators:
     type: array
-    description: The blockchain addresses where the royalties will be sent every time
+    description:
+      The blockchain addresses where the royalties will be sent every time
       the minted NFT is transferred
     items:
-      $ref: '../migrated.yml#/components/schemas/SolanaNftMetadataCreator'
+      $ref: "../migrated.yml#/components/schemas/SolanaNftMetadataCreator"

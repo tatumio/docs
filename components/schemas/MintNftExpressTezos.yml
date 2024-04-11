@@ -1,4 +1,5 @@
-description: <p>The <code>MintNftExpressTezos</code> schema lets you mint NFTs on
+description:
+  <p>The <code>MintNftExpressTezos</code> schema lets you mint NFTs on
   Tezos using <b>NTF Express</b>. You don't need to provide the private key and Tatum
   will cover the minting fees. The price of the mint operation will be deducted from
   your credits. In order to use the mint you need to first deploy the smartcontract
@@ -10,7 +11,7 @@ properties:
     example: TEZOS
     description: The blockchain to work with
     enum:
-    - TEZOS
+      - TEZOS
   url:
     description: The URL pointing to the NFT metadata</a>
     example: https://my_token_data.com
@@ -32,11 +33,11 @@ properties:
     description: The ID of the NFT
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
 required:
-- tokenId
-- chain
-- url
-- ownerAddress
-- contractAddress
+  - tokenId
+  - chain
+  - url
+  - ownerAddress
+  - contractAddress

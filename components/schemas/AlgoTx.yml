@@ -67,7 +67,8 @@ properties:
     description: signature
     type: object
   txType:
-    description: indicates what type of transaction this is. Different types have
+    description:
+      indicates what type of transaction this is. Different types have
       differnet fields.
     type: string
     example: pay

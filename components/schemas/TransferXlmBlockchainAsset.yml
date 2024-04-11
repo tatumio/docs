@@ -14,7 +14,7 @@ properties:
     type: string
   amount:
     description: Amount to be sent, in XLM.
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   fromSecret:
@@ -27,10 +27,12 @@ properties:
     type: boolean
     default: false
     example: false
-    description: Set to true, if the destination address is not yet initialized and
+    description:
+      Set to true, if the destination address is not yet initialized and
       should be funded for the first time.
   token:
-    description: Asset name. If not defined, transaction is being sent in native XLM
+    description:
+      Asset name. If not defined, transaction is being sent in native XLM
       asset.
     example: TOKEN123
     type: string
@@ -38,23 +40,25 @@ properties:
     maxLength: 12
     minLength: 1
   issuerAccount:
-    description: Blockchain address of the issuer of the assets to send, if not native
+    description:
+      Blockchain address of the issuer of the assets to send, if not native
       XLM asset.
     example: GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT
     maxLength: 56
     minLength: 56
     type: string
   message:
-    description: Short message to recipient. It can be either 28 characters long ASCII
+    description:
+      Short message to recipient. It can be either 28 characters long ASCII
       text, 64 characters long HEX string or uint64 number.
-    example: '12355'
+    example: "12355"
     pattern: ^[ -~]{0,64}$
     type: string
     maxLength: 64
 required:
-- fromAccount
-- fromSecret
-- token
-- issuerAccount
-- to
-- amount
+  - fromAccount
+  - fromSecret
+  - token
+  - issuerAccount
+  - to
+  - amount

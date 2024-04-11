@@ -1,4 +1,5 @@
-description: '<h4>5 credits per API call.</h4><br/><p>Tatum supports BIP44 HD wallets.
+description:
+  '<h4>5 credits per API call.</h4><br/><p>Tatum supports BIP44 HD wallets.
   It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic
   phrase. Mnemonic phrase consists of 24 special words in defined order and can restore
   access to all generated addresses and private keys.<br/>Each address is identified
@@ -16,53 +17,57 @@ description: '<h4>5 credits per API call.</h4><br/><p>Tatum supports BIP44 HD wa
   '
 operationId: LtcGenerateWallet
 parameters:
-- description: Mnemonic to use for generation of extended public and private keys.
-  in: query
-  name: mnemonic
-  required: false
-  schema:
-    type: string
-    maxLength: 500
+  - description: Mnemonic to use for generation of extended public and private keys.
+    in: query
+    name: mnemonic
+    required: false
+    schema:
+      type: string
+      maxLength: 500
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Wallet'
+          $ref: "../../../components/migrated.yml#/components/schemas/Wallet"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Generate Litecoin wallet
 tags:
-- Litecoin
+  - Litecoin

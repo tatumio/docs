@@ -14,10 +14,10 @@ properties:
     type: string
   amount:
     description: Amount to be sent in XDC.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- to
-- amount
-- from
+  - to
+  - amount
+  - from

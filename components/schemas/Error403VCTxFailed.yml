@@ -4,17 +4,19 @@ properties:
     example: virtual.tx.failed
     type: string
   message:
-    description: Unable to perform operation on virtual currency, impossible to store
+    description:
+      Unable to perform operation on virtual currency, impossible to store
       transaction.
-    example: Unable to perform operation on virtual currency, impossible to store
+    example:
+      Unable to perform operation on virtual currency, impossible to store
       transaction.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

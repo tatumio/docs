@@ -1,4 +1,5 @@
-description: "<h4>2 credits per API call, additional credits are charged for each\
+description:
+  "<h4>2 credits per API call, additional credits are charged for each\
   \ gas covered operation.</h4><br/>\n<p>Sign transaction and transfer assets from\
   \ a custodial managed address.<br/>\nSupported chains:\n<ul>\n<li><b>Solana</b></li>\n\
   </ul>\n<br/>\nLogic for <b>Solana</b><br/>\nIn Solana, it's possible to cover the\
@@ -50,40 +51,43 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: '../../../components/migrated.yml#/components/schemas/TransferManagedAddress'
+        $ref: "../../../components/migrated.yml#/components/schemas/TransferManagedAddress"
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          $ref: "../../../components/migrated.yml#/components/schemas/TransactionHash"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '500':
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Sign and transfer using managed address
 tags:
-- Custodial managed wallets
+  - Custodial managed wallets

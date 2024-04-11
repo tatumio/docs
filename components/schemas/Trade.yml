@@ -9,16 +9,16 @@ properties:
     description: Type of the trade, BUY or SELL
     example: BUY
     enum:
-    - BUY
-    - SELL
+      - BUY
+      - SELL
   price:
     type: string
     description: Price to buy / sell
-    example: '8650.4'
+    example: "8650.4"
   amount:
     type: string
     description: Amount of the trade to be bought / sold
-    example: '15000'
+    example: "15000"
   pair:
     type: string
     description: Trading pair
@@ -30,10 +30,11 @@ properties:
   fill:
     type: string
     description: How much of the trade was already filled.
-    example: '1500'
+    example: "1500"
   feeAccountId:
     type: string
-    description: ID of the account where fee will be paid, if any. If trade is a BUY
+    description:
+      ID of the account where fee will be paid, if any. If trade is a BUY
       or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId,
       and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have
       same currency as a currency of currency1AccountId.
@@ -62,7 +63,7 @@ properties:
     type: object
     description: Additional attributes for the future type.
     required:
-    - sealDate
+      - sealDate
     properties:
       sealDate:
         type: number
@@ -70,7 +71,8 @@ properties:
         example: 1572031674384
         minimum: 0
       percentBlock:
-        description: "Percentage of the future amount which the selling or buying\
+        description:
+          "Percentage of the future amount which the selling or buying\
           \ account must have available for the future\u2019s creation. This amount\
           \ will be blocked until the future is filled or expires."
         type: number
@@ -78,7 +80,8 @@ properties:
         minimum: 0
         maximum: 100
       percentPenalty:
-        description: "If one of the parties doesn\u2019t have the full amount of the\
+        description:
+          "If one of the parties doesn\u2019t have the full amount of the\
           \ future at the time of expiration filled, the party will be penalized."
         type: number
         example: 1.5

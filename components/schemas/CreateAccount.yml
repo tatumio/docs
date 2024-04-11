@@ -40,9 +40,10 @@ properties:
     minLength: 2
     type: string
   customer:
-    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+    $ref: "../migrated.yml#/components/schemas/CustomerRegistration"
   compliant:
-    description: Enable compliant checks. If this is enabled, it is impossible to
+    description:
+      Enable compliant checks. If this is enabled, it is impossible to
       create account if compliant check fails.
     example: false
     type: boolean
@@ -53,17 +54,18 @@ properties:
     example: AC_1011_B
     type: string
   accountingCurrency:
-    description: All transaction will be accounted in this currency for all accounts.
+    description:
+      All transaction will be accounted in this currency for all accounts.
       Currency can be overridden per account level. If not set, customer accountingCurrency
       is used or EUR by default. ISO-4217
-    $ref: '../migrated.yml#/components/schemas/FiatCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatCurrency"
     example: USD
   accountNumber:
     description: Account number from external system.
     maxLength: 50
     minLength: 1
-    example: '123456'
+    example: "123456"
     type: string
 required:
-- currency
+  - currency
 type: object

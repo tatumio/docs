@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - TRON
+      - TRON
     example: TRON
     type: string
   feeLimit:
@@ -28,18 +28,20 @@ properties:
   enableSemiFungibleTokens:
     type: boolean
     example: false
-    description: If address should support ERC1155 tokens, it should be marked as
+    description:
+      If address should support ERC1155 tokens, it should be marked as
       true. Not supported for TRON.
   enableBatchTransactions:
     type: boolean
     example: false
-    description: If address should support batch transfers of the assets, it should
+    description:
+      If address should support batch transfers of the assets, it should
       be marked as true.
 required:
-- chain
-- feeLimit
-- fromPrivateKey
-- enableFungibleTokens
-- enableNonFungibleTokens
-- enableSemiFungibleTokens
-- enableBatchTransactions
+  - chain
+  - feeLimit
+  - fromPrivateKey
+  - enableFungibleTokens
+  - enableNonFungibleTokens
+  - enableSemiFungibleTokens
+  - enableBatchTransactions

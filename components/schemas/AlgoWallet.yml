@@ -15,6 +15,7 @@ properties:
   mnemonic:
     description: Mnemonic of the wallet.
     type: string
-    example: work syrup plug fluid moon regret wolf visa muffin supply erode lemon
+    example:
+      work syrup plug fluid moon regret wolf visa muffin supply erode lemon
       absurd voyage plastic blade baby stable burger glue dynamic expire cabin abandon
       pilot

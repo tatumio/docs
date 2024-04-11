@@ -3,6 +3,6 @@ properties:
   accounts:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/CreateAccount'
+      $ref: "../migrated.yml#/components/schemas/CreateAccount"
 required:
-- accounts
+  - accounts

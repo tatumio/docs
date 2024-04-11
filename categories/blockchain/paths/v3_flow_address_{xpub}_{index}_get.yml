@@ -1,4 +1,5 @@
-description: '<h4>1 credit for GET operation + 300 credits per address.</h4><br/>
+description:
+  "<h4>1 credit for GET operation + 300 credits per address.</h4><br/>
 
   <p>Generate Flow address from Extended public key. This operation internally creates
   public key and assigns it to the newly created address on the blockchain.
@@ -11,25 +12,25 @@ description: '<h4>1 credit for GET operation + 300 credits per address.</h4><br/
   Public key is generated for the specific index - each extended public key can generate
   up to 2^31 addresses starting from index 0 until 2^31 - 1.</p>
 
-  '
+  "
 operationId: FlowGenerateAddress
 parameters:
-- description: Extended public key of wallet.
-  in: path
-  name: xpub
-  required: true
-  example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
-  schema:
-    type: string
-- description: Derivation index of desired address to be generated.
-  in: path
-  name: index
-  required: true
-  example: 0
-  schema:
-    type: number
+  - description: Extended public key of wallet.
+    in: path
+    name: xpub
+    required: true
+    example: xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid
+    schema:
+      type: string
+  - description: Derivation index of desired address to be generated.
+    in: path
+    name: index
+    required: true
+    example: 0
+    schema:
+      type: number
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -38,43 +39,47 @@ responses:
             address:
               type: string
               description: Flow address
-              example: '0x4f09d8d43e4967b7'
+              example: "0x4f09d8d43e4967b7"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Generate Flow address from Extended public key
 tags:
-- Flow
+  - Flow

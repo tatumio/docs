@@ -15,20 +15,22 @@ properties:
   Amount:
     type: string
     description: Amount of transaction, in drops. 1 drop = 0.000001 XRP.
-    example: '1000000000'
+    example: "1000000000"
   Destination:
     type: string
     description: Recipient account address.
     example: rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF
   Fee:
     type: string
-    description: Integer amount of XRP, in drops, to be destroyed as a cost for distributing
+    description:
+      Integer amount of XRP, in drops, to be destroyed as a cost for distributing
       this transaction to the network. Some transaction types have different minimum
       requirements.
-    example: '12'
+    example: "12"
   TransactionType:
     type: string
-    description: Type of the transaction. XRp supports more than 18 transaction types.
+    description:
+      Type of the transaction. XRp supports more than 18 transaction types.
       For the payment, Payment type is used.
     example: Payment
   Flags:
@@ -41,13 +43,15 @@ properties:
     example: 760473
   Sequence:
     type: number
-    description: The sequence number of the account sending the transaction. A transaction
+    description:
+      The sequence number of the account sending the transaction. A transaction
       is only valid if the Sequence number is exactly 1 greater than the previous
       transaction from the same account.
     example: 118697
   date:
     type: number
-    description: Timestamp of the transaction, in Ripple epoch (946684800 seconds
+    description:
+      Timestamp of the transaction, in Ripple epoch (946684800 seconds
       after Unix Epoch)
     example: 622916620
   inLedger:
@@ -76,7 +80,7 @@ properties:
                       example: rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe
                     Balance:
                       type: string
-                      example: '99871289963167439'
+                      example: "99871289963167439"
                     Flags:
                       type: number
                       example: 0
@@ -95,12 +99,12 @@ properties:
                   example: 31CCE9D28412FF973E9AB6D0FA219BACF19687D9A2456A0C2ABC3280E9D47E37
                 PreviousFields:
                   required:
-                  - Balance
-                  - Sequence
+                    - Balance
+                    - Sequence
                   properties:
                     Balance:
                       type: string
-                      example: '99871290963167451'
+                      example: "99871290963167451"
                     Sequence:
                       type: number
                       example: 118697
@@ -120,10 +124,11 @@ properties:
         example: tesSUCCESS
       delivered_amount:
         type: string
-        example: '1000000000'
+        example: "1000000000"
     type: object
   validated:
     type: boolean
-    description: Whether or not the transaction is included in a validated ledger.
+    description:
+      Whether or not the transaction is included in a validated ledger.
       Any transaction not yet in a validated ledger is subject to change.
     example: true

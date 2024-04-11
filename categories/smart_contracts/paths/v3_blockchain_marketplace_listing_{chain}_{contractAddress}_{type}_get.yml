@@ -1,4 +1,4 @@
-description: '<p><b>1 credit per API call</b></p>
+description: "<p><b>1 credit per API call</b></p>
 
   <p>Get the open, sold, or cancelled listings from the NFT marketplace.</p>
 
@@ -16,41 +16,41 @@ description: '<p><b>1 credit per API call</b></p>
 
   </ul>
 
-  '
+  "
 operationId: GetMarketplaceListings
 parameters:
-- description: Blockchain to work with
-  in: path
-  name: chain
-  required: true
-  schema:
-    type: string
-    example: CELO
-    enum:
-    - CELO
-    - ETH
-    - MATIC
-    - SOL
-- description: Contract address
-  in: path
-  name: contractAddress
-  required: true
-  schema:
-    type: string
-    example: '0xe6e7340394958674cdf8606936d292f565e4ecc4'
-- description: The type of listings to return
-  in: path
-  name: type
-  required: true
-  schema:
-    type: string
-    example: INITIATED
-    enum:
-    - INITIATED
-    - SOLD
-    - CANCELLED
+  - description: Blockchain to work with
+    in: path
+    name: chain
+    required: true
+    schema:
+      type: string
+      example: CELO
+      enum:
+        - CELO
+        - ETH
+        - MATIC
+        - SOL
+  - description: Contract address
+    in: path
+    name: contractAddress
+    required: true
+    schema:
+      type: string
+      example: "0xe6e7340394958674cdf8606936d292f565e4ecc4"
+  - description: The type of listings to return
+    in: path
+    name: type
+    required: true
+    schema:
+      type: string
+      example: INITIATED
+      enum:
+        - INITIATED
+        - SOLD
+        - CANCELLED
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -58,42 +58,46 @@ responses:
           items:
             type: string
             description: ID of the listing.
-            example: '12345'
+            example: "12345"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403TxNotFound'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403TxNotFound"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get the listings of a certain type from the NFT marketplace
 tags:
-- Marketplace
+  - Marketplace

@@ -4,9 +4,9 @@ properties:
     type: array
     description: Activated gas pump addresses
     items:
-      $ref: '../migrated.yml#/components/schemas/ValidGasPumpAddress'
+      $ref: "../migrated.yml#/components/schemas/ValidGasPumpAddress"
   invalid:
     type: array
     description: Not activated gas pump addresses
     items:
-      $ref: '../migrated.yml#/components/schemas/InvalidGasPumpAddress'
+      $ref: "../migrated.yml#/components/schemas/InvalidGasPumpAddress"

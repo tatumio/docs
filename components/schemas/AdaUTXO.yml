@@ -3,7 +3,7 @@ properties:
   value:
     type: string
     description: Sent amount in ADA.
-    example: '1.5'
+    example: "1.5"
   index:
     type: number
     description: Index of the output in the transaction.

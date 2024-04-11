@@ -4,17 +4,19 @@ properties:
     example: trade.currency2AccountId.frozen
     type: string
   message:
-    description: Currency2 account ${trade.currency2AccountId} is frozen, unable to
+    description:
+      Currency2 account ${trade.currency2AccountId} is frozen, unable to
       perform trade.
-    example: Currency2 account ${trade.currency2AccountId} is frozen, unable to perform
+    example:
+      Currency2 account ${trade.currency2AccountId} is frozen, unable to perform
       trade.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

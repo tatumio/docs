@@ -1,6 +1,7 @@
 properties:
   currency:
-    description: Currency of signed transaction to be broadcast, BTC, LTC, DOGE, BNB,
+    description:
+      Currency of signed transaction to be broadcast, BTC, LTC, DOGE, BNB,
       XLM, TRX, BCH, ETH, XRP, ERC20, TRC20
     example: BTC
     maxLength: 40
@@ -19,13 +20,14 @@ properties:
     minLength: 24
     type: string
   signatureId:
-    description: ID of prepared payment template to sign. This is should be stored
+    description:
+      ID of prepared payment template to sign. This is should be stored
       on a client side to retrieve ID of the blockchain transaction, when signing
       application signs the transaction and broadcasts it to the blockchain.
     format: uuid
     example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
     type: string
 required:
-- txData
-- currency
+  - txData
+  - currency
 type: object

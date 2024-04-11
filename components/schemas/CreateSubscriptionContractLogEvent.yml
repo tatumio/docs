@@ -1,26 +1,27 @@
 type: object
 required:
-- type
-- attr
+  - type
+  - attr
 properties:
   type:
     type: string
     description: Type of the subscription.
     example: CONTRACT_LOG_EVENT
     enum:
-    - CONTRACT_LOG_EVENT
+      - CONTRACT_LOG_EVENT
   attr:
     type: object
     description: Additional attributes based on the subscription type.
     required:
-    - chain
-    - event
-    - url
+      - chain
+      - event
+      - url
     properties:
       event:
-        description: Hexadecimal data representing the event emitted from the smart
+        description:
+          Hexadecimal data representing the event emitted from the smart
           contract; represents "topic[0]" from the event log.
-        example: '0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef'
+        example: "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
         maxLength: 66
         minLength: 66
         type: string
@@ -29,14 +30,15 @@ properties:
         example: MATIC
         type: string
         enum:
-        - ETH
-        - MATIC
-        - CELO
-        - KLAY
-        - BSC
+          - ETH
+          - MATIC
+          - CELO
+          - KLAY
+          - BSC
       url:
         type: string
-        description: The URL of the endpoint where an HTTP POST request will be sent
+        description:
+          The URL of the endpoint where an HTTP POST request will be sent
           when the block where the events from the smart contracts are reflected gets
           completed.
         example: https://dashboard.tatum.io/webhook-handler

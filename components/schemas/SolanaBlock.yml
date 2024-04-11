@@ -18,8 +18,8 @@ properties:
   rewards:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/SolanaBlockReward'
+      $ref: "../migrated.yml#/components/schemas/SolanaBlockReward"
   transactions:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/SolanaBlockTx'
+      $ref: "../migrated.yml#/components/schemas/SolanaBlockTx"

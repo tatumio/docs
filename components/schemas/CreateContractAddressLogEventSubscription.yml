@@ -1,7 +1,7 @@
 type: object
 required:
-- type
-- attr
+  - type
+  - attr
 properties:
   type:
     type: string
@@ -11,9 +11,9 @@ properties:
     type: object
     description: Additional attributes based on the subscription type.
     required:
-    - chain
-    - address
-    - url
+      - chain
+      - address
+      - url
     properties:
       address:
         description: Blockchain address to watch.
@@ -26,21 +26,23 @@ properties:
         example: SOL
         type: string
         enum:
-        - ETH
-        - MATIC
-        - CELO
-        - KLAY
-        - BSC
-        - TEZOS
+          - ETH
+          - MATIC
+          - CELO
+          - KLAY
+          - BSC
+          - TEZOS
       url:
         type: string
-        description: URL of the endpoint, where HTTP POST request will be sent, when
+        description:
+          URL of the endpoint, where HTTP POST request will be sent, when
           transaction is detected on the address.
         example: https://dashboard.tatum.io/webhook-handler
         maxLength: 500
       event:
         type: string
-        description: Event to watch. In case of EVM chains it is usually a hash of
+        description:
+          Event to watch. In case of EVM chains it is usually a hash of
           the event signature. In case of Tezos it is a name of the event and max
           length is not enforced.
         example: 1.0038928713678618e+77

@@ -1,20 +1,21 @@
 type: object
 required:
-- to
-- fromUTXO
-- fee
-- changeAddres
+  - to
+  - fromUTXO
+  - fee
+  - changeAddres
 properties:
   fromUTXO:
-    description: The array of transaction hashes, indexes of its UTXOs, and the signature
+    description:
+      The array of transaction hashes, indexes of its UTXOs, and the signature
       IDs of the associated blockchain addresses
     type: array
     items:
       type: object
       required:
-      - txHash
-      - signatureId
-      - index
+        - txHash
+        - signatureId
+        - index
       properties:
         txHash:
           description: The transaction hash of the UTXO to be spent
@@ -44,10 +45,12 @@ properties:
           type: string
           format: uuid
           example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-          description: The KMS identifier of the private key of the blockchain address
+          description:
+            The KMS identifier of the private key of the blockchain address
             that holds the UTXO to be spent
   to:
-    description: The array of blockchain addresses to send the assets to and the amounts
+    description:
+      The array of blockchain addresses to send the assets to and the amounts
       that each address should receive (in ADA). The difference between the UTXOs
       calculated in the <code>fromUTXO</code> section and the total amount to receive
       calculated in the <code>to</code> section will be used as the gas fee. To explicitly
@@ -58,8 +61,8 @@ properties:
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: The blockchain address to receive the assets
@@ -77,7 +80,8 @@ properties:
     description: The fee to be paid for the transaction (in ADA).
     example: 0.0015
   changeAddress:
-    description: The blockchain address to send any extra assets remaning after covering
+    description:
+      The blockchain address to send any extra assets remaning after covering
       the fee.
     type: string
     example: addr_test1vzdts2y4k47zwypzdh36azxx0w4v8tev6m6svtz9fud0emgchuswu

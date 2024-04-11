@@ -1,12 +1,12 @@
 type: object
 required:
-- address
-- freeNetUsage
-- balance
-- bandwidth
-- trc10
-- trc20
-- createTime
+  - address
+  - freeNetUsage
+  - balance
+  - bandwidth
+  - trc10
+  - trc20
+  - createTime
 properties:
   address:
     type: string
@@ -31,17 +31,18 @@ properties:
           description: Balance of the TRC10 asset.
           example: 123
       required:
-      - key
-      - value
+        - key
+        - value
   trc20:
     type: array
     items:
       type: object
-      description: Balance of the TRC20 assets. It is structured as key value array,
+      description:
+        Balance of the TRC20 assets. It is structured as key value array,
         where key is the address of the TRC20 and value is the balance.
       example:
-        TRkuKAxmWZ4G74MvZnFpoosQZsfvtNpmwH: '30958'
-        TVKXY8DJ9aVTcg3wwVrRRs2FbTUwi4UZWR: '70000'
+        TRkuKAxmWZ4G74MvZnFpoosQZsfvtNpmwH: "30958"
+        TVKXY8DJ9aVTcg3wwVrRRs2FbTUwi4UZWR: "70000"
   createTime:
     type: number
     description: Date of creation of the account in UTC millis.
@@ -49,7 +50,7 @@ properties:
   assetIssuedId:
     type: string
     description: ID of the issued TRC10 token, if any.
-    example: '1003475'
+    example: "1003475"
   assetIssuedName:
     type: number
     description: Balance of the issued TRC10 token, if any.
@@ -72,6 +73,7 @@ properties:
     example: 5000
   bandwidth:
     type: number
-    description: Remaining usage of the network, equal to freeNetLimit - freeNetUsed
+    description:
+      Remaining usage of the network, equal to freeNetLimit - freeNetUsed
       + netLimit - netUsed.
     example: 1500

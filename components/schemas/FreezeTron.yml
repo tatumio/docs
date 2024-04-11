@@ -11,14 +11,14 @@ properties:
     description: Resource to obtain, BANDWIDTH or ENERGY.
     example: ENERGY
     enum:
-    - BANDWIDTH
-    - ENERGY
+      - BANDWIDTH
+      - ENERGY
   amount:
     description: Amount to be frozen in TRX.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- fromPrivateKey
-- resource
-- amount
+  - fromPrivateKey
+  - resource
+  - amount

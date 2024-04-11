@@ -1,8 +1,8 @@
 type: object
 required:
-- estimations
+  - estimations
 properties:
   estimations:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/EthEstimateGas'
+      $ref: "../migrated.yml#/components/schemas/EthEstimateGas"

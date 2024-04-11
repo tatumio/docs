@@ -9,10 +9,10 @@ properties:
     type: string
   statusCode:
     example: 401
-    description: '401'
+    description: "401"
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

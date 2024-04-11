@@ -4,17 +4,19 @@ properties:
     example: withdrawal.pending
     type: string
   message:
-    description: Unable to prepare withdrawal, last withdrawal with id ${id} is not
+    description:
+      Unable to prepare withdrawal, last withdrawal with id ${id} is not
       yet processed by blockchain.
-    example: Unable to prepare withdrawal, last withdrawal with id ${id} is not yet
+    example:
+      Unable to prepare withdrawal, last withdrawal with id ${id} is not yet
       processed by blockchain.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

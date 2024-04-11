@@ -9,7 +9,7 @@ properties:
         balance:
           type: string
           description: Balance of the asset.
-          example: '1000000000'
+          example: "1000000000"
         currency:
           type: string
           description: Asset identifier.
@@ -17,4 +17,4 @@ properties:
   balance:
     type: string
     description: Balance of XRP, in drops.
-    example: '1000000000'
+    example: "1000000000"

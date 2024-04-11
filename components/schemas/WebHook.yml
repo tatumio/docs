@@ -1,27 +1,27 @@
 type: object
 required:
-- id
-- type
-- subscriptionId
-- url
-- data
-- failed
-- response
+  - id
+  - type
+  - subscriptionId
+  - url
+  - data
+  - failed
+  - response
 properties:
   type:
     type: string
     description: Type of the subscription.
     example: ACCOUNT_BALANCE_LIMIT
     enum:
-    - INCOMING_BLOCKCHAIN_HOOK
-    - ADDRESS_TRANSACTION
-    - CONTRACT_LOG_EVENT
-    - TRADE_MATCH
-    - TRADE_PARTIAL_FILL
-    - PENDING_BLOCKCHAIN_HOOK
-    - TRANSACTION_IN_THE_BLOCK
-    - KMS_FAILED_TX
-    - KMS_COMPLETED_TX
+      - INCOMING_BLOCKCHAIN_HOOK
+      - ADDRESS_TRANSACTION
+      - CONTRACT_LOG_EVENT
+      - TRADE_MATCH
+      - TRADE_PARTIAL_FILL
+      - PENDING_BLOCKCHAIN_HOOK
+      - TRANSACTION_IN_THE_BLOCK
+      - KMS_FAILED_TX
+      - KMS_COMPLETED_TX
   id:
     type: string
     description: ID of the WebHook
@@ -57,7 +57,7 @@ properties:
     type: object
     description: Response from the server in case the webhook was unsuccessful
     required:
-    - networkError
+      - networkError
     properties:
       code:
         type: number

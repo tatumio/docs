@@ -4,7 +4,7 @@ properties:
     maxLength: 42
     minLength: 42
     description: The address of the smart contract
-    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    example: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85"
     type: string
   methodName:
     minLength: 1
@@ -16,9 +16,9 @@ properties:
     type: object
     example:
       inputs:
-      - internalType: uint256
-        name: amount
-        type: uint256
+        - internalType: uint256
+          name: amount
+          type: uint256
       name: stake
       outputs: []
       stateMutability: nonpayable
@@ -27,12 +27,12 @@ properties:
   params:
     type: array
     example:
-    - '0x632'
+      - "0x632"
     items:
       type: string
     description: Parameters of the method to be invoked.
 required:
-- contractAddress
-- params
-- methodABI
-- methodName
+  - contractAddress
+  - params
+  - methodABI
+  - methodName

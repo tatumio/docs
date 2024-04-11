@@ -1,5 +1,5 @@
 tags:
-- Tron
+  - Tron
 summary: Create a TRC-20 token
 description: '<p><b>10 credits per API call</b></p>
 
@@ -36,48 +36,52 @@ requestBody:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateTronTrc20Blockchain'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateTronTrc20BlockchainKMS'
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateTronTrc20Blockchain"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateTronTrc20BlockchainKMS"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
-          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+            - $ref: "../../../components/migrated.yml#/components/schemas/TransactionHash"
+            - $ref: "../../../components/migrated.yml#/components/schemas/SignatureId"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403Tron'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403Tron"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []

@@ -86,73 +86,78 @@ description: '<p><b>100 credits per API call on Flow<br/>
   '
 operationId: NftDeployErc721
 parameters:
-- description: Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
-    for testnet API Key. For mainnet API Key, this value is ignored.
-  in: header
-  name: x-testnet-type
-  required: false
-  schema:
-    default: ethereum-sepolia
-    type: string
-    enum:
-    - ethereum-sepolia
+  - description:
+      Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations
+      for testnet API Key. For mainnet API Key, this value is ignored.
+    in: header
+    name: x-testnet-type
+    required: false
+    schema:
+      default: ethereum-sepolia
+      type: string
+      enum:
+        - ethereum-sepolia
 requestBody:
   content:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNft'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftCelo'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTron'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftKMS'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftCeloKMS'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTronKMS'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftFlowPK'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftFlowMnemonic'
-        - $ref: '../../../components/migrated.yml#/components/schemas/DeployNftTezos'
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNft"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftCelo"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftTron"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftKMS"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftCeloKMS"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftTronKMS"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftFlowPK"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftFlowMnemonic"
+          - $ref: "../../../components/migrated.yml#/components/schemas/DeployNftTezos"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
-          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+            - $ref: "../../../components/migrated.yml#/components/schemas/TransactionHash"
+            - $ref: "../../../components/migrated.yml#/components/schemas/SignatureId"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Deploy an NFT smart contract
 tags:
-- NFT (ERC-721 or compatible)
+  - NFT (ERC-721 or compatible)

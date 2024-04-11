@@ -1,4 +1,4 @@
-description: '<p><b>1 credit per API call</b></p>
+description: "<p><b>1 credit per API call</b></p>
 
   <p>Get an estimated block height (number) for some future point in time.</p>
 
@@ -23,31 +23,31 @@ description: '<p><b>1 credit per API call</b></p>
 
   </ul>
 
-  '
+  "
 operationId: GetAuctionEstimatedTime
 parameters:
-- description: The blockchain to work with
-  in: path
-  name: chain
-  required: true
-  schema:
-    type: string
-    enum:
-    - BSC
-    - CELO
-    - ETH
-    - KLAY
-    - MATIC
-    - ONE
-- description: The date and time in the ISO 8601 standard format
-  in: path
-  name: date
-  required: true
-  schema:
-    type: string
-    example: '2021-09-17T07:55:54Z'
+  - description: The blockchain to work with
+    in: path
+    name: chain
+    required: true
+    schema:
+      type: string
+      enum:
+        - BSC
+        - CELO
+        - ETH
+        - KLAY
+        - MATIC
+        - ONE
+  - description: The date and time in the ISO 8601 standard format
+    in: path
+    name: date
+    required: true
+    schema:
+      type: string
+      example: "2021-09-17T07:55:54Z"
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -55,40 +55,44 @@ responses:
           description: The estimated block hight (number)
           example: 15795762
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       perform the required operation due to a logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Estimate the block height for a future point in time
 tags:
-- Blockchain utils
+  - Blockchain utils

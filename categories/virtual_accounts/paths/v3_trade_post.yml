@@ -1,4 +1,5 @@
-description: "<h4>2 credits for API call, 2 credits for each fill of the counter trade.\
+description:
+  "<h4>2 credits for API call, 2 credits for each fill of the counter trade.\
   \ 1 API call + 2 fills  = 6 credits.</h4><br/>\n<p>Store new buy / sell trade. If\
   \ there is trade already available to fill, fill as much trades as possible.<br/>\n\
   It is possible to charge fees for the trades. Fees are an extra amount on top of\
@@ -45,66 +46,70 @@ requestBody:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateTrade'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateFutureTrade'
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateTrade"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateFutureTrade"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Id'
+          $ref: "../../../components/migrated.yml#/components/schemas/Id"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountNotExists'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountCurrencyVC'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403RateNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403VCNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AmountFormat'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1NotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Frozen'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderFeeNotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderFeeIncompatible'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1CustomerDisabled'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2NotFound'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Frozen'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2CustomerDisabled'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Pair'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Pair'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Balance'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Balance'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountNotExists"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountCurrencyVC"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403RateNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403VCNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AmountFormat"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1NotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Frozen"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderFeeNotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderFeeIncompatible"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1CustomerDisabled"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2NotFound"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Frozen"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2CustomerDisabled"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Pair"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Pair"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency1Balance"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403OrderCurrency2Balance"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Store buy / sell trade
 tags:
-- Order Book
+  - Order Book

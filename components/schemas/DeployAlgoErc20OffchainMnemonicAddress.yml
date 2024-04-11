@@ -1,7 +1,8 @@
 type: object
 properties:
   symbol:
-    description: The name of the token; used as an identifier within the Tatum platform
+    description:
+      The name of the token; used as an identifier within the Tatum platform
       and as a currency symbol on the blockchain
     example: MY_TOKEN
     maxLength: 8
@@ -11,18 +12,20 @@ properties:
   supply:
     description: The supply of the token
     maxLength: 38
-    example: '10000000'
+    example: "10000000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   description:
-    description: The description of the token; used as a description within the Tatum
+    description:
+      The description of the token; used as a description within the Tatum
       platform and as a currency name on the blockchain
     example: My Public Token
     maxLength: 100
     minLength: 1
     type: string
   address:
-    description: The blockchain address to be assigned to the virtual account as a
+    description:
+      The blockchain address to be assigned to the virtual account as a
       deposit address
     maxLength: 58
     minLength: 58
@@ -31,39 +34,44 @@ properties:
   mnemonic:
     maxLength: 500
     minLength: 1
-    description: The mnemonic to generate the private key for the blockchain address
+    description:
+      The mnemonic to generate the private key for the blockchain address
       from which the fee for deploying the smart contract will be deducted; is used
       together with the derivation index of this address
-    example: artist alarm clerk obscure timber firm reopen provide ankle vicious exhibit
+    example:
+      artist alarm clerk obscure timber firm reopen provide ankle vicious exhibit
       waste math toilet believe puppy lucky coast post kind black suspect mule able
       market
     type: string
   index:
-    description: The derivation index of the blockchain address from which the fee
+    description:
+      The derivation index of the blockchain address from which the fee
       for deploying the smart contract will be deducted; is used together with the
       mnemonic to generate the private key for this address
     example: 0
     type: integer
     maximum: 2147483647
   basePair:
-    description: The base pair for the virtual currency that represents the token;
+    description:
+      The base pair for the virtual currency that represents the token;
       used to calculate the value of a transaction
     example: EUR
-    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
   baseRate:
     type: number
     example: 1
     default: 1
     minimum: 0
-    description: The exchange rate for the base pair; one unit of the created virtual
+    description:
+      The exchange rate for the base pair; one unit of the created virtual
       currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
   customer:
-    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+    $ref: "../migrated.yml#/components/schemas/CustomerRegistration"
 required:
-- description
-- supply
-- symbol
-- basePair
-- address
-- mnemonic
-- index
+  - description
+  - supply
+  - symbol
+  - basePair
+  - address
+  - mnemonic
+  - index

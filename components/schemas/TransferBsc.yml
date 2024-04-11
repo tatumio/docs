@@ -3,22 +3,24 @@ properties:
   nonce:
     type: number
     minimum: 0
-    description: The nonce to be set to the transaction; if not present, the last
+    description:
+      The nonce to be set to the transaction; if not present, the last
       known nonce will be used
   address:
     description: Blockchain address to send assets
-    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    example: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85"
     maxLength: 42
     minLength: 42
     type: string
   amount:
     description: Amount to be sent.
     maxLength: 38
-    example: '100000'
+    example: "100000"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
@@ -26,13 +28,15 @@ properties:
     type: string
     maxLength: 66
     minLength: 66
-    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
-    description: Private key of sender address. Either mnemonic and index, privateKey
+    example: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85"
+    description:
+      Private key of sender address. Either mnemonic and index, privateKey
       or signature Id must be present - depends on the type of account and xpub.
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -50,17 +54,18 @@ properties:
     type: string
   gasLimit:
     type: string
-    description: Gas limit for transaction in gas price. If not set, automatic calculation
+    description:
+      Gas limit for transaction in gas price. If not set, automatic calculation
       will be used.
     pattern: ^[+]?\d+$
-    example: '40000'
+    example: "40000"
   gasPrice:
     type: string
     description: Gas price in Gwei. If not set, automatic calculation will be used.
     pattern: ^[+]?\d+$
-    example: '20'
+    example: "20"
 required:
-- senderAccountId
-- address
-- amount
-- privateKey
+  - senderAccountId
+  - address
+  - amount
+  - privateKey

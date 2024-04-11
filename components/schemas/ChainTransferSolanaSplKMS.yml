@@ -5,7 +5,7 @@ properties:
     example: SOL
     description: The blockchain to work with
     enum:
-    - SOL
+      - SOL
   from:
     description: The blockchain address to send the fungible tokens from
     maxLength: 44
@@ -26,7 +26,7 @@ properties:
     type: string
   amount:
     description: The amount of the fungible tokens to be sent
-    example: '100000'
+    example: "100000"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   digits:
@@ -39,12 +39,14 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: The KMS identifier of the private key of the blockchain address that
+    description:
+      The KMS identifier of the private key of the blockchain address that
       you are sending the fungible tokens from (the address that you specified in
       the <code>from</code> parameter); the transaction fee will be deducted from
       this address
   feePayer:
-    description: The blockchain address from which the fee will be deducted; if not
+    description:
+      The blockchain address from which the fee will be deducted; if not
       set, defaults to the address that you specified in the <code>from</code> parameter
     example: FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ
     maxLength: 44
@@ -54,15 +56,16 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: The KMS identifier of the private key of the blockchain address that
+    description:
+      The KMS identifier of the private key of the blockchain address that
       you specified in the <code>feePayer</code> parameter; if not set, defaults to
       the signature ID that you specified in the <code>signatureId</code> parameter
 required:
-- chain
-- currency
-- to
-- contractAddress
-- digits
-- signatureId
-- from
-- amount
+  - chain
+  - currency
+  - to
+  - contractAddress
+  - digits
+  - signatureId
+  - from
+  - amount

@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - TRON
+      - TRON
     example: TRON
     type: string
   fromPrivateKey:
@@ -28,8 +28,8 @@ properties:
     example: 100
     description: Fee limit to be set, in TRX
 required:
-- chain
-- feeLimit
-- fromPrivateKey
-- batchCount
-- owner
+  - chain
+  - feeLimit
+  - fromPrivateKey
+  - batchCount
+  - owner

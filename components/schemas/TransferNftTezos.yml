@@ -5,7 +5,7 @@ properties:
     example: TEZOS
     description: The blockchain to work with
     enum:
-    - TEZOS
+      - TEZOS
   from:
     maxLength: 36
     minLength: 36
@@ -28,19 +28,20 @@ properties:
     description: The ID of the NFT
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
   fromPrivateKey:
     type: string
     maxLength: 128
     example: edskRvJQqeNih91dkoRkTG1PWxV5AruYbtrkp5DKibL2iMkPGWBbdYp8jpsY3N3skCNrwf9socTv9Sstonkckc4jTb
     minLength: 64
-    description: The private key of the blockchain address that owns the token or
+    description:
+      The private key of the blockchain address that owns the token or
       has rights to transfer the token. This address will pay the fee for the transaction,
 required:
-- chain
-- from
-- to
-- tokenId
-- contractAddress
-- fromPrivateKey
+  - chain
+  - from
+  - to
+  - tokenId
+  - contractAddress
+  - fromPrivateKey

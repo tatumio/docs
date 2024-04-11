@@ -1,19 +1,19 @@
 type: object
 required:
-- type
-- attr
+  - type
+  - attr
 properties:
   type:
     type: string
     description: Type of the subscription.
     example: TRANSACTION_HISTORY_REPORT
     enum:
-    - TRANSACTION_HISTORY_REPORT
+      - TRANSACTION_HISTORY_REPORT
   attr:
     type: object
     description: Additional attributes based on the subscription type.
     required:
-    - interval
+      - interval
     properties:
       interval:
         type: number

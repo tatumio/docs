@@ -14,10 +14,10 @@ properties:
     example: TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh
   amount:
     description: Amount to be sent in TRX.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- fromPrivateKey
-- to
-- amount
+  - fromPrivateKey
+  - to
+  - amount

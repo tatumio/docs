@@ -13,13 +13,13 @@ properties:
       properties:
         free:
           type: string
-          example: '207.00000000'
+          example: "207.00000000"
         frozen:
           type: string
-          example: '0.00000000'
+          example: "0.00000000"
         locked:
           type: string
-          example: '0.00000000'
+          example: "0.00000000"
         symbol:
           type: string
           example: BNB

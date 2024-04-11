@@ -15,7 +15,7 @@ properties:
   timestamp:
     description: The timestamp of the block
     type: string
-    example: '2021-05-11T13:00:54.913131268Z'
+    example: "2021-05-11T13:00:54.913131268Z"
   collectionGuarantees:
     description: Collection guaranties
     type: array

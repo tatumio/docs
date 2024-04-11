@@ -10,55 +10,58 @@ description: '<p><b>1 credit per API call</b></p>
   '
 operationId: EthGetBalance
 parameters:
-- description: Account address you want to get balance of
-  in: path
-  name: address
-  required: true
-  schema:
-    type: string
-    example: '0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B'
-- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-  in: header
-  name: x-testnet-type
-  required: false
-  schema:
-    default: ethereum-sepolia
-    type: string
-    enum:
-    - ethereum-sepolia
+  - description: Account address you want to get balance of
+    in: path
+    name: address
+    required: true
+    schema:
+      type: string
+      example: "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B"
+  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+    in: header
+    name: x-testnet-type
+    required: false
+    schema:
+      default: ethereum-sepolia
+      type: string
+      enum:
+        - ethereum-sepolia
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/EthBalance'
+          $ref: "../../../components/migrated.yml#/components/schemas/EthBalance"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '500':
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get the ETH balance of an Ethereum account
 tags:
-- Ethereum
+  - Ethereum

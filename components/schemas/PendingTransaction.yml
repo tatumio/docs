@@ -9,38 +9,41 @@ properties:
     example: ETH
     description: Blockchain of the transaction
     enum:
-    - BNB
-    - BTC
-    - ETH
-    - XLM
-    - XRP
-    - BCH
-    - LTC
-    - DOGE
-    - VET
-    - BSC
-    - MATIC
-    - CELO
-    - FLOW
-    - TRON
-    - ONE
-    - XDC
-    - EGLD
-    - KLAY
-    - SOL
+      - BNB
+      - BTC
+      - ETH
+      - XLM
+      - XRP
+      - BCH
+      - LTC
+      - DOGE
+      - VET
+      - BSC
+      - MATIC
+      - CELO
+      - FLOW
+      - TRON
+      - ONE
+      - XDC
+      - EGLD
+      - KLAY
+      - SOL
   hashes:
     type: array
-    description: List of the signature Ids to be used to sign transaction. Those hashes
+    description:
+      List of the signature Ids to be used to sign transaction. Those hashes
       should be in order of signing for the BTC, LTC or BCH blockchains.
     items:
       type: string
-      description: Signature hash representing wallet or private key managed in the
+      description:
+        Signature hash representing wallet or private key managed in the
         Tatum KMS instance.
       example: 1234987askdjfb1o2873ryskajfb1234987askdjfb1o2873ryskajfb1234987askdjfb1o2873ryskajfb
   serializedTransaction:
     type: string
     example: alskdjfq8o27fbkasljfbq8o7b4fqo83f7bqejhafbo8q4f
-    description: Serialized data of the transaction to be signed. It can be JSON,
+    description:
+      Serialized data of the transaction to be signed. It can be JSON,
       HEX or any other representation based on the blockchain.
   withdrawalId:
     description: ID of the pending off-chain withdrawal connected to this transaction
@@ -48,7 +51,8 @@ properties:
     type: string
   index:
     type: number
-    description: In case of mnemonic type of signature Id, this is the index to the
+    description:
+      In case of mnemonic type of signature Id, this is the index to the
       specific account that should be used for signature.
     example: 1
     minimum: 0
@@ -58,12 +62,13 @@ properties:
     type: string
   withdrawalResponses:
     items:
-      $ref: '../migrated.yml#/components/schemas/ResponseData'
+      $ref: "../migrated.yml#/components/schemas/ResponseData"
     type: array
-    description: Additional information used for BTC, LTC, DOGE and BCH off-chain
+    description:
+      Additional information used for BTC, LTC, DOGE and BCH off-chain
       to blockchain transactions.
 required:
-- id
-- chain
-- serializedTransaction
-- hashes
+  - id
+  - chain
+  - serializedTransaction
+  - hashes

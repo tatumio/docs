@@ -5,7 +5,7 @@ properties:
     type: string
   data:
     items:
-      $ref: '../migrated.yml#/components/schemas/ResponseData'
+      $ref: "../migrated.yml#/components/schemas/ResponseData"
     type: array
   id:
     description: ID of withdrawal

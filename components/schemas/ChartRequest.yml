@@ -1,9 +1,9 @@
 type: object
 required:
-- pair
-- from
-- to
-- timeFrame
+  - pair
+  - from
+  - to
+  - timeFrame
 properties:
   pair:
     type: string
@@ -27,15 +27,15 @@ properties:
     example: MIN_5
     description: Time frame of the chart.
     enum:
-    - MIN_1
-    - MIN_3
-    - MIN_5
-    - MIN_15
-    - MIN_30
-    - HOUR_1
-    - HOUR_4
-    - HOUR_12
-    - DAY
-    - WEEK
-    - MONTH
-    - YEAR
+      - MIN_1
+      - MIN_3
+      - MIN_5
+      - MIN_15
+      - MIN_30
+      - HOUR_1
+      - HOUR_4
+      - HOUR_12
+      - DAY
+      - WEEK
+      - MONTH
+      - YEAR

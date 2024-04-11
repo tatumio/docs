@@ -1,8 +1,8 @@
 type: object
 required:
-- senderAccountId
-- address
-- amount
+  - senderAccountId
+  - address
+  - amount
 properties:
   senderAccountId:
     description: Sender account ID
@@ -11,7 +11,8 @@ properties:
     minLength: 24
     type: string
   address:
-    description: Blockchain address to send assets to. For BTC, LTC, and DOGE, it
+    description:
+      Blockchain address to send assets to. For BTC, LTC, and DOGE, it
       is possible to enter list of multiple recipient blockchain addresses as a comma
       separated string.
     example: mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7
@@ -21,20 +22,22 @@ properties:
   amount:
     description: Amount to be withdrawn to blockchain.
     maxLength: 38
-    example: '0.001'
+    example: "0.001"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   multipleAmounts:
-    description: For BTC, LTC, and DOGE, it is possible to enter list of multiple
+    description:
+      For BTC, LTC, and DOGE, it is possible to enter list of multiple
       recipient blockchain amounts. List of recipient addresses must be present in
       the address field and total sum of amounts must be equal to the amount field.
     type: array
     items:
       type: string
-      example: '0.1'
+      example: "0.1"
       pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   attr:
-    description: Used to parametrize withdrawal as a change address for left coins
+    description:
+      Used to parametrize withdrawal as a change address for left coins
       from transaction. XPub or attr must be used.
     maxLength: 256
     minLength: 1

@@ -5,19 +5,20 @@ properties:
     example: ETH
     description: The blockchain to work with
     enum:
-    - BSC
-    - CELO
-    - ETH
-    - MATIC
-    - KLAY
-    - ONE
-    - TRON
+      - BSC
+      - CELO
+      - ETH
+      - MATIC
+      - KLAY
+      - ONE
+      - TRON
   owner:
     type: string
-    description: The blockchain address that will own the precalculated gas pump addresses
+    description:
+      The blockchain address that will own the precalculated gas pump addresses
       and will be used to pay gas fees for operations made on the gas pump addresses;
       can be referred to as "master address"
-    example: '0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD'
+    example: "0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD"
   from:
     type: integer
     description: The start index of the range of gas pump addresses to precalculate
@@ -25,12 +26,13 @@ properties:
     example: 0
   to:
     type: integer
-    description: The end index of the range of gas pump addresses to precalculate;
+    description:
+      The end index of the range of gas pump addresses to precalculate;
       must be greater than or equal to the value in the <code>from</code> parameter
     minimum: 0
     example: 1000
 required:
-- chain
-- owner
-- from
-- to
+  - chain
+  - owner
+  - from
+  - to

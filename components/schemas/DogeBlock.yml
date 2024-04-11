@@ -30,7 +30,8 @@ properties:
     example: a3047a060e5d586a9b26779ebe62fc57ce7323745da8f28761ab755454d89c52
   merkleRoot:
     type: string
-    description: The root node of a merkle tree, a descendant of all the hashed pairs
+    description:
+      The root node of a merkle tree, a descendant of all the hashed pairs
       in the tree.
     example: a1634a42a8e956a5fb5225d06c3af6207e7f6fe5a00fa45229edfd0ddfa587f0
   time:
@@ -42,10 +43,11 @@ properties:
     example: 503452237
   nonce:
     type: number
-    description: Arbitrary number that is used in Litecoin's proof of work consensus
+    description:
+      Arbitrary number that is used in Litecoin's proof of work consensus
       algorithm.
     example: 2278594841
   txs:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/DogeTx'
+      $ref: "../migrated.yml#/components/schemas/DogeTx"

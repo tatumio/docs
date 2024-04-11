@@ -1,20 +1,21 @@
 type: object
 required:
-- to
-- fromUTXO
+  - to
+  - fromUTXO
 properties:
   fromUTXO:
-    description: The array of transaction hashes, indexes of its UTXOs, and the signature
+    description:
+      The array of transaction hashes, indexes of its UTXOs, and the signature
       IDs of the associated blockchain addresses
     type: array
     items:
       type: object
       required:
-      - txHash
-      - value
-      - address
-      - index
-      - signatureId
+        - txHash
+        - value
+        - address
+        - index
+        - signatureId
       properties:
         txHash:
           description: The transaction hash of the UTXO to be spent
@@ -25,7 +26,7 @@ properties:
         value:
           type: string
           description: The amount to send (in DOGE)
-          example: '0.0015'
+          example: "0.0015"
         address:
           description: The blockchain address to receive the assets
           type: string
@@ -42,17 +43,20 @@ properties:
           type: string
           format: uuid
           example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-          description: The KMS identifier of the private key of the blockchain address
+          description:
+            The KMS identifier of the private key of the blockchain address
             that holds the UTXO to be spent
         signatureIdIndex:
-          description: Index of the address in the wallet. Required when signatureId
+          description:
+            Index of the address in the wallet. Required when signatureId
             represents the mnenomic.
           type: number
           example: 0
           minimum: 0
           maximum: 2147483647
   to:
-    description: The array of blockchain addresses to send the assets to and the amounts
+    description:
+      The array of blockchain addresses to send the assets to and the amounts
       that each address should receive (in DOGE). The difference between the UTXOs
       calculated in the <code>fromUTXO</code> section and the total amount to receive
       calculated in the <code>to</code> section will be used as the gas fee. To explicitly
@@ -63,8 +67,8 @@ properties:
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: The blockchain address to receive the assets
@@ -79,12 +83,14 @@ properties:
           example: 0.02969944
   fee:
     type: string
-    description: The fee to be paid for the transaction (in DOGE); if you are using
+    description:
+      The fee to be paid for the transaction (in DOGE); if you are using
       this parameter, you have to also use the <code>changeAddress</code> parameter
       because these two parameters only work together.
-    example: '0.0015'
+    example: "0.0015"
   changeAddress:
-    description: The blockchain address to send any extra assets remaning after covering
+    description:
+      The blockchain address to send any extra assets remaning after covering
       the fee; if you are using this parameter, you have to also use the <code>fee</code>
       parameter because these two parameters only work together.
     type: string

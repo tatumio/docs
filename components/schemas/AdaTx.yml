@@ -7,7 +7,7 @@ properties:
   fee:
     type: string
     description: Fee paid for this transaction, in ADA.
-    example: '0.00001682'
+    example: "0.00001682"
   block:
     type: object
     properties:
@@ -32,7 +32,7 @@ properties:
         value:
           type: string
           description: Value of the transaction, in Lovelace - 1/1000000 of ADA.
-          example: '989946'
+          example: "989946"
         address:
           type: string
           description: Sender address.
@@ -41,4 +41,4 @@ properties:
     description: List of recipient addresses and amounts to send to each of them.
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/AdaUTXO'
+      $ref: "../migrated.yml#/components/schemas/AdaUTXO"

@@ -10,9 +10,10 @@ properties:
     example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
   sequence:
     type: string
-    description: "This account\u2019s current sequence number. For use when submitting\
+    description:
+      "This account\u2019s current sequence number. For use when submitting\
       \ this account\u2019s next transaction."
-    example: '1'
+    example: "1"
   subentry_count:
     type: number
     description: The number of subentries on this account.
@@ -25,33 +26,39 @@ properties:
     properties:
       low_threshold:
         type: number
-        description: The weight required for a valid transaction including the Allow
+        description:
+          The weight required for a valid transaction including the Allow
           Trust and Bump Sequence operations.
         example: 0
       med_threshold:
         type: number
-        description: The weight required for a valid transaction including the Create
+        description:
+          The weight required for a valid transaction including the Create
           Account, Payment, Path Payment, Manage Buy Offer, Manage Sell Offer, Create
           Passive Sell Offer, Change Trust, Inflation, and Manage Data operations.
         example: 0
       high_threshold:
         type: number
-        description: The weight required for a valid transaction including the Account
+        description:
+          The weight required for a valid transaction including the Account
           Merge and Set Options operations.
         example: 0
     type: object
-    description: Operations have varying levels of access. This field specifies thresholds
+    description:
+      Operations have varying levels of access. This field specifies thresholds
       for different access levels, as well as the weight of the master key.
   flags:
     properties:
       auth_required:
         type: boolean
-        description: If set to true, anyone who wants to hold an asset issued by this
+        description:
+          If set to true, anyone who wants to hold an asset issued by this
           account must first be approved by this account.
         example: false
       auth_revocable:
         type: boolean
-        description: If set to true, this account can freeze the balance of a holder
+        description:
+          If set to true, this account can freeze the balance of a holder
           of an asset issued by this account.
         example: false
       auth_immutable:
@@ -69,20 +76,21 @@ properties:
         balance:
           type: string
           description: The number of units of an asset held by this account.
-          example: '99.9999000'
+          example: "99.9999000"
         limit:
           type: string
-          description: The maximum amount of this asset that this account is willing
+          description:
+            The maximum amount of this asset that this account is willing
             to accept. Specified when opening a trustline.
-          example: '99.9999000'
+          example: "99.9999000"
         buying_liabilities:
           type: string
           description: The sum of all buy offers owned by this account for this asset.
-          example: '0.0000000'
+          example: "0.0000000"
         selling_liabilities:
           type: string
           description: The sum of all sell offers owned by this account for this asset.
-          example: '0.0000000'
+          example: "0.0000000"
         asset_type:
           type: string
           description: Either native, credit_alphanum4, or credit_alphanum12.
@@ -97,14 +105,16 @@ properties:
           example: GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H
   signers:
     type: array
-    description: The public keys and associated weights that can be used to authorize
+    description:
+      The public keys and associated weights that can be used to authorize
       transactions for this account. Used for multi-sig.
     items:
       type: object
       properties:
         weight:
           type: number
-          description: The numerical weight of a signer. Used to determine if a transaction
+          description:
+            The numerical weight of a signer. Used to determine if a transaction
             meets the threshold requirements.
           example: 1
         key:
@@ -116,9 +126,9 @@ properties:
           description: The type of hash for this signer.
           example: ed25519_public_key
           enum:
-          - sha256_hash
-          - ed25519_public_key
-          - preauth_tx
+            - sha256_hash
+            - ed25519_public_key
+            - preauth_tx
   data:
     properties: {}
     type: object

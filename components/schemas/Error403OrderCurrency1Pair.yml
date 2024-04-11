@@ -4,17 +4,19 @@ properties:
     example: trade.currency1.pair
     type: string
   message:
-    description: Incompatible currencies for currency1 account ${trade.currency1AccountId}
+    description:
+      Incompatible currencies for currency1 account ${trade.currency1AccountId}
       and trading pair.
-    example: Incompatible currencies for currency1 account ${trade.currency1AccountId}
+    example:
+      Incompatible currencies for currency1 account ${trade.currency1AccountId}
       and trading pair.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - CELO
+      - CELO
     example: CELO
     type: string
   feeCurrency:
@@ -11,13 +11,13 @@ properties:
     description: The currency in which the gas fee will be paid
     default: CELO
     enum:
-    - CELO
-    - CUSD
-    - CEUR
+      - CELO
+      - CUSD
+      - CEUR
   fromPrivateKey:
     type: string
     maxLength: 66
-    example: '0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2'
+    example: "0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2"
     minLength: 66
     description: Private key of account, from which the transaction will be initiated.
   enableFungibleTokens:
@@ -31,24 +31,27 @@ properties:
   enableSemiFungibleTokens:
     type: boolean
     example: false
-    description: If address should support ERC1155 tokens, it should be marked as
+    description:
+      If address should support ERC1155 tokens, it should be marked as
       true.
   enableBatchTransactions:
     type: boolean
     example: false
-    description: If address should support batch transfers of the assets, it should
+    description:
+      If address should support batch transfers of the assets, it should
       be marked as true.
   fee:
-    $ref: '../migrated.yml#/components/schemas/CustomFee'
+    $ref: "../migrated.yml#/components/schemas/CustomFee"
   nonce:
     type: number
     minimum: 0
-    description: The nonce to be set to the transaction; if not present, the last
+    description:
+      The nonce to be set to the transaction; if not present, the last
       known nonce will be used
 required:
-- chain
-- fromPrivateKey
-- enableFungibleTokens
-- enableNonFungibleTokens
-- enableSemiFungibleTokens
-- enableBatchTransactions
+  - chain
+  - fromPrivateKey
+  - enableFungibleTokens
+  - enableNonFungibleTokens
+  - enableSemiFungibleTokens
+  - enableBatchTransactions

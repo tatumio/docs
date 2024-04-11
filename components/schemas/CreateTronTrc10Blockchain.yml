@@ -48,11 +48,11 @@ properties:
     description: Number of decimal places of the token.
     example: 10
 required:
-- fromPrivateKey
-- recipient
-- name
-- abbreviation
-- description
-- url
-- totalSupply
-- decimals
+  - fromPrivateKey
+  - recipient
+  - name
+  - abbreviation
+  - description
+  - url
+  - totalSupply
+  - decimals

@@ -2,4 +2,4 @@ type: array
 description: (Flow) Token ids
 items:
   type: string
-  example: '3654'
+  example: "3654"

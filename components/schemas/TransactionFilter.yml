@@ -12,14 +12,16 @@ properties:
     minLength: 24
     type: string
   from:
-    description: Starting date to search for transactions from in UTC millis. If not
+    description:
+      Starting date to search for transactions from in UTC millis. If not
       present, search all history.
     example: 1571833231000
     type: integer
     format: int64
     minimum: 0
   to:
-    description: Date until to search for transactions in UTC millis. If not present,
+    description:
+      Date until to search for transactions in UTC millis. If not present,
       search up till now.
     example: 1571833231000
     type: integer
@@ -42,19 +44,19 @@ properties:
           description: Filtering operation.
           example: gte
           enum:
-          - gte
-          - lte
-          - gt
-          - lt
-          - eq
-          - neq
+            - gte
+            - lte
+            - gt
+            - lt
+            - eq
+            - neq
         value:
           type: string
           description: Value of the operation.
-          example: '1.5'
+          example: "1.5"
       required:
-      - op
-      - value
+        - op
+        - value
   currencies:
     description: List of currencies of the transactions.
     type: array
@@ -66,24 +68,6 @@ properties:
   transactionType:
     description: Type of payment
     enum:
-    - FAILED
-    - DEBIT_PAYMENT
-    - CREDIT_PAYMENT
-    - CREDIT_DEPOSIT
-    - DEBIT_WITHDRAWAL
-    - CANCEL_WITHDRAWAL
-    - DEBIT_OUTGOING_PAYMENT
-    - EXCHANGE_BUY
-    - EXCHANGE_SELL
-    - DEBIT_TRANSACTION
-    - CREDIT_INCOMING_PAYMENT
-  transactionTypes:
-    description: Types of payment
-    type: array
-    items:
-      type: string
-      example: CREDIT_PAYMENT
-      enum:
       - FAILED
       - DEBIT_PAYMENT
       - CREDIT_PAYMENT
@@ -95,17 +79,35 @@ properties:
       - EXCHANGE_SELL
       - DEBIT_TRANSACTION
       - CREDIT_INCOMING_PAYMENT
+  transactionTypes:
+    description: Types of payment
+    type: array
+    items:
+      type: string
+      example: CREDIT_PAYMENT
+      enum:
+        - FAILED
+        - DEBIT_PAYMENT
+        - CREDIT_PAYMENT
+        - CREDIT_DEPOSIT
+        - DEBIT_WITHDRAWAL
+        - CANCEL_WITHDRAWAL
+        - DEBIT_OUTGOING_PAYMENT
+        - EXCHANGE_BUY
+        - EXCHANGE_SELL
+        - DEBIT_TRANSACTION
+        - CREDIT_INCOMING_PAYMENT
   opType:
     description: Type of operation
     enum:
-    - PAYMENT
-    - WITHDRAWAL
-    - BLOCKCHAIN_TRANSACTION
-    - EXCHANGE
-    - FAILED
-    - DEPOSIT
-    - MINT
-    - REVOKE
+      - PAYMENT
+      - WITHDRAWAL
+      - BLOCKCHAIN_TRANSACTION
+      - EXCHANGE
+      - FAILED
+      - DEPOSIT
+      - MINT
+      - REVOKE
     example: PAYMENT
     type: string
   transactionCode:
@@ -116,22 +118,22 @@ properties:
     type: string
   paymentId:
     description: Payment ID defined in payment order by sender.
-    example: '65426'
+    example: "65426"
     maxLength: 100
     minLength: 1
     type: string
   recipientNote:
     description: Recipient note defined in payment order by sender.
-    example: '65426'
+    example: "65426"
     maxLength: 500
     minLength: 1
     type: string
   senderNote:
     description: Sender note defined in payment order by sender.
-    example: '65426'
+    example: "65426"
     maxLength: 500
     minLength: 1
     type: string
 required:
-- id
+  - id
 type: object

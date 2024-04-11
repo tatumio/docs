@@ -1,4 +1,4 @@
-description: '<p><b>10 credits per API call</b></p>
+description: "<p><b>10 credits per API call</b></p>
 
   <p>Get information about blocks (when they were added, how many NFTs and events
   were ingested and list of transaction hashes that were processed within them) on
@@ -33,114 +33,120 @@ description: '<p><b>10 credits per API call</b></p>
 
   </ul>
 
-  '
+  "
 operationId: GetBlocksOld
 parameters:
-- description: The blockchain to work with.
-  in: query
-  name: chain
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/ChainEnum'
-- description: List of block numbers, separated by comma.
-  in: query
-  name: blockIds
-  schema:
-    type: array
-    items:
-      type: integer
-    example: 1,2,4,400
-    minimum: 0
-- description: Range of block numbers. Both blockFrom and blockTo need to be specified.
-  in: query
-  name: blockFrom
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/BlockNumber'
-- description: Range of block numbers. Both blockFrom and blockTo need to be specified.
-  in: query
-  name: blockTo
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/BlockNumber'
-- description: Date range when blocks were processed. Both timeFrom and timeTo need
-    to be specified.
-  in: query
-  name: timeFrom
-  schema:
-    type: string
-    example: 2022-12-24T00:10
-- description: Date range when blocks were processed. Both timeFrom and timeTo need
-    to be specified.
-  in: query
-  name: timeTo
-  schema:
-    type: string
-    example: 2022-12-24T00:20
-- description: The number of items per page (default is 50).
-  in: query
-  name: pageSize
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/PageSize'
-- description: The offset to obtain next page of the data.
-  in: query
-  name: offset
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/Offset'
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/ChainEnum"
+  - description: List of block numbers, separated by comma.
+    in: query
+    name: blockIds
+    schema:
+      type: array
+      items:
+        type: integer
+      example: 1,2,4,400
+      minimum: 0
+  - description: Range of block numbers. Both blockFrom and blockTo need to be specified.
+    in: query
+    name: blockFrom
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/BlockNumber"
+  - description: Range of block numbers. Both blockFrom and blockTo need to be specified.
+    in: query
+    name: blockTo
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/BlockNumber"
+  - description:
+      Date range when blocks were processed. Both timeFrom and timeTo need
+      to be specified.
+    in: query
+    name: timeFrom
+    schema:
+      type: string
+      example: 2022-12-24T00:10
+  - description:
+      Date range when blocks were processed. Both timeFrom and timeTo need
+      to be specified.
+    in: query
+    name: timeTo
+    schema:
+      type: string
+      example: 2022-12-24T00:20
+  - description: The number of items per page (default is 50).
+    in: query
+    name: pageSize
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/PageSize"
+  - description: The offset to obtain next page of the data.
+    in: query
+    name: offset
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/Offset"
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           type: array
           items:
-            $ref: '../../../components/migrated.yml#/components/schemas/BlockItem'
+            $ref: "../../../components/migrated.yml#/components/schemas/BlockItem"
           description: List of blocks added to a blockchain.
           example:
-          - blockNumber: 10
-            blockTimestamp: 1598671520000
-            hash: '0xec1a2d906f34e1981b2b1a15dbe5e10cf640e8b4b27dc056ebb65c0409b5a9af'
-            eventIngestedSize: 0
-            nftIngestedSize: 0
-          - blockNumber: 11
-            blockTimestamp: 1598671540000
-            hash: '0xa78e7a9c6910fea66a981389735e0c652f1625905c6e0dca08d3f5c1694b7cc4'
-            eventIngestedSize: 1
-            nftIngestedSize: 0
-            txHashes:
-            - '0x19eaae1f7bdd28605f4175d7e87c9de68431bf76e85a262e268252a84bfc3984'
+            - blockNumber: 10
+              blockTimestamp: 1598671520000
+              hash: "0xec1a2d906f34e1981b2b1a15dbe5e10cf640e8b4b27dc056ebb65c0409b5a9af"
+              eventIngestedSize: 0
+              nftIngestedSize: 0
+            - blockNumber: 11
+              blockTimestamp: 1598671540000
+              hash: "0xa78e7a9c6910fea66a981389735e0c652f1625905c6e0dca08d3f5c1694b7cc4"
+              eventIngestedSize: 1
+              nftIngestedSize: 0
+              txHashes:
+                - "0x19eaae1f7bdd28605f4175d7e87c9de68431bf76e85a262e268252a84bfc3984"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get specified blocks
 tags:
-- Data API (old)
+  - Data API (old)

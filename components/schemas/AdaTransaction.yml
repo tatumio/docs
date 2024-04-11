@@ -1,9 +1,10 @@
 type: object
 required:
-- to
+  - to
 properties:
   fromAddress:
-    description: Array of addresses and corresponding private keys. Tatum will automatically
+    description:
+      Array of addresses and corresponding private keys. Tatum will automatically
       scan last unspent transactions for each address and will use all of the unspent
       values. We advise to use this option if you have 1 address per 1 transaction
       only.
@@ -11,7 +12,7 @@ properties:
     items:
       type: object
       required:
-      - address
+        - address
       properties:
         address:
           description: Address to send assets from.
@@ -20,7 +21,8 @@ properties:
           maximum: 150
           example: addr1qxm3vd0msv9ph8elhy7xrv975z88y6lr3d8vdgy3fwr2e22uvu2ffa2ctx3pdl4rjjja5p7al2k356x5yx8cn03am88s2807d9
         privateKey:
-          description: Private key of the address to send assets from. Private key,
+          description:
+            Private key of the address to send assets from. Private key,
             or signature Id must be present.
           type: string
           minimum: 192
@@ -30,18 +32,20 @@ properties:
           type: string
           format: uuid
           example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-          description: Identifier of the private key associated in signing application.
+          description:
+            Identifier of the private key associated in signing application.
             Private key, or signature Id must be present.
   fromUTXO:
-    description: Array of transaction hashes, index of UTXO in it and corresponding
+    description:
+      Array of transaction hashes, index of UTXO in it and corresponding
       private keys. Use this option if you want to calculate amount to send manually.
       Either fromUTXO or fromAddress must be present.
     type: array
     items:
       type: object
       required:
-      - txHash
-      - index
+        - txHash
+        - index
       properties:
         txHash:
           description: Transaction hash of the UTXO to be spent.
@@ -56,7 +60,8 @@ properties:
           minimum: 0
           maximum: 2147483647
         privateKey:
-          description: Private key of the UTXO to be spent. Private key, or signature
+          description:
+            Private key of the UTXO to be spent. Private key, or signature
             Id must be present.
           type: string
           example: 7808a501e1bbc9926ac8ac6981e47cb0401288ae331a1f2333d1bed46c5b3051b5f875c39477b05bc3a43a3800b763f616ae3646f21df0ab5d95db944e71f5cfa8082d5c4e6241d49b17b2b6173f01bb3fd03be012cc8908ceea9e559e33e4fc
@@ -66,17 +71,19 @@ properties:
           type: string
           format: uuid
           example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-          description: Identifier of the private key associated in signing application.
+          description:
+            Identifier of the private key associated in signing application.
             Private key, or signature Id must be present.
   to:
-    description: Array of addresses and values to send Litecoins to. Values must be
+    description:
+      Array of addresses and values to send Litecoins to. Values must be
       set in LTC. Difference between from and to is transaction fee.
     type: array
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: Destination address.

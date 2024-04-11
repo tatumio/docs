@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -19,7 +19,7 @@ properties:
     example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
   amount:
     description: Amount of funds to withdraw.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   signatureId:
@@ -28,9 +28,9 @@ properties:
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
     description: The KMS identifier of the private key of the marketplace fee recipient
 required:
-- chain
-- contractAddress
-- nftAddress
-- amount
-- from
-- signatureId
+  - chain
+  - contractAddress
+  - nftAddress
+  - amount
+  - from
+  - signatureId

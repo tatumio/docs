@@ -1,5 +1,6 @@
 type: object
-description: <p>The <code>MintNftTron</code> schema lets you mint NFTs natively on
+description:
+  <p>The <code>MintNftTron</code> schema lets you mint NFTs natively on
   TRON and sign the transaction with your private key.<br/>For more information, see
   "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
   an NFT</a>.</p><br/>
@@ -9,7 +10,7 @@ properties:
     example: TRON
     description: The blockchain to work with
     enum:
-    - TRON
+      - TRON
   to:
     maxLength: 34
     minLength: 34
@@ -26,10 +27,11 @@ properties:
     description: The ID of the NFT
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
   url:
-    description: The URL pointing to the NFT metadata; for more information, see <a
+    description:
+      The URL pointing to the NFT metadata; for more information, see <a
       href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     example: https://my_token_data.com
     type: string
@@ -43,13 +45,14 @@ properties:
     maxLength: 64
     example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
     minLength: 64
-    description: The private key of the blockchain address that will pay the fee for
+    description:
+      The private key of the blockchain address that will pay the fee for
       the transaction
 required:
-- chain
-- to
-- url
-- feeLimit
-- contractAddress
-- fromPrivateKey
-- tokenId
+  - chain
+  - to
+  - url
+  - feeLimit
+  - contractAddress
+  - fromPrivateKey
+  - tokenId

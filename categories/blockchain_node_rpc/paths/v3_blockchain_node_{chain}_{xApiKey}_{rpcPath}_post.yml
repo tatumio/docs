@@ -1,4 +1,5 @@
-description: "<p><b>The number of credits consumed depends on the number of methods\
+description:
+  "<p><b>The number of credits consumed depends on the number of methods\
   \ submitted in an API call:<br/>\n* 50 credits per debug*/trace* method (for EVM-based\
   \ blockchains)<br/>\n* 50 credits per EOS <a href=\"https://developers.eos.io/manuals/eos/v2.0/nodeos/plugins/trace_api_plugin/api-reference/index\"\
   \ target=\"_blank\">Trace API</a> methods <br/>\n* 5 credits per eth_call method\
@@ -59,70 +60,74 @@ description: "<p><b>The number of credits consumed depends on the number of meth
   \ target=\"_blank\">Zilliqa</a></li>\n</ul>\n"
 operationId: NodeJsonPostRpcDriver
 parameters:
-- description: Tatum X-API-Key used for authorization. You can omit this path parameter
-    and either use the X-Api-Key header, or the API key tied to your IP address without
-    any header.
-  in: path
-  name: xApiKey
-  required: true
-  schema:
-    type: string
-    example: ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5
-- description: Blockchain to communicate with.
-  in: path
-  name: chain
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/NodeRpcPostChains'
-- description: Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
-  in: path
-  name: rpcPath
-  required: true
-  schema:
-    type: string
-    example: v2/accounts
+  - description:
+      Tatum X-API-Key used for authorization. You can omit this path parameter
+      and either use the X-Api-Key header, or the API key tied to your IP address without
+      any header.
+    in: path
+    name: xApiKey
+    required: true
+    schema:
+      type: string
+      example: ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5
+  - description: Blockchain to communicate with.
+    in: path
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/NodeRpcPostChains"
+  - description: Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
+    in: path
+    name: rpcPath
+    required: true
+    schema:
+      type: string
+      example: v2/accounts
 requestBody:
   content:
     application/json:
       schema:
         type: object
-        description: A valid Web3 RPC method content body with one or multiple RPC
+        description:
+          A valid Web3 RPC method content body with one or multiple RPC
           methods
         example:
-          jsonrpc: '2.0'
+          jsonrpc: "2.0"
           method: web3_clientVersion
           params: []
           id: 2
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           type: object
           description: A valid RPC response
           example:
-            jsonrpc: '2.0'
+            jsonrpc: "2.0"
             id: 2
             result: Geth/v1.9.9-omnibus-e320ae4c-20191206/linux-amd64/go1.13.4
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '500':
+  "500":
     content:
       application/json:
         schema:
@@ -132,4 +137,4 @@ responses:
 x-codeSamples: []
 summary: Connect to the blockchain node through an RPC driver
 tags:
-- Node RPC
+  - Node RPC

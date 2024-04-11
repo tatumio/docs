@@ -9,5 +9,5 @@ properties:
     example: 5695321609876367000
     description: The generated blockchain address
 required:
-- txId
-- address
+  - txId
+  - address

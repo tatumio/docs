@@ -1,13 +1,14 @@
 required:
-- address
-- currency
+  - address
+  - currency
 properties:
   address:
     description: Blockchain address.
     example: 7c21ed165e294db78b95f0f181086d6f
     type: string
   currency:
-    description: Currency of generated address. BTC, LTC, DOGE, BCH, ETH, XRP, XLM,
+    description:
+      Currency of generated address. BTC, LTC, DOGE, BCH, ETH, XRP, XLM,
       BNB, TRX, ERC20, TRC20.
     example: BTC
     type: string
@@ -17,7 +18,8 @@ properties:
     type: integer
     maximum: 2147483647
   xpub:
-    description: Extended public key to derive address from. In case of XRP, this
+    description:
+      Extended public key to derive address from. In case of XRP, this
       is account address, since address is defined as DestinationTag, which is address
       field. In case of XLM, this is account address, since address is defined as
       message, which is address field.
@@ -30,9 +32,9 @@ properties:
   memo:
     description: In case of BNB, message is the distinguisher of the account.
     type: string
-    example: '5'
+    example: "5"
   message:
     description: In case of XLM, message is the distinguisher of the account.
     type: string
-    example: '5'
+    example: "5"
 type: object

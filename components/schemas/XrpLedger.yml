@@ -13,7 +13,8 @@ properties:
         example: 9E081790E520046EBA4B2ED3869C762C16EEAC6817293D40AFFD1F1B602A2321
       close_flags:
         type: integer
-        description: 'A bit-map of flags relating to the closing of this ledger. Currently,
+        description:
+          'A bit-map of flags relating to the closing of this ledger. Currently,
           the ledger has only one flag defined for close_flags: sLCF_NoConsensusTime
           (value 1). If this flag is enabled, it means that validators were in conflict
           regarding the correct close time for the ledger, but build otherwise the
@@ -25,11 +26,13 @@ properties:
         example: 0
       close_time:
         type: integer
-        description: The time this ledger was closed, in seconds since the Ripple
+        description:
+          The time this ledger was closed, in seconds since the Ripple
           Epoch
         example: 640976331
       close_time_human:
-        description: The time this ledger was closed, in human-readable format. Always
+        description:
+          The time this ledger was closed, in human-readable format. Always
           uses the UTC time zone.
         type: string
         example: 2020-Apr-23 16:58:51.000000000 UTC
@@ -51,36 +54,39 @@ properties:
       ledger_index:
         description: The Ledger Index of this ledger, as a quoted integer.
         type: string
-        example: '6543210'
+        example: "6543210"
       parent_close_time:
         description: The time at which the previous ledger was closed.
         type: integer
         example: 640976330
       parent_hash:
-        description: Unique identifying hash of the ledger that came immediately before
+        description:
+          Unique identifying hash of the ledger that came immediately before
           this one.
         type: string
         example: 02860E47A797340505B51DE00E21AA576B1E50509C0C7FF8D5475954DA5FE7B5
       seqNum:
         type: string
-        example: '6543210'
+        example: "6543210"
       totalCoins:
         type: string
-        example: '99999971496551645'
+        example: "99999971496551645"
       total_coins:
         type: string
-        description: Total number of XRP drops in the network, as a quoted integer.
+        description:
+          Total number of XRP drops in the network, as a quoted integer.
           (This decreases as transaction costs destroy XRP.)
-        example: '99999971496551645'
+        example: "99999971496551645"
       transaction_hash:
         type: string
-        description: Hash of the transaction information included in this ledger,
+        description:
+          Hash of the transaction information included in this ledger,
           as hex.
         example: F415CCAB1ED22B2E81C8BE588A0521634F1CBC478BE3A5563B1E09D283A082C9
       transactions:
         type: array
         items:
-          $ref: '../migrated.yml#/components/schemas/XrpTx'
+          $ref: "../migrated.yml#/components/schemas/XrpTx"
   ledger_hash:
     type: string
     description: Unique identifying hash of the entire ledger.
@@ -91,6 +97,7 @@ properties:
     example: 6543210
   validated:
     type: boolean
-    description: True if this data is from a validated ledger version; if omitted
+    description:
+      True if this data is from a validated ledger version; if omitted
       or set to false, this data is not final.
     example: true

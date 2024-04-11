@@ -22,7 +22,7 @@ properties:
   postTokenBalances:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/TokenBalance'
+      $ref: "../migrated.yml#/components/schemas/TokenBalance"
   preBalances:
     type: array
     items:
@@ -31,7 +31,7 @@ properties:
   preTokenBalances:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/TokenBalance'
+      $ref: "../migrated.yml#/components/schemas/TokenBalance"
   rewards:
     type: array
     items:

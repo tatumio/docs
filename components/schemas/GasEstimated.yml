@@ -1,14 +1,15 @@
 type: object
 required:
-- gasLimit
-- gasPrice
+  - gasLimit
+  - gasPrice
 properties:
   gasPrice:
     type: string
     description: The estimated price for one gas unit (in wei)
-    example: '10000000000'
+    example: "10000000000"
   gasLimit:
     type: number
-    description: The number of the gas units needed to process the transaction at
+    description:
+      The number of the gas units needed to process the transaction at
       the estimated gas price
-    example: '21000'
+    example: "21000"

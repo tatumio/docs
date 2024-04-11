@@ -17,7 +17,7 @@ properties:
     example: 9MLntRkghAgC7ZR1RQouE9EkXwjTfZxbi9nBziofPTjM
     type: string
 required:
-- txId
-- contractAddress
-- feeAccount
-- treasuryAccount
+  - txId
+  - contractAddress
+  - feeAccount
+  - treasuryAccount

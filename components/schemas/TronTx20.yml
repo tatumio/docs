@@ -1,11 +1,11 @@
 type: object
 required:
-- txID
-- to
-- tokenInfo
-- type
-- value
-- from
+  - txID
+  - to
+  - tokenInfo
+  - type
+  - value
+  - from
 properties:
   txID:
     type: string
@@ -14,10 +14,10 @@ properties:
   tokenInfo:
     type: object
     required:
-    - symbol
-    - decimals
-    - address
-    - name
+      - symbol
+      - decimals
+      - address
+      - name
     properties:
       symbol:
         type: string
@@ -42,4 +42,4 @@ properties:
     example: Transfer
   value:
     type: string
-    example: '1800'
+    example: "1800"

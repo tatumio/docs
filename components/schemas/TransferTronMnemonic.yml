@@ -9,18 +9,20 @@ properties:
   amount:
     description: Amount to be sent in Tron.
     maxLength: 38
-    example: '100000'
+    example: "100000"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   fee:
-    description: Fee to be submitted as a transaction fee to blockchain. If none is
+    description:
+      Fee to be submitted as a transaction fee to blockchain. If none is
       set, default value of 2.5 TRX is used.
-    example: '2.5'
+    example: "2.5"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   index:
@@ -31,15 +33,17 @@ properties:
   mnemonic:
     maxLength: 500
     minLength: 1
-    description: Mnemonic to generate private key for sender address. Either mnemonic
+    description:
+      Mnemonic to generate private key for sender address. Either mnemonic
       and index, privateKey or signature Id must be present - depends on the type
       of account and xpub.
     example: urge pulp usage sister evidence arrest palm math please chief egg abuse
     type: string
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -56,8 +60,8 @@ properties:
     example: Sender note
     type: string
 required:
-- senderAccountId
-- address
-- amount
-- mnemonic
-- index
+  - senderAccountId
+  - address
+  - amount
+  - mnemonic
+  - index

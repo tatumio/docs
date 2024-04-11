@@ -19,8 +19,8 @@ properties:
   forgedAt:
     type: string
     description: Time of the block.
-    example: '2020-10-20T08:21:50.107Z'
+    example: "2020-10-20T08:21:50.107Z"
   transactions:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/AdaTx'
+      $ref: "../migrated.yml#/components/schemas/AdaTx"

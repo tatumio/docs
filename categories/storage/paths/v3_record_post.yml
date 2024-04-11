@@ -1,4 +1,5 @@
-description: '<p><b>2 credits per API call + additional credits based on the size
+description:
+  "<p><b>2 credits per API call + additional credits based on the size
   of the stored data and the type of the blockchain</b></p>
 
   <p>Store data on the blockchain.</p>
@@ -32,63 +33,67 @@ description: '<p><b>2 credits per API call + additional credits based on the siz
 
   </ul>
 
-  '
+  "
 operationId: StoreLog
 requestBody:
   content:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateRecord'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateRecordKMS'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateRecordCelo'
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateRecord"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateRecordKMS"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateRecordCelo"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
+          $ref: "../../../components/migrated.yml#/components/schemas/TransactionHash"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       perform the required operation due to a logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthBroadcast'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasPrice'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxBody'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxHash'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403EthTxSign'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthBroadcast"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthGasPrice"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxBody"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthGasCalculation"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxHash"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403EthTxSign"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Store a log record
 tags:
-- Blockchain storage
+  - Blockchain storage

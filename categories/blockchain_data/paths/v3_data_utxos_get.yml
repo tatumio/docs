@@ -1,4 +1,4 @@
-description: '<p><b>100 credits per API call</b></p>
+description: "<p><b>100 credits per API call</b></p>
 
   <p>Get unspent UTXOs for a specific address up to a specific total amount.
 
@@ -31,55 +31,56 @@ description: '<p><b>100 credits per API call</b></p>
 
   </ul>
 
-  '
+  "
 operationId: GetUtxosByAddressOld
 parameters:
-- description: The blockchain to work with.
-  in: query
-  name: chain
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/ChainUtxoEnum'
-- description: The blockchain address.
-  in: query
-  name: address
-  required: true
-  schema:
-    type: string
-    example: bc1qmfp2r68cde646jv5ns7x2qvah8v5qtfw8gznj2
-- description: The total amount of transaction you want to send. Only UTXOs up to
-    this amount will be returned, so you will not spend more than you need.
-  in: query
-  name: totalValue
-  required: true
-  schema:
-    type: number
-    example: 0.0001
-    minimum: 0
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/ChainUtxoEnum"
+  - description: The blockchain address.
+    in: query
+    name: address
+    required: true
+    schema:
+      type: string
+      example: bc1qmfp2r68cde646jv5ns7x2qvah8v5qtfw8gznj2
+  - description:
+      The total amount of transaction you want to send. Only UTXOs up to
+      this amount will be returned, so you will not spend more than you need.
+    in: query
+    name: totalValue
+    required: true
+    schema:
+      type: number
+      example: 0.0001
+      minimum: 0
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           type: array
-          description: 'Information about specific collection or token
+          description: "Information about specific collection or token
 
             (not all fields are available for every token, e.g. some multitokens do
             not have name and symbol).
 
-            '
+            "
           items:
             type: object
             required:
-            - chain
-            - address
-            - txHash
-            - index
-            - value
-            - valueAsString
+              - chain
+              - address
+              - txHash
+              - index
+              - value
+              - valueAsString
             properties:
               chain:
-                $ref: '../../../components/migrated.yml#/components/schemas/ChainUtxoEnum'
+                $ref: "../../../components/migrated.yml#/components/schemas/ChainUtxoEnum"
               address:
                 type: string
                 description: Address of the UTXO
@@ -87,7 +88,7 @@ responses:
               txHash:
                 type: string
                 description: Hash of the transaction this UTXO is present in
-                example: '0x1b5b3e8a671434bf5d0d38e3e52dcafac484441a48bfae4a3f71e5b0b3093d8e'
+                example: "0x1b5b3e8a671434bf5d0d38e3e52dcafac484441a48bfae4a3f71e5b0b3093d8e"
               index:
                 type: number
                 description: Index of the UTXO in the transaction
@@ -98,43 +99,48 @@ responses:
                 example: 0.0001
               valueAsString:
                 type: string
-                description: String representation of the value of the UTXO, in BTC,
+                description:
+                  String representation of the value of the UTXO, in BTC,
                   LTC or DOGE.
-                example: '0.0001'
+                example: "0.0001"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get unspent UTXOs for an address
 tags:
-- Data API (old)
+  - Data API (old)

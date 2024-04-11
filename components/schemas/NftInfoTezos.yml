@@ -7,7 +7,7 @@ properties:
   description:
     type: string
     description: The total supply of the NFT collection.
-    example: '5000'
+    example: "5000"
   tokenType:
     type: string
     description: The type of the token (e.g., ERC721, ERC1155).

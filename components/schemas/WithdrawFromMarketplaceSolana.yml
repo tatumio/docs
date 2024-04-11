@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -19,7 +19,7 @@ properties:
     example: FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU
   amount:
     description: Amount of funds to withdraw.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   fromPrivateKey:
@@ -29,9 +29,9 @@ properties:
     minLength: 87
     description: The private key of the marketplace fee recipient
 required:
-- chain
-- contractAddress
-- nftAddress
-- amount
-- from
-- fromPrivateKey
+  - chain
+  - contractAddress
+  - nftAddress
+  - amount
+  - from
+  - fromPrivateKey

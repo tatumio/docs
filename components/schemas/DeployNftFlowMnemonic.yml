@@ -5,11 +5,11 @@ properties:
     example: FLOW
     description: The blockchain to work with
     enum:
-    - FLOW
+      - FLOW
   account:
     type: string
     maxLength: 18
-    example: '0xc1b45bc27b9c61c3'
+    example: "0xc1b45bc27b9c61c3"
     minLength: 18
     description: Blockchain address of the sender account.
   mnemonic:
@@ -24,7 +24,7 @@ properties:
     type: integer
     maximum: 2147483647
 required:
-- chain
-- account
-- mnemonic
-- index
+  - chain
+  - account
+  - mnemonic
+  - index

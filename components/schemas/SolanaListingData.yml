@@ -1,17 +1,17 @@
 type: object
 required:
-- amount
-- listingId
-- nft
-- price
-- seller
-- state
-- createdAt
+  - amount
+  - listingId
+  - nft
+  - price
+  - seller
+  - state
+  - createdAt
 properties:
   amount:
     type: string
     description: Amount of NFTs to sold in this listing.
-    example: '1'
+    example: "1"
   buyer:
     type: string
     description: Address of the buyer, if exists.
@@ -23,20 +23,21 @@ properties:
   nft:
     type: object
     required:
-    - address
-    - data
+      - address
+      - data
     properties:
       address:
         type: string
         description: NFT Address
         example: 9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5
       data:
-        $ref: '../migrated.yml#/components/schemas/SolanaNftMetadata'
+        $ref: "../migrated.yml#/components/schemas/SolanaNftMetadata"
   price:
     type: string
-    description: Price of the NFT asset in native currency or ERC20 token based on
+    description:
+      Price of the NFT asset in native currency or ERC20 token based on
       the presence of erc20Address field.
-    example: '1.234'
+    example: "1.234"
   seller:
     type: string
     description: Address of the seller.
@@ -45,10 +46,10 @@ properties:
     type: string
     description: State of the listing. 0 - available, 1 - sold, 2 - cancelled
     enum:
-    - '0'
-    - '1'
-    - '2'
-    example: '1'
+      - "0"
+      - "1"
+      - "2"
+    example: "1"
   createdAt:
     type: number
     description: Timestamp when this listing was created

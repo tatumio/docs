@@ -8,11 +8,11 @@ properties:
     example: Either currency, or tokenAddress must be defined.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

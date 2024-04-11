@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -26,7 +26,8 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: The KMS identifier of the private key used for signing transactions
+    description:
+      The KMS identifier of the private key used for signing transactions
       as authority; required if <code>requiresSignOff</code> is set to "true" for
       the marketplace
   signatureId:
@@ -35,8 +36,8 @@ properties:
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
     description: The KMS identifier of the private key of the asset owner
 required:
-- chain
-- contractAddress
-- listingId
-- from
-- signatureId
+  - chain
+  - contractAddress
+  - listingId
+  - from
+  - signatureId

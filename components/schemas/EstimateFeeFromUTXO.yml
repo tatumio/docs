@@ -1,32 +1,33 @@
 type: object
 required:
-- chain
-- type
-- fromUTXO
-- to
+  - chain
+  - type
+  - fromUTXO
+  - to
 properties:
   chain:
     type: string
     description: Blockchain to estimate fee for.
     enum:
-    - BTC
-    - DOGE
-    - LTC
+      - BTC
+      - DOGE
+      - LTC
   type:
     type: string
     description: Type of transaction
     enum:
-    - TRANSFER
+      - TRANSFER
   fromUTXO:
-    description: Array of transaction hashes, index of UTXO in it and corresponding
+    description:
+      Array of transaction hashes, index of UTXO in it and corresponding
       private keys. Use this option if you want to calculate amount to send manually.
       Either fromUTXO or fromAddress must be present.
     type: array
     items:
       type: object
       required:
-      - txHash
-      - index
+        - txHash
+        - index
       properties:
         txHash:
           description: Transaction hash of the UTXO to be spent.
@@ -41,14 +42,15 @@ properties:
           minimum: 0
           maximum: 2147483647
   to:
-    description: Array of addresses and values to send bitcoins to. Values must be
+    description:
+      Array of addresses and values to send bitcoins to. Values must be
       set in BTC. Difference between from and to is transaction fee.
     type: array
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: Destination address.

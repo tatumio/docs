@@ -1,8 +1,8 @@
 type: object
 required:
-- address
-- walletId
-- chain
+  - address
+  - walletId
+  - chain
 properties:
   address:
     type: string
@@ -18,15 +18,15 @@ properties:
     description: Blockchain of the address
     example: SOL
     enum:
-    - BSC
-    - ETH
-    - KLAY
-    - ONE
-    - CELO
-    - MATIC
-    - SOL
-    - LTC
-    - BTC
+      - BSC
+      - ETH
+      - KLAY
+      - ONE
+      - CELO
+      - MATIC
+      - SOL
+      - LTC
+      - BTC
   privateKey:
     type: string
     example: 4jCFiqh3tLxKxt3vYW478qodivkCkSzqtpG4wqEaYkgdVC1o79a1VJTc5UiCmCmZBwoJmjaenfYH1ML7ra8vbNpA

@@ -36,9 +36,9 @@ properties:
     description: Number of decimal places of the token.
     example: 10
 required:
-- fromPrivateKey
-- name
-- recipient
-- symbol
-- totalSupply
-- decimals
+  - fromPrivateKey
+  - name
+  - recipient
+  - symbol
+  - totalSupply
+  - decimals

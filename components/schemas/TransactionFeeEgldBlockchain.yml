@@ -15,13 +15,14 @@ properties:
   value:
     type: string
     description: Value to be sent.
-    example: '0.1'
+    example: "0.1"
   data:
     type: string
-    description: Additional data that can be passed to a blockchain transaction as
+    description:
+      Additional data that can be passed to a blockchain transaction as
       a data property; must be in the hexadecimal format
     example: 4d79206e6f746520746f2074686520726563697069656e74
 required:
-- sender
-- receiver
-- value
+  - sender
+  - receiver
+  - value

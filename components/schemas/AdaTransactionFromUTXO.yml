@@ -1,22 +1,23 @@
 type: object
 required:
-- to
-- fromUTXO
-- fee
-- changeAddress
+  - to
+  - fromUTXO
+  - fee
+  - changeAddress
 properties:
   fromUTXO:
-    description: The array of transaction hashes, indexes of its UTXOs, and the private
+    description:
+      The array of transaction hashes, indexes of its UTXOs, and the private
       keys of the associated blockchain addresses
     type: array
     items:
       type: object
       required:
-      - txHash
-      - index
-      - address
-      - amount
-      - privateKey
+        - txHash
+        - index
+        - address
+        - amount
+        - privateKey
       properties:
         txHash:
           description: The transaction hash of the UTXO to be spent
@@ -37,7 +38,8 @@ properties:
           minimum: 0
           maximum: 1.652
         privateKey:
-          description: The private key of the blockchain address that holds the UTXO
+          description:
+            The private key of the blockchain address that holds the UTXO
             to be spent
           type: string
           example: 8873d5e84af86978f03b63d9ffc9c6f940bd8501d32e91980c904e8d81c305507dc95992faa5aefccb263b28b411eda2dde7882d922742663804a69d78182e34
@@ -50,7 +52,8 @@ properties:
           minLength: 0
           maxLength: 128
   to:
-    description: The array of blockchain addresses to send the assets to and the amounts
+    description:
+      The array of blockchain addresses to send the assets to and the amounts
       that each address should receive (in ADA). The difference between the UTXOs
       calculated in the <code>fromUTXO</code> section and the total amount to receive
       calculated in the <code>to</code> section will be used as the gas fee. To explicitly
@@ -61,8 +64,8 @@ properties:
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: The blockchain address to receive the assets
@@ -80,7 +83,8 @@ properties:
     description: The fee to be paid for the transaction (in ADA).
     example: 0.0015
   changeAddress:
-    description: The blockchain address to send any extra assets remaning after covering
+    description:
+      The blockchain address to send any extra assets remaning after covering
       the fee
     type: string
     example: addr_test1vzdts2y4k47zwypzdh36azxx0w4v8tev6m6svtz9fud0emgchuswu

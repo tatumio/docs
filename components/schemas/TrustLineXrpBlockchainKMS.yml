@@ -3,21 +3,24 @@ properties:
   fromAccount:
     maxLength: 34
     minLength: 33
-    description: XRP account address. Must be the one used for generating deposit
+    description:
+      XRP account address. Must be the one used for generating deposit
       tags.
     example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
     type: string
   issuerAccount:
-    description: Blockchain address of the issuer of the assets to create trust line
+    description:
+      Blockchain address of the issuer of the assets to create trust line
       for.
     example: rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc
     maxLength: 34
     minLength: 33
     type: string
   limit:
-    description: Amount of the assets to be permitted to send over this trust line.
+    description:
+      Amount of the assets to be permitted to send over this trust line.
       0 means deletion of the trust line.
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   token:
@@ -31,16 +34,17 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the secret associated in signing application. Secret,
+    description:
+      Identifier of the secret associated in signing application. Secret,
       or signature Id must be present.
   fee:
     description: Fee to be paid, in XRP. If omitted, current fee will be calculated.
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- fromAccount
-- issuerAccount
-- limit
-- token
-- signatureId
+  - fromAccount
+  - issuerAccount
+  - limit
+  - token
+  - signatureId

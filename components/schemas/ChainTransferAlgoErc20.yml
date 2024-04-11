@@ -5,7 +5,7 @@ properties:
     example: ALGO
     description: The blockchain to work with
     enum:
-    - ALGO
+      - ALGO
   to:
     maxLength: 58
     minLength: 42
@@ -16,11 +16,11 @@ properties:
     maxLength: 43
     minLength: 1
     description: The asset ID (the ID of the fungible tokens)
-    example: '1'
+    example: "1"
     type: string
   amount:
     description: The amount of the fungible tokens to be sent
-    example: '100000'
+    example: "100000"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   digits:
@@ -34,16 +34,17 @@ properties:
     maxLength: 103
     example: 72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI
     minLength: 103
-    description: The private key of the blockchain address from which the fee will
+    description:
+      The private key of the blockchain address from which the fee will
       be deducted
   fee:
     description: The transaction fee in Algos
     type: string
-    example: '0.001'
+    example: "0.001"
 required:
-- chain
-- to
-- contractAddress
-- amount
-- digits
-- fromPrivateKey
+  - chain
+  - to
+  - contractAddress
+  - amount
+  - digits
+  - fromPrivateKey

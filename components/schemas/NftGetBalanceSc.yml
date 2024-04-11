@@ -7,5 +7,5 @@ properties:
       description: The ID of the NFT
       type: string
       maxLength: 78
-      example: '123'
+      example: "123"
       format: uint256

@@ -1,16 +1,17 @@
 allOf:
-- $ref: '../migrated_v1.yml#/components/schemas/DeployAbstractContract'
-- type: object
-  required:
-  - contractType
-  properties:
-    contractType:
-      type: string
-      enum:
-      - multitoken
-      description: The type of contract to deploy.
-    baseURI:
-      type: string
-      maxLength: 500
-      description: The base URI for the ERC1155 token metadata. If not provided, the
-        token will not have any base URI prefixed.
+  - $ref: "../migrated_v1.yml#/components/schemas/DeployAbstractContract"
+  - type: object
+    required:
+      - contractType
+    properties:
+      contractType:
+        type: string
+        enum:
+          - multitoken
+        description: The type of contract to deploy.
+      baseURI:
+        type: string
+        maxLength: 500
+        description:
+          The base URI for the ERC1155 token metadata. If not provided, the
+          token will not have any base URI prefixed.

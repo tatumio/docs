@@ -4,17 +4,19 @@ properties:
     example: trade.currency1AccountId.customer.disabled
     type: string
   message:
-    description: Currency1 account's customer ${currency1Account.customerId} is disabled,
+    description:
+      Currency1 account's customer ${currency1Account.customerId} is disabled,
       unable to perform exchange trade.
-    example: Currency1 account's customer ${currency1Account.customerId} is disabled,
+    example:
+      Currency1 account's customer ${currency1Account.customerId} is disabled,
       unable to perform exchange trade.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

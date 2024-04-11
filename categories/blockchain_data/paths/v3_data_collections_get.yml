@@ -1,4 +1,4 @@
-description: '<p><b>10 credits per API call</b></p>
+description: "<p><b>10 credits per API call</b></p>
 
   <p>Get all NFTs (ERC-721 and ERC-1155) and multitokens (ERC-1155 only) of your favorite
   collections! Our API lets you search for all tokens on:</p>
@@ -37,103 +37,107 @@ description: '<p><b>10 credits per API call</b></p>
   (nft, multitokens), but you can also choose to filter only one <code>tokenType</code>.</li>
 
   <li>For Tezos blockchain query parameters <code>excludeMetadata</code> and <code>tokenType</code>
-  won''t have any effect on filtering data.</li>
+  won't have any effect on filtering data.</li>
 
   </ul>
 
-  '
+  "
 operationId: GetCollectionsOld
 parameters:
-- description: The blockchain to work with.
-  in: query
-  name: chain
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/ChainEnum'
-- description: 'The blockchain addresses of the collections.
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/ChainEnum"
+  - description: "The blockchain addresses of the collections.
 
-    It is possible to enter list of up to 10 addresses as a comma separated string.
+      It is possible to enter list of up to 10 addresses as a comma separated string.
 
-    '
-  in: query
-  name: collectionAddresses
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/TokenAddress'
-- description: 'The option to select only specific token types.
+      "
+    in: query
+    name: collectionAddresses
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/TokenAddress"
+  - description: "The option to select only specific token types.
 
-    It is possible to enter list of multiple types as a comma separated string.
+      It is possible to enter list of multiple types as a comma separated string.
 
-    Use nft (includes ERC-721 and ERC-1155) or multitoken (ERC-1155 only).
+      Use nft (includes ERC-721 and ERC-1155) or multitoken (ERC-1155 only).
 
-    '
-  in: query
-  name: tokenTypes
-  schema:
-    type: string
-    example: nft
-    enum:
-    - nft
-    - multitoken
-- description: The option to exclude metadata from the response.
-  in: query
-  name: excludeMetadata
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/ExcludeMetadata'
-- description: The number of items per page (default is 50).
-  in: query
-  name: pageSize
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/PageSize'
-- description: The offset to obtain next page of the data.
-  in: query
-  name: offset
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/Offset'
+      "
+    in: query
+    name: tokenTypes
+    schema:
+      type: string
+      example: nft
+      enum:
+        - nft
+        - multitoken
+  - description: The option to exclude metadata from the response.
+    in: query
+    name: excludeMetadata
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/ExcludeMetadata"
+  - description: The number of items per page (default is 50).
+    in: query
+    name: pageSize
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/PageSize"
+  - description: The offset to obtain next page of the data.
+    in: query
+    name: offset
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/Offset"
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           type: array
           items:
             oneOf:
-            - $ref: '../../../components/migrated.yml#/components/schemas/Token'
-            - $ref: '../../../components/migrated.yml#/components/schemas/TokenTezos'
+              - $ref: "../../../components/migrated.yml#/components/schemas/Token"
+              - $ref: "../../../components/migrated.yml#/components/schemas/TokenTezos"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '500':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get tokens from a collection
 tags:
-- Data API (old)
+  - Data API (old)

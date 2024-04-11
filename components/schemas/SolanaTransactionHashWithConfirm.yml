@@ -9,5 +9,5 @@ properties:
     example: false
     type: boolean
 required:
-- txId
-- confirmed
+  - txId
+  - confirmed

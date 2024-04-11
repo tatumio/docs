@@ -10,8 +10,9 @@ properties:
     minLength: 24
     maxLength: 24
     example: 5e68c66581f2ee32bc354087
-    description: Identifier of KMS pending transaction ID to be completed with the
+    description:
+      Identifier of KMS pending transaction ID to be completed with the
       broadcast.
 required:
-- txData
+  - txData
 type: object

@@ -8,10 +8,10 @@ properties:
     example: Chain ${chain} is not supported for this operation.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode

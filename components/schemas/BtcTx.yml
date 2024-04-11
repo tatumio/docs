@@ -46,12 +46,12 @@ properties:
     description: List of transactions, from which assets are being sent.
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/BtcTxInput'
+      $ref: "../migrated.yml#/components/schemas/BtcTxInput"
   outputs:
     type: array
     description: List of recipient addresses and amounts to send to each of them.
     items:
-      $ref: '../migrated.yml#/components/schemas/BtcTxOutput'
+      $ref: "../migrated.yml#/components/schemas/BtcTxOutput"
   locktime:
     type: number
     description: Block this transaction was included in.

@@ -1,18 +1,19 @@
 type: object
 required:
-- to
-- fromAddress
+  - to
+  - fromAddress
 properties:
   fromAddress:
-    description: The array of blockchain addresses to send the assets from and their
+    description:
+      The array of blockchain addresses to send the assets from and their
       private keys. For each address, the last 100 transactions are scanned for any
       UTXO to be included in the transaction.
     type: array
     items:
       type: object
       required:
-      - signatureId
-      - address
+        - signatureId
+        - address
       properties:
         address:
           description: The blockchain address to receive the assets
@@ -24,10 +25,12 @@ properties:
           type: string
           format: uuid
           example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-          description: The KMS identifier of the private key of the address to send
+          description:
+            The KMS identifier of the private key of the address to send
             the assets from
         index:
-          description: (Only if the signature ID is mnemonic-based and you run KMS
+          description:
+            (Only if the signature ID is mnemonic-based and you run KMS
             v6.2 or later) The index of the address to send the assets from that was
             generated from the mnemonic
           type: number
@@ -35,7 +38,8 @@ properties:
           minimum: 0
           maximum: 2147483647
   to:
-    description: The array of blockchain addresses to send the assets to and the amounts
+    description:
+      The array of blockchain addresses to send the assets to and the amounts
       that each address should receive (in DOGE). The difference between the UTXOs
       calculated in the <code>fromAddress</code> section and the total amount to receive
       calculated in the <code>to</code> section will be used as the gas fee. To explicitly
@@ -46,8 +50,8 @@ properties:
     items:
       type: object
       required:
-      - address
-      - value
+        - address
+        - value
       properties:
         address:
           description: The blockchain address to receive the assets
@@ -62,12 +66,14 @@ properties:
           example: 0.02969944
   fee:
     type: string
-    description: The fee to be paid for the transaction (in DOGE); if you are using
+    description:
+      The fee to be paid for the transaction (in DOGE); if you are using
       this parameter, you have to also use the <code>changeAddress</code> parameter
       because these two parameters only work together.
-    example: '0.0015'
+    example: "0.0015"
   changeAddress:
-    description: The blockchain address to send any extra assets remaning after covering
+    description:
+      The blockchain address to send any extra assets remaning after covering
       the fee to; if you are using this parameter, you have to also use the <code>fee</code>
       parameter because these two parameters only work together.
     type: string

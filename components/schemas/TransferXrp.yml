@@ -9,7 +9,8 @@ properties:
   account:
     maxLength: 100
     minLength: 1
-    description: XRP account address. Must be the one used for generating deposit
+    description:
+      XRP account address. Must be the one used for generating deposit
       tags.
     example: rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV
     type: string
@@ -22,27 +23,30 @@ properties:
   amount:
     description: Amount to be sent, in XRP.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   attr:
-    description: Destination tag of the recipient account, if any. Must be stringified
+    description:
+      Destination tag of the recipient account, if any. Must be stringified
       uint32.
-    example: '12355'
+    example: "12355"
     type: string
   sourceTag:
     description: Source tag of sender account, if any.
     example: 12355
     type: integer
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -59,8 +63,8 @@ properties:
     example: Sender note
     type: string
 required:
-- account
-- senderAccountId
-- address
-- amount
-- secret
+  - account
+  - senderAccountId
+  - address
+  - amount
+  - secret

@@ -1,7 +1,7 @@
 type: object
 required:
-- address
-- value
+  - address
+  - value
 properties:
   address:
     description: The blockchain address to receive the assets

@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -31,8 +31,8 @@ properties:
     minLength: 87
     description: The private key of the marketspace authority
 required:
-- chain
-- contractAddress
-- treasuryWithdrawalDestination
-- from
-- fromPrivateKey
+  - chain
+  - contractAddress
+  - treasuryWithdrawalDestination
+  - from
+  - fromPrivateKey

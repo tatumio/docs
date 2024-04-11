@@ -8,7 +8,7 @@ properties:
     example: 14493280
   blockTimestamp:
     type: string
-    example: '2021-05-14T21:08:34.536Z'
+    example: "2021-05-14T21:08:34.536Z"
   type:
     type: string
     example: A.7e60df042a9c0868.FlowToken.TokensWithdrawn
@@ -28,7 +28,7 @@ properties:
         type: string
         description: Type of payload.
         enum:
-        - Event
+          - Event
       value:
         type: object
         properties:
@@ -47,30 +47,30 @@ properties:
                   description: Name of the property
                 value:
                   oneOf:
-                  - type: object
-                    properties:
-                      type:
-                        type: string
-                        description: Type of the value
-                        example: UFix64
-                      value:
-                        type: string
-                        description: Value
-                        example: '0.001'
-                  - type: object
-                    properties:
-                      type:
-                        type: string
-                        description: Type of the value
-                        example: Optional
-                      value:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: Type of the value
-                            example: Address
-                          value:
-                            type: string
-                            description: Value
-                            example: '0x18eb4ee6b3c026d2'
+                    - type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the value
+                          example: UFix64
+                        value:
+                          type: string
+                          description: Value
+                          example: "0.001"
+                    - type: object
+                      properties:
+                        type:
+                          type: string
+                          description: Type of the value
+                          example: Optional
+                        value:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              description: Type of the value
+                              example: Address
+                            value:
+                              type: string
+                              description: Value
+                              example: "0x18eb4ee6b3c026d2"

@@ -28,4 +28,4 @@ properties:
     type: array
     description: Transactions that occurs in this block.
     items:
-      $ref: '../migrated.yml#/components/schemas/TronTx'
+      $ref: "../migrated.yml#/components/schemas/TronTx"

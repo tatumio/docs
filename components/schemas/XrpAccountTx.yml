@@ -10,11 +10,13 @@ properties:
     example: 760762
   ledger_index_min:
     type: number
-    description: The ledger index of the most recent ledger actually searched for
+    description:
+      The ledger index of the most recent ledger actually searched for
       transactions.
     example: 614
   marker:
-    description: Server-defined value indicating the response is paginated. Pass this
+    description:
+      Server-defined value indicating the response is paginated. Pass this
       to the next call to resume where this call left off.
     properties:
       ledger:
@@ -26,7 +28,8 @@ properties:
     type: object
   transactions:
     type: array
-    description: Array of transactions matching the request's criteria, as explained
+    description:
+      Array of transactions matching the request's criteria, as explained
       below.
     items:
       type: object
@@ -54,7 +57,7 @@ properties:
                             example: rGenhJmoWHqD6tgmUyxQHLQH8sPuRGtUcv
                           Balance:
                             type: string
-                            example: '1000000000'
+                            example: "1000000000"
                           Sequence:
                             type: number
                             example: 1
@@ -68,12 +71,13 @@ properties:
               example: tesSUCCESS
             delivered_amount:
               type: string
-              example: '1000000000'
+              example: "1000000000"
           type: object
         tx:
-          $ref: '../migrated.yml#/components/schemas/XrpTx'
+          $ref: "../migrated.yml#/components/schemas/XrpTx"
         validated:
           type: boolean
-          description: True if this data is from a validated ledger version; if omitted
+          description:
+            True if this data is from a validated ledger version; if omitted
             or set to false, this data is not final.
           example: true

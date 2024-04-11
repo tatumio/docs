@@ -5,7 +5,7 @@ properties:
     example: TRON
     description: The blockchain to work with
     enum:
-    - TRON
+      - TRON
   name:
     description: Name of the NFT token
     example: My ERC721
@@ -19,7 +19,8 @@ properties:
     minLength: 1
     type: string
   fromPrivateKey:
-    description: Private key of account address, from which gas for deployment of
+    description:
+      Private key of account address, from which gas for deployment of
       ERC721 will be paid. Private key, or signature Id must be present.
     type: string
     maxLength: 64
@@ -27,12 +28,13 @@ properties:
     minLength: 64
   feeLimit:
     type: number
-    description: The maximum amount to be paid as the transaction fee (in TRX); deployment
+    description:
+      The maximum amount to be paid as the transaction fee (in TRX); deployment
       of a smart contract on TRON costs around 580 TRX
     example: 600
 required:
-- chain
-- name
-- symbol
-- feeLimit
-- fromPrivateKey
+  - chain
+  - name
+  - symbol
+  - feeLimit
+  - fromPrivateKey

@@ -1,17 +1,17 @@
 required:
-- txId
-- address
-- timestamp
-- xpub
-- derivationKey
-- amount
-- status
-- accountId
-- currency
-- reference
-- vout
-- spent
-- blockHeight
+  - txId
+  - address
+  - timestamp
+  - xpub
+  - derivationKey
+  - amount
+  - status
+  - accountId
+  - currency
+  - reference
+  - vout
+  - spent
+  - blockHeight
 properties:
   txId:
     type: string
@@ -37,15 +37,15 @@ properties:
   amount:
     type: string
     description: Amount of the trade
-    example: '15000'
+    example: "15000"
   status:
     type: string
     example: Done
     description: Status of deposit
     enum:
-    - InProgress
-    - Done
-    - Failed
+      - InProgress
+      - Done
+      - Failed
   accountId:
     description: Account ID.
     example: 5e68c66581f2ee32bc354087
@@ -70,7 +70,7 @@ properties:
   blockHash:
     description: Hash of the block where this transaction was in.
     type: string
-    example: '0xcf2c40f475e78c7c19778e1ae999a0e371c9319b38182ea15dc94536f13f9137'
+    example: "0xcf2c40f475e78c7c19778e1ae999a0e371c9319b38182ea15dc94536f13f9137"
   from:
     description: Blockchain address.
     example: 7c21ed165e294db78b95f0f181086d6f

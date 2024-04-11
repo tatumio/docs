@@ -4,17 +4,19 @@ properties:
     example: withdrawal.not.cancelled.transaction.failed
     type: string
   message:
-    description: Unable to cancel withdrawal ${id}, it is impossible to create refund
+    description:
+      Unable to cancel withdrawal ${id}, it is impossible to create refund
       transaction.
-    example: Unable to cancel withdrawal ${id}, it is impossible to create refund
+    example:
+      Unable to cancel withdrawal ${id}, it is impossible to create refund
       transaction.
     type: string
   statusCode:
-    description: '403'
+    description: "403"
     example: 403
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

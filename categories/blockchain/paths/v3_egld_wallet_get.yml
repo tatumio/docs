@@ -29,15 +29,15 @@ description: '<h4>1 credit per API call.</h4><br/>
   '
 operationId: EgldGenerateWallet
 parameters:
-- description: Mnemonic to use for generation of private key.
-  in: query
-  name: mnemonic
-  required: false
-  schema:
-    type: string
-    maxLength: 500
+  - description: Mnemonic to use for generation of private key.
+    in: query
+    name: mnemonic
+    required: false
+    schema:
+      type: string
+      maxLength: 500
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -46,36 +46,40 @@ responses:
             mnemonic:
               type: string
               description: Mnemonic to use for generation of private key
-              example: quantum tobacco key they maid mean crime youth chief jungle
+              example:
+                quantum tobacco key they maid mean crime youth chief jungle
                 mind design broken tilt bus shoulder leaf good forward erupt split
                 divert bread kitten
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '500':
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Generate EGLD wallet
 tags:
-- Elrond
+  - Elrond

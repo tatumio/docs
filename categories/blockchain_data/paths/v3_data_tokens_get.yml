@@ -1,4 +1,4 @@
-description: '<p><b>1 credit per API call</b></p>
+description: "<p><b>1 credit per API call</b></p>
 
   <p>Get information about your favorite token! Our API lets you search for all tokens
   on:</p>
@@ -34,46 +34,47 @@ description: '<p><b>1 credit per API call</b></p>
 
   </ul>
 
-  '
+  "
 operationId: GetTokensOld
 parameters:
-- description: The blockchain to work with.
-  in: query
-  name: chain
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/ChainEnum'
-- description: The blockchain address of the token (NFT collection or any fungible
-    token).
-  in: query
-  name: tokenAddress
-  required: true
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/TokenAddress'
-- description: The ID of a specific NFT token.
-  in: query
-  name: tokenId
-  schema:
-    $ref: '../../../components/migrated.yml#/components/schemas/TokenId'
+  - description: The blockchain to work with.
+    in: query
+    name: chain
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/ChainEnum"
+  - description:
+      The blockchain address of the token (NFT collection or any fungible
+      token).
+    in: query
+    name: tokenAddress
+    required: true
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/TokenAddress"
+  - description: The ID of a specific NFT token.
+    in: query
+    name: tokenId
+    schema:
+      $ref: "../../../components/migrated.yml#/components/schemas/TokenId"
 responses:
-  '200':
+  "200":
     description: OK
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/FungibleInfo'
-          - $ref: '../../../components/migrated.yml#/components/schemas/NftInfo'
-          - $ref: '../../../components/migrated.yml#/components/schemas/MultitokenInfo'
-          - $ref: '../../../components/migrated.yml#/components/schemas/NftTokenInfo'
-          - $ref: '../../../components/migrated.yml#/components/schemas/NftInfoTezos'
-          - $ref: '../../../components/migrated.yml#/components/schemas/FungibleInfoTezos'
-          description: 'Information about specific collection or token
+            - $ref: "../../../components/migrated.yml#/components/schemas/FungibleInfo"
+            - $ref: "../../../components/migrated.yml#/components/schemas/NftInfo"
+            - $ref: "../../../components/migrated.yml#/components/schemas/MultitokenInfo"
+            - $ref: "../../../components/migrated.yml#/components/schemas/NftTokenInfo"
+            - $ref: "../../../components/migrated.yml#/components/schemas/NftInfoTezos"
+            - $ref: "../../../components/migrated.yml#/components/schemas/FungibleInfoTezos"
+          description: "Information about specific collection or token
 
             (not all fields are available for every token, e.g. some multitokens do
             not have name and symbol).
 
-            '
+            "
           example:
             name: BeefyCollectibles
             symbol: RareItem
@@ -81,34 +82,38 @@ responses:
             metadataURI: QmYrUYv3kCXsrbs8YGguwZkyyMgGkgdQpbse8dZrDaruy5
             metadata:
               name: Cowmmunity Ambassador
-              description: Represents one of the most important roles in any civilization,
+              description:
+                Represents one of the most important roles in any civilization,
                 as on him depends the molding of the community.
               image: QmbNsFNDCRYnswu5rtjTPNPkkn8y23DCXVkebrsx2b9fjg
-            supply: '13'
-  '400':
+            supply: "13"
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error403'
-  '404':
+          $ref: "../../../components/migrated.yml#/components/schemas/Error403"
+  "404":
     description: Collection or token not found.
     content:
       application/json:
@@ -123,24 +128,25 @@ responses:
               example: Collection or token not found on chain bsc-mainnet.
               type: string
             statusCode:
-              description: '404'
+              description: "404"
               example: 404
               type: number
           required:
-          - errorCode
-          - message
-          - statusCode
+            - errorCode
+            - message
+            - statusCode
           type: object
-  '500':
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server during the
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server during the
       processing of the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Get information about collection or token
 tags:
-- Data API (old)
+  - Data API (old)

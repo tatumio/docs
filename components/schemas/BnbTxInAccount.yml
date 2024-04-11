@@ -6,4 +6,4 @@ properties:
   tx:
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/BnbTransaction'
+      $ref: "../migrated.yml#/components/schemas/BnbTransaction"

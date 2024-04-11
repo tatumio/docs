@@ -24,7 +24,8 @@ properties:
     example: 2
   height:
     type: number
-    description: The height (number) of the block where the transaction is included
+    description:
+      The height (number) of the block where the transaction is included
       in
     example: 1233224
   value:
@@ -33,7 +34,8 @@ properties:
     example: 1000
   coinbase:
     type: boolean
-    description: If set to "true", the transaction is a coinbase transaction (a transaction
+    description:
+      If set to "true", the transaction is a coinbase transaction (a transaction
       created by a Bitcoin miner to collect their reward)
     example: false
   bestblock:

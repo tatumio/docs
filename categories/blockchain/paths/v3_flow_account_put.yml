@@ -1,4 +1,5 @@
-description: '<h4>100 credits per API call. Tatum covers the fee connected to the
+description:
+  '<h4>100 credits per API call. Tatum covers the fee connected to the
   transaction costs in subscription credits. This operation can be done on mainnet
   only for paid plans.</h4><br/>
 
@@ -41,57 +42,61 @@ requestBody:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/FlowAddPubKeyMnemonic'
-        - $ref: '../../../components/migrated.yml#/components/schemas/FlowAddPubKeySecret'
-        - $ref: '../../../components/migrated.yml#/components/schemas/FlowAddPubKeySecretKMS'
+          - $ref: "../../../components/migrated.yml#/components/schemas/FlowAddPubKeyMnemonic"
+          - $ref: "../../../components/migrated.yml#/components/schemas/FlowAddPubKeySecret"
+          - $ref: "../../../components/migrated.yml#/components/schemas/FlowAddPubKeySecretKMS"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/TransactionHash'
-          - $ref: '../../../components/migrated.yml#/components/schemas/SignatureId'
+            - $ref: "../../../components/migrated.yml#/components/schemas/TransactionHash"
+            - $ref: "../../../components/migrated.yml#/components/schemas/SignatureId"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcTx'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcUTXO'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403Broadcast'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403BtcTxFailed'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403BtcTx"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403BtcBlockchain"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403BtcUTXO"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403Broadcast"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403BtcTxFailed"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Add public key to Flow address
 tags:
-- Flow
+  - Flow

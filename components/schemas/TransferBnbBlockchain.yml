@@ -9,12 +9,12 @@ properties:
   currency:
     description: Currency to transfer from Binance Blockchain Account.
     enum:
-    - BNB
+      - BNB
     example: BNB
     type: string
   amount:
     description: Amount to be sent in BNB.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   fromPrivateKey:
@@ -30,7 +30,7 @@ properties:
     example: Message to recipient
     type: string
 required:
-- to
-- amount
-- fromPrivateKey
-- currency
+  - to
+  - amount
+  - fromPrivateKey
+  - currency

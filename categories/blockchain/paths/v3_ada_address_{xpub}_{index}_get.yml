@@ -13,23 +13,23 @@ description: '<p><b>
   '
 operationId: AdaGenerateAddress
 parameters:
-- description: Extended public key of a wallet.
-  in: path
-  name: xpub
-  required: true
-  example: 30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9fef3a26b7eba8a07653483d06427d0c07966c5f81c69a7925d714530bedb1ef9e9103547b54ad0954b3569785ca70e1fd08313f92a3a9d31efa216b2b9adac4678455e66c97b53cd589f9da70a14265cf15cd4c1e0ce914407008f4a65f316
-  schema:
-    type: string
-- description: Derivation index of the desired address to be generated.
-  in: path
-  name: index
-  required: true
-  example: 0
-  schema:
-    type: number
-    minimum: 0
+  - description: Extended public key of a wallet.
+    in: path
+    name: xpub
+    required: true
+    example: 30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9fef3a26b7eba8a07653483d06427d0c07966c5f81c69a7925d714530bedb1ef9e9103547b54ad0954b3569785ca70e1fd08313f92a3a9d31efa216b2b9adac4678455e66c97b53cd589f9da70a14265cf15cd4c1e0ce914407008f4a65f316
+    schema:
+      type: string
+  - description: Derivation index of the desired address to be generated.
+    in: path
+    name: index
+    required: true
+    example: 0
+    schema:
+      type: number
+      minimum: 0
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
@@ -40,41 +40,45 @@ responses:
               description: Ada address
               example: addr1qyyxyhaa2e7kxeqcc72w7f747zqlgwwwstlzsg9umuxc40wnhawldxl4nan95rhtlcnju9q2r8j9qz8vslwsmrkj5r4spxhep9
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       perform the required operation due to a logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountIncompatibleXpubBtc"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403AccountAddressGeneral"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Generate Ada deposit address from Extended public key
 tags:
-- Cardano
+  - Cardano

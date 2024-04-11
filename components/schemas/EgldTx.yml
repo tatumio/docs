@@ -14,13 +14,14 @@ properties:
     example: 186580
   epoch:
     type: number
-    description: An epoch is a sequence of consecutive rounds during which the configuration
+    description:
+      An epoch is a sequence of consecutive rounds during which the configuration
       of the network does not change (currently aprox. 24 hrs in length).
     example: 12
   value:
     type: string
     description: Transferred value.
-    example: '1000000000000000000'
+    example: "1000000000000000000"
   receiver:
     type: string
     description: Address of the receiver.

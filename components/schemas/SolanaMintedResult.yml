@@ -10,7 +10,8 @@ properties:
     example: 4afZBmAneN2j6gDHH8zdrNWkCqfMC3XPH2cpFKtYMSVe
   nftAccountAddress:
     type: string
-    description: The blockchain address that received the minted NFT; this address
+    description:
+      The blockchain address that received the minted NFT; this address
       was created under the recipient's account address (the one in the <code>to</code>
       parameter of the request body), is owned by the recipient's address, and has
       the same private key

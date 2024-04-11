@@ -8,10 +8,10 @@ properties:
     example: 4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A
   height:
     type: string
-    example: '44925860'
+    example: "44925860"
   log:
     type: string
-    example: 'Msg 0: '
+    example: "Msg 0: "
   ok:
     type: boolean
     example: true
@@ -24,7 +24,7 @@ properties:
         properties:
           memo:
             type: string
-            example: ''
+            example: ""
           msg:
             type: array
             items:
@@ -36,7 +36,8 @@ properties:
                 value:
                   properties:
                     inputs:
-                      description: List of transactions, from which assets are being
+                      description:
+                        List of transactions, from which assets are being
                         sent.
                       type: array
                       items:
@@ -52,12 +53,13 @@ properties:
                               properties:
                                 amount:
                                   type: string
-                                  example: '20000000000'
+                                  example: "20000000000"
                                 denom:
                                   type: string
                                   example: BNB
                     outputs:
-                      description: List of recipient addresses and amounts to send
+                      description:
+                        List of recipient addresses and amounts to send
                         to each of them.
                       type: array
                       items:
@@ -73,7 +75,7 @@ properties:
                               properties:
                                 amount:
                                   type: string
-                                  example: '20000000000'
+                                  example: "20000000000"
                                 denom:
                                   type: string
                                   example: BNB
@@ -85,7 +87,7 @@ properties:
               properties:
                 account_number:
                   type: string
-                  example: '14'
+                  example: "14"
                 pub_key:
                   properties:
                     type:
@@ -97,12 +99,12 @@ properties:
                   type: object
                 sequence:
                   type: string
-                  example: '47816'
+                  example: "47816"
                 signature:
                   type: string
                   example: VhewxOCPucjrtrpRbQMbl05i5MyJMrw12nUJ4ATssB1qvCqIO2+Fgqa/WTHaYpkhjJuIbpK620e0zpIQ56a5nw==
           source:
             type: string
-            example: '0'
+            example: "0"
         type: object
     type: object

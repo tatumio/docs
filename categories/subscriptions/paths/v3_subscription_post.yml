@@ -1,4 +1,5 @@
-description: "<p><b>2 credits per API call + credits spent on subscriptions themselves<br/>\n\
+description:
+  "<p><b>2 credits per API call + credits spent on subscriptions themselves<br/>\n\
   Each subscription type consumes a different number of credits.</b></p>\n<p>For Free\
   \ plans, there is a monthly limit of sent webhooks, which is <b>1000</b>.</p>\n\
   <p>If the webhook is sent unsuccessfully, it will be retried. The number of retries\
@@ -257,81 +258,85 @@ description: "<p><b>2 credits per API call + credits spent on subscriptions them
   \ reports.</p>\n"
 operationId: createSubscriptionOld
 parameters:
-- description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
-  in: query
-  name: testnetType
-  required: false
-  schema:
-    default: ethereum-sepolia
-    type: string
-    enum:
-    - ethereum-sepolia
-    - ethereum-goerli
+  - description: Type of Ethereum testnet. Defaults to ethereum-sepolia.
+    in: query
+    name: testnetType
+    required: false
+    schema:
+      default: ethereum-sepolia
+      type: string
+      enum:
+        - ethereum-sepolia
+        - ethereum-goerli
 requestBody:
   content:
     application/json:
       schema:
         oneOf:
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionNotification'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionNftTransferEvent'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionMultiTokenTransferEvent'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionContractLogEvent'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionIncoming'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionPending'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionTradeMatch'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionPartialTradeMatch'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSError'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSSuccess'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionTxInTheBlock'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionBalance'
-        - $ref: '../../../components/migrated.yml#/components/schemas/CreateSubscriptionInterval'
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionNotification"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionNftTransferEvent"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionMultiTokenTransferEvent"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionContractLogEvent"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionIncoming"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionPending"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionTradeMatch"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionPartialTradeMatch"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSError"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionKMSSuccess"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionTxInTheBlock"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionBalance"
+          - $ref: "../../../components/migrated.yml#/components/schemas/CreateSubscriptionInterval"
   required: true
 responses:
-  '200':
+  "200":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Id'
+          $ref: "../../../components/migrated.yml#/components/schemas/Id"
     description: OK
-  '400':
+  "400":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error400'
-    description: Bad Request. Validation failed for the given object in the HTTP Body
+          $ref: "../../../components/migrated.yml#/components/schemas/Error400"
+    description:
+      Bad Request. Validation failed for the given object in the HTTP Body
       or Request parameters.
-  '401':
+  "401":
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401NotActive'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error401Invalid'
-    description: Unauthorized. Not valid or inactive subscription key present in the
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401NotActive"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error401Invalid"
+    description:
+      Unauthorized. Not valid or inactive subscription key present in the
       HTTP Header.
-  '403':
-    description: Forbidden. The request is authenticated, but it is not possible to
+  "403":
+    description:
+      Forbidden. The request is authenticated, but it is not possible to
       required perform operation due to logical error or invalid permissions.
     content:
       application/json:
         schema:
           oneOf:
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionType'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionCurrency'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionBalance'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionInterval'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionId'
-          - $ref: '../../../components/migrated.yml#/components/schemas/Error403SubscriptionPendingId'
-  '500':
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionType"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionCurrency"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionBalance"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionInterval"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionId"
+            - $ref: "../../../components/migrated.yml#/components/schemas/Error403SubscriptionPendingId"
+  "500":
     content:
       application/json:
         schema:
-          $ref: '../../../components/migrated.yml#/components/schemas/Error500'
-    description: Internal server error. There was an error on the server while processing
+          $ref: "../../../components/migrated.yml#/components/schemas/Error500"
+    description:
+      Internal server error. There was an error on the server while processing
       the request.
 security:
-- X-API-Key: []
+  - X-API-Key: []
 x-codeSamples: []
 summary: Create a subscription (old)
 tags:
-- Notification subscriptions
+  - Notification subscriptions

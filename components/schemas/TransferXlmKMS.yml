@@ -21,33 +21,37 @@ properties:
   amount:
     description: Amount to be sent, in XLM or XLM-based Asset.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   signatureId:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the secret associated in signing application. Secret,
+    description:
+      Identifier of the secret associated in signing application. Secret,
       or signature Id must be present.
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   attr:
-    description: Short message to recipient. Usually used as an account discriminator.
+    description:
+      Short message to recipient. Usually used as an account discriminator.
       It can be either 28 characters long ASCII text, 64 characters long HEX string
       or uint64 number. When using as an account disciminator in Tatum Offchain ledger,
       can be in format of destination_acc|source_acc.
-    example: '12355'
+    example: "12355"
     pattern: ^[ -~]{0,64}$
     type: string
     maxLength: 64
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -58,8 +62,8 @@ properties:
     example: Sender note
     type: string
 required:
-- fromAccount
-- senderAccountId
-- address
-- amount
-- signatureId
+  - fromAccount
+  - senderAccountId
+  - address
+  - amount
+  - signatureId

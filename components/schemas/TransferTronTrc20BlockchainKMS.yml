@@ -12,12 +12,14 @@ properties:
     maximum: 36
     format: uuid
     example: 1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6
-    description: Identifier of the private key associated in signing application.
+    description:
+      Identifier of the private key associated in signing application.
       Private key, or signature Id must be present.
   index:
     type: number
     minimum: 0
-    description: If signatureId is mnemonic-based, this is the index to the specific
+    description:
+      If signatureId is mnemonic-based, this is the index to the specific
       address from that mnemonic.
   to:
     type: string
@@ -38,13 +40,13 @@ properties:
     example: 0.01
   amount:
     description: Amount to be sent in TRX.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- from
-- signatureId
-- tokenAddress
-- to
-- amount
-- feeLimit
+  - from
+  - signatureId
+  - tokenAddress
+  - to
+  - amount
+  - feeLimit

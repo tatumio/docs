@@ -16,8 +16,8 @@ properties:
   from:
     type: string
     description: The sender address of the event.
-    example: '0x742d35cc6634c0532925a3b844bc454e4438f44e'
+    example: "0x742d35cc6634c0532925a3b844bc454e4438f44e"
   to:
     type: string
     description: The receiver address of the event.
-    example: '0xb7d49e5aa39ff1e5d1b33286c3a8e5515b6a4e1a'
+    example: "0xb7d49e5aa39ff1e5d1b33286c3a8e5515b6a4e1a"

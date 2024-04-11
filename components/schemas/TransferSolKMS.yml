@@ -21,32 +21,36 @@ properties:
   amount:
     description: Amount to be sent, in SOL.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   signatureId:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the secret associated in signing application. Secret,
+    description:
+      Identifier of the secret associated in signing application. Secret,
       or signature Id must be present.
   fee:
-    description: Fee to be charged for the operation. For SOL, fee is decided by the
+    description:
+      Fee to be charged for the operation. For SOL, fee is decided by the
       blockchain, but default SOL fee is 0.000005. This fee will be only charged on
       top of the withdrawal amount to the virtual account.
     maxLength: 38
-    example: '10000'
+    example: "10000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   compliant:
-    description: Compliance check, if withdrawal is not compliant, it will not be
+    description:
+      Compliance check, if withdrawal is not compliant, it will not be
       processed.
     example: false
     type: boolean
   paymentId:
-    description: Identifier of the payment, shown for created Transaction within Tatum
+    description:
+      Identifier of the payment, shown for created Transaction within Tatum
       sender account.
-    example: '1234'
+    example: "1234"
     maxLength: 100
     minLength: 1
     type: string
@@ -57,8 +61,8 @@ properties:
     example: Sender note
     type: string
 required:
-- from
-- senderAccountId
-- address
-- signatureId
-- amount
+  - from
+  - senderAccountId
+  - address
+  - signatureId
+  - amount

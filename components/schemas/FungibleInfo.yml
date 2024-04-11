@@ -11,7 +11,7 @@ properties:
   supply:
     type: string
     description: The total supply of the fungible token.
-    example: '1000000000'
+    example: "1000000000"
   decimals:
     type: number
     description: The number of decimal places for the fungible token.
@@ -23,4 +23,4 @@ properties:
   cap:
     type: string
     description: The maximum supply cap of the fungible token.
-    example: '2000000000'
+    example: "2000000000"

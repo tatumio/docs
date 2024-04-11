@@ -1,6 +1,6 @@
 type: object
 required:
-- changeAddress
+  - changeAddress
 properties:
   changeAddress:
     description: Address, where unspent funds will be transferred.
@@ -11,4 +11,4 @@ properties:
   fee:
     type: string
     description: Fee to be paid.
-    example: '0.5'
+    example: "0.5"

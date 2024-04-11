@@ -1,4 +1,5 @@
-description: <p>The <code>MintNftTezos</code> schema lets you mint NFTs on Tezos.<br/>For
+description:
+  <p>The <code>MintNftTezos</code> schema lets you mint NFTs on Tezos.<br/>For
   more information, see "Minting NFTs natively on a blockchain" in <a href="#operation/NftMintErc721">Mint
   an NFT</a>.<br/>
 type: object
@@ -8,7 +9,7 @@ properties:
     example: TEZOS
     description: The blockchain to work with
     enum:
-    - TEZOS
+      - TEZOS
   url:
     description: The URL pointing to the NFT metadata</a>
     example: https://my_token_data.com
@@ -30,19 +31,20 @@ properties:
     description: The ID of the NFT
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
   fromPrivateKey:
     type: string
     maxLength: 128
     example: edskRvJQqeNih91dkoRkTG1PWxV5AruYbtrkp5DKibL2iMkPGWBbdYp8jpsY3N3skCNrwf9socTv9Sstonkckc4jTb
     minLength: 64
-    description: The private key of the blockchain address that will pay the fee for
+    description:
+      The private key of the blockchain address that will pay the fee for
       the transaction
 required:
-- tokenId
-- chain
-- url
-- ownerAddress
-- contractAddress
-- fromPrivateKey
+  - tokenId
+  - chain
+  - url
+  - ownerAddress
+  - contractAddress
+  - fromPrivateKey

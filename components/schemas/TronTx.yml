@@ -1,10 +1,10 @@
 type: object
 required:
-- txID
-- signature
-- blockNumber
-- ret
-- rawData
+  - txID
+  - signature
+  - blockNumber
+  - ret
+  - rawData
 properties:
   ret:
     type: array
@@ -16,7 +16,7 @@ properties:
           description: Returns the value of the smart contract invocation.
           example: SUCCESS
     required:
-    - contractRet
+      - contractRet
   signature:
     type: array
     description: List of signatures of the transaction.
@@ -39,9 +39,9 @@ properties:
     type: object
     description: Raw data of the transaction.
     required:
-    - expiration
-    - timestamp
-    - contract
+      - expiration
+      - timestamp
+      - contract
     properties:
       contract:
         type: array
@@ -59,7 +59,7 @@ properties:
                       type: string
                       format: hex
                       description: The amount transferred within the transaction.
-                      example: '0x000002e917e68b4e'
+                      example: "0x000002e917e68b4e"
                     amount:
                       type: number
                       description: The amount transferred within the transaction.

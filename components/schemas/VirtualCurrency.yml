@@ -10,24 +10,26 @@ properties:
     description: Supply of virtual currency.
     maxLength: 38
     minLength: 1
-    example: '1000000'
+    example: "1000000"
     type: string
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
   basePair:
-    description: Base pair for virtual currency. Transaction value will be calculated
+    description:
+      Base pair for virtual currency. Transaction value will be calculated
       according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair
       is set to BTC.
-    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
     example: BTC
   baseRate:
     type: number
     example: 1
     default: 1
     minimum: 0
-    description: Exchange rate of the base pair. Each unit of the created curency
+    description:
+      Exchange rate of the base pair. Each unit of the created curency
       will represent value of baseRate*1 basePair.
   customer:
-    $ref: '../migrated.yml#/components/schemas/CustomerRegistration'
+    $ref: "../migrated.yml#/components/schemas/CustomerRegistration"
   description:
     description: Used as a description within Tatum system.
     example: My Virtual Token description.
@@ -42,17 +44,18 @@ properties:
     type: string
   accountNumber:
     description: Account number from external system.
-    example: '1234567890'
+    example: "1234567890"
     type: string
     minLength: 1
     maxLength: 50
   accountingCurrency:
-    description: All transaction will be billed in this currency for created account
+    description:
+      All transaction will be billed in this currency for created account
       associated with this currency. If not set, EUR is used. ISO-4217
-    $ref: '../migrated.yml#/components/schemas/FiatCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatCurrency"
     example: USD
 required:
-- basePair
-- name
-- supply
+  - basePair
+  - name
+  - supply
 type: object

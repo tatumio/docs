@@ -5,7 +5,7 @@ properties:
     example: ALGO
     description: The blockchain to work with
     enum:
-    - ALGO
+      - ALGO
   symbol:
     description: Symbol of the ERC20 token
     example: ERC_SYMBOL
@@ -20,10 +20,11 @@ properties:
     pattern: ^[a-zA-Z0-9_]+$
     type: string
   supply:
-    description: Initial supply of ERC20 token. If totalCap is not defined, this will
+    description:
+      Initial supply of ERC20 token. If totalCap is not defined, this will
       be the total cap.
     maxLength: 38
-    example: '10000000'
+    example: "10000000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
   digits:
@@ -47,22 +48,24 @@ properties:
     type: string
     format: uuid
     example: 26d3883e-4e17-48b3-a0ee-09a3e484ac83
-    description: Identifier of the private key associated in signing application.
+    description:
+      Identifier of the private key associated in signing application.
       Private key, or signature Id must be present.
   index:
     type: number
     minimum: 0
-    description: If signatureId is mnemonic-based, this is the index to the specific
+    description:
+      If signatureId is mnemonic-based, this is the index to the specific
       address from that mnemonic.
   fee:
     description: The transaction fee in ALGO
     type: string
-    example: '0.001'
+    example: "0.001"
 required:
-- chain
-- name
-- symbol
-- supply
-- signatureId
-- digits
-- from
+  - chain
+  - name
+  - symbol
+  - supply
+  - signatureId
+  - digits
+  - from

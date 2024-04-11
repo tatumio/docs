@@ -1,7 +1,7 @@
 type: object
 properties:
   message:
-    $ref: '../migrated.yml#/components/schemas/SolanaTxMessage'
+    $ref: "../migrated.yml#/components/schemas/SolanaTxMessage"
   signatures:
     type: array
     items:

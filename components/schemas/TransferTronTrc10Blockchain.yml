@@ -17,14 +17,14 @@ properties:
     minLength: 1
     maxLength: 100
     description: ID of the token to transfer.
-    example: '1000538'
+    example: "1000538"
   amount:
     description: Amount to be sent in TRX.
-    example: '100000'
+    example: "100000"
     pattern: ^[+]?((\d+(\.\d*)?)|(\.\d+))$
     type: string
 required:
-- fromPrivateKey
-- tokenId
-- to
-- amount
+  - fromPrivateKey
+  - tokenId
+  - to
+  - amount

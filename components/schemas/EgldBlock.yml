@@ -17,7 +17,8 @@ properties:
     type: string
     example: 2a11aad21e933be58200839ff875f0ca7e955b8c483a0e117cb92409e5d2a5da
   epoch:
-    description: An epoch is a sequence of consecutive rounds during which the configuration
+    description:
+      An epoch is a sequence of consecutive rounds during which the configuration
       of the network does not change (currently aprox. 24 hrs in length).
     type: number
     example: 18
@@ -29,9 +30,9 @@ properties:
     description: Array of shard blocks
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/EgldShardBlock'
+      $ref: "../migrated.yml#/components/schemas/EgldShardBlock"
   transactions:
     description: Array of transactions.
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/EgldTx'
+      $ref: "../migrated.yml#/components/schemas/EgldTx"

@@ -38,9 +38,10 @@ properties:
     description: Array of transactions
     type: array
     items:
-      $ref: '../migrated.yml#/components/schemas/AlgoTx'
+      $ref: "../migrated.yml#/components/schemas/AlgoTx"
   txn:
-    description: TransactionsRoot authenticates the set of transactions appearing
+    description:
+      TransactionsRoot authenticates the set of transactions appearing
       in the block.
     type: string
     example: ++MWW82yIvYQ0AEoPP0aDGGHGk/dSp5WHlbkf9SVU1U=

@@ -2,7 +2,7 @@ type: object
 properties:
   account:
     description: Blockchain account to send from
-    example: '0x955cd3f17b2fd8ad'
+    example: "0x955cd3f17b2fd8ad"
     maxLength: 18
     minLength: 18
     type: string
@@ -29,7 +29,7 @@ properties:
     maximum: 1000
     type: number
 required:
-- account
-- publicKey
-- mnemonic
-- index
+  - account
+  - publicKey
+  - mnemonic
+  - index

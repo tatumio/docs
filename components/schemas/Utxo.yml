@@ -1,14 +1,14 @@
 type: object
 required:
-- chain
-- address
-- txHash
-- index
-- value
-- valueAsString
+  - chain
+  - address
+  - txHash
+  - index
+  - value
+  - valueAsString
 properties:
   chain:
-    $ref: '../migrated_v1.yml#/components/schemas/ChainUtxoEnum'
+    $ref: "../migrated_v1.yml#/components/schemas/ChainUtxoEnum"
   address:
     type: string
     description: Address of the UTXO
@@ -16,7 +16,7 @@ properties:
   txHash:
     type: string
     description: Hash of the transaction this UTXO is present in
-    example: '0x1b5b3e8a671434bf5d0d38e3e52dcafac484441a48bfae4a3f71e5b0b3093d8e'
+    example: "0x1b5b3e8a671434bf5d0d38e3e52dcafac484441a48bfae4a3f71e5b0b3093d8e"
   index:
     type: number
     description: Index of the UTXO in the transaction
@@ -28,4 +28,4 @@ properties:
   valueAsString:
     type: string
     description: String representation of the value of the UTXO, in BTC, LTC or DOGE.
-    example: '0.0001'
+    example: "0.0001"

@@ -5,7 +5,7 @@ properties:
     example: TRON
     description: The blockchain to work with
     enum:
-    - TRON
+      - TRON
   to:
     maxLength: 34
     minLength: 34
@@ -16,7 +16,7 @@ properties:
     description: ID of the token.
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256
   contractAddress:
     maxLength: 34
@@ -29,16 +29,17 @@ properties:
     maxLength: 64
     example: 842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701
     minLength: 64
-    description: Private key of sender address. Private key, or signature Id must
+    description:
+      Private key of sender address. Private key, or signature Id must
       be present.
   feeLimit:
     type: number
     description: The maximum amount to be paid as the transaction fee (in TRX)
     example: 600
 required:
-- chain
-- to
-- contractAddress
-- tokenId
-- fromPrivateKey
-- feeLimit
+  - chain
+  - to
+  - contractAddress
+  - tokenId
+  - fromPrivateKey
+  - feeLimit

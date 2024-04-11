@@ -8,11 +8,11 @@ properties:
     example: No such block.
     type: string
   statusCode:
-    description: '404'
+    description: "404"
     example: 404
     type: number
 required:
-- errorCode
-- message
-- statusCode
+  - errorCode
+  - message
+  - statusCode
 type: object

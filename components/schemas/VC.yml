@@ -5,7 +5,7 @@ properties:
     type: string
   supply:
     description: Supply of virtual currency.
-    example: '1000000'
+    example: "1000000"
     type: string
   accountId:
     description: Virtual currency account.
@@ -14,7 +14,8 @@ properties:
   baseRate:
     type: number
     default: 1
-    description: Exchange rate of the base pair. Each unit of the created curency
+    description:
+      Exchange rate of the base pair. Each unit of the created curency
       will represent value of baseRate*1 basePair.
   precision:
     type: number
@@ -25,13 +26,14 @@ properties:
     example: TRC20
     description: Type of Tron token.
     enum:
-    - TRC10
-    - TRC20
+      - TRC10
+      - TRC20
   basePair:
-    description: Base pair for virtual currency. Transaction value will be calculated
+    description:
+      Base pair for virtual currency. Transaction value will be calculated
       according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair
       is set to BTC.
-    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
     example: BTC
     type: string
   customerId:
@@ -43,33 +45,37 @@ properties:
     example: My Virtual Token description.
     type: string
   erc20Address:
-    description: Address of ERC20 token, when virtual currency is based on the Ethereum
+    description:
+      Address of ERC20 token, when virtual currency is based on the Ethereum
       blockchain.
-    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    example: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85"
     type: string
   issuerAccount:
-    description: Blockchain account for XLM or XRP based virtual currencies, which
+    description:
+      Blockchain account for XLM or XRP based virtual currencies, which
       is marked as the issuer of the custom blockchain asset.
     example: GDKYMXOAJ5MK4EVIHHNWRGAAOUZMNZYAETMHFCD6JCVBPZ77TUAZFPKT
     type: string
   chain:
-    description: Blockchain, on which this virtual currency is paired on. Not present,
+    description:
+      Blockchain, on which this virtual currency is paired on. Not present,
       when Tatum's private ledger is used as a base ledger.
     example: ETH
     type: string
     enum:
-    - ETH
-    - XRP
-    - XLM
+      - ETH
+      - XRP
+      - XLM
   initialAddress:
-    description: Ethereum address, where initial supply was minted, when virtual currency
+    description:
+      Ethereum address, where initial supply was minted, when virtual currency
       is based on the Ethereum blockchain.
-    example: '0x687422eEA2cB73B5d3e242bA5456b782919AFc85'
+    example: "0x687422eEA2cB73B5d3e242bA5456b782919AFc85"
     type: string
 required:
-- basePair
-- baseRate
-- name
-- accountId
-- supply
+  - basePair
+  - baseRate
+  - name
+  - accountId
+  - supply
 type: object

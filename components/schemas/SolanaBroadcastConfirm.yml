@@ -6,7 +6,7 @@ properties:
     minLength: 1
     type: string
   options:
-    $ref: '../migrated.yml#/components/schemas/SolanaBroadcastConfirmOptions'
+    $ref: "../migrated.yml#/components/schemas/SolanaBroadcastConfirmOptions"
 required:
-- txData
+  - txData
 type: object

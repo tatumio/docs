@@ -14,12 +14,13 @@ properties:
     maxLength: 40
     minLength: 40
   basePair:
-    description: Base pair for Asset. Transaction value will be calculated according
+    description:
+      Base pair for Asset. Transaction value will be calculated according
       to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to
       EUR.
-    $ref: '../migrated.yml#/components/schemas/FiatOrCryptoCurrency'
+    $ref: "../migrated.yml#/components/schemas/FiatOrCryptoCurrency"
     example: EUR
 required:
-- basePair
-- issuerAccount
-- token
+  - basePair
+  - issuerAccount
+  - token

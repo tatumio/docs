@@ -9,6 +9,6 @@ properties:
     description: Account number from external system.
     maxLength: 50
     minLength: 1
-    example: '123456'
+    example: "123456"
     type: string
 type: object

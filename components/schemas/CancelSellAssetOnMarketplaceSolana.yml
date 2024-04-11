@@ -3,7 +3,7 @@ properties:
   chain:
     description: Blockchain to work with.
     enum:
-    - SOL
+      - SOL
     example: SOL
     type: string
   contractAddress:
@@ -27,7 +27,8 @@ properties:
     maxLength: 128
     example: zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv
     minLength: 87
-    description: The private key used for signing transactions as authority; required
+    description:
+      The private key used for signing transactions as authority; required
       if <code>requiresSignOff</code> is set to "true" for the marketplace
   fromPrivateKey:
     type: string
@@ -36,8 +37,8 @@ properties:
     minLength: 87
     description: The private key of the asset owner
 required:
-- chain
-- contractAddress
-- listingId
-- from
-- fromPrivateKey
+  - chain
+  - contractAddress
+  - listingId
+  - from
+  - fromPrivateKey

@@ -1,19 +1,19 @@
 type: object
 required:
-- chain
-- owner
+  - chain
+  - owner
 properties:
   chain:
     type: string
     enum:
-    - bsc-mainnet
-    - bsc-testnet
-    - ethereum-mainnet
-    - ethereum-sepolia
-    - polygon-mainnet
-    - polygon-mumbai
-    - celo-mainnet
-    - celo-alfajores
+      - bsc-mainnet
+      - bsc-testnet
+      - ethereum-mainnet
+      - ethereum-sepolia
+      - polygon-mainnet
+      - polygon-mumbai
+      - celo-mainnet
+      - celo-alfajores
     description: The blockchain network where the contract will be deployed.
   owner:
     type: string
@@ -22,5 +22,6 @@ properties:
   minter:
     type: string
     pattern: ^0x[a-fA-F0-9]{40}$
-    description: The address of the minter of the contract. If not provided, the owner
+    description:
+      The address of the minter of the contract. If not provided, the owner
       will be the minter.

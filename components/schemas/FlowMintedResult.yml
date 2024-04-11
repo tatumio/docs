@@ -8,5 +8,5 @@ properties:
     description: ID of the token.
     type: string
     maxLength: 78
-    example: '123'
+    example: "123"
     format: uint256

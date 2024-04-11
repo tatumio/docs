@@ -1,13 +1,13 @@
 type: object
 properties:
   chain:
-    $ref: '../migrated.yml#/components/schemas/Chain'
+    $ref: "../migrated.yml#/components/schemas/Chain"
   tokenId:
-    $ref: '../migrated.yml#/components/schemas/TokenId'
+    $ref: "../migrated.yml#/components/schemas/TokenId"
   tokenAddress:
-    $ref: '../migrated.yml#/components/schemas/TokenAddress'
+    $ref: "../migrated.yml#/components/schemas/TokenAddress"
   tokenType:
-    $ref: '../migrated.yml#/components/schemas/TokenType'
+    $ref: "../migrated.yml#/components/schemas/TokenType"
   creator:
     type: string
     description: Address of the token creator.
