@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Subscriptions
+  title: Notifications
   version: 3.18.3
 tags:
   - description:
@@ -18,33 +18,33 @@ servers:
 paths:
   /v4/subscription:
     post:
-      $ref: categories/subscriptions/paths/v1_subscription_post.yml
+      $ref: categories/notifications/paths/v1_subscription_post.yml
   /v3/subscription:
     post:
-      $ref: categories/subscriptions/paths/v3_subscription_post.yml
+      $ref: categories/notifications/paths/v3_subscription_post.yml
     get:
-      $ref: categories/subscriptions/paths/v3_subscription_get.yml
+      $ref: categories/notifications/paths/v3_subscription_get.yml
     put:
-      $ref: categories/subscriptions/paths/v3_subscription_put.yml
+      $ref: categories/notifications/paths/v3_subscription_put.yml
     delete:
-      $ref: categories/subscriptions/paths/v3_subscription_delete.yml
+      $ref: categories/notifications/paths/v3_subscription_delete.yml
   /v3/subscription/count:
     get:
-      $ref: categories/subscriptions/paths/v3_subscription_count_get.yml
+      $ref: categories/notifications/paths/v3_subscription_count_get.yml
   /v3/subscription/{id}:
     put:
-      $ref: categories/subscriptions/paths/v3_subscription_{id}_put.yml
+      $ref: categories/notifications/paths/v3_subscription_{id}_put.yml
     delete:
-      $ref: categories/subscriptions/paths/v3_subscription_{id}_delete.yml
+      $ref: categories/notifications/paths/v3_subscription_{id}_delete.yml
   /v3/subscription/report/{id}:
     get:
-      $ref: categories/subscriptions/paths/v3_subscription_report_{id}_get.yml
+      $ref: categories/notifications/paths/v3_subscription_report_{id}_get.yml
   /v3/subscription/webhook:
     get:
-      $ref: categories/subscriptions/paths/v3_subscription_webhook_get.yml
+      $ref: categories/notifications/paths/v3_subscription_webhook_get.yml
   /v3/subscription/webhook/count:
     get:
-      $ref: categories/subscriptions/paths/v3_subscription_webhook_count_get.yml
+      $ref: categories/notifications/paths/v3_subscription_webhook_count_get.yml
 components:
   securitySchemes:
     X-API-Key:

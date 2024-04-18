@@ -24,19 +24,19 @@ jobs:
         with:
           rdme: openapi categories/blockchain_data/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65c0c716d716fe0040919d89
 
-      - name: Blockchain Node RPC
-        env:
-          README_API_KEY: ${{ secrets.README_API_KEY }}
-        uses: readmeio/rdme@v8
-        with:
-          rdme: openapi categories/blockchain_node_rpc/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65c0c794d329e30077a0638a
+      # - name: Blockchain Node RPC
+      #   env:
+      #     README_API_KEY: ${{ secrets.README_API_KEY }}
+      #   uses: readmeio/rdme@v8
+      #   with:
+      # å    rdme: openapi categories/blockchain_node_rpc/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65c0c794d329e30077a0638a
 
-      - name: Subscriptions
+      - name: Notifications
         env:
           README_API_KEY: ${{ secrets.README_API_KEY }}
         uses: readmeio/rdme@v8
         with:
-          rdme: openapi categories/subscriptions/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65c0c7b84eb96b0034e72a4e
+          rdme: openapi categories/notifications/openapi.yml --key=${{ secrets.README_API_KEY }} --id=65c0c7b84eb96b0034e72a4e
 
       - name: Fee Estimation
         env:
