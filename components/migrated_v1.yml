@@ -452,4 +452,4 @@ components:
         \ are applied to both the testnet and mainnet.\n\n  By default, API calls\
         \ with the auto-generated API key are executed against the mainnet.\n  To\
         \ make an API call to the testnet, add the `type` query parameter set to `testnet`\
-        \ to the endpoint URL,\n  for example:\n\n  `https://api.tatum.com/v1/subscription?type=testnet`\n"
+        \ to the endpoint URL,\n  for example:\n\n  `https://api.tatum.com/v4/subscription?type=testnet`\n"

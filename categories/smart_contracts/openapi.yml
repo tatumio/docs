@@ -106,10 +106,10 @@ tags:
 servers:
   - url: https://api.tatum.io
 paths:
-  /v1/contract/deploy:
+  /v4/contract/deploy:
     post:
       $ref: categories/smart_contracts/paths/v1_contract_deploy_post.yml
-  /v1/contract/erc721/mint:
+  /v4/contract/erc721/mint:
     post:
       $ref: categories/smart_contracts/paths/v1_contract_erc721_mint_post.yml
   /v3/gas-pump:
