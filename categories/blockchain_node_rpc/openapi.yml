@@ -11,7 +11,7 @@ tags:
       the supported blockchains is provided in the API description further in this section.</p>
 
       "
-    name: Node RPC
+    name: Connecting to v3 REST API
 servers:
   - url: https://api.tatum.io
 paths:
