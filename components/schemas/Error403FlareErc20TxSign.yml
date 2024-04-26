@@ -1,3 +1,4 @@
+title: Error403FlareErc20TxSign
 properties:
   errorCode:
     description: flare.bep20.sign

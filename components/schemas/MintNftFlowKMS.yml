@@ -1,3 +1,4 @@
+title: MintNftFlowKMS
 description:
   <p>The <code>MintNftFlowKMS</code> schema lets you mint NFTs natively
   on Flow and sign the transaction with your signature ID.<br/>For more information,

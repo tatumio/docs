@@ -1,3 +1,4 @@
+title: CallEthSmartContractMethodCaller
 type: object
 properties:
   caller:

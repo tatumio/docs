@@ -1,3 +1,4 @@
+title: FlowCustomTransactionPK
 type: object
 properties:
   account:

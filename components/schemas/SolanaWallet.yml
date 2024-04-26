@@ -1,3 +1,4 @@
+title: SolanaWallet
 type: object
 properties:
   mnemonic:

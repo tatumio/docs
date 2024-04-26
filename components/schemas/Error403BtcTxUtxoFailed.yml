@@ -1,3 +1,4 @@
+title: Error403BtcTxUtxoFailed
 properties:
   errorCode:
     description: transaction.preparation.failed.utxo

@@ -1,3 +1,4 @@
+title: TransferKCS
 type: object
 properties:
   nonce:

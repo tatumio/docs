@@ -1,3 +1,4 @@
+title: BtcTransactionFromUTXOKMSSource
 type: object
 required:
   - txHash

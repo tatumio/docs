@@ -1,3 +1,4 @@
+title: EstimateFeeTransferFromCustodial
 type: object
 required:
   - chain

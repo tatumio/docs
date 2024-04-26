@@ -1,3 +1,4 @@
+title: Error403BscTxBody
 properties:
   errorCode:
     description: bsc.transaction.body

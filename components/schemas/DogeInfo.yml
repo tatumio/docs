@@ -1,3 +1,4 @@
+title: DogeInfo
 type: object
 properties:
   chain:

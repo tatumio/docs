@@ -1,3 +1,4 @@
+title: CreateAccountXpub
 properties:
   currency:
     description: '<p>The currency for the virtual account</p>

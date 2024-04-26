@@ -1,3 +1,4 @@
+title: XrpInfo
 type: object
 properties:
   ledger_hash:

@@ -1,3 +1,4 @@
+title: Error403MainnetNotSupported
 properties:
   errorCode:
     description: mainnet.not.supported

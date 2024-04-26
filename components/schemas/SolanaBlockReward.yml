@@ -1,3 +1,4 @@
+title: SolanaBlockReward
 type: object
 properties:
   commission:

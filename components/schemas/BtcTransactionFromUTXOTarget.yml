@@ -1,3 +1,4 @@
+title: BtcTransactionFromUTXOTarget
 type: object
 required:
   - address

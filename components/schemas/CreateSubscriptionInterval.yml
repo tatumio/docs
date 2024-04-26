@@ -1,3 +1,4 @@
+title: CreateSubscriptionInterval
 type: object
 required:
   - type

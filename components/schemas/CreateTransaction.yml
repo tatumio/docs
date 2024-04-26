@@ -1,3 +1,4 @@
+title: CreateTransaction
 properties:
   senderAccountId:
     description: Internal sender account ID within Tatum platform

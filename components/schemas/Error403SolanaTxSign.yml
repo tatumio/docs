@@ -1,3 +1,4 @@
+title: Error403SolanaTxSign
 properties:
   errorCode:
     description: solana.transaction.sign

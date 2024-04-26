@@ -1,3 +1,4 @@
+title: Error403BlockageNotExists
 properties:
   errorCode:
     description: blockage.not.exists

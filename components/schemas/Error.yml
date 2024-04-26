@@ -1,3 +1,4 @@
+title: Error
 properties:
   errorCode:
     description: payment.amount.notNull

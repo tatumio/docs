@@ -1,3 +1,4 @@
+title: UpdateFeeAuction
 type: object
 properties:
   chain:

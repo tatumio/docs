@@ -1,3 +1,4 @@
+title: Subscription
 type: object
 required:
   - type

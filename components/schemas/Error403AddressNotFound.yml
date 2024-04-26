@@ -1,3 +1,4 @@
+title: Error403AddressNotFound
 properties:
   errorCode:
     description: Address.not.found

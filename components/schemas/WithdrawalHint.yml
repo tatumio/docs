@@ -1,3 +1,4 @@
+title: WithdrawalHint
 additionalProperties:
   properties:
     address:

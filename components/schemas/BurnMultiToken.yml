@@ -1,3 +1,4 @@
+title: BurnMultiToken
 type: object
 properties:
   chain:

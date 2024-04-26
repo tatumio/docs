@@ -1,3 +1,4 @@
+title: ListOderBookHistoryBody
 type: object
 required:
   - pageSize

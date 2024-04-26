@@ -1,3 +1,4 @@
+title: UpdateFeeRecipientTron
 type: object
 properties:
   chain:

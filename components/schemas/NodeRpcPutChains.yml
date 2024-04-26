@@ -1,3 +1,4 @@
+title: NodeRpcPutChains
 type: string
 example: algorand-testnet-algod
 enum:

@@ -1,3 +1,4 @@
+title: UnblockAmount
 properties:
   recipientAccountId:
     description: Internal recipient account ID within Tatum platform

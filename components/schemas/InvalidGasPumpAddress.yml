@@ -1,3 +1,4 @@
+title: InvalidGasPumpAddress
 type: object
 properties:
   address:

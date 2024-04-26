@@ -1,3 +1,4 @@
+title: CreateBnbAsset
 type: object
 properties:
   token:

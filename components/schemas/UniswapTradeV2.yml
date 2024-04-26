@@ -1,3 +1,4 @@
+title: UniswapTradeV2
 allOf:
   - $ref: "../migrated_v1.yml#/components/schemas/UniswapTrade"
   - type: object

@@ -1,3 +1,4 @@
+title: TransferCustodialWalletBatch
 type: object
 properties:
   chain:

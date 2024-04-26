@@ -1,3 +1,4 @@
+title: SignatureId
 type: object
 properties:
   signatureId:

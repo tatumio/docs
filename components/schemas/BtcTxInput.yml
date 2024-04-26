@@ -1,3 +1,4 @@
+title: BtcTxInput
 type: object
 properties:
   prevout:

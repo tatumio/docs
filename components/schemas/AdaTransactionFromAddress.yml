@@ -1,3 +1,4 @@
+title: AdaTransactionFromAddress
 type: object
 required:
   - to

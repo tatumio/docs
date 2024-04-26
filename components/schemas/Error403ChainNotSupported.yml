@@ -1,3 +1,4 @@
+title: Error403ChainNotSupported
 properties:
   errorCode:
     description: chain.not.supported

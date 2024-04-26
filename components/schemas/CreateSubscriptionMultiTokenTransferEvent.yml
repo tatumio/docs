@@ -1,3 +1,4 @@
+title: CreateSubscriptionMultiTokenTransferEvent
 type: object
 required:
   - type

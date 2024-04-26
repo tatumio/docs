@@ -1,3 +1,4 @@
+title: Error403TxRecipientNotFound
 properties:
   errorCode:
     description: recipientAccount.not.exists

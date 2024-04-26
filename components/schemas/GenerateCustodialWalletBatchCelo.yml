@@ -1,3 +1,4 @@
+title: GenerateCustodialWalletBatchCelo
 type: object
 properties:
   chain:

@@ -1,3 +1,4 @@
+title: Cursor
 type: string
 description:
   "Cursor pagination, used to get next page or previous page of results.\

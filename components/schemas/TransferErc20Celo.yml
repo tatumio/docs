@@ -1,3 +1,4 @@
+title: TransferErc20Celo
 type: object
 properties:
   to:

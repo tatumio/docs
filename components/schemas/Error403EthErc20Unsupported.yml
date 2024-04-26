@@ -1,3 +1,4 @@
+title: Error403EthErc20Unsupported
 properties:
   errorCode:
     description: eth.erc20.unsupported

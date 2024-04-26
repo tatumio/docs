@@ -1,3 +1,4 @@
+title: DecodedDataCommon
 type: object
 description: Common properties for decoded data events.
 properties:

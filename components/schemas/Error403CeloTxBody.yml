@@ -1,3 +1,4 @@
+title: Error403CeloTxBody
 properties:
   errorCode:
     description: celo.transaction.body

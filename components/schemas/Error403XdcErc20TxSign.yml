@@ -1,3 +1,4 @@
+title: Error403XdcErc20TxSign
 properties:
   errorCode:
     description: xdc.erc20.sign

@@ -1,3 +1,4 @@
+title: TransferCustodialWallet
 type: object
 properties:
   chain:

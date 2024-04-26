@@ -1,3 +1,4 @@
+title: Error403CustomerDeactivateActiveAccounts
 properties:
   errorCode:
     description: customer.deactivate.account.active

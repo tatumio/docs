@@ -1,3 +1,4 @@
+title: Error403XrpLedger
 properties:
   errorCode:
     description: xrp.ledger.failed

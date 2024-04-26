@@ -1,3 +1,4 @@
+title: TransferMultiTokenBatchKMS
 type: object
 properties:
   chain:

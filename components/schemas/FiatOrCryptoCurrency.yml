@@ -1,3 +1,4 @@
+title: FiatOrCryptoCurrency
 type: string
 enum:
   - AED

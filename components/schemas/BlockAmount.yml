@@ -1,3 +1,4 @@
+title: BlockAmount
 properties:
   amount:
     description: The amount to be blocked on the account

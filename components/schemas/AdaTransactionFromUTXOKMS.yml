@@ -1,3 +1,4 @@
+title: AdaTransactionFromUTXOKMS
 type: object
 required:
   - to

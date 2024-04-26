@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainPKXpub
 allOf:
   - type: object
     required:

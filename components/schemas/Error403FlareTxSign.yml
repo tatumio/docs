@@ -1,3 +1,4 @@
+title: Error403FlareTxSign
 properties:
   errorCode:
     description: flare.transaction.sign

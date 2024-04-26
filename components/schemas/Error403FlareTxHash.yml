@@ -1,3 +1,4 @@
+title: Error403FlareTxHash
 properties:
   errorCode:
     description: flare.transaction.hash

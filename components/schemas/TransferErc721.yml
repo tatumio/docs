@@ -1,3 +1,4 @@
+title: TransferErc721
 type: object
 properties:
   to:

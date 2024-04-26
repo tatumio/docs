@@ -1,3 +1,4 @@
+title: XlmWallet
 type: object
 required:
   - address

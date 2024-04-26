@@ -1,3 +1,4 @@
+title: Error403VCCreateFailed
 properties:
   errorCode:
     description: virtual.creation.error

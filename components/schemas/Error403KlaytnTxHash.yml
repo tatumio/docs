@@ -1,3 +1,4 @@
+title: Error403KlaytnTxHash
 properties:
   errorCode:
     description: klaytn.transaction.hash

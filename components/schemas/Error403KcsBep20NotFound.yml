@@ -1,3 +1,4 @@
+title: Error403KcsBep20NotFound
 properties:
   errorCode:
     description: erc20.token.notFound

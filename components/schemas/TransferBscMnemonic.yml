@@ -1,3 +1,4 @@
+title: TransferBscMnemonic
 type: object
 properties:
   nonce:

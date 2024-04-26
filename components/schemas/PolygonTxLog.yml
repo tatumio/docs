@@ -1,3 +1,4 @@
+title: PolygonTxLog
 type: object
 properties:
   address:

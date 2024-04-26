@@ -1,3 +1,4 @@
+title: ApproveErc20
 type: object
 properties:
   chain:

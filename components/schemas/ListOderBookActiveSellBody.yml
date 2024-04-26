@@ -1,3 +1,4 @@
+title: ListOderBookActiveSellBody
 type: object
 required:
   - pageSize

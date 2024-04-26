@@ -1,3 +1,4 @@
+title: BroadcastResponse
 properties:
   completed:
     description: Flag, if withdrawal is successfully completed within Tatum systems.

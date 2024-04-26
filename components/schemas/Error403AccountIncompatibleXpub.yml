@@ -1,3 +1,4 @@
+title: Error403AccountIncompatibleXpub
 properties:
   errorCode:
     description: account.xpub.incompatible

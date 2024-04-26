@@ -1,3 +1,4 @@
+title: KmsSignatureIds
 type: object
 properties:
   signatureIds:

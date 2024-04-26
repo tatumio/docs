@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainKMSXpub
 allOf:
   - type: object
     required:

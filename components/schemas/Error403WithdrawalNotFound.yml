@@ -1,3 +1,4 @@
+title: Error403WithdrawalNotFound
 properties:
   errorCode:
     description: withdrawal.missing

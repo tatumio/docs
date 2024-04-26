@@ -1,3 +1,4 @@
+title: Error403Erc20XpubBoth
 properties:
   errorCode:
     description: erc20.address.xpub.both

@@ -1,3 +1,4 @@
+title: Error403AccountBalanceNonZero
 properties:
   errorCode:
     description: account.balance.non.zero

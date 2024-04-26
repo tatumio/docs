@@ -1,3 +1,4 @@
+title: CreateXlmAsset
 type: object
 properties:
   issuerAccount:

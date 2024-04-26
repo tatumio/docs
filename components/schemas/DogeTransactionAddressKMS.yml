@@ -1,3 +1,4 @@
+title: DogeTransactionAddressKMS
 type: object
 required:
   - to

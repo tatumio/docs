@@ -1,3 +1,4 @@
+title: CallKcsSmartContractMethod
 type: object
 properties:
   contractAddress:

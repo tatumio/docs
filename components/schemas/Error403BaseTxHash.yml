@@ -1,3 +1,4 @@
+title: Error403BaseTxHash
 properties:
   errorCode:
     description: base.transaction.hash

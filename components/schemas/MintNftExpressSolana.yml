@@ -1,3 +1,4 @@
+title: MintNftExpressSolana
 description:
   <p>The <code>MintNftExpressSolana</code> schema lets you mint NFTs on
   Solana using <b>NTF Express</b> with the pre-built smart contract provided by Tatum.<br/>For

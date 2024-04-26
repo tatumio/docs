@@ -1,3 +1,4 @@
+title: EstimateFeeFromAddress
 type: object
 required:
   - chain

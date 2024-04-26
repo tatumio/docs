@@ -1,3 +1,4 @@
+title: Error403KcsGasPrice
 properties:
   errorCode:
     description: gas.price.failed

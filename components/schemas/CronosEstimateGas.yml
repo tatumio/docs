@@ -1,3 +1,4 @@
+title: CronosEstimateGas
 type: object
 properties:
   from:

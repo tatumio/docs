@@ -1,3 +1,4 @@
+title: MintNftAlgorand
 description:
   <p>The <code>MintNftAlgorand</code> schema lets you mint NFTs natively
   on Algorand and sign the transaction with your private key.<br/>For more information,

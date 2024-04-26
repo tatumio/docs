@@ -1,3 +1,4 @@
+title: SolanaTxMessage
 type: object
 properties:
   header:

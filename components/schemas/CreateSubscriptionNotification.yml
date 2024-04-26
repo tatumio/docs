@@ -1,3 +1,4 @@
+title: CreateSubscriptionNotification
 type: object
 required:
   - type

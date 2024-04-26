@@ -1,3 +1,4 @@
+title: TransferDogeMnemonic
 properties:
   senderAccountId:
     description: Sender account ID

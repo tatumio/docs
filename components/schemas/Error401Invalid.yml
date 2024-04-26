@@ -1,3 +1,4 @@
+title: Error401Invalid
 properties:
   errorCode:
     example: subscription.invalid

@@ -1,3 +1,4 @@
+title: EthTxLog
 type: object
 properties:
   address:

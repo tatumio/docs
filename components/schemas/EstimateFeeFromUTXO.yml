@@ -1,3 +1,4 @@
+title: EstimateFeeFromUTXO
 type: object
 required:
   - chain

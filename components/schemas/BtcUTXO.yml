@@ -1,3 +1,4 @@
+title: BtcUTXO
 type: object
 properties:
   version:

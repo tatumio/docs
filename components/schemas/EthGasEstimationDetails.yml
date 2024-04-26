@@ -1,3 +1,4 @@
+title: EthGasEstimationDetails
 type: object
 description:
   Detailed estimations for safe (under 30 minutes), standard (under 5 minutes)

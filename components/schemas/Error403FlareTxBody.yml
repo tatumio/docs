@@ -1,3 +1,4 @@
+title: Error403FlareTxBody
 properties:
   errorCode:
     description: flare.transaction.body

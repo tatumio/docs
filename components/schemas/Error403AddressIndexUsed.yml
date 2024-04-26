@@ -1,3 +1,4 @@
+title: Error403AddressIndexUsed
 properties:
   errorCode:
     description: Address.index.used

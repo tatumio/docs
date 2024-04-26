@@ -1,3 +1,4 @@
+title: AccountSettingsXrpBlockchain
 type: object
 properties:
   fromAccount:

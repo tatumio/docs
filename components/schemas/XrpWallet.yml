@@ -1,3 +1,4 @@
+title: XrpWallet
 type: object
 required:
   - address

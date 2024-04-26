@@ -1,3 +1,4 @@
+title: NftTransfer
 allOf:
   - $ref: "../migrated_v1.yml#/components/schemas/DecodedDataCommon"
   - type: object

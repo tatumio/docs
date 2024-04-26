@@ -1,3 +1,4 @@
+title: SolanaListingData
 type: object
 required:
   - amount

@@ -1,3 +1,4 @@
+title: GenerateMarketplace
 type: object
 properties:
   chain:

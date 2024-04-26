@@ -1,3 +1,4 @@
+title: CreateSubscriptionKMSError
 type: object
 required:
   - type

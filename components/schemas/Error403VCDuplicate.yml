@@ -1,3 +1,4 @@
+title: Error403VCDuplicate
 properties:
   errorCode:
     description: virtual.duplicate

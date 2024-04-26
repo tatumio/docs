@@ -1,3 +1,4 @@
+title: AlgorandMintedResult
 type: object
 properties:
   txId:

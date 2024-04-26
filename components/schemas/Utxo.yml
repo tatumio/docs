@@ -1,3 +1,4 @@
+title: Utxo
 type: object
 required:
   - chain

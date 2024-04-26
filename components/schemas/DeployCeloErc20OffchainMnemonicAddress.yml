@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainMnemonicAddress
 allOf:
   - type: object
     required:

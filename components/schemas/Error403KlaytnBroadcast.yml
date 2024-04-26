@@ -1,3 +1,4 @@
+title: Error403KlaytnBroadcast
 properties:
   errorCode:
     description: klaytn.broadcast.failed

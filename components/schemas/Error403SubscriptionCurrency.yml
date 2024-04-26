@@ -1,3 +1,4 @@
+title: Error403SubscriptionCurrency
 properties:
   errorCode:
     description: subscription.attr.currency.invalid

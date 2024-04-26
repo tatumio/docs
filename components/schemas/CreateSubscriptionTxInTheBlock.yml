@@ -1,3 +1,4 @@
+title: CreateSubscriptionTxInTheBlock
 type: object
 required:
   - type

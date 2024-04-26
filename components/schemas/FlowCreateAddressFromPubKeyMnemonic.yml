@@ -1,3 +1,4 @@
+title: FlowCreateAddressFromPubKeyMnemonic
 type: object
 properties:
   account:

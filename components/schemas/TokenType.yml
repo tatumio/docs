@@ -1,3 +1,4 @@
+title: TokenType
 type: string
 enum:
   - native

@@ -1,3 +1,4 @@
+title: Error403TxNotCompliant
 properties:
   errorCode:
     description: transaction.not.compliant

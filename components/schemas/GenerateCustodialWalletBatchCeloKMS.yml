@@ -1,3 +1,4 @@
+title: GenerateCustodialWalletBatchCeloKMS
 type: object
 properties:
   chain:

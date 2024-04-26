@@ -1,3 +1,4 @@
+title: CallFlareSmartContractMethod
 type: object
 properties:
   contractAddress:

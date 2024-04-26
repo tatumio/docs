@@ -1,3 +1,4 @@
+title: Error403BtcUTXO
 properties:
   errorCode:
     description: tx.hash.index.spent

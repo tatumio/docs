@@ -1,3 +1,4 @@
+title: BlockItem
 type: object
 properties:
   blockNumber:

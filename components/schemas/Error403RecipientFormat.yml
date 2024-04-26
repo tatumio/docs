@@ -1,3 +1,4 @@
+title: Error403RecipientFormat
 properties:
   errorCode:
     description: withdrawal.recipient.format

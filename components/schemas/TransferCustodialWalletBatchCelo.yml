@@ -1,3 +1,4 @@
+title: TransferCustodialWalletBatchCelo
 type: object
 properties:
   chain:

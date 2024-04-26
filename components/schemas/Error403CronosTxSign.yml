@@ -1,3 +1,4 @@
+title: Error403CronosTxSign
 properties:
   errorCode:
     description: cronos.transaction.sign

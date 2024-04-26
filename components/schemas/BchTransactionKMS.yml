@@ -1,3 +1,4 @@
+title: BchTransactionKMS
 type: object
 required:
   - to

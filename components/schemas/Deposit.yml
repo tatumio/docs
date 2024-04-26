@@ -1,3 +1,4 @@
+title: Deposit
 required:
   - txId
   - address

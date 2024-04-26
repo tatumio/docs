@@ -1,3 +1,4 @@
+title: EthBalance
 type: object
 properties:
   balance:

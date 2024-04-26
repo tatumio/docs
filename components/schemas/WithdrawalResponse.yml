@@ -1,3 +1,4 @@
+title: WithdrawalResponse
 properties:
   reference:
     description: Transaction reference of the transaction connected to this withdrawal.

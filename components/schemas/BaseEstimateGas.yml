@@ -1,3 +1,4 @@
+title: BaseEstimateGas
 type: object
 properties:
   from:

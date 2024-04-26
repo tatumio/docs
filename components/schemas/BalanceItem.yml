@@ -1,3 +1,4 @@
+title: BalanceItem
 oneOf:
   - $ref: "../migrated_v1.yml#/components/schemas/NativeTokenBalance"
   - $ref: "../migrated_v1.yml#/components/schemas/NftBalance"

@@ -1,3 +1,4 @@
+title: TxSubtype
 type: string
 description: The subtype of the transaction.
 enum:

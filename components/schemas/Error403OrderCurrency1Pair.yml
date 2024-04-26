@@ -1,3 +1,4 @@
+title: Error403OrderCurrency1Pair
 properties:
   errorCode:
     description: trade.currency1.pair

@@ -1,3 +1,4 @@
+title: Error403BscTxHash
 properties:
   errorCode:
     description: bsc.transaction.hash

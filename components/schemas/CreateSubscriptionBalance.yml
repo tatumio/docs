@@ -1,3 +1,4 @@
+title: CreateSubscriptionBalance
 type: object
 required:
   - type

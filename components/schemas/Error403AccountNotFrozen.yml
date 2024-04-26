@@ -1,3 +1,4 @@
+title: Error403AccountNotFrozen
 properties:
   errorCode:
     description: account.not.frozen

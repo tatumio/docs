@@ -1,3 +1,4 @@
+title: TransactionFilter
 properties:
   id:
     description: Account ID - source of transaction(s).

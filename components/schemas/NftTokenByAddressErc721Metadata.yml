@@ -1,3 +1,4 @@
+title: NftTokenByAddressErc721Metadata
 type: object
 description:
   The metadata scheme obtained from the metadata URL; the scheme may not

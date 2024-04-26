@@ -1,3 +1,4 @@
+title: XrpFee
 type: object
 properties:
   current_ledger_size:

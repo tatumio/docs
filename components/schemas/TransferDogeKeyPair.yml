@@ -1,3 +1,4 @@
+title: TransferDogeKeyPair
 properties:
   senderAccountId:
     description: Sender account ID

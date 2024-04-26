@@ -1,3 +1,4 @@
+title: Error403SubscriptionPendingId
 properties:
   errorCode:
     description: subscription.attr.pending.invalid

@@ -1,3 +1,4 @@
+title: SolanaMarketplaceTransactionHash
 type: object
 properties:
   txId:

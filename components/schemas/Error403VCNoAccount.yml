@@ -1,3 +1,4 @@
+title: Error403VCNoAccount
 properties:
   errorCode:
     description: virtual.account.notValid

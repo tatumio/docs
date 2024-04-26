@@ -1,3 +1,4 @@
+title: CreateRecord
 type: object
 properties:
   data:

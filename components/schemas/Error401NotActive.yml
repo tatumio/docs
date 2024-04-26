@@ -1,3 +1,4 @@
+title: Error401NotActive
 properties:
   errorCode:
     example: subscription.not.active

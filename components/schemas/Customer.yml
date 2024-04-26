@@ -1,3 +1,4 @@
+title: Customer
 required:
   - active
   - id

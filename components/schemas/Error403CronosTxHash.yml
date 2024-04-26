@@ -1,3 +1,4 @@
+title: Error403CronosTxHash
 properties:
   errorCode:
     description: cronos.transaction.hash

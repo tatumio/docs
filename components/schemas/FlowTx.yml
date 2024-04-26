@@ -1,3 +1,4 @@
+title: FlowTx
 type: object
 properties:
   referenceBlockId:

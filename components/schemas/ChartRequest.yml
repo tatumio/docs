@@ -1,3 +1,4 @@
+title: ChartRequest
 type: object
 required:
   - pair

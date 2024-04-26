@@ -1,3 +1,4 @@
+title: AdaTransactionFromAddressKMS
 type: object
 required:
   - to

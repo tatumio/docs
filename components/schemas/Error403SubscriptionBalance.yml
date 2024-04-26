@@ -1,3 +1,4 @@
+title: Error403SubscriptionBalance
 properties:
   errorCode:
     description: subscription.attr.balance.invalid

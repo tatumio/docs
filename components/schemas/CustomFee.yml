@@ -1,3 +1,4 @@
+title: CustomFee
 description: The custom defined fee; if not present, will be calculated automatically
 type: object
 required:

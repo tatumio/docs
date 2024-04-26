@@ -1,3 +1,4 @@
+title: LtcTx
 type: object
 properties:
   hash:

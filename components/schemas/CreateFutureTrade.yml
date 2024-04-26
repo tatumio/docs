@@ -1,3 +1,4 @@
+title: CreateFutureTrade
 type: object
 required:
   - type

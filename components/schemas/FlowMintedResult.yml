@@ -1,3 +1,4 @@
+title: FlowMintedResult
 type: object
 properties:
   txId:

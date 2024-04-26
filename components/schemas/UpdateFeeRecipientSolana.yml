@@ -1,3 +1,4 @@
+title: UpdateFeeRecipientSolana
 type: object
 properties:
   chain:

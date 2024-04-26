@@ -1,3 +1,4 @@
+title: Error403BtcTxFailed
 properties:
   errorCode:
     description: transaction.failed

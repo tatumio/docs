@@ -1,3 +1,4 @@
+title: Error403LimitExceeded
 properties:
   errorCode:
     description: limit.exceeded

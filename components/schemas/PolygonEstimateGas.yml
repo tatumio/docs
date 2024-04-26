@@ -1,3 +1,4 @@
+title: PolygonEstimateGas
 type: object
 properties:
   from:

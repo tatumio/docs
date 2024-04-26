@@ -1,3 +1,4 @@
+title: RawData
 type: object
 description: Raw data associated with the event, including topics and data.
 required:

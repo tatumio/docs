@@ -1,3 +1,4 @@
+title: MultitokenInfo
 type: object
 properties:
   symbol:

@@ -1,3 +1,4 @@
+title: Error403EthMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

@@ -1,3 +1,4 @@
+title: TransferBtcKeyPair
 properties:
   senderAccountId:
     description: Sender account ID

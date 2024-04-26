@@ -1,3 +1,4 @@
+title: KcsBlock
 type: object
 properties:
   difficulty:

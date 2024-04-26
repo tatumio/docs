@@ -1,3 +1,4 @@
+title: TransferCeloMnemonic
 type: object
 properties:
   nonce:

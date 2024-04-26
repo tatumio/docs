@@ -1,3 +1,4 @@
+title: Error403XrpSign
 properties:
   errorCode:
     description: xrp.sign.failed

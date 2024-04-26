@@ -1,3 +1,4 @@
+title: TransactionFilterCustomer
 properties:
   id:
     description: Customer internal ID to search for.

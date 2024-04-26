@@ -1,3 +1,4 @@
+title: BscTxLog
 type: object
 properties:
   address:

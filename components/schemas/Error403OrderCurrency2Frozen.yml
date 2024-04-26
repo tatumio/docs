@@ -1,3 +1,4 @@
+title: Error403OrderCurrency2Frozen
 properties:
   errorCode:
     description: trade.currency2AccountId.frozen

@@ -1,3 +1,4 @@
+title: AdaAccountBalance
 type: array
 items:
   type: object

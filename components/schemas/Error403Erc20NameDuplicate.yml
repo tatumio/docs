@@ -1,3 +1,4 @@
+title: Error403Erc20NameDuplicate
 properties:
   errorCode:
     description: erc20.duplicate.name

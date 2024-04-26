@@ -1,3 +1,4 @@
+title: Error403PolygonBroadcast
 properties:
   errorCode:
     description: polygon.broadcast.failed

@@ -1,3 +1,4 @@
+title: XrpAccountBalance
 type: object
 properties:
   assets:

@@ -1,3 +1,4 @@
+title: ValidGasPumpAddress
 type: object
 properties:
   index:

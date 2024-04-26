@@ -1,3 +1,4 @@
+title: CallPolygonSmartContractReadMethod
 type: object
 properties:
   contractAddress:

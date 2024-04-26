@@ -1,3 +1,4 @@
+title: CallFlareSmartContractMethodCaller
 type: object
 properties:
   caller:

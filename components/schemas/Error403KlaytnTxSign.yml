@@ -1,3 +1,4 @@
+title: Error403KlaytnTxSign
 properties:
   errorCode:
     description: klaytn.transaction.sign

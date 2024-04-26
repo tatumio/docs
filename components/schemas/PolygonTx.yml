@@ -1,3 +1,4 @@
+title: PolygonTx
 type: object
 properties:
   blockHash:

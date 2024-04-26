@@ -1,3 +1,4 @@
+title: BtcTransactionFromUTXO
 type: object
 required:
   - to

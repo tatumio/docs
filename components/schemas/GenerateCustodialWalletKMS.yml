@@ -1,3 +1,4 @@
+title: GenerateCustodialWalletKMS
 type: object
 properties:
   chain:

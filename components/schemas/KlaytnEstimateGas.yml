@@ -1,3 +1,4 @@
+title: KlaytnEstimateGas
 type: object
 properties:
   from:

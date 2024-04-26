@@ -1,3 +1,4 @@
+title: UpdateFeeRecipientCelo
 type: object
 properties:
   chain:

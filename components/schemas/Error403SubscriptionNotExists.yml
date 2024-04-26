@@ -1,3 +1,4 @@
+title: Error403SubscriptionNotExists
 properties:
   errorCode:
     description: subscription.not.exists

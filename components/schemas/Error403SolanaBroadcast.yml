@@ -1,3 +1,4 @@
+title: Error403SolanaBroadcast
 properties:
   errorCode:
     description: solana.broadcast.failed

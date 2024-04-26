@@ -1,3 +1,4 @@
+title: Error403BscTxSign
 properties:
   errorCode:
     description: bsc.transaction.sign

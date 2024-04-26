@@ -1,3 +1,4 @@
+title: Error403PolygonTxBody
 properties:
   errorCode:
     description: polygon.transaction.body

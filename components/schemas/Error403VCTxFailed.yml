@@ -1,3 +1,4 @@
+title: Error403VCTxFailed
 properties:
   errorCode:
     description: virtual.tx.failed

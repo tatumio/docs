@@ -1,3 +1,4 @@
+title: NftMetadataURI
 type: string
 description: "Metadata URL of the token. This data doesn't have to be present.
 

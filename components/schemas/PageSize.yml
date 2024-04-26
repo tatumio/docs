@@ -1,3 +1,4 @@
+title: PageSize
 type: number
 example: 10
 minimum: 1

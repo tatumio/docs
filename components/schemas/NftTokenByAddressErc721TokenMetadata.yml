@@ -1,3 +1,4 @@
+title: NftTokenByAddressErc721TokenMetadata
 type: object
 properties:
   tokenId:

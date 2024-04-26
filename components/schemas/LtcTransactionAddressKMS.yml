@@ -1,3 +1,4 @@
+title: LtcTransactionAddressKMS
 type: object
 required:
   - to

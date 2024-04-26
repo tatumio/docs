@@ -1,3 +1,4 @@
+title: Error403OffchainBroadcastState
 properties:
   errorCode:
     description: withdrawal.unexpected.state

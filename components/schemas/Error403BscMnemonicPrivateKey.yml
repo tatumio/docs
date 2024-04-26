@@ -1,3 +1,4 @@
+title: Error403BscMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

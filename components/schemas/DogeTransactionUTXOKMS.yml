@@ -1,3 +1,4 @@
+title: DogeTransactionUTXOKMS
 type: object
 required:
   - to

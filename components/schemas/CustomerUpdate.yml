@@ -1,3 +1,4 @@
+title: CustomerUpdate
 properties:
   externalId:
     description: External customer ID. If not set, it will not be updated.

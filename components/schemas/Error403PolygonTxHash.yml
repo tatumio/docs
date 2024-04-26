@@ -1,3 +1,4 @@
+title: Error403PolygonTxHash
 properties:
   errorCode:
     description: polygon.transaction.hash

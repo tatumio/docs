@@ -1,3 +1,4 @@
+title: Error403BtcMnemonicTxFailed
 properties:
   errorCode:
     description: transaction.preparation.failed

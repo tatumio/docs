@@ -1,3 +1,4 @@
+title: DogeTxByAddress
 type: object
 properties:
   hash:

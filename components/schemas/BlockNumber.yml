@@ -1,3 +1,4 @@
+title: BlockNumber
 type: number
 example: 16499510
 minimum: 0

@@ -1,3 +1,4 @@
+title: TransferXrp
 type: object
 properties:
   senderAccountId:

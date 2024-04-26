@@ -1,3 +1,4 @@
+title: MarketValue
 description: FIAT value of transaction.
 properties:
   amount:

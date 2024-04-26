@@ -1,3 +1,4 @@
+title: Error403KcsTxHash
 properties:
   errorCode:
     description: kcs.transaction.hash

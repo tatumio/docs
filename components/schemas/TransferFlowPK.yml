@@ -1,3 +1,4 @@
+title: TransferFlowPK
 type: object
 properties:
   senderAccountId:

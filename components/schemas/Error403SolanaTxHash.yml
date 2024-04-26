@@ -1,3 +1,4 @@
+title: Error403SolanaTxHash
 properties:
   errorCode:
     description: solana.transaction.hash

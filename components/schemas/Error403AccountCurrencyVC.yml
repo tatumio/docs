@@ -1,3 +1,4 @@
+title: Error403AccountCurrencyVC
 properties:
   errorCode:
     description: account.currency.missing

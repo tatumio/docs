@@ -1,3 +1,4 @@
+title: Url
 properties:
   url:
     description: QR Code as data URL

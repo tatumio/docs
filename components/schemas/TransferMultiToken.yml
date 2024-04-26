@@ -1,3 +1,4 @@
+title: TransferMultiToken
 type: object
 properties:
   chain:

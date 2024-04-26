@@ -1,3 +1,4 @@
+title: PrivKey
 type: object
 properties:
   key:

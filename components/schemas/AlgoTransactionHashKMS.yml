@@ -1,3 +1,4 @@
+title: AlgoTransactionHashKMS
 type: object
 properties:
   txId:

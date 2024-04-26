@@ -1,3 +1,4 @@
+title: TxType
 type: string
 description: The type of the transaction.
 enum:

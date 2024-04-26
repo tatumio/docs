@@ -1,3 +1,4 @@
+title: FlowAddPubKeyMnemonic
 type: object
 properties:
   account:

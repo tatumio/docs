@@ -1,3 +1,4 @@
+title: BurnErc721
 type: object
 properties:
   tokenId:

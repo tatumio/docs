@@ -1,3 +1,4 @@
+title: TransferXlmBlockchain
 type: object
 properties:
   fromAccount:

@@ -1,3 +1,4 @@
+title: EthBlock
 type: object
 properties:
   difficulty:

@@ -1,3 +1,4 @@
+title: Error403BnbTxStateFailed
 properties:
   errorCode:
     description: bnb.broadcast.failed.tx.state

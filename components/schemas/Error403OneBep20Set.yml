@@ -1,3 +1,4 @@
+title: Error403OneBep20Set
 properties:
   errorCode:
     description: erc20.address.set

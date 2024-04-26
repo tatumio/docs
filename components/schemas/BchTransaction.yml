@@ -1,3 +1,4 @@
+title: BchTransaction
 type: object
 required:
   - to

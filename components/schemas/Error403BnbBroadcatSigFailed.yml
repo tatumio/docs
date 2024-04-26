@@ -1,3 +1,4 @@
+title: Error403BnbBroadcatSigFailed
 properties:
   errorCode:
     description: bnb.broadcast.bad.signature

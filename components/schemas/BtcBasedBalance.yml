@@ -1,3 +1,4 @@
+title: BtcBasedBalance
 type: object
 properties:
   incoming:

@@ -1,3 +1,4 @@
+title: CallCeloSmartContractMethod
 type: object
 properties:
   contractAddress:

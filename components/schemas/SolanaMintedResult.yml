@@ -1,3 +1,4 @@
+title: SolanaMintedResult
 type: object
 properties:
   txId:

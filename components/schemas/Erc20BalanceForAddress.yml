@@ -1,3 +1,4 @@
+title: Erc20BalanceForAddress
 type: object
 properties:
   contractAddress:

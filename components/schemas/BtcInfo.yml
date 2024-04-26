@@ -1,3 +1,4 @@
+title: BtcInfo
 type: object
 properties:
   chain:

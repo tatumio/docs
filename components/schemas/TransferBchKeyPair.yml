@@ -1,3 +1,4 @@
+title: TransferBchKeyPair
 properties:
   senderAccountId:
     description: Sender account ID

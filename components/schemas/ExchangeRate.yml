@@ -1,3 +1,4 @@
+title: ExchangeRate
 description: FIAT value in EURO of the FIAT or crypto asset.
 properties:
   id:

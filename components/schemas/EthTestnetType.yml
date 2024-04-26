@@ -1,3 +1,4 @@
+title: EthTestnetType
 type: string
 default: ethereum-sepolia
 enum:

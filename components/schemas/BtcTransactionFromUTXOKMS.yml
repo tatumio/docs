@@ -1,3 +1,4 @@
+title: BtcTransactionFromUTXOKMS
 type: object
 required:
   - to

@@ -1,3 +1,4 @@
+title: VirtualCurrency
 properties:
   name:
     description: Virtual currency name. Must be prefixed with 'VC_'.

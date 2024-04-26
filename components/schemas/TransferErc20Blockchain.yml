@@ -1,3 +1,4 @@
+title: TransferErc20Blockchain
 type: object
 properties:
   to:

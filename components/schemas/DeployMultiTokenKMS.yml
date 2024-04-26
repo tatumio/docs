@@ -1,3 +1,4 @@
+title: DeployMultiTokenKMS
 type: object
 properties:
   chain:

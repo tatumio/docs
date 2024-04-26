@@ -1,3 +1,4 @@
+title: CreateSubscriptionKMSSuccess
 type: object
 required:
   - type

@@ -1,3 +1,4 @@
+title: Error403SubscriptionInterval
 properties:
   errorCode:
     description: subscription.attr.interval.invalid

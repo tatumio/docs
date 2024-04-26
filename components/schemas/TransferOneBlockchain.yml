@@ -1,3 +1,4 @@
+title: TransferOneBlockchain
 type: object
 properties:
   amount:

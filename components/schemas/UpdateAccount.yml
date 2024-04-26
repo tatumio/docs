@@ -1,3 +1,4 @@
+title: UpdateAccount
 properties:
   accountCode:
     description: For bookkeeping to distinct account purpose.

@@ -1,3 +1,4 @@
+title: Error403CronosBroadcast
 properties:
   errorCode:
     description: cronos.broadcast.failed

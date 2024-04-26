@@ -1,3 +1,4 @@
+title: FeeAndChange
 type: object
 required:
   - changeAddress

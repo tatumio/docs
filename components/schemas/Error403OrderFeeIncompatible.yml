@@ -1,3 +1,4 @@
+title: Error403OrderFeeIncompatible
 properties:
   errorCode:
     description: trade.currency.fee

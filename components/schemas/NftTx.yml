@@ -1,3 +1,4 @@
+title: NftTx
 type: object
 properties:
   blockNumber:

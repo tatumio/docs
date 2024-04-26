@@ -1,3 +1,4 @@
+title: UpdateFeeKMS
 type: object
 properties:
   chain:

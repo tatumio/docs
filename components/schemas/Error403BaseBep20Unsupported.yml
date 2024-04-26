@@ -1,3 +1,4 @@
+title: Error403BaseBep20Unsupported
 properties:
   errorCode:
     description: base.bep20.unsupported

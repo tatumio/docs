@@ -1,3 +1,4 @@
+title: DeployErc20
 type: object
 properties:
   symbol:

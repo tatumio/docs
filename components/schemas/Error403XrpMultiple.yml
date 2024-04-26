@@ -1,3 +1,4 @@
+title: Error403XrpMultiple
 properties:
   errorCode:
     description: xrp.settings.multiple

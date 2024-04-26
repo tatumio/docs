@@ -1,3 +1,4 @@
+title: BatchTransactionResult
 type: array
 items:
   description:

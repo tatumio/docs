@@ -1,3 +1,4 @@
+title: Error403EthBroadcast
 properties:
   errorCode:
     description: ethereum.broadcast.failed

@@ -1,3 +1,4 @@
+title: Error403Erc20Prefix
 properties:
   errorCode:
     description: erc20.symbol.prefix

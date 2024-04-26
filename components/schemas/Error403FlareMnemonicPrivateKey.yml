@@ -1,3 +1,4 @@
+title: Error403FlareMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

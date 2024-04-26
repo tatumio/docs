@@ -1,3 +1,4 @@
+title: Error403BaseScBody
 properties:
   errorCode:
     description: base.sc.invalid

@@ -1,3 +1,4 @@
+title: Error403SubscriptionId
 properties:
   errorCode:
     description: subscription.attr.incoming.invalid

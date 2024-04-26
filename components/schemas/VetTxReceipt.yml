@@ -1,3 +1,4 @@
+title: VetTxReceipt
 type: object
 properties:
   gasUsed:

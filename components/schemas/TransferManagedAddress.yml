@@ -1,3 +1,4 @@
+title: TransferManagedAddress
 type: object
 properties:
   chain:

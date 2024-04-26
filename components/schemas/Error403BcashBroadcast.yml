@@ -1,3 +1,4 @@
+title: Error403BcashBroadcast
 properties:
   errorCode:
     description: bch.broadcast.failed

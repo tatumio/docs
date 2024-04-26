@@ -1,3 +1,4 @@
+title: Error403KcsMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing
