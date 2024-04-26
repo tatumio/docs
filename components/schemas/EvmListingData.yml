@@ -1,3 +1,4 @@
+title: EvmListingData
 type: object
 properties:
   amount:

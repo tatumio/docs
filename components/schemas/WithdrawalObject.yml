@@ -1,3 +1,4 @@
+title: WithdrawalObject
 properties:
   id:
     description: ID of the withdrawal

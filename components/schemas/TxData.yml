@@ -1,3 +1,4 @@
+title: TxData
 type: object
 properties:
   chain:

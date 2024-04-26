@@ -1,3 +1,4 @@
+title: MintNftFlowMnemonic
 description:
   <p>The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively
   on Flow and sign the transaction with your wallet mnemonic.<br/>For more information,

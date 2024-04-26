@@ -1,3 +1,4 @@
+title: FlowTransactionMnemonic
 type: object
 properties:
   account:

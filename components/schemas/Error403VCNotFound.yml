@@ -1,3 +1,4 @@
+title: Error403VCNotFound
 properties:
   errorCode:
     description: vc.not.found

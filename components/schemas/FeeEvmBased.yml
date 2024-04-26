@@ -1,3 +1,4 @@
+title: FeeEvmBased
 type: object
 required:
   - gasLimit

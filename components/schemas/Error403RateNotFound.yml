@@ -1,3 +1,4 @@
+title: Error403RateNotFound
 properties:
   errorCode:
     description: rate.not.found

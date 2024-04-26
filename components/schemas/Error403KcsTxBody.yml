@@ -1,3 +1,4 @@
+title: Error403KcsTxBody
 properties:
   errorCode:
     description: kcs.transaction.body

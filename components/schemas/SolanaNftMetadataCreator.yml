@@ -1,3 +1,4 @@
+title: SolanaNftMetadataCreator
 type: object
 required:
   - address

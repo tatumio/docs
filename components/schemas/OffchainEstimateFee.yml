@@ -1,3 +1,4 @@
+title: OffchainEstimateFee
 type: object
 required:
   - senderAccountId

@@ -1,3 +1,4 @@
+title: Error403VCPrefix
 properties:
   errorCode:
     description: virtual.name.prefix

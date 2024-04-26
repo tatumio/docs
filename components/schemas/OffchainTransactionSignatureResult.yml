@@ -1,3 +1,4 @@
+title: OffchainTransactionSignatureResult
 type: object
 properties:
   signatureId:

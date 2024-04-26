@@ -1,3 +1,4 @@
+title: TokenIds
 type: string
 description: IDs of the token.
 maxLength: 78

@@ -1,3 +1,4 @@
+title: Error403TxAmountEthOffchain
 properties:
   errorCode:
     description: transaction.amount.eth

@@ -1,3 +1,4 @@
+title: TransferTronMnemonic
 type: object
 properties:
   address:

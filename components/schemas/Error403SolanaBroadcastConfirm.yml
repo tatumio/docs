@@ -1,3 +1,4 @@
+title: Error403SolanaBroadcastConfirm
 properties:
   errorCode:
     description: solana.broadcast.confirm.failed

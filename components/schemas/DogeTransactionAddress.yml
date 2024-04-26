@@ -1,3 +1,4 @@
+title: DogeTransactionAddress
 type: object
 required:
   - to

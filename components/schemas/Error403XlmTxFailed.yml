@@ -1,3 +1,4 @@
+title: Error403XlmTxFailed
 properties:
   errorCode:
     description: xlm.tx.failed

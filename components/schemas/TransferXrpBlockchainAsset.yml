@@ -1,3 +1,4 @@
+title: TransferXrpBlockchainAsset
 type: object
 properties:
   fromAccount:

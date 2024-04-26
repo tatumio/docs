@@ -1,3 +1,4 @@
+title: Error400
 properties:
   errorCode:
     example: validation.failed

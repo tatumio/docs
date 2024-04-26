@@ -1,3 +1,4 @@
+title: TransferXrpBlockchainAssetKMS
 type: object
 properties:
   fromAccount:

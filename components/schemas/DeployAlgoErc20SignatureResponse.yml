@@ -1,3 +1,4 @@
+title: DeployAlgoErc20SignatureResponse
 properties:
   accountId:
     description:

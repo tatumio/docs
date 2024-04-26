@@ -1,3 +1,4 @@
+title: Error403CustomerDisabled
 properties:
   errorCode:
     description: customer.disabled

@@ -1,3 +1,4 @@
+title: Error403OneBep20Unsupported
 properties:
   errorCode:
     description: bsc.bep20.unsupported

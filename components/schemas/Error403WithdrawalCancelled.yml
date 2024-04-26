@@ -1,3 +1,4 @@
+title: Error403WithdrawalCancelled
 properties:
   errorCode:
     description: withdrawal.not.cancelled.transaction.failed

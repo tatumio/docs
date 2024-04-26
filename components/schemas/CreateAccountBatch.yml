@@ -1,3 +1,4 @@
+title: CreateAccountBatch
 type: object
 properties:
   accounts:

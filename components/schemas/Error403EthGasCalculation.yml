@@ -1,3 +1,4 @@
+title: Error403EthGasCalculation
 properties:
   errorCode:
     description: eth.transaction.gas

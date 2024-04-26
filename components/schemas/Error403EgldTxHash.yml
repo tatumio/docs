@@ -1,3 +1,4 @@
+title: Error403EgldTxHash
 properties:
   errorCode:
     description: egld.transaction.hash

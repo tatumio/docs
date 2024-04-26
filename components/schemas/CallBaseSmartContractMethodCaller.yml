@@ -1,3 +1,4 @@
+title: CallBaseSmartContractMethodCaller
 type: object
 properties:
   caller:

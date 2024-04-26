@@ -1,3 +1,4 @@
+title: CallCeloReadSmartContractMethod
 type: object
 properties:
   contractAddress:

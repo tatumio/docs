@@ -1,3 +1,4 @@
+title: Error403OrderCurrency1CustomerDisabled
 properties:
   errorCode:
     description: trade.currency1AccountId.customer.disabled

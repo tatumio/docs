@@ -1,3 +1,4 @@
+title: Error403OrderCurrency1NotFound
 properties:
   errorCode:
     description: trade.currency1AccountId.not.exists

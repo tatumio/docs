@@ -1,3 +1,4 @@
+title: PrivKeyRequest
 type: object
 properties:
   index:

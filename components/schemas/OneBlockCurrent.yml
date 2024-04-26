@@ -1,3 +1,4 @@
+title: OneBlockCurrent
 type: object
 properties:
   shardID:

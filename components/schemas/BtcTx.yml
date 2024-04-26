@@ -1,3 +1,4 @@
+title: BtcTx
 type: object
 properties:
   hash:

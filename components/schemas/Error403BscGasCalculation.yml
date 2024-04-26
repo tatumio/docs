@@ -1,3 +1,4 @@
+title: Error403BscGasCalculation
 properties:
   errorCode:
     description: bsc.transaction.gas

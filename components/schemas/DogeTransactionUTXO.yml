@@ -1,3 +1,4 @@
+title: DogeTransactionUTXO
 type: object
 required:
   - to

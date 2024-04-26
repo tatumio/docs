@@ -1,3 +1,4 @@
+title: Error403Broadcast
 properties:
   errorCode:
     description: blockchain.broadcast.error

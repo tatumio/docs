@@ -1,3 +1,4 @@
+title: BchInfo
 type: object
 properties:
   chain:

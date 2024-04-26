@@ -1,3 +1,4 @@
+title: NftTokenByAddressErc721
 type: object
 required:
   - contractAddress

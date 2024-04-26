@@ -1,3 +1,4 @@
+title: Error403VetFailed
 properties:
   errorCode:
     description: vet.failed

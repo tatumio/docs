@@ -1,3 +1,4 @@
+title: DeployAbstractContract
 type: object
 required:
   - chain

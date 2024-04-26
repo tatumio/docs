@@ -1,3 +1,4 @@
+title: BtcBlockHash
 type: object
 properties:
   hash:

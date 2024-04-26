@@ -1,3 +1,4 @@
+title: Error404BlockNotExists
 properties:
   errorCode:
     description: block.hash.not.exists

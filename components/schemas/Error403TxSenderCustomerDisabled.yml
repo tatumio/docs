@@ -1,3 +1,4 @@
+title: Error403TxSenderCustomerDisabled
 properties:
   errorCode:
     description: senderAccount.customer.disabled

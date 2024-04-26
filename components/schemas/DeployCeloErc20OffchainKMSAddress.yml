@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainKMSAddress
 allOf:
   - type: object
     required:

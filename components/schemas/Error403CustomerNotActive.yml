@@ -1,3 +1,4 @@
+title: Error403CustomerNotActive
 properties:
   errorCode:
     description: customer.not.active

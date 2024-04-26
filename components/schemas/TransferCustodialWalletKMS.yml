@@ -1,3 +1,4 @@
+title: TransferCustodialWalletKMS
 type: object
 properties:
   chain:

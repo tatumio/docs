@@ -1,3 +1,4 @@
+title: EthEstimateGasArray
 type: object
 required:
   - estimations

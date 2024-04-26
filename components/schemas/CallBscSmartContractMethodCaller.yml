@@ -1,3 +1,4 @@
+title: CallBscSmartContractMethodCaller
 type: object
 properties:
   caller:

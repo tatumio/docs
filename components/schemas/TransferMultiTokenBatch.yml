@@ -1,3 +1,4 @@
+title: TransferMultiTokenBatch
 type: object
 properties:
   chain:

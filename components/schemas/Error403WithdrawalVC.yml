@@ -1,3 +1,4 @@
+title: Error403WithdrawalVC
 properties:
   errorCode:
     description: withdrawal.account.virtual

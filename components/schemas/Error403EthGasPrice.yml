@@ -1,3 +1,4 @@
+title: Error403EthGasPrice
 properties:
   errorCode:
     description: gas.price.failed

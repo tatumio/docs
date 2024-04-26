@@ -1,3 +1,4 @@
+title: UpdateFee
 type: object
 properties:
   chain:

@@ -1,3 +1,4 @@
+title: Error403AccountXpub
 properties:
   errorCode:
     description: account.xpub.present

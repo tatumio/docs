@@ -1,3 +1,4 @@
+title: Error403EthTxHash
 properties:
   errorCode:
     description: eth.transaction.hash

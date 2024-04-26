@@ -1,3 +1,4 @@
+title: GenerateCustodialWalletBatchTronKMS
 type: object
 properties:
   chain:

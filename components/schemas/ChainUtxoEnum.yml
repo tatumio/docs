@@ -1,3 +1,4 @@
+title: ChainUtxoEnum
 description: The blockchain to work with.
 type: string
 example: bitcoin

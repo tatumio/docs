@@ -1,3 +1,4 @@
+title: Error403EgldGasCalculation
 properties:
   errorCode:
     description: egld.transaction.gas

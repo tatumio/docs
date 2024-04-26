@@ -1,3 +1,4 @@
+title: LtcTransactionUTXOKMS
 type: object
 required:
   - to

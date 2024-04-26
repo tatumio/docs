@@ -1,3 +1,4 @@
+title: Error403OffchainCheck
 properties:
   errorCode:
     description: withdrawal.check.currency

@@ -1,3 +1,4 @@
+title: BscTx
 type: object
 properties:
   blockHash:

@@ -1,3 +1,4 @@
+title: OffchainTransactionResult
 type: object
 properties:
   id:

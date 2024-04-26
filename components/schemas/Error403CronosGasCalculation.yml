@@ -1,3 +1,4 @@
+title: Error403CronosGasCalculation
 properties:
   errorCode:
     description: cronos.transaction.gas

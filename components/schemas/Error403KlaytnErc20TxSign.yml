@@ -1,3 +1,4 @@
+title: Error403KlaytnErc20TxSign
 properties:
   errorCode:
     description: klaytn.bep20.sign

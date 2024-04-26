@@ -1,3 +1,4 @@
+title: Error404TxNotFound
 properties:
   errorCode:
     description: tx.not.found

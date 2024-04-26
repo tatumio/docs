@@ -1,3 +1,4 @@
+title: Error403CronosGasPrice
 properties:
   errorCode:
     description: gas.price.failed

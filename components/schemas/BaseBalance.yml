@@ -1,3 +1,4 @@
+title: BaseBalance
 type: object
 properties:
   balance:

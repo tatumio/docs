@@ -1,3 +1,4 @@
+title: Error401
 properties:
   message:
     example: Unauthorized

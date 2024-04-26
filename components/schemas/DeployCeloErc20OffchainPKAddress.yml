@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainPKAddress
 allOf:
   - type: object
     required:

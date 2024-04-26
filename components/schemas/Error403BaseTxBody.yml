@@ -1,3 +1,4 @@
+title: Error403BaseTxBody
 properties:
   errorCode:
     description: base.transaction.body

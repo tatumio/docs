@@ -1,3 +1,4 @@
+title: Error403PolygonErc20TxSign
 properties:
   errorCode:
     description: polygon.bep20.sign

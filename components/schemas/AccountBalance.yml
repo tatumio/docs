@@ -1,3 +1,4 @@
+title: AccountBalance
 properties:
   accountBalance:
     description: All assets on the account, both available and blocked

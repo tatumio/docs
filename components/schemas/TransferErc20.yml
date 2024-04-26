@@ -1,3 +1,4 @@
+title: TransferErc20
 type: object
 properties:
   senderAccountId:

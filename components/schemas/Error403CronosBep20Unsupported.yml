@@ -1,3 +1,4 @@
+title: Error403CronosBep20Unsupported
 properties:
   errorCode:
     description: cronos.bep20.unsupported

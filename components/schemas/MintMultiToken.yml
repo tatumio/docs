@@ -1,3 +1,4 @@
+title: MintMultiToken
 type: object
 properties:
   chain:

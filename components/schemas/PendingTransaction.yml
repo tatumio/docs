@@ -1,3 +1,4 @@
+title: PendingTransaction
 type: object
 properties:
   id:

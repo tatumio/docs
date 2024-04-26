@@ -1,3 +1,4 @@
+title: Error403AccountCustomerInactive
 properties:
   errorCode:
     description: account.customer.inactive

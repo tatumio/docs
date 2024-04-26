@@ -1,3 +1,4 @@
+title: CreateSubscriptionIncoming
 type: object
 required:
   - type

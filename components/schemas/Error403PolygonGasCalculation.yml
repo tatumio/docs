@@ -1,3 +1,4 @@
+title: Error403PolygonGasCalculation
 properties:
   errorCode:
     description: polygon.transaction.gas

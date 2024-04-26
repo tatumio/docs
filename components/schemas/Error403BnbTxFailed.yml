@@ -1,3 +1,4 @@
+title: Error403BnbTxFailed
 properties:
   errorCode:
     description: bnb.transfer.failed

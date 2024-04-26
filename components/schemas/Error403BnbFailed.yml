@@ -1,3 +1,4 @@
+title: Error403BnbFailed
 properties:
   errorCode:
     description: bnb.failed

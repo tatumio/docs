@@ -1,3 +1,4 @@
+title: BaseTx
 type: object
 properties:
   blockHash:

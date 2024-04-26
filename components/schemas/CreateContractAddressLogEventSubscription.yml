@@ -1,3 +1,4 @@
+title: CreateContractAddressLogEventSubscription
 type: object
 required:
   - type

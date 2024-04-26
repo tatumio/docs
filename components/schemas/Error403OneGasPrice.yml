@@ -1,3 +1,4 @@
+title: Error403OneGasPrice
 properties:
   errorCode:
     description: gas.price.failed

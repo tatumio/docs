@@ -1,3 +1,4 @@
+title: BtcTxInputCoin
 properties:
   version:
     type: number

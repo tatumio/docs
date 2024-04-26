@@ -1,3 +1,4 @@
+title: CreateSubscriptionNftTransferEvent
 type: object
 required:
   - type

@@ -1,3 +1,4 @@
+title: Error403ComplianceBtc
 properties:
   errorCode:
     description: compliance.country.btc.not.supported

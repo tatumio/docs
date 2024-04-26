@@ -1,3 +1,4 @@
+title: XdcEstimateGas
 type: object
 properties:
   from:

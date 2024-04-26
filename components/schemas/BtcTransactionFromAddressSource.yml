@@ -1,3 +1,4 @@
+title: BtcTransactionFromAddressSource
 type: object
 required:
   - address

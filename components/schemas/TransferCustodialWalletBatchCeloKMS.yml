@@ -1,3 +1,4 @@
+title: TransferCustodialWalletBatchCeloKMS
 type: object
 properties:
   chain:

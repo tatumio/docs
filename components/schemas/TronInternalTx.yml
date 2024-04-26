@@ -1,3 +1,4 @@
+title: TronInternalTx
 type: object
 required:
   - internal_tx_id

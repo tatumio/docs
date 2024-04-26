@@ -1,3 +1,4 @@
+title: KcsEstimateGas
 type: object
 properties:
   from:

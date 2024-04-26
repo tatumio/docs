@@ -1,3 +1,4 @@
+title: Error403OffchainCancelled
 properties:
   errorCode:
     description: withdrawal.prepare.failed

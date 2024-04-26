@@ -1,3 +1,4 @@
+title: CreateTrade
 type: object
 required:
   - type

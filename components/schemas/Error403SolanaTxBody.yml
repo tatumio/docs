@@ -1,3 +1,4 @@
+title: Error403SolanaTxBody
 properties:
   errorCode:
     description: solana.transaction.body

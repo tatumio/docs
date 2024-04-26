@@ -1,3 +1,4 @@
+title: ReceiveAlgorandAsset
 type: object
 properties:
   assetId:

@@ -1,3 +1,4 @@
+title: TransferLtcKeyPair
 properties:
   senderAccountId:
     description: Sender account ID

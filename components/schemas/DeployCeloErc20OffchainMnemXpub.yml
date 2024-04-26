@@ -1,3 +1,4 @@
+title: DeployCeloErc20OffchainMnemXpub
 allOf:
   - type: object
     required:

@@ -1,3 +1,4 @@
+title: AdaTransactionFromUTXO
 type: object
 required:
   - to

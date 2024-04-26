@@ -1,3 +1,4 @@
+title: EstimateFeeBatchMintNft
 type: object
 required:
   - chain

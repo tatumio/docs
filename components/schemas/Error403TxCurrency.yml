@@ -1,3 +1,4 @@
+title: Error403TxCurrency
 properties:
   errorCode:
     description: transaction.currency.incompatible

@@ -1,3 +1,4 @@
+title: NativeTokenBalance
 type: object
 properties:
   chain:

@@ -1,3 +1,4 @@
+title: Error403BlockageAmount
 properties:
   errorCode:
     description: blockage.amount.exceeded

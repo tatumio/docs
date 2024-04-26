@@ -1,3 +1,4 @@
+title: NftTokenByCollectionErc721TokenMetadata
 type: object
 required:
   - tokenID

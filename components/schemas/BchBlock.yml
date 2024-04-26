@@ -1,3 +1,4 @@
+title: BchBlock
 type: object
 properties:
   hash:

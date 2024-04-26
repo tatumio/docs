@@ -1,3 +1,4 @@
+title: SolanaTransactionHashWithConfirm
 type: object
 properties:
   txId:

@@ -1,3 +1,4 @@
+title: Error403KcsGasCalculation
 properties:
   errorCode:
     description: kcs.transaction.gas

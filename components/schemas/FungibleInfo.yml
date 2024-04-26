@@ -1,3 +1,4 @@
+title: FungibleInfo
 type: object
 properties:
   symbol:

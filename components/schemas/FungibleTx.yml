@@ -1,3 +1,4 @@
+title: FungibleTx
 type: object
 properties:
   blockNumber:

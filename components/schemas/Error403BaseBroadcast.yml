@@ -1,3 +1,4 @@
+title: Error403BaseBroadcast
 properties:
   errorCode:
     description: base.broadcast.failed

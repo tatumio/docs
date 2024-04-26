@@ -1,3 +1,4 @@
+title: XrpAccount
 type: object
 properties:
   account_data:

@@ -1,3 +1,4 @@
+title: Error403AccountCurrency
 properties:
   errorCode:
     description: ledger.currency.invalid

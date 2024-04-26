@@ -1,3 +1,4 @@
+title: Error403OffchainBroadcast
 properties:
   errorCode:
     description: broadcast.failed.withdrawalId

@@ -1,3 +1,4 @@
+title: Error403KcsTxSign
 properties:
   errorCode:
     description: kcs.transaction.sign

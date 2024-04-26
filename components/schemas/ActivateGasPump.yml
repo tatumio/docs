@@ -1,3 +1,4 @@
+title: ActivateGasPump
 type: object
 properties:
   chain:

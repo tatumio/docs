@@ -1,3 +1,4 @@
+title: CreateXrpAsset
 type: object
 properties:
   issuerAccount:

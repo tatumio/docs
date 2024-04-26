@@ -1,3 +1,4 @@
+title: Error403OffchainNotSupported
 properties:
   errorCode:
     description: offchain.not.supported

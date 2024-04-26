@@ -1,3 +1,4 @@
+title: Error403BaseTxSign
 properties:
   errorCode:
     description: base.transaction.sign

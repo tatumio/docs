@@ -1,3 +1,4 @@
+title: Error403KcsBroadcast
 properties:
   errorCode:
     description: kcs.broadcast.failed

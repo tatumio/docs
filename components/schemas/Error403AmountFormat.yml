@@ -1,3 +1,4 @@
+title: Error403AmountFormat
 properties:
   errorCode:
     description: amount.format

@@ -1,3 +1,4 @@
+title: CallXdcSmartContractMethod
 type: object
 properties:
   contractAddress:

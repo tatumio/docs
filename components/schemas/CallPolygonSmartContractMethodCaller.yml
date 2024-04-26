@@ -1,3 +1,4 @@
+title: CallPolygonSmartContractMethodCaller
 type: object
 properties:
   caller:

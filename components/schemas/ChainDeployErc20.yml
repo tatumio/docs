@@ -1,3 +1,4 @@
+title: ChainDeployErc20
 type: object
 properties:
   chain:

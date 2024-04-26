@@ -1,3 +1,4 @@
+title: Error403BaseErc20TxSign
 properties:
   errorCode:
     description: base.bep20.sign

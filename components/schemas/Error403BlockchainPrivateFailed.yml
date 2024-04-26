@@ -1,3 +1,4 @@
+title: Error403BlockchainPrivateFailed
 properties:
   errorCode:
     description: key.generation.failed.wrong.mnemonic

@@ -1,3 +1,4 @@
+title: CallKlaytnSmartContractReadMethod
 type: object
 properties:
   contractAddress:

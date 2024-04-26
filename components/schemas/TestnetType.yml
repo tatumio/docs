@@ -1,3 +1,4 @@
+title: TestnetType
 type: string
 description:
   Specifies the testnet type. The default is ethereum-sepolia for Ethereum

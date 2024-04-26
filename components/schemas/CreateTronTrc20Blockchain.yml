@@ -1,3 +1,4 @@
+title: CreateTronTrc20Blockchain
 type: object
 properties:
   fromPrivateKey:

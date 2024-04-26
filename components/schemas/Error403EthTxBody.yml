@@ -1,3 +1,4 @@
+title: Error403EthTxBody
 properties:
   errorCode:
     description: ethereum.transaction.body

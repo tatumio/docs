@@ -1,3 +1,4 @@
+title: Error403KlaytnGasCalculation
 properties:
   errorCode:
     description: klaytn.transaction.gas

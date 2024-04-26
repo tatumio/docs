@@ -1,3 +1,4 @@
+title: EthGasEstimationBatch
 type: object
 required:
   - error

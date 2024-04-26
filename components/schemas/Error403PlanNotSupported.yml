@@ -1,3 +1,4 @@
+title: Error403PlanNotSupported
 properties:
   errorCode:
     description: product.not.supported

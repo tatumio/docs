@@ -1,3 +1,4 @@
+title: Error403SubscriptionType
 properties:
   errorCode:
     description: subscription.type.invalid

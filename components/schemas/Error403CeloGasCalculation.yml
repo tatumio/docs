@@ -1,3 +1,4 @@
+title: Error403CeloGasCalculation
 properties:
   errorCode:
     description: celo.transaction.gas

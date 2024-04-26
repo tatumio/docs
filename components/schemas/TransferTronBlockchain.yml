@@ -1,3 +1,4 @@
+title: TransferTronBlockchain
 type: object
 properties:
   fromPrivateKey:

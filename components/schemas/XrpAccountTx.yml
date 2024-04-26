@@ -1,3 +1,4 @@
+title: XrpAccountTx
 type: object
 properties:
   account:

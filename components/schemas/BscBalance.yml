@@ -1,3 +1,4 @@
+title: BscBalance
 type: object
 properties:
   balance:

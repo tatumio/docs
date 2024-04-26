@@ -1,3 +1,4 @@
+title: Error403ReportNotAvailable
 properties:
   errorCode:
     description: report.invalid

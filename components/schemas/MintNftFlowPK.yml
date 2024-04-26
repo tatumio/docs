@@ -1,3 +1,4 @@
+title: MintNftFlowPK
 description:
   <p>The <code>MintNftFlowPK</code> schema lets you mint NFTs natively
   on Flow and sign the transaction with your private key.<br/>For more information,

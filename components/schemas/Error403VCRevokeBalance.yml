@@ -1,3 +1,4 @@
+title: Error403VCRevokeBalance
 properties:
   errorCode:
     description: virtual.account.balance

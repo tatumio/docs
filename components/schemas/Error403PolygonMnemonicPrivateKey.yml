@@ -1,3 +1,4 @@
+title: Error403PolygonMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

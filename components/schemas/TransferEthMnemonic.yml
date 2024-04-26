@@ -1,3 +1,4 @@
+title: TransferEthMnemonic
 type: object
 properties:
   nonce:

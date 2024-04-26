@@ -1,3 +1,4 @@
+title: CallReadSmartContractMethod
 type: object
 properties:
   contractAddress:

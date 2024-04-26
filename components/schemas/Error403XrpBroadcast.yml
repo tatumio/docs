@@ -1,3 +1,4 @@
+title: Error403XrpBroadcast
 properties:
   errorCode:
     description: xrp.broadcast.failed

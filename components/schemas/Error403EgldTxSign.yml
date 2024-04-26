@@ -1,3 +1,4 @@
+title: Error403EgldTxSign
 properties:
   errorCode:
     description: egld.transaction.sign

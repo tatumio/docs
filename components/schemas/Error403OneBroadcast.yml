@@ -1,3 +1,4 @@
+title: Error403OneBroadcast
 properties:
   errorCode:
     description: bsc.broadcast.failed

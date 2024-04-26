@@ -1,3 +1,4 @@
+title: CreateSubscriptionPartialTradeMatch
 type: object
 required:
   - type

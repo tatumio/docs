@@ -1,3 +1,4 @@
+title: NftMetadata
 type: object
 description:
   "Metadata scheme obtained from the url. This data don't have to be present.

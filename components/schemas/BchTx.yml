@@ -1,3 +1,4 @@
+title: BchTx
 type: object
 properties:
   txid:

@@ -1,3 +1,4 @@
+title: Error403OrderCurrency1Balance
 properties:
   errorCode:
     description: trade.currency1.balance

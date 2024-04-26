@@ -1,3 +1,4 @@
+title: CallBscSmartContractMethodKMS
 type: object
 properties:
   contractAddress:

@@ -1,3 +1,4 @@
+title: MintNftAlgorandKMS
 description:
   <p>The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively
   on Algorand and sign the transaction with your signature ID.<br/>For more information,

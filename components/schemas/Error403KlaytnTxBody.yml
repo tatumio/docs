@@ -1,3 +1,4 @@
+title: Error403KlaytnTxBody
 properties:
   errorCode:
     description: klaytn.transaction.body

@@ -1,3 +1,4 @@
+title: Transaction
 properties:
   accountId:
     description: Source account - source of transaction(s)

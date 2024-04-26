@@ -1,3 +1,4 @@
+title: TransactionFeeEgldBlockchain
 type: object
 properties:
   sender:

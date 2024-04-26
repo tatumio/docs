@@ -1,3 +1,4 @@
+title: TransferErc20KMS
 type: object
 properties:
   senderAccountId:

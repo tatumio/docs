@@ -1,3 +1,4 @@
+title: Error403BaseGasCalculation
 properties:
   errorCode:
     description: base.transaction.gas

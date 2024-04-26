@@ -1,3 +1,4 @@
+title: NodeRpcGetChains
 type: string
 example: algorand-testnet-algod
 enum:

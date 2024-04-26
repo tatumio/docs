@@ -1,3 +1,4 @@
+title: WebHook
 type: object
 required:
   - id

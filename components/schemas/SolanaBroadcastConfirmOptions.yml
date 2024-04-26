@@ -1,3 +1,4 @@
+title: SolanaBroadcastConfirmOptions
 description: Options for sending and waiting for a transaction
 type: object
 properties:

@@ -1,3 +1,4 @@
+title: BtcGetTxByAddressBatch
 type: object
 properties:
   txType:

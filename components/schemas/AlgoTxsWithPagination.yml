@@ -1,3 +1,4 @@
+title: AlgoTxsWithPagination
 type: object
 properties:
   nextToken:

@@ -1,3 +1,4 @@
+title: Error403BlockDelete
 properties:
   errorCode:
     description: customer.blockage.inactive

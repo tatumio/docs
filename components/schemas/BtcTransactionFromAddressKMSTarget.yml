@@ -1,3 +1,4 @@
+title: BtcTransactionFromAddressKMSTarget
 type: object
 required:
   - address

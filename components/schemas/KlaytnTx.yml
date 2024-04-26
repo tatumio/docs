@@ -1,3 +1,4 @@
+title: KlaytnTx
 type: object
 properties:
   blockHash:

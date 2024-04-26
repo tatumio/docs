@@ -1,3 +1,4 @@
+title: Error403TxAmountBtcOffchain
 properties:
   errorCode:
     description: transaction.amount.btc

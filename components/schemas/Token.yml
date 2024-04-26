@@ -1,3 +1,4 @@
+title: Token
 type: object
 properties:
   chain:

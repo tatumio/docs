@@ -1,3 +1,4 @@
+title: Error403AccountIncompatibleXpubBtc
 properties:
   errorCode:
     description: Address.generation.failed.wrong.xpub

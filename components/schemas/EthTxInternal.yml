@@ -1,3 +1,4 @@
+title: EthTxInternal
 type: object
 properties:
   from:

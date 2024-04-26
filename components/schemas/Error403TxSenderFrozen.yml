@@ -1,3 +1,4 @@
+title: Error403TxSenderFrozen
 properties:
   errorCode:
     description: senderAccount.frozen

@@ -1,3 +1,4 @@
+title: TronTx
 type: object
 required:
   - txID

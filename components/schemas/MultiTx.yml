@@ -1,3 +1,4 @@
+title: MultiTx
 type: object
 properties:
   blockNumber:

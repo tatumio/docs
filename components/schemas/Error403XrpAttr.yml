@@ -1,3 +1,4 @@
+title: Error403XrpAttr
 properties:
   errorCode:
     description: attr.wrong.format

@@ -1,3 +1,4 @@
+title: Error403KcsBep20Unsupported
 properties:
   errorCode:
     description: kcs.bep20.unsupported

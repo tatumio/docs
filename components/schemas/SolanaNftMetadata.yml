@@ -1,3 +1,4 @@
+title: SolanaNftMetadata
 type: object
 required:
   - name

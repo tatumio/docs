@@ -1,3 +1,4 @@
+title: Error403PolygonGasPrice
 properties:
   errorCode:
     description: gas.price.failed

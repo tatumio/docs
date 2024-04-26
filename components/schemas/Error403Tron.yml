@@ -1,3 +1,4 @@
+title: Error403Tron
 properties:
   errorCode:
     description: tron.failed

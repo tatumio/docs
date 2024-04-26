@@ -1,3 +1,4 @@
+title: FlareTestnetType
 type: string
 default: flare-coston
 enum:

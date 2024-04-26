@@ -1,3 +1,4 @@
+title: Error403CronosMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

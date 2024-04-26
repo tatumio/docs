@@ -1,3 +1,4 @@
+title: Error403AccountActive
 properties:
   errorCode:
     description: account.active

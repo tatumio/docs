@@ -1,3 +1,4 @@
+title: AdaTransaction
 type: object
 required:
   - to

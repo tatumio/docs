@@ -1,3 +1,4 @@
+title: ChainEnum
 type: string
 example: ethereum
 enum:

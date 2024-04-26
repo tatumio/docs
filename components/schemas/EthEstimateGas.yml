@@ -1,3 +1,4 @@
+title: EthEstimateGas
 type: object
 properties:
   from:

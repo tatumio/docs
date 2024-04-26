@@ -1,3 +1,4 @@
+title: AddMultiTokenMinter
 type: object
 properties:
   chain:

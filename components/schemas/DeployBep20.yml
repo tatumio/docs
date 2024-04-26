@@ -1,3 +1,4 @@
+title: DeployBep20
 type: object
 properties:
   symbol:

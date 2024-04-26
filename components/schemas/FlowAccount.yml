@@ -1,3 +1,4 @@
+title: FlowAccount
 type: object
 properties:
   address:

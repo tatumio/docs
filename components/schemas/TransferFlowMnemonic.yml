@@ -1,3 +1,4 @@
+title: TransferFlowMnemonic
 type: object
 properties:
   senderAccountId:

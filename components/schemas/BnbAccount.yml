@@ -1,3 +1,4 @@
+title: BnbAccount
 type: object
 properties:
   account_number:

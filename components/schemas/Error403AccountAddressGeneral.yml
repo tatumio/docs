@@ -1,3 +1,4 @@
+title: Error403AccountAddressGeneral
 properties:
   errorCode:
     description: Address.generation.failed

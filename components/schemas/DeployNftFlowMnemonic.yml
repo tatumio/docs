@@ -1,3 +1,4 @@
+title: DeployNftFlowMnemonic
 type: object
 properties:
   chain:

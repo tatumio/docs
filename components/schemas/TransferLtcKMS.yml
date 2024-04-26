@@ -1,3 +1,4 @@
+title: TransferLtcKMS
 properties:
   senderAccountId:
     description: Sender account ID

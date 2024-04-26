@@ -1,3 +1,4 @@
+title: Error403EthErc721Call
 properties:
   errorCode:
     description: eth.erc721.failed

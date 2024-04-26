@@ -1,3 +1,4 @@
+title: Error403FeeFormat
 properties:
   errorCode:
     description: fee.format

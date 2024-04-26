@@ -1,3 +1,4 @@
+title: Chain
 type: string
 description: Name of the chain.
 example: ethereum

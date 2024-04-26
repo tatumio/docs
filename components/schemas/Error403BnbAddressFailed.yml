@@ -1,3 +1,4 @@
+title: Error403BnbAddressFailed
 properties:
   errorCode:
     description: Address.bnb.generation.failed.wrong.xpub

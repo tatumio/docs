@@ -1,3 +1,4 @@
+title: Error403EthErc721TxSign
 properties:
   errorCode:
     description: eth.erc721.sign

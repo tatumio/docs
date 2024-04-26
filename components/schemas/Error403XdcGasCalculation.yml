@@ -1,3 +1,4 @@
+title: Error403XdcGasCalculation
 properties:
   errorCode:
     description: xdc.transaction.gas

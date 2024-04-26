@@ -1,3 +1,4 @@
+title: MintMultiTokenBatchKMS
 type: object
 properties:
   chain:

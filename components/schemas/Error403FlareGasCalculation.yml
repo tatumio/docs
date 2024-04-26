@@ -1,3 +1,4 @@
+title: Error403FlareGasCalculation
 properties:
   errorCode:
     description: flare.transaction.gas

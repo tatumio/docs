@@ -1,3 +1,4 @@
+title: Error403VetGas
 properties:
   errorCode:
     description: vet.transaction.gas

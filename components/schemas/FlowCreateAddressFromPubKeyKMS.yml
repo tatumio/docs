@@ -1,3 +1,4 @@
+title: FlowCreateAddressFromPubKeyKMS
 type: object
 properties:
   account:

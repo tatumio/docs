@@ -1,3 +1,4 @@
+title: Error403BtcTx
 properties:
   errorCode:
     description: transaction.invalid.body

@@ -1,3 +1,4 @@
+title: BscBlock
 type: object
 properties:
   difficulty:

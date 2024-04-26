@@ -1,3 +1,4 @@
+title: BnbTxInAccount
 type: object
 properties:
   total:

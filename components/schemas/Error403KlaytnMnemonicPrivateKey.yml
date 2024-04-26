@@ -1,3 +1,4 @@
+title: Error403KlaytnMnemonicPrivateKey
 properties:
   errorCode:
     description: private.mnemonic.missing

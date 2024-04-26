@@ -1,3 +1,4 @@
+title: Error403AccountNotExists
 properties:
   errorCode:
     description: account.not.exists

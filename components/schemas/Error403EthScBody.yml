@@ -1,3 +1,4 @@
+title: Error403EthScBody
 properties:
   errorCode:
     description: ethereum.sc.invalid

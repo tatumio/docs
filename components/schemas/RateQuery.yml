@@ -1,3 +1,4 @@
+title: RateQuery
 type: object
 properties:
   batchId:

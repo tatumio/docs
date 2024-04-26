@@ -1,3 +1,4 @@
+title: CallBscSmartContractMethod
 type: object
 properties:
   contractAddress:

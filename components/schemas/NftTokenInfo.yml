@@ -1,3 +1,4 @@
+title: NftTokenInfo
 type: object
 properties:
   symbol:

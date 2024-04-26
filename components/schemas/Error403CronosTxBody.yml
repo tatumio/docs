@@ -1,3 +1,4 @@
+title: Error403CronosTxBody
 properties:
   errorCode:
     description: cronos.transaction.body

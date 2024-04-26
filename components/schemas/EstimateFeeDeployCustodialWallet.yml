@@ -1,3 +1,4 @@
+title: EstimateFeeDeployCustodialWallet
 type: object
 required:
   - chain

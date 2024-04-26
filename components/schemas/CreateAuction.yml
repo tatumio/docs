@@ -1,3 +1,4 @@
+title: CreateAuction
 type: object
 properties:
   chain:

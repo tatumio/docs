@@ -1,3 +1,4 @@
+title: CustodialManagedAddress
 type: object
 required:
   - address

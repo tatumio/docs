@@ -1,3 +1,4 @@
+title: OrderBookSort
 description:
   Sorts the result by selected property. The priority of the items is determined
   by order of the sort properties in array.

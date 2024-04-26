@@ -1,3 +1,4 @@
+title: LtcInfo
 type: object
 properties:
   chain:

@@ -1,3 +1,4 @@
+title: GasEstimated
 type: object
 required:
   - gasLimit

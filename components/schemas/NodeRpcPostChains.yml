@@ -1,3 +1,4 @@
+title: NodeRpcPostChains
 type: string
 example: ethereum-sepolia
 enum:

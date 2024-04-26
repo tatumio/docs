@@ -1,3 +1,4 @@
+title: StablecoinTransfer
 allOf:
   - $ref: "../migrated_v1.yml#/components/schemas/FungibleTransfer"
   - type: object

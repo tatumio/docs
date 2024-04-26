@@ -1,3 +1,4 @@
+title: TransferEthBlockchain
 type: object
 properties:
   to:

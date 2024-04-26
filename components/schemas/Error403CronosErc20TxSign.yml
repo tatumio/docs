@@ -1,3 +1,4 @@
+title: Error403CronosErc20TxSign
 properties:
   errorCode:
     description: cronos.bep20.sign

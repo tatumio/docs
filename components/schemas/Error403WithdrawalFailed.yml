@@ -1,3 +1,4 @@
+title: Error403WithdrawalFailed
 properties:
   errorCode:
     description: withdrawal.failed.transaction.failed

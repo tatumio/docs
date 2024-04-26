@@ -1,3 +1,4 @@
+title: DeployErc1155Contract
 allOf:
   - $ref: "../migrated_v1.yml#/components/schemas/DeployAbstractContract"
   - type: object

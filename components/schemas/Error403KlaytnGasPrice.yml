@@ -1,3 +1,4 @@
+title: Error403KlaytnGasPrice
 properties:
   errorCode:
     description: gas.price.failed

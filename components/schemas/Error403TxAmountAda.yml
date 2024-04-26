@@ -1,3 +1,4 @@
+title: Error403TxAmountAda
 properties:
   errorCode:
     description: transaction.amount.ada

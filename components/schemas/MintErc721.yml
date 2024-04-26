@@ -1,3 +1,4 @@
+title: MintErc721
 type: object
 properties:
   tokenId:

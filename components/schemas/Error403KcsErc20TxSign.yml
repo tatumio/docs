@@ -1,3 +1,4 @@
+title: Error403KcsErc20TxSign
 properties:
   errorCode:
     description: kcs.bep20.sign

@@ -1,3 +1,4 @@
+title: CallCronosSmartContractMethod
 type: object
 properties:
   contractAddress:

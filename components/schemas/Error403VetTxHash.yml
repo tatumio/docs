@@ -1,3 +1,4 @@
+title: Error403VetTxHash
 properties:
   errorCode:
     description: vet.transaction.hash

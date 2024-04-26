@@ -1,3 +1,4 @@
+title: TransferErc20Mnemonic
 type: object
 properties:
   senderAccountId:

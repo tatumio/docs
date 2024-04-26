@@ -1,3 +1,4 @@
+title: Error403CustomerInternalNotExists
 properties:
   errorCode:
     description: customer.internal.not.exists

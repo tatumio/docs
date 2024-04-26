@@ -1,3 +1,4 @@
+title: SolanaBlockTx
 type: object
 properties:
   meta:

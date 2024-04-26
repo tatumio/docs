@@ -1,3 +1,4 @@
+title: Error403FlareBep20Unsupported
 properties:
   errorCode:
     description: flare.bep20.unsupported

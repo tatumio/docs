@@ -1,3 +1,4 @@
+title: Error403TxAmountBtc
 properties:
   errorCode:
     description: amount.btc

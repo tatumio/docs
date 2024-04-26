@@ -1,3 +1,4 @@
+title: CreateGasPump
 type: object
 properties:
   chain:

@@ -1,3 +1,4 @@
+title: BtcTransactionFromAddressKMS
 type: object
 required:
   - to

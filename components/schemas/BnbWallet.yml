@@ -1,3 +1,4 @@
+title: BnbWallet
 type: object
 properties:
   address:

@@ -1,3 +1,4 @@
+title: TransactionFilterLedger
 properties:
   account:
     description: Source account - source of transaction(s).

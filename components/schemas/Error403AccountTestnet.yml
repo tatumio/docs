@@ -1,3 +1,4 @@
+title: Error403AccountTestnet
 properties:
   errorCode:
     description: account.blockchain.testnet

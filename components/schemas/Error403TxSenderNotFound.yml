@@ -1,3 +1,4 @@
+title: Error403TxSenderNotFound
 properties:
   errorCode:
     description: senderAccount.not.exists
