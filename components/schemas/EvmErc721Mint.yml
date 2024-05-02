@@ -9,7 +9,7 @@ properties:
       - ethereum-mainnet
       - ethereum-sepolia
       - polygon-mainnet
-      - polygon-mumbai
+      - polygon-amoy
       - celo-mainnet
       - celo-alfajores
       - one-mainnet-s0

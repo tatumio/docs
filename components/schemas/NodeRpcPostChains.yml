@@ -5,7 +5,7 @@ enum:
   - ethereum-sepolia
   - ethereum-mainnet
   - ethereum-holesky
-  - polygon-mumbai
+  - polygon-amoy
   - polygon-mainnet
   - klaytn-baobab
   - klaytn-cypress

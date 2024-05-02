@@ -98,7 +98,7 @@ description:
   \ (the \"chain\" parameter in the response payload)</th>\n    <th>Credit consumption\
   \ / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n    <td>ethereum-sepolia /\
   \ ethereum-holesky / ethereum-mainnet</td>\n    <td>500,000 credits / day</td>\n\
-  \  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai / polygon-mainnet</td>\n\
+  \  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-amoy / polygon-mainnet</td>\n\
   \    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n    <td>Celo</td>\n    <td>celo-testnet\
   \ / celo-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n   \
   \ <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n    <td>500,000\
@@ -129,7 +129,7 @@ description:
   \    <th>Chain</th>\n    <th>Available chains (the \"chain\" parameter in the response\
   \ payload)</th>\n    <th>Credit consumption / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n\
   \    <td>ethereum-sepolia / ethereum-holesky / ethereum-mainnet</td>\n    <td>500,000\
-  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai\
+  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-amoy\
   \ / polygon-mainnet</td>\n    <td>500,000 credits / day</td>\n  </tr>\n  <tr>\n\
   \    <td>Celo</td>\n    <td>celo-testnet / celo-mainnet</td>\n    <td>500,000 credits\
   \ / day</td>\n  </tr>\n  <tr>\n    <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n\
@@ -159,7 +159,7 @@ description:
   \    <th>Available chains (the \"chain\" parameter in the response payload)</th>\n\
   \    <th>Credit consumption / day</th>\n  </tr>\n  <tr>\n    <td>Ethereum</td>\n\
   \    <td>ethereum-sepolia / ethereum-holesky / ethereum-mainnet</td>\n    <td>50,000\
-  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-mumbai\
+  \ credits / day</td>\n  </tr>\n  <tr>\n    <td>Polygon</td>\n    <td>polygon-amoy\
   \ / polygon-mainnet</td>\n    <td>50,000 credits / day</td>\n  </tr>\n  <tr>\n \
   \   <td>Celo</td>\n    <td>celo-testnet / celo-mainnet</td>\n    <td>50,000 credits\
   \ / day</td>\n  </tr>\n  <tr>\n    <td>Klaytn</td>\n    <td>klaytn-baobab / klaytn-cypress</td>\n\
@@ -177,7 +177,7 @@ description:
   ,\n     \"topic_1\": \"0x000000000000000000000000a91ab7d77892a559d2a95baaf1d748fc97c65d29\"\
   ,\n     \"topic_2\": \"0x0000000000000000000000009b08288c3be4f62bbf8d1c20ac9c5e6f9467d8b7\"\
   ,\n     \"topic_3\": null,\n     \"data\": \"0x0000000000000000000000000000000000000000000000000000000002c9e3e4\"\
-  \n   }\n ],\n \"blockNumber\": 32447538,\n \"chain\": \"polygon-mumbai\",\n \"subscriptionType\"\
+  \n   }\n ],\n \"blockNumber\": 32447538,\n \"chain\": \"polygon-amoy\",\n \"subscriptionType\"\
   : \"CONTRACT_LOG_EVENT\"\n}</pre>\n<b>1 credit is debited for each fired web hook.</b><br/></li>\n\
   <li><b>ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION</b> - Enable HTTP POST JSON notifications\
   \ about incoming blockchain transactions on virtual accounts.\nThis web hook is\

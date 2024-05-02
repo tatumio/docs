@@ -2,7 +2,7 @@ description:
   "<p><b>20 credits per API call</b></p>\n<p>Get transactions on the following\
   \ blockchains:</p>\n<ul>\n<li>Celo - celo / celo-testnet</li>\n<li>Ethereum - ethereum\
   \ / ethereum-sepolia</li>\n<li>BNB (Binance) Smart Chain - bsc / bsc-testnet</li>\n\
-  <li>Polygon - polygon / polygon-mumbai</li>\n<li>Tezos - tezos-mainnet</li>\n<li>Horizen\
+  <li>Polygon - polygon</li>\n<li>Tezos - tezos-mainnet</li>\n<li>Horizen\
   \ EON - eon-mainnet</li>\n<li>Chiliz - chiliz-mainnet</li>\n</ul>\n<p>To get started:</p>\n\
   <ul>\n<li>Provide a chain name and comma-separated list of addresses. Our API will\
   \ return all of their transactions along with further information such as their\
