@@ -9,7 +9,7 @@ description:
   \        | Mainnet                     | Testnet                               \
   \           |\n| ------------------- | --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
   \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
@@ -41,7 +41,7 @@ description:
   \     | Mainnet                     | Testnet                                  \
   \        |\n| ------------------- | --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
   \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
@@ -72,7 +72,7 @@ description:
   \                                          |\n| ------------------- | ---------------------------\
   \ | ------------------------------------------------ |\n| Ethereum            |\
   \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin             |\
   \ Network.BITCOIN             | Network.BITCOIN_TESTNET                        \
@@ -132,7 +132,7 @@ description:
   \                          |\n| ------------------- | ---------------------------\
   \ | ------------------------------------------------ |\n| Ethereum            |\
   \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -155,7 +155,7 @@ description:
   \                                          |\n| ------------------- | ---------------------------\
   \ | ------------------------------------------------ |\n| Ethereum            |\
   \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -176,7 +176,7 @@ description:
   \                          |\n| ------------------- | ---------------------------\
   \ | ------------------------------------------------ |\n| Ethereum            |\
   \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -196,7 +196,7 @@ description:
   \                     | Testnet                                          |\n| -------------------\
   \ | --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Bitcoin Cash        |\
   \ Network.BITCOIN_CASH        | Network.BITCOIN_CASH_TESTNET                   \
@@ -222,7 +222,7 @@ description:
   \  | Testnet                                          |\n| ------------------- |\
   \ --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -247,7 +247,7 @@ description:
   \     | Mainnet                     | Testnet                                  \
   \        |\n| ------------------- | --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -274,7 +274,7 @@ description:
   \                        |\n| ------------------- | ---------------------------\
   \ | ------------------------------------------------ |\n| Ethereum            |\
   \ Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -300,7 +300,7 @@ description:
   \                     | Testnet                                          |\n| -------------------\
   \ | --------------------------- | ------------------------------------------------\
   \ |\n| Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -322,7 +322,7 @@ description:
   \ Blockchain          | Mainnet                     | Testnet                  \
   \                        |\n|---------------------|-----------------------------|--------------------------------------------------|\n\
   | Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \
@@ -343,7 +343,7 @@ description:
   \ are supported?\n| Blockchain          | Mainnet                     | Testnet\
   \                                          |\n|---------------------|-----------------------------|--------------------------------------------------|\n\
   | Ethereum            | Network.ETHEREUM            | Network.ETHEREUM_SEPOLIA,Network.ETHEREUM_GOERLI\
-  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_MUMBAI\
+  \ |\n| Polygon             | Network.POLYGON             | Network.POLYGON_AMOY\
   \                           |\n| Binance Smart Chain | Network.BINANCE_SMART_CHAIN\
   \ | Network.BINANCE_SMART_CHAIN_TESTNET              |\n| Celo                |\
   \ Network.CELO                | Network.CELO_ALFAJORES                         \

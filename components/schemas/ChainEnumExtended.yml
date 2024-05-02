@@ -9,7 +9,7 @@ enum:
   - bsc
   - bsc-testnet
   - polygon
-  - polygon-mumbai
+  - polygon-amoy
   - tezos
   - eon
   - chiliz

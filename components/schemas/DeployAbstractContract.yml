@@ -12,7 +12,7 @@ properties:
       - ethereum-mainnet
       - ethereum-sepolia
       - polygon-mainnet
-      - polygon-mumbai
+      - polygon-amoy
       - celo-mainnet
       - celo-alfajores
     description: The blockchain network where the contract will be deployed.
