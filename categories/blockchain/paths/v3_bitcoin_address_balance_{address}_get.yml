@@ -6,6 +6,11 @@ description: "<p><b>1 credit per API call</b></p>
   Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns
   an error with the <code>403</code> response code.</p>
 
+  <p> NOTE: Tatum BTC nodes use the standard 2 weeks mempool expiration time. 
+  Additional information is available in the BTC official GitHub. 
+  Nodes from other providers may have different setups and keep unconfirmed transactions for longer,
+  where those Pending transactions may be confirmed or dropped beyond two weeks.</p>
+
   "
 operationId: BtcGetBalanceOfAddress
 parameters:
