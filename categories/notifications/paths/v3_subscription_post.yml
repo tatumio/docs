@@ -66,18 +66,19 @@ description:
   \ addresses across all blockchains</td>\n    <td>25 credits / day / address</td>\n\
   \  </tr>     \n</table>\nThe request body of the POST request is a JSON object with\
   \ the following structure:<br/>\n<pre>{\n  \"address\": \"FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ\"\
-  , // the address on which the transaction occurs; for EVM-based chains, this is\
+  , \n// the address on which the transaction occurs; for EVM-based chains, this is\
   \ the sender's address\n  \"txId\": \"2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A\"\
-  , // the transaction ID\n  \"blockNumber\": 110827114, // the block number; does\
+  , \n// the transaction ID\n  \"blockNumber\": 110827114, \n// the block number; does\
   \ not appear if the transaction is in the mempool (for EVM-based blockchains)\n\
-  \  \"asset\": \"3gUeeR3BfVhukYJMwtHownRtRkGcf1bvwiV8TbKMZBVz\", // the asset of\
+  \  \"asset\": \"3gUeeR3BfVhukYJMwtHownRtRkGcf1bvwiV8TbKMZBVz\", \n// the asset of\
   \ the transaction: for token assets, this is the token address; for native blochckain\
   \ assets, this is the name of the asset (for example, SOL)\n  \"amount\": \"1\"\
-  , // the amount of the asset that was credited to (+) or debited from (-) the address;\
+  , \n// the amount of the asset that was credited to (+) or debited from (-) the address;\
   \ for EVM-based chains, when \"counterAddress\" is present, the amount is always\
-  \ positive\n  \"tokenId\": \"1\", // (ERC-721 / ERC-1155 only) the ID of the transferred\
-  \ token\n  \"type\": \"token\", // the type of the transaction; can be either \"\
-  native\" or \"token\"\n  \"mempool\": true, // (EVM-based blockchains only) if appears\
+  \ positive\n  \"tokenId\": \"1\", \n// (ERC-721 / ERC-1155 only) the ID of the transferred\
+  \ token\n  \"type\": \"token\", \n// the type of the transaction; can be either \"\
+  \n //native\" or \"token\" or \"erc721\" or \"erc1155\" or \"internal\" or \"fee\"or \"trc10\" or \"trc20\" or \"failed\"or \"sol_nft\" \n //Based on the type of notification you recieve.\
+  \n  \"mempool\": true, // (EVM-based blockchains only) if appears\
   \ and set to \"true\", the transaction is in the mempool; if set to \"false\" or\
   \ does not appear at all, the transaction has been added to a block\n  \"counterAddress\"\
   : undefined // an optional counter party address of the transaction; for EVM-based\
@@ -86,7 +87,7 @@ description:
   \ with which the address communicated within the transaction; the addresses are\
   \ assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources\n\
   \    {\"vTEfAhXTmvgFmepgfhzBbRrJ4EtUP9adbMJjpzLsDMk\": 0},\n    {\"zBbRrJ4EtUP9adbMJjpzLsDMkvTEfAhXTmvgFmepgfh\"\
-  : 100}\n  ]\n}</pre>\n<b>5 credits are debited for each fired web hook.</b><br/></li>\n\
+  : 100}\n  ]\n}</pre>\n  <b>5 credits are debited for each fired web hook.</b><br/></li>\n\
   <li><b>CONTRACT_NFT_TXS_PER_BLOCK</b> - Enable HTTP POST JSON notifications for\
   \ any event of minting, transferring, or burning an NFT that was emitted from any\
   \ smart contract. This notification is fired as a batch notification per block:\
