@@ -67,22 +67,22 @@ description:
   \  </tr>     \n</table>\nThe request body of the POST request is a JSON object with\
   \ the following structure:<br/>\n<pre>{\n  \"address\": \"FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ\"\
   , \n// the address on which the transaction occurs; for EVM-based chains, this is\
-  \ the sender's address\n\n  \"txId\": \"2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A\"\
-  , \n// the transaction ID\n\n  \"blockNumber\": 110827114, \n// the block number; does\
-  \ not appear if the transaction is in the mempool (for EVM-based blockchains)\n\n\
+  \ the sender's address\n  \"txId\": \"2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A\"\
+  , \n// the transaction ID\n  \"blockNumber\": 110827114, \n// the block number; does\
+  \ not appear if the transaction is in the mempool (for EVM-based blockchains)\n\
   \  \"asset\": \"3gUeeR3BfVhukYJMwtHownRtRkGcf1bvwiV8TbKMZBVz\", \n// the asset of\
   \ the transaction: for token assets, this is the token address; for native blochckain\
-  \ assets, this is the name of the asset (for example, SOL)\n\n  \"amount\": \"1\"\
+  \ assets, this is the name of the asset (for example, SOL)\n  \"amount\": \"1\"\
   , \n// the amount of the asset that was credited to (+) or debited from (-) the address;\
   \ for EVM-based chains, when \"counterAddress\" is present, the amount is always\
-  \ positive\n\n  \"tokenId\": \"1\", \n// (ERC-721 / ERC-1155 only) the ID of the transferred\
-  \ token\n\n  \"type\": \"token\", \n// the type of the transaction; can be either \"\
-  native\" or \"token\" or\n//\"erc721\" or \"erc1155\" or \"internal\" or \"fee\" or \"trc10\" or \"trc20\" \n//or \"failed\" or \"sol_nft\" Based on the type of notification you recieve.\
-  \n\n  \"mempool\": true, // (EVM-based blockchains only) if appears\
+  \ positive\n  \"tokenId\": \"1\", \n// (ERC-721 / ERC-1155 only) the ID of the transferred\
+  \ token\n  \"type\": \"token\", \n// the type of the transaction; can be either \"\
+  native\" or \"token\" or \n //\"erc721\" or \"erc1155\" or \"internal\" or \"fee\" or \"trc10\" or \"trc20\" or \n //\"failed\" or \"sol_nft\" Based on the type of notification you recieve.\
+  \n  \"mempool\": true, // (EVM-based blockchains only) if appears\
   \ and set to \"true\", the transaction is in the mempool; if set to \"false\" or\
-  \ does not appear at all, the transaction has been added to a block\n\n  \"counterAddress\"\
+  \ does not appear at all, the transaction has been added to a block\n  \"counterAddress\"\
   : undefined // an optional counter party address of the transaction; for EVM-based\
-  \ blockchains, this is the recipient's address\n\n  \"addressesRiskRatio\": [ // (optional,\
+  \ blockchains, this is the recipient's address\n  \"addressesRiskRatio\": [ // (optional,\
   \ subject to change; for Solana mainnet only) risk levels assigned to the addresses\
   \ with which the address communicated within the transaction; the addresses are\
   \ assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources\n\
