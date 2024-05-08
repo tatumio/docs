@@ -76,8 +76,8 @@ description:
   , \n// the amount of the asset that was credited to (+) or debited from (-) the address;\
   \ for EVM-based chains, when \"counterAddress\" is present, the amount is always\
   \ positive\n  \"tokenId\": \"1\", \n// (ERC-721 / ERC-1155 only) the ID of the transferred\
-  \ token\n  \"type\": \"token\", \n// the type of the transaction; can be either \"\
-  native\" or \"token\" or \n //\"erc721\" or \"erc1155\" or \"internal\" or \"fee\" or \"trc10\" or \"trc20\" or \n //\"failed\" or \"sol_nft\" Based on the type of notification you recieve.\
+  \ token\n  \"type\": \"token\", \n// the type of the transaction can be \"\
+  native\" or \"token\" or \"erc721\" \n //or \"erc1155\" or \"internal\" or \"fee\" or \"trc10\" or \"trc20\" or \n //\"failed\" or \"sol_nft\" Based on the type of notification you recieve.\
   \n  \"mempool\": true, // (EVM-based blockchains only) if appears\
   \ and set to \"true\", the transaction is in the mempool; if set to \"false\" or\
   \ does not appear at all, the transaction has been added to a block\n  \"counterAddress\"\
