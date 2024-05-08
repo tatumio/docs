@@ -7,9 +7,7 @@ description: "<p><b>1 credit per API call</b></p>
   an error with the <code>403</code> response code.</p>
 
   <p> <b>NOTE:</b> Tatum BTC nodes use the standard 2 weeks mempool expiration time. 
-  Additional information is available in the BTC official GitHub. 
-  Nodes from other providers may have different setups and keep unconfirmed transactions for longer,
-  where those Pending transactions may be confirmed or dropped beyond two weeks.</p>
+  Which means that transactions which are stuck in mempool for more than 2 weeks are dropped and will not be returned as pending balances as well.</p>
 
   "
 operationId: BtcGetBalanceOfAddress
