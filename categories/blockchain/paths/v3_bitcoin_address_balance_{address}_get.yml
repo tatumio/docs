@@ -6,7 +6,7 @@ description: "<p><b>1 credit per API call</b></p>
   Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns
   an error with the <code>403</code> response code.</p>
 
-  <p> <b>NOTE:</b> Tatum BTC nodes use the default 2 weeks mempool expiration time as can be seen in <a href="https://github.com/bitcoin/bitcoin/commit/5f0e27f1a8495d9be43a"> Bitcoin Core</a>. 
+  <p> <b>NOTE:</b> Tatum BTC nodes use the default 2 weeks mempool expiration time as can be seen in <a href='https://github.com/bitcoin/bitcoin/commit/5f0e27f1a8495d9be43a'> Bitcoin Core</a>. 
   Which means that transactions which are stuck in mempool for more than 2 weeks are dropped and will not be returned as pending balances as well.</p>
 
   "
