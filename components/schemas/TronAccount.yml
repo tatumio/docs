@@ -36,10 +36,9 @@ properties:
         - value
   trc20:
     type: array
-    description: List of TRC20 asset balances, where are dynamic keys as TRON adresses and values are balances.
+    description: List of TRC20 token balances, where key is the TRC20 token address and value is balance. Please expand the response example on the right side of the docs.
     items:
       type: object
-      description: Balance of the TRC20 token, where key is the TRC20 token address.
       example: {"TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG": "99999700000000000"}
   createTime:
     type: number
