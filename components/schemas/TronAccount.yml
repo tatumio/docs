@@ -38,8 +38,15 @@ properties:
     type: array
     items:
       type: object
-      description: List of TRC20 token balances, where key is the TRC20 token address and value is balance.
+      description: List of TRC20 token balances, where key is the TRC20 token address and value is balance. Please see example response on the right side of the docs.
       example: [{"TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG": "99999700000000000"},{"TNBQup8ZkD9VmChpGiynGAjh3KbeFZ8mMT": "500"}]
+      properties:
+        TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG:
+          type: string
+          description: Address of token (this parameter is an example and is always unique)
+        balance:
+          type: string
+          description: Number of tokens in smallest denomination unit.
   createTime:
     type: number
     description: Date of creation of the account in UTC millis.
