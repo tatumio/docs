@@ -39,10 +39,11 @@ properties:
     description: List of TRC20 asset balances.
     items:
       type: object
-      additionalProperties: 
-        type: string
-        description: Balance of the TRC20 token, where key is the TRC20 token address.
-        example: {"TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG": "99999700000000000"}
+      properties:
+        unique_address:
+          type: string
+          description: Balance of the TRC20 token, where key is the TRC20 token address.
+          example: {"TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG": "99999700000000000"}
   createTime:
     type: number
     description: Date of creation of the account in UTC millis.
