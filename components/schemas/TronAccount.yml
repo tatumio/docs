@@ -47,6 +47,9 @@ properties:
         balance:
           type: string
           description: Number of tokens in smallest denomination unit.
+      required:
+        - TWEWc9EoVMn588Kn7p1E6pdcpStTg3AhsG
+        - balance
   createTime:
     type: number
     description: Date of creation of the account in UTC millis.
