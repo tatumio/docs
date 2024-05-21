@@ -14,6 +14,13 @@ description: "<h4>1 credit per API call.</h4><br/>
   amount should be reverted, not the fee.
 
   </p>
+  <pre>Tip : For Virtual Accounts where withdrawal currency is a token, \n 
+  it is recommended to use “revert=false”. Otherwise, the blockchain \n 
+  transaction fee in native currency will be reverted as effective \n 
+  Virtual Account balance. Example: tx out fails and cancel \n 
+  “revert=true” from a 10 USDT + 0.10 TRX as “fee” would be \n
+  reverted as 10+30 USDT (where the TRX of the fee is converted to USDT)
+  </pre>
 
   "
 operationId: cancelInProgressWithdrawal
