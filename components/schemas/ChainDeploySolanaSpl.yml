@@ -49,8 +49,8 @@ properties:
       deployment of SPL will be paid. Private key, or signature Id must be present.
     type: string
     example: 3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad
-    maxLength: 103
-    minLength: 128
+    maxLength: 104
+    minLength: 1
   feePayer:
     description:
       Address on the Solana blockchain, from which the fee will be paid
