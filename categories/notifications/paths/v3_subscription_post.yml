@@ -82,7 +82,7 @@ description:
   \ and set to \"true\", the transaction is in the mempool; if set to \"false\" or\
   \ does not appear at all, the transaction has been added to a block\n  \"counterAddress\"\
   : undefined // an optional counter party address \n // of the transaction; for EVM-based\
-  \ blockchains, this is the recipient's address\n //UTXO based chains return without this parameter, since UTXO is \n //many-to-many by design. \"addressesRiskRatio\": [ // (optional,\
+  \ blockchains, this is the recipient's address\n //UTXO based chains return without this parameter, since UTXO is \n //many-to-many by design. \n \"addressesRiskRatio\": [ // (optional,\
   \ subject to change; for Solana mainnet only) risk levels assigned to the addresses\
   \ with which the address communicated within the transaction; the addresses are\
   \ assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources\n\
