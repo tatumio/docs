@@ -87,7 +87,8 @@ description:
   \ with which the address communicated within the transaction; the addresses are\
   \ assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources\n\
   \    {\"vTEfAhXTmvgFmepgfhzBbRrJ4EtUP9adbMJjpzLsDMk\": 0},\n    {\"zBbRrJ4EtUP9adbMJjpzLsDMkvTEfAhXTmvgFmepgfh\"\
-  : 100}\n  ]\n}</pre>\n  <b>5 credits are debited for each fired web hook.</b><br/></li>\n\
+  : 100}\n  ]\n}</pre>\n<pre> Tip : To easily understand direction of transaction, like form & to \n look at the amount value
+  when it is negative it means \n amount is reduced from address and sent to counter address \n when its positive it means its recieved on address from counter address</pre>\n  <b>5 credits are debited for each fired web hook.</b><br/></li>\n\
   <li><b>CONTRACT_NFT_TXS_PER_BLOCK</b> - Enable HTTP POST JSON notifications for\
   \ any event of minting, transferring, or burning an NFT that was emitted from any\
   \ smart contract. This notification is fired as a batch notification per block:\
